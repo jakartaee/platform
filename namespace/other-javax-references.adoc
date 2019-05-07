@@ -1,0 +1,33 @@
+# Other javax references in APIs
+
+Code that calls a method in the javax namespace and will need migration in the future is easy to spot and handle with bytecode changes.  Outside these usages, there are other uses of `javax` that may need to be considered.
+
+These will generally fall into the following categories:
+
+ - TODO: Joakim you had a great list
+
+
+The following is a more specific audit of each spec.
+
+## EJB
+
+Classpath Resources:
+
+ - `META-INF/services/javax.ejb.spi.EJBContainerProvider`
+
+System & Config Properties:
+
+ - `javax.ejb.embeddable.provider`
+ - `javax.ejb.embeddable.appName`
+ - `javax.ejb.embeddable.modules`
+
+
+## JPA
+
+TODO Help
+
+## JSF
+
+TODO Help
+
+## TODO Help list every spec
