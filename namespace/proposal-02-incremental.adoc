@@ -1,0 +1,32 @@
+# Proposal 2: Incremental Change in Jakarta EE 9 and beyond
+
+Evolve API source from `javax` to the `jakarta` namespace over time on an as-needed basis.  The most active specifications would immediately move in Jakarta EE 9.  Every Jakarta EE release, starting with version 10 and beyond may involve some `javax` to `jakarta` namespace transition.
+
+- The most active APIs would immediately move from `javax` to `jakarta`
+- APIs not changed or determined by the community to be unlikely to change would stay in `javax`
+- Jakarta EE 9 would be a mix of `javax` and `jakarta` packaged APIs
+- If a change was needed to a `javax` API post Jakarta EE 9 for any reason, that API would transition from `javax` to `jakarta`.
+- Jakarta EE 10 would be a mix of `javax` and `jakarta` packaged APIs, but a different mix than Jakarta EE 9.
+- At some point down the road, Jakarta EE xx, it may be decided that the migration from `javax` to `jakarta` is "done" and the final APIs are moved.
+
+Pros:
+
+- Cheaper up front cost and reduced immediate noise.
+- No need to move specifications unless there is an immediately visible benefit.
+- Potential for less impact from API change overall.
+
+Cons:
+
+- Prolonged coordination, cost and complexity to industry affecting conversion tools, users, enterprises, cloud vendors, IDE creators, platform vendors, trainers and book authors.
+- Use of restricted `javax` namespace prolonged.
+- Frustration of "always changing" packages may deter application developers and become a permanent perception of the brand.
+- Difficulty in remembering/knowing which Jakarta EE release an API was moved. "Is Connector `javax` or `jakarta` in Jakarta EE 11?"
+- Difficulty in keeping the industry in sync.
+- New implementations may find themselves having to deal with the `javax` to `jakarta` transition, unable to avoid legacy costs and therefore decide not to enter the space.
+- Transitive dependencies to other specifications may make incremental change difficult or impossible.
+- Restrictions on what Java SE implementation can be used for certification
+
+Decisions:
+
+- Do we start small or start large?
+- Which APIs would immediately need to be changed?
