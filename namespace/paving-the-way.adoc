@@ -1,0 +1,20 @@
+# Paving the Way
+
+There is not a direct line between Jakarta EE implementations and developers.  There are many players that fill out our ecosystem and will need time to absorb any namespace change.   Figuratively, these parts of our ecosystem need to pave a path from the Jakarta EE implementations to developers.
+
+Things that need "paving" include:
+
+- Components themselves (Hibernate, MyFaces, etc)
+- Libraries and tools written on top of them (Primefaces, Jolokia, etc)
+- Server implementations (TomEE, Payara, GlassFish, Wildfly, OpenLiberty, etc)
+- IDEs (Eclipse, Intellij, Netbeans, etc.)
+- Cloud platforms (Microsoft, Amazon, Google, etc.)
+- Monitoring tools (AppDynamics, NewRelic, Elastic APM, etc)
+
+We should mentally budget a 6+ month delay for this section of the industry to adopt a namespace change.
+
+If we intend to potentially do some form of `javax` to the `jakarta` change each major Jakarta EE release, they will have to invest in some sort of repeatable process.
+
+If we intend to do a `javax` to the `jakarta` change once and never again, the affected packages are higher but the process could be done manually in whatever way is fastest.
+
+In the future, we will likely need to create a list of such tools/components and encourage them to report as to the status of adopting the namespace change.
