@@ -1,0 +1,48 @@
+# Absorbing the `javax` to `jakarta` namespace change
+
+This section of the repo is intended as an informal wiki-like place
+where data can be collected about the various impacts of the `javax`
+to `jakarta` namespace change.
+
+One month of discussion will bring no fruit if we do not curate
+information as we go.  People will stop contributing very quickly due
+to inability to digest 2 weeks of free flowing discussion.
+
+Github wikis do not allow PRs, so here we are using the main repo.
+
+## Status
+
+All documents in this directory are considered works-in-progress.
+
+## Contributing
+
+Pull-requests are encouraged from anyone.  People are encouraged
+to contribute to the already created documents or to imagine new
+documents that might help curate feedback and move towards a
+consensus.
+
+## Discussion
+
+Open discussion is currently taking place on
+
+ - https://www.eclipse.org/lists/jakartaee-platform-dev/msg00029.html
+ - https://accounts.eclipse.org/mailing-list/jakartaee-platform-dev (subscribe)
+
+## Proposal Goals and Considerations
+
+Other proposals should incorporate the following considerations and goals:
+
+- The new namespace will be `jakarta.*`
+- APIs moved to the `jakarta` namespace maintain class names and method signatures compatible with equivalent class names and method signatures in the `javax`.* namespace.
+- Even a small maintenance change to an API would require a `javax` to `jakarta` change of that entire specification. Examples include:
+-- Adding a value to an enum
+-- Overriding/adding a method signature
+-- Adding default methods in interfaces
+-- Compensating for Java language changes
+- Binary compatibility for existing applications in the `javax` namespace is an agreed goal by the majority of existing vendors in the Jakarta EE Working Group and would be a priority in their products. However, there is a strong desire not to deter new implementers of the `jakarta` namespace from entering the ecosystem by requiring they also implement an equivalent `javax` legacy API.
+- There is no intention to change Jakarta EE 8 goals or timeline.
+- Community discussion on how to transition to the `jakarta` namespace will conclude Sunday, June 9th, 2019.
+
+# Binary Compatibility
+
+It is envisioned binary compatibility can be achieved and offered by implementations via tooling that performs bytecode modification at either build-time, deploy-time or runtime. While there are open questions and considerations in this area, the primary goal of the discussion that must conclude is how do we move forward with future modifications to the APIs themselves.
