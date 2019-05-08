@@ -1,0 +1,13 @@
+# Backwards Compatibility
+
+It is the universal desire that existing applications run on future versions of Jakarta EE.  Discussions on namespace are proceeding with the assumption this is possible.  This docment is intended to capture all plausable methods such compatibility could be offered.
+
+## Build or Deploy-time tooling
+
+A handful of plugins already exist, such as the Maven Shade Plugin, that allow java packages to be renamed via modifying bytecode.  It also has basic support for classpath resource files, which can be extended.
+
+Build-time solutions of this nature could be achived.
+
+## Runtime javaagent
+
+A runtime version of the above technique could be achived with a Java Agent. An agent has the ability to see all bytecode being loaded and to modify it before it becomes a class.
