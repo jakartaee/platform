@@ -32,16 +32,16 @@ Open discussion is currently taking place on
 
 Other proposals should incorporate the following considerations and goals:
 
-- The new namespace will be `jakarta.*`
-- APIs moved to the `jakarta` namespace maintain class names and method signatures compatible with equivalent class names and method signatures in the `javax`.* namespace.
-- Even a small maintenance change to an API would require a `javax` to `jakarta` change of that entire specification. Examples include:
--- Adding a value to an enum
--- Overriding/adding a method signature
--- Adding default methods in interfaces
--- Compensating for Java language changes
-- Binary compatibility for existing applications in the `javax` namespace is an agreed goal by the majority of existing vendors in the Jakarta EE Working Group and would be a priority in their products. However, there is a strong desire not to deter new implementers of the `jakarta` namespace from entering the ecosystem by requiring they also implement an equivalent `javax` legacy API.
-- There is no intention to change Jakarta EE 8 goals or timeline.
-- Community discussion on how to transition to the `jakarta` namespace will conclude Sunday, June 9th, 2019.
+* The new namespace will be `jakarta.*`
+* APIs moved to the `jakarta` namespace maintain class names and method signatures compatible with equivalent class names and method signatures in the `javax`.* namespace.
+* Even a small maintenance change to an API would require a `javax` to `jakarta` change of that entire specification. Examples include:
+** Adding a value to an enum
+** Overriding/adding a method signature
+** Adding default methods in interfaces
+** Compensating for Java language changes
+* Binary compatibility for existing applications in the `javax` namespace is an agreed goal by the majority of existing vendors in the Jakarta EE Working Group and would be a priority in their products. However, there is a strong desire not to deter new implementers of the `jakarta` namespace from entering the ecosystem by requiring they also implement an equivalent `javax` legacy API.
+* There is no intention to change Jakarta EE 8 goals or timeline.
+* Community discussion on how to transition to the `jakarta` namespace will conclude Sunday, June 9th, 2019.
 
 # Binary Compatibility
 
