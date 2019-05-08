@@ -10,7 +10,6 @@ Some example non-Jakarta EE `javax` packages not affected include:
  - javax.accessibility
  - javax.activity
  - javax.annotation.processing
- - javax.annotation.sql
  - javax.crypto
  - javax.crypto.interfaces
  - javax.crypto.spec
