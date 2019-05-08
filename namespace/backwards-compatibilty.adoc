@@ -2,6 +2,8 @@
 
 It is the universal desire that existing applications run on future versions of Jakarta EE.  Discussions on namespace are proceeding with the assumption this is possible.  This docment is intended to capture all plausable methods such compatibility could be offered.
 
+NOTE: It is not the intent of this document to in any way specify how it must be done.
+
 ## Build or Deploy-time tooling
 
 A handful of plugins already exist, such as the Maven Shade Plugin, that allow java packages to be renamed via modifying bytecode.  It also has basic support for classpath resource files, which can be extended.
