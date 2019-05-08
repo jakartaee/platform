@@ -30,4 +30,15 @@ TODO Help
 
 TODO Help
 
+## JTA
+The following classes are referenced from `javax.sql.XAConnection`which is still part of JavaSE
+* `javax.transaction.xa.XAResource`
+* `javax.transaction.xa.XAException`
+* `javax.transaction.xa.Xid`
+
+## Security
+
+`javax.security` might be part of JavaSE still?
+Some parts are defined by the servlet spec though it seems.
+
 ## TODO Help list every spec
