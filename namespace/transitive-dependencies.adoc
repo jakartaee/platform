@@ -1,0 +1,5 @@
+# Transitive Dependencies
+
+The following is a list of each specification's API jar and its transitive list of dependencies to other specs.  The goal of this document is to help us evaluate impact of pruning or not migrating a spec from `javax` to `jakarta`
+
+TODO: list each spec and its transitive dependencies
