@@ -31,3 +31,23 @@ TODO Help
 TODO Help
 
 ## TODO Help list every spec
+
+## JTA
+The following classes are referenced from `javax.sql.XAConnection`which is still part of JavaSE
+* `javax.transaction.xa.XAResource`
+* `javax.transaction.xa.XAException`
+* `javax.transaction.xa.Xid`
+
+## Security
+
+`javax.security` might be part of JavaSE still?
+Some parts are defined by the servlet spec though it seems.
+
+## atinject
+JSR-330 ('atinject') is now owned by Oracle but developed by an independent group of individuals.
+Atinject is fully ALv2 licensed and thus also has an implicit license grant.
+I doubt that there are any trademark issues hidden in the docs and code but we need to do a double-check on that.
+
+There are 2 open questions:
+* Do we want to move `javax.inject` to `jakarta.inject) at all?
+* Would this only affect all downstream users of atinject (Maven, picocontainer, etc) or will JakartaEE move the atinject spec into it's own teritory?
