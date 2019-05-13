@@ -44,7 +44,7 @@ The following classes are referenced from `javax.sql.XAConnection`which is still
 Some parts are defined by the servlet spec though it seems.
 
 ## atinject
-JSR-330 ('atinject') is now owned by Oracle but developed by an independent group of individuals.
+JSR-330 ('atinject') is not owned by Oracle but developed by an independent group of individuals.
 Atinject is fully ALv2 licensed and thus also has an implicit license grant.
 I doubt that there are any trademark issues hidden in the docs and code but we need to do a double-check on that.
 
