@@ -68,12 +68,14 @@ The following is a list of each specification's API jar and its transitive list 
     * websocket-client
 29. websocket-client(`javax.websocket`)
 30. ws.rs(`javax.ws.rs`)
+    * xml.bind (jdk11+)
+    * activation (jdk11+)
 31. xml.bind(`javax.xml.bind`)
 32. xml.registry(`javax.xml.registry`)
 33. xml.rpc(`javax.xml.rpc`)
     * servlet
 34. xml.soap(`javax.xml.soap`)
-    * activation-api (jdk > 9)
+    * activation-api (jdk9+)
 35. xml.ws(`javax.xml.ws`)
     * xml.bind-api
     * xml.soap-api
