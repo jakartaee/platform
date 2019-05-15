@@ -2,4 +2,81 @@
 
 The following is a list of each specification's API jar and its transitive list of dependencies to other specs.  The goal of this document is to help us evaluate impact of pruning or not migrating a spec from `javax` to `jakarta`
 
-TODO: list each spec and its transitive dependencies
+1. activation (`javax.activation`)
+2. annotation (`javax.annotation`)
+3. batch (`javax.batch`)
+    * javax.inject
+    * cdi
+4. ejb (`javax.ejb`,`javax.xml.rpc.handler`)
+    * xml.rpc
+    * transaction
+5. el (`javax.el`)
+6. enterprise.cdi (`javax.decorator`,`javax.enterprise`)
+    * el
+    * interceptor
+    * javax.inject
+7. enterprise.concurrent (`javax.enterprise.concurrent`)
+8. enterprise.deploy (`javax.enterprise.deploy`)
+9. faces (`javax.faces`)
+    * servlet
+    * servlet.jsp
+    * servlet.jsp.jstl
+    * websocket
+    * el
+    * enterprise.cdi
+    * validation
+    * json
+    * ejb
+10. javax.inject(`javax.inject`)
+11. interceptor(`javax.interceptor`)
+    * annotation
+    * ejb
+12. jms (`javax.jms`)
+13. json.bind (`javax.json.bind`)
+    * json
+14. json(`javax.json`)
+15. jws(`javax.jws`)
+16. mail(`javax.mail`)
+17. management.j2ee (`javax.management.j2ee`)
+    * ejb
+18. persistence(`javax.persistence`)
+19. resource (`javax.resource`)
+    * transaction
+20. security.auth.message(`javax.security.auth.message`)
+21. security.enterprise (`javax.security.enterprise`)
+    * servlet
+    * interceptor
+    * el
+    * enterprise.cdi
+    * ejb
+    * security.auth.message
+    * security.jacc
+22. security.jacc (`javax.security.jacc`)
+    * servlet
+23. servlet.jsp.jstl(`javax.servlet.jsp.jstl`)
+    * servlet
+    * servlet.jsp
+    * el
+24. servlet.jsp(`javax.servlet.jsp`)
+    * servlet
+    * el
+25. servlet (`javax.servlet`)
+26. transaction (`javax.transaction`)
+    * enterprise.cdi
+27. validation (`javax.validation`)
+28. websocket(`javax.websocket`)
+    * websocket-client
+29. websocket-client(`javax.websocket`)
+30. ws.rs(`javax.ws.rs`)
+31. xml.bind(`javax.xml.bind`)
+32. xml.registry(`javax.xml.registry`)
+33. xml.rpc(`javax.xml.rpc`)
+    * servlet
+34. xml.soap(`javax.xml.soap`)
+    * activation-api (jdk > 9)
+35. xml.ws(`javax.xml.ws`)
+    * xml.bind-api
+    * xml.soap-api
+    * annotation-api
+    * jws-api
+
