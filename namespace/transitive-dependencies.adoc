@@ -5,123 +5,207 @@ The following is a list of each specification's API jar and its transitive list 
 This list includes all the APIs in Java EE 8,plus a few of the "Java EE" specs that had migrated to Java SE and were remove by link:https://openjdk.java.net/jeps/320[JEP 320],JDK 11+.
 
 ```
-jakarta.activation-api-{version}jar
-jakarta.annotation-api-{version}jar
-jakarta.batch-api-{version}jar
-jakarta.ejb-api-{version}jar
-jakarta.el-api-{version}jar
-jakarta.enterprise.cdi-api-{version}jar
-jakarta.enterprise.concurrent-api-{version}jar
-jakarta.enterprise.deploy-api-{version}jar
-jakarta.faces-api-{version}jar
-jakarta.interceptor-api-{version}jar
-jakarta.jms-api-{version}jar
-jakarta.json.bind-api-{version}jar
-jakarta.json-api-{version}jar
-jakarta.jws-api-{version}jar
-jakarta.mail-api-{version}jar
-jakarta.management.j2ee-api-{version}jar
-jakarta.persistence-api-{version}jar
-jakarta.resource-api-{version}jar
-jakarta.security.auth.message-api-{version}jar
-jakarta.security.enterprise-api-{version}jar
-jakarta.security.jacc-api-{version}jar
-jakarta.servlet.jsp.jstl-api-{version}jar
-jakarta.servlet.jsp-api-{version}jar
-jakarta.servlet-api-{version}jar
-jakarta.transaction-api-{version}jar
-jakarta.validation-api-{version}jar
-jakarta.websocket-api-{version}jar
-jakarta.websocket-client-api-{version}jar
-jakarta.ws.rs-api-{version}jar
-jakarta.xml.bind-api-{version}jar
-jakarta.xml.registry-api-{version}jar
-jakarta.xml.rpc-api-{version}jar
-jakarta.xml.soap-api-{version}jar
-jakarta.xml.ws-api-{version}jar
-javax.inject-{version}jar
+jakarta.activation-api-{version}.jar
+jakarta.annotation-api-{version}.jar
+jakarta.batch-api-{version}.jar
+jakarta.ejb-api-{version}.jar
+jakarta.el-api-{version}.jar
+jakarta.enterprise.cdi-api-{version}.jar
+jakarta.enterprise.concurrent-api-{version}.jar
+jakarta.enterprise.deploy-api-{version}.jar
+jakarta.faces-api-{version}.jar
+jakarta.interceptor-api-{version}.jar
+jakarta.jms-api-{version}.jar
+jakarta.json.bind-api-{version}.jar
+jakarta.json-api-{version}.jar
+jakarta.jws-api-{version}.jar
+jakarta.mail-api-{version}.jar
+jakarta.management.j2ee-api-{version}.jar
+jakarta.persistence-api-{version}.jar
+jakarta.resource-api-{version}.jar
+jakarta.security.auth.message-api-{version}.jar
+jakarta.security.enterprise-api-{version}.jar
+jakarta.security.jacc-api-{version}.jar
+jakarta.servlet.jsp.jstl-api-{version}.jar
+jakarta.servlet.jsp-api-{version}.jar
+jakarta.servlet-api-{version}.jar
+jakarta.transaction-api-{version}.jar
+jakarta.validation-api-{version}.jar
+jakarta.websocket-api-{version}.jar
+jakarta.websocket-client-api-{version}.jar
+jakarta.ws.rs-api-{version}.jar
+jakarta.xml.bind-api-{version}.jar
+jakarta.xml.registry-api-{version}.jar
+jakarta.xml.rpc-api-{version}.jar
+jakarta.xml.soap-api-{version}.jar
+jakarta.xml.ws-api-{version}.jar
+javax.inject-{version}.jar
 ```
 
-1. activation(`javax.activation`)
-2. annotation(`javax.annotation`)
+1. activation(`javax.activation`) 
+
+2. annotation(`javax.annotation`) 
+
 3. batch(`javax.batch`)
     * javax.inject(`javax.inject`)
     * cdi(`javax.decorator`,`javax.enterprise`)
-4. ejb(`javax.ejb`,`javax.xml.rpc.handler`)
+        ** el(`javax.el`)
+        ** interceptor(`javax.interceptor`)
+        ** javax.inject(`javax.inject`)
+
+4. ejb(`javax.ejb`,`javax.xml.rpc.handler`) 
     * xml.rpc(`javax.xml.rpc`)
+        ** servlet(`javax.servlet`)
     * transaction(`javax.transaction`)
-5. el(`javax.el`)
-6. enterprise.cdi(`javax.decorator`,`javax.enterprise`)
+        ** cdi(`javax.decorator`,`javax.enterprise`)
+            *** el(`javax.el`)
+            *** interceptor(`javax.interceptor`)
+            *** javax.inject(`javax.inject`)
+        ** interceptor(`javax.interceptor`)
+
+5. el(`javax.el`) 
+
+6. cdi(`javax.decorator`,`javax.enterprise`)
     * el(`javax.el`)
     * interceptor(`javax.interceptor`)
     * javax.inject(`javax.inject`)
-7. enterprise.concurrent(`javax.enterprise.concurrent`)
-8. enterprise.deploy(`javax.enterprise.deploy`)
-9. faces(`javax.faces`)
+
+7. enterprise.concurrent(`javax.enterprise.concurrent`) 
+
+8. enterprise.deploy(`javax.enterprise.deploy`) 
+
+9. faces(`javax.faces`) 
     * servlet(`javax.servlet`)
     * servlet.jsp(`javax.servlet.jsp`)
+        ** servlet(`javax.servlet`)
+        ** el(`javax.el`)
     * servlet.jsp.jstl(`javax.servlet.jsp.jstl`)
+        ** servlet(`javax.servlet`)
+        ** servlet.jsp(`javax.servlet.jsp`)
+            *** servlet(`javax.servlet`)
+        ** el(`javax.el`)
     * websocket(`javax.websocket`)
     * el(`javax.el`)
     * cdi(`javax.decorator`,`javax.enterprise`)
+        ** el(`javax.el`)
+        ** interceptor(`javax.interceptor`)
+        ** javax.inject(`javax.inject`)
     * validation(`javax.validation`)
     * json(`javax.json`)
     * ejb(`javax.ejb`,`javax.xml.rpc.handler`)
-10. interceptor(`javax.interceptor`)
-    * annotation(`javax.annotation`)
-    * ejb(`javax.ejb`,`javax.xml.rpc.handler`)
-11. jms(`javax.jms`)
+        ** xml.rpc(`javax.xml.rpc`)
+            *** servlet(`javax.servlet`)
+        ** transaction(`javax.transaction`)
+            *** cdi(`javax.decorator`,`javax.enterprise`)
+                **** el(`javax.el`)
+                **** interceptor(`javax.interceptor`)
+                **** javax.inject(`javax.inject`)
+            *** interceptor(`javax.interceptor`)
+
+10. interceptor(`javax.interceptor`) 
+
+11. jms(`javax.jms`) 
+
 12. json(`javax.json`)
+
 13. json.bind(`javax.json.bind`)
     * json(`javax.json`)
+
 14. jws(`javax.jws`)
-15. mail(`javax.mail`)
+
+15. mail(`javax.mail`) 
     * activation(`javax.activation`)
+
 16. management.j2ee(`javax.management.j2ee`)
     * ejb(`javax.ejb`,`javax.xml.rpc.handler`)
+        ** xml.rpc(`javax.xml.rpc`)
+            *** servlet(`javax.servlet`)
+        ** transaction(`javax.transaction`)
+            *** cdi(`javax.decorator`,`javax.enterprise`)
+                **** el(`javax.el`)
+                **** interceptor(`javax.interceptor`)
+                **** javax.inject(`javax.inject`)
+            *** interceptor(`javax.interceptor`)
+
 17. persistence(`javax.persistence`)
+
 18. resource(`javax.resource`)
     * transaction(`javax.transaction`)
+        ** cdi(`javax.decorator`,`javax.enterprise`)
+        ** interceptor(`javax.interceptor`)
+
 19. security.auth.message(`javax.security.auth.message`)
+
 20. security.enterprise(`javax.security.enterprise`)
     * servlet(`javax.servlet`)
     * interceptor(`javax.interceptor`)
     * el(`javax.el`)
     * ejb(`javax.ejb`,`javax.xml.rpc.handler`)
-    * enterprise.cdi(`javax.decorator`,`javax.enterprise`)
+        ** xml.rpc(`javax.xml.rpc`)
+            *** servlet(`javax.servlet`)
+        ** transaction(`javax.transaction`)
+            *** cdi(`javax.decorator`,`javax.enterprise`)
+                **** el(`javax.el`)
+                **** interceptor(`javax.interceptor`)
+                **** javax.inject(`javax.inject`)
+            *** interceptor(`javax.interceptor`)
+    * cdi(`javax.decorator`,`javax.enterprise`)
+        ** el(`javax.el`)
+        ** interceptor(`javax.interceptor`)
+        ** javax.inject(`javax.inject`)
     * security.auth.message(`javax.security.auth.message`)
     * security.jacc(`javax.security.jacc`)
+        ** servlet(`javax.servlet`)
+
 21. security.jacc(`javax.security.jacc`)
     * servlet(`javax.servlet`)
+
 22. servlet(`javax.servlet`)
+
 23. servlet.jsp(`javax.servlet.jsp`)
     * servlet(`javax.servlet`)
     * el(`javax.el`)
-24. servlet.jsp.jstl(`javax.servlet.jsp.jstl`)
+
+24. servlet.jsp.jstl(`javax.servlet.jsp.jstl`) 
     * servlet(`javax.servlet`)
     * servlet.jsp(`javax.servlet.jsp`)
     * el(`javax.el`)
-25. transaction(`javax.transaction`)
+
+25. transaction(`javax.transaction`) 
     * cdi(`javax.decorator`,`javax.enterprise`)
-26. validation(`javax.validation`)
-27. websocket(`javax.websocket`)
+    * interceptor(`javax.interceptor`)
+
+26. validation(`javax.validation`) 
+
+27. websocket(`javax.websocket`) 
     * websocket-client(`javax.websocket`)
-28. websocket-client(`javax.websocket`)
-29. ws.rs(`javax.ws.rs`)
-    * xml.bind(jdk11+)(`javax.xml.bind`)
-    * activation(jdk11+)(`javax.activation`)
-30. xml.bind(`javax.xml.bind`)
+
+28. websocket-client(`javax.websocket`) 
+
+29. ws.rs(`javax.ws.rs`) 
     * activation(`javax.activation`)
-31. xml.registry(`javax.xml.registry`)
-32. xml.rpc(`javax.xml.rpc`)
-    * servlet(`javax.servlet`)
-33. xml.soap(`javax.xml.soap`)
-    * activation(jdk9)(`javax.activation`)
-34. xml.ws(`javax.xml.ws`)
     * xml.bind(`javax.xml.bind`)
-    * xml.soap(`javax.xml.soap`)
+        ** activation(`javax.activation`)
+
+30. xml.bind(`javax.xml.bind`) 
+    * activation(`javax.activation`)
+
+31. xml.registry(`javax.xml.registry`) 
+
+32. xml.rpc(`javax.xml.rpc`) 
+    * servlet(`javax.servlet`)
+
+33. xml.soap(`javax.xml.soap`) 
+    * activation(`javax.activation`)
+
+34. xml.ws(`javax.xml.ws`) 
     * annotation(`javax.annotation`)
     * jws(`javax.jws`)
-35. javax.inject (`javax.inject`)
+    * xml.bind(`javax.xml.bind`)
+        ** activation(`javax.activation`)
+    * xml.soap(`javax.xml.soap`)
+        ** activation(`javax.activation`)
+
+35. javax.inject (`javax.inject`)  
 
 
