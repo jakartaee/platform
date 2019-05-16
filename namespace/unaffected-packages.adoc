@@ -25,6 +25,7 @@ Some example non-Jakarta EE `javax` packages not affected include:
  - javax.imageio.metadata
  - javax.imageio.plugins.bmp
  - javax.imageio.plugins.jpeg
+ - javax.imageio.plugins.tiff
  - javax.imageio.spi
  - javax.imageio.stream
  - javax.inject
@@ -75,6 +76,7 @@ Some example non-Jakarta EE `javax` packages not affected include:
  - javax.sql.rowset.serial
  - javax.sql.rowset.spi
  - javax.swing
+ - javax.swing.beaninfo.images
  - javax.swing.border
  - javax.swing.colorchooser
  - javax.swing.event
@@ -93,6 +95,9 @@ Some example non-Jakarta EE `javax` packages not affected include:
  - javax.swing.tree
  - javax.swing.undo
  - javax.tools
+ - javax.transaction.xa
+ - javax.xml
+ - javax.xml.catalog
  - javax.xml.crypto
  - javax.xml.crypto.dom
  - javax.xml.crypto.dsig
@@ -110,4 +115,5 @@ Some example non-Jakarta EE `javax` packages not affected include:
  - javax.xml.transform.sax
  - javax.xml.transform.stax
  - javax.xml.transform.stream
+ - javax.xml.validation
  - javax.xml.xpath
