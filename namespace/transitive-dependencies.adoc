@@ -1,5 +1,981 @@
 # Transitive Dependencies
 
-The following is a list of each specification's API jar and its transitive list of dependencies to other specs.  The goal of this document is to help us evaluate impact of pruning or not migrating a spec from `javax` to `jakarta`
+The following is a list of each specification's API jar and its transitive list of dependencies to other specs.  The goal of this document is to help us evaluate impact of pruning or not migrating a spec from `javax` to `jakarta`.
 
-TODO: list each spec and its transitive dependencies
+This list includes all the APIs in Java EE 8,plus a few of the "Java EE" specs that had migrated to Java SE and were remove by link:https://openjdk.java.net/jeps/320[JEP 320],JDK 11+.
+
+```
+jakarta.activation-api-{version}.jar
+jakarta.annotation-api-{version}.jar
+jakarta.batch-api-{version}.jar
+jakarta.ejb-api-{version}.jar
+jakarta.el-api-{version}.jar
+jakarta.enterprise.cdi-api-{version}.jar
+jakarta.enterprise.concurrent-api-{version}.jar
+jakarta.enterprise.deploy-api-{version}.jar
+jakarta.faces-api-{version}.jar
+jakarta.interceptor-api-{version}.jar
+jakarta.jms-api-{version}.jar
+jakarta.json.bind-api-{version}.jar
+jakarta.json-api-{version}.jar
+jakarta.jws-api-{version}.jar
+jakarta.mail-api-{version}.jar
+jakarta.management.j2ee-api-{version}.jar
+jakarta.persistence-api-{version}.jar
+jakarta.resource-api-{version}.jar
+jakarta.security.auth.message-api-{version}.jar
+jakarta.security.enterprise-api-{version}.jar
+jakarta.security.jacc-api-{version}.jar
+jakarta.servlet.jsp.jstl-api-{version}.jar
+jakarta.servlet.jsp-api-{version}.jar
+jakarta.servlet-api-{version}.jar
+jakarta.transaction-api-{version}.jar
+jakarta.validation-api-{version}.jar
+jakarta.websocket-api-{version}.jar
+jakarta.websocket-client-api-{version}.jar
+jakarta.ws.rs-api-{version}.jar
+jakarta.xml.bind-api-{version}.jar
+jakarta.xml.registry-api-{version}.jar
+jakarta.xml.rpc-api-{version}.jar
+jakarta.xml.soap-api-{version}.jar
+jakarta.xml.ws-api-{version}.jar
+javax.inject-{version}.jar
+```
+
+== JAF
+
+|=======
+|Namespace | `javax.activation`
+|EE4J Project | link:https://projects.eclipse.org/proposals/eclipse-project-jaf[Eclipse Project for JAF]
+|Git Repo | link:https://github.com/eclipse-ee4j/jaf[jaf]
+|TCK Git Repo| link:https://github.com/eclipse-ee4j/jaf-tck[jaf-tck]
+|Group Id| jakarta.activation
+|Artifact Id| jakarta.activation-api
+|Latest Spec Version| 1.2
+|=======
+
+=== Dependents
+==== Project
+- link:https://projects.eclipse.org/projects/ee4j.javamail[Eclipse Project for JavaMail]
+- link:https://projects.eclipse.org/proposals/eclipse-implementation-jaxb[Eclipse Implementation of JAXB]
+- link:https://projects.eclipse.org/projects/ee4j.openmq[Eclipse OpenMQ]
+
+==== API
+- mail
+- jax-rs
+- jaxb
+- saaj
+
+
+== Common Annotations
+|=======
+|Namespace | `javax.annotation`
+|EE4J Project | link:https://projects.eclipse.org/projects/ee4j.ca[Eclipse Project for Common Annotations]
+|Git Repo | link:https://github.com/eclipse-ee4j/common-annotations-api[common-annotations-api]
+|Group Id| jakarta.annotation
+|Artifact Id| jakarta.annotation-api
+|Latest Spec Version| 1.3
+|=======
+
+=== Dependents
+==== Project
+- link:https://projects.eclipse.org/projects/ee4j.glassfish[Eclipse Glassfish]
+- link:https://projects.eclipse.org/projects/ee4j.eclipselink[EclipseLink]
+- link:https://projects.eclipse.org/projects/ee4j.jersey[Eclipse Jersey]
+- link:https://projects.eclipse.org/proposals/eclipse-metro[Eclipse Metro]
+
+==== API
+- jax-ws
+
+
+== batch
+|=======
+|Namespace | `javax.batch`
+|EE4J Project | undefined❌
+|Git Repo | link:https://github.com/WASdev/standards.jsr352.jbatch[WASdev/standards.jsr352.jbatch]
+|Group Id| jakarta.batch
+|Artifact Id| jakarta.batch-api
+|Latest Spec Version| 1.0
+|=======
+
+=== Dependents
+==== Project
+undefined❌
+
+==== API
+none
+
+=== Dependencies
+==== API
+```
+batch
+├─ javax.inject 1
+└─ cdi-api 1.1
+     ├─ jsr250-api 1.0
+     ├─ el-api 2.2
+     ├─ javax.inject 1
+     ├─ org.jboss.spec.javax.ejb:jboss-ejb-api_3.1_spec (optional)
+     └─ org.jboss.spec.javax.interceptor:jboss-interceptors-api_1.1_spec
+```
+
+== EJB
+|=======
+|Namespace | `javax.ejb`,`javax.xml.rpc.handler`
+|EE4J Project | link:https://projects.eclipse.org/proposals/eclipse-project-ejb[Eclipse Project for EJB]
+|Git Repo | link:https://github.com/eclipse-ee4j/ejb-api[ejb-api]
+|Group Id| jakarta.ejb
+|Artifact Id| jakarta.ejb-api
+|Latest Spec Version| 3.2
+|=======
+
+=== Dependents
+==== Project
+- link:https://projects.eclipse.org/projects/ee4j.glassfish[Eclipse Glassfish]
+- link:https://projects.eclipse.org/projects/ee4j.jersey[Eclipse Jersey]
+- link:https://projects.eclipse.org/proposals/eclipse-metro[Eclipse Metro]
+- link:https://projects.eclipse.org/projects/ee4j.orb[Eclipse Eclipse ORB]
+- `TEST SCOPE` link:https://projects.eclipse.org/projects/ee4j.eclipselink[EclipseLink]
+
+==== API
+- jsf
+- management.j2ee
+- security
+
+=== Dependencies
+==== Project
+- link:https://projects.eclipse.org/projects/ee4j.jta[Eclipse Project for JTA]
+
+==== API
+```
+ejb
+├─ jax-rpc 1.1 (optional)
+│    └─ servlet 4.0 (optional)
+└─ jta 1.3
+     ├─ cdi-api 1.0
+     │    ├─ jsr250-api
+     │    ├─ el-api 2.2 (optional)
+     │    ├─ javax.inject 1
+     │    ├─ org.jboss.spec.javax.ejb:jboss-ejb-api_3.1_spec (optional)
+     │    └─ org.jboss.spec.javax.interceptor:jboss-interceptors-api_1.1_spec
+     └─ interceptor (currently transitively, should be declared directly)
+```
+
+== EL
+|=======
+|Namespace | `javax.el`
+|EE4J Project | link:https://projects.eclipse.org/projects/ee4j.el[Eclipse Project for Expression Language]
+|Git Repo | link:https://github.com/eclipse-ee4j/el-ri[el-ri]
+|Group Id| jakarta.el
+|Artifact Id| jakarta.el-api
+|Latest Spec Version| 3.0
+|=======
+
+=== Dependents
+==== Project
+- link:https://projects.eclipse.org/projects/ee4j.glassfish[Eclipse Glassfish]
+- link:https://projects.eclipse.org/projects/ee4j.jersey[Eclipse Jersey]
+- link:https://projects.eclipse.org/projects/ee4j.krazo[Eclipse  Krazo]
+- link:https://projects.eclipse.org/projects/ee4j.jsp[Eclipse Project for JSP]
+- link:https://projects.eclipse.org/projects/ee4j.jstl[Eclipse Project for JSTL]
+
+==== API
+- cdi
+- jsf
+- jsp
+- jstl
+- security
+
+
+
+== CDI
+|=======
+|Namespace | `javax.decorator`,`javax.enterprise`
+|EE4J Project | undefined❌
+|Git Repo | link:http://github.com/cdi-spec/cdi[cdi-spec/cdi]
+|Group Id| jakarta.enterprise
+|Artifact Id| jakarta.enterprise.cdi-api
+|Latest Spec Version| 2.0
+|=======
+
+=== Dependents
+==== Project
+undefined❌
+
+==== API
+- jsf
+- security
+- jta
+- batch
+
+=== Dependencies
+==== Project
+undefined❌
+
+==== API
+```
+cdi-api
+├─ el-api 3.0
+├─ javax.inject 1.0
+└─ interceptor-api 1.2
+     ├─ ejb 3.2 (never used)
+     └─ common-annotation 1.3 (never used)
+```
+
+== Concurrency Utilities
+|=======
+|Namespace | `javax.enterprise.concurrent`
+|EE4J Project | link:https://projects.eclipse.org/projects/ee4j.cu[Eclipse Project for Concurrency Utils]
+|Git Repo | link:https://github.com/eclipse-ee4j/concurrency-api[concurrency-api]
+|Group Id| jakarta.enterprise.concurrent
+|Artifact Id| jakarta.enterprise.concurrent-api
+|Latest Spec Version| 1.2
+|=======
+
+=== Dependents
+==== Project
+- link:https://projects.eclipse.org/projects/ee4j.glassfish[Eclipse Glassfish]
+
+==== API
+none
+
+
+== EE Application Deployment
+|=======
+|Namespace | `javax.enterprise.deploy`
+|EE4J Project | undefined❌
+|Git Repo | link:https://github.com/eclipse-ee4j/enterprise-deployment[enterprise-deployment]
+|Group Id| jakarta.enterprise.concurrent
+|Artifact Id| jakarta.enterprise.concurrent-api
+|Latest Spec Version| 1.2
+|=======
+
+=== Dependents
+==== Project
+undefined❌
+
+==== API
+none
+
+
+== JSF
+|=======
+|Namespace | `javax.faces`
+|EE4J Project | link:https://projects.eclipse.org/projects/ee4j.mojarra[Eclipse Mojarra]
+|Git Repo | link:https://github.com/eclipse-ee4j/mojarra[mojarra]
+|Group Id| jakarta.faces
+|Artifact Id| jakarta.faces-api
+|Latest Spec Version| 2.3
+|=======
+
+=== Dependents
+==== Project
+- link:https://projects.eclipse.org/projects/ee4j.glassfish[Eclipse Glassfish]
+
+==== API
+none
+
+=== Dependencies
+==== Project
+- link:https://projects.eclipse.org/projects/ee4j.jsp[Eclipse Project for JSP]
+
+==== API
+
+```
+jsf
+├─ el 3.0
+├─ servlet 4.0
+├─ jsonp 1.1 (optional)
+├─ websocket 1.1
+├─ bean validation 2.0
+├─ jsp 2.3 (optional)
+│    ├─ servlet 3.0
+│    └─ el 3.0
+├─ jstl 1.2 (optional)
+│    ├─ servlet 4.0
+│    ├─ el 3.0
+│    └─ jsp 2.2 (provided)
+│         ├─ servlet 3.0
+│         └─ el 2.2
+├─ cdi 2.0
+│    ├─ el 3.0
+│    ├─ interceptor 1.2
+│    └─ javax.inject 1
+└─ ejb 3.2 (optional)
+     ├─ jax-rpc 1.1 (optional)
+     │    └─ servlet 4.0 (optional)
+     └─ jta 1.3
+          ├─ cdi-api 1.0
+          │    ├─ jsr250-api
+          │    ├─ el-api 2.2 (optional)
+          │    ├─ javax.inject 1
+          │    ├─ org.jboss.spec.javax.ejb:jboss-ejb-api_3.1_spec (optional)
+          │    └─ org.jboss.spec.javax.interceptor:jboss-interceptors-api_1.1_spec
+          └─ interceptor (currently transitively, should be declared explicitly)
+```
+== Interceptors
+|=======
+|Namespace | `javax.interceptor`
+|EE4J Project | link:https://projects.eclipse.org/proposals/eclipse-project-interceptors[Eclipse Project for Interceptors]
+|Git Repo | link:https://github.com/eclipse-ee4j/interceptor-api[interceptor-api]
+|Group Id| jakarta.interceptor
+|Artifact Id| jakarta.interceptor-api
+|Latest Spec Version| 1.2
+|=======
+
+=== Dependents
+==== Project
+- link:https://projects.eclipse.org/projects/ee4j.glassfish[Eclipse Glassfish]
+
+==== API
+- cdi
+- jta
+- security
+
+
+== JMS
+|=======
+|Namespace | `javax.jms`
+|EE4J Project | link:https://projects.eclipse.org/projects/ee4j.jms[Eclipse Project for JMS]
+|Git Repo | link:https://github.com/eclipse-ee4j/jms-api[jms-api]
+|Group Id| jakarta.jms
+|Artifact Id| jakarta.jms-api
+|Latest Spec Version| 2.1
+|=======
+
+=== Dependents
+==== Project
+- link:https://projects.eclipse.org/projects/ee4j.glassfish[Eclipse Glassfish]
+- link:https://projects.eclipse.org/projects/ee4j.eclipselink[EclipseLink]
+- link:https://projects.eclipse.org/projects/ee4j.openmq[Eclipse OpenMQ]
+
+==== API
+none
+
+
+== JSONP
+|=======
+|Namespace | `javax.json`
+|EE4J Project | link:https://projects.eclipse.org/projects/ee4j.jsonp[Eclipse Project for JSON Processing]
+|Git Repo | link:https://github.com/eclipse-ee4j/jsonp[jsonp]
+|Group Id| jakarta.json
+|Artifact Id| jakarta.json-api
+|Latest Spec Version| 1.1
+|=======
+=== Dependents
+==== Project
+- link:https://projects.eclipse.org/projects/ee4j.glassfish[Eclipse Glassfish]
+- link:https://projects.eclipse.org/projects/ee4j.jsonb[Eclipse Project for JSON Binding]
+- link:https://projects.eclipse.org/projects/ee4j.yasson[Eclipse Yasson]
+- link:https://projects.eclipse.org/projects/ee4j.jersey[Eclipse Jersey]
+- link:https://projects.eclipse.org/projects/ee4j.eclipselink[EclipseLink]
+- link:https://projects.eclipse.org/projects/ee4j.openmq[Eclipse OpenMQ]
+- link:https://projects.eclipse.org/projects/ee4j.tyrus[Eclipse Tyrus]
+
+==== API
+- jsf
+- jsonb
+
+
+
+== JSONB
+|=======
+|Namespace | `javax.json.bind`
+|EE4J Project | link:https://projects.eclipse.org/projects/ee4j.jsonb[Eclipse Project for JSON Binding]
+|Git Repo | link:https://github.com/eclipse-ee4j/jsonb-api[jsonb-api]
+|Group Id| jakarta.json.bind
+|Artifact Id| jakarta.json.bind-api
+|Latest Spec Version| 1.0
+|=======
+=== Dependents
+==== Project
+- link:https://projects.eclipse.org/projects/ee4j.glassfish[Eclipse Glassfish]
+- link:https://projects.eclipse.org/projects/ee4j.yasson[Eclipse Yasson]
+- link:https://projects.eclipse.org/projects/ee4j.jersey[Eclipse Jersey]
+
+==== API
+- jsf
+- jsonb
+
+=== Dependencies
+==== Project
+- link:https://projects.eclipse.org/projects/ee4j.jsonp[Eclipse Project for JSON Processing]
+
+==== API
+```
+jsonp
+└─ jsonp 1.1
+```
+
+== JWS
+|=======
+|Namespace | `javax.jws`
+|EE4J Project | undefined❌
+|Git Repo | link:https://github.com/eclipse-ee4j/jws-api[jws-api]
+|Group Id| jakarta.jws
+|Artifact Id| jakarta.jws-api
+|Latest Spec Version| 1.0
+|=======
+
+=== Dependents
+=== Project
+undefined❌
+
+=== API
+none
+
+
+== JavaMail
+|=======
+|Namespace | `javax.mail`
+|EE4J Project | link:https://projects.eclipse.org/projects/ee4j.javamail[Eclipse Project for JavaMail]
+|Git Repo | link:https://github.com/eclipse-ee4j/javamail[javamail]
+|Group Id| jakarta.mail
+|Artifact Id| jakarta.mail-api
+|Latest Spec Version| 1.6
+|=======
+
+=== Dependents
+==== Project
+- link:https://projects.eclipse.org/projects/ee4j.glassfish[Eclipse Glassfish]
+- link:https://projects.eclipse.org/projects/ee4j.eclipselink[EclipseLink]
+- link:https://projects.eclipse.org/proposals/eclipse-metro[Eclipse Metro]
+- link:https://projects.eclipse.org/projects/ee4j.openmq[Eclipse OpenMQ]
+
+==== API
+- jsf
+- jsonb
+
+=== Dependencies
+==== Project
+- link:https://projects.eclipse.org/projects/ee4j.javamail[Eclipse Project for JavaMail]
+- link:https://projects.eclipse.org/proposals/eclipse-project-jaf[Eclipse Project for JAF]
+- link:https://projects.eclipse.org/projects/ee4j.jsp[Eclipse Project for JSP]
+- link:https://projects.eclipse.org/projects/ee4j.servlet[Eclipse Project for Servlet]
+
+==== API
+```
+javamail
+└─ jaf 1.2
+```
+
+== Management
+|=======
+|Namespace | `javax.management.j2ee`
+|EE4J Project | undefined❌
+|Git Repo | link:https://github.com/eclipse-ee4j/management-api[management-api]
+|Group Id| jakarta.management.j2ee
+|Artifact Id| jakarta.management.j2ee-api
+|Latest Spec Version| 1.1
+|=======
+
+=== Dependents
+==== Project
+undefined❌
+
+==== API
+none
+
+```
+management.j2ee
+  └─ ejb 3.2 (optional)
+       ├─ jax-rpc 1.1 (optional)
+       │    └─ servlet 4.0 (optional)
+       └─ jta 1.3
+            ├─ cdi-api 1.0
+            │    ├─ jsr250-api
+            │    ├─ el-api 2.2 (optional)
+            │    ├─ javax.inject 1
+            │    ├─ org.jboss.spec.javax.ejb:jboss-ejb-api_3.1_spec (optional)
+            │    └─ org.jboss.spec.javax.interceptor:jboss-interceptors-api_1.1_spec
+            └─ interceptor (currently transitively, should be declared directly)
+```
+
+== JPA
+|=======
+|Namespace | `javax.persistence`
+|EE4J Project | link:https://projects.eclipse.org/projects/ee4j.jpa[Eclipse Project for JPA]
+|Git Repo | link:https://github.com/eclipse-ee4j/jpa-api[jpa-api]
+|Group Id| jakarta.persistence
+|Artifact Id| jakarta.persistence-api
+|Latest Spec Version| 2.2
+|=======
+=== Dependents
+==== Project
+- link:https://projects.eclipse.org/projects/ee4j.eclipselink[EclipseLink]
+- link:https://projects.eclipse.org/projects/ee4j.jersey[Eclipse Jersey]
+
+==== API
+none
+
+
+== JCA
+|=======
+|Namespace | `javax.resource`
+|EE4J Project | link:https://projects.eclipse.org/proposals/eclipse-project-jca[Eclipse Project for JCA]
+|Git Repo | link:https://github.com/eclipse-ee4j/jca-api[jca-api]
+|Group Id| jakarta.resource
+|Artifact Id| jakarta.resource-api
+|Latest Spec Version| 1.7
+|=======
+=== Dependents
+==== Project
+- link:https://projects.eclipse.org/projects/ee4j.glassfish[Eclipse Glassfish]
+- link:https://projects.eclipse.org/projects/ee4j.eclipselink[EclipseLink]
+- link:https://projects.eclipse.org/proposals/eclipse-metro[Eclipse Metro]
+- link:https://projects.eclipse.org/projects/ee4j.openmq[Eclipse OpenMQ]
+
+=== APIs that depend on `JCA`
+none
+
+=== Dependencies
+==== Project dependencies tree
+- link:https://projects.eclipse.org/projects/ee4j.jta[Eclipse Project for JTA]
+
+==== API
+```
+jca
+  └─ jta 1.3
+       ├─ cdi-api 1.0
+       │    ├─ jsr250-api
+       │    ├─ el-api 2.2 (optional)
+       │    ├─ javax.inject 1
+       │    ├─ org.jboss.spec.javax.ejb:jboss-ejb-api_3.1_spec (optional)
+       │    └─ org.jboss.spec.javax.interceptor:jboss-interceptors-api_1.1_spec
+       └─ interceptor (currently transitively, should be declared directly)
+```
+
+== JASPIC
+|=======
+|Namespace | `javax.security.auth.message`
+|EE4J Project | link:https://projects.eclipse.org/projects/ee4j.jaspic[Eclipse Project for JASPIC]
+|Git Repo | link:https://github.com/eclipse-ee4j/jaspic[jaspic]
+|Group Id| jakarta.security.auth.message
+|Artifact Id| jakarta.security.auth.message-api
+|Latest Spec Version| 1.1
+|=======
+=== Dependents
+==== Project
+- link:https://projects.eclipse.org/projects/ee4j.glassfish[Eclipse Glassfish]
+- link:https://projects.eclipse.org/proposals/eclipse-metro[Eclipse Metro]
+
+=== API
+none
+
+
+== Security
+|=======
+|Namespace | `javax.security.enterprise`
+|EE4J Project | link:https://projects.eclipse.org/projects/ee4j.es[Eclipse Project for Enterprise Security]
+|Git Repo | link:https://github.com/eclipse-ee4j/security-api[security-api]
+|Group Id| jakarta.security.enterprise
+|Artifact Id| jakarta.security.enterprise-api
+|Latest Spec Version| 1.0
+|=======
+=== Dependents
+==== Project
+- link:https://projects.eclipse.org/projects/ee4j.glassfish[Eclipse Glassfish]
+- link:https://projects.eclipse.org/projects/ee4j.soteria[Eclipse  Krazo]
+
+==== API
+none
+
+=== Dependencies
+==== Project
+none
+
+==== API
+```
+security
+├─ servlet 4.0
+├─ interceptor 1.2
+├─ el 3.0
+├─ jaspic 1.1
+├─ jacc 1.6
+│    └─ servlet 4.0
+├─ cdi 2.0
+│    ├─ el 3.0
+│    ├─ interceptor 1.2
+│    └─ javax.inject 1
+└─ ejb 3.2 (optional)
+     ├─ jax-rpc 1.1 (optional)
+     │    └─ servlet 4.0 (optional)
+     └─ jta 1.3
+          ├─ cdi-api 1.0
+          │    ├─ jsr250-api
+          │    ├─ el-api 2.2 (optional)
+          │    ├─ javax.inject 1
+          │    ├─ org.jboss.spec.javax.ejb:jboss-ejb-api_3.1_spec (optional)
+          │    └─ org.jboss.spec.javax.interceptor:jboss-interceptors-api_1.1_spec
+          └─ interceptor (currently transitively, should be declared explicitly)
+```
+
+== JACC
+|=======
+|Namespace | `javax.security.jacc`
+|EE4J Project | link:https://projects.eclipse.org/projects/ee4j.jacc[Eclipse Project for JACC]
+|Git Repo | link:https://github.com/eclipse-ee4j/jacc[jacc]
+|Group Id| jakarta.security.jacc
+|Artifact Id| jakarta.security.jacc-api
+|Latest Spec Version| 1.6
+|=======
+=== Dependents
+=== Project
+- link:https://projects.eclipse.org/projects/ee4j.glassfish[Eclipse Glassfish]
+
+=== API
+none
+
+=== Dependencies
+=== Project
+- link:https://projects.eclipse.org/projects/ee4j.servlet[Eclipse Project for Servlet]
+
+=== API
+```
+jacc
+└─ servlet 4.0
+```
+
+== Servlet
+|=======
+|Namespace | `javax.servlet`
+|EE4J Project | link:https://projects.eclipse.org/projects/ee4j.servlet[Eclipse Project for Servlet]
+|Git Repo | link:https://github.com/eclipse-ee4j/servlet-api[servlet-api]
+|Group Id| jakarta.servlet
+|Artifact Id| jakarta.servlet-api
+|Latest Spec Version| 4.0
+|=======
+=== Dependents
+=== Project
+- link:https://projects.eclipse.org/projects/ee4j.glassfish[Eclipse Glassfish]
+- link:https://projects.eclipse.org/projects/ee4j.javamail[Eclipse Project for JavaMail]
+- link:https://projects.eclipse.org/projects/ee4j.eclipselink[EclipseLink]
+- link:https://projects.eclipse.org/proposals/eclipse-metro[Eclipse Metro]
+- link:https://projects.eclipse.org/projects/ee4j.grizzly[Eclipse Grizzly]
+- link:https://projects.eclipse.org/projects/ee4j.openmq[Eclipse OpenMQ]
+- link:https://projects.eclipse.org/projects/ee4j.krazo[Eclipse  Krazo]
+- link:https://projects.eclipse.org/projects/ee4j.jacc[Eclipse Project for JACC]
+- link:https://projects.eclipse.org/projects/ee4j.jsp[Eclipse Project for JSP]
+- link:https://projects.eclipse.org/projects/ee4j.jstl[Eclipse Project for JSTL]
+
+=== API
+- jsp
+- jstl
+- jax-rpc
+- jacc
+- security
+
+
+== JSP
+|=======
+|Namespace | `javax.servlet.jsp`
+|EE4J Project | link:https://projects.eclipse.org/projects/ee4j.jsp[Eclipse Project for JSP]
+|Git Repo | link:https://github.com/eclipse-ee4j/jsp-api[jsp-api]
+|Group Id| jakarta.servlet.jsp
+|Artifact Id| jakarta.servlet.jsp-api
+|Latest Spec Version| 2.3
+|=======
+=== Dependents
+=== Project
+- link:https://projects.eclipse.org/projects/ee4j.glassfish[Eclipse Glassfish]
+- link:https://projects.eclipse.org/projects/ee4j.mojarra[Eclipse Mojarra]
+- link:https://projects.eclipse.org/projects/ee4j.javamail[Eclipse Project for JavaMail]
+- link:https://projects.eclipse.org/projects/ee4j.openmq[Eclipse OpenMQ]
+- link:https://projects.eclipse.org/projects/ee4j.jstl[Eclipse Project for JSTL]
+
+=== API
+- jsf
+
+=== Dependencies
+==== Project
+link:https://projects.eclipse.org/projects/ee4j.servlet[Eclipse Project for Servlet]
+link:https://projects.eclipse.org/projects/ee4j.el[Eclipse Project for Expression Language]
+
+==== API
+```
+jsp
+  ├─ servlet 3.0
+  └─ el 2.2
+```
+
+== JSTL
+|=======
+|Namespace | `javax.servlet.jsp.jstl`
+|EE4J Project | link:https://projects.eclipse.org/projects/ee4j.jstl[Eclipse Project for JSTL]
+|Git Repo | link:https://github.com/eclipse-ee4j/jstl-api[jstl-api]
+|Group Id| jakarta.servlet.jsp.jstl
+|Artifact Id| jakarta.servlet.jsp.jstl-api
+|Latest Spec Version| 1.2
+|=======
+=== Dependents
+==== Project
+- link:https://projects.eclipse.org/projects/ee4j.glassfish[Eclipse Glassfish]
+- link:https://projects.eclipse.org/projects/ee4j.mojarra[Eclipse Mojarra]
+- link:https://projects.eclipse.org/projects/ee4j.javamail[Eclipse Project for JavaMail]
+- link:https://projects.eclipse.org/projects/ee4j.openmq[Eclipse OpenMQ]
+- link:https://projects.eclipse.org/projects/ee4j.jstl[Eclipse Project for JSTL]
+
+==== API
+- jsf
+
+=== Dependencies
+==== Project
+link:https://projects.eclipse.org/projects/ee4j.jsp[Eclipse Project for JSP]
+link:https://projects.eclipse.org/projects/ee4j.servlet[Eclipse Project for Servlet]
+link:https://projects.eclipse.org/projects/ee4j.el[Eclipse Project for Expression Language]
+
+==== API
+```
+jstl
+  ├─ jsp 2.2
+  ├─ servlet 3.0
+  └─ el 2.2
+```
+
+== JTA
+|=======
+|Namespace | `javax.transaction`
+|EE4J Project | link:https://projects.eclipse.org/projects/ee4j.jta[Eclipse Project for JTA]
+|Git Repo | link:https://github.com/eclipse-ee4j/jta-api[jta-api]
+|Group Id| jakarta.transaction
+|Artifact Id| jakarta.transaction-api
+|Latest Spec Version| 1.3
+|=======
+=== Dependents
+==== Project
+- link:https://projects.eclipse.org/projects/ee4j.glassfish[Eclipse Glassfish]
+- link:https://projects.eclipse.org/proposals/eclipse-project-ejb[Eclipse Project for EJB]
+- link:https://projects.eclipse.org/projects/ee4j.eclipselink[EclipseLink]
+- link:https://projects.eclipse.org/projects/ee4j.jersey[Eclipse Jersey]
+- link:https://projects.eclipse.org/proposals/eclipse-metro[Eclipse Metro]
+- link:https://projects.eclipse.org/proposals/eclipse-project-jca[Eclipse Project for JCA]
+
+==== API
+- jsf
+
+=== Dependencies
+=== Project
+none
+
+=== API
+```
+jta
+├─ cdi-api 1.0
+│    ├─ jsr250-api
+│    ├─ el-api 2.2 (optional)
+│    ├─ javax.inject 1
+│    ├─ org.jboss.spec.javax.ejb:jboss-ejb-api_3.1_spec (optional)
+│    └─ org.jboss.spec.javax.interceptor:jboss-interceptors-api_1.1_spec
+└─ interceptor (currently transitively, should be declared directly)
+```
+
+== Bean Validation
+|=======
+|Namespace | `javax.validation`
+|EE4J Project | undefined❌
+|Git Repo | link:https://github.com/beanvalidation/beanvalidation-api[beanvalidation/beanvalidation-api]
+|Group Id| jakarta.validation
+|Artifact Id| jakarta.validation-api
+|Latest Spec Version| 2.0
+|=======
+
+=== Dependents
+=== Project
+undefined❌
+
+=== API
+- jsf
+
+
+== Websocket
+|=======
+|Namespace | `javax.websocket`
+|EE4J Project | link:https://projects.eclipse.org/projects/ee4j.websocket[Eclipse Project for WebSocket]
+|Git Repo | link:https://github.com/eclipse-ee4j/websocket-api[websocket-api]
+|Group Id| jakarta.websocket
+|Artifact Id| jakarta.websocket-api,jakarta.websocket-client-api
+|Latest Spec Version| 1.1
+|=======
+=== Dependents
+==== Project
+- link:https://projects.eclipse.org/projects/ee4j.glassfish[Eclipse Glassfish]
+- link:https://projects.eclipse.org/projects/ee4j.tyrus[Eclipse Tyrus]
+
+==== API
+none
+
+== JAX-RS
+|=======
+|Namespace | `javax.ws.rs`
+|EE4J Project | link:https://projects.eclipse.org/projects/ee4j.jaxrs[Eclipse Project for JAX-RS]
+|Git Repo | link:https://github.com/eclipse-ee4j/jaxrs-api[jaxrs-api]
+|Group Id| jakarta.ws.rs
+|Artifact Id| jakarta.ws.rs-api
+|Latest Spec Version| 2.1
+|=======
+=== Dependents
+==== Project
+- link:https://projects.eclipse.org/projects/ee4j.glassfish[Eclipse Glassfish]
+- link:https://projects.eclipse.org/projects/ee4j.eclipselink[EclipseLink]
+- link:https://projects.eclipse.org/projects/ee4j.jersey[Eclipse Jersey]
+
+=== API
+none
+
+```
+jax-rs
+├─ jaxb
+└─ jaf 1.2
+```
+
+== JAXB
+|=======
+|Namespace | `javax.xml.bind`
+|EE4J Project | link:https://projects.eclipse.org/proposals/eclipse-project-jaxb[Eclipse Project for JAXB]
+|Git Repo | link:https://github.com/eclipse-ee4j/jaxb-api[jaxb-api]
+|Group Id| jakarta.xml.bind
+|Artifact Id| jakarta.xml.bind-api
+|Latest Spec Version| 2.4
+|=======
+=== Dependents
+==== Project
+- link:https://projects.eclipse.org/projects/ee4j.glassfish[Eclipse Glassfish]
+- link:https://projects.eclipse.org/projects/ee4j.eclipselink[EclipseLink]
+- link:https://projects.eclipse.org/projects/ee4j.jersey[Eclipse Jersey]
+- link:https://projects.eclipse.org/proposals/eclipse-implementation-jaxb[Eclipse Implementation of JAXB]
+- link:https://projects.eclipse.org/proposals/eclipse-project-jax-ws[Eclipse Project for JAX-WS]
+
+==== API
+- jax-rs
+- ws
+
+=== Dependencies
+==== Project
+none
+
+==== API
+```
+jaxb
+└─ jaf 1.2
+```
+
+== JAXR
+|=======
+|Namespace | `javax.xml.registry`
+|EE4J Project | undefined❌
+|Git Repo | link:https://github.com/eclipse-ee4j/jaxr-api[jaxr-api]
+|Group Id| jakarta.xml.registry
+|Artifact Id| jakarta.xml.registry-api
+|Latest Spec Version| 1.0
+|=======
+=== Dependents
+==== Project
+undefined❌
+
+==== API
+none
+
+
+
+== JAX-RPC
+|=======
+|Namespace | `javax.xml.rpc`
+|EE4J Project | undefined❌
+|Git Repo | link:https://github.com/eclipse-ee4j/jax-rpc-api[jax-rpc-api]
+|Group Id| jakarta.xml.rpc
+|Artifact Id| jakarta.xml.rpc-api
+|Latest Spec Version| 1.0
+|=======
+=== Dependents
+==== Project
+undefined❌
+
+==== API
+none
+
+=== Dependencies
+==== Project
+none
+
+==== API
+```
+jax-rpc
+  └─ servlet 4.0 (optional)
+```
+
+== SAAJ
+|=======
+|Namespace | `javax.xml.soap`
+|EE4J Project | undefined❌
+|Git Repo | link:https://github.com/eclipse-ee4j/saaj-api[saaj-api]
+|Group Id| jakarta.xml.soap
+|Artifact Id| jakarta.xml.soap-api
+|Latest Spec Version| 1.5
+|=======
+=== Dependents
+==== Project
+undefined❌
+
+==== API
+none
+
+=== Dependencies
+==== Project
+none
+
+==== API
+```
+saaj
+  └─ jaf 1.2
+```
+
+
+== JAX-WS
+|=======
+|Namespace | `javax.xml.ws`
+|EE4J Project | link:https://projects.eclipse.org/proposals/eclipse-project-jax-ws[Eclipse Project for JAX-WS]
+|Git Repo | link:https://github.com/eclipse-ee4j/jax-ws-api[jax-ws-api]
+|Group Id| jakarta.xml.ws
+|Artifact Id| jakarta.xml.ws-api
+|Latest Spec Version| 2.3
+|=======
+=== Dependents
+==== Project
+- link:https://projects.eclipse.org/projects/ee4j.eclipselink[EclipseLink]
+- link:https://projects.eclipse.org/proposals/eclipse-metro[Eclipse Metro]
+- link:https://projects.eclipse.org/projects/ee4j.openmq[Eclipse OpenMQ]
+
+==== API
+none
+
+=== Dependencies
+==== Project
+- link:https://projects.eclipse.org/proposals/eclipse-project-jaxb[Eclipse Project for JAXB]
+
+==== API
+```
+jax-ws
+├─ jws
+├─ common-annotation 1.3
+├─ jaxb
+│    └─ jaf 1.2
+└─ saaj
+     └─ jaf 1.2
+```
+
+== javax-inject
+|=======
+|Namespace | `javax.inject`
+|EE4J Project | undefined❌
+|Git Repo | link:https://github.com/javax-inject/javax-inject[javax-inject/javax-inject]
+|Group Id| javax.inject
+|Artifact Id| javax.inject
+|Latest Spec Version| 1
+|=======
+=== Dependents
+==== Project
+undefined❌
+
+==== API
+- batch
+- cdi
+
