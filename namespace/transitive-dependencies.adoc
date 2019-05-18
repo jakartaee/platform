@@ -246,7 +246,7 @@ cdi-api
 none
 
 
-#[deploy]
+[#deploy]
 == EE Application Deployment
 |=======
 |Namespace | `javax.enterprise.deploy`
