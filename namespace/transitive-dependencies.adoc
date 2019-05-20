@@ -42,11 +42,12 @@ jakarta.xml.ws-api-{version}.jar
 javax.inject-{version}.jar
 ```
 
+[#jaf]
 == JAF
 
 |=======
 |Namespace | `javax.activation`
-|EE4J Project | link:https://projects.eclipse.org/proposals/eclipse-project-jaf[Eclipse Project for JAF]
+|EE4J Project | link:https://projects.eclipse.org/projects/ee4j.jaf[Eclipse Project for JAF]
 |Git Repo | link:https://github.com/eclipse-ee4j/jaf[jaf]
 |TCK Git Repo| link:https://github.com/eclipse-ee4j/jaf-tck[jaf-tck]
 |Group Id| jakarta.activation
@@ -57,16 +58,17 @@ javax.inject-{version}.jar
 === Dependents
 ==== Project
 - link:https://projects.eclipse.org/projects/ee4j.javamail[Eclipse Project for JavaMail]
-- link:https://projects.eclipse.org/proposals/eclipse-implementation-jaxb[Eclipse Implementation of JAXB]
+- link:https://projects.eclipse.org/projects/ee4j.jaxb-impl[Eclipse Implementation of JAXB]
 - link:https://projects.eclipse.org/projects/ee4j.openmq[Eclipse OpenMQ]
 
 ==== API
-- mail
-- jax-rs
-- jaxb
-- saaj
+- link:#mail[mail]
+- link:#jax-rs[jax-rs]
+- link:#jaxb[jaxb]
+- link:#saaj[saaj]
 
 
+[#ca]
 == Common Annotations
 |=======
 |Namespace | `javax.annotation`
@@ -82,12 +84,13 @@ javax.inject-{version}.jar
 - link:https://projects.eclipse.org/projects/ee4j.glassfish[Eclipse Glassfish]
 - link:https://projects.eclipse.org/projects/ee4j.eclipselink[EclipseLink]
 - link:https://projects.eclipse.org/projects/ee4j.jersey[Eclipse Jersey]
-- link:https://projects.eclipse.org/proposals/eclipse-metro[Eclipse Metro]
+- link:https://projects.eclipse.org/projects/ee4j.metro[Eclipse Metro]
 
 ==== API
-- jax-ws
+- link:#jax-ws[jax-ws]
 
 
+[#batch]
 == batch
 |=======
 |Namespace | `javax.batch`
@@ -118,10 +121,11 @@ batch
      └─ org.jboss.spec.javax.interceptor:jboss-interceptors-api_1.1_spec
 ```
 
+[#ejb]
 == EJB
 |=======
 |Namespace | `javax.ejb`,`javax.xml.rpc.handler`
-|EE4J Project | link:https://projects.eclipse.org/proposals/eclipse-project-ejb[Eclipse Project for EJB]
+|EE4J Project | link:https://projects.eclipse.org/projects/ee4j.ejb[Eclipse Project for EJB]
 |Git Repo | link:https://github.com/eclipse-ee4j/ejb-api[ejb-api]
 |Group Id| jakarta.ejb
 |Artifact Id| jakarta.ejb-api
@@ -132,14 +136,14 @@ batch
 ==== Project
 - link:https://projects.eclipse.org/projects/ee4j.glassfish[Eclipse Glassfish]
 - link:https://projects.eclipse.org/projects/ee4j.jersey[Eclipse Jersey]
-- link:https://projects.eclipse.org/proposals/eclipse-metro[Eclipse Metro]
+- link:https://projects.eclipse.org/projects/ee4j.metro[Eclipse Metro]
 - link:https://projects.eclipse.org/projects/ee4j.orb[Eclipse Eclipse ORB]
 - `TEST SCOPE` link:https://projects.eclipse.org/projects/ee4j.eclipselink[EclipseLink]
 
 ==== API
-- jsf
-- management.j2ee
-- security
+- link:#jsf[jsf]
+- link:#management.j2ee[management.j2ee]
+- link:#security[security]
 
 === Dependencies
 ==== Project
@@ -160,6 +164,7 @@ ejb
      └─ interceptor (currently transitively, should be declared directly)
 ```
 
+[#el]
 == EL
 |=======
 |Namespace | `javax.el`
@@ -179,14 +184,15 @@ ejb
 - link:https://projects.eclipse.org/projects/ee4j.jstl[Eclipse Project for JSTL]
 
 ==== API
-- cdi
-- jsf
-- jsp
-- jstl
-- security
+- link:#cdi[cdi]
+- link:#jsf[jsf]
+- link:#jsp[jsp]
+- link:#jstl[jstl]
+- link:#security[security]
 
 
 
+[#cdi]
 == CDI
 |=======
 |Namespace | `javax.decorator`,`javax.enterprise`
@@ -202,10 +208,10 @@ ejb
 undefined❌
 
 ==== API
-- jsf
-- security
-- jta
-- batch
+- link:#jsf[jsf]
+- link:#security[security]
+- link:#jta[jta]
+- link:#batch[batch]
 
 === Dependencies
 ==== Project
@@ -221,6 +227,7 @@ cdi-api
      └─ common-annotation 1.3 (never used)
 ```
 
+[#cu]
 == Concurrency Utilities
 |=======
 |Namespace | `javax.enterprise.concurrent`
@@ -239,6 +246,7 @@ cdi-api
 none
 
 
+[#deploy]
 == EE Application Deployment
 |=======
 |Namespace | `javax.enterprise.deploy`
@@ -257,6 +265,7 @@ undefined❌
 none
 
 
+[#jsf]
 == JSF
 |=======
 |Namespace | `javax.faces`
@@ -312,10 +321,12 @@ jsf
           │    └─ org.jboss.spec.javax.interceptor:jboss-interceptors-api_1.1_spec
           └─ interceptor (currently transitively, should be declared explicitly)
 ```
+
+[#interceptors]
 == Interceptors
 |=======
 |Namespace | `javax.interceptor`
-|EE4J Project | link:https://projects.eclipse.org/proposals/eclipse-project-interceptors[Eclipse Project for Interceptors]
+|EE4J Project | link:https://projects.eclipse.org/projects/ee4j.interceptors[Eclipse Project for Interceptors]
 |Git Repo | link:https://github.com/eclipse-ee4j/interceptor-api[interceptor-api]
 |Group Id| jakarta.interceptor
 |Artifact Id| jakarta.interceptor-api
@@ -327,11 +338,12 @@ jsf
 - link:https://projects.eclipse.org/projects/ee4j.glassfish[Eclipse Glassfish]
 
 ==== API
-- cdi
-- jta
-- security
+- link:#cdi[cdi]
+- link:#jta[jta](never used)
+- link:#security[security]
 
 
+[#jms]
 == JMS
 |=======
 |Namespace | `javax.jms`
@@ -352,6 +364,7 @@ jsf
 none
 
 
+[#jsonp]
 == JSONP
 |=======
 |Namespace | `javax.json`
@@ -372,11 +385,12 @@ none
 - link:https://projects.eclipse.org/projects/ee4j.tyrus[Eclipse Tyrus]
 
 ==== API
-- jsf
-- jsonb
+- link:#jsf[jsf]
+- link:#jsonb[jsonb]
 
 
 
+[#jsonb]
 == JSONB
 |=======
 |Namespace | `javax.json.bind`
@@ -393,8 +407,8 @@ none
 - link:https://projects.eclipse.org/projects/ee4j.jersey[Eclipse Jersey]
 
 ==== API
-- jsf
-- jsonb
+- link:#jsf[jsf]
+- link:#jsonb[jsonb]
 
 === Dependencies
 ==== Project
@@ -406,10 +420,11 @@ jsonp
 └─ jsonp 1.1
 ```
 
+[#jws]
 == JWS
 |=======
 |Namespace | `javax.jws`
-|EE4J Project | undefined❌
+|EE4J Project | link:https://projects.eclipse.org/projects/ee4j.jaxws[Eclipse Project for JAX-WS]
 |Git Repo | link:https://github.com/eclipse-ee4j/jws-api[jws-api]
 |Group Id| jakarta.jws
 |Artifact Id| jakarta.jws-api
@@ -417,13 +432,21 @@ jsonp
 |=======
 
 === Dependents
-=== Project
-undefined❌
+==== Project
+- link:https://projects.eclipse.org/projects/ee4j.eclipselink[EclipseLink]
+- link:https://projects.eclipse.org/projects/ee4j.metro[Eclipse Metro]
+- link:https://projects.eclipse.org/projects/ee4j.openmq[Eclipse OpenMQ]
 
-=== API
+==== API
 none
 
+=== Dependencies
+==== Project
+- link:https://projects.eclipse.org/projects/ee4j.jaxb[Eclipse Project for JAXB]
 
+
+
+[#mail]
 == JavaMail
 |=======
 |Namespace | `javax.mail`
@@ -438,17 +461,17 @@ none
 ==== Project
 - link:https://projects.eclipse.org/projects/ee4j.glassfish[Eclipse Glassfish]
 - link:https://projects.eclipse.org/projects/ee4j.eclipselink[EclipseLink]
-- link:https://projects.eclipse.org/proposals/eclipse-metro[Eclipse Metro]
+- link:https://projects.eclipse.org/projects/ee4j.metro[Eclipse Metro]
 - link:https://projects.eclipse.org/projects/ee4j.openmq[Eclipse OpenMQ]
 
 ==== API
-- jsf
-- jsonb
+- link:#jsf[jsf]
+- link:#jsonb[jsonb]
 
 === Dependencies
 ==== Project
 - link:https://projects.eclipse.org/projects/ee4j.javamail[Eclipse Project for JavaMail]
-- link:https://projects.eclipse.org/proposals/eclipse-project-jaf[Eclipse Project for JAF]
+- link:https://projects.eclipse.org/projects/ee4j.jaf[Eclipse Project for JAF]
 - link:https://projects.eclipse.org/projects/ee4j.jsp[Eclipse Project for JSP]
 - link:https://projects.eclipse.org/projects/ee4j.servlet[Eclipse Project for Servlet]
 
@@ -458,6 +481,7 @@ javamail
 └─ jaf 1.2
 ```
 
+[#management.j2ee]
 == Management
 |=======
 |Namespace | `javax.management.j2ee`
@@ -490,6 +514,7 @@ management.j2ee
             └─ interceptor (currently transitively, should be declared directly)
 ```
 
+[#jpa]
 == JPA
 |=======
 |Namespace | `javax.persistence`
@@ -508,10 +533,11 @@ management.j2ee
 none
 
 
+[#jca]
 == JCA
 |=======
 |Namespace | `javax.resource`
-|EE4J Project | link:https://projects.eclipse.org/proposals/eclipse-project-jca[Eclipse Project for JCA]
+|EE4J Project | link:https://projects.eclipse.org/projects/ee4j.jca[Eclipse Project for JCA]
 |Git Repo | link:https://github.com/eclipse-ee4j/jca-api[jca-api]
 |Group Id| jakarta.resource
 |Artifact Id| jakarta.resource-api
@@ -521,10 +547,10 @@ none
 ==== Project
 - link:https://projects.eclipse.org/projects/ee4j.glassfish[Eclipse Glassfish]
 - link:https://projects.eclipse.org/projects/ee4j.eclipselink[EclipseLink]
-- link:https://projects.eclipse.org/proposals/eclipse-metro[Eclipse Metro]
+- link:https://projects.eclipse.org/projects/ee4j.metro[Eclipse Metro]
 - link:https://projects.eclipse.org/projects/ee4j.openmq[Eclipse OpenMQ]
 
-=== APIs that depend on `JCA`
+==== API
 none
 
 === Dependencies
@@ -544,6 +570,7 @@ jca
        └─ interceptor (currently transitively, should be declared directly)
 ```
 
+[#jaspic]
 == JASPIC
 |=======
 |Namespace | `javax.security.auth.message`
@@ -556,12 +583,13 @@ jca
 === Dependents
 ==== Project
 - link:https://projects.eclipse.org/projects/ee4j.glassfish[Eclipse Glassfish]
-- link:https://projects.eclipse.org/proposals/eclipse-metro[Eclipse Metro]
+- link:https://projects.eclipse.org/projects/ee4j.metro[Eclipse Metro]
 
-=== API
-none
+==== API
+- link:#security[security]
 
 
+[#security]
 == Security
 |=======
 |Namespace | `javax.security.enterprise`
@@ -574,7 +602,7 @@ none
 === Dependents
 ==== Project
 - link:https://projects.eclipse.org/projects/ee4j.glassfish[Eclipse Glassfish]
-- link:https://projects.eclipse.org/projects/ee4j.soteria[Eclipse  Krazo]
+- link:https://projects.eclipse.org/projects/ee4j.soteria[Eclipse Soteria]
 
 ==== API
 none
@@ -609,6 +637,7 @@ security
           └─ interceptor (currently transitively, should be declared explicitly)
 ```
 
+[#jacc]
 == JACC
 |=======
 |Namespace | `javax.security.jacc`
@@ -635,6 +664,7 @@ jacc
 └─ servlet 4.0
 ```
 
+[#servlet]
 == Servlet
 |=======
 |Namespace | `javax.servlet`
@@ -649,7 +679,7 @@ jacc
 - link:https://projects.eclipse.org/projects/ee4j.glassfish[Eclipse Glassfish]
 - link:https://projects.eclipse.org/projects/ee4j.javamail[Eclipse Project for JavaMail]
 - link:https://projects.eclipse.org/projects/ee4j.eclipselink[EclipseLink]
-- link:https://projects.eclipse.org/proposals/eclipse-metro[Eclipse Metro]
+- link:https://projects.eclipse.org/projects/ee4j.metro[Eclipse Metro]
 - link:https://projects.eclipse.org/projects/ee4j.grizzly[Eclipse Grizzly]
 - link:https://projects.eclipse.org/projects/ee4j.openmq[Eclipse OpenMQ]
 - link:https://projects.eclipse.org/projects/ee4j.krazo[Eclipse  Krazo]
@@ -658,13 +688,15 @@ jacc
 - link:https://projects.eclipse.org/projects/ee4j.jstl[Eclipse Project for JSTL]
 
 === API
-- jsp
-- jstl
-- jax-rpc
-- jacc
-- security
+- link:#jsp[jsp]
+- link:#jstl[jstl]
+- link:#jax-rpc[jax-rpc]
+- link:#jacc[jacc]
+- link:#security[security]
+- link:#jsf[jsf]
 
 
+[#jsp]
 == JSP
 |=======
 |Namespace | `javax.servlet.jsp`
@@ -683,7 +715,7 @@ jacc
 - link:https://projects.eclipse.org/projects/ee4j.jstl[Eclipse Project for JSTL]
 
 === API
-- jsf
+- link:#jsf[jsf]
 
 === Dependencies
 ==== Project
@@ -697,6 +729,7 @@ jsp
   └─ el 2.2
 ```
 
+[#jstl]
 == JSTL
 |=======
 |Namespace | `javax.servlet.jsp.jstl`
@@ -715,7 +748,7 @@ jsp
 - link:https://projects.eclipse.org/projects/ee4j.jstl[Eclipse Project for JSTL]
 
 ==== API
-- jsf
+- link:#jsf[jsf]
 
 === Dependencies
 ==== Project
@@ -743,14 +776,15 @@ jstl
 === Dependents
 ==== Project
 - link:https://projects.eclipse.org/projects/ee4j.glassfish[Eclipse Glassfish]
-- link:https://projects.eclipse.org/proposals/eclipse-project-ejb[Eclipse Project for EJB]
+- link:https://projects.eclipse.org/projects/ee4j.ejb[Eclipse Project for EJB]
 - link:https://projects.eclipse.org/projects/ee4j.eclipselink[EclipseLink]
 - link:https://projects.eclipse.org/projects/ee4j.jersey[Eclipse Jersey]
-- link:https://projects.eclipse.org/proposals/eclipse-metro[Eclipse Metro]
-- link:https://projects.eclipse.org/proposals/eclipse-project-jca[Eclipse Project for JCA]
+- link:https://projects.eclipse.org/projects/ee4j.metro[Eclipse Metro]
+- link:https://projects.eclipse.org/projects/ee4j.jca[Eclipse Project for JCA]
 
 ==== API
-- jsf
+- link:#jca[jca]
+- link:#ejb[ejb]
 
 === Dependencies
 === Project
@@ -768,6 +802,7 @@ jta
 └─ interceptor (currently transitively, should be declared directly)
 ```
 
+[#bv]
 == Bean Validation
 |=======
 |Namespace | `javax.validation`
@@ -783,9 +818,10 @@ jta
 undefined❌
 
 === API
-- jsf
+- link:#jsf[jsf]
 
 
+[#websocket]
 == Websocket
 |=======
 |Namespace | `javax.websocket`
@@ -803,6 +839,7 @@ undefined❌
 ==== API
 none
 
+[#jax-rs]
 == JAX-RS
 |=======
 |Namespace | `javax.ws.rs`
@@ -823,14 +860,15 @@ none
 
 ```
 jax-rs
-├─ jaxb
+├─ jaxb 2.4
 └─ jaf 1.2
 ```
 
+[#jaxb]
 == JAXB
 |=======
 |Namespace | `javax.xml.bind`
-|EE4J Project | link:https://projects.eclipse.org/proposals/eclipse-project-jaxb[Eclipse Project for JAXB]
+|EE4J Project | link:https://projects.eclipse.org/projects/ee4j.jaxb[Eclipse Project for JAXB]
 |Git Repo | link:https://github.com/eclipse-ee4j/jaxb-api[jaxb-api]
 |Group Id| jakarta.xml.bind
 |Artifact Id| jakarta.xml.bind-api
@@ -841,12 +879,12 @@ jax-rs
 - link:https://projects.eclipse.org/projects/ee4j.glassfish[Eclipse Glassfish]
 - link:https://projects.eclipse.org/projects/ee4j.eclipselink[EclipseLink]
 - link:https://projects.eclipse.org/projects/ee4j.jersey[Eclipse Jersey]
-- link:https://projects.eclipse.org/proposals/eclipse-implementation-jaxb[Eclipse Implementation of JAXB]
-- link:https://projects.eclipse.org/proposals/eclipse-project-jax-ws[Eclipse Project for JAX-WS]
+- link:https://projects.eclipse.org/projects/ee4j.jaxb-impl[Eclipse Implementation of JAXB]
+- link:https://projects.eclipse.org/projects/ee4j.jaxws[Eclipse Project for JAX-WS]
 
 ==== API
-- jax-rs
-- ws
+- link:#jax-rs[jax-rs]
+- link:#ws[ws]
 
 === Dependencies
 ==== Project
@@ -858,6 +896,7 @@ jaxb
 └─ jaf 1.2
 ```
 
+[#jaxr]
 == JAXR
 |=======
 |Namespace | `javax.xml.registry`
@@ -876,6 +915,7 @@ none
 
 
 
+[#jax-rpc]
 == JAX-RPC
 |=======
 |Namespace | `javax.xml.rpc`
@@ -883,7 +923,7 @@ none
 |Git Repo | link:https://github.com/eclipse-ee4j/jax-rpc-api[jax-rpc-api]
 |Group Id| jakarta.xml.rpc
 |Artifact Id| jakarta.xml.rpc-api
-|Latest Spec Version| 1.0
+|Latest Spec Version| 1.1
 |=======
 === Dependents
 ==== Project
@@ -905,7 +945,7 @@ jax-rpc
 == SAAJ
 |=======
 |Namespace | `javax.xml.soap`
-|EE4J Project | undefined❌
+|EE4J Project | link:https://projects.eclipse.org/projects/ee4j.jaxws[Eclipse Project for JAX-WS]
 |Git Repo | link:https://github.com/eclipse-ee4j/saaj-api[saaj-api]
 |Group Id| jakarta.xml.soap
 |Artifact Id| jakarta.xml.soap-api
@@ -913,14 +953,16 @@ jax-rpc
 |=======
 === Dependents
 ==== Project
-undefined❌
+- link:https://projects.eclipse.org/projects/ee4j.eclipselink[EclipseLink]
+- link:https://projects.eclipse.org/projects/ee4j.metro[Eclipse Metro]
+- link:https://projects.eclipse.org/projects/ee4j.openmq[Eclipse OpenMQ]
 
 ==== API
 none
 
 === Dependencies
 ==== Project
-none
+- link:https://projects.eclipse.org/projects/ee4j.jaxb[Eclipse Project for JAXB]
 
 ==== API
 ```
@@ -929,10 +971,11 @@ saaj
 ```
 
 
+[#jax-ws]
 == JAX-WS
 |=======
 |Namespace | `javax.xml.ws`
-|EE4J Project | link:https://projects.eclipse.org/proposals/eclipse-project-jax-ws[Eclipse Project for JAX-WS]
+|EE4J Project | link:https://projects.eclipse.org/projects/ee4j.jaxws[Eclipse Project for JAX-WS]
 |Git Repo | link:https://github.com/eclipse-ee4j/jax-ws-api[jax-ws-api]
 |Group Id| jakarta.xml.ws
 |Artifact Id| jakarta.xml.ws-api
@@ -941,7 +984,7 @@ saaj
 === Dependents
 ==== Project
 - link:https://projects.eclipse.org/projects/ee4j.eclipselink[EclipseLink]
-- link:https://projects.eclipse.org/proposals/eclipse-metro[Eclipse Metro]
+- link:https://projects.eclipse.org/projects/ee4j.metro[Eclipse Metro]
 - link:https://projects.eclipse.org/projects/ee4j.openmq[Eclipse OpenMQ]
 
 ==== API
@@ -949,19 +992,20 @@ none
 
 === Dependencies
 ==== Project
-- link:https://projects.eclipse.org/proposals/eclipse-project-jaxb[Eclipse Project for JAXB]
+- link:https://projects.eclipse.org/projects/ee4j.jaxb[Eclipse Project for JAXB]
 
 ==== API
 ```
 jax-ws
-├─ jws
+├─ jws 1.0
 ├─ common-annotation 1.3
-├─ jaxb
+├─ jaxb 2.4
 │    └─ jaf 1.2
-└─ saaj
+└─ saaj 1.5
      └─ jaf 1.2
 ```
 
+[#javax-inject]
 == javax-inject
 |=======
 |Namespace | `javax.inject`
@@ -976,6 +1020,6 @@ jax-ws
 undefined❌
 
 ==== API
-- batch
-- cdi
+- link:#batch[batch]
+- link:#cdi[cdi]
 
