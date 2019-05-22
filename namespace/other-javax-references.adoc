@@ -1,4 +1,4 @@
-# Other javax references in APIs
+= Other javax references in APIs
 
 Code that calls a method in the javax namespace and will need migration in the future is easy to spot and handle with bytecode changes.  Outside these usages, there are other uses of `javax` that may need to be considered.
 
@@ -9,7 +9,16 @@ These will generally fall into the following categories:
 
 The following is a more specific audit of each spec.
 
-## EJB
+== JAF
+todo
+
+== Common Annotations
+todo
+
+== batch
+todo
+
+== EJB
 
 Classpath Resources:
 
@@ -22,7 +31,43 @@ System & Config Properties:
  - `javax.ejb.embeddable.modules`
 
 
-## JPA
+== EL
+todo
+
+== CDI
+todo
+
+== Concurrency Utilities
+todo
+
+== EE Application Deployment
+todo
+
+== JSF
+todo
+
+== Interceptors
+todo
+
+== JMS
+todo
+
+== JSONP
+todo
+
+== JSONB
+todo
+
+== JWS
+todo
+
+== JavaMail
+todo
+
+== Management
+todo
+
+== JPA
 
 === Classpath Resources
   - `META-INF/services/javax.persistence.spi.PersistenceProvider`
@@ -38,40 +83,84 @@ System & Config Properties:
 
 === Persistence Unit Properties(link:https://github.com/eclipse-ee4j/eclipselink/blob/master/foundation/org.eclipse.persistence.core/src/org/eclipse/persistence/config/PersistenceUnitProperties.java[Eclipselink])
 
-  - `javax.persistence.transactionType`;
-  - `javax.persistence.jtaDataSource`;
-  - `javax.persistence.nonJtaDataSource`;
-  - `javax.persistence.jdbc.driver`;
-  - `javax.persistence.jdbc.url`;
-  - `javax.persistence.jdbc.user`;
-  - `javax.persistence.jdbc.password`;
-  - `javax.persistence.validation.factory`;
-  - `javax.persistence.validation.mode`;
-  - `javax.persistence.validation.group.pre-persist`;
-  - `javax.persistence.validation.group.pre-update`;
-  - `javax.persistence.validation.group.pre-remove`;
-  - `javax.persistence.sharedCache.mode`;
-  - `javax.persistence.schema-generation.database.action`;
-  - `javax.persistence.schema-generation.scripts.action`;
-  - `javax.persistence.schema-generation.create-source`;
-  - `javax.persistence.schema-generation.drop-source`;
-  - `javax.persistence.schema-generation.create-database-schemas`;
-  - `javax.persistence.schema-generation.scripts.create-target`;
-  - `javax.persistence.schema-generation.scripts.drop-target`;
-  - `javax.persistence.database-product-name`;
-  - `javax.persistence.database-major-version`;
-  - `javax.persistence.database-minor-version`;
-  - `javax.persistence.schema-generation.create-script-source`;
-  - `javax.persistence.schema-generation.drop-script-source`;
-  - `javax.persistence.schema-generation.connection`;
-  - `javax.persistence.sql-load-script-source`;
-  - `javax.persistence.bean.manager`;
-  - `javax.persistence.query.timeout`;
+  - `javax.persistence.transactionType`
+  - `javax.persistence.jtaDataSource`
+  - `javax.persistence.nonJtaDataSource`
+  - `javax.persistence.jdbc.driver`
+  - `javax.persistence.jdbc.url`
+  - `javax.persistence.jdbc.user`
+  - `javax.persistence.jdbc.password`
+  - `javax.persistence.validation.factory`
+  - `javax.persistence.validation.mode`
+  - `javax.persistence.validation.group.pre-persist`
+  - `javax.persistence.validation.group.pre-update`
+  - `javax.persistence.validation.group.pre-remove`
+  - `javax.persistence.sharedCache.mode`
+  - `javax.persistence.schema-generation.database.action`
+  - `javax.persistence.schema-generation.scripts.action`
+  - `javax.persistence.schema-generation.create-source`
+  - `javax.persistence.schema-generation.drop-source`
+  - `javax.persistence.schema-generation.create-database-schemas`
+  - `javax.persistence.schema-generation.scripts.create-target`
+  - `javax.persistence.schema-generation.scripts.drop-target`
+  - `javax.persistence.database-product-name`
+  - `javax.persistence.database-major-version`
+  - `javax.persistence.database-minor-version`
+  - `javax.persistence.schema-generation.create-script-source`
+  - `javax.persistence.schema-generation.drop-script-source`
+  - `javax.persistence.schema-generation.connection`
+  - `javax.persistence.sql-load-script-source`
+  - `javax.persistence.bean.manager`
+  - `javax.persistence.query.timeout`
 
+== JCA
+todo
 
+== JASPIC
+todo
 
-## JSF
+== Security
+todo
 
-TODO Help
+== JACC
+todo
 
-## TODO Help list every spec
+== Servlet
+todo
+
+== JSP
+todo
+
+== JSTL
+todo
+
+== JTA
+todo
+
+== Bean Validation
+todo
+
+== Websocket
+todo
+
+== JAX-RS
+todo
+
+== JAXB
+todo
+
+== JAXR
+todo
+
+== JAX-RPC
+todo
+
+== SAAJ
+todo
+
+== JAX-WS
+todo
+
+== javax-inject
+todo
+
