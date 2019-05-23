@@ -144,7 +144,10 @@ todo
 todo
 
 == JAX-RS
-todo
+=== Classpath Resources
+- `META-INF/services/javax.ws.rs.ext.RuntimeDelegate`
+- properties key `javax.ws.rs.ext.RuntimeDelegate` in `${java.home}/lib/jaxrs.properties`
+- `META-INF/services/javax.ws.rs.sse.SseEventSource.Builder` (SSE delegate)
 
 == JAXB
 todo
