@@ -1,0 +1,23 @@
+Total Big Bang with Binary Compatibility Profile
+=================================================
+:Author:    Richard Monson-Haefel
+:Email:     <rmonson@tomitribe.com>
+:Date:      June 4th, 2019
+
+
+This proposal builds on the Big Bang but with the following modifications:
+
+. The Proposal
+. All javax packages in Java EE 8 are converted over to jakarta namespace at once, for the Jakarta EE 9 release.
+. A "Jakarta Compatibility Profile for Java EE" is created that ensures binary compatibility with Java EE 8 javax packages is defined as optional, requires passing TCK, and branding.
+
+. Pros:
+. Bulk Transition is Simpler:  The original Big Bang proposal suggested that some, but not all of the packages will be switched to the jakarta namespace. This proposal says that all of them which are  switched over to jakarta namespace. (The exception being javax packages in Java EE).
+. Binary Compatability Profile provides backward compatibility to ensure that existing Java EE applications continue to run and have a migration path to Jakarta
+. Optional Binary Compatability Profile allows new vendors who do not wish to support binary compatibility to enter the market.
+. End-users will know that any product branded as Binary Compatible has passed TCK tests and demonstrated backward compatibility.
+. The platform can continue to evolve without being constrained by the previous platform.
+
+. Cons:
+. Vendors will need to implement binary compatibility profile and pass TCKs to use the Binary Compatability Profile brand
+. End-Users will need to get used to jakarta as the top level namespace.
