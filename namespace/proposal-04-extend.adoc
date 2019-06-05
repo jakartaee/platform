@@ -1,4 +1,4 @@
-# Proposal 3: Extend javax in Jakarta EE 9 and beyond
+# Proposal 4: Extend javax in Jakarta EE 9 and beyond
 
 The `javax` APIs would live "forever".
 All of the new work in Jakarta EE would extend or build upon the existing `javax` APIs.
