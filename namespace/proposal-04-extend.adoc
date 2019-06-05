@@ -1,0 +1,34 @@
+# Proposal 4: Extend javax in Jakarta EE 9 and beyond
+
+The `javax` APIs would live "forever".
+All of the new work in Jakarta EE would extend or build upon the existing `javax` APIs.
+This would be similar to what https://microprofile.io[MicroProfile] has accomplished with their https://github.com/eclipse/microprofile-rest-client[Rest Client] and https://github.com/eclipse/microprofile-context-propagation[Concurrency/Context Propagation] components.
+The Rest Client has provided a feature extension to Java EE JAX-RS, while the Concurrency/Context Propagation project has provided a feature extension to Java EE Concurrency Utilities.
+
+- All existing Java EE APIs would stay in the `javax` namespace.
+- New or modified APIs would be in the `jakarta` namespace.
+- Jakarta EE would be a mix of `javax` and `jakarta` packaged APIs for the foreseeable future.
+- When updates are proposed for an existing `javax` API, the first goal is to provide the updates via a `jakarta` extension.
+- If the proposed updates can not be a proper extension and updates to the `javax` API are required, then that API would transition from `javax` to `jakarta`.
+This should be the exception, not the rule.
+
+Pros:
+
+- Easier for customer acceptance since their existing applications will continue to run.
+- Cheaper up front cost and reduced immediate noise -- gradual coordination and cost.
+- No need to move Specifications/APIs to `jakarta` unless there is a technical requirement.
+- Potential for less impact from API change overall -- minimize the API migration.
+- Easier to provide more functional Jakarta EE releases in an efficient manner
+
+Cons:
+
+- Prolonged coordination, cost and complexity to industry affecting conversion tools, users, enterprises, cloud vendors, IDE creators, platform vendors, trainers and book authors.
+- Use of `javax` namespace prolonged (could also be considered a benefit).
+- Difficulty in knowing whether a given API is in the `javax` or the `jakarta` namespace.
+- Transitive dependencies to other specifications makes this option harder for platform implementors although not for consumers.
+- Restrictions on what Java SE implementation can be used for certification
+
+Decisions:
+
+- Which APIs would be good candidates for the initial Jakarta EE 9 feature set?
+- And, could these updates be proper API extensions, or would they require the `javax` to `jakarta` namespace change?
