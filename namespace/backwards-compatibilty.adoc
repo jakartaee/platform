@@ -13,3 +13,9 @@ Build-time solutions of this nature could be achived.
 ## Runtime javaagent
 
 A runtime version of the above technique could be achived with a Java Agent. An agent has the ability to see all bytecode being loaded and to modify it before it becomes a class.
+
+## Jakarta EE container ClassLoader
+
+A corner case which cannot be handled by Runtime javaaganet is calling javax package via reflection APIs. A Jakarta EE implementation can hook ClassLoader and convert package names.
+
+Another way is the Runtime javaagent (byte code translation) inserts a name-mapping call before calling certain ClassLoader methods.
