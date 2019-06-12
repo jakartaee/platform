@@ -1,5 +1,9 @@
-# Compatibiliity Prototypes
+# Compatibility Prototypes
 
-Working on a prototype?
+Working on a prototype?  The goal of this document is to encourage prototypes on backwards compatibility and
+rally community around them.
 
-Register it here
+Multiple efforts are encouraged at this stage.  We can consolidate as they prove themsevles.
+
+Update via PR
+
