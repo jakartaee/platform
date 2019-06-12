@@ -1,0 +1,32 @@
+# Dependencies Between Jakarta EE APIs
+
+A major factor of incremental vs big bang is now small we could actually draw the circle.  If even one change cascades out greatly, all proposals are effectively big bang.
+
+Raw data has been collected in JSON format so that we can all help in the analysis of any theoretical changes.
+
+ - https://github.com/eclipse-ee4j/jakartaee-platform/blob/master/namespace/dependencies.json
+
+## Issues with dependencies.json
+
+This data should be considered a beginning.  There are two issues that need to be fixed for the data to be clean.
+
+ - Split packages.  It was taken from the jars in Maven Central under the jakarta namespace.  The ejb-api.jar also contains non-ejb classes such as `javax.xml.rpc.handler.Handler`.  This taints results showing EJB as dependent on `javax.xml.namespace.QName`.
+
+ - Java SE `javax` references still need to be filtered out.  In particular, `javax.management.ObjectName`, `javax.sql.DataSource` are Java SE and do not factor into any namespace discussions and therefore should be filtered out of the source data.
+
+## Initial Reports
+
+With the above caveats understood, some initial views:
+
+ - https://github.com/eclipse-ee4j/jakartaee-platform/blob/master/namespace/dependencies-classes-by-jar.adoc
+
+## Needed Analysis Reports
+
+ - Transitive view of each specs dependencies: if it is renamed, which specs are immediately and transitively affected.
+
+ - Which specifications can be renamed without affecting other specificiations.
+
+ - Given the most likely renames and factoring in transitive renames, how large is our most realistic "minimum" changeset.
+
+ - What is the delta between big-bang and incremental given our most realistic "minimum" changeset.
+ 

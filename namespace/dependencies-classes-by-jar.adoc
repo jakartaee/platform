@@ -1,0 +1,250 @@
+
+## jakarta.batch-api.jar
+
+ - javax.enterprise.util.Nonbinding
+ - javax.inject.Qualifier
+
+## jakarta.ejb-api.jar
+
+ - javax.naming.Context
+ - javax.transaction.UserTransaction
+ - javax.xml.namespace.QName
+
+## jakarta.enterprise.cdi-api.jar
+
+ - javax.el.ELResolver
+ - javax.el.ExpressionFactory
+ - javax.inject.Inject
+ - javax.inject.Named
+ - javax.inject.Provider
+ - javax.inject.Qualifier
+ - javax.inject.Scope
+ - javax.inject.Singleton
+ - javax.interceptor.InterceptorBinding
+ - javax.interceptor.InvocationContext
+
+## jakarta.faces-api.jar
+
+ - javax.el.ELContext
+ - javax.el.ELContextListener
+ - javax.el.ELException
+ - javax.el.ELResolver
+ - javax.el.ExpressionFactory
+ - javax.el.FunctionMapper
+ - javax.el.MethodExpression
+ - javax.el.ValueExpression
+ - javax.el.VariableMapper
+ - javax.enterprise.context.NormalScope
+ - javax.enterprise.inject.spi.CDI
+ - javax.enterprise.util.AnnotationLiteral
+ - javax.enterprise.util.Nonbinding
+ - javax.inject.Qualifier
+ - javax.servlet.Servlet
+ - javax.servlet.ServletConfig
+ - javax.servlet.ServletContext
+ - javax.servlet.ServletException
+ - javax.servlet.ServletRequest
+ - javax.servlet.ServletResponse
+ - javax.servlet.UnavailableException
+ - javax.servlet.annotation.MultipartConfig
+ - javax.servlet.http.HttpServletRequest
+ - javax.servlet.http.HttpServletResponse
+ - javax.servlet.jsp.JspException
+ - javax.servlet.jsp.JspWriter
+ - javax.servlet.jsp.PageContext
+ - javax.servlet.jsp.jstl.sql.Result
+ - javax.servlet.jsp.tagext.BodyContent
+ - javax.servlet.jsp.tagext.BodyTag
+ - javax.servlet.jsp.tagext.JspIdConsumer
+ - javax.servlet.jsp.tagext.JspTag
+ - javax.servlet.jsp.tagext.Tag
+ - javax.servlet.jsp.tagext.TagSupport
+ - javax.validation.MessageInterpolator
+ - javax.validation.MessageInterpolator$Context
+ - javax.validation.Validator
+ - javax.validation.ValidatorFactory
+ - javax.websocket.CloseReason$CloseCode
+
+## jakarta.jms-api.jar
+
+ - javax.transaction.xa.XAResource
+
+## jakarta.json.bind-api.jar
+
+ - javax.json.spi.JsonProvider
+ - javax.json.stream.JsonGenerator
+ - javax.json.stream.JsonParser
+
+## jakarta.mail-api.jar
+
+ - javax.activation.DataHandler
+ - javax.activation.DataSource
+ - javax.activation.FileDataSource
+
+## jakarta.management.j2ee-api.jar
+
+ - javax.ejb.CreateException
+ - javax.ejb.EJBHome
+ - javax.ejb.EJBObject
+ - javax.management.Attribute
+ - javax.management.AttributeList
+ - javax.management.AttributeNotFoundException
+ - javax.management.InstanceNotFoundException
+ - javax.management.IntrospectionException
+ - javax.management.InvalidAttributeValueException
+ - javax.management.ListenerNotFoundException
+ - javax.management.MBeanException
+ - javax.management.MBeanInfo
+ - javax.management.NotificationFilter
+ - javax.management.NotificationListener
+ - javax.management.ObjectName
+ - javax.management.QueryExp
+ - javax.management.ReflectionException
+
+## jakarta.persistence-api.jar
+
+ - javax.sql.DataSource
+
+## jakarta.resource-api.jar
+
+ - javax.naming.Reference
+ - javax.naming.Referenceable
+ - javax.security.auth.Subject
+ - javax.security.auth.callback.CallbackHandler
+ - javax.transaction.TransactionSynchronizationRegistry
+ - javax.transaction.xa.XAException
+ - javax.transaction.xa.XAResource
+ - javax.transaction.xa.Xid
+
+## jakarta.security.auth.message-api.jar
+
+ - javax.crypto.SecretKey
+ - javax.security.auth.Subject
+ - javax.security.auth.callback.Callback
+ - javax.security.auth.callback.CallbackHandler
+ - javax.security.auth.login.LoginException
+ - javax.security.auth.x500.X500Principal
+
+## jakarta.security.enterprise-api.jar
+
+ - javax.enterprise.util.Nonbinding
+ - javax.interceptor.InterceptorBinding
+ - javax.security.auth.Subject
+ - javax.security.auth.callback.CallbackHandler
+ - javax.security.auth.message.MessageInfo
+ - javax.servlet.http.HttpServletRequest
+ - javax.servlet.http.HttpServletResponse
+
+## jakarta.security.jacc-api.jar
+
+ - javax.servlet.http.HttpServletRequest
+
+## jakarta.servlet.jsp-api.jar
+
+ - javax.el.ELContext
+ - javax.el.ELContextListener
+ - javax.el.ELResolver
+ - javax.el.ExpressionFactory
+ - javax.servlet.Servlet
+ - javax.servlet.ServletConfig
+ - javax.servlet.ServletContext
+ - javax.servlet.ServletException
+ - javax.servlet.ServletRequest
+ - javax.servlet.ServletResponse
+ - javax.servlet.http.Cookie
+ - javax.servlet.http.HttpServletRequest
+ - javax.servlet.http.HttpServletResponse
+ - javax.servlet.http.HttpSession
+
+## jakarta.servlet.jsp.jstl-api.jar
+
+ - javax.el.ELContext
+ - javax.el.ValueExpression
+ - javax.servlet.ServletContext
+ - javax.servlet.ServletRequest
+ - javax.servlet.http.HttpServletRequest
+ - javax.servlet.http.HttpSession
+ - javax.servlet.jsp.JspException
+ - javax.servlet.jsp.JspTagException
+ - javax.servlet.jsp.PageContext
+ - javax.servlet.jsp.tagext.IterationTag
+ - javax.servlet.jsp.tagext.PageData
+ - javax.servlet.jsp.tagext.Tag
+ - javax.servlet.jsp.tagext.TagLibraryValidator
+ - javax.servlet.jsp.tagext.TagSupport
+ - javax.servlet.jsp.tagext.TryCatchFinally
+ - javax.servlet.jsp.tagext.ValidationMessage
+ - javax.xml.parsers.SAXParserFactory
+
+## jakarta.transaction-api.jar
+
+ - javax.enterprise.context.NormalScope
+ - javax.enterprise.util.Nonbinding
+ - javax.interceptor.InterceptorBinding
+ - javax.transaction.xa.XAResource
+
+## jakarta.ws.rs-api.jar
+
+ - javax.net.ssl.HostnameVerifier
+ - javax.net.ssl.SSLContext
+ - javax.xml.bind.annotation.XmlAnyAttribute
+ - javax.xml.bind.annotation.XmlAttribute
+ - javax.xml.bind.annotation.adapters.XmlAdapter
+ - javax.xml.namespace.QName
+
+## jakarta.xml.bind-api.jar
+
+ - javax.activation.DataHandler
+ - javax.xml.datatype.DatatypeFactory
+ - javax.xml.namespace.NamespaceContext
+ - javax.xml.namespace.QName
+ - javax.xml.parsers.DocumentBuilder
+ - javax.xml.stream.XMLEventReader
+ - javax.xml.stream.XMLEventWriter
+ - javax.xml.stream.XMLStreamReader
+ - javax.xml.stream.XMLStreamWriter
+ - javax.xml.transform.Result
+ - javax.xml.transform.Source
+ - javax.xml.transform.dom.DOMResult
+ - javax.xml.transform.sax.SAXResult
+ - javax.xml.transform.sax.SAXSource
+ - javax.xml.transform.stream.StreamSource
+ - javax.xml.validation.Schema
+
+## jakarta.xml.registry-api.jar
+
+ - javax.activation.DataHandler
+
+## jakarta.xml.rpc-api.jar
+
+ - javax.servlet.ServletContext
+ - javax.servlet.http.HttpSession
+ - javax.xml.namespace.QName
+ - javax.xml.soap.Detail
+ - javax.xml.soap.SOAPMessage
+
+## jakarta.xml.soap-api.jar
+
+ - javax.activation.DataHandler
+ - javax.xml.namespace.QName
+ - javax.xml.transform.Source
+ - javax.xml.transform.dom.DOMResult
+
+## jakarta.xml.ws-api.jar
+
+ - javax.xml.bind.JAXBContext
+ - javax.xml.bind.annotation.XmlAnyAttribute
+ - javax.xml.bind.annotation.XmlAnyElement
+ - javax.xml.bind.annotation.XmlElement
+ - javax.xml.bind.annotation.XmlRootElement
+ - javax.xml.bind.annotation.XmlSchema
+ - javax.xml.bind.annotation.XmlTransient
+ - javax.xml.bind.annotation.XmlType
+ - javax.xml.bind.annotation.XmlValue
+ - javax.xml.namespace.QName
+ - javax.xml.soap.MessageFactory
+ - javax.xml.soap.SOAPFactory
+ - javax.xml.soap.SOAPFault
+ - javax.xml.soap.SOAPMessage
+ - javax.xml.transform.Result
+ - javax.xml.transform.Source
