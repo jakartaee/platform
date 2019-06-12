@@ -18,6 +18,8 @@ This data should be considered a beginning.  There are two issues that need to b
 
 With the above caveats understood, some initial views:
 
+ - https://github.com/eclipse-ee4j/jakartaee-platform/blob/master/namespace/transitive-dependencies.adoc
+
  - https://github.com/eclipse-ee4j/jakartaee-platform/blob/master/namespace/dependencies-classes-by-jar.adoc
 
 ## Needed Analysis Reports
