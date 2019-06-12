@@ -1,3 +1,5 @@
+The following is a generated list of references to `javax` classes found outside the jar in question.  Some of these `javax` references are Java SE and therefore of no consequence.
+
 
 ## jakarta.batch-api.jar
 
