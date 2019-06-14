@@ -18,7 +18,7 @@ Pros:
 - Cheaper up front cost and reduced immediate noise -- gradual coordination and cost.
 - No need to move Specifications/APIs to `jakarta` unless there is a technical requirement.
 - Potential for less impact from API change overall -- minimize the API migration.
-- Easier to provide more functional Jakarta EE releases in an efficient manner
+- Easier to provide more functional Jakarta EE releases in an efficient manner.
 
 Cons:
 
@@ -27,6 +27,8 @@ Cons:
 - Difficulty in knowing whether a given API is in the `javax` or the `jakarta` namespace.
 - Transitive dependencies to other specifications makes this option harder for platform implementors although not for consumers.
 - Restrictions on what Java SE implementation can be used for certification
+- Additions in the jakarta namespace may not change the behavior of existing javax APIs in a way that would be incompatible with the Java EE specs.
+- Difficulty of adding new functionality without changing existing API.
 
 Decisions:
 
