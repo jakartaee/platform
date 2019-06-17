@@ -1,0 +1,675 @@
+= Simple
+
+The following 18 apis can be renamed without consequence to other javax packages
+
+ - javax.annotation
+ - javax.batch
+ - javax.decorator
+ - javax.enterprise.concurrent
+ - javax.enterprise.deploy
+ - javax.faces
+ - javax.jms
+ - javax.json.bind
+ - javax.jws
+ - javax.mail
+ - javax.management.j2ee
+ - javax.persistence
+ - javax.resource
+ - javax.security.enterprise
+ - javax.security.jacc
+ - javax.ws.rs
+ - javax.xml.registry
+ - javax.xml.ws
+
+= Complex
+
+The following 16 apis if renamed will transitively force other javax packages to be renamed
+
+== javax.json
+
+Forces the following 2 package renames, 60 classes total:
+
+ - javax.json
+ - javax.json.bind
+
+Due to the following 5 transitive references:
+
+ - javax.json.bind.JsonbBuilder -> javax.json.spi.JsonProvider
+ - javax.json.bind.serializer.DeserializationContext -> javax.json.stream.JsonParser
+ - javax.json.bind.serializer.JsonbDeserializer -> javax.json.stream.JsonParser
+ - javax.json.bind.serializer.JsonbSerializer -> javax.json.stream.JsonGenerator
+ - javax.json.bind.serializer.SerializationContext -> javax.json.stream.JsonGenerator
+
+== javax.security.auth.message
+
+Forces the following 2 package renames, 68 classes total:
+
+ - javax.security.auth.message
+ - javax.security.enterprise
+
+Due to the following 2 transitive references:
+
+ - javax.security.enterprise.authentication.mechanism.http.HttpMessageContext -> javax.security.auth.message.MessageInfo
+ - javax.security.enterprise.authentication.mechanism.http.HttpMessageContextWrapper -> javax.security.auth.message.MessageInfo
+
+== javax.ejb
+
+Forces the following 2 package renames, 114 classes total:
+
+ - javax.ejb
+ - javax.management.j2ee
+
+Due to the following 3 transitive references:
+
+ - javax.management.j2ee.Management -> javax.ejb.EJBObject
+ - javax.management.j2ee.ManagementHome -> javax.ejb.EJBHome
+ - javax.management.j2ee.ManagementHome -> javax.ejb.CreateException
+
+== javax.servlet.jsp.jstl
+
+Forces the following 2 package renames, 545 classes total:
+
+ - javax.servlet.jsp.jstl
+ - javax.faces
+
+Due to the following 1 transitive references:
+
+ - javax.faces.model.ResultDataModel -> javax.servlet.jsp.jstl.sql.Result
+
+== javax.websocket
+
+Forces the following 2 package renames, 577 classes total:
+
+ - javax.websocket
+ - javax.faces
+
+Due to the following 1 transitive references:
+
+ - javax.faces.event.WebsocketEvent -> javax.websocket.CloseReason$CloseCode
+
+== javax.validation
+
+Forces the following 2 package renames, 666 classes total:
+
+ - javax.validation
+ - javax.faces
+
+Due to the following 4 transitive references:
+
+ - javax.faces.validator.BeanValidator -> javax.validation.Validator
+ - javax.faces.validator.BeanValidator -> javax.validation.ValidatorFactory
+ - javax.faces.validator.BeanValidator$JsfAwareMessageInterpolator -> javax.validation.MessageInterpolator
+ - javax.faces.validator.BeanValidator$JsfAwareMessageInterpolator -> javax.validation.MessageInterpolator$Context
+
+== javax.xml.rpc
+
+Forces the following 3 package renames, 164 classes total:
+
+ - javax.xml.rpc
+ - javax.ejb
+ - javax.management.j2ee
+
+Due to the following 4 transitive references:
+
+ - javax.ejb.SessionContext -> javax.xml.rpc.handler.MessageContext
+ - javax.management.j2ee.Management -> javax.ejb.EJBObject
+ - javax.management.j2ee.ManagementHome -> javax.ejb.EJBHome
+ - javax.management.j2ee.ManagementHome -> javax.ejb.CreateException
+
+== javax.xml.bind
+
+Forces the following 3 package renames, 313 classes total:
+
+ - javax.xml.bind
+ - javax.ws.rs
+ - javax.xml.ws
+
+Due to the following 21 transitive references:
+
+ - javax.ws.rs.core.Link$JaxbAdapter -> javax.xml.bind.annotation.adapters.XmlAdapter
+ - javax.ws.rs.core.Link$JaxbLink -> javax.xml.bind.annotation.XmlAttribute
+ - javax.ws.rs.core.Link$JaxbLink -> javax.xml.bind.annotation.XmlAnyAttribute
+ - javax.xml.ws.EndpointReference -> javax.xml.bind.annotation.XmlTransient
+ - javax.xml.ws.LogicalMessage -> javax.xml.bind.JAXBContext
+ - javax.xml.ws.Service -> javax.xml.bind.JAXBContext
+ - javax.xml.ws.handler.soap.SOAPMessageContext -> javax.xml.bind.JAXBContext
+ - javax.xml.ws.spi.ServiceDelegate -> javax.xml.bind.JAXBContext
+ - javax.xml.ws.wsaddressing.W3CEndpointReference -> javax.xml.bind.annotation.XmlAnyElement
+ - javax.xml.ws.wsaddressing.W3CEndpointReference -> javax.xml.bind.annotation.XmlAnyAttribute
+ - javax.xml.ws.wsaddressing.W3CEndpointReference -> javax.xml.bind.annotation.XmlRootElement
+ - javax.xml.ws.wsaddressing.W3CEndpointReference -> javax.xml.bind.annotation.XmlType
+ - javax.xml.ws.wsaddressing.W3CEndpointReference -> javax.xml.bind.JAXBContext
+ - javax.xml.ws.wsaddressing.W3CEndpointReference -> javax.xml.bind.annotation.XmlElement
+ - javax.xml.ws.wsaddressing.W3CEndpointReference$Address -> javax.xml.bind.annotation.XmlType
+ - javax.xml.ws.wsaddressing.W3CEndpointReference$Address -> javax.xml.bind.annotation.XmlAnyAttribute
+ - javax.xml.ws.wsaddressing.W3CEndpointReference$Address -> javax.xml.bind.annotation.XmlValue
+ - javax.xml.ws.wsaddressing.W3CEndpointReference$Elements -> javax.xml.bind.annotation.XmlType
+ - javax.xml.ws.wsaddressing.W3CEndpointReference$Elements -> javax.xml.bind.annotation.XmlAnyElement
+ - javax.xml.ws.wsaddressing.W3CEndpointReference$Elements -> javax.xml.bind.annotation.XmlAnyAttribute
+ - javax.xml.ws.wsaddressing.package-info -> javax.xml.bind.annotation.XmlSchema
+
+== javax.servlet.jsp
+
+Forces the following 3 package renames, 603 classes total:
+
+ - javax.servlet.jsp
+ - javax.faces
+ - javax.servlet.jsp.jstl
+
+Due to the following 46 transitive references:
+
+ - javax.faces.webapp.AttributeTag -> javax.servlet.jsp.tagext.TagSupport
+ - javax.faces.webapp.AttributeTag -> javax.servlet.jsp.JspException
+ - javax.faces.webapp.ConverterELTag -> javax.servlet.jsp.tagext.TagSupport
+ - javax.faces.webapp.ConverterELTag -> javax.servlet.jsp.JspException
+ - javax.faces.webapp.ConverterTag -> javax.servlet.jsp.tagext.TagSupport
+ - javax.faces.webapp.ConverterTag -> javax.servlet.jsp.JspException
+ - javax.faces.webapp.FacetTag -> javax.servlet.jsp.tagext.TagSupport
+ - javax.faces.webapp.FacetTag -> javax.servlet.jsp.JspException
+ - javax.faces.webapp.UIComponentClassicTagBase -> javax.servlet.jsp.tagext.Tag
+ - javax.faces.webapp.UIComponentClassicTagBase -> javax.servlet.jsp.tagext.JspIdConsumer
+ - javax.faces.webapp.UIComponentClassicTagBase -> javax.servlet.jsp.tagext.BodyContent
+ - javax.faces.webapp.UIComponentClassicTagBase -> javax.servlet.jsp.PageContext
+ - javax.faces.webapp.UIComponentClassicTagBase -> javax.servlet.jsp.tagext.BodyTag
+ - javax.faces.webapp.UIComponentClassicTagBase -> javax.servlet.jsp.JspException
+ - javax.faces.webapp.UIComponentClassicTagBase -> javax.servlet.jsp.JspWriter
+ - javax.faces.webapp.UIComponentELTag -> javax.servlet.jsp.JspException
+ - javax.faces.webapp.UIComponentELTag -> javax.servlet.jsp.tagext.Tag
+ - javax.faces.webapp.UIComponentTag -> javax.servlet.jsp.PageContext
+ - javax.faces.webapp.UIComponentTag -> javax.servlet.jsp.JspException
+ - javax.faces.webapp.UIComponentTag -> javax.servlet.jsp.tagext.Tag
+ - javax.faces.webapp.UIComponentTag$UIComponentTagAdapter -> javax.servlet.jsp.JspException
+ - javax.faces.webapp.UIComponentTag$UIComponentTagAdapter -> javax.servlet.jsp.tagext.Tag
+ - javax.faces.webapp.UIComponentTagBase -> javax.servlet.jsp.tagext.JspTag
+ - javax.faces.webapp.ValidatorELTag -> javax.servlet.jsp.tagext.TagSupport
+ - javax.faces.webapp.ValidatorELTag -> javax.servlet.jsp.JspException
+ - javax.faces.webapp.ValidatorTag -> javax.servlet.jsp.tagext.TagSupport
+ - javax.faces.webapp.ValidatorTag -> javax.servlet.jsp.JspException
+ - javax.servlet.jsp.jstl.core.ConditionalTagSupport -> javax.servlet.jsp.tagext.TagSupport
+ - javax.faces.model.ResultDataModel -> javax.servlet.jsp.jstl.sql.Result
+ - javax.servlet.jsp.jstl.core.ConditionalTagSupport -> javax.servlet.jsp.JspException
+ - javax.servlet.jsp.jstl.core.ConditionalTagSupport -> javax.servlet.jsp.JspTagException
+ - javax.servlet.jsp.jstl.core.Config -> javax.servlet.jsp.PageContext
+ - javax.servlet.jsp.jstl.core.LoopTag -> javax.servlet.jsp.tagext.Tag
+ - javax.servlet.jsp.jstl.core.LoopTagSupport -> javax.servlet.jsp.JspException
+ - javax.servlet.jsp.jstl.core.LoopTagSupport -> javax.servlet.jsp.tagext.IterationTag
+ - javax.servlet.jsp.jstl.core.LoopTagSupport -> javax.servlet.jsp.tagext.TagSupport
+ - javax.servlet.jsp.jstl.core.LoopTagSupport -> javax.servlet.jsp.JspTagException
+ - javax.servlet.jsp.jstl.core.LoopTagSupport -> javax.servlet.jsp.tagext.TryCatchFinally
+ - javax.servlet.jsp.jstl.fmt.LocaleSupport -> javax.servlet.jsp.PageContext
+ - javax.servlet.jsp.jstl.tlv.PermittedTaglibsTLV -> javax.servlet.jsp.tagext.TagLibraryValidator
+ - javax.servlet.jsp.jstl.tlv.PermittedTaglibsTLV -> javax.servlet.jsp.tagext.PageData
+ - javax.servlet.jsp.jstl.tlv.PermittedTaglibsTLV -> javax.servlet.jsp.tagext.ValidationMessage
+ - javax.servlet.jsp.jstl.tlv.ScriptFreeTLV -> javax.servlet.jsp.tagext.TagLibraryValidator
+ - javax.servlet.jsp.jstl.tlv.ScriptFreeTLV -> javax.servlet.jsp.tagext.PageData
+ - javax.servlet.jsp.jstl.tlv.ScriptFreeTLV -> javax.servlet.jsp.tagext.ValidationMessage
+ - javax.servlet.jsp.jstl.tlv.ScriptFreeTLV$MyContentHandler -> javax.servlet.jsp.tagext.ValidationMessage
+
+== javax.transaction
+
+Forces the following 4 package renames, 222 classes total:
+
+ - javax.transaction
+ - javax.ejb
+ - javax.management.j2ee
+ - javax.resource
+
+Due to the following 5 transitive references:
+
+ - javax.ejb.EJBContext -> javax.transaction.UserTransaction
+ - javax.management.j2ee.Management -> javax.ejb.EJBObject
+ - javax.management.j2ee.ManagementHome -> javax.ejb.EJBHome
+ - javax.management.j2ee.ManagementHome -> javax.ejb.CreateException
+ - javax.resource.spi.BootstrapContext -> javax.transaction.TransactionSynchronizationRegistry
+
+== javax.xml.soap
+
+Forces the following 5 package renames, 263 classes total:
+
+ - javax.xml.soap
+ - javax.xml.rpc
+ - javax.ejb
+ - javax.management.j2ee
+ - javax.xml.ws
+
+Due to the following 10 transitive references:
+
+ - javax.xml.rpc.handler.soap.SOAPMessageContext -> javax.xml.soap.SOAPMessage
+ - javax.ejb.SessionContext -> javax.xml.rpc.handler.MessageContext
+ - javax.management.j2ee.Management -> javax.ejb.EJBObject
+ - javax.management.j2ee.ManagementHome -> javax.ejb.EJBHome
+ - javax.management.j2ee.ManagementHome -> javax.ejb.CreateException
+ - javax.xml.rpc.soap.SOAPFaultException -> javax.xml.soap.Detail
+ - javax.xml.ws.handler.soap.SOAPMessageContext -> javax.xml.soap.SOAPMessage
+ - javax.xml.ws.soap.SOAPBinding -> javax.xml.soap.MessageFactory
+ - javax.xml.ws.soap.SOAPBinding -> javax.xml.soap.SOAPFactory
+ - javax.xml.ws.soap.SOAPFaultException -> javax.xml.soap.SOAPFault
+
+== javax.servlet
+
+Forces the following 9 package renames, 899 classes total:
+
+ - javax.servlet
+ - javax.faces
+ - javax.security.enterprise
+ - javax.security.jacc
+ - javax.servlet.jsp
+ - javax.servlet.jsp.jstl
+ - javax.xml.rpc
+ - javax.ejb
+ - javax.management.j2ee
+
+Due to the following 97 transitive references:
+
+ - javax.faces.ServletContextFacesContextFactory -> javax.servlet.ServletContext
+ - javax.faces.webapp.FacesServlet -> javax.servlet.annotation.MultipartConfig
+ - javax.faces.webapp.FacesServlet -> javax.servlet.ServletException
+ - javax.faces.webapp.FacesServlet -> javax.servlet.http.HttpServletRequest
+ - javax.faces.webapp.FacesServlet -> javax.servlet.ServletRequest
+ - javax.faces.webapp.FacesServlet -> javax.servlet.ServletConfig
+ - javax.faces.webapp.FacesServlet -> javax.servlet.Servlet
+ - javax.faces.webapp.FacesServlet -> javax.servlet.http.HttpServletResponse
+ - javax.faces.webapp.FacesServlet -> javax.servlet.UnavailableException
+ - javax.faces.webapp.FacesServlet -> javax.servlet.ServletResponse
+ - javax.security.enterprise.SecurityContext -> javax.servlet.http.HttpServletRequest
+ - javax.security.enterprise.SecurityContext -> javax.servlet.http.HttpServletResponse
+ - javax.security.enterprise.authentication.mechanism.http.HttpAuthenticationMechanism -> javax.servlet.http.HttpServletResponse
+ - javax.security.enterprise.authentication.mechanism.http.HttpAuthenticationMechanism -> javax.servlet.http.HttpServletRequest
+ - javax.security.enterprise.authentication.mechanism.http.HttpMessageContext -> javax.servlet.http.HttpServletResponse
+ - javax.security.enterprise.authentication.mechanism.http.HttpMessageContext -> javax.servlet.http.HttpServletRequest
+ - javax.security.enterprise.authentication.mechanism.http.HttpMessageContextWrapper -> javax.servlet.http.HttpServletResponse
+ - javax.security.enterprise.authentication.mechanism.http.HttpMessageContextWrapper -> javax.servlet.http.HttpServletRequest
+ - javax.security.jacc.WebResourcePermission -> javax.servlet.http.HttpServletRequest
+ - javax.security.jacc.WebUserDataPermission -> javax.servlet.http.HttpServletRequest
+ - javax.servlet.jsp.HttpJspPage -> javax.servlet.http.HttpServletRequest
+ - javax.faces.webapp.AttributeTag -> javax.servlet.jsp.tagext.TagSupport
+ - javax.faces.webapp.AttributeTag -> javax.servlet.jsp.JspException
+ - javax.faces.webapp.ConverterELTag -> javax.servlet.jsp.tagext.TagSupport
+ - javax.faces.webapp.ConverterELTag -> javax.servlet.jsp.JspException
+ - javax.faces.webapp.ConverterTag -> javax.servlet.jsp.tagext.TagSupport
+ - javax.faces.webapp.ConverterTag -> javax.servlet.jsp.JspException
+ - javax.faces.webapp.FacetTag -> javax.servlet.jsp.tagext.TagSupport
+ - javax.faces.webapp.FacetTag -> javax.servlet.jsp.JspException
+ - javax.faces.webapp.UIComponentClassicTagBase -> javax.servlet.jsp.tagext.Tag
+ - javax.faces.webapp.UIComponentClassicTagBase -> javax.servlet.jsp.tagext.JspIdConsumer
+ - javax.faces.webapp.UIComponentClassicTagBase -> javax.servlet.jsp.tagext.BodyContent
+ - javax.faces.webapp.UIComponentClassicTagBase -> javax.servlet.jsp.PageContext
+ - javax.faces.webapp.UIComponentClassicTagBase -> javax.servlet.jsp.tagext.BodyTag
+ - javax.faces.webapp.UIComponentClassicTagBase -> javax.servlet.jsp.JspException
+ - javax.faces.webapp.UIComponentClassicTagBase -> javax.servlet.jsp.JspWriter
+ - javax.faces.webapp.UIComponentELTag -> javax.servlet.jsp.JspException
+ - javax.faces.webapp.UIComponentELTag -> javax.servlet.jsp.tagext.Tag
+ - javax.faces.webapp.UIComponentTag -> javax.servlet.jsp.PageContext
+ - javax.faces.webapp.UIComponentTag -> javax.servlet.jsp.JspException
+ - javax.faces.webapp.UIComponentTag -> javax.servlet.jsp.tagext.Tag
+ - javax.faces.webapp.UIComponentTag$UIComponentTagAdapter -> javax.servlet.jsp.JspException
+ - javax.faces.webapp.UIComponentTag$UIComponentTagAdapter -> javax.servlet.jsp.tagext.Tag
+ - javax.faces.webapp.UIComponentTagBase -> javax.servlet.jsp.tagext.JspTag
+ - javax.faces.webapp.ValidatorELTag -> javax.servlet.jsp.tagext.TagSupport
+ - javax.faces.webapp.ValidatorELTag -> javax.servlet.jsp.JspException
+ - javax.faces.webapp.ValidatorTag -> javax.servlet.jsp.tagext.TagSupport
+ - javax.faces.webapp.ValidatorTag -> javax.servlet.jsp.JspException
+ - javax.servlet.jsp.jstl.core.ConditionalTagSupport -> javax.servlet.jsp.tagext.TagSupport
+ - javax.faces.model.ResultDataModel -> javax.servlet.jsp.jstl.sql.Result
+ - javax.servlet.jsp.jstl.core.ConditionalTagSupport -> javax.servlet.jsp.JspException
+ - javax.servlet.jsp.jstl.core.ConditionalTagSupport -> javax.servlet.jsp.JspTagException
+ - javax.servlet.jsp.jstl.core.Config -> javax.servlet.jsp.PageContext
+ - javax.servlet.jsp.jstl.core.LoopTag -> javax.servlet.jsp.tagext.Tag
+ - javax.servlet.jsp.jstl.core.LoopTagSupport -> javax.servlet.jsp.JspException
+ - javax.servlet.jsp.jstl.core.LoopTagSupport -> javax.servlet.jsp.tagext.IterationTag
+ - javax.servlet.jsp.jstl.core.LoopTagSupport -> javax.servlet.jsp.tagext.TagSupport
+ - javax.servlet.jsp.jstl.core.LoopTagSupport -> javax.servlet.jsp.JspTagException
+ - javax.servlet.jsp.jstl.core.LoopTagSupport -> javax.servlet.jsp.tagext.TryCatchFinally
+ - javax.servlet.jsp.jstl.fmt.LocaleSupport -> javax.servlet.jsp.PageContext
+ - javax.servlet.jsp.jstl.tlv.PermittedTaglibsTLV -> javax.servlet.jsp.tagext.TagLibraryValidator
+ - javax.servlet.jsp.jstl.tlv.PermittedTaglibsTLV -> javax.servlet.jsp.tagext.PageData
+ - javax.servlet.jsp.jstl.tlv.PermittedTaglibsTLV -> javax.servlet.jsp.tagext.ValidationMessage
+ - javax.servlet.jsp.jstl.tlv.ScriptFreeTLV -> javax.servlet.jsp.tagext.TagLibraryValidator
+ - javax.servlet.jsp.jstl.tlv.ScriptFreeTLV -> javax.servlet.jsp.tagext.PageData
+ - javax.servlet.jsp.jstl.tlv.ScriptFreeTLV -> javax.servlet.jsp.tagext.ValidationMessage
+ - javax.servlet.jsp.jstl.tlv.ScriptFreeTLV$MyContentHandler -> javax.servlet.jsp.tagext.ValidationMessage
+ - javax.servlet.jsp.HttpJspPage -> javax.servlet.ServletException
+ - javax.servlet.jsp.HttpJspPage -> javax.servlet.http.HttpServletResponse
+ - javax.servlet.jsp.JspFactory -> javax.servlet.ServletRequest
+ - javax.servlet.jsp.JspFactory -> javax.servlet.ServletResponse
+ - javax.servlet.jsp.JspFactory -> javax.servlet.Servlet
+ - javax.servlet.jsp.JspFactory -> javax.servlet.ServletContext
+ - javax.servlet.jsp.JspPage -> javax.servlet.Servlet
+ - javax.servlet.jsp.PageContext -> javax.servlet.http.HttpSession
+ - javax.servlet.jsp.PageContext -> javax.servlet.ServletRequest
+ - javax.servlet.jsp.PageContext -> javax.servlet.ServletConfig
+ - javax.servlet.jsp.PageContext -> javax.servlet.ServletException
+ - javax.servlet.jsp.PageContext -> javax.servlet.Servlet
+ - javax.servlet.jsp.PageContext -> javax.servlet.ServletResponse
+ - javax.servlet.jsp.PageContext -> javax.servlet.ServletContext
+ - javax.servlet.jsp.el.ImplicitObjectELResolver$ImplicitObjects -> javax.servlet.http.Cookie
+ - javax.servlet.jsp.el.ImplicitObjectELResolver$ImplicitObjects$5 -> javax.servlet.http.HttpServletRequest
+ - javax.servlet.jsp.el.ImplicitObjectELResolver$ImplicitObjects$6 -> javax.servlet.http.HttpServletRequest
+ - javax.servlet.jsp.el.ImplicitObjectELResolver$ImplicitObjects$7 -> javax.servlet.http.HttpServletRequest
+ - javax.servlet.jsp.el.ImplicitObjectELResolver$ImplicitObjects$8 -> javax.servlet.http.HttpServletRequest
+ - javax.servlet.jsp.el.ImplicitObjectELResolver$ImplicitObjects$9 -> javax.servlet.ServletContext
+ - javax.servlet.jsp.jstl.core.Config -> javax.servlet.http.HttpSession
+ - javax.servlet.jsp.jstl.core.Config -> javax.servlet.ServletRequest
+ - javax.servlet.jsp.jstl.core.Config -> javax.servlet.ServletContext
+ - javax.servlet.jsp.jstl.fmt.LocaleSupport -> javax.servlet.http.HttpServletRequest
+ - javax.xml.rpc.server.ServletEndpointContext -> javax.servlet.http.HttpSession
+ - javax.ejb.SessionContext -> javax.xml.rpc.handler.MessageContext
+ - javax.management.j2ee.Management -> javax.ejb.EJBObject
+ - javax.management.j2ee.ManagementHome -> javax.ejb.EJBHome
+ - javax.management.j2ee.ManagementHome -> javax.ejb.CreateException
+ - javax.xml.rpc.server.ServletEndpointContext -> javax.servlet.ServletContext
+
+== javax.enterprise
+
+Forces the following 9 package renames, 986 classes total:
+
+ - javax.enterprise
+ - javax.batch
+ - javax.decorator
+ - javax.faces
+ - javax.security.enterprise
+ - javax.transaction
+ - javax.ejb
+ - javax.management.j2ee
+ - javax.resource
+
+Due to the following 20 transitive references:
+
+ - javax.batch.api.BatchProperty -> javax.enterprise.util.Nonbinding
+ - javax.decorator.Decorator -> javax.enterprise.inject.Stereotype
+ - javax.faces.annotation.FacesConfig -> javax.enterprise.util.Nonbinding
+ - javax.faces.annotation.ManagedProperty -> javax.enterprise.util.Nonbinding
+ - javax.faces.component.UIData -> javax.enterprise.inject.spi.CDI
+ - javax.faces.component.UIData$FacesDataModelAnnotationLiteral -> javax.enterprise.util.AnnotationLiteral
+ - javax.faces.flow.FlowScoped -> javax.enterprise.context.NormalScope
+ - javax.faces.push.Push -> javax.enterprise.util.Nonbinding
+ - javax.faces.view.ViewScoped -> javax.enterprise.context.NormalScope
+ - javax.security.enterprise.authentication.mechanism.http.CustomFormAuthenticationMechanismDefinition -> javax.enterprise.util.Nonbinding
+ - javax.security.enterprise.authentication.mechanism.http.FormAuthenticationMechanismDefinition -> javax.enterprise.util.Nonbinding
+ - javax.security.enterprise.authentication.mechanism.http.LoginToContinue -> javax.enterprise.util.Nonbinding
+ - javax.security.enterprise.authentication.mechanism.http.RememberMe -> javax.enterprise.util.Nonbinding
+ - javax.transaction.TransactionScoped -> javax.enterprise.context.NormalScope
+ - javax.ejb.EJBContext -> javax.transaction.UserTransaction
+ - javax.management.j2ee.Management -> javax.ejb.EJBObject
+ - javax.management.j2ee.ManagementHome -> javax.ejb.EJBHome
+ - javax.management.j2ee.ManagementHome -> javax.ejb.CreateException
+ - javax.resource.spi.BootstrapContext -> javax.transaction.TransactionSynchronizationRegistry
+ - javax.transaction.Transactional -> javax.enterprise.util.Nonbinding
+
+== javax.activation
+
+Forces the following 10 package renames, 730 classes total:
+
+ - javax.activation
+ - javax.mail
+ - javax.xml.bind
+ - javax.ws.rs
+ - javax.xml.ws
+ - javax.xml.registry
+ - javax.xml.soap
+ - javax.xml.rpc
+ - javax.ejb
+ - javax.management.j2ee
+
+Due to the following 48 transitive references:
+
+ - javax.mail.MultipartDataSource -> javax.activation.DataSource
+ - javax.mail.Part -> javax.activation.DataHandler
+ - javax.mail.internet.MimeBodyPart -> javax.activation.DataHandler
+ - javax.mail.internet.MimeBodyPart$EncodedFileDataSource -> javax.activation.FileDataSource
+ - javax.mail.internet.MimeBodyPart$MimePartDataHandler -> javax.activation.DataHandler
+ - javax.mail.internet.MimeMessage -> javax.activation.DataHandler
+ - javax.mail.internet.MimeMultipart -> javax.activation.DataSource
+ - javax.mail.internet.MimePartDataSource -> javax.activation.DataSource
+ - javax.mail.internet.MimeUtility -> javax.activation.DataSource
+ - javax.mail.internet.MimeUtility -> javax.activation.DataHandler
+ - javax.mail.util.ByteArrayDataSource -> javax.activation.DataSource
+ - javax.xml.bind.attachment.AttachmentMarshaller -> javax.activation.DataHandler
+ - javax.ws.rs.core.Link$JaxbAdapter -> javax.xml.bind.annotation.adapters.XmlAdapter
+ - javax.ws.rs.core.Link$JaxbLink -> javax.xml.bind.annotation.XmlAttribute
+ - javax.ws.rs.core.Link$JaxbLink -> javax.xml.bind.annotation.XmlAnyAttribute
+ - javax.xml.ws.EndpointReference -> javax.xml.bind.annotation.XmlTransient
+ - javax.xml.ws.LogicalMessage -> javax.xml.bind.JAXBContext
+ - javax.xml.ws.Service -> javax.xml.bind.JAXBContext
+ - javax.xml.ws.handler.soap.SOAPMessageContext -> javax.xml.bind.JAXBContext
+ - javax.xml.ws.spi.ServiceDelegate -> javax.xml.bind.JAXBContext
+ - javax.xml.ws.wsaddressing.W3CEndpointReference -> javax.xml.bind.annotation.XmlAnyElement
+ - javax.xml.ws.wsaddressing.W3CEndpointReference -> javax.xml.bind.annotation.XmlAnyAttribute
+ - javax.xml.ws.wsaddressing.W3CEndpointReference -> javax.xml.bind.annotation.XmlRootElement
+ - javax.xml.ws.wsaddressing.W3CEndpointReference -> javax.xml.bind.annotation.XmlType
+ - javax.xml.ws.wsaddressing.W3CEndpointReference -> javax.xml.bind.JAXBContext
+ - javax.xml.ws.wsaddressing.W3CEndpointReference -> javax.xml.bind.annotation.XmlElement
+ - javax.xml.ws.wsaddressing.W3CEndpointReference$Address -> javax.xml.bind.annotation.XmlType
+ - javax.xml.ws.wsaddressing.W3CEndpointReference$Address -> javax.xml.bind.annotation.XmlAnyAttribute
+ - javax.xml.ws.wsaddressing.W3CEndpointReference$Address -> javax.xml.bind.annotation.XmlValue
+ - javax.xml.ws.wsaddressing.W3CEndpointReference$Elements -> javax.xml.bind.annotation.XmlType
+ - javax.xml.ws.wsaddressing.W3CEndpointReference$Elements -> javax.xml.bind.annotation.XmlAnyElement
+ - javax.xml.ws.wsaddressing.W3CEndpointReference$Elements -> javax.xml.bind.annotation.XmlAnyAttribute
+ - javax.xml.ws.wsaddressing.package-info -> javax.xml.bind.annotation.XmlSchema
+ - javax.xml.bind.attachment.AttachmentUnmarshaller -> javax.activation.DataHandler
+ - javax.xml.registry.LifeCycleManager -> javax.activation.DataHandler
+ - javax.xml.registry.infomodel.ExtrinsicObject -> javax.activation.DataHandler
+ - javax.xml.soap.AttachmentPart -> javax.activation.DataHandler
+ - javax.xml.rpc.handler.soap.SOAPMessageContext -> javax.xml.soap.SOAPMessage
+ - javax.ejb.SessionContext -> javax.xml.rpc.handler.MessageContext
+ - javax.management.j2ee.Management -> javax.ejb.EJBObject
+ - javax.management.j2ee.ManagementHome -> javax.ejb.EJBHome
+ - javax.management.j2ee.ManagementHome -> javax.ejb.CreateException
+ - javax.xml.rpc.soap.SOAPFaultException -> javax.xml.soap.Detail
+ - javax.xml.ws.handler.soap.SOAPMessageContext -> javax.xml.soap.SOAPMessage
+ - javax.xml.ws.soap.SOAPBinding -> javax.xml.soap.MessageFactory
+ - javax.xml.ws.soap.SOAPBinding -> javax.xml.soap.SOAPFactory
+ - javax.xml.ws.soap.SOAPFaultException -> javax.xml.soap.SOAPFault
+ - javax.xml.soap.SOAPMessage -> javax.activation.DataHandler
+
+== javax.interceptor
+
+Forces the following 10 package renames, 996 classes total:
+
+ - javax.interceptor
+ - javax.enterprise
+ - javax.batch
+ - javax.decorator
+ - javax.faces
+ - javax.security.enterprise
+ - javax.transaction
+ - javax.ejb
+ - javax.management.j2ee
+ - javax.resource
+
+Due to the following 26 transitive references:
+
+ - javax.enterprise.context.control.ActivateRequestContext -> javax.interceptor.InterceptorBinding
+ - javax.batch.api.BatchProperty -> javax.enterprise.util.Nonbinding
+ - javax.decorator.Decorator -> javax.enterprise.inject.Stereotype
+ - javax.faces.annotation.FacesConfig -> javax.enterprise.util.Nonbinding
+ - javax.faces.annotation.ManagedProperty -> javax.enterprise.util.Nonbinding
+ - javax.faces.component.UIData -> javax.enterprise.inject.spi.CDI
+ - javax.faces.component.UIData$FacesDataModelAnnotationLiteral -> javax.enterprise.util.AnnotationLiteral
+ - javax.faces.flow.FlowScoped -> javax.enterprise.context.NormalScope
+ - javax.faces.push.Push -> javax.enterprise.util.Nonbinding
+ - javax.faces.view.ViewScoped -> javax.enterprise.context.NormalScope
+ - javax.security.enterprise.authentication.mechanism.http.CustomFormAuthenticationMechanismDefinition -> javax.enterprise.util.Nonbinding
+ - javax.security.enterprise.authentication.mechanism.http.FormAuthenticationMechanismDefinition -> javax.enterprise.util.Nonbinding
+ - javax.security.enterprise.authentication.mechanism.http.LoginToContinue -> javax.enterprise.util.Nonbinding
+ - javax.security.enterprise.authentication.mechanism.http.RememberMe -> javax.enterprise.util.Nonbinding
+ - javax.transaction.TransactionScoped -> javax.enterprise.context.NormalScope
+ - javax.ejb.EJBContext -> javax.transaction.UserTransaction
+ - javax.management.j2ee.Management -> javax.ejb.EJBObject
+ - javax.management.j2ee.ManagementHome -> javax.ejb.EJBHome
+ - javax.management.j2ee.ManagementHome -> javax.ejb.CreateException
+ - javax.resource.spi.BootstrapContext -> javax.transaction.TransactionSynchronizationRegistry
+ - javax.transaction.Transactional -> javax.enterprise.util.Nonbinding
+ - javax.enterprise.inject.spi.Interceptor -> javax.interceptor.InvocationContext
+ - javax.security.enterprise.authentication.mechanism.http.AutoApplySession -> javax.interceptor.InterceptorBinding
+ - javax.security.enterprise.authentication.mechanism.http.LoginToContinue -> javax.interceptor.InterceptorBinding
+ - javax.security.enterprise.authentication.mechanism.http.RememberMe -> javax.interceptor.InterceptorBinding
+ - javax.transaction.Transactional -> javax.interceptor.InterceptorBinding
+
+== javax.el
+
+Forces the following 12 package renames, 1115 classes total:
+
+ - javax.el
+ - javax.enterprise
+ - javax.batch
+ - javax.decorator
+ - javax.faces
+ - javax.security.enterprise
+ - javax.transaction
+ - javax.ejb
+ - javax.management.j2ee
+ - javax.resource
+ - javax.servlet.jsp
+ - javax.servlet.jsp.jstl
+
+Due to the following 147 transitive references:
+
+ - javax.enterprise.inject.spi.BeanManager -> javax.el.ExpressionFactory
+ - javax.batch.api.BatchProperty -> javax.enterprise.util.Nonbinding
+ - javax.decorator.Decorator -> javax.enterprise.inject.Stereotype
+ - javax.faces.annotation.FacesConfig -> javax.enterprise.util.Nonbinding
+ - javax.faces.annotation.ManagedProperty -> javax.enterprise.util.Nonbinding
+ - javax.faces.component.UIData -> javax.enterprise.inject.spi.CDI
+ - javax.faces.component.UIData$FacesDataModelAnnotationLiteral -> javax.enterprise.util.AnnotationLiteral
+ - javax.faces.flow.FlowScoped -> javax.enterprise.context.NormalScope
+ - javax.faces.push.Push -> javax.enterprise.util.Nonbinding
+ - javax.faces.view.ViewScoped -> javax.enterprise.context.NormalScope
+ - javax.security.enterprise.authentication.mechanism.http.CustomFormAuthenticationMechanismDefinition -> javax.enterprise.util.Nonbinding
+ - javax.security.enterprise.authentication.mechanism.http.FormAuthenticationMechanismDefinition -> javax.enterprise.util.Nonbinding
+ - javax.security.enterprise.authentication.mechanism.http.LoginToContinue -> javax.enterprise.util.Nonbinding
+ - javax.security.enterprise.authentication.mechanism.http.RememberMe -> javax.enterprise.util.Nonbinding
+ - javax.transaction.TransactionScoped -> javax.enterprise.context.NormalScope
+ - javax.ejb.EJBContext -> javax.transaction.UserTransaction
+ - javax.management.j2ee.Management -> javax.ejb.EJBObject
+ - javax.management.j2ee.ManagementHome -> javax.ejb.EJBHome
+ - javax.management.j2ee.ManagementHome -> javax.ejb.CreateException
+ - javax.resource.spi.BootstrapContext -> javax.transaction.TransactionSynchronizationRegistry
+ - javax.transaction.Transactional -> javax.enterprise.util.Nonbinding
+ - javax.enterprise.inject.spi.BeanManager -> javax.el.ELResolver
+ - javax.faces.application.Application -> javax.el.ELContextListener
+ - javax.faces.application.Application -> javax.el.ELException
+ - javax.faces.application.Application -> javax.el.ExpressionFactory
+ - javax.faces.application.Application -> javax.el.ELResolver
+ - javax.faces.application.Application -> javax.el.ValueExpression
+ - javax.faces.application.ApplicationWrapper -> javax.el.ELContextListener
+ - javax.faces.application.ApplicationWrapper -> javax.el.ELException
+ - javax.faces.application.ApplicationWrapper -> javax.el.ExpressionFactory
+ - javax.faces.application.ApplicationWrapper -> javax.el.ELResolver
+ - javax.faces.application.ApplicationWrapper -> javax.el.ValueExpression
+ - javax.faces.application.NavigationCase -> javax.el.ValueExpression
+ - javax.faces.component.ActionSource2 -> javax.el.MethodExpression
+ - javax.faces.component.SelectItemsIterator$GenericObjectSelectItemIterator$GenericObjectSelectItem -> javax.el.ValueExpression
+ - javax.faces.component.UICommand -> javax.el.MethodExpression
+ - javax.faces.component.UIComponent -> javax.el.ValueExpression
+ - javax.faces.component.UIComponentBase -> javax.el.ValueExpression
+ - javax.faces.component.UIData -> javax.el.ValueExpression
+ - javax.faces.component.UIGraphic -> javax.el.ValueExpression
+ - javax.faces.component.UIImportConstants -> javax.el.ValueExpression
+ - javax.faces.component.UISelectBoolean -> javax.el.ValueExpression
+ - javax.faces.component.UISelectMany -> javax.el.ValueExpression
+ - javax.faces.component.UIViewAction -> javax.el.MethodExpression
+ - javax.faces.component.UIViewRoot -> javax.el.MethodExpression
+ - javax.faces.component.UIWebsocket -> javax.el.ValueExpression
+ - javax.faces.component.behavior.AjaxBehavior -> javax.el.ValueExpression
+ - javax.faces.context.FacesContext -> javax.el.ELContext
+ - javax.faces.context.FacesContextWrapper -> javax.el.ELContext
+ - javax.faces.el.CompositeComponentExpressionHolder -> javax.el.ValueExpression
+ - javax.faces.event.MethodExpressionActionListener -> javax.el.MethodExpression
+ - javax.faces.event.MethodExpressionValueChangeListener -> javax.el.MethodExpression
+ - javax.faces.flow.Flow -> javax.el.MethodExpression
+ - javax.faces.flow.MethodCallNode -> javax.el.ValueExpression
+ - javax.faces.flow.MethodCallNode -> javax.el.MethodExpression
+ - javax.faces.flow.Parameter -> javax.el.ValueExpression
+ - javax.faces.flow.builder.FlowBuilder -> javax.el.MethodExpression
+ - javax.faces.flow.builder.FlowBuilder -> javax.el.ValueExpression
+ - javax.faces.flow.builder.FlowCallBuilder -> javax.el.ValueExpression
+ - javax.faces.flow.builder.MethodCallBuilder -> javax.el.MethodExpression
+ - javax.faces.flow.builder.MethodCallBuilder -> javax.el.ValueExpression
+ - javax.faces.flow.builder.NavigationCaseBuilder -> javax.el.ValueExpression
+ - javax.faces.flow.builder.ReturnBuilder -> javax.el.ValueExpression
+ - javax.faces.flow.builder.SwitchBuilder -> javax.el.ValueExpression
+ - javax.faces.flow.builder.SwitchCaseBuilder -> javax.el.ValueExpression
+ - javax.faces.validator.BeanValidator -> javax.el.ValueExpression
+ - javax.faces.validator.MethodExpressionValidator -> javax.el.MethodExpression
+ - javax.faces.validator.ValueExpressionAnalyzer -> javax.el.ValueExpression
+ - javax.faces.validator.ValueExpressionAnalyzer -> javax.el.ELContext
+ - javax.faces.validator.ValueExpressionAnalyzer -> javax.el.ELResolver
+ - javax.faces.validator.ValueExpressionAnalyzer$1 -> javax.el.FunctionMapper
+ - javax.faces.validator.ValueExpressionAnalyzer$1 -> javax.el.ELContext
+ - javax.faces.validator.ValueExpressionAnalyzer$1 -> javax.el.ELResolver
+ - javax.faces.validator.ValueExpressionAnalyzer$1 -> javax.el.VariableMapper
+ - javax.faces.validator.ValueExpressionAnalyzer$InterceptingResolver -> javax.el.ELContext
+ - javax.faces.validator.ValueExpressionAnalyzer$InterceptingResolver -> javax.el.ELResolver
+ - javax.faces.view.facelets.DelegatingMetaTagHandler -> javax.el.ELException
+ - javax.faces.view.facelets.FaceletContext -> javax.el.ExpressionFactory
+ - javax.faces.view.facelets.FaceletContext -> javax.el.FunctionMapper
+ - javax.faces.view.facelets.FaceletContext -> javax.el.ELContext
+ - javax.faces.view.facelets.FaceletContext -> javax.el.VariableMapper
+ - javax.faces.view.facelets.TagAttribute -> javax.el.MethodExpression
+ - javax.faces.view.facelets.TagAttribute -> javax.el.ValueExpression
+ - javax.faces.webapp.UIComponentELTag -> javax.el.ValueExpression
+ - javax.faces.webapp.UIComponentELTag -> javax.el.ELContext
+ - javax.faces.webapp.UIComponentTagBase -> javax.el.ELContext
+ - javax.servlet.jsp.JspApplicationContext -> javax.el.ExpressionFactory
+ - javax.faces.webapp.AttributeTag -> javax.servlet.jsp.tagext.TagSupport
+ - javax.faces.webapp.AttributeTag -> javax.servlet.jsp.JspException
+ - javax.faces.webapp.ConverterELTag -> javax.servlet.jsp.tagext.TagSupport
+ - javax.faces.webapp.ConverterELTag -> javax.servlet.jsp.JspException
+ - javax.faces.webapp.ConverterTag -> javax.servlet.jsp.tagext.TagSupport
+ - javax.faces.webapp.ConverterTag -> javax.servlet.jsp.JspException
+ - javax.faces.webapp.FacetTag -> javax.servlet.jsp.tagext.TagSupport
+ - javax.faces.webapp.FacetTag -> javax.servlet.jsp.JspException
+ - javax.faces.webapp.UIComponentClassicTagBase -> javax.servlet.jsp.tagext.Tag
+ - javax.faces.webapp.UIComponentClassicTagBase -> javax.servlet.jsp.tagext.JspIdConsumer
+ - javax.faces.webapp.UIComponentClassicTagBase -> javax.servlet.jsp.tagext.BodyContent
+ - javax.faces.webapp.UIComponentClassicTagBase -> javax.servlet.jsp.PageContext
+ - javax.faces.webapp.UIComponentClassicTagBase -> javax.servlet.jsp.tagext.BodyTag
+ - javax.faces.webapp.UIComponentClassicTagBase -> javax.servlet.jsp.JspException
+ - javax.faces.webapp.UIComponentClassicTagBase -> javax.servlet.jsp.JspWriter
+ - javax.faces.webapp.UIComponentELTag -> javax.servlet.jsp.JspException
+ - javax.faces.webapp.UIComponentELTag -> javax.servlet.jsp.tagext.Tag
+ - javax.faces.webapp.UIComponentTag -> javax.servlet.jsp.PageContext
+ - javax.faces.webapp.UIComponentTag -> javax.servlet.jsp.JspException
+ - javax.faces.webapp.UIComponentTag -> javax.servlet.jsp.tagext.Tag
+ - javax.faces.webapp.UIComponentTag$UIComponentTagAdapter -> javax.servlet.jsp.JspException
+ - javax.faces.webapp.UIComponentTag$UIComponentTagAdapter -> javax.servlet.jsp.tagext.Tag
+ - javax.faces.webapp.UIComponentTagBase -> javax.servlet.jsp.tagext.JspTag
+ - javax.faces.webapp.ValidatorELTag -> javax.servlet.jsp.tagext.TagSupport
+ - javax.faces.webapp.ValidatorELTag -> javax.servlet.jsp.JspException
+ - javax.faces.webapp.ValidatorTag -> javax.servlet.jsp.tagext.TagSupport
+ - javax.faces.webapp.ValidatorTag -> javax.servlet.jsp.JspException
+ - javax.servlet.jsp.jstl.core.ConditionalTagSupport -> javax.servlet.jsp.tagext.TagSupport
+ - javax.faces.model.ResultDataModel -> javax.servlet.jsp.jstl.sql.Result
+ - javax.servlet.jsp.jstl.core.ConditionalTagSupport -> javax.servlet.jsp.JspException
+ - javax.servlet.jsp.jstl.core.ConditionalTagSupport -> javax.servlet.jsp.JspTagException
+ - javax.servlet.jsp.jstl.core.Config -> javax.servlet.jsp.PageContext
+ - javax.servlet.jsp.jstl.core.LoopTag -> javax.servlet.jsp.tagext.Tag
+ - javax.servlet.jsp.jstl.core.LoopTagSupport -> javax.servlet.jsp.JspException
+ - javax.servlet.jsp.jstl.core.LoopTagSupport -> javax.servlet.jsp.tagext.IterationTag
+ - javax.servlet.jsp.jstl.core.LoopTagSupport -> javax.servlet.jsp.tagext.TagSupport
+ - javax.servlet.jsp.jstl.core.LoopTagSupport -> javax.servlet.jsp.JspTagException
+ - javax.servlet.jsp.jstl.core.LoopTagSupport -> javax.servlet.jsp.tagext.TryCatchFinally
+ - javax.servlet.jsp.jstl.fmt.LocaleSupport -> javax.servlet.jsp.PageContext
+ - javax.servlet.jsp.jstl.tlv.PermittedTaglibsTLV -> javax.servlet.jsp.tagext.TagLibraryValidator
+ - javax.servlet.jsp.jstl.tlv.PermittedTaglibsTLV -> javax.servlet.jsp.tagext.PageData
+ - javax.servlet.jsp.jstl.tlv.PermittedTaglibsTLV -> javax.servlet.jsp.tagext.ValidationMessage
+ - javax.servlet.jsp.jstl.tlv.ScriptFreeTLV -> javax.servlet.jsp.tagext.TagLibraryValidator
+ - javax.servlet.jsp.jstl.tlv.ScriptFreeTLV -> javax.servlet.jsp.tagext.PageData
+ - javax.servlet.jsp.jstl.tlv.ScriptFreeTLV -> javax.servlet.jsp.tagext.ValidationMessage
+ - javax.servlet.jsp.jstl.tlv.ScriptFreeTLV$MyContentHandler -> javax.servlet.jsp.tagext.ValidationMessage
+ - javax.servlet.jsp.JspApplicationContext -> javax.el.ELContextListener
+ - javax.servlet.jsp.JspApplicationContext -> javax.el.ELResolver
+ - javax.servlet.jsp.JspContext -> javax.el.ELContext
+ - javax.servlet.jsp.el.ImplicitObjectELResolver -> javax.el.ELContext
+ - javax.servlet.jsp.el.ImplicitObjectELResolver -> javax.el.ELResolver
+ - javax.servlet.jsp.el.ScopedAttributeELResolver -> javax.el.ELContext
+ - javax.servlet.jsp.el.ScopedAttributeELResolver -> javax.el.ELResolver
+ - javax.servlet.jsp.jstl.core.IndexedValueExpression -> javax.el.ValueExpression
+ - javax.servlet.jsp.jstl.core.IndexedValueExpression -> javax.el.ELContext
+ - javax.servlet.jsp.jstl.core.IteratedExpression -> javax.el.ValueExpression
+ - javax.servlet.jsp.jstl.core.IteratedExpression -> javax.el.ELContext
+ - javax.servlet.jsp.jstl.core.IteratedValueExpression -> javax.el.ValueExpression
+ - javax.servlet.jsp.jstl.core.IteratedValueExpression -> javax.el.ELContext
+ - javax.servlet.jsp.jstl.core.LoopTagSupport -> javax.el.ValueExpression
+
