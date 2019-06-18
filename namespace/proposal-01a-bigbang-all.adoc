@@ -4,8 +4,7 @@ The heart of this proposal is to do a one-time move of API source from the `java
 
 Were we to take this path, a compelling approach would be to do the namespace rename and immediately release this as Jakarta EE 9. Additional modifications would be put into a Jakarta EE 10 which can be developed in parallel, without further delays.
 
-- Some or all Jakarta EE APIs under `javax` would move immediately into `jakarta` as-is.
-- Any packages not moved from `javax` to `jakarta` could be included in Jakarta EE, but would be forever frozen and never move to the `jakarta` namespace.
+- All Jakarta EE APIs under `javax` would either move immediately into `jakarta` as-is, or be pruned from Jakarta EE.
 - Jakarta EE 9 would be refocused as quick, stepping-stone release, identical to Jakarta EE 8 with the exception of the `javax` to `jakarta` namespace change and immediately released.
 - Jakarta EE 10 would become the new release name for what we imagined as Jakarta EE.next with only minor impact on timeline.
 - Work on Jakarta EE 10 could start immediately after rename is completed in the GitHub source and need not wait for the Jakarta EE 9 release to actually ship.
@@ -17,15 +16,15 @@ Pros:
 - Consistent with the `javax` to `jakarta` Maven groupId change.
 - Highest degree of flexibility and freedom of action, post-change.
 - Industry would have the opportunity to begin digesting the namespace change far in advance of any major new APIs or feature changes.
+- A clear separation in namespaces between Java SE and Jakarta EE: anything left in the javax.* namespace (in the context of Jakarta EE) is part of Java SE.
+- It's no longer necessary that "implementations which claim compliance with any version of the Jakarta EE specifications using the javax namespace must test on and distribute containers which embed certified Java SE implementations licensed by Oracle" (as stated https://blogs.eclipse.org/post/mike-milinkovich/update-jakarta-ee-rights-java-trademarks[here])
 
 Cons:
 
 - Largest upfront cost for everyone.
 - Specifications that may never be updated would still likely be moved.
-- Decision to not move a specification is permanent and therefore requires high confidence.
 
  Decisions:
 
-- Which specifications, if any, would we opt not to move?
-- Would we take the opportunity to prune specifications from Jakarta EE 9?
+- Would we take the opportunity to prune specifications from Jakarta EE 9? (in any case, these are limited to the optional (parts of) specs in Java EE 8: EJB entity beans and associated EJB QL (part of EJB 3.2), JAX-RPC 1.1, JAXR 1.0, Java EE Deployment 1.2)
 - Do we change the language level in Jakarta EE 9 to Java SE 11 or delay that to Jakarta EE 10?
