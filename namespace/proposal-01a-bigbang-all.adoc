@@ -4,7 +4,7 @@ The heart of this proposal is to do a one-time move of API source from the `java
 
 Were we to take this path, a compelling approach would be to do the namespace rename and immediately release this as Jakarta EE 9. Additional modifications would be put into a Jakarta EE 10 which can be developed in parallel, without further delays.
 
-- Some or link:proposal-01a-bigbang-all.adoc[all] Jakarta EE APIs under `javax` would move immediately into `jakarta` as-is.
+- Some or all Jakarta EE APIs under `javax` would move immediately into `jakarta` as-is.
 - Any packages not moved from `javax` to `jakarta` could be included in Jakarta EE, but would be forever frozen and never move to the `jakarta` namespace.
 - Jakarta EE 9 would be refocused as quick, stepping-stone release, identical to Jakarta EE 8 with the exception of the `javax` to `jakarta` namespace change and immediately released.
 - Jakarta EE 10 would become the new release name for what we imagined as Jakarta EE.next with only minor impact on timeline.
