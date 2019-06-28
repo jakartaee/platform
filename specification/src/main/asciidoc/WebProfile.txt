@@ -1,0 +1,495 @@
+======= [#50405429_pgfId-107871]## 
+
+[#50405430_pgfId-652943]##Specification: JSR-366 Java Platform,
+Enterprise Edition 8 Web Profile ("Specification")
+
+======= [#50405430_pgfId-652808]##Version: 8.0
+
+[#50405430_pgfId-653117]##Status: Final Release
+
+[#50405430_pgfId-653300]## 
+
+[#50405430_pgfId-653118]##Specification Lead: Oracle America, Inc.
+("Specification Lead")
+
+[#50405430_pgfId-653301]## 
+
+[#50405430_pgfId-653119]##Release: August 2017
+
+[#50405430_pgfId-653120]## 
+
+[#50405430_pgfId-653121]##Copyright 2017 Oracle America, Inc. ("Oracle")
+
+[#50405430_pgfId-653308]##500 Oracle Parkway, Redwood City, CA 94065,
+U.S.A.
+
+[#50405430_pgfId-653122]##All rights reserved.
+
+[#50405384_pgfId-412649]##Contents
+
+{empty}[#50405384_pgfId-494598]##link:titlepage.htm#50405429_pgfId-108776[Java™
+Platform, Enterprise Edition 8 (Java EE 8) Web Profile Specification i]
+
+======= [#50405384_pgfId-494600]## _link:WebProfile.htm#50405432_pgfId-6959[WP.1 Introduction]_ __ _._ 1
+
+{empty}[#50405384_pgfId-494602]##link:WebProfile.htm#50405432_pgfId-1001631[WP.1.1
+Target and Rationale for the Web Profile 1]
+
+{empty}[#50405384_pgfId-494604]##link:WebProfile.htm#50405432_pgfId-1001707[WP.1.2
+Determining Applicable Requirements 2]
+
+{empty}[#50405384_pgfId-494606]##link:WebProfile.htm#50405432_pgfId-1001693[WP.1.3
+Acknowledgements for Version 6 4]
+
+{empty}[#50405384_pgfId-494608]##link:WebProfile.htm#50405432_pgfId-1002086[WP.1.4
+Acknowledgements for Version 7 4]
+
+{empty}[#50405384_pgfId-494610]##link:WebProfile.htm#50405432_pgfId-1002242[WP.1.5
+Acknowledgements for Version 8 5]
+
+======= [#50405384_pgfId-494612]## _link:WebProfile.htm#50405433_pgfId-14708[WP.2 Web Profile Definition]_ __ _._ 7
+
+{empty}[#50405384_pgfId-494614]##link:WebProfile.htm#50405433_pgfId-31720[WP.2.1
+Required Components 7]
+
+{empty}[#50405384_pgfId-494616]##link:WebProfile.htm#50405433_pgfId-31708[WP.2.2
+Optional Components 8]
+
+{empty}[#50405384_pgfId-494618]##link:WebProfile.htm#50405433_pgfId-31773[WP.2.3
+Additional Requirements 8]
+
+====== [#50405384_pgfId-494620]##link:WebProfile.htm#50405444_pgfId-9484[Appendix WP.A: Revision History 9]
+
+{empty}[#50405384_pgfId-494622]##link:WebProfile.htm#50405444_pgfId-17296[WP.A.1
+Changes in Early Draft 9]
+
+{empty}[#50405384_pgfId-494624]##link:WebProfile.htm#50405444_pgfId-17642[WP.A.2
+Changes in Early Draft 2 9]
+
+{empty}[#50405384_pgfId-494626]##link:WebProfile.htm#50405444_pgfId-17713[WP.A.3
+Changes in Public Review Draft 10]
+
+{empty}[#50405384_pgfId-494628]##link:WebProfile.htm#50405444_pgfId-17765[WP.A.4
+Changes in Proposed Final Draft 10]
+
+====== [#50405384_pgfId-494630]##link:WebProfile.htm#50405445_pgfId-7705[Appendix WP.B: Related Documents 11]
+
+======= [#50405432_pgfId-874]## _CHAPTER_ __ [#50405432_32725]##
+
+== [#50405432_pgfId-6959]##Introduction
+
+[#50405432_pgfId-999128]## _T_ his specification defines the Java EE Web
+Profile (“Web Profile”), a profile of the Java Platform, Enterprise
+Edition specifically targeted at web applications.
+
+===== [#50405432_pgfId-1001631]##Target and Rationale for the Web Profile
+
+[#50405432_pgfId-1001635]##The Web Profile is targeted at developers of
+modern web applications.
+
+[#50405432_pgfId-1001933]##With the term “modern” we intend to highlight
+the fact that the world of web applications has made much progress since
+the introduction of the first Servlet specification. Inevitably, the
+number of technologies used to create even simple web applications had
+grown by leaps and bounds. In fact, few web applications today are
+written directly to the servlet API: most applications rely on standard
+or third-party frameworks and libraries, often developed as open source,
+which in turn use the services of the servlet container.
+
+[#50405432_pgfId-1001946]##Besides managing HTTP interactions, most web
+applications have significant requirements in the areas of transaction
+management, security and persistence. Such requirements can be readily
+addressed by technologies that have been part of the Java EE platform
+for quite some time, such as the Enterprise JavaBeans (EJB) 3.x
+technology and the Java Persistence API, but that are rarely supported
+by “plain” servlet containers. By incorporating many of these APIs, the
+Web Profile aims at raising the bar for what should be considered a
+basic stack for the development of web applications using the Java
+platform.
+
+[#50405432_pgfId-1001648]##Targeting “modern” web applications then
+implies offering a reasonably complete stack, composed of standard APIs,
+and capable out-of-the-box of addressing the needs of a large class of
+web applications. Furthermore, this stack should be easy to grow, so as
+to address any remaining developer needs.
+
+[#50405432_pgfId-1001662]##Against this drive towards completeness, one
+wishes to balance a desire to limit the footprint of web containers,
+both in physical and in conceptual terms. From the point of view of
+developers learning the Web Profile, it is more valuable to have a
+small, focused profile, with as little overlap between technologies as
+possible, rather than a more powerful but overly complex one, with
+redundant APIs.
+
+[#50405432_pgfId-1001692]##In defining the Web Profile we strove to find
+a middle ground between these two sets of requirements.
+
+[#50405432_pgfId-1001698]##In terms of completeness, the Web Profile
+offers a complete stack, with technologies addressing presentation and
+state management (JavaServer Faces, JavaServer Pages), core web
+container funtionality (Servlet), business logic (Enterprise JavaBeans
+Lite), transactions (Java Transaction API), persistence (Java
+Persistence API) and more.
+
+[#50405432_pgfId-1001699]##As for simplicity, it leaves out many of the
+enterprise backend APIs that are part of the Java EE platform. It also
+relies on the pluggability features in the Servlet specification to
+allow applications to use libraries that extend the servlet container
+with minimal configuration overhead.
+
+[#50405432_pgfId-1001756]##Finally, it is worth reminding that Web
+Profile products are allowed to ship with more technologies than the
+required ones. It is conceivable that products will offer a choice at
+installation time between different configurations, some richer in
+extensions, or even allow for complete customization beyond the required
+core (“à la carte” installation).
+
+===== [#50405432_pgfId-1001707]##Determining Applicable Requirements
+
+* [#50405432_pgfId-1001869]##
+
+[#50405432_pgfId-1001867]##As dictated by the general rules for Java EE
+profiles in the Platform specification, products that implement the Web
+Profile must honor:
+
+. [#50405432_pgfId-1001790]##all requirements of the Java EE Platform
+specification that apply to all profiles;
+. [#50405432_pgfId-1001820]##all requirements of this specification;
+. [#50405432_pgfId-1001792]##all requirements of the individual
+component specifications;
+. [#50405432_pgfId-1001808]##all requirements in the Java EE Platform
+specification that are conditional on the presence of a specific
+technology or combinations of technologies.
+
+[#50405432_pgfId-1001725]##Let’s look at some examples of requirements
+from each grouping.
+
+[#50405432_pgfId-1001822]##For the first one, the Java EE Platform
+specification mandates support for the “ _java:_ ” naming context in all
+profiles. Consequently, Web Profile products must support it. For a
+similar reason, all Web Profile 8 products must support the Java
+Platform, Standard Edition 8 API.
+
+[#50405432_pgfId-1001823]##In the second category one can point out the
+requirement to support Java EE web application modules ( _.war_ files)
+(see link:WebProfile.htm#50405433_31324[See Additional Requirements]”).
+
+[#50405432_pgfId-1001833]##The third category is hopefully
+self-explanatory. For example, Web Profile products must implement the
+Servlet API, which in turn means they need to satisfy all the
+requirements listed in the Servlet specification.
+
+[#50405432_pgfId-1001834]##The fourth category is the most complex. As a
+first example, since a Web Profile product is required to implement the
+Servlet technology, it must also follow all general requirements for
+Java EE web containers in the Platform specification. Additionally, it
+must follow all security requirements in the Platform specification that
+pertain to Java EE web containers, all interoperability requirements for
+such containers, etc. Furthermore, since a Web Profile product must
+implement the Java Transaction API (JTA), it must also satisfy all the
+Platform specification’s transaction management-related requirements for
+web components, which indeed are conditional on the presence of Servlet
+and JTA .
+
+[#50405432_pgfId-1001726]##As a negative example for the fourth category
+of requirements, consider the Java Message Service (JMS) technology.
+Since it is not a required component of the Web Profile, Web Profile
+products are not required to include an implementation of JMS, nor do
+they have to support other JMS-related requirements, like the ability to
+inject message destination references. On the other hand, a Web Profile
+product that included an implementation of JMS would be required to
+honor all the JMS-related requirements in the Java EE Platform
+specification.
+
+[#50405432_pgfId-1001978]##Particular care should be taken when
+determining applicable requirements based on the presence of EJB Lite in
+the Web Profile. As described in the EJB specification, EJB Lite is a
+subset of the EJB API. When examining an EJB-related requirement in the
+Java EE Platform spec, one must first of all determine which API
+classes, component types and EJB container services are mentioned in the
+requirement itself. Only if all of them fall inside the EJB Lite subset
+that requirement is considered applicable to Web Profile products.
+
+[#50405432_pgfId-1001988]##For example, since EJB Lite does not include
+any remote functionality, the _EJB_ annotation may not be used to inject
+a remote reference, something that should be kept in mind when
+evaluating the requirements in the Platform specification section
+“Enterprise JavaBeans References”.
+
+===== [#50405432_pgfId-1001693]##Acknowledgements for Version 6
+
+[#50405432_pgfId-1001478]##Version 6 of this specification was created
+under the Java Community Process as JSR-316. The spec leads for the
+JSR-316 Expert Group were Bill Shannon (Sun Microsystems, Inc.) and
+Roberto Chinnici (Sun Microsystems, Inc.). The expert group included the
+following members: Florent Benoit (Inria), Adam Bien (Individual), David
+Blevins (Individual), Bill Burke (Red Hat Middleware LLC), Larry Cable
+(BEA Systems), Bongjae Chan (Tmax Soft, Inc.), Rejeev Divakaran
+(Individual), Francois Exertier (Inria), Jeff Genender (Individual),
+Antonio Goncalves (Individual), Jason Greene (Red Hat Middleware LLC),
+Gang Huang (Peking University), Rod Johnson (SpringSource), Werner Keil
+(Individual), Michael Keith (Oracle), Wonseok Kim (Tmax Soft, Inc.), Jim
+Knutson (IBM), Elika S. Kohen (Individual), Peter Kristiansson (Ericsson
+AB), Changshin Lee (NCsoft Corporation), Felipe Leme (Individual), Ming
+Li (TongTech Ltd.), Vladimir Pavlov (SAP AG), Dhanji R. Prasanna
+(Google), Reza Rahman (Individual), Rajiv Shivane (Pramati
+Technologies), Hani Suleiman (Individual).
+
+===== [#50405432_pgfId-1002086]##Acknowledgements for Version 7
+
+[#50405432_pgfId-1002102]##Version 7 of this specification was created
+under the Java Community Process as JSR-342. The Expert Group work for
+this specification was conducted by means of the
+_http://javaee-spec.java.net_ project in order to provide transparency
+to the Java community. The specification leads for the JSR-342 Expert
+Group were Bill Shannon (Oracle) and Linda DeMichiel (Oracle). The
+expert group included the following members: Deepak Anupalli (Pramati
+Technologies), Anton Arhipov (ZeroTurnaround), Florent Benoit (OW2),
+Adam Bien (Individual), David Blevins (Individual), Markus Eisele
+(Individual), Jeff Genender (Individual), Antonio Goncalves
+(Individual), Jason Greene (Red Hat, Inc.), Minehiko Iida (Fujitsu),
+Alex Heneveld (Individual), Jevgeni Kabanov (Individual), Ingyu Kang
+(Tmax Soft, Inc.), Werner Keil (Individual), Jim Knutson (IBM), Ming Li
+(TongTech Ltd.), Pete Muir (Red Hat, Inc.), Minoru Nitta (Fujitsu), Reza
+Rahman (Caucho Technology, Inc), Kristoffer Sjogren (Ericsson AB), Kevin
+Sutter (IBM), Spike Washburn (Individual), Kyung Koo Yoon (Tmax Soft).
+
+===== [#50405432_pgfId-1002242]##Acknowledgements for Version 8
+
+[#50405432_pgfId-1002249]##Version 8 of this specification was created
+under the Java Community Process as JSR-366. The Expert Group work for
+this specification was conducted by means of the
+_http://javaee-spec.java.net_ and _https:javaee.github.io/javaee-spec_
+projects in order to provide transparency to the Java community. The
+specification leads for the JSR-366 Expert Group were Bill Shannon
+(Oracle) and Linda DeMichiel (Oracle). The expert group included the
+following members: Florent Benoit (OW2), David Blevins (Tomitribe), Jeff
+Genender (Savoir Technologies), Antonio Goncalves (Individual), Jason
+Greene (Red Hat), Werner Keil (Individual), Moon Namkoong (TmaxSoft,
+Inc.) Antoine Sabot-Durand (Red Hat), Kevin Sutter (IBM), Ruslan
+Synytsky (Jelastic, Inc.), Markus Winkler (oparco - open architectures &
+consulting). Reza Rahman (Individual) participated as a contributor.
+
+[#50405432_pgfId-1002092]## 
+
+======= [#50405433_pgfId-874]##CHApTER[#50405433_32725]##
+
+== [#50405433_pgfId-14708]##[#50405433_33788]##[#50405433_47053]##Web Profile Definition
+
+[#50405433_pgfId-6955]## _T_ his chapter defines the contents of the
+Java™ Platform, Enterprise Edition 8 (Java EE™ 8) Web Profile.
+
+===== [#50405433_pgfId-31720]##[#50405433_58245]##Required Components
+
+[#50405433_pgfId-31604]##The following technologies are required
+components of the Web Profile:
+
+======= [#50405433_pgfId-31666]##Servlet 4.0
+
+* [#50405433_pgfId-31675]##JavaServer Pages (JSP) 2.3
+* [#50405433_pgfId-31676]##Expression Language (EL) 3.0
+* [#50405433_pgfId-31677]##Debugging Support for Other Languages
+(JSR-45) 1.0
+* [#50405433_pgfId-31678]##Standard Tag Library for JavaServer Pages
+(JSTL) 1.2
+* [#50405433_pgfId-31683]##JavaServer Faces (JSF) 2.3
+* [#50405433_pgfId-31942]##Java API for RESTful Web Services (JAX-RS)
+2.1
+* [#50405433_pgfId-31952]##Java API for WebSocket (WebSocket) 1.1
+* [#50405433_pgfId-31953]##Java API for JSON Processing (JSON-P) 1.1
+* [#50405433_pgfId-32027]##Java API for JSON Binding (JSON-B) 1.0
+* [#50405433_pgfId-31679]##Common Annotations for the Java Platform
+(JSR-250) 1.3
+* [#50405433_pgfId-31680]##Enterprise JavaBeans (EJB) 3.2 Lite
+* [#50405433_pgfId-31681]##Java Transaction API (JTA) 1.2
+* [#50405433_pgfId-31682]##Java Persistence API (JPA) 2.2
+* [#50405433_pgfId-31843]##Bean Validation 2.0
+* [#50405433_pgfId-31861]##Managed Beans 1.0
+* [#50405433_pgfId-31888]##Interceptors 1.2
+* [#50405433_pgfId-31876]##Contexts and Dependency Injection for the
+Java EE Platform 2.0
+* [#50405433_pgfId-31877]##Dependency Injection for Java 1.0
+* [#50405433_pgfId-32058]##Java EE Security API 1.0
+* [#50405433_pgfId-32059]##Java Authentication Service Provider
+Interface for Containers (JASPIC) 1.1 Servlet Container Profile
+
+===== [#50405433_pgfId-31708]##Optional Components
+
+[#50405433_pgfId-31665]##There are no optional components in the Web
+Profile.
+
+[#50405433_pgfId-31804]##Web Profile products may support some of the
+technologies present in the full Java EE Platform and not already listed
+in link:WebProfile.htm#50405433_58245[See Required Components]”,
+consistently with their compatibility requirements.
+
+===== [#50405433_pgfId-31773]##[#50405433_31324]##Additional Requirements
+
+[#50405433_pgfId-26614]##Web Profile products must support the
+deployment of Java EE web application modules ( _.war_ files). No other
+modules types are required to be supported.
+
+[#50405433_pgfId-31784]## 
+
+[#50405433_pgfId-26623]## 
+
+======= [#50405444_pgfId-6947]## aPPENDIX
+
+== [#50405444_pgfId-9484]##Revision History
+
+==== [#50405444_pgfId-17296]##Changes in Early Draft
+
+======= [#50405444_pgfId-17297]##Additional Requirements
+
+* [#50405444_pgfId-17385]##Java EE 8 Web Profile requires Java SE 8.
+* [#50405444_pgfId-17488]##Updated to reflect versions of Java EE 8
+technologies.
+* [#50405444_pgfId-17614]##Added JSON-B as required component.
+* [#50405444_pgfId-17619]##Added MVC as required component.
+
+======= [#50405444_pgfId-17390]##Removed Requirements
+
+======= [#50405444_pgfId-17338]##None
+
+======= [#50405444_pgfId-17339]##Editorial Changes
+
+* [#50405444_pgfId-17340]##Updated Related Documents.
+
+==== [#50405444_pgfId-17642]##Changes in Early Draft 2
+
+======= [#50405444_pgfId-17743]##Additional Requirements
+
+* [#50405444_pgfId-17744]##None
+
+======= [#50405444_pgfId-17745]##Removed Requirements
+
+* [#50405444_pgfId-17668]##Removed MVC 1.0 from
+link:WebProfile.htm#50405433_58245[See Required Components].”
+
+======= [#50405444_pgfId-17677]##Editorial Changes
+
+* [#50405444_pgfId-17684]##Changed version of Bean Validation from 1.1
+to 2.0.
+
+==== [#50405444_pgfId-17713]##Changes in Public Review Draft
+
+======= [#50405444_pgfId-17727]##Additional Requirements
+
+* [#50405444_pgfId-17728]##Added Java EE Security API 1.0 and JASPIC 1.1
+as required components.
+
+======= [#50405444_pgfId-17732]##Removed Requirements
+
+* [#50405444_pgfId-17733]##None
+
+======= [#50405444_pgfId-17719]##Editorial Changes
+
+* [#50405444_pgfId-17711]##Corrected version of WebSocket to 1.1.
+* [#50405444_pgfId-17724]##Added acknowledgements.
+* [#50405444_pgfId-17750]##Updated “Related Documents.”
+
+==== [#50405444_pgfId-17765]##Changes in Proposed Final Draft
+
+======= [#50405444_pgfId-17770]##Editorial Changes
+
+* [#50405444_pgfId-17763]##Added reference to
+_https:javaee.github.io/javaee-spec[]http:javaee.github.io/javaee-spec[]https:javaee.github.io/javaee-spec
+project._
+* [#50405444_pgfId-17783]##Updated “Related Documents.”
+
+[#50405444_pgfId-17650]## 
+
+[#50405444_pgfId-17543]## 
+
+======= [#50405445_pgfId-6947]##APPENDIX [#50405445_55242]##
+
+== [#50405445_pgfId-7705]##[#50405445_53633]##Related Documents
+
+[#50405445_pgfId-7999]## _T_ his specification refers to the following
+documents. The terms used to refer to the documents in this
+specification are included in parentheses.
+
+[#50405445_pgfId-8155]## _Java™ Platform, Enterprise Edition
+Specification Version 8_ . Available at
+_http://jcp.org/en/jsr/detail?id=366_ .
+
+[#50405445_pgfId-8190]## _Java™ Platform, Standard Edition, v8 API
+Specification_ (Java SE specification). Available at
+_http://docs.oracle.com/javase/8/docs/_ .
+
+[#50405445_pgfId-8186]## _Enterprise JavaBeans™ Specification, Version
+3.2_ (EJB specification). Available at
+_http://jcp.org/en/jsr/detail?id=345_ .
+
+[#50405445_pgfId-8007]## _JavaServer Pages™ Specification, Version 2.3_
+(JSP specification). Available at _http://jcp.org/en/jsr/detail?id=245_
+.
+
+[#50405445_pgfId-13533]## _Expression Language Specification, Version
+3.0_ (EL specification). Available at
+_http://jcp.org/en/jsr/detail?id=341_ .
+
+[#50405445_pgfId-8009]## _Java™ Servlet Specification, Version 4.0_
+(Servlet specification). Available at
+_http://jcp.org/en/jsr/detail?id=369_ .
+
+[#50405445_pgfId-12920]## _Java™ Transaction API, Version 1.2_ (JTA
+specification). Available at _http://jcp.org/en/jsr/detail?id=907_ .
+
+[#50405445_pgfId-13132]##JAX-RS: The JavaTM API for RESTful Web Services
+2.1 (JAX-RS specification). Available at
+_http://jcp.org/en/jsr/summary?id=370_ .
+
+[#50405445_pgfId-13450]##Common Annotations for the Java Platform 1.3.
+Available at _http://jcp.org/en/jsr/detail?id=250_ .
+
+[#50405445_pgfId-12777]##Debugging Support for Other Languages 1.0.
+Available at _http://jcp.org/en/jsr/detail?id=45_ .
+
+[#50405445_pgfId-12778]##Standard Tag Library for JavaServer Pages 1.2
+(JSTL specification). Available at _http://jcp.org/en/jsr/detail?id=52_
+.
+
+[#50405445_pgfId-12796]##JavaServer Faces 2.3 (JSF specification).
+Available at _http://jcp.org/en/jsr/detail?id=372_ .
+
+[#50405445_pgfId-12806]##Java Persistence 2.2 (Java Persistence
+specification). Available at _http://jcp.org/en/jsr/detail?id=338_ .
+
+[#50405445_pgfId-13340]##Bean Validation 2.0 (Bean Validation
+specification). Available at _http://jcp.org/en/jsr/detail?id=380_ .
+
+[#50405445_pgfId-13374]##Managed Beans 1.0 (Managed Beans
+specification). Available at _http://jcp.org/en/jsr/detail?id=316_ .
+
+[#50405445_pgfId-13417]##Interceptors 1.2 rev A (Interceptors
+specification). Available at _http://jcp.org/en/jsr/detail?id=318_ .
+
+[#50405445_pgfId-13193]##Contexts and Dependency Injection for the Java
+EE Platform 2.0 (CDI specification). Available at
+_http://jcp.org/en/jsr/detail?id=365_ .
+
+[#50405445_pgfId-13400]##Dependency Injection for Java 1.0 (DI
+specification). Available at _http://jcp.org/en/jsr/detail?id=330_ .
+
+[#50405445_pgfId-13546]## _Java API for WebSocket 1.1_ (WebSocket
+specification). Available at _http://jcp.org/en/jsr/detail?id=356_ .
+
+[#50405445_pgfId-13557]## _Java API for JSON Processing 1.1_ (JSON-P
+specification). Available at _http://jcp.org/en/jsr/detail?id=374_ .
+
+[#50405445_pgfId-13671]## _Java API for JSON Binding 1.0_ (JSON-B
+specification). Available at _http://jcp.org/en/jsr/detail?id=367_ .
+
+[#50405445_pgfId-13719]##Java™ EE Security API 1.0. Available at
+_http://jcp.org/en/jsr/detail?id=375_ .
+
+[#50405445_pgfId-13723]##Java™ Authentication Service Provider Interface
+for Containers 1.1 (JASPIC specification). Available at
+_http://jcp.org/en/jsr/detail?id=196_ .
+
+[#50405445_pgfId-13715]## 
+
+[#50405445_pgfId-13669]## 
+
+======= [#50405445_pgfId-8039]##
