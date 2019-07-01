@@ -33,7 +33,8 @@ Open discussion is currently taking place on
 Other proposals should incorporate the following considerations and goals:
 
 * The new namespace will be `jakarta.*`
-* APIs moved to the `jakarta` namespace maintain class names and method signatures compatible with equivalent class names and method signatures in the `javax`.* namespace.
+* APIs moved to the `jakarta.\*` namespace maintain package names (except for the `javax`), class names, and method signatures compatible with equivalent package names, class names, and method signatures in the `javax.*` namespace.
+For example, `javax.jms.JMSConsumer.getMessageListener()` would move to `jakarta.jms.JMSConsumer.getMessageListener()`.
 * Even a small maintenance change to an API would require a `javax` to `jakarta` change of that entire specification. Examples include:
 ** Adding a value to an enum
 ** Overriding/adding a method signature
@@ -45,4 +46,4 @@ Other proposals should incorporate the following considerations and goals:
 
 # Binary Compatibility
 
-It is envisioned binary compatibility can be achieved and offered by implementations via tooling that performs bytecode modification at either build-time, deploy-time or runtime. While there are open questions and considerations in this area, the primary goal of the discussion that must conclude is how do we move forward with future modifications to the APIs themselves.
+It is envisioned binary compatibility can be achieved and offered by implementations via tooling that performs bytecode modification at either build-time, deploy-time, or runtime. While there are open questions and considerations in this area, the primary goal of the discussion that must conclude is how do we move forward with future modifications to the APIs themselves.
