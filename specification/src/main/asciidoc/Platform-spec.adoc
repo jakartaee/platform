@@ -25,4 +25,4 @@ include::license-efsl.adoc[]
 
 // == WebProfile
 :sectnums:
-include::Platform.adoc[]
+include::platform/Platform.adoc[]
