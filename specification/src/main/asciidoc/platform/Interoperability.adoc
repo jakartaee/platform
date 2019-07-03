@@ -1,0 +1,203 @@
+== [[a2845]]Interoperability
+
+This chapter describes the interoperability
+requirements for the Java™ Platform, Enterprise Edition (Java EE).
+
+=== Introduction to Interoperability
+
+The Java EE platform will be used by enterprise
+environments that support clients of many different types. The
+enterprise environments will add new services to existing Enterprise
+Information Systems (EISs). They will be using various hardware
+platforms and applications written in various languages.
+
+In particular, the Java EE platform may be used
+in enterprise environments to bring together any of the following kinds
+of applications:
+
+* applications written in such languages as C++
+and Visual Basic.
+* applications running on a personal computer
+platform, or Unix® workstation.
+* standalone Java technology-based applications
+that are not directly supported by the Java EE platform.
+
+It is the interoperability requirements of the
+Java EE platform, set out in this chapter, that make it possible for it
+to provide indirect support for various types of clients, different
+hardware platforms, and a multitude of software applications. The
+interoperability features of the Java EE platform permit the underlying
+disparate systems to work together seamlessly, while hiding much of the
+complexity required to join these pieces together.
+
+The interoperability requirements for the
+current Java EE platform release allow:
+
+* Java EE applications to connect to legacy
+systems using CORBA or low-level socket interfaces.
+* Java EE applications to connect to other Java
+EE applications across multiple Java EE products, whether from different
+Product Providers or from the same Provider, and multiple Java EE
+platforms.
+
+In this version of the specification,
+interoperability between Java EE applications running in different
+platforms is accomplished through the HTTP protocol, possibly using SSL,
+or the EJB interoperability protocol based on IIOP.
+
+=== Interoperability Protocols
+
+This specification requires that a Java EE
+product support a standard set of protocols and formats to ensure
+interoperability between Java EE applications and with other
+applications that also implement these protocols and formats. The
+specification requires support for the following groups of protocols and
+formats:
+
+=== Internet and web protocols
+
+* OMG protocols
+* Java technology protocols
+
+=== Data formats
+
+Most of these protocols and formats are
+supported by Java SE and by the underlying operating system.
+
+=== [[a2865]]Internet and Web Protocols
+
+Standards based Internet protocols are the means
+by which different pieces of the platform communicate. The Java EE
+platform typically supports the following Internet protocols, as
+described in the corresponding technology specifications:
+
+* TCP/IP protocol family—This is the core
+component of Internet communication. TCP/IP and UDP/IP are the standard
+transport protocols for the Internet. TCP/IP is supported by Java SE and
+the underlying operating system.
+* HTTP 1.1—This is the core protocol of web
+communication. As with TCP/IP, HTTP 1.1 is supported by Java SE and the
+underlying operating system. A Java EE web container must be capable of
+advertising its HTTP services on the standard HTTP port, port 80.
+* HTTP/2—Server-side support for the HTTP/2
+protocol is required by the Servlet specification.
+* SSL 3.0, TLS 1.2—SSL 3.0 (Secure Socket Layer)
+represents the security layer for Web communication. It is available
+indirectly when using the _https_ URL as opposed to the _http_ URL. A
+Java EE web container must be capable of advertising its HTTPS service
+on the standard HTTPS port, port 443. Note that SSL 3.0 and only TLS 1.0
+are required as part of the EJB interoperability protocol in the EJB
+specification.
+* SOAP 1.1—SOAP is a presentation layer
+protocol for the exchange of XML messages. Support for SOAP layered on
+HTTP is required, as described in the JAX-RPC and JAX-WS specifications.
+* SOAP 1.2—SOAP 1.2 is the version of the SOAP
+protocol standardized through W3C and supported by JAX-WS.
+* WS-I Basic Profile 1.1—The WS-I Basic
+Profile, in combination with the Simple SOAP Binding Profile and
+Attachment Profile, describes interoperability requirements for the use
+of SOAP 1.1, WSDL 1.1, and MIME-based SOAP with Attachments. It is
+required by the JAX-RPC and JAX-WS specifications.
+* WebSocket protocol—The WebSocket protocol
+enables two-way communication layered over TCP. It enables
+bi-directional communication over a single connection established by an
+initial HTTP handshake and upgrade request. The WebSocket protocol has
+been standardized by IETF under RFC 6455.
+
+=== [[a2875]]OMG Protocols (Proposed Optional)
+
+This specification requires the a full Java EE
+product to support the following Object Management Group (OMG) based
+protocols:
+
+* IIOP (Internet Inter-ORB Protocol)—Supported
+by Java IDL and RMI-IIOP in Java SE. Java IDL provides standards-based
+interoperability and connectivity through the Common Object Request
+Broker Architecture (CORBA). CORBA specifies the Object Request Broker
+(ORB) which allows applications to communicate with each other
+regardless of location. This interoperability is delivered through IIOP,
+and is typically found in an intranet setting. IIOP can be used as an
+RMI protocol using the RMI-IIOP technology. IIOP is defined in Chapters
+13 and 15 of the CORBA 2.3.1 specification, available at
+_http://omg.org/cgi-bin/doc?formal/99-10-07_ .
+* EJB interoperability protocol—The EJB
+interoperability protocol is based on IIOP (GIOP 1.2) and the CSIv2
+CORBA Secure Interoperability specification. The EJB interoperability
+protocol is defined in the EJB specification.
+* CORBA Interoperable Naming Service
+protocol—The COSNaming-based INS protocol is an IIOP-based protocol for
+accessing a name service. The EJB interoperability protocol requires the
+use of the INS protocol for lookup of EJB objects using the JNDI API. In
+addition, it must be possible to use the Java IDL COSNaming API to
+access the INS name service. All Java EE products must provide a name
+service that meets the requirements of the Interoperable Naming Service
+specification, available at
+_http://omg.org/cgi-bin/doc?formal/2000-06-19_ . This name service may
+be provided as a separate name server or as a protocol bridge or gateway
+to another name service. Either approach is consistent with this
+specification.
+
+=== Java Technology Protocols
+
+This specification requires the Java EE platform
+to support the JRMP protocol, which is the Java technology-specific
+Remote Method Invocation (RMI) protocol. JRMP is a required component of
+Java SE and is one of two required RMI protocols. (IIOP is the other
+required RMI protocol, see above.)
+
+JRMP is a distributed object model for the Java
+programming language. Distributed systems, running in different address
+spaces and often on different hosts, must be able to communicate with
+each other. JRMP permits program-level objects in different address
+spaces to invoke remote objects using the semantics of the Java
+programming language object model.
+
+Complete information on the JRMP specification
+can be found at
+_http://docs.oracle.com/javase/8/docs/technotes/guides/rmi_ .
+
+=== [[a2884]]Data Formats
+
+In addition to the protocols that allow
+communication between components, this specification requires Java EE
+platform support for a number of data formats. These formats provide the
+definition for data exchanged between components.
+
+The following data formats must be supported:
+
+* XML 1.0—The XML format can be used to
+construct documents, RPC messages, etc. The JAXP API provides support
+for processing XML format data. The JAX-RPC API provides support for XML
+RPC messages, as well as a mapping between Java classes and XML.
+* JSON—JSON is a language-neutral plain text
+format commonly used to transfer structured data between a server and
+web application. The JSON-P API provides support for the parsing,
+generation, transformation, and querying of JSON text. The JSON-B API
+provides support for mapping between JSON text and Java objects.
+* HTML 4.01—This represents the minimum web
+browser standard document format. While all Java EE APIs with the
+exception of JSF are agnostic to the version of the browser document
+format, Java EE web clients must be able to display HTML 4.01 documents.
+* Image file formats—The Java EE platform must
+support GIF, JPEG, and PNG images. Support for these formats is provided
+by the _java.awt.image_ APIs (see the URL:
+_http://docs.oracle.com/javase/8/docs/api/java/awt/image/package-summary.html_
+) and by Java EE web clients.
+* JAR files—JAR (Java Archive) files are the
+standard packaging format for Java technology-based application
+components, including the ejb-jar specialized format, the Web
+application archive (WAR) format, the Resource Adapter archive (RAR),
+and the Java EE enterprise application archive (EAR) format. JAR is a
+platform-independent file format that permits many files to be
+aggregated into one file. This allows multiple Java components to be
+bundled into one JAR file and downloaded to a browser in a single HTTP
+transaction. JAR file formats are supported by the _java.util.jar_ and
+_java.util.zip_ packages. For complete information on the JAR
+specification, see
+_http://docs.oracle.com/javase/8/docs/technotes/guides/jar_ .
+* Class file format—The class file format is
+specified in the Java Virtual Machine specification. Each class file
+contains one Java programming language type—either a class or an
+interface—and consists of a stream of 8-bit bytes. For complete
+information on the class file format, see
+_http://docs.oracle.com/javase/specs/_ .

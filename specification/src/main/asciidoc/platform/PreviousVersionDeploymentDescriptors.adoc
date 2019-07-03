@@ -1,0 +1,419 @@
+== [[a3447]]Previous Version Deployment Descriptors
+
+This appendix describes Document Type
+Definitions and XML schemas for Deployment Descriptors from previous
+versions of the Java EE specification. All Java EE products are required
+to support these DTDs and schemas as well as the schemas specified in
+this version of the specification. This ensures that applications
+written to previous versions of this specification can be deployed on
+products supporting the current version of this specification. In
+addition, there are no restrictions on mixing versions of deployment
+descriptors in a single application; any combination of valid deployment
+descriptor versions must be supported.
+
+=== Java EE 7 Application XML Schema
+
+The XML grammar for a Java EE application
+deployment descriptor is defined by the Java EE application schema. The
+root element of the deployment descriptor for a Jaav EE application is
+_application_ . The granularity of composition for Java EE application
+assembly is the Java EE module. A Java EE application deployment
+descriptor contains a name and description for the application and the
+URI of a UI icon for the application, as well a list of the Java EE
+modules that comprise the application. The content of the XML elements
+is in general case sensitive. This means, for example, that
+_<role-name>Manager</role-name>_ is a different role than
+_<role-name>manager</role-name>_ .
+
+All valid Java EE application deployment
+descriptors must conform to the XML Schema definition, or the DTD or
+schema definition from a previous version of this specification. The
+deployment descriptor must be named _META-INF/application.xml_ in the
+_.ear_ file. Note that this name is case-sensitive.
+link:#a3453[See Java EE 7 Application
+XML Schema Structure] shows a graphic representation of the structure of
+the Java EE application 7 XML Schema.
+
+
+
+=== [[a3453]] Java EE 7 Application XML Schema Structure
+
+image:Platform_Spec-13.png[image]
+
+
+
+
+_link:#a3483[See Java EE Application
+XML Schema Structure]_ The XML Schema located at
+_http://xmlns.jcp.org/xml/ns/javaee/application_7.xsd_ defines the XML
+grammar for a Java EE 7 application deployment descriptor.
+
+=== Common Java EE XML Schema Definitions
+
+The XML Schema located at
+_http://xmlns.jcp.org/xml/ns/javaee/javaee_7.xsd_ defines types that are
+used by many other Java EE deployment descriptor schemas, both in this
+specification and in other specifications.
+
+=== Java EE 7 Application Client XML Schema
+
+The XML grammar for a Java EE application
+client deployment descriptor is defined by the Java EE
+application-client schema. The root element of the deployment descriptor
+for an application client is _application-client_ . The content of the
+XML elements is in general case sensitive. This means, for example, that
+_<res-auth>Container</res-auth>_ must be used, rather than
+_<res-auth>container</res-auth>_ .
+
+All valid _application-client_ deployment
+descriptors must conform to the XML Schema definition, or to a DTD or
+schema definition from a previous version of this specification. The
+deployment descriptor must be named _META-INF/application-client.xml_ in
+the application client’s _.jar_ file. Note that this name is
+case-sensitive.
+
+
+_link:#a3462[See Java EE 7 Application
+Client XML Schema Structure]_ shows the structure of the Java EE
+application-client XML Schema. The Java EE application-client XML Schema
+is located at
+_http://xmlns.jcp.org/xml/ns/javaee/application-client_7.xsd_ .
+
+=== [[a3462]]Java EE 7 Application Client XML Schema Structure
+
+image:Platform_Spec-14.png[image]
+
+=== Java EE 6 Application XML Schema
+
+The XML grammar for a Java EE application
+deployment descriptor is defined by the Java EE application schema. The
+root element of the deployment descriptor for a Jaav EE application is
+_application_ . The granularity of composition for Java EE application
+assembly is the Java EE module. A Java EE application deployment
+descriptor contains a name and description for the application and the
+URI of a UI icon for the application, as well a list of the Java EE
+modules that comprise the application. The content of the XML elements
+is in general case sensitive. This means, for example, that
+_<role-name>Manager</role-name>_ is a different role than
+_<role-name>manager</role-name>_ .
+
+All valid Java EE application deployment
+descriptors must conform to the XML Schema definition, or the DTD or
+schema definition from a previous version of this specification. The
+deployment descriptor must be named _META-INF/application.xml_ in the
+_.ear_ file. Note that this name is case-sensitive.
+link:#a3467[See Java EE Application XML
+Schema Structure] shows a graphic representation of the structure of the
+Java EE application XML Schema.
+
+
+
+=== [[a3467]] Java EE Application XML Schema Structure
+
+image:Platform_Spec-15.png[image]
+
+
+
+
+_link:#a3483[See Java EE Application
+XML Schema Structure]_ The XML Schema located at
+_http://java.sun.com/xml/ns/javaee/application_6.xsd_ defines the XML
+grammar for a Java EE application deployment descriptor.
+
+=== Common Java EE XML Schema Definitions
+
+The XML Schema located at
+_http://java.sun.com/xml/ns/javaee/javaee_6.xsd_ defines types that are
+used by many other Java EE deployment descriptor schemas, both in this
+specification and in other specifications.
+
+=== Java EE 6 Application Client XML Schema
+
+The XML grammar for a Java EE application
+client deployment descriptor is defined by the Java EE
+application-client schema. The root element of the deployment descriptor
+for an application client is _application-client_ . The content of the
+XML elements is in general case sensitive. This means, for example, that
+_<res-auth>Container</res-auth>_ must be used, rather than
+_<res-auth>container</res-auth>_ .
+
+All valid _application-client_ deployment
+descriptors must conform to the XML Schema definition, or to a DTD or
+schema definition from a previous version of this specification. The
+deployment descriptor must be named _META-INF/application-client.xml_ in
+the application client’s _.jar_ file. Note that this name is
+case-sensitive.
+
+
+_link:#a3476[See Java EE Application
+Client XML Schema Structure]_ shows the structure of the Java EE
+application-client XML Schema. The Java EE application-client XML Schema
+is located at
+_http://java.sun.com/xml/ns/javaee/application-client_6.xsd_ .
+
+=== [[a3476]]Java EE Application Client XML Schema Structure
+
+image:Platform_Spec-16.png[image]
+
+=== Java EE 5 Application XML Schema
+
+The XML grammar for a Java EE application
+deployment descriptor is defined by the Java EE application schema. The
+root element of the deployment descriptor for a Jaav EE application is
+_application_ . The granularity of composition for Java EE application
+assembly is the Java EE module. A Java EE application deployment
+descriptor contains a name and description for the application and the
+URI of a UI icon for the application, as well a list of the Java EE
+modules that comprise the application. The content of the XML elements
+is in general case sensitive. This means, for example, that
+_<role-name>Manager</role-name>_ is a different role than
+_<role-name>manager</role-name>_ .
+
+A valid Java EE 5 application deployment
+descriptors must conform to this XML Schema definition.
+
+The deployment descriptor must be named
+_META-INF/application.xml_ in the _.ear_ file. Note that this name is
+case-sensitive.
+
+
+_link:#a3483[See Java EE Application
+XML Schema Structure]_ shows a graphic representation of the structure
+of the Java EE application XML Schema.
+
+.
+
+image:Platform_Spec-17.png[image]
+
+=== [[a3483]]Java EE Application XML Schema Structure
+
+The XML Schema located at
+_http://java.sun.com/xml/ns/javaee/application_5.xsd_ defines the XML
+grammar for a Java EE application deployment descriptor.
+
+=== Common Java EE 5 XML Schema Definitions
+
+The XML Schema located at
+_http://java.sun.com/xml/ns/javaee/javaee_5.xsd_ defines types that are
+used by many other Java EE deployment descriptor schemas, both in this
+specification and in other specifications.
+
+=== Java EE 5 Application Client XML Schema
+
+The XML grammar for a Java EE application
+client deployment descriptor is defined by the Java EE
+application-client schema. The root element of the deployment descriptor
+for an application client is _application-client_ . The content of the
+XML elements is in general case sensitive. This means, for example, that
+_<res-auth>Container</res-auth>_ must be used, rather than
+_<res-auth>container</res-auth>_ .
+
+All valid _application-client_ deployment
+descriptors must conform to the XML Schema definition, or to a DTD or
+schema definition from a previous version of this specification. The
+deployment descriptor must be named _META-INF/application-client.xml_ in
+the application client’s _.jar_ file. Note that this name is
+case-sensitive.
+
+
+_link:#a3492[See Java EE Application
+Client XML Schema Structure]_ shows the structure of the Java EE
+application-client XML Schema. The Java EE application-client XML Schema
+is located at
+_http://java.sun.com/xml/ns/javaee/application-client_5.xsd_ .
+
+
+
+image:Platform_Spec-18.png[image]
+
+=== [[a3492]]Java EE Application Client XML Schema Structure
+
+=== J2EE 1.4 Application XML Schema
+
+This section provides the XML Schema for the
+J2EE application deployment descriptor. The XML grammar for a J2EE
+application deployment descriptor is defined by the _J2EE:application_
+schema. The granularity of composition for J2EE application assembly is
+the J2EE module. A _J2EE:application_ deployment descriptor contains a
+name and description for the application and the URI of a UI icon for
+the application, as well a list of the J2EE modules that comprise the
+application. The content of the XML elements is in general case
+sensitive. This means, for example, that
+_<role-name>Manager</role-name>_ is a different role than
+_<role-name>manager</role-name>_ .
+
+A valid J2EE application deployment descriptors
+may conform to the XML Schema definition below. The deployment
+descriptor must be named _META-INF/application.xml_ in the _.ear_ file.
+Note that this name is case-sensitive.
+
+
+_link:#a3509[See J2EE:application XML
+DTD Structure]_ link:#a3498[See J2EE
+Application XML Schema Structure] shows a graphic representation of the
+structure of the J2EE application XML Schema.
+
+
+
+image:Platform_Spec-19.png[image]
+
+=== [[a3498]]J2EE Application XML Schema Structure
+
+The XML Schema that defines the XML grammar for
+a J2EE 1.4 application deployment descriptor is located at
+_http://java.sun.com/xml/ns/j2ee/application_1_4.xsd_ .
+
+=== Common J2EE 1.4 XML Schema Definitions
+
+The XML Schema that defines types that are used
+by many other J2EE 1.4 deployment descriptor schemas, both in this
+specification and in other specifications, is located at
+_http://java.sun.com/xml/ns/j2ee/j2ee_1_4.xsd_ .
+
+=== J2EE:application 1.3 XML DTD
+
+This section provides the XML DTD for the J2EE
+1.3 application deployment descriptor. The XML grammar for a J2EE
+application deployment descriptor is defined by the _J2EE:application_
+document type definition. The granularity of composition for J2EE
+application assembly is the J2EE module. A _J2EE:application_ deployment
+descriptor contains a name and description for the application and the
+URI of a UI icon for the application, as well as a list of the J2EE
+modules that comprise the application. The content of the XML elements
+is in general case sensitive. This means, for example, that
+_<role-name>Manager</role-name>_ is a different role than
+_<role-name>manager</role-name>_ .
+
+A valid J2EE 1.3 application deployment
+descriptor may contain the following DOCTYPE declaration:
+
+ <!DOCTYPE application PUBLIC "-//Sun
+Microsystems, Inc.//DTD J2EE Application 1.3//EN"
+"http://java.sun.com/dtd/application_1_3.dtd">
+
+The deployment descriptor must be named
+_META-INF/application.xml_ in the _.ear_ file.
+
+
+_link:#a3509[See J2EE:application XML
+DTD Structure]_ shows a graphic representation of the structure of the
+_J2EE:application_ XML DTD.
+
+
+
+image:Platform_Spec-20.png[image]
+
+=== [[a3509]]J2EE:application XML DTD Structure
+
+The DTD that defines the XML grammar for a J2EE
+1.3 application deployment descriptor is available at
+http://java.sun.com/dtd/application_1_3.dtd.
+
+=== J2EE:application 1.2 XML DTD
+
+This section provides the XML DTD for the J2EE
+1.2 version of the application deployment descriptor. A valid J2EE 1.2
+application deployment descriptor may contain the following DOCTYPE
+declaration:
+
+<!DOCTYPE application PUBLIC "-//Sun
+Microsystems, Inc.//DTD J2EE Application 1.2//EN"
+"http://java.sun.com/j2ee/dtds/application_1_2.dtd">
+
+
+_link:#a3516[See J2EE:application XML
+DTD Structure]_ shows a graphic representation of the structure of the
+_J2EE:application_ XML DTD.
+
+
+
+image:Platform_Spec-21.png[image]
+
+=== [[a3516]]J2EE:application XML DTD Structure
+
+The DTD that defines the XML grammar for a J2EE
+1.2 application deployment descriptor is available at
+http://java.sun.com/j2ee/dtds/application_1_2.dtd.
+
+=== J2EE 1.4 Application Client XML Schema
+
+The XML grammar for a J2EE application client
+deployment descriptor is defined by the J2EE application-client schema.
+The root element of the deployment descriptor for an application client
+is _application-client_ . The content of the XML elements is in general
+case sensitive. This means, for example, that
+_<res-auth>Container</res-auth>_ must be used, rather than
+_<res-auth>container</res-auth>_ .
+
+A valid _application-client_ deployment
+descriptors may conform to the following XML Schema definition. The
+deployment descriptor must be named _META-INF/application-client.xml_ in
+the application client’s _.jar_ file. Note that this name is
+case-sensitive.
+
+link:#a3523[See
+J2EE Application Client XML Schema Structure] shows the structure of the
+J2EE 1.4 application-client XML Schema, which is available at
+_http://java.sun.com/xml/ns/j2ee/application-client_1_4.xsd_ .
+
+
+
+image:Platform_Spec-22.png[image]
+
+=== [[a3523]]J2EE Application Client XML Schema Structure
+
+=== J2EE:application-client 1.3 XML DTD
+
+This section describes the XML DTD for the J2EE
+1.3 version of the application client deployment descriptor. The XML
+grammar for a J2EE application client deployment descriptor is defined
+by the _J2EE:application-client_ document type definition. The root
+element of the deployment descriptor for an application client is
+_application-client_ . The content of the XML elements is in general
+case sensitive. This means, for example, that
+_<res-auth>Container</res-auth>_ must be used, rather than
+_<res-auth>container</res-auth>_ .
+
+A valid _application-client_ deployment
+descriptor may contain the following DOCTYPE declaration:
+
+<!DOCTYPE application-client PUBLIC "-//Sun
+Microsystems, Inc.//DTD J2EE Application Client 1.3//EN" "
+_http://java.sun.com/dtd/application-client_1_3.dtd_ ">
+
+The deployment descriptor must be named
+_META-INF/application-client.xml_ in the application client’s _.jar_
+file.
+
+
+_link:#a3530[See
+J2EE:application-client XML DTD Structure]_ shows the structure of the
+_J2EE:application-client_ XML DTD, which is available at
+http://java.sun.com/dtd/application-client_1_3.dtd.
+
+image:Platform_Spec-23.png[image]
+
+=== [[a3530]]J2EE:application-client XML DTD Structure
+
+=== J2EE:application-client 1.2 XML DTD
+
+This section describes the XML DTD for the J2EE
+1.2 version of the application client deployment descriptor. A valid
+application client deployment descriptor may contain the following
+DOCTYPE declaration:
+
+<!DOCTYPE application-client PUBLIC "-//Sun
+Microsystems, Inc.//DTD J2EE Application Client 1.2//EN"
+"http://java.sun.com/j2ee/dtds/application-client_1_2.dtd">
+
+
+_link:#a3536[See
+J2EE:application-client XML DTD Structure]_ shows the structure of the
+_J2EE:application-client_ XML DTD, which is available at
+http://java.sun.com/j2ee/dtds/application-client_1_2.dtd.
+
+
+
+image:Platform_Spec-24.png[image]
+
+=== [[a3536]]J2EE:application-client XML DTD Structure

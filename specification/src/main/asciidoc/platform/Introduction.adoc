@@ -1,0 +1,182 @@
+== Introduction
+
+Enterprises today need to extend their
+reach, reduce their costs, and lower the response times of their
+services to customers, employees, and suppliers.
+
+Typically, applications that provide these
+services must combine existing enterprise information systems (EISs)
+with new business functions that deliver services to a broad range of
+users. The services need to be:
+
+* Highly available, to meet the needs of today’s
+global business environment.
+* Secure, to protect the privacy of users and
+the integrity of the enterprise.
+* Reliable and scalable, to ensure that business
+transactions are accurately and promptly processed.
+
+In most cases, enterprise services are
+implemented as multitier __ applications. The middle tiers integrate
+existing EISs with the business functions and data of the new service.
+Maturing web technologies are used to provide first tier users with easy
+access to business complexities, and eliminate or drastically reduce
+user administration and training.
+
+The Java™ Platform, Enterprise Edition (Java™
+EE) reduces the cost and complexity of developing multitier, enterprise
+services. Java EE applications can be rapidly deployed and easily
+enhanced as the enterprise responds to competitive pressures.
+
+Java EE achieves these benefits by defining a
+standard architecture with the following elements:
+
+*  _Java EE Platform_ - A standard platform for
+hosting Java EE applications.
+*  _Java EE Compatibility Test Suite_ - A suite
+of compatibility tests for verifying that a Java EE platform product
+complies with the Java EE platform standard.
+*  _Java EE Reference Implementation_ - A
+reference implementation for prototyping Java EE applications and for
+providing an operational definition of the Java EE platform.
+
+This document is the Java EE platform
+specification. It sets out the requirements that a Java EE platform
+product must meet.
+
+=== Acknowledgements for the Initial Version
+
+This specification is the work of many people.
+Vlada Matena wrote the first draft as well as the Transaction Management
+and Naming chapters. Sekhar Vajjhala, Kevin Osborn, and Ron Monzillo
+wrote the Security chapter. Hans Hrasna wrote the Application Assembly
+and Deployment chapter. Seth White wrote the JDBC API requirements. Jim
+Inscore, Eric Jendrock, and Beth Stearns provided editorial assistance.
+Shel Finkelstein, Mark Hapner, Danny Coward, Tom Kincaid, and Tony Ng
+provided feedback on many drafts. And of course this specification was
+formed and molded based on conversations with and review feedback from
+our many industry partners.
+
+=== Acknowledgements for Version 1.3
+
+Version 1.3 of this specification grew out of
+discussions with our partners during the creation of version 1.2, as
+well as meetings with those partners subsequent to the final release of
+version 1.2. Version 1.3 was created under the Java Community Process as
+JSR-058. The JSR-058 Expert Group included representatives from the
+following companies and organizations: Allaire, BEA Systems, Bluestone
+Software, Borland, Bull S.A., Exoffice, Fujitsu Limited, GemStone
+Systems, Inc., IBM, Inline Software, IONA Technologies, iPlanet,
+jGuru.com, Orion Application Server, Persistence, POET Software,
+SilverStream, Sun, and Sybase. In addition, most of the people who
+helped with the previous version continued to help with this version,
+along with Jon Ellis and Ram Jeyaraman. Alfred Towell provided
+significant editorial assistance with this version.
+
+=== Acknowledgements for Version 1.4
+
+Version 1.4 of this specification was created
+under the Java Community Process as JSR-151. The JSR-151 Expert Group
+included the following members: Larry W. Allen (SilverStream Software),
+Karl Avedal (Individual), Charlton Barreto (Borland Software
+Corporation), Edward Cobb (BEA), Alan Davies (SeeBeyond Technology
+Corporation), Sreeram Duvvuru (iPlanet), B.J. Fesq (Individual), Mark
+Field (Macromedia), Mark Hapner (Sun Microsystems, Inc.), Pierce Hickey
+(IONA), Hemant Khandelwal (Pramati Technologies), Jim Knutson (IBM),
+Elika S. Kohen (Individual), Ramesh Loganathan (Pramati Technologies),
+Jasen Minton (Oracle Corporation), Jeff Mischkinsky (Oracle
+Corporation), Richard Monson-Haefel (Individual), Sean Neville
+(Macromedia), Bill Shannon (Sun Microsystems, Inc.), Simon Tuffs (Lutris
+Technologies), Jeffrey Wang (Persistence Software, Inc.), and Ingo Zenz
+(SAP AG). My colleagues at Sun provided invaluable assistance: Umit
+Yalcinalp converted the deployment descriptors to XML Schema; Tony Ng
+and Sanjeev Krishnan helped with transaction requirements; Jonathan
+Bruce helped with JDBC requirements; Suzette Pelouch, Eric Jendrock, and
+Ian Evans provided editorial assistance. Thanks also to all the external
+reviewers, including Jeff Estefan (Adecco Technical Services).
+
+=== Acknowledgements for Version 5
+
+Version 5 (originally known as version 1.5)
+of this specification was created under the Java Community Process as
+JSR-244. The JSR-244 Expert Group included the following members: Kilinc
+Alkan (Individual), Rama Murthy Amar Pratap (Individual), Charlton
+Barreto (Individual), Michael Bechauf (SAP AG), Florent Benoit (INRIA),
+Bill Burke (JBoss, Inc.), Muralidharan Chandrasekaran (Individual),
+Yongmin Chen (Novell, Inc.), Jun Ho Cho (TmaxSoft), Ed Cobb (BEA), Ugo
+Corda (SeeBeyond Technology Corporation), Scott Crawford (Individual),
+Arulazi Dhesiaseelan (Hewlett-Packard Company), Bill Dudney
+(Individual), Francois Exertier (INRIA), Jeff Genender (The Apache
+Software Foundation), Evan Ireland (Sybase, Inc.), Vishy Kasar (Borland
+Software Corporation), Michael Keith (Oracle Corporation), Wonseok Kim
+(TmaxSoft, Inc.), Jim Knutson (IBM), Elika Kohen (Individual), Felipe
+Leme (Individual), Geir Magnusson Jr. (The Apache Software Foundation),
+Scott Marlow (Novell, Inc.), Jasen Minton (Oracle Corporation), Jishnu
+Mitra (Borland Software Corp), David Morandi (E.piphany), Nathan Pahucki
+(Novell, Inc.), David Morandi (E.piphany, Inc.), Ricardo Morin (Intel
+Corporation), Nathan Pahucki (Novell, Inc.), Matt Raible (Individual),
+Dirk Reinshagen (Individual), Narinder Sahota (Cap Gemini), Suneet Shah
+(Individual), Bill Shannon (Sun Microsystems, Inc.), Rajiv Shivane
+(Pramati Technologies), Scott Stark (Jboss, Inc), Hani Suleiman
+(Ironflare AB), Kresten Krab Thorup (Trifork), Ashish Kumar Tiwari
+(Individual), Sivasundaram Umapathy (Individual), Steve Weston (Cap
+Gemini), Seth White (BEA Systems), and Umit Yalcinalp (SAP AG). Once
+again, my colleagues at Sun provided invaluable assistance: Roberto
+Chinnici provided draft proposals for many issues related to dependency
+injection.
+
+=== Acknowledgements for Version 6
+
+Version 6 of this specification was created
+under the Java Community Process as JSR-316. The spec leads for the
+JSR-316 Expert Group were Bill Shannon (Sun Microsystems, Inc.) and
+Roberto Chinnici (Sun Microsystems, Inc.). The expert group included the
+following members: Florent Benoit (Inria), Adam Bien (Individual), David
+Blevins (Individual), Bill Burke (Red Hat Middleware LLC), Larry Cable
+(BEA Systems), Bongjae Chang (Tmax Soft, Inc.), Rejeev Divakaran
+(Individual), Francois Exertier (Inria), Jeff Genender (Individual),
+Antonio Goncalves (Individual), Jason Greene (Red Hat Middleware LLC),
+Gang Huang (Peking University), Rod Johnson (SpringSource), Werner Keil
+(Individual), Michael Keith (Oracle), Wonseok Kim (Tmax Soft, Inc.), Jim
+Knutson (IBM), Elika S. Kohen (Individual), Peter Kristiansson (Ericsson
+AB), Changshin Lee (NCsoft Corporation), Felipe Leme (Individual), Ming
+Li (TongTech Ltd.), Vladimir Pavlov (SAP AG), Dhanji R. Prasanna
+(Google), Reza Rahman (Individual), Rajiv Shivane (Pramati
+Technologies), Hani Suleiman (Individual).
+
+=== Acknowledgements for Version 7
+
+Version 7 of this specification was created
+under the Java Community Process as JSR-342. The Expert Group work for
+this specification was conducted by means of the
+_http://javaee-spec.java.net_ project in order to provide transparency
+to the Java community. The specification leads for the JSR-342 Expert
+Group were Bill Shannon (Oracle) and Linda DeMichiel (Oracle). The
+expert group included the following members: Deepak Anupalli (Pramati
+Technologies), Anton Arhipov (ZeroTurnaround), Florent Benoit (OW2),
+Adam Bien (Individual), David Blevins (Individual), Markus Eisele
+(Individual), Jeff Genender (Individual), Antonio Goncalves
+(Individual), Jason Greene (Red Hat, Inc.), Alex Heneveld (Individual),
+Minehiko Iida (Fujitsu), Jevgeni Kabanov (Individual), Ingyu Kang (Tmax
+Soft, Inc.), Werner Keil (Individual), Jim Knutson (IBM), Ming Li
+(TongTech Ltd.), Pete Muir (Red Hat, Inc.), Minoru Nitta (Fujitsu), Reza
+Rahman (Caucho Technology, Inc), Kristoffer Sjogren (Ericsson AB), Kevin
+Sutter (IBM), Spike Washburn (Individual), Kyung Koo Yoon (TmaxSoft).
+
+
+
+=== Acknowledgements for Version 8
+
+Version 8 of this specification was created
+under the Java Community Process as JSR-366. The Expert Group work for
+this specification was conducted by means of the
+_http://javaee-spec.java.net_ and _https:javaee.github.io/javaee-spec_
+projects in order to provide transparency to the Java community. The
+specification leads for the JSR-366 Expert Group were Bill Shannon
+(Oracle) and Linda DeMichiel (Oracle). The expert group included the
+following members: Florent Benoit (OW2), David Blevins (Tomitribe), Jeff
+Genender (Savoir Technologies), Antonio Goncalves (Individual), Jason
+Greene (Red Hat), Werner Keil (Individual), Moon Namkoong (TmaxSoft,
+Inc.) Antoine Sabot-Durand (Red Hat), Kevin Sutter (IBM), Ruslan
+Synytsky (Jelastic, Inc.), Markus Winkler (oparco - open architectures &
+consulting). Reza Rahman (Individual) participated as a contributor.

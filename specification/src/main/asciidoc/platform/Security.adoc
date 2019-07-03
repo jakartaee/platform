@@ -1,0 +1,1003 @@
+== [[a235]]Security
+
+This chapter describes the security
+requirements for the Java™ Platform, Enterprise Edition (Java EE) that
+must be satisfied by Java EE products.
+
+In addition to the Java EE requirements, each
+Java EE Product Provider will determine the level of security and
+security assurances that will be provided by their implementation.
+
+=== Introduction
+
+Almost every enterprise has security
+requirements and specific mechanisms and infrastructure to meet them.
+Sensitive resources that can be accessed by many users or that often
+traverse unprotected open networks (such as the Internet) need to be
+protected.
+
+Although the quality assurances and
+implementation details may vary, they all share some of the following
+characteristics:
+
+*  _Authentication_ : The means by which
+communicating entities (for example, client and server) prove to one
+another that they are acting on behalf of specific identities that are
+authorized for access.
+*  _Access control for resources_ : The means
+by which interactions with resources are limited to collections of users
+or programs for the purpose of enforcing integrity, confidentiality, or
+availability constraints.
+*  _Data integrity_ : The means used to prove
+that information has not been modified by a third party (some entity
+other than the source of the information). For example, a recipient of
+data sent over an open network must be able to detect and discard
+messages that were modified after they were sent.
+*  _Confidentiality or Data Privacy_ : The means
+used to ensure that information is made available only to users who are
+authorized to access it.
+*  _Non-repudiation_ : The means used to prove
+that a user performed some action such that the user cannot reasonably
+deny having done so.
+*  _Auditing_ : The means used to capture a
+tamper-resistant record of security related events for the purpose of
+being able to evaluate the effectiveness of security policies and
+mechanisms.
+
+This chapter specifies how Java EE platform
+requirements address security requirements, and identifies requirements
+that may be addressed by Java EE Product Providers. Finally, issues
+being considered for future versions of this specification are briefly
+mentioned in link:#a457[See Future
+Directions]”.
+
+=== A Simple Example
+
+The security behavior of a Java EE environment
+may be better understood by examining what happens in a simple
+application with a web client, a JSP user interface, and enterprise bean
+business logic. (The example is not meant to specify requirements.)
+
+In this example, the web client relies on the
+web server to act as its authentication proxy by collecting user
+authentication data from the client and using it to establish an
+authenticated session.
+
+=== Initial Request
+
+The web client requests the main application
+URL, shown in _link:#a253[See Initial
+Request]_ .
+
+image:Platform_Spec-3.png[image]
+
+=== [[a253]]Initial Request
+
+Since the client has not yet authenticated
+itself to the application environment, the server responsible for
+delivering the web portion of the application (hereafter referred to as
+“web server”) detects this and invokes the appropriate authentication
+mechanism for this resource.
+
+=== Initial Authentication
+
+The web server returns a form that the web
+client uses to collect authentication data (for example, username and
+password) from the user. The web client forwards the authentication data
+to the web server, where it is validated by the web server, as shown in
+_link:#a257[See Initial
+Authentication]_ .
+
+image:Platform_Spec-4.png[image]
+
+=== [[a257]]Initial Authentication
+
+The validation mechanism may be local to the
+server, or it may leverage the underlying security services. On the
+basis of the validation, the web server sets a credential for the user.
+
+=== URL Authorization
+
+The credential is used for future
+determinations of whether the user is authorized to access restricted
+resources it may request. The web server consults the security policy
+(derived from the deployment descriptor) associated with the web
+resource to determine the security roles that are permitted access to
+the resource. The web container then tests the user’s credential against
+each role to determine if it can map the user to the role.
+_link:#a261[See URL Authorization]_
+shows this process.
+
+image:Platform_Spec-5.png[image]
+
+=== [[a261]]URL Authorization
+
+The web server’s evaluation stops with an “is
+authorized” outcome when the web server is able to map the user to a
+role. A “not authorized” outcome is reached if the web server is unable
+to map the user to any of the permitted roles.
+
+=== Fulfilling the Original Request
+
+If the user is authorized, the web server
+returns the result of the original URLrequest, as shown in
+_link:#a265[See Fulfilling the
+Original Request]_ .
+
+image:Platform_Spec-6.png[image]
+
+=== [[a265]]Fulfilling the Original Request
+
+In our example, the response URL of a JSP page
+is returned, enabling the user to post form data that needs to be
+handled by the business logic component of the application.
+
+=== Invoking Enterprise Bean Business Methods
+
+The JSP page performs the remote method call to
+the enterprise bean, using the user’s credential to establish a secure
+association between the JSP page and the enterprise bean (as shown in
+_link:#a269[See Invoking an Enterprise
+Bean Business Method]_ ). The association is implemented as two related
+security contexts, one in the web server and one in the EJB container.
+
+image:Platform_Spec-7.png[image]
+
+=== [[a269]]Invoking an Enterprise Bean Business Method
+
+The EJB container is responsible for enforcing
+access control on the enterprise bean method. It consults the security
+policy (derived from the deployment descriptor) associated with the
+enterprise bean to determine the security roles that are permitted
+access to the method. For each role, the EJB container uses the security
+context associated with the call to determine if it can map the caller
+to the role.
+
+The container’s evaluation stops with an “is
+authorized” outcome when the container is able to map the caller’s
+credential to a role. A “not authorized” outcome is reached if the
+container is unable to map the caller to any of the permitted roles. A
+“not authorized” result causes an exception to be thrown by the
+container, and propagated back to the calling JSP page.
+
+If the call “is authorized”, the container
+dispatches control to the enterprise bean method. The result of the
+bean’s execution of the call is returned to the JSP, and ultimately to
+the user by the web server and the web client.
+
+=== Security Architecture
+
+This section describes the Java EE security
+architecture on which the security requirements defined by this
+specification are based.
+
+=== Goals
+
+The following are goals for the Java EE
+security architecture:
+
+. Portability: The Java EE security architecture
+must support the Write Once, Run Anywhere™ application property.
+. Transparency: Application Component Providers
+should not have to know anything about security to write an application.
+. Isolation: The Java EE platform should be able
+to perform authentication and access control according to instructions
+established by the Deployer using deployment attributes, and managed by
+the System Administrator.
+
+Note that divorcing the application from
+responsibility for security ensures greater portability of Java EE
+applications.
+
+. Extensibility: The use of platform services by
+security-aware applications must not compromise application portability.
+
+This specification provides APIs in the
+component programming model for interacting with container/server
+security information. Applications that restrict their interactions to
+the provided APIs will retain portability.
+
+. Flexibility: The security mechanisms and
+declarations used by applications under this specification should not
+impose a particular security policy, but facilitate the implementation
+of security policies specific to the particular Java EE installation or
+application.
+. Abstraction: An application component’s
+security requirements will be logically specified using Java language
+annotations or deployment descriptors. Java language annotations or
+deployment descriptors will specify how security roles and access
+requirements are to be mapped into environment-specific security roles,
+users, and policies. A Deployer may choose to modify the security
+properties in ways consistent with the deployment environment. The
+annotations or deployment descriptor should document which security
+properties can be modified and which cannot.
+. Independence: Required security behaviors and
+deployment contracts should be implementable using a variety of popular
+security technologies.
+. Compatibility testing: The Java EE security
+requirements architecture must be expressed in a manner that allows for
+an unambiguous determination of whether or not an implementation is
+compatible.
+. Secure interoperability: Application
+components executing in a Java EE product must be able to invoke
+services provided in a Java EE product from a different vendor, whether
+with the same or a different security policy. The services may be
+provided by web components or enterprise beans.
+
+=== Non Goals
+
+The following are not goals for the Java EE
+security architecture:
+
+. This specification does not dictate a specific
+security policy. Security policies for applications and for enterprise
+information systems vary for many reasons unconnected with this
+specification. Product Providers can provide the technology needed to
+implement and administer desired security policies while adhering to the
+requirements of this specification.
+. This specification does not mandate a specific
+security technology, such as Kerberos, PK, NIS+, or NTLM.
+. This specification does not require that the
+Java EE security behaviors be universally implementable using any or all
+security technologies.
+. This specification does not provide any
+warranty or assurance of the effective security of a Java EE product.
+
+=== Terminology
+
+This section introduces the terminology that is
+used to describe the security requirements of the Java EE platform.
+
+=== Principal
+
+A principal is an entity that can be
+authenticated by an authentication protocol in a security service that
+is deployed in an enterprise. A principal is identified using a
+principal name and authenticated using authentication data. The content
+and format of the principal name and the authentication data can vary
+depending upon the authentication protocol.
+
+=== Security Policy Domain
+
+A security policy domain, also referred to as a
+security domain, is a scope over which a common security policy is
+defined and enforced by the security administrator of the security
+service.
+
+A security policy domain is also sometimes
+referred to as a realm. This specification uses the security policy
+domain, or security domain, terminology.
+
+=== Security Technology Domain
+
+A security technology domain is the scope over
+which the same security mechanism (for example Kerberos) is used to
+enforce a security policy.
+
+A single security technology domain may include
+multiple security policy domains, for example.
+
+=== Security Attributes
+
+A set of security attributes is associated with
+every principal. The security attributes have many uses (for example,
+access to protected resources and auditing of users). Security
+attributes can be associated with a principal by an authentication
+protocol and/or by the Java EE Product Provider.
+
+The Java EE platform does not specify what
+security attributes are associated with a principal.
+
+=== Credential
+
+A credential contains or references information
+(security attributes) used to authenticate a principal for Java EE
+product services. A principal acquires a credential upon authentication,
+or from another principal that allows its credential to be used
+(delegation).
+
+This specification does not specify the
+contents or the format of a credential. The contents and format of a
+credential can vary widely.
+
+=== Container Based Security
+
+Security for components is provided by their
+containers in order to achieve the goals for security specified above in
+a Java EE environment. A container provides two kinds of security
+(discussed in the following sections):
+
+* Declarative security
+* Programmatic security
+
+=== Declarative Security
+
+Declarative security refers to the means of
+expressing an application’s security structure, including security
+roles, access control, and authentication requirements in
+non-programmatic form. Java language annotations and the deployment
+descriptor are the primary vehicles for declarative security in the Java
+EE platform.
+
+Java language annotations and the deployment
+descriptor are a contract between an Application Component Provider and
+a Deployer or Application Assembler. They can be used by an application
+programmer to represent an application’s security related environmental
+requirements. A deployment descriptor can be associated with groups of
+components.
+
+A Deployer maps the declarative representation
+of the application’s security policy to a security structure specific to
+the particular environment. A Deployer uses a deployment tool to process
+the annotations and deployment descriptor.
+
+At runtime, the container uses the security
+policy security structure derived from the declarative security
+information expressed in annotations and the deployment descriptor and
+configured by the Deployer to enforce authorization (see
+link:#a331[See Authorization Model]”).
+
+=== Programmatic Security
+
+Programmatic security refers to security
+decisions made by security aware applications. Programmatic security is
+useful when declarative security alone is not sufficient to express the
+security model of the application. The API for programmatic security
+consists of methods of the Java EE Security API _SecurityContext_
+interface, and methods of the EJB _EJBContext_ interface and the servlet
+_HttpServletRequest_ interface. The methods of the Java EE Security API
+_SecurityContext_ interface are intended to supersede the corresponding
+methods of the _EJBContext_ and _HttpServletRequest_ interfaces.
+
+These methods allow components to make business
+logic decisions based on the security role of the caller or remote user.
+For example they allow the component to determine the principal name of
+the caller or remote user to use as a database key. (Note that the form
+and content of principal names will vary widely between products and
+enterprises, and portable components will not depend on the actual
+contents of a principal name. Due to principal name mapping, the same
+logical principal may have different names in different containers,
+although usually it will be possible to configure a single product to
+use consistent principal names. In particular, if a principal name is
+used as a key into a database table, and that database table is accessed
+from multiple components, containers, or products, the same logical
+principal may map to different entries in the database.)
+
+=== Distributed Security
+
+Some Product Providers may produce Java EE
+products in which the containers for various component types are
+distributed. In a distributed environment, communication between Java EE
+components can be subject to security attacks (for example, data
+modification and replay attacks).
+
+Such threats can be countered by using a secure
+association to secure communications. A secure association is shared
+security state information that establishes the basis of a secure
+communication between components. Establishing a secure association
+could involve several steps, such as:
+
+. Authenticating the target principal to the
+client and/or authenticating the client to the target principal.
+. Negotiating a quality of protection, such as
+confidentiality or integrity.
+. Setting up a security context for the
+association between the components.
+
+Since a container provides security in Java EE,
+secure associations for a component are typically established by a
+container. Secure associations for web access are specified here. Secure
+associations for access to enterprise beans are described in the EJB
+specification.
+
+Product Providers may allow for control over
+the quality of protection or other aspects of secure association at
+deployment time. Applications can specify their requirements for access
+to web resources using annotations or elements in their deployment
+descriptor.
+
+This specification does not define mechanisms
+that an Application Component Provider can use to communicate
+requirements for secure associations with an enterprise bean.
+
+=== [[a331]]Authorization Model
+
+The Java EE authorization model is based on the
+concept of security roles. A security role is a logical grouping of
+users that is defined by an Application Component Provider or Assembler.
+A Deployer maps roles to security identities (for example principals,
+and groups) in the operational environment. Security roles are used with
+both declarative security and programmatic security.
+
+Declarative authorization can be used to
+control access to an enterprise bean method and is specified in
+annotations or in the enterprise bean deployment descriptor. The
+_RolesAllows_ , _PermitAll_ , and _DenyAll_ annotations are used to
+specify method permissions. An enterprise bean method can also be
+associated with a _method-permission_ element in the deployment
+descriptor. The _method-permission_ element contains a list of methods
+that can be accessed by a given security role. If the calling principal
+is in one of the security roles allowed access to a method, the
+principal is allowed to execute the method. Conversely, if the calling
+principal is in none of the roles, the caller is not allowed to execute
+the method. Access to web resources can be protected in a similar
+manner.
+
+Security roles are used in the
+_SecurityContext_ method _isCallerInRole_ , the _EJBContext_ method
+_isCallerInRole_ , and the _HttpServletRequest_ method _isUserInRole_ .
+Each method returns _true_ if the calling principal is in the specified
+security role.
+
+=== Role Mapping
+
+Enforcement of security constraints on web
+resources or enterprise beans, whether programmatic or declarative,
+depends upon determination of whether the principal associated with an
+incoming request is in a given security role. A container makes this
+determination based on the security attributes of the calling principal.
+For example,
+
+. A Deployer may have mapped a security role to
+a user group in the operational environment or may depend on the default
+mapping of security roles to user groups as defined by the Java EE
+Security API specification. In this case, the user group of the calling
+principal is retrieved from its security attributes. The principal is in
+the security role if the principal’s user group matches a user group to
+which the security role has been mapped.
+. A Deployer may have mapped a security role to
+a principal name in a security policy domain. In this case, the
+principal name of the calling principal is retrieved from its security
+attributes. If this principal name is the same as a principal name to
+which the security role was mapped, the calling principal is in the
+security role.
+
+The source of security attributes may vary
+across implementations of the Java EE platform. Security attributes may
+be transmitted in the calling principal’s credential or in the security
+context. In other cases, security attributes may be retrieved from an
+identity store, or from a trusted third party, such as a directory
+service or a security service.
+
+=== HTTP Login Gateways
+
+Secure interoperability between enterprise
+beans in different security policy domains is addressed in the EJB
+specification. In addition, a component may choose to log in to a
+foreign server via HTTP. An application component can be configured to
+use SSL mutual authentication for security when accessing a remote
+resource using HTTP. Applications using HTTP in this way may choose to
+use XML or some other structured format, rather than HTML.
+
+We call the use of HTTP with SSL mutual
+authentication to access a remote service an HTTP Login Gateway.
+Requirements in this area are specified in
+link:#a347[See Authentication by Web
+Clients].”
+
+=== User Authentication
+
+User authentication is the process by which a
+user proves his or her identity to the system. This authenticated
+identity is then used to perform authorization decisions for accessing
+Java EE application components. An end user can authenticate using
+either of the two supported client types:
+
+* Web client
+* Application client
+
+=== [[a347]]Authentication by Web Clients
+
+It is required that a web client be able to
+authenticate a user to a web server using any of the following
+mechanisms. The Deployer or System Administrator determines which method
+to apply to an application or to a group of applications.
+
+* HTTP Basic Authentication
+
+HTTP Basic Authentication is the authentication
+mechanism supported by the HTTP protocol. This mechanism is based on a
+username and password. A web server requests a web client to
+authenticate the user. As part of the request, the web server passes the
+realm in which the user is to be authenticated. The web client obtains
+the username and the password from the user and transmits them to the
+web server. The web server then authenticates the user in the specified
+realm (referred to as HTTP Realm in this document).
+
+HTTP Basic Authentication is not secure.
+Passwords are sent in simple base64 encoding. The target server is not
+authenticated. Additional protection can be applied to overcome these
+weaknesses. The password may be protected by applying security at the
+transport layer (for example HTTPS) or at the network layer (for
+example, IPSEC or VPN).
+
+Despite its limitations, the HTTP Basic
+Authentication mechanism is included in this specification because it is
+widely used in form based applications.
+
+* HTTPS Client Authentication
+
+End user authentication using HTTPS (HTTP over
+SSL) is a strong authentication mechanism. This mechanism requires the
+user to possess a Public Key Certificate (PKC). Currently, a PKC is
+rarely used by end users on the Internet. However, it is useful for
+e-commerce applications and also for a single-signon from within the
+browser. For these reasons, HTTPS client authentication is a required
+feature of the Java EE platform.
+
+=== Form Based Authentication
+
+The look and feel of a login screen cannot be
+varied using the web browser’s built-in authentication mechanisms. This
+specification introduces the ability to package standard HTML or
+servlet/JSP/JSF based forms for logging in, allowing customization of
+the user interface. The form based authentication mechanism introduced
+by this specification is described in the Servlet specification.
+
+HTTP Digest Authentication is not widely
+supported by web browsers and hence is not required.
+
+A web client can employ a web server as its
+authentication proxy. In this case, a client’s credential is established
+in the server, where it may be used by the server for various purposes:
+to perform authorization decisions, to act as the client in calls to
+enterprise beans, or to negotiate secure associations with resources.
+Current web browsers commonly rely on proxy authentication.
+
+=== Web Single Signon
+
+HTTP is a stateless protocol. However, many web
+applications need support for sessions that can maintain state across
+multiple requests from a client. Therefore, it is desirable to:
+
+. Make login mechanisms and policies a property
+of the environment the web application is deployed in.
+. Be able to use the same login session to
+represent a user to all the applications that he or she accesses.
+. Require re-authentication of users only when
+a security policy domain boundary has been crossed.
+
+Credentials that are acquired through a web
+login process are associated with a session. The container uses the
+credentials to establish a security context for the session. The
+container uses the security context to determine authorization for
+access to web resources and for the establishment of secure associations
+with other components (including enterprise beans).
+
+=== Login Session
+
+{empty}In the Java EE platform, login session
+support is provided by a web container. When a user successfully
+authenticates with a web server, the container establishes a login
+session context for the user. The login session contains the credentials
+associated with the user.link:#a3648[1]
+
+=== Authentication by Application Clients
+
+Application clients (described in detail in
+link:#a3294[See Application Clients]”)
+are client programs that may interact with enterprise beans directly
+(that is, without the help of a web browser and without traversing a web
+server). Application clients may also access web resources.
+
+Application clients, like the other Java EE
+application component types, execute in a managed environment that is
+provided by an appropriate container. Application clients are expected
+to have access to a graphical display and input device, and are expected
+to communicate with a human user.
+
+Application clients are used to authenticate
+end users to the Java EE platform, when the users access protected web
+resources or enterprise beans.
+
+=== Lazy Authentication
+
+There is a cost associated with authentication.
+For example, an authentication process may require exchanging multiple
+messages across the network. Therefore, it is desirable to use lazy
+authentication, that is, to perform authentication only when it is
+needed. With lazy authentication, a user is not required to authenticate
+until there is a request to access a protected resource.
+
+Lazy authentication can be used with first-tier
+clients (applets, application clients) when they request access to
+protected resources that require authentication. At that point the user
+can be asked to provide appropriate authentication data. If a user is
+successfully authenticated, the user is allowed to access the resource.
+
+=== User Authentication Requirements
+
+The Java EE Product Provider must meet the
+following requirements concerning user authentication.
+
+=== Login Sessions
+
+All Java EE web servers must maintain a login
+session for each web user. It must be possible for a login session to
+span more than one application, allowing a user to log in once and
+access multiple applications. The required login session support is
+described in the Servlet specification. This requirement of a session
+for each web user supports single signon.
+
+Applications can remain independent of the
+details of implementing the security and maintenance of login
+information. The Java EE Product Provider has the flexibility to choose
+authentication mechanisms independent of the applications secured by
+these mechanisms.
+
+Lazy authentication must be supported by web
+servers for protected web resources. When authentication is required,
+one of the three required login mechanisms listed in the next section
+may be used.
+
+=== Required Login Mechanisms
+
+All Java EE products are required to support
+three login mechanisms: HTTP basic authentication, SSL mutual
+authentication, and form-based login. An application is not required to
+use any of these mechanisms, but they are required to be available for
+any application’s use.
+
+=== HTTP Basic Authentication
+
+All Java EE products are required to support
+HTTP basic authentication (RFC2068). Platform Providers are also
+required to support basic authentication over SSL.
+
+=== [[a384]]SSL Mutual Authentication
+
+TLS 1.2 and the means to perform mutual (client
+and server) certificate-based authentication are required by this
+specification.
+
+All Java EE products must also support TLS 1.1
+and TLS 1.0, to ensure interoperable secure communications with clients;
+however, TLS 1.0 should be disabled if not needed for a given
+deployment, and TLS 1.1 may be disabled if not needed.
+
+Similarly, all Java EE products must support
+the following cipher suites, to ensure interoperable secure
+communications with clients:
+
+*  _TLS_RSA_WITH_AES_128_CBC_SHA_
+*  _TLS_DHE_RSA_WITH_AES_128_CBC_SHA_
+*  _TLS_ECDH_RSA_WITH_AES_128_CBC_SHA_
+*  _TLS_ECDH_ECDSA_WITH_AES_128_CBC_SHA_
+*  _TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA_
+*  _TLS_ECDHE_ECDSA_WITH_AES_128_CBC_SHA_
+
+However, it is recommended to use the strongest
+possible cipher suite that can be negotiated between client and server,
+and the above cipher suites may be disabled in favor of stronger cipher
+suites, if not needed for a given deployment.
+
+Note that previous versions of this
+specification required support for SSL 3.0, and for the following cipher
+suites:
+
+*  _TLS_RSA_WITH_RC4_128_MD5_
+*  _SSL_RSA_WITH_RC4_128_MD5_
+*  _TLS_DHE_DSS_WITH_3DES_EDE_CBC_SHA_
+*  _SSL_DHE_DSS_WITH_3DES_EDE_CBC_SHA_
+*  _TLS_RSA_EXPORT_WITH_RC4_40_MD5_
+*  _SSL_RSA_EXPORT_WITH_RC4_40_MD5_
+*  _TLS_DHE_DSS_EXPORT_WITH_DES40_CBC_SHA_
+*  _SSL_DHE_DSS_EXPORT_WITH_DES40_CBC_SHA_
+
+SSL 3.0 was officially deprecated by RFC 7568
+in 2015, and is unsupported or disabled by default in many TLS
+implementations. None of the above cipher suites is currently considered
+secure, and may be unsupported or disabled by default. In extreme cases,
+it may be necessary to use SSL 3.0, or to negotiate one of the above
+cipher suites, in order to interoperate with an older client or a
+previous version of Java EE. However, it is recommended to use TLS 1.0
+or higher, and to negotiate a stronger cipher suite, whenever possible.
+SSL 3.0, and the above listed cipher suites, should be disabled if not
+needed for interoperability in a given deployment.
+
+=== Form Based Login
+
+The web application deployment descriptor
+contains an element that causes a Java EE product to associate an HTML
+form resource (perhaps dynamically generated) with the web application.
+If the Deployer chooses this form of authentication (over HTTP basic, or
+SSL certificate based authentication), this form must be used as the
+user interface for login to the application.
+
+The form based login mechanism and web
+application deployment descriptors are described in the Servlet
+specification.
+
+=== [[a408]]Unauthenticated Users
+
+Web containers are required to support access
+to web resources by clients that have not authenticated themselves to
+the container. This is the common mode of access to web resources on the
+Internet.
+
+A web container reports that no user has been
+authenticated by returning _null_ from the _SecurityContext_ method
+_getCallerPrincipal_ or the _HttpServletRequest_ method
+_getUserPrincipal_ . This is different than the result of the
+_EJBContext_ method _getCallerPrincipal_ . The EJB specification
+requires that the _EJBContext_ method _getCallerPrincipal_ always return
+a valid _Principal_ object. This method can never return _null_ . The
+_SecurityContext_ method _getCallerPrincipal_ can also be called in the
+EJB container, and still returns _null_ for anonymous users.
+
+In Java EE products that contain both a web
+container and an EJB container, components running in a web container
+must be able to call enterprise beans even when no user has been
+authenticated in the web container. When a call is made in such a case
+from a component in a web container to an enterprise bean, a Java EE
+product must provide a principal for use in the call.
+
+A Java EE product may provide a principal for
+use by unauthenticated callers using many approaches, including, but not
+limited to:
+
+* Always use a single distinguished principal.
+* Use a different distinguished principal per
+server, or per session, or per application.
+* Allow the deployer or system administrator to
+choose which principal to use through the Run As capability of the web
+and enterprise bean containers.
+
+This specification does not specify how a Java
+EE product should choose a principal to represent unauthenticated users,
+although future versions of this specification may add requirements in
+this area. Note that the EJB specification does include requirements in
+this area when using the EJB interoperability protocol. Applications are
+encouraged to use the Run As capability in cases where the web component
+may be unauthenticated and needs to call EJB components.
+
+=== Application Client User Authentication
+
+The application client container must provide
+authentication of application users to satisfy the authentication and
+authorization constraints enforced by the enterprise bean containers and
+web containers. The techniques used may vary with the implementation of
+the application client container, and are beyond the control of the
+application. The application client container may integrate with a Java
+EE product’s authentication system, to provide a single signon
+capability, or the container may authenticate the user when the
+application is started. The container may delay authentication until
+there is a request to access a protected resource or enterprise bean.
+
+The container will provide an appropriate user
+interface for interactions with the user to gather authentication data.
+In addition, an application client may provide a class that implements
+the _javax.security.auth.callback.CallbackHandler_ interface and specify
+the class name in its deployment descriptor (see
+link:#a3399[See Java EE Application
+Client XML Schema]” for details). The Deployer may override the callback
+handler specified by the application and require use of the container’s
+default authentication user interface instead.
+
+If use of a callback handler has been
+configured by the Deployer, the application client container must
+instantiate an object of this class and use it for all authentication
+interactions with the user. The application’s callback handler must
+support all the _Callback_ objects specified in the
+_javax.security.auth.callback_ package.
+
+Application clients may execute in an
+environment controlled by a Java SE security manager and are subject to
+the security permissions defined in
+link:#a2339[See Java Platform, Standard
+Edition (Java SE) Requirements].” Although this specification does not
+define the relationship between the operating system identity associated
+with a running application client and the authenticated user identity,
+support for single signon requires that the Java EE product be able to
+relate these identities. Additional application client requirements are
+described in link:#a3293[See CHApter]
+of this specification.
+
+=== Resource Authentication Requirements
+
+Resources within an enterprise are often
+deployed in security policy domains different from the security policy
+domain of the application component. The wide variance of authentication
+mechanisms used to authenticate the caller to resources leads to the
+requirement that a Java EE product provide the means to authenticate in
+the security policy domain of the resource.
+
+A Product Provider must support both of the
+following:
+
+. Configured Identity. A Java EE container must
+be able to authenticate for access to the resource using a principal and
+authentication data specified by a Deployer at deployment time.The
+authentication must not depend in any way on data provided by the
+application components. Providing for the confidential storage of the
+authentication information is the responsibility of the Product
+Provider.
+. Programmatic Authentication. The Java EE
+product must provide for specification of the principal and
+authentication data for a resource by the application component at
+runtime using appropriate APIs. The application may obtain the principal
+and authentication data through a variety of mechanisms, including
+receiving them as parameters, obtaining them from the component’s
+environment, and so forth.
+
+In addition, the following techniques are
+recommended but not required by this specification:
+
+
+
+. Principal Mapping. A resource can have a
+principal and attributes that are determined by a mapping from the
+identity and security attributes of the requesting principal. In this
+case, a resource principal is not based on inheritance of the identity
+or security attributes from a requesting principal, but gets its
+identity and security attributes based on the mapping.
+. Caller Impersonation. A resource principal
+acts on behalf of a requesting principal. Acting on behalf of a caller
+principal requires delegation of the caller’s identity and credentials
+to the underlying resource manager. In some scenarios, a requesting
+principal can be a delegate of an initiating principal and the resource
+principal is transitively impersonating an initiating principal.
+
+The support for principal delegation is
+typically specific to a security mechanism. For example, Kerberos
+supports a mechanism for the delegation of authentication. (Refer to the
+Kerberos v5 specification for more details.)
+
+. Credentials Mapping. This technique may be
+used when an application server and an EIS support different
+authentication domains. For example:
+. The initiating principal may have been
+authenticated and have public key certificate-based credentials.
+. The security environment for the resource
+manager may be configured with the Kerberos authentication service.
+
+The application server is configured to map the
+public key certificate-based credentials associated with the initiating
+principal to the Kerberos credentials.
+
+Additional information on resource
+authentication requirements can be found in the Connector specification.
+
+=== Authorization Requirements
+
+To support the authorization models described
+in this chapter, the following requirements are imposed on Java EE
+products.
+
+=== Code Authorization
+
+A Java EE product may restrict the use of
+certain Java SE classes and methods to secure and ensure proper
+operation of the system. The minimum set of permissions that a Java EE
+product is required to grant to a Java EE application is defined in
+link:#a2339[See Java Platform, Standard
+Edition (Java SE) Requirements].” All Java EE products must be capable
+of deploying application components with exactly these permissions.
+
+A Java EE Product Provider may choose to enable
+selective access to resources using the Java protection model. The
+mechanism used is Java EE product dependent.
+
+The _permissions.xml_ descriptor (see
+link:#a2496[See Declaring Permissions
+Required by Application Components]”) makes it possible to express
+permissions that a component needs for access.
+
+=== Caller Authorization
+
+A Java EE product must enforce the access
+control rules specified at deployment time (see
+link:#a451[See Deployment
+Requirements]”) and more fully described in the EJB and Servlet
+specifications.
+
+=== Propagated Caller Identities.
+
+In a Java EE product that contains an EJB
+container, it must be possible to configure the Java EE product so that
+a propagated caller identity is used in all authorization decisions.
+With this configuration, for all calls to all enterprise beans from a
+single application within a single Java EE product, the principal name
+returned by the _EJBContext_ method _getCallerPrincipal_ or the
+_SecurityContext_ method _getCallerPrincipal_ must be the same as that
+returned by the first enterprise bean in the call chain. If the first
+enterprise bean in the call chain is called by a servlet or JSP page,
+the principal name must be the same as that returned by the
+_HttpServletRequest_ method _getUserPrincipal_ or the _SecurityContext_
+method _getCallerPrincipal_ in the calling servlet or JSP page.
+(However, if the _HttpServletRequest_ or _SecurityContext_ method
+_getCallerPrincipal_ returns _null_ , the principal used in calls to
+enterprise beans is not specified by this specification, although it
+must still be possible to configure enterprise beans to be callable by
+such components.)
+
+Note that this does not require delegation of
+credentials, only identification of the caller. A single principal must
+be the principal used in authorization decisions for access to all
+enterprise beans in the call chain. The requirements in this section
+apply only when a Java EE product has been configured to propagate
+caller identity.
+
+=== Run As Identities
+
+Java EE products must also support the Run As
+capability that allows the Application Component Provider and the
+Deployer to specify an identity under which an enterprise bean or web
+component must run. In this case it is the Run As identity that is
+propagated to subsequent EJB components, rather than the original caller
+identity.
+
+Note that this specification doesn’t specify
+any relationship between the Run As identity and any underlying
+operating system identity that may be used to access system resources
+such as files. However, the Java Authorization Contract for Containers
+specification does specify the relationship between the Run As identity
+and the access control context used by the Java SE security manager.
+
+=== [[a451]]Deployment Requirements
+
+All Java EE products must implement the access
+control semantics described in all included component specifications,
+such as the EJB, JSP, and Servlet specifications; provide a means of
+mapping the security roles specified in metadata annotations or the
+deployment descriptor to the actual roles exposed by a Java EE product;
+and support the default mapping from user groups to roles defined by the
+Java EE Security API specification.
+
+While most Java EE products will allow the
+Deployer to customize the role mappings and change the assignment of
+roles to methods, all Java EE products must support the ability to
+deploy applications and components using exactly the mappings and
+assignments specified in their metadata annotations or deployment
+descriptors.
+
+As described in the EJB specification and the
+Servlet specification, a Java EE product must provide a deployment tool
+or tools capable of assigning the security roles in metadata annotations
+or deployment descriptors to the entities that are used to determine
+role membership at authorization time.
+
+Application developers will need to specify (in
+the application’s metadata annotations or deployment descriptors) the
+security requirements of an application in which some components may be
+accessed by unauthenticated users as well as authenticated users (as
+described above in link:#a408[See
+Unauthenticated Users]”). Applications express their security
+requirements in terms of security roles, which the Deployer maps to
+users (principals) in the operational environment at deployment time. An
+application might define a role representing all authenticated and
+unauthenticated users and configure some enterprise bean methods to be
+accessible by this role.
+
+To support such usage, this specification
+requires that it be possible to map an application defined security role
+to the universal set of application principals independent of
+authentication. __
+
+=== [[a457]]Future Directions
+
+=== Auditing
+
+This specification does not specify
+requirements for the auditing of security relevant events, nor APIs for
+application components to generate audit records. A future version of
+this specification may include such a specification for products that
+choose to provide auditing.
+
+=== Instance-based Access Control
+
+Some applications need to control access to
+their data based on the content of the data, rather than simply the type
+of the data. We refer to this as “instance-based” rather than
+“class-based” access control. We hope to address this in a future
+release.
+
+=== User Registration
+
+Web-based internet applications often need to
+manage a set of customers dynamically, allowing users to register
+themselves as new customers. This scenario was widely discussed in the
+Servlet expert group (JSR-53) but we were unable to achieve consensus on
+the appropriate solution. We had to abandon this work for J2EE 1.3, and
+were not able to address it for J2EE 1.4, but hope to pursue it further
+in a future release.

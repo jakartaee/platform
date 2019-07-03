@@ -1,0 +1,477 @@
+== Transaction Management
+
+This chapter describes the required Java™
+Platform, Enterprise Edition (Java EE) transaction management and
+runtime environment.
+
+Product Providers must transparently support
+transactions that involve multiple components and transactional
+resources within a single Java EE product, as described in this chapter.
+This requirement must be met regardless of whether the Java EE product
+is implemented as a single process, multiple processes on the same
+network node, or multiple processes on multiple network nodes.
+
+If the following components are included in a
+Java EE product, they are considered transactional resources and must
+behave as specified here:
+
+* JDBC connections
+* JMS sessions
+* Resource adapter connections for resource
+adapters specifying the _XATransaction_ transaction level
+
+=== Overview
+
+A Java EE Product that includes both a servlet
+container and an EJB container must support a transactional application
+comprised of combinations of web application components accessing
+multiple enterprise beans within a single transaction. If the Java EE
+product also includes support for the Connectors specification, each
+component may also acquire one or more connections to access one or more
+transactional resource managers.
+
+For example, in
+_link:#a475[See Servlets/JSP Pages
+Accessing Enterprise Beans]_ , the call tree starts from a servlet or
+JSP page accessing multiple enterprise beans, which in turn may access
+other enterprise beans. The components access resource managers via
+connections.
+
+=== [[a475]]Servlets/JSP Pages Accessing Enterprise Beans
+
+image:Platform_Spec-8.png[image]
+
+The Application Component Provider specifies,
+using a combination of programmatic and declarative transaction
+demarcation APIs, how the platform must manage transactions on behalf of
+the application.
+
+For example, the application may require that
+all the components in _link:#a475[See
+Servlets/JSP Pages Accessing Enterprise Beans]_ access resources as part
+of a single transaction. The Platform Provider must provide the
+transaction capabilities to support such a scenario.
+
+This specification does not define how the
+components and the resources are partitioned or distributed within a
+single Java EE product. In order to achieve the transactional semantics
+required by the application, the Java EE Product Provider is free to
+execute the application components sharing a transaction in the same
+Java virtual machine, or distribute them across multiple virtual
+machines, in accordance with the requirements of the component
+specifications.
+
+The rest of this chapter describes the
+transactional requirements for a Java EE product in more detail. +
+
+=== Requirements
+
+This section defines the transaction support
+requirements of Java EE Products that must be supported by Product
+Providers.
+
+=== Web Components
+
+Web components may demarcate transactions using
+the _javax.transaction.UserTransaction_ interface or transactional
+interceptors, which are defined in the JTA specification. They may
+access multiple resource managers and invoke multiple enterprise beans
+within a single transaction. The specified transaction context is
+automatically propagated to the enterprise beans and transactional
+resource managers. The result of the propagation may be subject to the
+enterprise bean transaction attributes (for example, a bean may be
+required to use Container Managed Transactions).
+
+Web application event listeners and upgrade
+handlers must not demarcate transactions using the
+_javax.transaction.UserTransaction_ interface or transactional
+interceptors. Servlet filters may use transactional resources within
+their _doFilter_ methods but should not use any transactional resources
+in the methods of any objects used to wrap the request or response
+objects.
+
+=== Transaction Requirements
+
+The Java EE platform must meet the following
+requirements:
+
+* The Java EE platform must provide an object
+implementing the _javax.transaction.UserTransaction_ interface to all
+web components. The platform must publish the _UserTransaction_ object
+in the Java™ Naming and Directory Interface (JNDI) name space available
+to web components under the name _java:comp/UserTransaction_ .
+* The Java EE platform must provide classes
+that implement the transactional interceptors, as defined by the JTA
+specification.
+* If a web component invokes an enterprise bean
+from a thread associated with a JTA transaction, the Java EE platform
+must propagate the transaction context with the enterprise bean
+invocation. Whether the target enterprise bean will be invoked in this
+transaction context or not is determined by the rules defined in the EJB
+specification.
+
+Note that this transaction propagation
+requirement applies only to invocations of enterprise beans in the same
+Java EE product instancelink:#a3649[2] as the invoking component.
+Invocations of enterprise beans in another Java EE product instance (for
+example, using the EJB interoperability protocol) need not propagate the
+transaction context. See the EJB specification for details.
+
+* If a web component accesses a transactional
+resource manager from a thread associated with a JTA transaction, the
+Java EE platform must ensure that the resource access is included as
+part of the JTA transaction.
+* If a web component creates a thread, the Java
+EE platform must ensure that the newly created thread is not associated
+with any JTA transaction.
+
+=== [[a493]]Transaction Non-Requirements
+
+The Product Provider is not required to support
+the importing of a transaction context from a client to a web component.
+
+The Product Provider is not required to support
+transaction context propagation via an HTTP request across web
+components. The HTTP protocol does not support such transaction context
+propagation. When a web component associated with a transaction makes an
+HTTP request to another web component, the transaction context is not
+propagated to the target servlet or page.
+
+However, when a web component is invoked
+through the _RequestDispatcher_ interface, any active transaction
+context must be propagated to the called servlet or JSP page.
+
+=== Transactions in Web Component Life Cycles
+
+Transactions may not span web requests from a
+client on the network. If a web component starts a transaction in the
+_service_ or _doFilter_ method (or transactional interceptor of
+_service_ or _doFilter_ method), it must be completed before the
+_service_ or _doFilter_ method returns to the network
+clientlink:#a3650[3]. Returning from the _service_ or _doFilter_
+method to the network client with an active transaction context is an
+error. The web container is required to detect this error and abort the
+transaction.
+
+As specified above in
+link:#a493[See Transaction
+Non-Requirements],” requests made within a web container using the
+_RequestDispatcher_ must propagate any transaction context to the called
+class. Unless the called class commits or aborts the transaction, the
+transaction must remain active when the called class returns.
+
+If a servlet that is called via the
+_RequestDispatcher_ starts a transaction, the behavior of the container
+with regard to that transaction is unspecified when the servlet returns
+from its service method. The web container may throw an exception to the
+caller, abort the transaction and return to the caller without error, or
+propagate the transaction context back to the caller. Portable servlets
+will complete any transaction they start before returning from the
+service method.
+
+=== Transactions and Threads
+
+There are many subtle and complex interactions
+between the use of transactional resources and threads. To ensure
+correct operation, web components should obey the following guidelines,
+and the web container must support at least these usages.
+
+* JTA transactions should be started and
+completed in the thread in which the _service_ method is called.
+Additional threads that are created for any purpose should not attempt
+to start JTA transactions.
+* Transactional resources may be acquired and
+released by a thread other than the _service_ method thread, but should
+not be shared between threads.
+* Transactional resource objects (for example,
+JDBC _Connection_ objects) should not be stored in static fields. Such
+objects can only be associated with one transaction at a time. Storing
+them in static fields would make it easy to erroneously share them
+between threads in different transactions.
+* Web components implementing
+_SingleThreadModel_ may store top-level transactional resource objects
+in class instance fields. A top-level object is one acquired directly
+from a container managed connection factory object (for example, a JDBC
+_Connection_ acquired from a JDBC _ConnectionFactory_ ), as opposed to
+other objects acquired from these top-level objects (for example, a JDBC
+_Statement_ acquired from a JDBC _Connection_ ). The web container
+ensures that requests to a _SingleThreadModel_ servlet are serialized
+and thus only one thread and one transaction will be able to use the
+object at a time, and that the top-level object will be enlisted in any
+new transaction started by the component.
+* In web components not implementing
+_SingleThreadModel_ , transactional resource objects, as well as Java
+Persistence _EntityManager_ objects, should not be stored in class
+instance fields, and should be acquired and released within the same
+invocation of the _service_ method.
+* Web components that are called by other web
+components (using the _forward_ or _include_ methods) should not store
+transactional resource objects in class instance fields.
+* Enterprise beans may be invoked from any
+thread used by a web component. Transaction context propagation
+requirements are described above and in the EJB specification.
+
+=== Enterprise JavaBeans™ Components
+
+The Java EE Product Provider must provide
+support for transactions as defined in the EJB specification.
+
+=== Application Clients
+
+The Java EE Product Provider is not required to
+provide transaction management support for application clients.
+
+=== Applet Clients
+
+The Java EE Product Provider is not required to
+provide transaction management support for applets.
+
+=== [[a516]]Transactional JDBC™ Technology Support
+
+A Java EE product must support a JDBC
+technology database as a transactional resource manager. The platform
+must enable transactional JDBC API access from web components and
+enterprise beans.
+
+It must be possible to access the JDBC
+technology database from multiple application components within a single
+transaction. For example, a servlet may wish to start a transaction,
+access a database, invoke an enterprise bean that accesses the same
+database as part of the same transaction, and, finally, commit the
+transaction.
+
+A Java EE product must provide a transaction
+manager that is capable of coordinating two-phase commit operations
+across multiple XA-capable JDBC databases. If a JDBC driver supports the
+Java Transaction API’s XA interfaces (in the _javax.transaction.xa_
+package), then the Java EE product must be capable of using the XA
+interfaces provided by the JDBC driver to accomplish two-phase commit
+operations. The Java EE product may discover the XA capabilities of JDBC
+drivers through product-specific means, although normally such JDBC
+drivers would be delivered as resource adapters using the Connector API.
+
+=== [[a520]]Transactional JMS Support
+
+A Java EE product must support a JMS provider
+as a transactional resource manager. The platform must enable
+transactional JMS access from servlets, JSP pages, and enterprise beans.
+
+It must be possible to access the JMS provider
+from multiple application components within a single transaction. For
+example, a servlet may wish to start a transaction, send a JMS message,
+invoke an enterprise bean that also sends a JMS message as part of the
+same transaction, and, finally, commit the transaction.
+
+=== Transactional Resource Adapter (Connector) Support
+
+A Java EE product must support resource
+adapters that use _XATransaction_ mode as transactional resource
+managers. The platform must enable transactional access to the resource
+adapter from servlets, JSP pages, and enterprise beans.
+
+It must be possible to access the resource
+adapter from multiple application components within a single
+transaction. For example, a servlet may wish to start a transaction,
+access the resource adapter, invoke an enterprise bean that also
+accesses the resource adapter as part of the same transaction, and,
+finally, commit the transaction.
+
+=== Transaction Interoperability
+
+=== Multiple Java EE Platform Interoperability
+
+This specification does not require the Product
+Provider to implement any particular protocol for transaction
+interoperability across multiple Java EE products. Java EE compatibility
+requires neither interoperability among identical Java EE products from
+the same Product Provider, nor among heterogeneous Java EE products from
+multiple Product Providers.
+
+We recommend that Java EE Product Providers use
+the IIOP transaction propagation protocol defined by OMG and described
+in the OTS specification (and implemented by the Java Transaction
+Service), for transaction interoperability when using the EJB
+interoperability protocol based on RMI-IIOP.
+
+=== Support for Transactional Resource Managers
+
+This specification requires all Java EE
+products to support the _javax.transaction.xa.XAResource_ interface, as
+specified in the Connector specification. This specification also
+requires all Java EE products to support the
+_javax.transaction.xa.XAResource_ interface for performing two-phase
+commit operations on JDBC drivers that support the JTA XA APIs. This
+specification does not require that JDBC drivers or JMS providers use
+the _javax.transaction.xa.XAResource_ interface, although they may use
+this interface and in all cases they must meet the transactional
+resource manager requirements described in this chapter. In particular,
+it must be possible to combine operations on one or more JDBC databases,
+one or more JMS sessions, one or more enterprise beans, and multiple
+resource adapters supporting the _XATransaction_ mode in a single JTA
+transaction.
+
+=== Local Transaction Optimization
+
+=== Requirements
+
+If a transaction uses a single resource
+manager, performance may be improved by using a resource manager
+specific local optimization. A local transaction is typically more
+efficient than a global transaction and provides better performance.
+Local optimization is not available for transactions that are imported
+from a different container.
+
+Containers may choose to provide local
+transaction optimization, but are not required to do so. Local
+transaction optimization must be transparent to a Java EE application.
+
+The following section describes a possible
+mechanism for local transaction optimization by containers.
+
+=== A Possible Design
+
+This section illustrates how the previously
+described requirements might be implemented.
+
+When the first connection to a resource manager
+is established as part of the transaction, a resource manager specific
+local transaction is started on the connection. Any subsequent
+connection acquired as part of the transaction that can share the local
+transaction on the first connection is allowed to share the local
+transaction.
+
+A global transaction is started lazily under
+the following conditions:
+
+* When a subsequent connection cannot share the
+resource manager local transaction on the first connection, or if it
+uses a different resource manager.
+* When a transaction is exported to a different
+container.
+
+After the lazy start of a global transaction,
+any subsequent connection acquired may either share the local
+transaction on the first connection, or be part of the global
+transaction, depending on the resource manager it accesses.
+
+When a transaction completion (commit or
+rollback) is attempted, there are two possibilities:
+
+* If only a single resource manager had been
+accessed as part of the transaction, the transaction is completed using
+the resource manager specific local transaction mechanism.
+* If a global transaction had been started, the
+transaction is completed treating the resource manager local transaction
+as a last resource in the global 2-phase commit protocol, that is using
+the last resource 2-phase commit optimization.
+
+=== Connection Sharing
+
+When multiple connections acquired by a Java EE
+application use the same resource manager, containers may choose to
+provide connection sharing within the same transaction scope. Sharing
+connections typically results in efficient usage of resources and better
+performance. Containers are required to provide connection sharing in
+certain situations; see the Connector specification for details.
+
+Connections to resource managers acquired by
+Java EE applications are considered potentially shared or shareable. A
+Java EE application component that intends to use a connection in an
+unshareable way must provide deployment information to that effect, to
+prevent the connection from being shared by the container. Examples of
+when this may be needed include situations with changed security
+attributes, isolation levels, character settings, and localization
+configuration. Containers must not attempt to share connections that are
+marked unshareable. If a connection is not marked unshareable, it must
+be transparent to the application whether the connection is actually
+shared or not.
+
+Java EE application components may use the
+optional _shareable_ element of the _Resource_ annotation or the
+optional deployment descriptor element _res-sharing-scope_ to indicate
+whether a connection to a resource manager is shareable or unshareable.
+Containers must assume connections to be shareable if no deployment hint
+is provided. link:#a3399[See Java EE
+Application Client XML Schema]”, the EJB specification, and the Servlet
+specification provide descriptions of the deployment descriptor element.
+
+Java EE application components may cache
+connection objects and reuse them across multiple transactions.
+Containers that provide connection sharing must transparently switch
+such cached connection objects (at dispatch time) to point to an
+appropriate shared connection with the correct transaction scope. Refer
+to the Connector specification for a detailed description of connection
+sharing.
+
+=== JDBC and JMS Deployment Issues
+
+The JDBC transaction requirements in
+link:#a516[See Transactional JDBC™
+Technology Support]” and the JMS transaction requirements in
+link:#a520[See Transactional JMS
+Support]” may impose some restrictions on a Deployer’s configuration of
+an application’s JDBC and JMS resources. Java EE Product Providers may
+impose the restrictions described in this section to meet these
+requirements.
+
+If the deployer configures a non-XA-capable
+JDBC resource manager in a transaction, then a Java EE Product Provider
+may restrict all JDBC access within that transaction to that
+non-XA-capable JDBC resource manager. Otherwise, a Java EE Product
+Provider must support use of multiple XA-capable JDBC resource managers
+within a transaction. In addition, a Java EE Product Provider may
+restrict the security configuration of all JDBC connections within a
+transaction to a single user identity. A Java EE Product Provider is not
+required to support transactions where more than one JDBC identity is
+used. Specifically, this means that transactions that require the use of
+more than one JDBC security identity (which can be done explicitly via
+component provided user name and password) may not be portable.
+
+A Java EE Product Provider may make the same
+restrictions as above, resulting in a transaction being restricted to a
+single JMS resource manager and user identity.
+
+In addition, when both a JDBC resource manager
+and a JMS resource manager are used in the same transaction, a Java EE
+Product Provider may restrict both to a pairing that allows their
+combination to deliver the full transactional semantics required by the
+application, and may restrict the security identity of both to a single
+identity. To fully support such usage, portable applications that wish
+to include JDBC and JMS access in a single global transaction must not
+mark the corresponding transactional resources as “unshareable”.
+
+Although these restrictions are allowed, it is
+recommended that Java EE Product Providers support JDBC and JMS resource
+managers that provide full two-phase commit functionality and, as a
+result, do not impose these restrictions.
+
+=== Two-Phase Commit Support
+
+A Java EE product must support the use of
+multiple XA-capable resource adapters in a single transaction. To
+support such a scenario, full two-phase commit support is required. A
+JMS provider may be provided as an XA-capable resource adapter. In such
+a case, it must be possible to include JMS operations in the same global
+transaction as other resource adapters. While JDBC drivers are not
+required to be XA-capable, a JDBC driver may be delivered as an
+XA-capable resource adapter. In such a case, it must be possible to
+include JDBC operations in the same global transaction as other
+XA-capable resource adapters. See also
+link:#a516[See Transactional JDBC™
+Technology Support].”
+
+=== System Administration Tools
+
+Although there are no compatibility
+requirements for system administration capabilities, the Java EE Product
+Provider will typically include tools that allow the System
+Administrator to perform the following tasks:
+
+* Integrate transactional resource managers
+with the platform.
+* Configure the transaction management parts of
+the platform.
+* Monitor transactions at runtime.
+* Receive notifications of abnormal transaction
+processing conditions (such as abnormally high number of transaction
+rollbacks).

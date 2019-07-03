@@ -1,0 +1,593 @@
+== [[a3212]]Profiles
+
+This chapter describes the requirements
+common to all Java EE profiles. It does not define any concrete
+profiles, delegating this task to separate specifications.
+
+The Java EE Web Profile Specification,
+published in conjunction with the present specification, defines the
+first Java EE profile, the Web Profile.
+
+The definition of other profiles is left to
+future specifications.
+
+=== Introduction
+
+A Java EE profile (from now on, simply “a
+profile”) represents a configuration of the platform suited to a
+particular class of applications.
+
+A profile may contain a proper subset of the
+technologies contained in the platform. By doing so, a profile can
+effectively drop technologies which the platform supports but which are
+not generally useful in a particular domain.
+
+A profile may also add one or more
+technologies which are not present in the platform itself. For example,
+a hypothetical Java EE Portal Profile would likely include the Portlet
+API (JSR-286).
+
+Additionally, a profile may tag certain
+technologies as optional. In this case, products implementing the
+profile may or may not include the technology in question. Naturally, if
+they do, they need to obey all the relevant requirements mandated by the
+profile specification.
+
+A product may implement two or more Java EE
+profiles, or the full platform and one or more Java EE profiles, as long
+as their combined requirements do not give rise to conflicts.
+
+=== Profile Definition
+
+A profile is defined in accordance with the
+rules of the Java Community Process. Typically, a proposal to create a
+new profile, or to revise an existing one, will be submitted as a Java
+Specification Request (JSR). Once the JSR is approved, an expert group
+will be formed and conduct work as dictated by the process. The JSR for
+a profile must mention the version of the Java EE Platform that it
+builds on. Additionally, if it builds on an existing profile, it must
+mention this fact as well.
+
+Although profiles can be created and evolved
+independently of the Java EE platform, modulo the rules contained in
+this specification, it is envisioned that profiles will maintain a
+reasonable level of alignment with the platform itself, in order to
+avoid fragmenting the development space into progressively incompatible
+islands. To this end, a profile must build on the most recent version of
+the Java EE platform available at the time the JSR for the profile is
+approved. It is also recommended that profile expert groups go beyond
+this requirement and, as much as it is practical, ensure that their
+profile builds on the most recent version of the Java EE platform at the
+time the profile is finalized.
+
+=== General Rules for Profiles
+
+A profile must include all technologies that
+are required components of the Java EE platform or of any profiles on
+which it builds. These technologies will be listed as required in the
+profile.
+
+A profile may promote to required status any
+technologies that are optional components of the Java EE platform or of
+any profile on which it builds.
+
+Unless otherwise mandated by a profile, any
+technologies that are optional components of the Java EE platform, or of
+any profile on which the profile in question builds, must be optional
+components of the profile itself.
+
+A profile may include as a required or as an
+optional component any technology outside of those included in the Java
+EE platform or any profile on which it builds, as long as the
+corresponding compatibility requirements are satisfied.
+
+A profile must preserve any requirements
+defined in the Java EE platform specification, or in the specification
+of any profile on which it builds, as long as the preconditions for
+those requirements are satisfied. Typically, the preconditions will
+involve the presence of one or more technologies among those included in
+the profile. Unconditional requirements must be obeyed unconditionally.
+
+A profile may add any requirements that
+pertain to one or more technologies whose inclusion it allows or
+requires. Such requirements must not conflict with those set by the Java
+EE platform or by any profile on which the present one builds.
+
+The specification for individual technologies
+may allow for certain features of the technology in question to be
+optional. In this case, a profile may promote one or more of these
+features to required status, assuming the Java EE platform or any
+profile on which it builds hasn’t done so already.
+
+A profile must not conflict with the
+specifications for any technologies it includes either as required or
+optional components. Therefore, unless the specification for an
+individual technology explicitly allows for certain features or sets of
+requirements to be optionally implementable, a profile must not itself
+attempt to redefine any such features or requirements. For example, a
+profile may not allow omitting a package or type or method from an API
+specified elsewhere, unless the specification for that API explicitly
+allows for this to happen.
+
+Although this specification does not define
+any APIs, a profile may do so. Since such an API would be available only
+in profiles that build on the one that defines it, this approach limits
+the reusability of the API and thus is discouraged.
+
+=== Expression of Requirements
+
+The present specification uses the following
+conventions when expressing requirements that pertain to one or more
+technologies included in the platform:
+
+* Chapters or sections which are conditional
+on the presence of a specific technology are marked as such at the very
+beginning. The condition is then intended to stay in force until the
+next textual unit at the same logical level (e.g. the following chapter,
+or section, etc.).
+* Individual paragraphs and sentences are
+deemed to be conditional on any technologies they mention, unless
+otherwise indicated.
+* Section or paragraphs which discuss
+examples, or are otherwise non-normative, do not contain any
+requirements.
+
+=== [[a3240]]Requirements for All Java EE Profiles
+
+The Java Platform, Standard Edition 8 is the
+required foundation for any Java EE 8 profile.
+
+The following technologies are required to be
+present in all Java EE profiles:
+
+* Resource and component lifecycle
+annotations defined by the Common Annotations specification ( _Resource_
+, _Resources_ , _PostConstruct_ , _PreDestroy_ )
+
+The following functionality is required to be
+supported in all Java EE profiles:
+
+=== JNDI “java:” naming context (see link:#a607[See JNDI Naming Context]”)
+
+* Java Transaction API (JTA)
+
+=== Optional Features for Java EE Profiles
+
+All the technologies listed in
+link:#a2136[See Required APIs]”, and
+not designated as required in
+link:#a3240[See Requirements for All
+Java EE Profiles]”, are designated as optional for use in Java EE
+profiles.
+
+The following functionality is designated as
+optional for use in Java EE profiles:
+
+* RMI/IIOP interoperability requirements (see
+link:#a2875[See OMG Protocols (Proposed
+Optional)]”)
+* Support for _java:comp/ORB_ (see
+link:#a1385[See ORB References]”)
+
+=== [[a3252]]Full Java EE Product Requirements
+
+This section defines the requirements for
+full Java EE platform products. These requirements correspond to the
+full set of requirements in previous versions of the Java EE platform
+specification and update those requirements for this new version of the
+platform.
+
+Please note that, due to the effects of the
+pruning process, future versions of the Java EE specification will
+likely relax the requirements given here, specifically by marking as
+optional technologies that have been subject to pruning and that are
+required by the present specification. The set of technologies that have
+been made optional and/or identified as candidates for pruning is given
+in link:#a2331[See Pruned Java
+Technologies]”.
+
+The following technologies are required:
+
+* EJB 3.2 (except for EJB entity beans and
+associated EJB QL, which have been made optional)
+* Servlet 4.0
+* JSP 2.3
+* EL 3.0
+* JMS 2.0
+* JTA 1.2
+* JavaMail 1.6
+* Connector 1.7
+* Web Services 1.4
+* JAX-RS 2.1
+* WebSocket 1.1
+* JSON-P 1.1
+* JSON-B 1.0
+* Concurrency Utilities 1.0
+* Batch 1.0
+* Java EE Management 1.1
+* JACC 1.5
+* JASPIC 1.1
+* Java EE Security 1.0
+* JSP Debugging 1.0
+* JSTL 1.2
+* Web Services Metadata 2.1
+* JSF 2.3
+* Common Annotations 1.3
+* Java Persistence 2.2
+* Bean Validation 2.0
+* Managed Beans 1.0
+* Interceptors 1.2
+* Contexts and Dependency Injection for Java
+EE 2.0
+* Dependency Injection for Java 1.0
+
+
+
+The following technologies are optional:
+
+* EJB 3.2 and earlier entity beans and
+associated EJB QL
+* JAX-RPC 1.1
+* JAXR 1.0
+* Java EE Deployment 1.2
+
+
+
+=== CHApter __ [[a3293]]
+
+[[a3294]]Application Clients
+
+This chapter describes application clients
+in the Java™ Platform, Enterprise Edition (Java EE).
+
+A full Java EE product must support the
+application client container as described in this chapter. A Java EE
+profile may or may not require support for the application client
+container.
+
+=== Overview
+
+Application clients are first tier client
+programs that execute in their own Java™ virtual machines. Application
+clients follow the model for Java technology-based applications: they
+are invoked at their _main_ method and run until the virtual machine is
+terminated. However, like other Java EE application components,
+application clients depend on a container to provide system services.
+The application client container may be very light-weight compared to
+other Java EE containers, providing only the security and deployment
+services described below
+
+=== Security
+
+The Java EE authentication requirements for
+application clients are the same as for other Java EE components, and
+the same authentication techniques may be used as for other Java EE
+application components.
+
+No authentication is necessary when accessing
+unprotected web resources. When accessing protected web resources, the
+usual varieties of authentication may be used, namely HTTP Basic
+authentication, SSL client authentication, or HTTP Login Form
+authentication. Lazy authentication may be used.
+
+Authentication is required when accessing
+protected enterprise beans. The authentication mechanisms for enterprise
+beans include those required in the EJB specification for enterprise
+bean interoperability. Lazy authentication may be used.
+
+An application client makes use of an
+authentication service provided by the application client container for
+authenticating its users. The container’s service may be integrated with
+the native platform’s authentication system, so that a single signon
+capability is employed. The container may authenticate the user when the
+application is started, or it may use lazy authentication,
+authenticating the user when a protected resource is accessed. This
+specification does not describe the technique used to authenticate the
+user, although a later version may do so.
+
+If the container interacts with the user to
+gather authentication data, the container must provide an appropriate
+user interface. In addition, an application client may provide a class
+that implements the _javax.security.auth.callback.CallbackHandler_
+interface and specify the class name in its deployment descriptor (see
+link:#a3399[See Java EE Application
+Client XML Schema]” for details). The Deployer may override the callback
+handler specified by the application and use the container’s default
+authentication user interface instead.
+
+If a callback handler is configured by the
+Deployer, the application client container must instantiate an object of
+this class and use it for all authentication interactions with the user.
+The application’s callback handler must fully support _Callback_ objects
+specified in the _javax.security.auth.callback_ package.
+
+Note that when HTTP Login Form authentication is
+used, the authentication user interface provided by the server (in the
+form of an HTML page delivered in response to an HTTP request) must be
+displayed by the application client.
+
+Application clients typically execute in an
+environment with a SecurityManager installed, and have similar security
+permission requirements as servlets. The security permission
+requirements are described fully in
+link:#a2339[See Java Platform, Standard
+Edition (Java SE) Requirements].”
+
+=== Transactions
+
+Application clients are not required to have
+direct access to the transaction facilities of the Java EE platform. A
+Java EE product is not required to provide a JTA _UserTransaction_
+object for use by application clients. Application clients can invoke
+enterprise beans that start transactions, and they can use the
+transaction facilities of the JDBC API. If a JDBC API transaction is
+open when an application client invokes an enterprise bean, the
+transaction context is not required to be propagated to the EJB server.
+
+=== Resources, Naming, and Injection
+
+As with all Java EE components, application
+clients use JNDI to look up enterprise beans, get access to resource
+managers, reference configurable parameters set at deployment time, and
+so on. Application clients use the _java:_ JNDI namespace to access
+these items (see link:#a567[See
+Resources, Naming, and Injection]” for details).
+
+Injection is also supported for the
+application client main class. Because the application client container
+does not create instances of the application client main class, but
+merely loads the class and invokes the static _main_ method, injection
+into the application client class uses _static_ fields and methods,
+unlike other Java EE components. Injection occurs before the _main_
+method is called.
+
+=== Application Programming Interfaces
+
+Application clients have all the facilities of
+the JavaTM Platform, Standard Edition (subject to security
+restrictions), as well as various standard extensions, as described in
+Chapter EE.6 “Application Programming Interface.” Each application
+client executes in its own Java virtual machine. Application clients
+start execution at the _main_ method of the class specified in the
+_Main-Class_ attribute in the manifest file of the application client’s
+JAR file (although note that application client container code will
+typically execute before the application client itself, in order to
+prepare the environment of the container, install a _SecurityManager_ ,
+initialize the name service client library, and so on).
+
+=== [[a3315]]Packaging and Deployment
+
+Application clients are packaged in JAR format
+files with a _.jar_ extension and may include a deployment descriptor
+similar to other Java EE application components. The deployment
+descriptor describes the enterprise beans, web services, and other types
+of external resources referenced by the application. If the deployment
+descriptor is not included, or is included but not marked
+_metadata-complete_ , annotations on the main class of the application
+client may also be used to describe the resources needed by the
+application. As with other Java EE application components, access to
+resources must be configured at deployment time, names assigned for
+enterprise beans and resources, and so on.
+
+The following table describes the cases the
+deployment tool must consider when deciding whether or not to process
+annotations on the application client main class. Whether or not to
+process annotations depends on the presence and version of the
+deployment descriptor and the setting of the _metadata-complete_
+attribute.
+
+=== [[a3318]]Deployment Descriptor Processing Requirements
+
+Deployment descriptor
+
+metadata-complete?
+
+process annotations?
+
+application-client_1_2
+
+N/A
+
+No
+
+application-client_1_3
+
+N/A
+
+No
+
+application-client_1_4
+
+N/A
+
+No
+
+application-client_5
+
+Yes
+
+No
+
+application-client_5
+
+No
+
+Yes
+
+application-client_6
+
+Yes
+
+No
+
+application-client_6
+
+No
+
+Yes
+
+application-client_7
+
+Yes
+
+No
+
+application-client_7
+
+No
+
+Yes
+
+application-client_8
+
+Yes
+
+No
+
+application-client_8
+
+No
+
+Yes
+
+none
+
+N/A
+
+Yes
+
+The _metadata-complete_ attribute defines
+whether the application client deployment descriptor is complete, or
+whether the class files available to the application client module
+should be examined for annotations that specify deployment information.
+Deployment information, in this sense, refers to any information that
+could have been specified by the application client deployment
+descriptor for the module.
+
+If the value of the _metadata-complete_
+attribute is specified as _“true”_ , the deployment tool must ignore any
+annotations that specify such deployment information in the class files
+packaged in the application client jar file. Such annotations must also
+be ignored when processing the class files that are available to the
+application client module for the deployment of this module according to
+link:#a3179[See Deploying a Java EE
+Application]”.
+
+Note that a _"true"_ value for the
+_metadata-complete_ attribute does _not_ preempt the processing of _all_
+annotations, only those that specify deployment information.
+
+The list of annotations to which the
+_metadata-complete_ attribute applies currently includes the following:
+
+
+
+*  _javax.annotation.PostConstruct_
+*  _javax.annotation.PreDestroy_
+*  _javax.annotation.Resource_
+*  _javax.annotation.Resources_
+*
+_javax.annotation.sql.DataSourceDefinition_
+*
+_javax.annotation.sql.DataSourceDefinitions_
+
+ __
+
+*  _javax.ejb.EJB_
+*  _javax.ejb.EJBs_
+
+ __
+
+*  _javax.jms.JMSConnectionFactoryDefinition_
+*
+_javax.jms.JMSConnectionFactoryDefinitions_
+*  _javax.jms.JMSDestinationDefinition_
+*  _javax.jms.JMSDestinationDefinitions_
+
+ __
+
+*  _javax.mail.MailSessionDefinition_
+*  _javax.mail.MailSessionDefinitions_
+
+ __
+
+*  _javax.persistence.PersistenceUnit_
+*  _javax.persistence.PersistenceUnits_
+
+ __
+
+*
+_javax.resource.AdministeredObjectDefinition_
+*
+_javax.resource.AdministeredObjectDefinitions_
+*
+_javax.resource.ConnectionFactoryDefinition_
+*
+_javax.resource.ConnectionFactoryDefinitions_
+
+ __
+
+* All annotations in the following packages:
+*  _javax.jws_
+* javax.jws.soap
+* javax.xml.ws
+* javax.xml.ws.soap
+* javax.xml.ws.spi
+
+ __
+
+If the _metadata-complete_ attribute is not
+specified or its value is _"false"_ , the deployment tool must examine
+the class files for all such annotations.
+
+The tool used to deploy an application client
+to the client machine, and the mechanism used to install the application
+client, is not specified. Very sophisticated Java EE products may allow
+the application client to be deployed on a Java EE server and
+automatically made available to some set of (usually intranet) clients.
+Other Java EE products may require the Java EE application bundle
+containing the application client to be manually deployed and installed
+on each client machine. And yet another approach would be for the
+deployment tool on the Java EE server to produce an installation package
+that could be used by each client to install the application client.
+There are many possibilities here and this specification doesn’t
+prescribe any one. It only defines the package format for the
+application client and the things that must be possible during the
+deployment process.
+
+How an application client is invoked by an end
+user is unspecified. Typically a Java EE Product Provider will provide
+an application launcher that integrates with the application client
+machine’s native operating system, but the level of such integration is
+unspecified.
+
+=== [[a3399]]Java EE Application Client XML Schema
+
+The XML grammar for a Java EE application client
+deployment descriptor is defined by the Java EE application-client
+schema. The root element of the deployment descriptor for an application
+client is _application-client_ . The content of the XML elements is in
+general case sensitive. This means, for example, that
+_<res-auth>Container</res-auth>_ must be used, rather than
+_<res-auth>container</res-auth>_ .
+
+All valid _application-client_ deployment
+descriptors must conform to the XML Schema definition, or to a DTD or
+schema definition from a previous version of this specification. (See
+link:#a3447[See Previous Version
+Deployment Descriptors].”) The deployment descriptor must be named
+_META-INF/application-client.xml_ in the application client’s _.jar_
+file. Note that this name is case-sensitive.
+
+
+_link:#a3404[See Java EE Application
+Client XML Schema Structure]_ shows the structure of the Java EE
+application-client XML Schema. The Java EE application-client XML Schema
+is located at
+_http://xmlns.jcp.org/xml/ns/javaee/application-client_8.xsd_ .
+
+
+
+image:Platform_Spec-12.png[image]
+
+=== [[a3404]]Java EE Application Client XML Schema Structure
