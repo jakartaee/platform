@@ -23,9 +23,9 @@ Run the full build:
 Locate the html files:
 - `target/generated-docs/Platform-spec-<version>.html`
 - `target/generated-docs/WebProfile-spec-<version>.html`
-- `target/generated-docs/ManagedBeans.html`
+- `target/generated-docs/ManagedBeans-spec-<version>.html`
 
 Locate the PDF files:
 - `target/generated-docs/Platform-spec-<version>.pdf`
 - `target/generated-docs/WebProfile-spec-<version>.pdf`
-- `target/generated-docs/ManagedBeans.pdf`
+- `target/generated-docs/ManagedBeans-spec-<version>.pdf`
