@@ -1,0 +1,64 @@
+== Service Provider Interface
+
+The Java™ Platform, Enterprise Edition (Java
+EE) includes several technologies that are primarily intended to be used
+to extend the capabilities of the Java EE containers. In addition, some
+Java EE technologies include service provider interfaces along with
+their application programming interfaces. A Java EE profile may include
+some or all of these facilities, as described in
+link:#a3212[See Profiles]”.
+
+=== Java™ EE Connector Architecture
+
+The Connector API defines how resource adapters
+are packaged and integrated with any Java EE product. Many types of
+service providers can be provided using the Connector API and packaging,
+including JDBC drivers, JMS providers, and JAXR providers. All Java EE
+products must support the Connector APIs, as specified in the Connector
+specification.
+
+The Connector specification is available at
+_http://jcp.org/en/jsr/detail?id=322_ .
+
+=== Java™ Authorization Service Provider Contract for Containers
+
+The JACC specification defines the contract
+between a Java EE container and an authorization policy provider.
+
+The JACC specification is available at
+_http://jcp.org/en/jsr/detail?id=115_ .
+
+=== Java™ Transaction API
+
+The Java Transaction API defines the
+_TransactionSynchronizationRegistry_ interface that is intended for use
+by system level application server components such as persistence
+managers, resource adapters, as well as EJB and Web application
+components. This provides the ability to register synchronization
+objects with special ordering semantics, associate resource objects with
+the current transaction, get the transaction context of the current
+transaction, get current transaction status, and mark the current
+transaction for rollback.
+
+The JTA specification is available at
+_http://jcp.org/en/jsr/detail?id=907_ .
+
+=== Java™ Persistence
+
+Java Persistence provides interfaces in the
+_javax.persistence.spi_ package that allow a persistence provider to be
+plugged into the Java Persistence framework.
+
+The Java Persistence specification is available
+at _http://jcp.org/en/jsr/detail?id=338_ .
+
+=== JavaMail™
+
+The JavaMail specification describes how
+JavaMail protocol providers can be packaged and distributed so that they
+can be discovered and used through the JavaMail API. This allows the
+JavaMail API to be extended with support for new mail protocols and
+mailbox formats.
+
+The JavaMail specification is available at
+_http://jcp.org/en/jsr/detail?id=919_ .
