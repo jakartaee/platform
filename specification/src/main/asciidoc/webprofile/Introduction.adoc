@@ -1,0 +1,193 @@
+== Introduction
+
+This specification defines the Java EE Web
+Profile (“Web Profile”), a profile of the Java Platform, Enterprise
+Edition specifically targeted at web applications.
+
+=== Target and Rationale for the Web Profile
+
+The Web Profile is targeted at developers of
+modern web applications.
+
+With the term “modern” we intend to highlight
+the fact that the world of web applications has made much progress since
+the introduction of the first Servlet specification. Inevitably, the
+number of technologies used to create even simple web applications had
+grown by leaps and bounds. In fact, few web applications today are
+written directly to the servlet API: most applications rely on standard
+or third-party frameworks and libraries, often developed as open source,
+which in turn use the services of the servlet container.
+
+Besides managing HTTP interactions, most web
+applications have significant requirements in the areas of transaction
+management, security and persistence. Such requirements can be readily
+addressed by technologies that have been part of the Java EE platform
+for quite some time, such as the Enterprise JavaBeans (EJB) 3.x
+technology and the Java Persistence API, but that are rarely supported
+by “plain” servlet containers. By incorporating many of these APIs, the
+Web Profile aims at raising the bar for what should be considered a
+basic stack for the development of web applications using the Java
+platform.
+
+Targeting “modern” web applications then
+implies offering a reasonably complete stack, composed of standard APIs,
+and capable out-of-the-box of addressing the needs of a large class of
+web applications. Furthermore, this stack should be easy to grow, so as
+to address any remaining developer needs.
+
+Against this drive towards completeness, one
+wishes to balance a desire to limit the footprint of web containers,
+both in physical and in conceptual terms. From the point of view of
+developers learning the Web Profile, it is more valuable to have a
+small, focused profile, with as little overlap between technologies as
+possible, rather than a more powerful but overly complex one, with
+redundant APIs.
+
+In defining the Web Profile we strove to find
+a middle ground between these two sets of requirements.
+
+In terms of completeness, the Web Profile
+offers a complete stack, with technologies addressing presentation and
+state management (JavaServer Faces, JavaServer Pages), core web
+container funtionality (Servlet), business logic (Enterprise JavaBeans
+Lite), transactions (Java Transaction API), persistence (Java
+Persistence API) and more.
+
+As for simplicity, it leaves out many of the
+enterprise backend APIs that are part of the Java EE platform. It also
+relies on the pluggability features in the Servlet specification to
+allow applications to use libraries that extend the servlet container
+with minimal configuration overhead.
+
+Finally, it is worth reminding that Web
+Profile products are allowed to ship with more technologies than the
+required ones. It is conceivable that products will offer a choice at
+installation time between different configurations, some richer in
+extensions, or even allow for complete customization beyond the required
+core (“à la carte” installation).
+
+=== Determining Applicable Requirements
+
+*
+
+As dictated by the general rules for Java EE
+profiles in the Platform specification, products that implement the Web
+Profile must honor:
+
+. all requirements of the Java EE Platform
+specification that apply to all profiles;
+. all requirements of this specification;
+. all requirements of the individual
+component specifications;
+. all requirements in the Java EE Platform
+specification that are conditional on the presence of a specific
+technology or combinations of technologies.
+
+Let’s look at some examples of requirements
+from each grouping.
+
+For the first one, the Java EE Platform
+specification mandates support for the “ _java:_ ” naming context in all
+profiles. Consequently, Web Profile products must support it. For a
+similar reason, all Web Profile 8 products must support the Java
+Platform, Standard Edition 8 API.
+
+In the second category one can point out the
+requirement to support Java EE web application modules ( _.war_ files)
+(see link:WebProfile.html#a69[See Additional Requirements]”).
+
+The third category is hopefully
+self-explanatory. For example, Web Profile products must implement the
+Servlet API, which in turn means they need to satisfy all the
+requirements listed in the Servlet specification.
+
+The fourth category is the most complex. As a
+first example, since a Web Profile product is required to implement the
+Servlet technology, it must also follow all general requirements for
+Java EE web containers in the Platform specification. Additionally, it
+must follow all security requirements in the Platform specification that
+pertain to Java EE web containers, all interoperability requirements for
+such containers, etc. Furthermore, since a Web Profile product must
+implement the Java Transaction API (JTA), it must also satisfy all the
+Platform specification’s transaction management-related requirements for
+web components, which indeed are conditional on the presence of Servlet
+and JTA .
+
+As a negative example for the fourth category
+of requirements, consider the Java Message Service (JMS) technology.
+Since it is not a required component of the Web Profile, Web Profile
+products are not required to include an implementation of JMS, nor do
+they have to support other JMS-related requirements, like the ability to
+inject message destination references. On the other hand, a Web Profile
+product that included an implementation of JMS would be required to
+honor all the JMS-related requirements in the Java EE Platform
+specification.
+
+Particular care should be taken when
+determining applicable requirements based on the presence of EJB Lite in
+the Web Profile. As described in the EJB specification, EJB Lite is a
+subset of the EJB API. When examining an EJB-related requirement in the
+Java EE Platform spec, one must first of all determine which API
+classes, component types and EJB container services are mentioned in the
+requirement itself. Only if all of them fall inside the EJB Lite subset
+that requirement is considered applicable to Web Profile products.
+
+For example, since EJB Lite does not include
+any remote functionality, the _EJB_ annotation may not be used to inject
+a remote reference, something that should be kept in mind when
+evaluating the requirements in the Platform specification section
+“Enterprise JavaBeans References”.
+
+=== Acknowledgements for Version 6
+
+Version 6 of this specification was created
+under the Java Community Process as JSR-316. The spec leads for the
+JSR-316 Expert Group were Bill Shannon (Sun Microsystems, Inc.) and
+Roberto Chinnici (Sun Microsystems, Inc.). The expert group included the
+following members: Florent Benoit (Inria), Adam Bien (Individual), David
+Blevins (Individual), Bill Burke (Red Hat Middleware LLC), Larry Cable
+(BEA Systems), Bongjae Chan (Tmax Soft, Inc.), Rejeev Divakaran
+(Individual), Francois Exertier (Inria), Jeff Genender (Individual),
+Antonio Goncalves (Individual), Jason Greene (Red Hat Middleware LLC),
+Gang Huang (Peking University), Rod Johnson (SpringSource), Werner Keil
+(Individual), Michael Keith (Oracle), Wonseok Kim (Tmax Soft, Inc.), Jim
+Knutson (IBM), Elika S. Kohen (Individual), Peter Kristiansson (Ericsson
+AB), Changshin Lee (NCsoft Corporation), Felipe Leme (Individual), Ming
+Li (TongTech Ltd.), Vladimir Pavlov (SAP AG), Dhanji R. Prasanna
+(Google), Reza Rahman (Individual), Rajiv Shivane (Pramati
+Technologies), Hani Suleiman (Individual).
+
+=== Acknowledgements for Version 7
+
+Version 7 of this specification was created
+under the Java Community Process as JSR-342. The Expert Group work for
+this specification was conducted by means of the
+_http://javaee-spec.java.net_ project in order to provide transparency
+to the Java community. The specification leads for the JSR-342 Expert
+Group were Bill Shannon (Oracle) and Linda DeMichiel (Oracle). The
+expert group included the following members: Deepak Anupalli (Pramati
+Technologies), Anton Arhipov (ZeroTurnaround), Florent Benoit (OW2),
+Adam Bien (Individual), David Blevins (Individual), Markus Eisele
+(Individual), Jeff Genender (Individual), Antonio Goncalves
+(Individual), Jason Greene (Red Hat, Inc.), Minehiko Iida (Fujitsu),
+Alex Heneveld (Individual), Jevgeni Kabanov (Individual), Ingyu Kang
+(Tmax Soft, Inc.), Werner Keil (Individual), Jim Knutson (IBM), Ming Li
+(TongTech Ltd.), Pete Muir (Red Hat, Inc.), Minoru Nitta (Fujitsu), Reza
+Rahman (Caucho Technology, Inc), Kristoffer Sjogren (Ericsson AB), Kevin
+Sutter (IBM), Spike Washburn (Individual), Kyung Koo Yoon (Tmax Soft).
+
+=== Acknowledgements for Version 8
+
+Version 8 of this specification was created
+under the Java Community Process as JSR-366. The Expert Group work for
+this specification was conducted by means of the
+_http://javaee-spec.java.net_ and _https:javaee.github.io/javaee-spec_
+projects in order to provide transparency to the Java community. The
+specification leads for the JSR-366 Expert Group were Bill Shannon
+(Oracle) and Linda DeMichiel (Oracle). The expert group included the
+following members: Florent Benoit (OW2), David Blevins (Tomitribe), Jeff
+Genender (Savoir Technologies), Antonio Goncalves (Individual), Jason
+Greene (Red Hat), Werner Keil (Individual), Moon Namkoong (TmaxSoft,
+Inc.) Antoine Sabot-Durand (Red Hat), Kevin Sutter (IBM), Ruslan
+Synytsky (Jelastic, Inc.), Markus Winkler (oparco - open architectures &
+consulting). Reza Rahman (Individual) participated as a contributor.

@@ -1,0 +1,54 @@
+== Web Profile Definition
+
+This chapter defines the contents of the
+Java™ Platform, Enterprise Edition 8 (Java EE™ 8) Web Profile.
+
+=== [[a43]]Required Components
+
+The following technologies are required
+components of the Web Profile:
+
+=== Servlet 4.0
+
+* JavaServer Pages (JSP) 2.3
+* Expression Language (EL) 3.0
+* Debugging Support for Other Languages
+(JSR-45) 1.0
+* Standard Tag Library for JavaServer Pages
+(JSTL) 1.2
+* JavaServer Faces (JSF) 2.3
+* Java API for RESTful Web Services (JAX-RS)
+2.1
+* Java API for WebSocket (WebSocket) 1.1
+* Java API for JSON Processing (JSON-P) 1.1
+* Java API for JSON Binding (JSON-B) 1.0
+* Common Annotations for the Java Platform
+(JSR-250) 1.3
+* Enterprise JavaBeans (EJB) 3.2 Lite
+* Java Transaction API (JTA) 1.2
+* Java Persistence API (JPA) 2.2
+* Bean Validation 2.0
+* Managed Beans 1.0
+* Interceptors 1.2
+* Contexts and Dependency Injection for the
+Java EE Platform 2.0
+* Dependency Injection for Java 1.0
+* Java EE Security API 1.0
+* Java Authentication Service Provider
+Interface for Containers (JASPIC) 1.1 Servlet Container Profile
+
+=== Optional Components
+
+There are no optional components in the Web
+Profile.
+
+Web Profile products may support some of the
+technologies present in the full Java EE Platform and not already listed
+in link:WebProfile.html#a43[See Required Components]”,
+consistently with their compatibility requirements.
+
+=== [[a69]]Additional Requirements
+
+Web Profile products must support the
+deployment of Java EE web application modules ( _.war_ files). No other
+modules types are required to be supported.

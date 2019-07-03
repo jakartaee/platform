@@ -1,0 +1,1388 @@
+== Application Assembly and Deployment
+
+This chapter specifies Java™ Platform,
+Enterprise Edition (Java EE) requirements for assembling, packaging, and
+deploying a Java EE application. The main goal of these requirements is
+to provide scalable and modular application assembly, and portable
+deployment of Java EE applications into any Java EE product.
+
+Java EE applications are composed of one or
+more Java EE components and an optional Java EE application deployment
+descriptor. The deployment descriptor, if present, lists the
+application’s components as _module_ s. If the deployment descriptor is
+not present, the application’s modules are discovered using default
+naming rules. A Java EE module represents the basic unit of composition
+of a Java EE application. Java EE modules consist of one or more Java EE
+components and an optional module level deployment descriptor. The
+flexibility and extensibility of the Java EE component model facilitates
+the packaging and deployment of Java EE components as individual
+components, component libraries, or Java EE applications.
+
+A full Java EE product must support all the
+facilities described in this chapter. A Java EE profile may support only
+a subset of the Java EE module types. Any requirements related to a
+module type not supported by a product based on a particular Java EE
+profile should be understood to not apply to such a product.
+
+
+_link:#a2899[See Java EE Deployment]_
+shows the composition model for Java EE deployment units and includes
+the optional use of alternate deployment descriptors by the application
+package to preserve any digital signatures of the original Java EE
+modules. An alternate deployment descriptor may also be provided
+external to the application package as described in
+link:#a3125[See Assembling a Java EE
+Application].”
+
+=== [[a2899]]Java EE Deployment
+
+image:Platform_Spec-9.png[image]
+
+=== Application Development Life Cycle
+
+The development life cycle of a Java EE
+application begins with the creation of discrete Java EE components.
+These components may then be packaged with a module level deployment
+descriptor to create a Java EE module. Java EE modules can be deployed
+as stand-alone units or can be assembled with a Java EE application
+deployment descriptor and deployed as a Java EE application.
+
+
+_link:#a2903[See Java EE Application
+Life Cycle]_ shows the life cycle of a Java EE application.
+
+=== [[a2903]]Java EE Application Life Cycle
+
+image:Platform_Spec-10.png[image]
+
+=== [[a2904]]Component Creation
+
+The EJB, servlet, application client, and
+Connector specifications include the XML Schema definition of the
+associated module level deployment descriptors and component packaging
+architecture required to produce Java EE modules. (The application
+client specification is found in
+link:#a3293[See CHApter] of this
+document.)
+
+A Java EE module is a collection of one or more
+Java EE components (web, EJB, application client, or Connector) with an
+optional module deployment descriptor of that type. Any number of
+components of the same container type can be packaged together with a
+single Java EE deployment descriptor appropriate to that container type
+to produce a Java EE module. Components of different container types may
+not be mixed in a single Java EE module, except for the packaging of EJB
+components within a web module.
+
+* A Java EE module represents the basic unit of
+composition of a Java EE application. In some cases a single Java EE
+module (not necessarily packaged into a Java EE application package)
+will contain an entire application. In other cases an application will
+be composed of multiple Java EE modules.
+* The deployment descriptor for a Java EE
+module contains declarative data required to deploy the components in
+the module. The deployment descriptor for a Java EE module also contains
+assembly instructions that describe how the components are composed into
+an application.
+* Starting with version 5 of the Java EE
+platform, a web application module, an enterprise bean module, or an
+application client module need not contain a deployment descriptor.
+Instead, the deployment information may be specified by annotations
+present in the class files of the module.
+* Starting with version 5 of the Java EE
+platform, a Java EE enterprise application archive need not contain a
+deployment descriptor. Instead, the deployment information may be
+determined using default naming rules for embedded modules.
+* An individual Java EE module can be
+deployed as a stand-alone Java EE module without an application level
+deployment descriptor and represents a valid Java EE application.
+* Java EE modules may express dependencies on
+libraries as described below in
+link:#a2945[See Library Support].”
+
+All Java EE modules have a name. The name can
+be explicitly set in the deployment descriptor for the module. If not
+set, the name of the module is the pathname of the module in the ear
+file with any filename extension (.jar, .war, .rar) removed, but with
+any directory names included. The name of a module must be unique within
+an application. If and only if the name is not unique (e.g., because two
+names are identical after removing different filename extensions) the
+deployment tool may choose new unique names for any of the conflicting
+modules; module names that do not conflict must not be changed. The
+algorithm for choosing unique names in such a case is product specific.
+Applications that depend on the names of their modules must ensure that
+their module names are unique.
+
+For example, an application with this
+structure:
+
+
+
+myapp.ear
+
+ inventory.jar
+
+ ui.war
+
+
+
+has a default application name of "myapp",
+and defines two modules with default names "inventory" and "ui".
+
+An application with this structure:
+
+
+
+bigapp.ear
+
+ ejbs
+
+ inventory.jar
+
+ accounts.jar
+
+ ui
+
+ store.war
+
+ admin.war
+
+
+
+has a default application name of "bigapp",
+and defines four modules with default names "ejbs/inventory",
+"ejbs/accounts", "ui/store", and "ui/admin".
+
+=== Application Assembly
+
+A Java EE application may consist of one or
+more Java EE modules and one Java EE application deployment descriptor.
+A Java EE application is packaged using the Java Archive (JAR) file
+format into a file with a _.ear_ (Enterprise ARchive) filename
+extension. A minimal Java EE application package will only contain Java
+EE modules and, optionally, the application deployment descriptor. A
+Java EE application package may also include libraries referenced by
+Java EE modules (using the _Class-Path_ mechanism described below in
+link:#a2945[See Library Support]”),
+help files, and documentation to aid the deployer.
+
+The deployment of a portable Java EE
+application should not depend on any entities that may be contained in
+the package other than those defined by this specification. Deployment
+of a portable Java EE application must be possible using only the
+application deployment descriptor, if any, and the Java EE modules (and
+their dependent libraries) and descriptors listed in it.
+
+The Java EE application deployment descriptor
+represents the top level view of a Java EE application’s contents. The
+Java EE application deployment descriptor is specified by an XML schema
+or document type definition (see
+link:#a3203[See Java EE Application XML
+Schema]”).
+
+In certain cases, a Java EE application will
+need customization before it can be deployed into the enterprise. New
+Java EE modules may be added to the application. Existing modules may be
+removed from the application. Some Java EE modules may need custom
+content created, changed, or replaced. For example, an application
+consumer may need to use an HTML editor to add company graphics to a
+template login page that was provided with a Java EE web application.
+
+All Java EE applications have a name. The
+name can be explicitly set in the application deployment descriptor. If
+not set, the name of the application is the base name of the ear file
+with any _.ear_ extension removed and with any directory names removed.
+The name of an application must be unique in an application server
+instance. If an attempt is made to deploy an application with a name
+that conflicts with an already deployed application, the deployment tool
+may choose a new unique name for the application. The deployment tool
+may also allow a different name to be specified at deployment time. A
+deployment tool may use product-specific means to decide whether a
+deployment operation is a deployment of a new application, in which case
+the name must be unique, or a redeployment of an existing application,
+in which case the name may match the existing application.
+
+Similarly, when a stand-alone module is
+deployed, the module name is used as the application name, and obeys the
+same rules as described above for application names. The module name can
+be explicitly set in the module deployment descriptor. If not set, the
+name of the module is the base name of the module file with any
+extension ( _.war_ , _.jar_ , _.rar_ ) removed and with any directory
+names removed.
+
+=== Deployment
+
+During the deployment phase of an
+application’s life cycle, the application is installed on the Java EE
+platform and then is configured and integrated into the existing
+infrastructure. Each Java EE module listed in the application deployment
+descriptor (or discovered using the default rules described below) must
+be deployed according to the requirements of the specification for the
+respective Java EE module type. Each module listed must be installed in
+the appropriate container type and the environment properties of each
+module must be set appropriately in the target container to reflect the
+values declared by the deployment descriptor element for each component.
+
+Every resource reference should be bound to a
+resource of the required type.
+
+Some resources have default mapping rules
+specified; see sections link:#a2009[See
+Default Data Source], link:#a2025[See
+Default JMS Connection Factory], and
+link:#a2042[See Default Concurrency
+Utilities Objects]. By default, a product must map otherwise unmapped
+resources using these default rules. A product may include an option to
+disable or override these default mapping rules.
+
+Once a resource reference is bound to a
+resource in the target operational environment, and deployment succeeds,
+that binding is not expected to change. A product may provide
+administrative operations that change the resource bindings that are
+used by applications. A product may notify applications of changes to
+their resource bindings using JNDI events, but this is not required.
+
+If deployment succeeds, in addition to
+binding resource references as specified above, every resource
+definition (see section link:#a1652[See
+Resource Definition and Configuration]) specified by the application or
+specified or overridden by the Deployer must be present in the target
+operational environment.
+
+=== [[a2945]]Library Support
+
+The Java EE platform provides several
+mechanisms for applications to use optional packages and shared
+libraries (hereafter referred to as _libraries_ ). Libraries may be
+bundled with an application or may be installed separately for use by
+any application.
+
+Java EE products are required to support the
+use of bundled and installed libraries as specified in the _Extension
+Mechanism Architecture_ and _Optional Package Versioning_ specifications
+(available at
+_http://docs.oracle.com/javase/8/docs/technotes/guides/extensions/_ )
+and the JAR File Specification (available at
+_http://docs.oracle.com/javase/8/docs/technotes/guides/jar/jar.html_ ).
+Using this mechanism a Java EE JAR file can reference utility classes or
+other shared classes or resources packaged in a separate _.jar_ file or
+directory that is included in the same Java EE application package, or
+that has been previously installed in the Java EE containers.
+
+=== [[a2948]]Bundled Libraries
+
+Libraries bundled with an application may be
+referenced in the following ways:
+
+. A JAR format file (such as a _.jar_ file,
+_.war_ file, or _.rar_ file) may reference a _.jar_ file or directory by
+naming the referenced _.jar_ file or directory in a _Class-Path_ header
+in the referencing JAR file’s Manifest file. The referenced _.jar_ file
+or directory is named using a URL relative to the URL of the referencing
+JAR file. The Manifest file is named _META-INF/MANIFEST.MF_ in the JAR
+file. The _Class-Path_ entry in the Manifest file is of the form
+
+Class-Path:
+list-of-jar-files-or-directories-separated-by-spaces
+
+(See the JAR File Specification for important
+details and limitations of the syntax of _Class-Path_ headers.) The Java
+EE deployment tools must process all such referenced files and
+directories when processing a Java EE module. Any deployment descriptors
+in referenced _.jar_ files must be ignored when processing the
+referencing _.jar_ file. The deployment tool must install the _.jar_
+files and directories in a way that preserves the relative references
+between the files. Typically this is done by installing the _.jar_ files
+into a directory hierarchy that matches the original application
+directory hierarchy. All referenced _.jar_ files or directories must
+appear in the logical class path of the referencing JAR files at
+runtime.
+
+Only JAR format files or directories
+containing class files or resources to be loaded directly by a standard
+class loader should be the target of a _Class-Path_ reference; such
+files are always named with a _.jar_ extension. Top level JAR files that
+are processed by a deployment tool should not contain _Class-Path_
+entries; such entries would, by definition, reference other files
+external to the deployment unit. A deployment tool is not required to
+process such external references.
+
+. A _.ear_ file may contain a directory that
+contains libraries packaged in JAR files. The _library-directory_
+element of the _.ear_ file’s deployment descriptor contains the name of
+this directory. If a _library-directory_ element isn’t specified, or if
+the _.ear_ file does not contain a deployment descriptor, the directory
+named _lib_ is used. An empty _library-directory_ element may be used to
+specify that there is no library directory.
+
+All files in this directory (but not
+subdirectories) with a _.jar_ extension must be made available to all
+components packaged in the EAR file, including application clients.
+These libraries may reference other libraries, either bundled with the
+application or installed separately, using any of the techniques
+described herein.
+
+. A web application may include libraries in
+the _WEB-INF/lib_ directory. See the Servlet specification for details.
+These libraries may reference other libraries, either bundled with the
+application or installed separately, using any of the techniques
+described herein.
+
+=== Installed Libraries
+
+Libraries that have been installed separately
+may be referenced in the following way:
+
+. JAR format files of all types may contain
+an _Extension-List_ attribute in their Manifest file, indicating a
+dependency on an installed library. The JAR File Specification defines
+the semantics of such attributes for use by applets; this specification
+requires support for such attributes for all component types and
+corresponding JAR format files. The deployment tool is required to check
+such dependency information and reject the deployment of any component
+for which the dependency can not be met. Portable applications should
+not assume that any installed libraries will be available to a component
+unless the component’s JAR format file, or one of the containing JAR
+format files, expresses a dependency on the library using the
+_Extension-List_ and related attributes.
+
+The referenced libraries must be made
+available to all components contained within the referencing file,
+including any components contained within other JAR format files within
+the referencing file. For example, if a _.ear_ file references an
+installed library, the library must be made available to all components
+in all _.war_ files, EJB _.jar_ files, application _.jar_ files, and
+resource adapter _.rar_ files within the _.ear_ file.
+
+A Java EE product is not required to support
+downloading of libraries (using the _<extension>-Implementation-URL_
+header) at deployment time or runtime. A Java EE product is also not
+required to support more than a single version of an installed library
+at once. A Java EE product is not required to limit access to installed
+libraries to only those for which the application has expressed a
+dependency; the application may be given access to more installed
+libraries than it has requested. In all of these cases, such support is
+highly recommended and may be required in a future version of this
+specification. In particular, we recommend that a Java EE product
+support multiple versions of an installed library, and by default only
+allow applications to access the installed libraries for which they have
+expressed a dependency.
+
+=== Library Conflicts
+
+If an application includes a bundled version
+of a library, and the same library exists as an installed library, the
+instance of the library bundled with the application should be used in
+preference to any installed version of the library. This allows an
+application to bundle exactly the version of a library it requires
+without being influenced by any installed libraries. Note that if the
+library is also a required component of the Java EE platform version on
+which the application is being deployed, the platform version may (and
+typically will) take precedence.
+
+=== Library Resources
+
+In addition to allowing access to referenced
+classes, as described above, any resources contained in the referenced
+JAR files must also be accessible using the _Class_ and _ClassLoader_
+_getResource_ methods, as allowed by the security permissions of the
+application. An application will typically have the security permissions
+required to access resources in any of the JAR files packaged with the
+application.
+
+=== [[a2966]]Dynamic Class Loading
+
+Libraries that dynamically load classes must
+consider the class loading environment of a Java EE application.
+Libraries will often be loaded by a class loader that is a parent class
+loader of the class loader that is used to load application classes and
+thus will not have direct visibility to classes of the application
+modules. A library that only needs to dynamically load classes provided
+by the library itself can safely use the _Class_ method _forName_ .
+However, libraries that need to dynamically load classes that have been
+provided as a part of the application need to use the context class
+loader to load the classes. Note that the context class loader may be
+different in each module of an application. Access to the context class
+loader requires _RuntimePermission_ (“ _getClassLoader”)_ , which is not
+normally granted to applications, but should be granted to libraries
+that need to dynamically load classes. Libraries can use a method such
+as the following to assert their privilege when accessing the context
+class loader. This technique will work in both Java SE and Java EE.
+
+
+
+public ClassLoader getContextClassLoader() \{
+
+ return AccessController.doPrivileged(
+
+ new PrivilegedAction<ClassLoader>() \{
+
+ public ClassLoader run() \{
+
+ ClassLoader cl = null;
+
+ try \{
+
+ cl = Thread.currentThread().
+
+ getContextClassLoader();
+
+ } catch (SecurityException ex) \{ }
+
+ return cl;
+
+ }
+
+ });
+
+}
+
+
+
+Libraries should then use the following
+technique to load classes.
+
+
+
+ ClassLoader cl = getContextClassLoader();
+
+ if (cl != null) \{
+
+ try \{
+
+ clazz = Class.forName(name, false, cl);
+
+ } catch (ClassNotFoundException ex) \{
+
+ clazz = Class.forName(name);
+
+ }
+
+ } else
+
+ clazz = Class.forName(name);
+
+=== Examples
+
+The following example illustrates a simple
+use of the bundled library mechanism to reference a library of utility
+classes that are shared between enterprise beans in two separate ejb-jar
+files.
+
+
+
+app1.ear:
+
+ META-INF/application.xml
+
+ ejb1.jar Class-Path: util.jar
+
+ ejb2.jar Class-Path: util.jar
+
+ util.jar
+
+
+
+The next example illustrates a more complex
+use of the _Class-Path_ mechanism. In this example the Developer has
+chosen to package the enterprise bean client view classes in a separate
+JAR file and reference that JAR file from the other JAR files that need
+those classes. Those classes are needed both by _ejb2.jar_ , packaged in
+the same application as _ejb1.jar_ , and by _ejb3.jar_ and
+_servlet1.jar_ , packaged in a different application. Those classes are
+also needed by _ejb1.jar_ itself because they define the remote
+interface of the enterprise beans in _ejb1.jar_ , and the developer has
+chosen the by reference model of making these classes available, as
+described in the EJB spec. The deployment descriptor for _ejb1.jar_
+names the client view JAR file in the _ejb-client-jar_ element.
+
+The _Class-Path_ mechanism must be used by
+components in _app3.ear_ to reference the client view JAR file that
+corresponds to the enterprise beans packaged in _ejb1.jar_ of _app2.ear_
+. These enterprise beans are referenced by enterprise beans in
+_ejb3.jar_ and by the servlets packaged in _webapp.war_ .
+
+
+
+app2.ear:
+
+ META-INF/application.xml
+
+ ejb1.jar Class-Path: ejb1_client.jar
+
+ deployment descriptor contains:
+
+
+<ejb-client-jar>ejb1_client.jar</ejb-client-jar>
+
+ ejb1_client.jar
+
+ ejb2.jar Class-Path: ejb1_client.jar
+
+
+
+app3.ear:
+
+ META-INF/application.xml
+
+ ejb1_client.jar
+
+ ejb3.jar Class-Path: ejb1_client.jar
+
+ webapp.war Class-Path: ejb1_client.jar
+
+ WEB-INF/web.xml
+
+ WEB-INF/lib/servlet1.jar
+
+
+
+The following example illustrates a simple
+use of the installed library mechanism to reference a library of utility
+classes that is installed separately.
+
+
+
+app1.ear:
+
+ META-INF/application.xml
+
+ ejb1.jar :
+
+ META-INF/MANIFEST.MF:
+
+ Extension-List: util
+
+ util-Extension-Name: com/example/util
+
+ util-Specification-Version: 1.4
+
+ META-INF/ejb-jar.xml
+
+
+
+util.jar:
+
+ META-INF/MANIFEST.MF:
+
+ Extension-Name: com/example/util
+
+ Specification-Title: example.com’s util
+package
+
+ Specification-Version: 1.4
+
+ Specification-Vendor: example.com
+
+ Implementation-Version: build96
+
+=== [[a3040]]Class Loading Requirements
+
+The Java EE specification
+purposely does not define the exact types and arrangements of class
+loaders that must be used by a Java EE product. Instead, the
+specification defines requirements in terms of what classes must or must
+not be visible to components. A Java EE product is free to use whatever
+class loaders it chooses to meet these requirements. Portable
+applications must not depend on the
+
+types of class loaders used or the
+hierarchical arrangement of class loaders, if any. Portable applications
+must not depend on the order in which classes and resources are loaded.
+Applications should use the techniques described in
+link:#a2966[See Dynamic Class Loading]”
+if they need to load classes dynamically.
+
+In addition to the required classes specified
+below, a Java EE product must provide a way to allow an application to
+access a class library installed in the application server, even if it
+has not expressed a dependency on that library. This supports the use of
+old applications and extension libraries that do not use the defined
+extension dependency mechanism.
+
+The following sections describe the
+requirements for each container type. In all cases, access to classes is
+governed by the rules of the Java language and the Java virtual machine.
+In all cases, access to classes and resources is governed by the rules
+of the Java security model.
+
+Note that while libraries must be accessible
+to application classes as described below, it may be necessary to use
+the techniques described in
+link:#a2966[See Dynamic Class Loading]”
+if libraries need to access classes packaged in the application modules.
+
+=== [[a3046]]Web Container Class Loading Requirements
+
+Components in the web container must have
+access to the following classes
+
+and resources. Note that as of Java EE 6, EJB
+components may be packaged in a web component module. Such EJB
+components have the same access as other components in the web
+container. See the EJB specification for further detail.
+
+* The content of the _WEB-INF/classes_
+directory of the containing war file.
+* The content of all jar files in the
+_WEB-INF/lib_ directory of the containing war file, but not any
+subdirectories.
+* The transitive closure of any libraries
+referenced by the above jar files (as specified in
+link:#a2945[See Library Support]”).
+* The transitive closure of any libraries
+referenced by the war file itself (as specified in
+link:#a2945[See Library Support]”).
+* The transitive closure of any libraries
+specified by or referenced by the containing ear file (as specified in
+link:#a2945[See Library Support]”).
+* The contents of all jar files included in
+any resource adapter archives (rar files) included in the same ear file.
+* The contents of all jar files included in
+each resource adapter archive (rar file) deployed separately to the
+application server, if that resource adapter is used to satisfy any
+resource references in the module.
+* The contents of all jar files included in
+each resource adapter archive (rar file) deployed separately to the
+application server, if any jar file in that rar file is used to satisfy
+any reference from the module using the Extension Mechanism Architecture
+(as specified in link:#a2945[See
+Library Support]”).
+* The transitive closure of any libraries
+referenced by the jar files in the rar files above (as specified in
+link:#a2945[See Library Support]”).
+* The transitive closure of any libraries
+referenced by the rar files themselves (as specified in
+link:#a2945[See Library Support]”).
+* The Java EE API classes specified in
+link:#a2159[See Java EE
+Technologies] for the web container.
+* All Java SE 8 API classes.
+
+
+
+Components in the web container may have
+access to the following classes and resources. Portable applications
+must not depend on having or not having access to these classes or
+resources.
+
+* The classes and resources accessible to any
+other web modules included in the same ear file, as described above.
+* The content of any EJB jar files included
+in the same ear file.
+* The content of any client jar files
+specified by the above EJB jar files.
+* The transitive closure of any libraries
+referenced by the above EJB jar files and client jar files (as specified
+in link:#a2945[See Library Support]”).
+* The contents of any jar files included in
+any resource adapter archives (rar files) deployed separately to the
+application server.
+* The transitive closure of any libraries
+referenced by the jar files in the rar files above (as specified in
+link:#a2945[See Library Support]”).
+* The transitive closure of any libraries
+referenced by the rar files above themselves (as specified in
+link:#a2945[See Library Support]”).
+* The Java EE API classes specified in
+link:#a2159[See Java EE
+Technologies] for the containers other than the web container.
+* Any installed libraries available in the
+application server.
+* Other classes or resources contained in the
+application package, and specified by an explicit use of an extension
+not defined by this specification.
+* Other classes and resources that are part
+of the implementation of the application server.
+
+
+
+Components in the web container must not have
+access to the following classes and resources, unless such classes or
+resources are covered by one of the rules above.
+
+* Other classes or resources in the
+application package. For example, the application should not have access
+to the classes in application client jar files.
+
+=== EJB Container Class Loading Requirements
+
+Components in the EJB container must have
+access to the following classes and resources.
+
+* The content of the EJB jar file.
+* The transitive closure of any libraries
+referenced by the EJB jar file (as specified in
+link:#a2945[See Library Support]”).
+* The transitive closure of any libraries
+specified by or referenced by the containing ear file (as specified in
+link:#a2945[See Library Support]”).
+* The contents of all jar files included in
+any resource adapter archives (rar files) included in the same ear file.
+* The contents of all jar files included in
+each resource adapter archive (rar file) deployed separately to the
+application server, if that resource adapter is used to satisfy any
+resource references in the module.
+* The contents of all jar files included in
+each resource adapter archive (rar file) deployed separately to the
+application server, if any jar file in that rar file is used to satisfy
+any reference from the module using the Extension Mechanism Architecture
+(as specified in link:#a2945[See
+Library Support]”).
+* The transitive closure of any libraries
+referenced by the jar files in the rar files above (as specified in
+link:#a2945[See Library Support]”.
+* The transitive closure of any libraries
+referenced by the rar files themselves (as specified in
+link:#a2945[See Library Support]”).
+* The Java EE API classes specified in
+link:#a2159[See Java EE
+Technologies] for the EJB container.
+* All Java SE 8 API classes.
+
+
+
+Components in the EJB container may have
+access to the following classes and resources. Portable applications
+must not depend on having or not having access to these classes or
+resources.
+
+* The classes and resources accessible to any
+web modules included in the same ear file, as described in
+link:#a3046[See Web Container Class
+Loading Requirements]” above.
+* The content of any EJB jar files included
+in the same ear file.
+* The content of any client jar files
+specified by the above EJB jar files.
+* The transitive closure of any libraries
+referenced by the above EJB jar files and client jar files (as specified
+in link:#a2945[See Library Support]”).
+* The contents of any jar files included in
+any resource adapter archives (rar files) deployed separately to the
+application server.
+* The transitive closure of any libraries
+referenced by the jar files in the rar files above (as specified in
+link:#a2945[See Library Support]”).
+* The transitive closure of any libraries
+referenced by the rar files above themselves (as specified in
+link:#a2945[See Library Support]”).
+* The Java EE API classes specified in
+link:#a2159[See Java EE
+Technologies] for the containers other than the EJB container.
+* Any installed libraries available in the
+application server.
+* Other classes or resources contained in the
+application package, and specified by an explicit use of an extension
+not defined by this specification.
+* Other classes and resources that are part
+of the implementation of the application server.
+
+Components in the EJB container must not have
+access to the following classes and resources, unless such classes or
+resources are covered by one of the
+
+rules above.
+
+* Other classes or resources in the
+application package. For example, the application should not have access
+to the classes in application client jar files.
+
+=== Application Client Container Class Loading Requirements
+
+Components in the application client
+container must have access to the following classes and resources.
+
+* The content of the application client jar
+file.
+* The transitive closure of any libraries
+referenced by the above jar file (as specified in
+link:#a2945[See Library Support]”).
+* The transitive closure of any libraries
+specified by or referenced by the containing ear file (as specified in
+link:#a2945[See Library Support]”).
+* The Java EE API classes specified in
+link:#a2159[See Java EE
+Technologies] for the application client container.
+* All Java SE 8 API classes.
+
+
+
+Components in the application client
+container may have access to the following classes and resources.
+Portable applications must not depend on having or not having access to
+these classes or resources.
+
+* The Java EE API classes specified in
+link:#a2159[See Java EE
+Technologies] for the containers other than the application client
+container.
+* Any installed libraries available in the
+application server.
+* Other classes or resources contained in the
+application package, and specified by an explicit use of an extension
+not defined by this specification.
+* Other classes and resources that are part
+of the implementation of the application server.
+
+
+
+Components in the application client
+container must not have access to the following classes and resources,
+unless such classes or resources are covered by one of the rules above.
+
+* Other classes or resources in the
+application package. For example, the application client should not have
+access to the classes in other application client jar files in the same
+ear file, nor should it have access to the classes in web applications
+or ejb jar files in the same ear file.
+
+=== Applet Container Class Loading Requirements
+
+The requirements for the applet container are
+completely specified by the Java SE 8 specification. This specification
+adds no new requirements for the applet container.
+
+=== Application Assembly
+
+This section specifies the sequence of steps
+that are typically followed when composing a Java EE application.
+
+=== [[a3125]]Assembling a Java EE Application
+
+. Select the Java EE modules that will be used
+by the application.
+. Create an application directory structure.
+
+The directory structure of an application is
+arbitrary, but by following some simple conventions a deployment
+descriptor may not be needed. The structure should be designed around
+the requirements of the contained components.
+
+. Reconcile Java EE module deployment
+descriptors.
+
+The deployment descriptors for the Java EE
+modules must be edited to link internally satisfied dependencies and
+eliminate any redundant security role names. An optional element
+_alt-dd_ (described in link:#a3203[See
+Java EE Application XML Schema]”) may be used when it is desirable to
+preserve the original deployment descriptor. The element _alt-dd_
+specifies an alternate deployment descriptor to use at deployment time.
+The edited copy of the deployment descriptor file may be saved in the
+application directory tree in a location determined by the Application
+Assembler. If the _alt-dd_ element is not present, the Deployer must
+read the deployment descriptor directly from the module package.
+
+. Choose unique names for the modules contained
+in the application. If two modules specify conflicting names in their
+deployment descriptors, create an alternate deployment descriptor for at
+least one of the modules and change its name. If two modules in the same
+directory of the ear file have the same base name (e.g., _foo.jar_ and
+_foo.war_ ), rename one of the modules or create an alternate deployment
+descriptor to specify a unique name for one of the modules.
+. Link the internally satisfied dependencies
+of all components in every module contained in the application. For each
+component dependency, there must only be one corresponding component
+that fulfills that dependency in the scope of the application.
+. For each _ejb-link_ , there must be only one
+matching _ejb-name_ in the scope of the entire application (see
+link:#a936[See Enterprise JavaBeans™
+(EJB) References]”).
+. Dependencies that are not linked to internal
+components must be handled by the Deployer as external dependencies that
+must be met by resources previously installed on the platform. External
+dependencies must be linked to the resources on the platform during
+deployment.
+. Synchronize security role-names across the
+application. Rename unique role-names with redundant meaning to a common
+name. Rename role-names with common names but different meanings to
+unique names. Descriptions of role-names that are used by many
+components of the application can be included in the application-level
+deployment descriptor.
+. Assign a context root for each web module
+included in the Java EE application. The context root is a relative name
+in the web namespace for the application. Each web module must be given
+a distinct and non-overlapping name for its context root. The web
+modules will be assigned a complete name in the namespace of the web
+server at deployment time. If there is only one web module in the Java
+EE application, the context root may be the empty string. If no
+deployment descriptor is included in the application package, it will
+use the default-context-path in the web module. Otherwise, it will use
+the module name as the context root of the web module. See the Servlet
+specification for detailed requirements of context root naming.
+. Make sure that each component in the
+application properly describes any dependencies it may have on other
+components in the application. A Java EE application should not assume
+that all components in the application will be available on the class
+path of the application at run time. Each component might be loaded into
+a separate class loader with a separate namespace. If the classes in a
+JAR file depend on classes in another JAR file, the first JAR file
+should reference the second JAR file using the _Class-Path_ mechanism. A
+notable exception to this rule is JAR files located in the _WEB-INF/lib_
+directory of a web application. All such JAR files are included in the
+class path of the web application at runtime; explicit references to
+them using the _Class-Path_ mechanism are not needed. Another exception
+to this rule is JAR files located in the library directory (usually
+named _lib_ ) in the application package. Note that the presence of
+component-declaring annotations in shared artifacts, such as libraries
+in the library directory and libraries referenced by more than one
+module through _Class-Path_ references, can have unintended and
+undesirable consequences and is not recommended.
+. There must be only one version of each class
+in an application. If one component depends on one version of a library,
+and another component depends on another version, it may not be possible
+to deploy an application containing both components. With the exception
+of application clients, a Java EE application should not assume that
+each component is loaded in a separate class loader and has a separate
+namespace. All components in a single application may be loaded in a
+single class loader and share a single namespace. Note, however, that it
+must be possible to deploy an application such that all components of
+the application are in a namespace (or namespaces) separate from that of
+other applications. Typically, this will be the normal method of
+deployment. By default, application clients are each deployed into their
+own Java virtual machine instance, and thus each application client has
+its own class namespace, and the classes from application clients are
+not visible in the class namespace of other components.
+. (Optional) Create an XML deployment
+descriptor for the application.
+
+The deployment descriptor must be named
+_application.xml_ and must reside in the top level of the _META-INF_
+directory of the application _.ear_ file. The deployment descriptor must
+be a valid XML document according to the XML schema for a Java EE
+application XML document. (Alternatively, the deployment descriptor may
+meet the requirements of previous versions of Java EE.)
+
+Many applications that follow the conventions
+described below will not need a deployment descriptor for the
+application. The deployment tool will determine the components of the
+application using some simple rules.
+
+. Package the application.
+. Place the Java EE modules and the deployment
+descriptor in the appropriate directories.
+. Package the application directory hierarchy
+in a file using the JAR file format. The file should be named with a
+_.ear_ filename extension.
+. (Optional) Create an alternate deployment
+descriptor (“alt-dd”) for the application, external to the packaged
+application.
+
+=== Adding and Removing Modules
+
+After the application is created, Java EE
+modules may be added or removed before deployment. When adding or
+removing a module the following steps must be performed:
+
+. Decide on a location in the application
+package for the new module. Optionally create new directories in the
+application package hierarchy to contain any Java EE modules that are
+being added to the application.
+. Ensure that the name of the new module does
+not conflict with any of the existing modules, either by choosing an
+appropriate default filename for the module or by explicitly specifying
+the module name in the module’s deployment descriptor or in an alternate
+deployment descriptor.
+. Copy the new Java EE modules to the desired
+location in the application package. The packaged modules are inserted
+directly in the desired location; the modules are not unpackaged.
+. Edit the deployment descriptors for the Java
+EE modules to link the dependencies which are internally satisfied by
+the Java EE modules included in the application.
+. Edit the Java EE application deployment
+descriptor (if included) to meet the content requirements of the Java EE
+platform and the validity requirements of the Java EE application XML
+DTD or schema.
+
+=== [[a3153]]Deployment
+
+The Java EE platform supports three types of
+deployment units:
+
+* Stand-alone Java EE modules.
+* Java EE applications, consisting of one or
+more Java EE modules.
+* Class libraries packaged as _.jar_ files
+according to the _Extension Mechanism Architecture_ . These class
+libraries then become installed libraries.
+
+Any Java EE product must be able to accept a
+Java EE application delivered as a _.ear_ file or a stand-alone Java EE
+module delivered as a _.jar_ , _.war_ , or _.rar_ file (as appropriate
+to its type), together with an optional alternate deployment descriptor
+external to the application or standalone Java EE module. If the
+application is delivered as a _.ear_ , an enterprise bean module
+delivered as a _.jar_ file, a web application delivered as a _.war_
+file, or an application client delivered as a _.jar_ file, the
+deployment tool must be able to deploy the application such that the
+Java classes in the application are in a separate namespace from classes
+in other Java applications. Typically this will require the use of a
+separate class loader for each application. Standalone resource adapters
+delivered in _.rar_ files and standalone class libraries delivered in
+_.jar_ files that become installed libraries will of necessity appear in
+the class namespaces of applications that use them, and may appear in
+the class namespace of any application depending on the level of
+isolation supported by the Java EE product.
+
+As described in
+link:#a149[See Java EE Product
+Packaging]”, the Java EE product might depend on external services to
+meet the requirements of this specification. While the Java EE product
+is not required to assure the availability of these services, it is
+required to ensure that these services have been configured for use.
+Deployment of applications must fail if such required services have not
+been configured for use.
+
+Deployment may provide an option that
+controls whether or not an application is attempted to be started during
+deployment. If no such option is provided or if the option to start the
+application is specified, and if deployment is successful, the
+application modules must be initialized as specified in section
+link:#a3201[See Module Initialization]
+and the application must be started.
+
+If the application is attempted to be started
+during deployment, the Servlet and EJB containers must be initialized
+during deployment. Such initialization must include CDI initialization.
+If initialization fails, deployment must fail.
+
+If the application is not attempted to be
+started during deployment, these containers must not be initialized
+during deployment.
+
+In all cases, the deployment and
+initialization of a Java EE application must be complete before the
+container delivers client requests to any of the application’s
+components. The container must first initialize all startup-time
+singleton session bean components before delivering any requests to
+enterprise bean components. Containers must deliver requests to web
+components and resource adapters only after initialization of the
+component has completed.
+
+The optional Java EE Deployment API describes
+how a product-independent deployment tool accepts plugins for a specific
+Java EE product, and how the tool and those plugins cooperate to deploy
+Java EE applications. The requirements in this specification that refer
+to a deployment tool are meant to refer to the combination of any
+vendor-provided product-independent deployment tool and the
+vendor-specific deployment plugin for this tool, as well as any other
+vendor-specific deployment tools provided with the Java EE product.
+
+Typically a deployment tool will copy the
+deployed application or module to a product-specific location, along
+with the configuration settings and customizations specified by the
+Deployer. In some cases a deployment tool might include Application
+Assembly functionality as well, allowing the Deployer to construct,
+modify, or customize the application before deployment. Still, it must
+be possible to deploy a portable Java EE application, module, or library
+containing no product-specific deployment information without modifying
+the original files or artifacts that the Deployer specified to the
+deployment tool.
+
+The deployment tools for Java EE containers
+must validate the deployment descriptors against the Java EE deployment
+descriptor schemas or DTDs that correspond to the deployment descriptors
+being processed. The appropriate schema or DTD is chosen by analyzing
+the deployment descriptor to determine which version it claims to
+conform to. Validation errors must cause an error to be reported to the
+Deployer. The deployment tool may allow the Deployer to correct the
+error and continue deployment. Note that the deployment descriptor
+version refers only to the version of the XML schema or DTD against
+which the descriptor is to be validated. It does not provide any
+information as to what version of the Java EE platform the application
+is written to.
+
+Some deployment descriptors are optional. The
+required deployment information is determined by using default rules or
+by annotations present on application class files. Some deployment
+descriptors that are included in an application may exist in either
+complete or incomplete form. A complete deployment descriptor provides a
+complete description of the deployment information; a deployment tool
+must not examine class files for this deployment information. An
+incomplete deployment descriptor provides only a subset of the required
+deployment information; a deployment tool must examine the application
+class files for annotations that specify deployment information.
+
+If annotations are being processed (as
+required by link:#a3318[See Deployment
+Descriptor Processing Requirements], Servlet Table 8-1, and EJB Tables
+16 and 17), _at least_ all of the classes specified in
+link:#a651[See Component classes
+supporting injection] must be scanned for annotations that specify
+deployment information. As specified in section
+link:#a3179[See Deploying a Java EE
+Application], all classes that can be used by the application may
+optionally be scanned for these annotations. (These are the annotations
+that specify information equivalent to what can be specified in a
+deployment descriptor. This requirement says nothing about the
+processing of annotations that were defined for other purposes.) These
+annotations may appear on classes, methods, and fields. All resources
+specified by resource definition annotations must be created. All
+resource reference annotations must result in JNDI entries in the
+corresponding namespace. If the corresponding namespace is not available
+to the class declaring or inheriting the reference, the resulting
+behavior is undefined. Future versions of this specification may alter
+this behavior.
+
+Any deployment information specified in a
+deployment descriptor overrides any deployment information specified in
+an application’s class files. The Java EE component specifications,
+including this specification, describe when deployment descriptors are
+optional and which deployment descriptors may exist in either complete
+or incomplete form. The attribute _metadata-complete_ is used in the
+deployment descriptor to specify whether the descriptor is complete. The
+_metadata-complete_ attribute in the standard deployment descriptors
+effects _only_ the scanning of annotations that specify deployment
+information, including web services deployment information. It has no
+impact on the scanning of other annotations.
+
+The scope of the _metadata-complete_
+attribute is the descriptor it appears in. For historical reasons, the
+_webservices.xml_ deployment descriptor does not have its own
+_metadata-complete_ attribute; instead, it defers to the value of the
+_metadata-complete_ attribute in the module’s deployment descriptor.
+Specifications that define their own additional deployment descriptors
+should provide a _metadata-complete_ attribute of their own, if deemed
+useful, with the appropriate semantics.
+
+=== Deploying a Stand-Alone Java EE Module
+
+This section specifies the requirements for
+deploying a stand-alone Java EE module.
+
+. The deployment tool must first read the Java
+EE module deployment descriptor if provided externally to the package or
+if present in the package. See the component specifications for the
+required location and name of the deployment descriptor for each
+component type.
+. If the deployment descriptor is absent, or
+is present and is a Java EE 5 or later version descriptor and the
+_metadata-complete_ attribute is not set to _true_ , the deployment tool
+must examine all the class files in the application package. Any
+annotations that specify deployment information must be logically merged
+with the information in the deployment descriptor (if present). The
+correspondence of annotation information with deployment descriptor
+information, as well as the overriding rules, are described in this and
+other Java EE specifications. The result of this logical merge process
+provides the deployment information used in subsequent deployment steps.
+Note that there is no requirement for the merge process to produce a new
+deployment descriptor, although that might be a common implementation
+technique.
+. When deploying a standalone module, the
+module name is used as the application name. The deployment tool must
+ensure that the application name is unique in the application server
+instance. If the name is not unique, the deployment tool may
+automatically choose a unique name or allow the Deployer to choose a
+unique name, but must not fail the deployment. This ensures that
+existing modules continue to be deployable.
+. The deployment tool must deploy all of the
+components listed in the Java EE module deployment descriptor, or marked
+via annotations and discovered as described in the previous requirement,
+according to the deployment requirements of the respective Java EE
+component specification. If the module is a type that contains JAR
+format files (for example, web and Connector modules), all classes in
+_.jar_ files within the module referenced from other JAR files within
+the module using the _Class-Path_ manifest header must be included in
+the deployment. If the module, or any JAR format files within the
+module, declares a dependency on an installed library, that dependency
+must be satisfied.
+. The deployment tool must allow the Deployer
+to configure the container to provide the resources and configuration
+values needed for each component. The required resources and
+configuration parameters are specified in the deployment descriptor or
+via annotations discovered in requirement 2.
+. The deployment tool must allow the Deployer
+to deploy the same module multiple times, as multiple independent
+applications, possibly with different configurations. For example, the
+enterprise beans in an ejb-jar file might be deployed multiple times
+under different JNDI names and with different configurations of their
+resources.
+
+=== [[a3179]]Deploying a Java EE Application
+
+This section specifies the requirements for
+deploying a Java EE application.
+
+. The deployment tool must first read the Java
+EE application deployment descriptor provided externally to the
+application _.ear_ file or from within the application _.ear_ file (
+_META-INF/application.xml_ ). If the deployment descriptor is present,
+it fully specifies the modules included in the application. If no
+deployment descriptor is present, the deployment tool uses the following
+rules to determine the modules included in the application.
+. All files in the application package with a
+filename extension of _.war_ are considered web modules. The context
+root of the web module is the module name (see
+link:#a2904[See Component Creation]”).
+. All files in the application package with a
+filename extension of _.rar_ are considered resource adapters.
+. A directory named _lib_ is considered to be
+the library directory, as described in
+link:#a2948[See Bundled Libraries].”
+. For all files in the application package
+with a filename extension of _.jar_ , but not contained in the _lib_
+directory, do the following:
+. If the _.jar_ file contains a
+_META-INF/MANIFEST.MF_ file with a _Main-Class_ attribute, or contains a
+_META-INF/application-client.xml_ file, consider the .jar file to be an
+application client module.
+. If the _.jar_ file contains a
+_META-INF/ejb-jar.xml_ file, or contains any class with an EJB
+component-defining annotation ( _Stateless_ , etc.), consider the .jar
+file to be an EJB module.
+. All other _.jar_ files are ignored unless
+referenced by a JAR file discovered above using one of the JAR file
+reference mechanisms such as the _Class-Path_ header in a manifest file.
+. The deployment tool must ensure that the
+application name is unique in the application server instance. If the
+name is not unique, the deployment tool may automatically choose a
+unique name or allow the Deployer to choose a unique name, but must not
+fail the deployment. This ensures that existing applications continue to
+be deployable.
+. The deployment tool must open each of the
+Java EE modules listed in the Java EE application deployment descriptor
+or discovered using the rules above and read the Java EE module
+deployment descriptor, if present in the package. See the Enterprise
+JavaBeans, servlet, Java EE Connector and application client
+specifications for the required location and name of the deployment
+descriptor for each component type. Deployment descriptors are optional
+for all module types. (The application client specification is
+link:#a3294[See Application Clients]”.)
+. If the module deployment descriptor is
+absent, or is present and is a Java EE 5 or later version descriptor and
+the _metadata-complete_ attribute is not set to _true_ , the deployment
+tool must examine all the class files in the application package that
+can be used by the module (that is, all class files that are included in
+the _.ear_ file and can be referenced by the module, such as the class
+files included in the module itself, class files referenced from the
+module by use of a _Class-Path_ reference, class files included in the
+library directory, etc.). Any annotations that specify deployment
+information must be logically merged with the information in the
+deployment descriptor (if present). Note that the presence of
+component-declaring annotations in shared artifacts, such as libraries
+in the library directory and libraries referenced by more than one
+module through _Class-Path_ references, can have unintended and
+undesirable consequences and is not recommended. The correspondence of
+annotation information with deployment descriptor information, as well
+as the overriding rules, are described in this and other Java EE
+specifications. The result of this logical merge process provides the
+deployment information used in subsequent deployment steps. Note that
+there is no requirement for the merge process to produce a new
+deployment descriptor, although that might be a common implementation
+technique.
+. The deployment tool must install all of the
+components described by each module deployment descriptor, or marked via
+annotations and discovered as described in the previous requirement,
+into the appropriate container according to the deployment requirements
+of the respective Java EE component specification. All classes in _.jar_
+files or directories referenced from other JAR files using the
+_Class-Path_ manifest header must be included in the deployment. If the
+_.ear_ file, or any JAR format files within the _.ear_ file, declares a
+dependency on an installed library, that dependency must be satisfied.
+. The deployment tool must allow the Deployer
+to configure the container to provide the resources and configuration
+values needed for each component. The required resources and
+configuration parameters are specified in the deployment descriptor or
+via annotations discovered in requirement 3.
+. The deployment tool must allow the Deployer
+to deploy the same Java EE application multiple times, as multiple
+independent applications, possibly with different configurations. For
+example, the enterprise beans in an ejb-jar file might be deployed
+multiple times under different JNDI names and with different
+configurations of their resources.
+. When presenting security role descriptions to
+the Deployer, the deployment tool must use the descriptions in the Java
+EE application deployment descriptor rather than the descriptions in any
+module deployment descriptors for security roles with the same name.
+However, for security roles that appear in a module deployment
+descriptor but do not appear in the application deployment descriptor,
+the deployment tool must use the description provided in the module
+deployment descriptor.
+
+=== Deploying a Library
+
+This section specifies the requirements for
+deploying a library.
+
+. The deployment tool must record the
+extension name and version information from the manifest file of the
+library JAR file. The deployment tool must make the library available to
+other Java EE deployment units that request it according to the version
+matching rules described in the Optional Package Versioning
+specification. Note that the library itself may include dependencies on
+other libraries and these dependencies must also be satisfied.
+. The deployment tool must make the library
+available with at least the same security permissions as any application
+or module that uses it. The library may be installed with the full
+security permissions of the container.
+. Not all libraries will be deployable on all
+Java EE products at all times. Libraries that conflict with the
+operation of the Java EE product may not be deployable. For example, an
+attempt to deploy an older version of a library that has subsequently
+been included in the Java EE platform specification may be rejected.
+Similarly, deployment of a library that is also used in the
+implementation of the Java EE product may be rejected. Deployment of a
+library that is in active use by an application may be rejected.
+
+=== [[a3201]]Module Initialization
+
+After a successful deployment, all the
+modules of an application other than application client modules are
+initialized. The specifications for the different module types describe
+the steps required to initialize a module. By default, the order of
+initialization of modules in an application is unspecified. In rare
+cases it may be important that modules are initialized in a certain
+order, for example, if a component in one modules uses a component in
+another module during its initialization. An application can declare
+that modules must be initialized in the order they’re listed in the
+application deployment descriptor by including the
+_<initialize-in-order>true</initialize-in-order>_ element in the
+application deployment descriptor. If the application deployment
+descriptor specifies a module initialization order that conflicts with
+the initialization order specified by any of the modules (for example,
+by the use of the EJB _DependsOn_ annotation), the deployment tool must
+report an error. Application client modules are initialized on their own
+schedule, typically when an end user invokes them; as such, they are
+excluded from any initialization ordering requirements.
+
+=== [[a3203]]Java EE Application XML Schema
+
+The XML grammar for a Java EE application
+deployment descriptor is defined by the Java EE application schema. The
+root element of the deployment descriptor for a Jaav EE application is
+_application_ . The granularity of composition for Java EE application
+assembly is the Java EE module. A Java EE application deployment
+descriptor contains a name and description for the application and the
+URI of a UI icon for the application, as well a list of the Java EE
+modules that comprise the application. The content of the XML elements
+is in general case sensitive. This means, for example, that
+_<role-name>Manager</role-name>_ is a different role than
+_<role-name>manager</role-name>_ .
+
+All valid Java EE application deployment
+descriptors must conform to the XML Schema definition, or the DTD or
+schema definition from a previous version of this specification. (See
+link:#a3447[See Previous Version
+Deployment Descriptors].”) The deployment descriptor must be named
+_META-INF/application.xml_ in the _.ear_ file. Note that this name is
+case-sensitive. The XML Schema located at
+_http://xmlns.jcp.org/xml/ns/javaee/application_8.xsd_ defines the XML
+grammar for a Java EE application deployment descriptor.
+
+link:#a3208[See
+Java EE Application XML Schema Structure] shows a graphic representation
+of the structure of the Java EE application XML schema.
+
+
+
+=== [[a3208]]Java EE Application XML Schema Structure
+
+image:Platform_Spec-11.png[image]
+
+=== Common Java EE XML Schema Definitions
+
+The XML Schema located at
+_http://xmlns.jcp.org/xml/ns/javaee/javaee_8.xsd_ defines types that are
+used by many other Java EE deployment descriptor schemas, both in this
+specification and in other specifications.

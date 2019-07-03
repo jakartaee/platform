@@ -1,0 +1,1075 @@
+== Platform Overview
+
+This chapter provides an overview of the
+Java™ Platform, Enterprise Edition (Java EE™).
+
+=== Architecture
+
+The required relationships of architectural
+elements of the Java EE platform are shown in
+_link:#a45[See Java EE Architecture
+Diagram]_ . Note that this figure shows the logical relationships of the
+elements; it is not meant to imply a physical partitioning of the
+elements into separate machines, processes, address spaces, or virtual
+machines.
+
+The Containers, denoted by the separate
+rectangles, are Java EE runtime environments that provide required
+services to the application components represented in the upper half of
+the rectangle. The services provided are denoted by the boxes in the
+lower half of the rectangle. For example, the Application Client
+Container provides Java Message Service (JMS) APIs to Application
+Clients, as well as the other services represented. All these services
+are explained below. See
+link:#a84[See Java EE Standard
+Services]”.
+
+The arrows represent required access to other
+parts of the Java EE platform. The Application Client Container provides
+Application Clients with direct access to the Java EE required Database
+through the Java API for connectivity with database systems, the JDBC
+_TM_ API. Similar access to databases is provided to JSP pages, JSF
+applications, and servlets by the Web Container, and to enterprise beans
+by the EJB Container.
+
+As indicated, the APIs of the Java _TM_
+Platform, Standard Edition (Java SE), are supported by Java SE runtime
+environments for each type of application component.
+
+
+
+
+
+image:Platform_Spec-1.png[image]
+
+
+
+=== [[a45]]Java EE Architecture Diagram
+
+The following sections describe the Java EE
+Platform requirements for each kind of Java EE platform element.
+
+=== Profiles
+
+The Java EE 6 specification introduced the
+notion of “profiles” (see
+link:#a3212[See Profiles]”).
+
+A profile is a configuration of the Java EE
+platform targeted at a specific class of applications.
+
+Profiles are not a new concept, nor are they
+unique to the Java EE platform. The Java Community Process Document
+(version 2.10) gives the following definition of a profile: “A
+Specification that references one of the Platform Edition Specifications
+and zero or more other JCP Specifications (that are not already a part
+of a Platform Edition Specification). APIs from the referenced Platform
+Edition must be included according to the referencing rules set out in
+that Platform Edition Specification. Other referenced specifications
+must be referenced in their entirety.”
+
+All Java EE profiles share a set of common
+features, such as naming and resource injection, packaging rules,
+security requirements, etc. This guarantees a degree of uniformity
+across all products and, indirectly, applications that fall under the
+“Java EE platform” umbrella. This also ensures that developers who are
+familiar with a certain profile, or with the full platform, can move
+easily to other profiles, avoiding excessive compartmentalization of
+skills and experience.
+
+Beyond the basic functionality outlined above,
+profiles are free to include any set of technologies that are part of
+the platform, provided that all rules in the present specification that
+pertain to the included technologies—either alone or in combination with
+others—are followed.
+
+This last point is worth stressing. If profiles
+only included pointwise technologies, they would be little more than
+bundles of APIs with few or no tie-ins. Instead, the definition of
+profiles adopted here guarantees that whenever this specification
+defines requirements on combinations of technologies, these requirements
+will be honored in all products based on Java EE profiles.
+
+As a concrete example, consider the use of
+transactions in a servlet container. In isolation, neither the Servlet
+specification nor the Java Transaction API specification defines a
+complete programming model for portable applications. This specification
+fills that gap by introducing its own set of requirements that pertain
+to the combination of Servlets and JTA. These requirements must be
+satisfied by any Java EE profile-based product that includes those two
+technologies, thus offering application developers a more complete
+programming model shared across all relevant Java EE profiles.
+
+A separate specification, the Java EE Web
+Profile Specification, defines the Java EE Web Profile, the first
+profile of the Java EE platform.
+
+Additional profiles may be defined in
+accordance with the rules of the Java Community Process and those
+contained in the present specification. In particular, profiles are
+initiated by submitting a Java Specification Request and are released at
+completion on their own schedule, independently of any concurrent
+revision of the platform itself or of other profiles. This ensures
+maximum flexibility in defining and releasing a new profile or an
+updated version of an existing one.
+
+In accordance with the definition of profiles
+given above, a profile may end up being either a proper subset or a
+proper superset of the platform, or it may overlap with it to a certain
+extent. This flexibility guarantees that future profiles will be able to
+cover uses well beyond those originally envisioned by the platform
+specification.
+
+As the previous paragraphs made clear, creating
+a new profile is a significant undertaking. The decision to create a
+profile should take into account its potential drawbacks, especially in
+terms of fragmentation and developer confusion. In general, a profile
+should be created only when there is a natural developer constituency
+and a well-understood class of applications that can benefit from it. It
+is also recommended that a profile cast a comprehensive net on its area
+of interest, to minimize the occurrence of overlapping or competing
+profiles. Java EE platform features such as optional components and
+extensibility can be used by profiles to achieve a better fit to their
+intended target.
+
+=== Application Components
+
+The Java EE runtime environment defines four
+application component types that a Java EE product must support:
+
+* Application clients are Java programming
+language programs that are typically GUI programs that execute on a
+desktop computer. Application clients offer a user experience similar to
+that of native applications and have access to all of the facilities of
+the Java EE middle tier.
+* Applets are GUI components that typically
+execute in a web browser, but can execute in a variety of other
+applications or devices that support the applet programming model.
+Applets can be used to provide a powerful user interface for Java EE
+applications. (Simple HTML pages can also be used to provide a more
+limited user interface for Java EE applications.)
+* Servlets, JSP pages, JSF applications,
+filters, and web event listeners typically execute in a web container
+and may respond to HTTP requests from web clients. Servlets, JSP pages,
+JSF applications, and filters may be used to generate HTML pages that
+are an application’s user interface. They may also be used to generate
+XML or other format data that is consumed by other application
+components. A special kind of servlet provides support for web services
+using the SOAP/HTTP protocol. Servlets, pages created with the
+JavaServer Pages™ technology or JavaServer™ Faces technology, web
+filters, and web event listeners are referred to collectively in this
+specification as “web components.” Web applications are composed of web
+components and other data such as HTML pages. Web components execute in
+a web container. A web server includes a web container and other
+protocol support, security support, and so on, as required by Java EE
+specifications.
+* Enterprise JavaBeans™ (EJB) components execute
+in a managed environment that supports transactions. Enterprise beans
+typically contain the business logic for a Java EE application.
+Enterprise beans may directly provide web services using the SOAP/HTTP
+protocol.
+
+=== Java EE Server Support for Application Components
+
+The Java EE servers provide deployment,
+management, and execution support for conforming application components.
+Application components can be divided into three categories according to
+their dependence on a Java EE server:
+
+* Components that are deployed, managed, and
+executed on a Java EE server. These components include web components
+and Enterprise JavaBeans components. See the separate specifications for
+these components.
+* Components that are deployed and managed on a
+Java EE server, but are loaded to and executed on a client machine.
+These components include web resources such as HTML pages and applets
+embedded in HTML pages.
+* Components whose deployment and management is
+not completely defined by this specification. Application Clients fall
+into this category. Future versions of this specification may more fully
+define deployment and management of Application Clients. See
+link:#a3294[See Application Clients],”
+for a description of Application Clients.
+
+=== Containers
+
+Containers provide the runtime support for Java
+EE application components. Containers provide a federated view of the
+underlying Java EE APIs to the application components. Java EE
+application components never interact directly with other Java EE
+application components. They use the protocols and methods of the
+container for interacting with each other and with platform services.
+Interposing a container between the application components and the Java
+EE services allows the container to transparently inject the services
+required by the component, such as declarative transaction management,
+security checks, resource pooling, and state management.
+
+A typical Java EE product will provide a
+container for each application component type: application client
+container, applet container, web component container, and enterprise
+bean container.
+
+=== Container Requirements
+
+This specification requires that containers
+provide a Java Compatible™ runtime environment, as defined by the Java
+Platform, Standard Edition, v8 specification (Java SE). The applet
+container may use the Java Plugin product to provide this environment,
+or it may provide it natively. The use of applet containers providing
+JDK™ 1.1 APIs is outside the scope of this specification.
+
+The container tools must understand the file
+formats for the packaging of application components for deployment.
+
+The containers are implemented by a Java EE
+Product Provider. See the description of the Product Provider role in
+link:#a162[See Java EE Product
+Provider]”.
+
+This specification defines a set of standard
+services that each Java EE product must support. These standard services
+are described below. The Java EE containers provide the APIs that
+application components use to access these services. This specification
+also describes standard ways to extend Java EE services with connectors
+to other non-Java EE application systems, such as mainframe systems and
+ERP systems.
+
+=== Java EE Servers
+
+Underlying a Java EE container is the server of
+which it is a part. A Java EE Product Provider typically implements the
+Java EE server-side functionality using an existing transaction
+processing infrastructure in combination with Java Platform, Standard
+Edition (Java SE) technology. The Java EE client functionality is
+typically built on Java SE technology.
+
+=== Resource Adapters
+
+A resource adapter is a system-level software
+component that typically implements network connectivity to an external
+resource manager. A resource adapter can extend the functionality of the
+Java EE platform either by implementing one of the Java EE standard
+service APIs (such as a JDBC™ driver), or by defining and implementing a
+resource adapter for a connector to an external application system.
+Resource adapters may also provide services that are entirely local,
+perhaps interacting with native resources. Resource adapters interface
+with the Java EE platform through the Java EE service provider
+interfaces (Java EE SPI). A resource adapter that uses the Java EE SPIs
+to attach to the Java EE platform will be able to work with all Java EE
+products.
+
+=== [[a82]]Database
+
+The Java EE platform requires a database,
+accessible through the JDBC API, for the storage of business data. The
+database is accessible from web components, enterprise beans, and
+application client components. The database need not be accessible from
+applets. The Java EE Product Provider must also provide a preconfigured,
+default data source for use by the application in accessing this
+database. See link:#a2009[See Default
+Data Source]”.
+
+=== [[a84]]Java EE Standard Services
+
+The Java EE standard services include the
+following (specified in more detail later in this document). Some of
+these standard services are actually provided by Java SE.
+
+=== HTTP
+
+The HTTP client-side API is defined by the
+_java.net_ package. The HTTP server-side API is defined by the servlet,
+JSP, and JSF interfaces and by the web services support that is a part
+of the Java EE platform.
+
+=== HTTPS
+
+Use of the HTTP protocol over the SSL protocol
+is supported by the same client and server APIs as HTTP.
+
+=== Java™ Transaction API (JTA)
+
+The Java Transaction API consists of two parts:
+
+* An application-level demarcation interface
+that is used by the container and application components to demarcate
+transaction boundaries.
+* An interface between the transaction manager
+and a resource manager used at the Java EE SPI level.
+
+=== RMI-IIOP (Proposed Optional)
+
+The RMI-IIOP subsystem is composed of APIs that
+allow for the use of RMI-style programming that is independent of the
+underlying protocol, as well as an implementation of those APIs that
+supports both the Java SE native RMI protocol (JRMP) and the CORBA IIOP
+protocol. Java EE applications can use RMI-IIOP, with IIOP protocol
+support, to access CORBA services that are compatible with the RMI
+programming restrictions (see the RMI-IIOP specification for details).
+Such CORBA services would typically be defined by components that live
+outside of a Java EE product, usually in a legacy system. Only Java EE
+application clients are required to be able to define their own CORBA
+services directly, using the RMI-IIOP APIs. Typically such CORBA objects
+would be used for callbacks when accessing other CORBA objects.
+
+Java EE products must be capable of exporting
+Enterprise JavaBeans components using the IIOP protocol and accessing
+enterprise beans using the IIOP protocol, as specified in the EJB
+specification. The ability to use the IIOP protocol is required to
+enable interoperability between Java EE products, however a Java EE
+product may also use other protocols. Requirements for use of the
+RMI-IIOP APIs when accessing Enterprise JavaBeans components have been
+relaxed as of EJB 3.0. See the Enterprise JavaBeans specification for
+details.
+
+Support for CORBA, including use of IIOP and
+Java IDL, is Proposed Optional as of Java EE 8. See
+link:#a2331[See Pruned Java
+Technologies].”
+
+=== Java IDL (Proposed Optional)
+
+Java IDL allows Java EE application components
+to invoke external CORBA objects using the IIOP protocol. These CORBA
+objects may be written in any language and typically live outside a Java
+EE product. Java EE applications may use Java IDL to act as clients of
+CORBA services, but only Java EE application clients are required to be
+allowed to use Java IDL directly to present CORBA services themselves.
+
+=== JDBC™ API
+
+The JDBC API is the API for connectivity with
+relational database systems. The JDBC API has two parts: an
+application-level interface used by the application components to access
+a database, and a service provider interface to attach a JDBC driver to
+the Java EE platform. Support for the service provider interface is not
+required in Java EE products. Instead, JDBC drivers should be packaged
+as resource adapters that use the facilities of the Connector API to
+interface with a Java EE product. The JDBC API is included in Java SE,
+but this specification includes additional requirements on JDBC device
+drivers.
+
+=== Java™ Persistence API
+
+The Java Persistence API is the standard API
+for the management of persistence and object/relational mapping. It
+provides an object/relational mapping facility for application
+developers using a Java domain model to manage a relational database.
+The Java Persistence API is required to be supported in Java EE. It can
+also be used in Java SE environments.
+
+=== [[a104]]Java™ Message Service (JMS)
+
+The Java Message Service is a standard API for
+messaging that supports reliable point-to-point messaging as well as the
+publish-subscribe model. This specification requires a JMS provider that
+implements both point-to-point messaging as well as publish-subscribe
+messaging. The Java EE Product Provider must also provide a
+preconfigured, default JMS connection factory for use by the application
+in accessing this JMS provider. See
+link:#a2025[See Default JMS Connection
+Factory]”.
+
+=== Java Naming and Directory Interface™ (JNDI)
+
+The JNDI API is the standard API for naming and
+directory access. The JNDI API has two parts: an application-level
+interface used by the application components to access naming and
+directory services and a service provider interface to attach a provider
+of a naming and directory service. The JNDI API is included in Java SE,
+but this specification defines additional requirements.
+
+=== JavaMail™
+
+Many Internet applications require the ability
+to send email notifications, so the Java EE platform includes the
+JavaMail API along with a JavaMail service provider that allows an
+application component to send Internet mail. The JavaMail API has two
+parts: an application-level interface used by the application components
+to send mail, and a service provider interface used at the Java EE SPI
+level.
+
+=== JavaBeans™ Activation Framework (JAF)
+
+The JAF API provides a framework for handling
+data in different MIME types, originating in different formats and
+locations. The JavaMail API makes use of the JAF API. The JAF API is
+included in Java SE and so is available to Java EE applications.
+
+=== XML Processing
+
+The Java™ API for XML Processing (JAXP)
+provides support for the industry standard SAX and DOM APIs for parsing
+XML documents, as well as support for XSLT transform engines. The
+Streaming API for XML (StAX) provides a pull-parsing API for XML. The
+JAXP and StAX APIs are included in Java SE and so are available to Java
+EE applications.
+
+=== Java EE™ Connector Architecture
+
+The Connector architecture is a Java EE SPI
+that allows resource adapters that support access to Enterprise
+Information Systems to be plugged in to any Java EE product. The
+Connector architecture defines a standard set of system-level contracts
+between a Java EE server and a resource adapter. The standard contracts
+include:
+
+* A connection management contract that lets a
+Java EE server pool connections to an underlying EIS, and lets
+application components connect to an EIS. This leads to a scalable
+application environment that can support a large number of clients
+requiring access to EIS systems.
+* A transaction management contract between the
+transaction manager and an EIS that supports transactional access to EIS
+resource managers. This contract lets a Java EE server use a transaction
+manager to manage transactions across multiple resource managers. This
+contract also supports transactions that are managed internal to an EIS
+resource manager without the necessity of involving an external
+transaction manager.
+* A security contract that enables secure
+access to an EIS. This contract provides support for a secure
+application environment, which reduces security threats to the EIS and
+protects valuable information resources managed by the EIS.
+* A thread management contract that allows a
+resource adapter to delegate work to other threads and allows the
+application server to manage a pool of threads. The resource adapter can
+control the security context and transaction context used by the worker
+thread.
+* A contract that allows a resource adapter to
+deliver messages to message driven beans independent of the specific
+messaging style, messaging semantics, and messaging infrastructure used
+to deliver messages. This contract also serves as the standard message
+provider pluggability contract that allows a message provider to be
+plugged into any Java EE server via a resource adapter.
+* A contract that allows a resource adapter to
+propagate an imported transaction context to the Java EE server such
+that its interactions with the server and any application components are
+part of the imported transaction. This contract preserves the ACID
+(atomicity, consistency, isolation, durability) properties of the
+imported transaction.
+* An optional contract providing a generic
+command interface between an application program and a resource adapter.
+
+=== Security Services
+
+The Java™ Authentication and Authorization
+Service (JAAS) enables services to authenticate and enforce access
+controls upon users. It implements a Java technology version of the
+standard Pluggable Authentication Module (PAM) framework and supports
+user-based authorization. The Java™ Authorization Service Provider
+Contract for Containers (JACC) defines a contract between a Java EE
+application server and an authorization service provider, allowing
+custom authorization service providers to be plugged into any Java EE
+product. The Java™ Authentication Service Provider Interface for
+Containers (JASPIC) defines an SPI by which authentication providers
+implementing message authentication mechanisms may be integrated in
+client or server message processing containers or runtimes. The Java EE
+Security API leverages JASPIC, but provides an easier to use SPI for
+authentication of users of web applications and defines identity store
+APIs for authentication and authorization.
+
+=== Web Services
+
+Java EE provides full support for both clients
+of web services as well as web service endpoints. Several Java
+technologies work together to provide support for web services. The Java
+API for XML Web Services (JAX-WS) and the Java API for XML-based RPC
+(JAX-RPC) both provide support for web service calls using the SOAP/HTTP
+protocol. JAX-WS, which is included in Java SE, is the primary API for
+web services and is a follow-on to JAX-RPC. JAX-WS offers extensive web
+services functionality, with support for multiple bindings/protocols.
+JAX-WS and JAX-RPC are fully interoperable when using the SOAP 1.1 over
+HTTP protocol as constrained by the WS-I Basic Profile specification.
+Support for JAX-RPC has been made optional as of Java EE 7. See
+link:#a2331[See Pruned Java
+Technologies]”.
+
+JAX-WS and the Java Architecture for XML
+Binding (JAXB) define the mapping between Java classes and XML as used
+in SOAP calls, and provide support for 100% of XML Schema. JAXB is
+included in Java SE. The SOAP with Attachments API for Java (SAAJ),
+which is also included in Java SE, provides support for manipulating low
+level SOAP messages. The Web Services for Java EE specification fully
+defines the deployment of web service clients and web service endpoints
+in Java EE, as well as the implementation of web service endpoints using
+enterprise beans. The Web Services Metadata specification defines Java
+language annotations that make it easier to develop web services. The
+Java API for XML Registries (JAXR) provides client access to XML
+registry servers. Support for JAXR has been made optional as of Java EE
+7. See link:#a2331[See Pruned Java
+Technologies]”.
+
+The Java API for JSON Processing (JSON-P)
+provides a convenient way to process (parse, generate, transform, and
+query) JSON text. The Java API for JSON Binding (JSON-B) provides a
+convenient way to convert between JSON text and Java objects. The Java
+API for WebSocket (WebSocket) is a standard API for creating WebSocket
+applications.
+
+The Java API for RESTful Web Services (JAX-RS)
+provides support for web services using the REST style. RESTful web
+services better match the design style of the web and are often easier
+to access using a wide variety of programming languages. JAX-RS provides
+a simple high-level API for writing such web services as well as a
+low-level API that can be used to control the details of the web service
+interaction.
+
+=== Concurrency Utilities
+
+The Concurrency Utilities for Java EE is a
+standard API for providing asynchronous capabilities to Java EE
+application components through the following types of objects: managed
+executor service, managed scheduled executor service, managed thread
+factory, and context service.
+
+=== Batch
+
+The Batch Applications for the Java Platform
+API (Batch) provides a programming model for batch applications and a
+runtime for scheduling and executing jobs.
+
+=== Management
+
+The Java 2 Platform, Enterprise Edition
+Management Specification defines APIs for managing Java EE servers using
+a special management enterprise bean. The Java™ Management Extensions
+(JMX) API is also used to provide some management support.
+
+=== Deployment
+
+The Java 2 Platform, Enterprise Edition
+Deployment Specification defines a contract between deployment tools and
+Java EE products. The Java EE products provide plug-in components that
+run in the deployment tool and allow the deployment tool to deploy
+applications into the Java EE product. The deployment tool provides
+services used by these plug-in components. Support for the Deployment
+Specification has been made optional as of Java EE 7. See
+link:#a2331[See Pruned Java
+Technologies].”
+
+=== Interoperability
+
+Many of the APIs described above provide
+interoperability with components that are not a part of the Java EE
+platform, such as external web or CORBA services.
+
+
+_link:#a142[See Java EE
+Interoperability]_ illustrates the interoperability facilities of the
+Java EE platform. (The directions of the arrows indicate the
+client/server relationships of the components.)
+
+.
+
+=== [[a142]]Java EE Interoperability
+
+
+
+image:Platform_Spec-2.png[image]
+
+
+
+=== Flexibility of Product Requirements
+
+This specification doesn’t require that a Java
+EE product be implemented by a single program, a single server, or even
+a single machine. In general, this specification doesn’t describe the
+partitioning of services or functions between machines, servers, or
+processes. As long as the requirements in this specification are met,
+Java EE Product Providers can partition the functionality however they
+see fit. A Java EE product must be able to deploy application components
+that execute with the semantics described by this specification.
+
+A typical low end Java EE product will support
+applets using the Java Plugin in one of the popular browsers,
+application clients each in their own Java virtual machine, and will
+provide a single server that supports both web components and enterprise
+beans. A high end Java EE product might split the server components into
+multiple servers, each of which can be distributed and load-balanced
+across a collection of machines. While such machines might exist on-site
+in an enterprise, they might also reside, for example, in a public
+cloud. This specification does not prescribe or preclude any of these
+configurations.
+
+A wide variety of Java EE product
+configurations and implementations, all of which meet the requirements
+of this specification, are possible. A portable Java EE application will
+function correctly when successfully deployed in any of these products.
+
+=== [[a149]]Java EE Product Packaging
+
+This specification doesn't include requirements
+for the packaging of a Java EE product. A Java EE product might be
+provided on distribution media, for download on the web, or as a service
+available only on the web, for example. A Java EE product must include
+implementations of all the APIs required by this specification. These
+implementations might depend on other software or services not included
+in the Java EE product. The customer may be required to combine or
+configure the product with other software or services that are necessary
+to meet the requirements of this specification. The documentation for
+the Java EE product must fully describe all the required software and
+configuration.
+
+For example, a Java EE product might depend on
+a database server, a naming service, a mail service, and/or a messaging
+service. All configurations in which the product is defined to operate
+must include all the software and services necessary to meet the
+requirements of this specification.
+
+Whether these services are available (running,
+accessible on the network, properly configured, operating correctly,
+etc.) may be controlled independently of the Java EE product — they may
+be unavailable when the Java EE server is started, or they may fail
+while the Java EE server is running. This specification does not require
+the Java EE product to assure the availability of these services.
+However, if such a service is needed to meet the requirements of this
+specification, the Java EE product must ensure that the service has been
+configured for use and will be usable when it is available.
+
+For example, this specification requires that
+applications can use a database. If the Java EE product requires a
+database server to be separately installed, and requires the Java EE
+product to be configured to use that database, such configuration must
+be done before applications are deployed. This ensures that the
+operational environment of applications includes all the required
+services.
+
+=== Java EE Product Extensions
+
+This specification describes a minimum set of
+facilities available to all Java EE products. A Java EE profile may
+include some or all of these facilities, as described in
+link:#a3212[See Profiles]”. Products
+implementing the full Java EE platform must provide all of them (see
+link:#a3252[See Full Java EE Product
+Requirements]”). Most Java EE products will provide facilities beyond
+the minimum required by this specification. This specification includes
+only a few limits to the ability of a product to provide extensions. In
+particular, it includes the same restrictions as Java SE on extensions
+to Java APIs. A Java EE product must not add classes to the Java
+programming language packages included in this specification, and must
+not add methods or otherwise alter the signatures of the specified
+classes.
+
+However, many other extensions are allowed. A
+Java EE product may provide additional Java APIs, either other Java
+optional packages or other (appropriately named) packages. A Java EE
+product may include support for additional protocols or services not
+specified here. A Java EE product may support applications written in
+other languages, or may support connectivity to other platforms or
+applications.
+
+Of course, portable applications will not make
+use of any platform extensions. Applications that do make use of
+facilities not required by this specification will be less portable.
+Depending on the facility used, the loss of portability may be minor or
+it may be significant.
+
+We expect Java EE products to vary widely and
+compete vigorously on various aspects of quality of service. Products
+will provide different levels of performance, scalability, robustness,
+availability, and security. In some cases this specification requires
+minimum levels of service. Future versions of this specification may
+allow applications to describe their requirements in these areas.
+
+=== Platform Roles
+
+This section describes typical Java Platform,
+Enterprise Edition roles. In an actual instance, an organization may
+divide role functionality differently to match that organization’s
+application development and deployment workflow.
+
+The roles are described in greater detail in
+later sections of this specification.
+
+=== [[a162]]Java EE Product Provider
+
+A Java EE Product Provider is the implementor
+and supplier of a Java EE product that includes the component
+containers, Java EE platform APIs, and other features defined in this
+specification. A Java EE Product Provider is typically an application
+server vendor, a web server vendor, a database system vendor, or an
+operating system vendor. A Java EE Product Provider must make available
+the Java EE APIs to the application components through containers. A
+Product Provider frequently bases their implementation on an existing
+infrastructure.
+
+A Java EE Product Provider must provide the
+mapping of the application components to the network protocols as
+specified by this specification. A Java EE product is free to implement
+interfaces that are not specified by this specification in an
+implementation-specific way.
+
+A Java EE Product Provider must provide
+application deployment and management tools. Deployment tools enable a
+Deployer (see link:#a170[See
+Deployer]”) to deploy application components on the Java EE product.
+Management tools allow a System Administrator (see
+link:#a178[See System Administrator]”)
+to manage the Java EE product and the applications deployed on the Java
+EE product. The form of these tools is not prescribed by this
+specification.
+
+=== Application Component Provider
+
+There are multiple roles for Application
+Component Providers, including, for example, HTML document designers,
+document programmers, and enterprise bean developers. These roles use
+tools to produce Java EE applications and components.
+
+=== Application Assembler
+
+The Application Assembler takes a set of
+components developed by Application Component Providers and assembles
+them into a complete Java EE application delivered in the form of an
+Enterprise Archive ( _.ear_ ) file. The Application Assembler will
+generally use GUI tools provided by either a Platform Provider or Tool
+Provider. The Application Assembler is responsible for providing
+assembly instructions describing external dependencies of the
+application that the Deployer must resolve in the deployment process.
+
+=== [[a170]]Deployer
+
+The Deployer is responsible for deploying
+application clients, web applications, and Enterprise JavaBeans
+components into a specific operational environment. The Deployer uses
+tools supplied by the Java EE Product Provider to carry out deployment
+tasks. Deployment is typically a three-stage process:
+
+. During Installation the Deployer moves
+application media to the server, generates the additional
+container-specific classes and interfaces that enable the container to
+manage the application components at runtime, and installs application
+components, and additional classes and interfaces, into the appropriate
+Java EE containers.
+. During Configuration, external dependencies
+declared by the Application Component Provider are resolved and
+application assembly instructions defined by the Application Assembler
+are followed. For example, the Deployer is responsible for mapping
+security roles defined by the Application Assembler onto user groups and
+accounts that exist in the target operational environment.
+. Finally, the Deployer starts up Execution of
+the newly installed and configured application.
+
+In some cases, a specially qualified Deployer
+may customize the business logic of the application’s components at
+deployment time. For example, using tools provided with a Java EE
+product, the Deployer may provide simple application code that wraps an
+enterprise bean’s business methods, or customizes the appearance of a
+JSP or JSF page.
+
+The Deployer’s output is web applications,
+enterprise beans, applets, and application clients that have been
+customized for the target operational environment and are deployed in a
+specific Java EE container.
+
+For example, in the case of cloud deployments,
+the Deployer would be responsible for configuring the application to run
+in the cloud environment. The Deployer would install the application
+into the cloud environment, configure its external dependencies, and
+might handle aspects of provisioning its required resources.
+
+=== [[a178]]System Administrator
+
+The System Administrator is responsible for the
+configuration and administration of the enterprise’s computing and
+networking infrastructure. The System Administrator is also responsible
+for overseeing the runtime well-being of the deployed Java EE
+applications. The System Administrator typically uses runtime monitoring
+and management tools provided by the Java EE Product Provider to
+accomplish these tasks.
+
+For example, in a cloud scenario, the System
+Administrator would be responsible for installing, configuring,
+managing, and maintaining the cloud environment, including the resources
+that are made available to applications running in the environment.
+
+=== Tool Provider
+
+A Tool Provider provides tools used for the
+development and packaging of application components. A variety of tools
+are anticipated, corresponding to the types of application components
+supported by the Java EE platform. Platform independent tools can be
+used for all phases of development through the deployment of an
+application and the management and monitoring of an application server.
+
+=== System Component Provider
+
+A variety of system level components may be
+provided by System Component Providers. The Connector Architecture
+defines the primary APIs used to provide resource adapters of many
+types. These resource adapters may connect to existing enterprise
+information systems of many types, including databases and messaging
+systems. Another type of system component is an authorization policy
+provider as defined by the Java Authorization Service Provider Contract
+for Containers specification.
+
+=== Platform Contracts
+
+This section describes the Java Platform,
+Enterprise Edition contracts that must be fulfilled by a Java EE Product
+Provider implementing the full Java EE platform. Java EE profiles may
+include some or all of these facilities, as described in
+link:#a3212[See Profiles]”.
+
+=== Java EE APIs
+
+The Java EE APIs define the contract between the
+Java EE application components and the Java EE platform. The contract
+specifies both the runtime and deployment interfaces.
+
+The Java EE Product Provider must implement the
+Java EE APIs in a way that supports the semantics and policies described
+in this specification. The Application Component Provider provides
+components that conform to these APIs and policies.
+
+=== Java EE Service Provider Interfaces (SPIs)
+
+The Java EE Service Provider Interfaces (SPIs)
+define the contract between the Java EE platform and service providers
+that may be plugged into a Java EE product. The Connector APIs define
+service provider interfaces for integrating resource adapters with a
+Java EE application server. Resource adapter components implementing the
+Connector APIs are called Connectors. The Java EE Authorization APIs
+define service provider interfaces for integrating security
+authorization mechanisms with a Java EE application server.
+
+The Java EE Product Provider must implement the
+Java EE SPIs in a way that supports the semantics and policies described
+in this specification. A provider of Service Provider components (for
+example, a Connector Provider) should provide components that conform to
+these SPIs and policies.
+
+=== Network Protocols
+
+This specification defines the mapping of
+application components to industry-standard network protocols. The
+mapping allows client access to the application components from systems
+that have not installed Java EE product technology. See
+link:#a2845[See Interoperability],” for
+details on the network protocol support required for interoperability.
+
+The Java EE Product Provider is required to
+publish the installed application components on the industry-standard
+protocols. This specification defines the mapping of servlets and JSP
+pages to the HTTP and HTTPS protocols, and the mapping of EJB components
+to IIOP and SOAP protocols.
+
+=== Deployment Descriptors and Annotations
+
+Deployment descriptors and Java language
+annotations are used to communicate the needs of application components
+to the Deployer. The deployment descriptor and class file annotations
+are a contract between the Application Component Provider or Assembler
+and the Deployer. The Application Component Provider or Assembler is
+required to specify the application component’s external resource
+requirements, security requirements, environment parameters, and so
+forth in the component’s deployment descriptor or through class file
+annotations. The Java EE Product Provider is required to provide a
+deployment tool that interprets the Java EE deployment descriptors and
+class file annotations and allows the Deployer to map the application
+component’s requirements to the capabilities of a specific Java EE
+product and environment.
+
+=== Changes in J2EE 1.3
+
+The J2EE 1.3 specification extends the J2EE
+platform with additional enterprise integration facilities. The
+Connector API supports integration with external enterprise information
+systems. A JMS provider is now required. The JAXP API provides support
+for processing XML documents. The JAAS API provides security support for
+the Connector API. The EJB specification now requires support for
+interoperability using the IIOP protocol.
+
+Significant changes have been made to the EJB
+specification. The EJB specification has a new container-managed
+persistence model, support for message driven beans, and support for
+local enterprise beans.
+
+Other existing J2EE APIs have been updated as
+well. See the individual API specifications for details. Finally, J2EE
+1.3 requires support for J2SE 1.3.
+
+=== Changes in J2EE 1.4
+
+The primary focus of J2EE 1.4 is support for
+web services. The JAX-RPC and SAAJ APIs provide the basic web services
+interoperability support. The Web Services for J2EE specification
+describes the packaging and deployment requirements for J2EE
+applications that provide and use web services. The EJB specification
+was also extended to support implementing web services using stateless
+session beans. The JAXR API supports access to registries and
+repositories.
+
+Several other APIs have been added to J2EE 1.4.
+The J2EE Management and J2EE Deployment APIs enable enhanced tool
+support for J2EE products. The JMX API supports the J2EE Management API.
+The J2EE Authorization Contract for Containers provides an SPI for
+security providers.
+
+Many of the existing J2EE APIs have been
+enhanced in J2EE 1.4. J2EE 1.4 builds on J2SE 1.4. The JSP specification
+has been enhanced to simplify the development of web applications. The
+Connector API now supports integration with asynchronous messaging
+systems, including the ability to plug in JMS providers.
+
+Changes in this J2EE platform specification
+include support for deploying class libraries independently of any
+application and the conversion of deployment descriptor DTDs to XML
+Schemas.
+
+Other J2EE APIs have been enhanced as well. For
+additional details, see each of the referenced specifications.
+
+=== Changes in Java EE 5
+
+With this release, the platform has a new name
+– Java Platform, Enterprise Edition, or Java EE for short. This new name
+gets rid of the confusing “2” while emphasizing even in the short name
+that this is a Java platform. Previous versions are still referred to
+using the old name “J2EE”.
+
+The focus of Java EE 5 is ease of development.
+To simplify the development process for programmers just starting with
+Java EE, or developing small to medium applications, Java EE 5 makes
+extensive use of Java language annotations, which were introduced by
+J2SE 5.0. Annotations reduce or eliminate the need to deal with Java EE
+deployment descriptors in many cases. Even large applications can
+benefit from the simplifications provided by annotations.
+
+One of the major uses of annotations is to
+specify injection of resources and other dependencies into Java EE
+components. Injection augments the existing JNDI lookup capability to
+provide a new simplified model for applications to gain access to the
+resources needed from the operational environment. Injection also works
+with deployment descriptors to allow the deployer to customize or
+override resource settings specified in the application’s source code.
+
+The use of annotations is made even more
+effective by providing better defaults. Better default behavior and
+better default configuration allows most applications to get the
+behavior they want most of the time, without the use of either
+annotations or deployment descriptors in many cases. When the default is
+not what the application wants, a simple annotation can be used to
+specify the required behavior or configuration.
+
+The combination of annotations and better
+defaults has greatly simplified the development of applications using
+Enterprise JavaBeans technology and applications defining or using web
+services. Enterprise beans are now dramatically simpler to develop. Web
+services are much easier to develop using the annotations defined by the
+Web Services Metadata specification.
+
+The area of web services continues to evolve at
+a rapid pace. To provide the latest web services support, the JAX-RPC
+technology has evolved into the JAX-WS technology, which makes heavy use
+of the JAXB technology to bind Java objects to XML data. Both JAX-WS and
+JAXB are new to this version of the platform.
+
+Major additions to Java EE 5 include the JSTL
+and JSF technologies that simplify development of web applications, and
+the Java Persistence API developed by the EJB 3.0 expert group, which
+greatly simplifies mapping Java objects to databases.
+
+Minor additions include the StAX API for XML
+parsing. Most APIs from previous versions have been updated with small
+to medium improvements.
+
+=== Changes in Java EE 6
+
+Java EE 6 continues the “ease of development”
+focus of Java EE 5.
+
+One of the major improvements introduced in
+Java EE 6 is the Contexts and Dependency Injection (CDI) technology,
+which provides a uniform framework for the dependency injection and
+lifecycle management of “managed beans”.
+
+The Java EE 6 Managed Bean specification
+defines the commonalities across the spectrum of Java EE managed
+objects, extending from basic managed beans through EJB components.
+
+The Bean Validation specification, introduced
+in this release, provides a facility for validation of managed objects.
+Bean Validation is integrated into the Java Persistence API, where it
+provides an automated facility for the validation of JPA entities.
+
+Java EE 6 adds the JAX-RS API as a required
+technology of the Java EE Platform. JAX-RS is the API for the
+development of Web services built according to the Representational
+State Transfer (REST) architectural style.
+
+Java EE 6 also introduces the Java EE Web
+Profile, the first new profile of the Java EE Platform.
+
+=== Changes in Java EE 7
+
+Since its inception, the Java EE platform has
+been targeted at offloading the developer from common infrastructure
+tasks through its container-based model and abstraction of resource
+access. In recent releases the platform has considerably simplified the
+APIs for access to container services while broadening the range of the
+services available. In this release we continue the direction of
+improved simplification, while extending the range of the Java EE
+platform to encompass emerging technologies in the web space.
+
+The Java EE 7 platform adds first-class support
+for recent developments in web standards, including Web Sockets and
+JSON, which provide the underpinnings for HTML 5 support in Java EE.
+Java EE 7 also adds a modern HTTP client API as defined by JAX-RS 2.0.
+
+Also new in the Java EE 7 platform is the Batch
+API, which provides a programming model for batch applications and a
+runtime for scheduling and executing jobs, and the Concurrency Utilities
+API, which provides asynchronous capabilities by means of managed
+executor service, managed scheduled executor service, managed thread
+factory, and context service.
+
+The CDI dependency injection facility
+introduced in Java EE 6 is enhanced as well as more broadly utilized by
+the Java EE 7 platform technologies, and the managed bean model is
+further aligned to remove inconsistencies among Java EE component
+classes in aspects of CDI injection and interceptor support. The
+declarative transaction functionality introduced by EJB is been made
+available in a more general way through CDI interceptors, so that it may
+be leveraged by other managed beans. The Bean Validation facility is
+extended to the automatic validation of method invocations and likewise
+made available via CDI interceptors.
+
+Java EE 7 also continues the "ease of
+development" focus of Java EE 5 and Java EE 6. Most notably, Java EE 7
+includes a revised and greatly simplified JMS 2.0 API. Ease of
+development encompasses ease of configuration as well. To that end, Java
+EE 7 broadens the resource definition facilities introduced in Java EE 6
+to encompass more of the standard platform resource types, and also
+provides default database and JMS connection factory resources. It also
+improves the configuration of application security, including new
+descriptors for security permissions. Java EE 7 further simplifies the
+platform by making optional the technologies that were identified as
+candidates for pruning in Java EE 6, namely: EJB Entity Beans, JAX-RPC
+1.1, JAXR 1.0, and JSR-88 1.2.
+
+Finally, Java EE 7 lays groundwork for
+enhancements to the platform for use in cloud environments in a future
+release. Such features include resource definition metadata, improved
+security configuration, and support for database schema generation via
+the Java Persistence API.
+
+=== [[a231]]Changes in Java EE 8
+
+Java EE 8 continues the focus on modern web
+applications of Java EE 7 and broadening the range of such applications.
+Java EE 8 introduces the JSON Binding API (JSON-B) for mapping between
+JSON text and Java objects, building on the JSON Processing API (JSON-P)
+introduced in Java EE 7. The JSON Processing API itself is updated to
+reflect additional JSON standards. Servlet undergoes major enhancement
+with the addition of support for the new HTTP/2 protocol. JAX-RS adds
+support for server-sent events and, building on concurrency facilities
+added in Java SE 8, a reactive client API. The new Java EE Security API
+provides enhanced support for authentication and authorization in web
+modules, and also introduces APIs for access to identity stores. The
+Bean Validation facility is updated to reflect enhancements made in Java
+SE 8 and to extend the range of validated objects. While the focus of
+CDI in this release is to extend its scope beyond Java EE with the
+introduction of a bootstrapping API, CDI also includes enhancements for
+event processing and alignment on Java SE 8 features.

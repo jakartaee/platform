@@ -1,0 +1,61 @@
+== Revision History
+
+=== Changes in Early Draft
+
+=== Additional Requirements
+
+* Java EE 8 Web Profile requires Java SE 8.
+* Updated to reflect versions of Java EE 8
+technologies.
+* Added JSON-B as required component.
+* Added MVC as required component.
+
+=== Removed Requirements
+
+=== None
+
+=== Editorial Changes
+
+* Updated Related Documents.
+
+=== Changes in Early Draft 2
+
+=== Additional Requirements
+
+* None
+
+=== Removed Requirements
+
+* Removed MVC 1.0 from
+link:WebProfile.html#a43[See Required Components].”
+
+=== Editorial Changes
+
+* Changed version of Bean Validation from 1.1
+to 2.0.
+
+=== Changes in Public Review Draft
+
+=== Additional Requirements
+
+* Added Java EE Security API 1.0 and JASPIC 1.1
+as required components.
+
+=== Removed Requirements
+
+* None
+
+=== Editorial Changes
+
+* Corrected version of WebSocket to 1.1.
+* Added acknowledgements.
+* Updated “Related Documents.”
+
+=== Changes in Proposed Final Draft
+
+=== Editorial Changes
+
+* Added reference to
+_https:javaee.github.io/javaee-spec[]http:javaee.github.io/javaee-spec[]https:javaee.github.io/javaee-spec
+project._
+* Updated “Related Documents.”
