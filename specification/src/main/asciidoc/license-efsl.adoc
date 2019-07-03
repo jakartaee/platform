@@ -8,6 +8,12 @@ Status: {revremark}
 
 Release: {revdate}
 ....
+=== Copyright
+
+Copyright (c) 2017, 2019 Oracle and/or its affiliates. All rights reserved.
+
+Oracle and Java are registered trademarks of Oracle and/or its
+affiliates. Other names may be trademarks of their respective owners.
 
 === Eclipse Foundation Specification License
 
