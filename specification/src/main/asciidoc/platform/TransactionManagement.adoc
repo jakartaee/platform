@@ -1,18 +1,18 @@
 == Transaction Management
 
-This chapter describes the required Java™
-Platform, Enterprise Edition (Java EE) transaction management and
+This chapter describes the required Jakarta™
+Platform, Enterprise Edition (Jakarta EE) transaction management and
 runtime environment.
 
 Product Providers must transparently support
 transactions that involve multiple components and transactional
-resources within a single Java EE product, as described in this chapter.
-This requirement must be met regardless of whether the Java EE product
+resources within a single Jakarta EE product, as described in this chapter.
+This requirement must be met regardless of whether the Jakarta EE product
 is implemented as a single process, multiple processes on the same
 network node, or multiple processes on multiple network nodes.
 
 If the following components are included in a
-Java EE product, they are considered transactional resources and must
+Jakarta EE product, they are considered transactional resources and must
 behave as specified here:
 
 * JDBC connections
@@ -22,10 +22,10 @@ adapters specifying the _XATransaction_ transaction level
 
 === Overview
 
-A Java EE Product that includes both a servlet
+A Jakarta EE Product that includes both a servlet
 container and an EJB container must support a transactional application
 comprised of combinations of web application components accessing
-multiple enterprise beans within a single transaction. If the Java EE
+multiple enterprise beans within a single transaction. If the Jakarta EE
 product also includes support for the Connectors specification, each
 component may also acquire one or more connections to access one or more
 transactional resource managers.
@@ -54,20 +54,20 @@ transaction capabilities to support such a scenario.
 
 This specification does not define how the
 components and the resources are partitioned or distributed within a
-single Java EE product. In order to achieve the transactional semantics
-required by the application, the Java EE Product Provider is free to
+single Jakarta EE product. In order to achieve the transactional semantics
+required by the application, the Jakarta EE Product Provider is free to
 execute the application components sharing a transaction in the same
 Java virtual machine, or distribute them across multiple virtual
 machines, in accordance with the requirements of the component
 specifications.
 
 The rest of this chapter describes the
-transactional requirements for a Java EE product in more detail. +
+transactional requirements for a Jakarta EE product in more detail. +
 
 === Requirements
 
 This section defines the transaction support
-requirements of Java EE Products that must be supported by Product
+requirements of Jakarta EE Products that must be supported by Product
 Providers.
 
 === Web Components
@@ -92,19 +92,19 @@ objects.
 
 === Transaction Requirements
 
-The Java EE platform must meet the following
+The Jakarta EE platform must meet the following
 requirements:
 
-* The Java EE platform must provide an object
+* The Jakarta EE platform must provide an object
 implementing the _javax.transaction.UserTransaction_ interface to all
 web components. The platform must publish the _UserTransaction_ object
 in the Java™ Naming and Directory Interface (JNDI) name space available
 to web components under the name _java:comp/UserTransaction_ .
-* The Java EE platform must provide classes
+* The Jakarta EE platform must provide classes
 that implement the transactional interceptors, as defined by the JTA
 specification.
 * If a web component invokes an enterprise bean
-from a thread associated with a JTA transaction, the Java EE platform
+from a thread associated with a JTA transaction, the Jakarta EE platform
 must propagate the transaction context with the enterprise bean
 invocation. Whether the target enterprise bean will be invoked in this
 transaction context or not is determined by the rules defined in the EJB
@@ -112,14 +112,14 @@ specification.
 
 Note that this transaction propagation
 requirement applies only to invocations of enterprise beans in the same
-Java EE product instancelink:#a3649[2] as the invoking component.
-Invocations of enterprise beans in another Java EE product instance (for
+Jakarta EE product instancelink:#a3649[2] as the invoking component.
+Invocations of enterprise beans in another Jakarta EE product instance (for
 example, using the EJB interoperability protocol) need not propagate the
 transaction context. See the EJB specification for details.
 
 * If a web component accesses a transactional
 resource manager from a thread associated with a JTA transaction, the
-Java EE platform must ensure that the resource access is included as
+Jakarta EE platform must ensure that the resource access is included as
 part of the JTA transaction.
 * If a web component creates a thread, the Java
 EE platform must ensure that the newly created thread is not associated
@@ -213,22 +213,22 @@ requirements are described above and in the EJB specification.
 
 === Enterprise JavaBeans™ Components
 
-The Java EE Product Provider must provide
+The Jakarta EE Product Provider must provide
 support for transactions as defined in the EJB specification.
 
 === Application Clients
 
-The Java EE Product Provider is not required to
+The Jakarta EE Product Provider is not required to
 provide transaction management support for application clients.
 
 === Applet Clients
 
-The Java EE Product Provider is not required to
+The Jakarta EE Product Provider is not required to
 provide transaction management support for applets.
 
 === [[a516]]Transactional JDBC™ Technology Support
 
-A Java EE product must support a JDBC
+A Jakarta EE product must support a JDBC
 technology database as a transactional resource manager. The platform
 must enable transactional JDBC API access from web components and
 enterprise beans.
@@ -240,19 +240,19 @@ access a database, invoke an enterprise bean that accesses the same
 database as part of the same transaction, and, finally, commit the
 transaction.
 
-A Java EE product must provide a transaction
+A Jakarta EE product must provide a transaction
 manager that is capable of coordinating two-phase commit operations
 across multiple XA-capable JDBC databases. If a JDBC driver supports the
 Java Transaction API’s XA interfaces (in the _javax.transaction.xa_
-package), then the Java EE product must be capable of using the XA
+package), then the Jakarta EE product must be capable of using the XA
 interfaces provided by the JDBC driver to accomplish two-phase commit
-operations. The Java EE product may discover the XA capabilities of JDBC
+operations. The Jakarta EE product may discover the XA capabilities of JDBC
 drivers through product-specific means, although normally such JDBC
 drivers would be delivered as resource adapters using the Connector API.
 
 === [[a520]]Transactional JMS Support
 
-A Java EE product must support a JMS provider
+A Jakarta EE product must support a JMS provider
 as a transactional resource manager. The platform must enable
 transactional JMS access from servlets, JSP pages, and enterprise beans.
 
@@ -264,7 +264,7 @@ same transaction, and, finally, commit the transaction.
 
 === Transactional Resource Adapter (Connector) Support
 
-A Java EE product must support resource
+A Jakarta EE product must support resource
 adapters that use _XATransaction_ mode as transactional resource
 managers. The platform must enable transactional access to the resource
 adapter from servlets, JSP pages, and enterprise beans.
@@ -278,16 +278,16 @@ finally, commit the transaction.
 
 === Transaction Interoperability
 
-=== Multiple Java EE Platform Interoperability
+=== Multiple Jakarta EE Platform Interoperability
 
 This specification does not require the Product
 Provider to implement any particular protocol for transaction
-interoperability across multiple Java EE products. Java EE compatibility
-requires neither interoperability among identical Java EE products from
-the same Product Provider, nor among heterogeneous Java EE products from
+interoperability across multiple Jakarta EE products. Jakarta EE compatibility
+requires neither interoperability among identical Jakarta EE products from
+the same Product Provider, nor among heterogeneous Jakarta EE products from
 multiple Product Providers.
 
-We recommend that Java EE Product Providers use
+We recommend that Jakarta EE Product Providers use
 the IIOP transaction propagation protocol defined by OMG and described
 in the OTS specification (and implemented by the Java Transaction
 Service), for transaction interoperability when using the EJB
@@ -295,10 +295,10 @@ interoperability protocol based on RMI-IIOP.
 
 === Support for Transactional Resource Managers
 
-This specification requires all Java EE
+This specification requires all Jakarta EE
 products to support the _javax.transaction.xa.XAResource_ interface, as
 specified in the Connector specification. This specification also
-requires all Java EE products to support the
+requires all Jakarta EE products to support the
 _javax.transaction.xa.XAResource_ interface for performing two-phase
 commit operations on JDBC drivers that support the JTA XA APIs. This
 specification does not require that JDBC drivers or JMS providers use
@@ -323,7 +323,7 @@ from a different container.
 
 Containers may choose to provide local
 transaction optimization, but are not required to do so. Local
-transaction optimization must be transparent to a Java EE application.
+transaction optimization must be transparent to a Jakarta EE application.
 
 The following section describes a possible
 mechanism for local transaction optimization by containers.
@@ -367,7 +367,7 @@ the last resource 2-phase commit optimization.
 
 === Connection Sharing
 
-When multiple connections acquired by a Java EE
+When multiple connections acquired by a Jakarta EE
 application use the same resource manager, containers may choose to
 provide connection sharing within the same transaction scope. Sharing
 connections typically results in efficient usage of resources and better
@@ -375,8 +375,8 @@ performance. Containers are required to provide connection sharing in
 certain situations; see the Connector specification for details.
 
 Connections to resource managers acquired by
-Java EE applications are considered potentially shared or shareable. A
-Java EE application component that intends to use a connection in an
+Jakarta EE applications are considered potentially shared or shareable. A
+Jakarta EE application component that intends to use a connection in an
 unshareable way must provide deployment information to that effect, to
 prevent the connection from being shared by the container. Examples of
 when this may be needed include situations with changed security
@@ -386,16 +386,16 @@ marked unshareable. If a connection is not marked unshareable, it must
 be transparent to the application whether the connection is actually
 shared or not.
 
-Java EE application components may use the
+Jakarta EE application components may use the
 optional _shareable_ element of the _Resource_ annotation or the
 optional deployment descriptor element _res-sharing-scope_ to indicate
 whether a connection to a resource manager is shareable or unshareable.
 Containers must assume connections to be shareable if no deployment hint
-is provided. link:#a3399[See Java EE
+is provided. link:#a3399[See Jakarta EE
 Application Client XML Schema]”, the EJB specification, and the Servlet
 specification provide descriptions of the deployment descriptor element.
 
-Java EE application components may cache
+Jakarta EE application components may cache
 connection objects and reuse them across multiple transactions.
 Containers that provide connection sharing must transparently switch
 such cached connection objects (at dispatch time) to point to an
@@ -410,29 +410,29 @@ link:#a516[See Transactional JDBC™
 Technology Support]” and the JMS transaction requirements in
 link:#a520[See Transactional JMS
 Support]” may impose some restrictions on a Deployer’s configuration of
-an application’s JDBC and JMS resources. Java EE Product Providers may
+an application’s JDBC and JMS resources. Jakarta EE Product Providers may
 impose the restrictions described in this section to meet these
 requirements.
 
 If the deployer configures a non-XA-capable
-JDBC resource manager in a transaction, then a Java EE Product Provider
+JDBC resource manager in a transaction, then a Jakarta EE Product Provider
 may restrict all JDBC access within that transaction to that
-non-XA-capable JDBC resource manager. Otherwise, a Java EE Product
+non-XA-capable JDBC resource manager. Otherwise, a Jakarta EE Product
 Provider must support use of multiple XA-capable JDBC resource managers
-within a transaction. In addition, a Java EE Product Provider may
+within a transaction. In addition, a Jakarta EE Product Provider may
 restrict the security configuration of all JDBC connections within a
-transaction to a single user identity. A Java EE Product Provider is not
+transaction to a single user identity. A Jakarta EE Product Provider is not
 required to support transactions where more than one JDBC identity is
 used. Specifically, this means that transactions that require the use of
 more than one JDBC security identity (which can be done explicitly via
 component provided user name and password) may not be portable.
 
-A Java EE Product Provider may make the same
+A Jakarta EE Product Provider may make the same
 restrictions as above, resulting in a transaction being restricted to a
 single JMS resource manager and user identity.
 
 In addition, when both a JDBC resource manager
-and a JMS resource manager are used in the same transaction, a Java EE
+and a JMS resource manager are used in the same transaction, a Jakarta EE
 Product Provider may restrict both to a pairing that allows their
 combination to deliver the full transactional semantics required by the
 application, and may restrict the security identity of both to a single
@@ -441,13 +441,13 @@ to include JDBC and JMS access in a single global transaction must not
 mark the corresponding transactional resources as “unshareable”.
 
 Although these restrictions are allowed, it is
-recommended that Java EE Product Providers support JDBC and JMS resource
+recommended that Jakarta EE Product Providers support JDBC and JMS resource
 managers that provide full two-phase commit functionality and, as a
 result, do not impose these restrictions.
 
 === Two-Phase Commit Support
 
-A Java EE product must support the use of
+A Jakarta EE product must support the use of
 multiple XA-capable resource adapters in a single transaction. To
 support such a scenario, full two-phase commit support is required. A
 JMS provider may be provided as an XA-capable resource adapter. In such
@@ -463,7 +463,7 @@ Technology Support].”
 === System Administration Tools
 
 Although there are no compatibility
-requirements for system administration capabilities, the Java EE Product
+requirements for system administration capabilities, the Jakarta EE Product
 Provider will typically include tools that allow the System
 Administrator to perform the following tasks:
 
