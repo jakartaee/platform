@@ -1,16 +1,16 @@
-==  Revision History
+Jakarta==  Revision History
 
 === Changes in Early Draft
 
 === Additional Requirements
 
-* Java EE 8 requires Java SE 8.
+* Jakarta EE 8 requires Java SE 8.
 * Added
 link:#a2713[See Java API for JSON
 Binding 1.0 (JSON-B) Requirements].”
 * Added link:api.html#UNKNOWN[].”
 * Added
-link:#a149[See Java EE Product
+link:#a149[See Jakarta EE Product
 Packaging]”; updated link:#a3153[See
 Deployment].”
 * Clarified semantics of _metadata-complete_
@@ -21,9 +21,9 @@ for application clients.
 * Updated
 link:#a651[See Component classes
 supporting injection],
-link:#a2159[See Java EE
+link:#a2159[See Jakarta EE
 Technologies], and Section
-link:#a3252[See Full Java EE Product
+link:#a3252[See Full Jakarta EE Product
 Requirements] to reflect requirements for JSON-B and MVC.
 * Updated URLs for many referenced documents.
 * Updated version numbers for component
@@ -37,7 +37,7 @@ technologies.
 
 === Removed Requirements
 
-=== Removed MVC 1.0 from required APIs in link:#a2159[See Component classes supporting injection] and link:#50581515_TABLE%206-1[See Java EE Technologies];
+=== Removed MVC 1.0 from required APIs in link:#a2159[See Component classes supporting injection] and link:#50581515_TABLE%206-1[See Jakarta EE Technologies];
 removed section on “Model-View-Controller (MVC) 1.0 Requirements” from Chapter link:#a2133[See CHAPTER].
 
 === Editorial Changes
@@ -53,31 +53,31 @@ link:#a3439[See Future Directions].”
 === Additional Requirements
 
 * Added
-link:#a2741[See Java EE Security API
+link:#a2741[See Jakarta EE Security API
 1.0 Requirements].”
 * Updated
-link:#a3125[See Assembling a Java EE
+link:#a3125[See Assembling a Jakarta EE
 Application],” to reflect Servlet requirements of context root naming.
 * Updated version of TLS that must be supported
 to 1.2 in link:#a2523[See Networking].”
-* Updated version of HTML that Java EE web
+* Updated version of HTML that Jakarta EE web
 clients must be able to display to 4.01 in
 link:#a2884[See Data Formats].”
 
 === Editorial Changes
 
-=== Added acknowledgements for Java EE 8 work.
+=== Added acknowledgements for Jakarta EE 8 work.
 
 * Added
-link:#a231[See Changes in Java EE 8].”
+link:#a231[See Changes in Jakarta EE 8].”
 * Updated
-link:#a2159[See Java EE
+link:#a2159[See Jakarta EE
 Technologies] and Section
-link:#a3252[See Full Java EE Product
-Requirements] to reflect requirements for Java EE Security API.
+link:#a3252[See Full Jakarta EE Product
+Requirements] to reflect requirements for Jakarta EE Security API.
 * Corrected version of Web Socket to 1.1.
 * Removed references to JAX-WS and JAXB from
-link:#a2159[See Java EE
+link:#a2159[See Jakarta EE
 Technologies] as they are included as part of Java SE.
 * Removed section on JAXB from
 link:#a2133[See CHAPTER].
@@ -101,7 +101,7 @@ Service Provider Interface for Containers (JASPIC) 1.1 Requirements].”
 
 * Updated
 link:#a235[See Security],” to reflect
-requirements of the Java EE Security API.
+requirements of the Jakarta EE Security API.
 
 === Editorial Changes
 
@@ -124,7 +124,7 @@ Authentication],” to reflect requirements for support of TLS 1.2 and
 related cipher suites.
 * Updated
 link:#a235[See Security],” to reflect
-Java EE Security API specification requirement to support default
+Jakarta EE Security API specification requirement to support default
 mapping from user groups to roles.
 
 === Editorial Changes
