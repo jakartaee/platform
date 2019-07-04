@@ -4,7 +4,7 @@ This specification refers to the following
 documents. The terms used to refer to the documents in this
 specification are included in parentheses.
 
- _Java™ Platform, Enterprise Edition
+ _Jakarta™ Platform, Enterprise Edition
 Specification Version 8_ . Available at
 _http://jcp.org/en/jsr/detail?id=366_ .
 
@@ -60,7 +60,7 @@ specification). Available at _http://jcp.org/en/jsr/detail?id=316_ .
 Interceptors 1.2 rev A (Interceptors
 specification). Available at _http://jcp.org/en/jsr/detail?id=318_ .
 
-Contexts and Dependency Injection for the Java
+Contexts and Dependency Injection for the Jakarta
 EE Platform 2.0 (CDI specification). Available at
 _http://jcp.org/en/jsr/detail?id=365_ .
 
@@ -76,7 +76,7 @@ specification). Available at _http://jcp.org/en/jsr/detail?id=374_ .
  _Java API for JSON Binding 1.0_ (JSON-B
 specification). Available at _http://jcp.org/en/jsr/detail?id=367_ .
 
-Java™ EE Security API 1.0. Available at
+Jakarta™ EE Security API 1.0. Available at
 _http://jcp.org/en/jsr/detail?id=375_ .
 
 Java™ Authentication Service Provider Interface
