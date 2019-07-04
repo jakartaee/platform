@@ -59,11 +59,11 @@ Version 1.1_ (JAF specification). Available at
 _http://www.oracle.com/technetwork/java/javase/tech/index-jsp-138795.html_
 .
 
- _Java EE™ Connector Architecture 1.7_
+ _Jakarta EE™ Connector Architecture 1.7_
 (Connector specification). Available at
 _http://jcp.org/en/jsr/detail?id=322_ .
 
-Web Services for Java EE 1.4 (Web Services
+Web Services for Jakarta EE 1.4 (Web Services
 specification). Available at _http://jcp.org/en/jsr/detail?id=109_ .
 
 Java™ API for XML-based RPC 1.1 (JAX-RPC
@@ -81,11 +81,11 @@ Services 2.1_ (JAX-RS specification). Available at
 _http://jcp.org/en/jsr/summary?id=370_ .
 
 Java™ Platform, Enterprise Edition Management
-Specification 1.1 (Java EE Management specification). Available at
+Specification 1.1 (Jakarta EE Management specification). Available at
 _http://jcp.org/en/jsr/detail?id=77_ .
 
 Java™ Platform, Enterprise Edition Deployment
-Specification 1.2 (Java EE Deployment specification). Available at
+Specification 1.2 (Jakarta EE Deployment specification). Available at
 _http://jcp.org/en/jsr/detail?id=88_ .
 
 Java™ Authorization Service Provider Contract
@@ -124,7 +124,7 @@ specification). Available at _http://jcp.org/en/jsr/detail?id=316_ .
 Interceptors 1.2 _rev A_ (Interceptors
 specification). Available at _http://jcp.org/en/jsr/detail?id=318_ .
 
-Contexts and Dependency Injection for the Java
+Contexts and Dependency Injection for the Jakarta
 EE Platform 2.0 (CDI specification). Available at
 _http://jcp.org/en/jsr/detail?id=365_ .
 
@@ -140,7 +140,7 @@ specification). Available at _http://jcp.org/en/jsr/detail?id=374_ .
  _Java API for JSON Binding 1.0_ (JSON-B
 specification). Available at _http://jcp.org/en/jsr/detail?id=367_ .
 
- _Concurrency Utilities for Java EE 1.0_
+ _Concurrency Utilities for Jakarta EE 1.0_
 (Concurrency Utilities specification). Available at
 _http://jcp.org/en/jsr/detail?id=236_ .
 
@@ -209,7 +209,7 @@ authentication protocol, the client can manage its own authentication
 context, and need not depend on references to the login session state.
 
 [.footnoteNumber]# 2.# [[a3649]]A product instance
-corresponds to a single installation of a Java EE product. A single
+corresponds to a single installation of a Jakarta EE product. A single
 product instance might use multiple operating system processes, or might
 support multiple host machines as part of a distributed container. In
 contrast, it might be possible to run multiple instances of a product on
@@ -224,7 +224,7 @@ instance.
 requirement applies to the _service_ method of the equivalent JSP page
 Implementation Class.
 
-[.footnoteNumber]# 4.# [[a3651]]Note that Java EE
+[.footnoteNumber]# 4.# [[a3651]]Note that Jakarta EE
 Managed Beans are required to have access to the JNDI naming environment
 of their calling component.
 
@@ -233,7 +233,7 @@ interceptors defined by means of the Interceptors annotation is
 supported in the absence of CDI for EJB and Managed Bean components.
 
 [.footnoteNumber]# 6.# [[a3653]]See the JSF
-specification section “JSF Managed Classes and Java EE Annotations” for
+specification section “JSF Managed Classes and Jakarta EE Annotations” for
 a list of these managed classes.
 
 [.footnoteNumber]# 7.# [[a3654]]Resource and CDI
