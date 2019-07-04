@@ -258,9 +258,9 @@ Jakarta EE products are required to support the
 use of bundled and installed libraries as specified in the _Extension
 Mechanism Architecture_ and _Optional Package Versioning_ specifications
 (available at
-_http://docs.oracle.com/Jakartase/8/docs/technotes/guides/extensions/_ )
+_http://docs.oracle.com/javase/8/docs/technotes/guides/extensions/_ )
 and the JAR File Specification (available at
-_http://docs.oracle.com/Jakartase/8/docs/technotes/guides/jar/jar.html_ ).
+_http://docs.oracle.com/javase/8/docs/technotes/guides/jar/jar.html_ ).
 Using this mechanism a Jakarta EE JAR file can reference utility classes or
 other shared classes or resources packaged in a separate _.jar_ file or
 directory that is included in the same Jakarta EE application package, or
@@ -404,7 +404,7 @@ loader requires _RuntimePermission_ (“ _getClassLoader”)_ , which is not
 normally granted to applications, but should be granted to libraries
 that need to dynamically load classes. Libraries can use a method such
 as the following to assert their privilege when accessing the context
-class loader. This technique will work in both Jakarta SE and Jakarta EE.
+class loader. This technique will work in both Java SE and Jakarta EE.
 
 
 
@@ -654,7 +654,7 @@ link:#a2945[See Library Support]”).
 * The Jakarta EE API classes specified in
 link:#a2159[See Jakarta EE
 Technologies] for the web container.
-* All Jakarta SE 8 API classes.
+* All Java SE 8 API classes.
 
 
 
@@ -735,7 +735,7 @@ link:#a2945[See Library Support]”).
 * The Jakarta EE API classes specified in
 link:#a2159[See Jakarta EE
 Technologies] for the EJB container.
-* All Jakarta SE 8 API classes.
+* All Java SE 8 API classes.
 
 
 
@@ -801,7 +801,7 @@ link:#a2945[See Library Support]”).
 * The Jakarta EE API classes specified in
 link:#a2159[See Jakarta EE
 Technologies] for the application client container.
-* All Jakarta SE 8 API classes.
+* All Java SE 8 API classes.
 
 
 
@@ -837,7 +837,7 @@ or ejb jar files in the same ear file.
 === Applet Container Class Loading Requirements
 
 The requirements for the applet container are
-completely specified by the Jakarta SE 8 specification. This specification
+completely specified by the Java SE 8 specification. This specification
 adds no new requirements for the applet container.
 
 === Application Assembly
