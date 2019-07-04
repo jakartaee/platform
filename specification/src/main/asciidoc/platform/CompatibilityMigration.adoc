@@ -1,31 +1,31 @@
 == Compatibility and Migration
 
 This chapter summarizes compatibility and
-migration issues for the Java EE platform. The specifications for each
-of the component technologies included in Java EE also describe
+migration issues for the Jakarta EE platform. The specifications for each
+of the component technologies included in Jakarta EE also describe
 compatibility and migration issues for that technology in much more
 detail.
 
 ===  Compatibility
 
 The word compatibility covers many different
-concepts. Java EE products are compatible with the Java EE specification
+concepts. Jakarta EE products are compatible with the Jakarta EE specification
 if they implement the APIs and behavior required by the specification.
-Applications are compatible with a release of the Java EE platform if
+Applications are compatible with a release of the Jakarta EE platform if
 they only depend on APIs and behavior defined by that release of the
-platform. A new release of the Java EE platform is compatible with
+platform. A new release of the Jakarta EE platform is compatible with
 previous releases of the platform if all portable applications written
 to the previous release of the platform will also run unchanged and with
 identical behavior on the new release of the platform.
 
-Compatibility is a core value of the Java EE
-platform. A Java EE product is required to support portable applications
+Compatibility is a core value of the Jakarta EE
+platform. A Jakarta EE product is required to support portable applications
 written to previous versions of the platform. Compatibility and
 portability work together to provide the Write Once, Run Anywhere value
-of the Java EE platform. Java EE products conform to the Java EE
+of the Jakarta EE platform. Jakarta EE products conform to the Jakarta EE
 specifications by providing APIs and behavior as required by the
 specifications. Portable applications depend only on the APIs and
-behavior required by the Java EE specifications. In general, portable
+behavior required by the Jakarta EE specifications. In general, portable
 applications written to a previous version of the platform will continue
 to work without change and with identical behavior on the current
 version of the platform.
@@ -35,10 +35,10 @@ version of the platform.
 Migration is the act of converting an
 application to use new facilities introduced in this release of the
 platform. Given the strong level of compatibility in this release of the
-Java EE platform, migration is largely an optional exercise. Still, an
+Jakarta EE platform, migration is largely an optional exercise. Still, an
 application may be improved (better performance, simpler to develop,
 more flexible, etc.) by converting it to use newer facilities of the
-Java EE platform.
+Jakarta EE platform.
 
 === Java Persistence
 
