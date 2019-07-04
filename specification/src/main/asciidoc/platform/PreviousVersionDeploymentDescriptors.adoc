@@ -2,7 +2,7 @@
 
 This appendix describes Document Type
 Definitions and XML schemas for Deployment Descriptors from previous
-versions of the Java EE specification. All Java EE products are required
+versions of the Jakarta EE specification. All Jakarta EE products are required
 to support these DTDs and schemas as well as the schemas specified in
 this version of the specification. This ensures that applications
 written to previous versions of this specification can be deployed on
@@ -11,54 +11,54 @@ addition, there are no restrictions on mixing versions of deployment
 descriptors in a single application; any combination of valid deployment
 descriptor versions must be supported.
 
-=== Java EE 7 Application XML Schema
+=== Jakarta EE 7 Application XML Schema
 
-The XML grammar for a Java EE application
-deployment descriptor is defined by the Java EE application schema. The
-root element of the deployment descriptor for a Jaav EE application is
-_application_ . The granularity of composition for Java EE application
-assembly is the Java EE module. A Java EE application deployment
+The XML grammar for a Jakarta EE application
+deployment descriptor is defined by the Jakarta EE application schema. The
+root element of the deployment descriptor for a Jakarta EE application is
+_application_ . The granularity of composition for Jakarta EE application
+assembly is the Jakarta EE module. A Jakarta EE application deployment
 descriptor contains a name and description for the application and the
-URI of a UI icon for the application, as well a list of the Java EE
+URI of a UI icon for the application, as well a list of the Jakarta EE
 modules that comprise the application. The content of the XML elements
 is in general case sensitive. This means, for example, that
 _<role-name>Manager</role-name>_ is a different role than
 _<role-name>manager</role-name>_ .
 
-All valid Java EE application deployment
+All valid Jakarta EE application deployment
 descriptors must conform to the XML Schema definition, or the DTD or
 schema definition from a previous version of this specification. The
 deployment descriptor must be named _META-INF/application.xml_ in the
 _.ear_ file. Note that this name is case-sensitive.
-link:#a3453[See Java EE 7 Application
+link:#a3453[See Jakarta EE 7 Application
 XML Schema Structure] shows a graphic representation of the structure of
-the Java EE application 7 XML Schema.
+the Jakarta EE application 7 XML Schema.
 
 
 
-=== [[a3453]] Java EE 7 Application XML Schema Structure
+=== [[a3453]] Jakarta EE 7 Application XML Schema Structure
 
 image:Platform_Spec-13.png[image]
 
 
 
 
-_link:#a3483[See Java EE Application
+_link:#a3483[See Jakarta EE Application
 XML Schema Structure]_ The XML Schema located at
 _http://xmlns.jcp.org/xml/ns/javaee/application_7.xsd_ defines the XML
-grammar for a Java EE 7 application deployment descriptor.
+grammar for a Jakarta EE 7 application deployment descriptor.
 
-=== Common Java EE XML Schema Definitions
+=== Common Jakarta EE XML Schema Definitions
 
 The XML Schema located at
 _http://xmlns.jcp.org/xml/ns/javaee/javaee_7.xsd_ defines types that are
-used by many other Java EE deployment descriptor schemas, both in this
+used by many other Jakarta EE deployment descriptor schemas, both in this
 specification and in other specifications.
 
-=== Java EE 7 Application Client XML Schema
+=== Jakarta EE 7 Application Client XML Schema
 
-The XML grammar for a Java EE application
-client deployment descriptor is defined by the Java EE
+The XML grammar for a Jakarta EE application
+client deployment descriptor is defined by the Jakarta EE
 application-client schema. The root element of the deployment descriptor
 for an application client is _application-client_ . The content of the
 XML elements is in general case sensitive. This means, for example, that
@@ -73,64 +73,64 @@ the application client’s _.jar_ file. Note that this name is
 case-sensitive.
 
 
-_link:#a3462[See Java EE 7 Application
-Client XML Schema Structure]_ shows the structure of the Java EE
-application-client XML Schema. The Java EE application-client XML Schema
+_link:#a3462[See Jakarta EE 7 Application
+Client XML Schema Structure]_ shows the structure of the Jakarta EE
+application-client XML Schema. The Jakarta EE application-client XML Schema
 is located at
 _http://xmlns.jcp.org/xml/ns/javaee/application-client_7.xsd_ .
 
-=== [[a3462]]Java EE 7 Application Client XML Schema Structure
+=== [[a3462]]Jakarta EE 7 Application Client XML Schema Structure
 
 image:Platform_Spec-14.png[image]
 
-=== Java EE 6 Application XML Schema
+=== Jakarta EE 6 Application XML Schema
 
-The XML grammar for a Java EE application
-deployment descriptor is defined by the Java EE application schema. The
+The XML grammar for a Jakarta EE application
+deployment descriptor is defined by the Jakarta EE application schema. The
 root element of the deployment descriptor for a Jaav EE application is
-_application_ . The granularity of composition for Java EE application
-assembly is the Java EE module. A Java EE application deployment
+_application_ . The granularity of composition for Jakarta EE application
+assembly is the Jakarta EE module. A Jakarta EE application deployment
 descriptor contains a name and description for the application and the
-URI of a UI icon for the application, as well a list of the Java EE
+URI of a UI icon for the application, as well a list of the Jakarta EE
 modules that comprise the application. The content of the XML elements
 is in general case sensitive. This means, for example, that
 _<role-name>Manager</role-name>_ is a different role than
 _<role-name>manager</role-name>_ .
 
-All valid Java EE application deployment
+All valid Jakarta EE application deployment
 descriptors must conform to the XML Schema definition, or the DTD or
 schema definition from a previous version of this specification. The
 deployment descriptor must be named _META-INF/application.xml_ in the
 _.ear_ file. Note that this name is case-sensitive.
-link:#a3467[See Java EE Application XML
+link:#a3467[See Jakarta EE Application XML
 Schema Structure] shows a graphic representation of the structure of the
-Java EE application XML Schema.
+Jakarta EE application XML Schema.
 
 
 
-=== [[a3467]] Java EE Application XML Schema Structure
+=== [[a3467]] Jakarta EE Application XML Schema Structure
 
 image:Platform_Spec-15.png[image]
 
 
 
 
-_link:#a3483[See Java EE Application
+_link:#a3483[See Jakarta EE Application
 XML Schema Structure]_ The XML Schema located at
 _http://java.sun.com/xml/ns/javaee/application_6.xsd_ defines the XML
-grammar for a Java EE application deployment descriptor.
+grammar for a Jakarta EE application deployment descriptor.
 
-=== Common Java EE XML Schema Definitions
+=== Common Jakarta EE XML Schema Definitions
 
 The XML Schema located at
 _http://java.sun.com/xml/ns/javaee/javaee_6.xsd_ defines types that are
-used by many other Java EE deployment descriptor schemas, both in this
+used by many other Jakarta EE deployment descriptor schemas, both in this
 specification and in other specifications.
 
-=== Java EE 6 Application Client XML Schema
+=== Jakarta EE 6 Application Client XML Schema
 
-The XML grammar for a Java EE application
-client deployment descriptor is defined by the Java EE
+The XML grammar for a Jakarta EE application
+client deployment descriptor is defined by the Jakarta EE
 application-client schema. The root element of the deployment descriptor
 for an application client is _application-client_ . The content of the
 XML elements is in general case sensitive. This means, for example, that
@@ -145,31 +145,31 @@ the application client’s _.jar_ file. Note that this name is
 case-sensitive.
 
 
-_link:#a3476[See Java EE Application
-Client XML Schema Structure]_ shows the structure of the Java EE
-application-client XML Schema. The Java EE application-client XML Schema
+_link:#a3476[See Jakarta EE Application
+Client XML Schema Structure]_ shows the structure of the Jakarta EE
+application-client XML Schema. The Jakarta EE application-client XML Schema
 is located at
 _http://java.sun.com/xml/ns/javaee/application-client_6.xsd_ .
 
-=== [[a3476]]Java EE Application Client XML Schema Structure
+=== [[a3476]]Jakarta EE Application Client XML Schema Structure
 
 image:Platform_Spec-16.png[image]
 
-=== Java EE 5 Application XML Schema
+=== Jakarta EE 5 Application XML Schema
 
-The XML grammar for a Java EE application
-deployment descriptor is defined by the Java EE application schema. The
+The XML grammar for a Jakarta EE application
+deployment descriptor is defined by the Jakarta EE application schema. The
 root element of the deployment descriptor for a Jaav EE application is
-_application_ . The granularity of composition for Java EE application
-assembly is the Java EE module. A Java EE application deployment
+_application_ . The granularity of composition for Jakarta EE application
+assembly is the Jakarta EE module. A Jakarta EE application deployment
 descriptor contains a name and description for the application and the
-URI of a UI icon for the application, as well a list of the Java EE
+URI of a UI icon for the application, as well a list of the Jakarta EE
 modules that comprise the application. The content of the XML elements
 is in general case sensitive. This means, for example, that
 _<role-name>Manager</role-name>_ is a different role than
 _<role-name>manager</role-name>_ .
 
-A valid Java EE 5 application deployment
+A valid Jakarta EE 5 application deployment
 descriptors must conform to this XML Schema definition.
 
 The deployment descriptor must be named
@@ -177,31 +177,31 @@ _META-INF/application.xml_ in the _.ear_ file. Note that this name is
 case-sensitive.
 
 
-_link:#a3483[See Java EE Application
+_link:#a3483[See Jakarta EE Application
 XML Schema Structure]_ shows a graphic representation of the structure
-of the Java EE application XML Schema.
+of the Jakarta EE application XML Schema.
 
 .
 
 image:Platform_Spec-17.png[image]
 
-=== [[a3483]]Java EE Application XML Schema Structure
+=== [[a3483]]Jakarta EE Application XML Schema Structure
 
 The XML Schema located at
 _http://java.sun.com/xml/ns/javaee/application_5.xsd_ defines the XML
-grammar for a Java EE application deployment descriptor.
+grammar for a Jakarta EE application deployment descriptor.
 
-=== Common Java EE 5 XML Schema Definitions
+=== Common Jakarta EE 5 XML Schema Definitions
 
 The XML Schema located at
 _http://java.sun.com/xml/ns/javaee/javaee_5.xsd_ defines types that are
-used by many other Java EE deployment descriptor schemas, both in this
+used by many other Jakarta EE deployment descriptor schemas, both in this
 specification and in other specifications.
 
-=== Java EE 5 Application Client XML Schema
+=== Jakarta EE 5 Application Client XML Schema
 
-The XML grammar for a Java EE application
-client deployment descriptor is defined by the Java EE
+The XML grammar for a Jakarta EE application
+client deployment descriptor is defined by the Jakarta EE
 application-client schema. The root element of the deployment descriptor
 for an application client is _application-client_ . The content of the
 XML elements is in general case sensitive. This means, for example, that
@@ -216,9 +216,9 @@ the application client’s _.jar_ file. Note that this name is
 case-sensitive.
 
 
-_link:#a3492[See Java EE Application
-Client XML Schema Structure]_ shows the structure of the Java EE
-application-client XML Schema. The Java EE application-client XML Schema
+_link:#a3492[See Jakarta EE Application
+Client XML Schema Structure]_ shows the structure of the Jakarta EE
+application-client XML Schema. The Jakarta EE application-client XML Schema
 is located at
 _http://java.sun.com/xml/ns/javaee/application-client_5.xsd_ .
 
@@ -226,7 +226,7 @@ _http://java.sun.com/xml/ns/javaee/application-client_5.xsd_ .
 
 image:Platform_Spec-18.png[image]
 
-=== [[a3492]]Java EE Application Client XML Schema Structure
+=== [[a3492]]Jakarta EE Application Client XML Schema Structure
 
 === J2EE 1.4 Application XML Schema
 
