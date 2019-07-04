@@ -1,7 +1,7 @@
 == Web Profile Definition
 
 This chapter defines the contents of the
-Java™ Platform, Enterprise Edition 8 (Java EE™ 8) Web Profile.
+Jakarta™ Platform, Enterprise Edition 8 (Jakarta EE™ 8) Web Profile.
 
 === [[a43]]Required Components
 
@@ -31,9 +31,9 @@ components of the Web Profile:
 * Managed Beans 1.0
 * Interceptors 1.2
 * Contexts and Dependency Injection for the
-Java EE Platform 2.0
+Jakarta EE Platform 2.0
 * Dependency Injection for Java 1.0
-* Java EE Security API 1.0
+* Jakarta EE Security API 1.0
 * Java Authentication Service Provider
 Interface for Containers (JASPIC) 1.1 Servlet Container Profile
 
@@ -43,12 +43,12 @@ There are no optional components in the Web
 Profile.
 
 Web Profile products may support some of the
-technologies present in the full Java EE Platform and not already listed
+technologies present in the full Jakarta EE Platform and not already listed
 in link:WebProfile.html#a43[See Required Components]”,
 consistently with their compatibility requirements.
 
 === [[a69]]Additional Requirements
 
 Web Profile products must support the
-deployment of Java EE web application modules ( _.war_ files). No other
+deployment of Jakarta EE web application modules ( _.war_ files). No other
 modules types are required to be supported.
