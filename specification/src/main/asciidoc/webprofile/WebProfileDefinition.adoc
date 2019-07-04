@@ -1,7 +1,7 @@
 == Web Profile Definition
 
 This chapter defines the contents of the
-Jakarta EE 8 Web Profile.
+Jakarta EE™ 8 Web Profile.
 
 === [[a43]]Required Components
 
