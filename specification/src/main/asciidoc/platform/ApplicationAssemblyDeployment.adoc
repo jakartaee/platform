@@ -1364,7 +1364,7 @@ link:#a3447[See Previous Version
 Deployment Descriptors].”) The deployment descriptor must be named
 _META-INF/application.xml_ in the _.ear_ file. Note that this name is
 case-sensitive. The XML Schema located at
-_http://xmlns.jcp.org/xml/ns/jakartaee/application_8.xsd_ defines the XML
+_http://xmlns.jcp.org/xml/ns/javaee/application_8.xsd_ defines the XML
 grammar for a Jakarta EE application deployment descriptor.
 
 link:#a3208[See
@@ -1380,6 +1380,6 @@ image:Platform_Spec-11.png[image]
 === Common Jakarta EE XML Schema Definitions
 
 The XML Schema located at
-_http://xmlns.jcp.org/xml/ns/jakartaee/jakartaee_8.xsd_ defines types that are
+_http://xmlns.jcp.org/xml/ns/javaee/javaee_8.xsd_ defines types that are
 used by many other Jakarta EE deployment descriptor schemas, both in this
 specification and in other specifications.
