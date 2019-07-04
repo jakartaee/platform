@@ -1,7 +1,7 @@
 == [[a235]]Security
 
 This chapter describes the security
-requirements for the Java™ Platform, Enterprise Edition (Jakarta EE) that
+requirements for the Jakarta™ Platform, Enterprise Edition (Jakarta EE) that
 must be satisfied by Jakarta EE products.
 
 In addition to the Jakarta EE requirements, each
