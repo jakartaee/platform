@@ -25,23 +25,23 @@ user administration and training.
 
 The Java™ Platform, Enterprise Edition (Java™
 EE) reduces the cost and complexity of developing multitier, enterprise
-services. Java EE applications can be rapidly deployed and easily
+services. Jakarta EE applications can be rapidly deployed and easily
 enhanced as the enterprise responds to competitive pressures.
 
-Java EE achieves these benefits by defining a
+Jakarta EE achieves these benefits by defining a
 standard architecture with the following elements:
 
-*  _Java EE Platform_ - A standard platform for
-hosting Java EE applications.
-*  _Java EE Compatibility Test Suite_ - A suite
-of compatibility tests for verifying that a Java EE platform product
-complies with the Java EE platform standard.
-*  _Java EE Reference Implementation_ - A
-reference implementation for prototyping Java EE applications and for
-providing an operational definition of the Java EE platform.
+*  _Jakarta EE Platform_ - A standard platform for
+hosting Jakarta EE applications.
+*  _Jakarta EE Compatibility Test Suite_ - A suite
+of compatibility tests for verifying that a Jakarta EE platform product
+complies with the Jakarta EE platform standard.
+*  _Jakarta EE Reference Implementation_ - A
+reference implementation for prototyping Jakarta EE applications and for
+providing an operational definition of the Jakarta EE platform.
 
-This document is the Java EE platform
-specification. It sets out the requirements that a Java EE platform
+This document is the Jakarta EE platform
+specification. It sets out the requirements that a Jakarta EE platform
 product must meet.
 
 === Acknowledgements for the Initial Version
