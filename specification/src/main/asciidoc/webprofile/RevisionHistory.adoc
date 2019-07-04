@@ -4,8 +4,8 @@
 
 === Additional Requirements
 
-* Java EE 8 Web Profile requires Java SE 8.
-* Updated to reflect versions of Java EE 8
+* Jakarta EE 8 Web Profile requires Java SE 8.
+* Updated to reflect versions of Jakarta EE 8
 technologies.
 * Added JSON-B as required component.
 * Added MVC as required component.
@@ -38,7 +38,7 @@ to 2.0.
 
 === Additional Requirements
 
-* Added Java EE Security API 1.0 and JASPIC 1.1
+* Added Jakarta EE Security API 1.0 and JASPIC 1.1
 as required components.
 
 === Removed Requirements
