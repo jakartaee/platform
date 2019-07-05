@@ -1,19 +1,19 @@
 == [[a3212]]Profiles
 
 This chapter describes the requirements
-common to all Java EE profiles. It does not define any concrete
+common to all Jakarta EE profiles. It does not define any concrete
 profiles, delegating this task to separate specifications.
 
-The Java EE Web Profile Specification,
+The Jakarta EE Web Profile Specification,
 published in conjunction with the present specification, defines the
-first Java EE profile, the Web Profile.
+first Jakarta EE profile, the Web Profile.
 
 The definition of other profiles is left to
 future specifications.
 
 === Introduction
 
-A Java EE profile (from now on, simply “a
+A Jakarta EE profile (from now on, simply “a
 profile”) represents a configuration of the platform suited to a
 particular class of applications.
 
@@ -24,7 +24,7 @@ not generally useful in a particular domain.
 
 A profile may also add one or more
 technologies which are not present in the platform itself. For example,
-a hypothetical Java EE Portal Profile would likely include the Portlet
+a hypothetical Jakarta EE Portal Profile would likely include the Portlet
 API (JSR-286).
 
 Additionally, a profile may tag certain
@@ -33,8 +33,8 @@ profile may or may not include the technology in question. Naturally, if
 they do, they need to obey all the relevant requirements mandated by the
 profile specification.
 
-A product may implement two or more Java EE
-profiles, or the full platform and one or more Java EE profiles, as long
+A product may implement two or more Jakarta EE
+profiles, or the full platform and one or more Jakarta EE profiles, as long
 as their combined requirements do not give rise to conflicts.
 
 === Profile Definition
@@ -44,35 +44,35 @@ rules of the Java Community Process. Typically, a proposal to create a
 new profile, or to revise an existing one, will be submitted as a Java
 Specification Request (JSR). Once the JSR is approved, an expert group
 will be formed and conduct work as dictated by the process. The JSR for
-a profile must mention the version of the Java EE Platform that it
+a profile must mention the version of the Jakarta EE Platform that it
 builds on. Additionally, if it builds on an existing profile, it must
 mention this fact as well.
 
 Although profiles can be created and evolved
-independently of the Java EE platform, modulo the rules contained in
+independently of the Jakarta EE platform, modulo the rules contained in
 this specification, it is envisioned that profiles will maintain a
 reasonable level of alignment with the platform itself, in order to
 avoid fragmenting the development space into progressively incompatible
 islands. To this end, a profile must build on the most recent version of
-the Java EE platform available at the time the JSR for the profile is
+the Jakarta EE platform available at the time the JSR for the profile is
 approved. It is also recommended that profile expert groups go beyond
 this requirement and, as much as it is practical, ensure that their
-profile builds on the most recent version of the Java EE platform at the
+profile builds on the most recent version of the Jakarta EE platform at the
 time the profile is finalized.
 
 === General Rules for Profiles
 
 A profile must include all technologies that
-are required components of the Java EE platform or of any profiles on
+are required components of the Jakarta EE platform or of any profiles on
 which it builds. These technologies will be listed as required in the
 profile.
 
 A profile may promote to required status any
-technologies that are optional components of the Java EE platform or of
+technologies that are optional components of the Jakarta EE platform or of
 any profile on which it builds.
 
 Unless otherwise mandated by a profile, any
-technologies that are optional components of the Java EE platform, or of
+technologies that are optional components of the Jakarta EE platform, or of
 any profile on which the profile in question builds, must be optional
 components of the profile itself.
 
@@ -82,7 +82,7 @@ EE platform or any profile on which it builds, as long as the
 corresponding compatibility requirements are satisfied.
 
 A profile must preserve any requirements
-defined in the Java EE platform specification, or in the specification
+defined in the Jakarta EE platform specification, or in the specification
 of any profile on which it builds, as long as the preconditions for
 those requirements are satisfied. Typically, the preconditions will
 involve the presence of one or more technologies among those included in
@@ -96,7 +96,7 @@ EE platform or by any profile on which the present one builds.
 The specification for individual technologies
 may allow for certain features of the technology in question to be
 optional. In this case, a profile may promote one or more of these
-features to required status, assuming the Java EE platform or any
+features to required status, assuming the Jakarta EE platform or any
 profile on which it builds hasn’t done so already.
 
 A profile must not conflict with the
@@ -132,36 +132,36 @@ otherwise indicated.
 examples, or are otherwise non-normative, do not contain any
 requirements.
 
-=== [[a3240]]Requirements for All Java EE Profiles
+=== [[a3240]]Requirements for All Jakarta EE Profiles
 
 The Java Platform, Standard Edition 8 is the
-required foundation for any Java EE 8 profile.
+required foundation for any Jakarta EE 8 profile.
 
 The following technologies are required to be
-present in all Java EE profiles:
+present in all Jakarta EE profiles:
 
 * Resource and component lifecycle
 annotations defined by the Common Annotations specification ( _Resource_
 , _Resources_ , _PostConstruct_ , _PreDestroy_ )
 
 The following functionality is required to be
-supported in all Java EE profiles:
+supported in all Jakarta EE profiles:
 
 === JNDI “java:” naming context (see link:#a607[See JNDI Naming Context]”)
 
 * Java Transaction API (JTA)
 
-=== Optional Features for Java EE Profiles
+=== Optional Features for Jakarta EE Profiles
 
 All the technologies listed in
 link:#a2136[See Required APIs]”, and
 not designated as required in
 link:#a3240[See Requirements for All
-Java EE Profiles]”, are designated as optional for use in Java EE
+Jakarta EE Profiles]”, are designated as optional for use in Jakarta EE
 profiles.
 
 The following functionality is designated as
-optional for use in Java EE profiles:
+optional for use in Jakarta EE profiles:
 
 * RMI/IIOP interoperability requirements (see
 link:#a2875[See OMG Protocols (Proposed
@@ -169,16 +169,16 @@ Optional)]”)
 * Support for _java:comp/ORB_ (see
 link:#a1385[See ORB References]”)
 
-=== [[a3252]]Full Java EE Product Requirements
+=== [[a3252]]Full Jakarta EE Product Requirements
 
 This section defines the requirements for
-full Java EE platform products. These requirements correspond to the
-full set of requirements in previous versions of the Java EE platform
+full Jakarta EE platform products. These requirements correspond to the
+full set of requirements in previous versions of the Jakarta EE platform
 specification and update those requirements for this new version of the
 platform.
 
 Please note that, due to the effects of the
-pruning process, future versions of the Java EE specification will
+pruning process, future versions of the Jakarta EE specification will
 likely relax the requirements given here, specifically by marking as
 optional technologies that have been subject to pruning and that are
 required by the present specification. The set of technologies that have
@@ -204,10 +204,10 @@ associated EJB QL, which have been made optional)
 * JSON-B 1.0
 * Concurrency Utilities 1.0
 * Batch 1.0
-* Java EE Management 1.1
+* Jakarta EE Management 1.1
 * JACC 1.5
 * JASPIC 1.1
-* Java EE Security 1.0
+* Jakarta EE Security 1.0
 * JSP Debugging 1.0
 * JSTL 1.2
 * Web Services Metadata 2.1
@@ -229,7 +229,7 @@ The following technologies are optional:
 associated EJB QL
 * JAX-RPC 1.1
 * JAXR 1.0
-* Java EE Deployment 1.2
+* Jakarta EE Deployment 1.2
 
 
 
@@ -238,10 +238,10 @@ associated EJB QL
 [[a3294]]Application Clients
 
 This chapter describes application clients
-in the Java™ Platform, Enterprise Edition (Java EE).
+in the Java™ Platform, Enterprise Edition (Jakarta EE).
 
-A full Java EE product must support the
-application client container as described in this chapter. A Java EE
+A full Jakarta EE product must support the
+application client container as described in this chapter. A Jakarta EE
 profile may or may not require support for the application client
 container.
 
@@ -251,17 +251,17 @@ Application clients are first tier client
 programs that execute in their own Java™ virtual machines. Application
 clients follow the model for Java technology-based applications: they
 are invoked at their _main_ method and run until the virtual machine is
-terminated. However, like other Java EE application components,
+terminated. However, like other Jakarta EE application components,
 application clients depend on a container to provide system services.
 The application client container may be very light-weight compared to
-other Java EE containers, providing only the security and deployment
+other Jakarta EE containers, providing only the security and deployment
 services described below
 
 === Security
 
-The Java EE authentication requirements for
-application clients are the same as for other Java EE components, and
-the same authentication techniques may be used as for other Java EE
+The Jakarta EE authentication requirements for
+application clients are the same as for other Jakarta EE components, and
+the same authentication techniques may be used as for other Jakarta EE
 application components.
 
 No authentication is necessary when accessing
@@ -290,7 +290,7 @@ gather authentication data, the container must provide an appropriate
 user interface. In addition, an application client may provide a class
 that implements the _javax.security.auth.callback.CallbackHandler_
 interface and specify the class name in its deployment descriptor (see
-link:#a3399[See Java EE Application
+link:#a3399[See Jakarta EE Application
 Client XML Schema]” for details). The Deployer may override the callback
 handler specified by the application and use the container’s default
 authentication user interface instead.
@@ -316,8 +316,8 @@ Edition (Java SE) Requirements].”
 === Transactions
 
 Application clients are not required to have
-direct access to the transaction facilities of the Java EE platform. A
-Java EE product is not required to provide a JTA _UserTransaction_
+direct access to the transaction facilities of the Jakarta EE platform. A
+Jakarta EE product is not required to provide a JTA _UserTransaction_
 object for use by application clients. Application clients can invoke
 enterprise beans that start transactions, and they can use the
 transaction facilities of the JDBC API. If a JDBC API transaction is
@@ -326,7 +326,7 @@ transaction context is not required to be propagated to the EJB server.
 
 === Resources, Naming, and Injection
 
-As with all Java EE components, application
+As with all Jakarta EE components, application
 clients use JNDI to look up enterprise beans, get access to resource
 managers, reference configurable parameters set at deployment time, and
 so on. Application clients use the _java:_ JNDI namespace to access
@@ -338,7 +338,7 @@ application client main class. Because the application client container
 does not create instances of the application client main class, but
 merely loads the class and invokes the static _main_ method, injection
 into the application client class uses _static_ fields and methods,
-unlike other Java EE components. Injection occurs before the _main_
+unlike other Jakarta EE components. Injection occurs before the _main_
 method is called.
 
 === Application Programming Interfaces
@@ -359,13 +359,13 @@ initialize the name service client library, and so on).
 
 Application clients are packaged in JAR format
 files with a _.jar_ extension and may include a deployment descriptor
-similar to other Java EE application components. The deployment
+similar to other Jakarta EE application components. The deployment
 descriptor describes the enterprise beans, web services, and other types
 of external resources referenced by the application. If the deployment
 descriptor is not included, or is included but not marked
 _metadata-complete_ , annotations on the main class of the application
 client may also be used to describe the resources needed by the
-application. As with other Java EE application components, access to
+application. As with other Jakarta EE application components, access to
 resources must be configured at deployment time, names assigned for
 enterprise beans and resources, and so on.
 
@@ -470,7 +470,7 @@ annotations that specify such deployment information in the class files
 packaged in the application client jar file. Such annotations must also
 be ignored when processing the class files that are available to the
 application client module for the deployment of this module according to
-link:#a3179[See Deploying a Java EE
+link:#a3179[See Deploying a Jakarta EE
 Application]”.
 
 Note that a _"true"_ value for the
@@ -542,13 +542,13 @@ the class files for all such annotations.
 
 The tool used to deploy an application client
 to the client machine, and the mechanism used to install the application
-client, is not specified. Very sophisticated Java EE products may allow
-the application client to be deployed on a Java EE server and
+client, is not specified. Very sophisticated Jakarta EE products may allow
+the application client to be deployed on a Jakarta EE server and
 automatically made available to some set of (usually intranet) clients.
-Other Java EE products may require the Java EE application bundle
+Other Jakarta EE products may require the Jakarta EE application bundle
 containing the application client to be manually deployed and installed
 on each client machine. And yet another approach would be for the
-deployment tool on the Java EE server to produce an installation package
+deployment tool on the Jakarta EE server to produce an installation package
 that could be used by each client to install the application client.
 There are many possibilities here and this specification doesn’t
 prescribe any one. It only defines the package format for the
@@ -556,15 +556,15 @@ application client and the things that must be possible during the
 deployment process.
 
 How an application client is invoked by an end
-user is unspecified. Typically a Java EE Product Provider will provide
+user is unspecified. Typically a Jakarta EE Product Provider will provide
 an application launcher that integrates with the application client
 machine’s native operating system, but the level of such integration is
 unspecified.
 
-=== [[a3399]]Java EE Application Client XML Schema
+=== [[a3399]]Jakarta EE Application Client XML Schema
 
-The XML grammar for a Java EE application client
-deployment descriptor is defined by the Java EE application-client
+The XML grammar for a Jakarta EE application client
+deployment descriptor is defined by the Jakarta EE application-client
 schema. The root element of the deployment descriptor for an application
 client is _application-client_ . The content of the XML elements is in
 general case sensitive. This means, for example, that
@@ -580,9 +580,9 @@ _META-INF/application-client.xml_ in the application client’s _.jar_
 file. Note that this name is case-sensitive.
 
 
-_link:#a3404[See Java EE Application
-Client XML Schema Structure]_ shows the structure of the Java EE
-application-client XML Schema. The Java EE application-client XML Schema
+_link:#a3404[See Jakarta EE Application
+Client XML Schema Structure]_ shows the structure of the Jakarta EE
+application-client XML Schema. The Jakarta EE application-client XML Schema
 is located at
 _http://xmlns.jcp.org/xml/ns/javaee/application-client_8.xsd_ .
 
@@ -590,4 +590,4 @@ _http://xmlns.jcp.org/xml/ns/javaee/application-client_8.xsd_ .
 
 image:Platform_Spec-12.png[image]
 
-=== [[a3404]]Java EE Application Client XML Schema Structure
+=== [[a3404]]Jakarta EE Application Client XML Schema Structure
