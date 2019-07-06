@@ -1,7 +1,6 @@
 == [[a3439]]Future Directions
 
-This version of the Java™ Platform,
-Enterprise Edition (Java EE) specification includes most of the
+This version of the Jakarta™ EE Platform specification includes most of the
 facilities needed by enterprise applications. Still, there is always
 more to be done. This chapter briefly describes our plans for future
 versions of this specification. Please keep in mind that all of this is
@@ -9,19 +8,19 @@ subject to change. Your feedback is encouraged.
 
 The following sections describe additional
 facilities we would like to include in future versions of this
-specification. Many of the APIs included in the Java EE platform will
+specification. Many of the APIs included in the Jakarta EE platform will
 continue to evolve on their own and we will include the latest version
 of each API.
 
-=== Java EE SPI
+=== Jakarta EE SPI
 
-Many of the APIs that make up the Java EE
+Many of the APIs that make up the Jakarta EE
 platform include an SPI layer that allows service providers or other
 system level components to be plugged in. This specification does not
 describe the execution environment for all such service providers, nor
 the packaging and deployment requirements for all service providers.
-However, the Java EE Connector Architecture does define the requirements
+However, the Jakarta Connectors Specification does define the requirements
 for certain types of service providers called resource adapters, and the
-Java Authorization Contract for Containers defines requirements for
+Jakarta Authorization specification defines requirements for
 security service providers. Future versions of this specification will
-more fully define the Java EE SPI.
+more fully define the Jakarta EE SPI.
