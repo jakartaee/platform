@@ -444,7 +444,7 @@ In addition, if CDI is enabled—which it is by default—these classes also
 support CDI injection, as described in
 link:#a2112[See Support for Dependency
 Injection]”, and the use of interceptorslink:#a3652[5]. The
-component classes listed with support level “Limited” only support Java
+component classes listed with support level “Limited” only support Jakarta
 EE field injection and the PostConstruct callback. Note that these are
 application client main classes, where field injection is into static
 fields.
@@ -2674,7 +2674,7 @@ element of an application component that produces messages to link it to
 the target destination. The value of the _message-destination-link_
 element is the name of the target destination, as defined in the
 _message-destination-name_ element of the _message-destination_ element.
-The _message-destination_ element can be in any module in the same Java
+The _message-destination_ element can be in any module in the same Jakarta
 EE application as the referencing component. The Application Assembler
 uses the _message-destination-usage_ element of the
 _message-destination-ref_ element to indicate that the referencing
@@ -2890,7 +2890,7 @@ _TransactionSynchronizationRegistry_ object.
 
 Only some application component types are
 required to be able to access a _TransactionSynchronizationRegistry_
-object; see _link:#a2159[See Java
+object; see _link:#a2159[See Jakarta
 EE Technologies]_ in this specification for details.
 
 === Jakarta EE Product Provider’s Responsibilities
@@ -4760,7 +4760,7 @@ All Resource Definition Types].”
 
 The Jakarta EE Platform requires that a Jakarta EE
 Product Provider provide a database in the operational environment (see
-link:#a82[See Database]”). The Java
+link:#a82[See Database]”). The Jakarta
 EE Product Provider must also provide a preconfigured, default data
 source for use by the application in accessing this database.
 
@@ -5634,7 +5634,7 @@ into an optional component. No actual removal from the specification
 occurs, although the feature may be removed from products at the choice
 of the product vendor.
 
-Technologies that have been pruned as of Java
+Technologies that have been pruned as of Jakarta
 EE 8 are marked Optional in
 link:#a2159[See Jakarta EE
 Technologies]. Technologies that may be pruned in a future release are
@@ -5808,7 +5808,7 @@ namespace available to other applications.
 === Listing of the Jakarta EE Security Permissions Set
 
 link:#a2366[See
-Jakarta EE Security Permissions Set] lists the Java permissions that Java
+Jakarta EE Security Permissions Set] lists the Java permissions that Jakarta
 EE components (by type) can reliably be granted by a Jakarta EE product,
 given appropriate local installation configuration.
 
@@ -6743,7 +6743,7 @@ publish/subscribe messaging, and thus must make those facilities
 available using the _ConnectionFactory_ and _Destination_ APIs.
 
 The JMS specification defines several
-interfaces intended for integration with an application server. A Java
+interfaces intended for integration with an application server. A Jakarta
 EE product need not provide objects that implement these interfaces, and
 portable Jakarta EE applications must not use the following interfaces:
 
@@ -6897,7 +6897,7 @@ default transport must be handled without need for the application to
 provide a _javax.mail.Authenticator_ or to explicitly connect to the
 transport and supply authentication information.
 
-This specification does not require that a Java
+This specification does not require that a Jakarta
 EE product support any message store protocols.
 
 Note that the JavaMail API creates threads to
@@ -6974,7 +6974,7 @@ The JAX-RPC specification defines client APIs
 for accessing web services as well as techniques for implementing web
 service endpoints. The Web Services for Jakarta EE specification describes
 the deployment of JAX-RPC-based services and clients. The EJB and
-Servlet specifications also describe aspects of such deployment. In Java
+Servlet specifications also describe aspects of such deployment. In Jakarta
 EE products that support JAX-RPC, it must be possible to deploy
 JAX-RPC-based applications using any of these deployment models.
 
@@ -7110,7 +7110,7 @@ available at _http://jcp.org/en/jsr/detail?id=77_ .
 The Jakarta EE Deployment API defines the
 interfaces between the runtime environment of a deployment tool and
 plug-in components provided by a Jakarta EE application server. These
-plug-in components execute in the deployment tool and implement the Java
+plug-in components execute in the deployment tool and implement the Jakarta
 EE product-specific deployment mechanisms. Jakarta EE products that support
 the Jakarta EE Deployment API are required to supply these plug-in
 components for use in tools from other vendors.
@@ -7402,7 +7402,7 @@ be found at _http://jcp.org/en/jsr/detail?id=380_ .
 
 The Managed Beans specification defines a
 lightweight component model that supports the basic lifecycle model,
-resource injection facility and interceptor service present in the Java
+resource injection facility and interceptor service present in the Jakarta
 EE platform.
 
 The Managed Beans specification can be found
