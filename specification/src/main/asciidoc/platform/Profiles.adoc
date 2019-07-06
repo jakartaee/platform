@@ -42,9 +42,9 @@ as their combined requirements do not give rise to conflicts.
 A profile is defined in accordance with the
 rules of the Java Community Process. Typically, a proposal to create a
 new profile, or to revise an existing one, will be submitted as a Jakarta EE
-Specification Process. Once the Jakarta EE Specification Process is approved, 
-an expert group will be formed and conduct work as dictated by the process. The Jakarta EE
-Specification Process for
+Specification Process. Once the Jakarta Specification Project is approved, 
+an expert group will be formed and conduct work as dictated by the process. The Jakarta
+Specification Project for
 a profile must mention the version of the Jakarta EE Platform that it
 builds on. Additionally, if it builds on an existing profile, it must
 mention this fact as well.
