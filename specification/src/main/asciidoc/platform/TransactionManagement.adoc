@@ -1,8 +1,7 @@
 == Transaction Management
 
-This chapter describes the required Java™
-Platform, Enterprise Edition (Jakarta EE) transaction management and
-runtime environment.
+This chapter describes the required Jakarta Enterprise Edition (Jakarta EE)
+transaction management and runtime environment.
 
 Product Providers must transparently support
 transactions that involve multiple components and transactional
@@ -16,14 +15,14 @@ Jakarta EE product, they are considered transactional resources and must
 behave as specified here:
 
 * JDBC connections
-* JMS sessions
+* Jakarta Messaging sessions
 * Resource adapter connections for resource
 adapters specifying the _XATransaction_ transaction level
 
 === Overview
 
 A Jakarta EE Product that includes both a servlet
-container and an EJB container must support a transactional application
+container and an enterprise bean container must support a transactional application
 comprised of combinations of web application components accessing
 multiple enterprise beans within a single transaction. If the Jakarta EE
 product also includes support for the Connectors specification, each
@@ -31,13 +30,13 @@ component may also acquire one or more connections to access one or more
 transactional resource managers.
 
 For example, in
-_link:#a475[See Servlets/JSP Pages
+_link:#a475[See Servlets/Server Pages
 Accessing Enterprise Beans]_ , the call tree starts from a servlet or
-JSP page accessing multiple enterprise beans, which in turn may access
+server pages accessing multiple enterprise beans, which in turn may access
 other enterprise beans. The components access resource managers via
 connections.
 
-=== [[a475]]Servlets/JSP Pages Accessing Enterprise Beans
+=== [[a475]]Servlets/Server Pages Accessing Enterprise Beans
 
 image:Platform_Spec-8.png[image]
 
@@ -48,7 +47,7 @@ the application.
 
 For example, the application may require that
 all the components in _link:#a475[See
-Servlets/JSP Pages Accessing Enterprise Beans]_ access resources as part
+Servlets/Server Pages Accessing Enterprise Beans]_ access resources as part
 of a single transaction. The Platform Provider must provide the
 transaction capabilities to support such a scenario.
 
@@ -73,8 +72,8 @@ Providers.
 === Web Components
 
 Web components may demarcate transactions using
-the _jakarta.transaction.UserTransaction_ interface or transactional
-interceptors, which are defined in the Jakarta Transaction specification. They may
+the _javax.transaction.UserTransaction_ interface or transactional
+interceptors, which are defined in the Jakarta Transactions specification. They may
 access multiple resource managers and invoke multiple enterprise beans
 within a single transaction. The specified transaction context is
 automatically propagated to the enterprise beans and transactional
@@ -84,7 +83,7 @@ required to use Container Managed Transactions).
 
 Web application event listeners and upgrade
 handlers must not demarcate transactions using the
-_jakarta.transaction.UserTransaction_ interface or transactional
+_javax.transaction.UserTransaction_ interface or transactional
 interceptors. Servlet filters may use transactional resources within
 their _doFilter_ methods but should not use any transactional resources
 in the methods of any objects used to wrap the request or response
@@ -96,34 +95,34 @@ The Jakarta EE platform must meet the following
 requirements:
 
 * The Jakarta EE platform must provide an object
-implementing the _jakarta.transaction.UserTransaction_ interface to all
+implementing the _javax.transaction.UserTransaction_ interface to all
 web components. The platform must publish the _UserTransaction_ object
 in the Java™ Naming and Directory Interface (JNDI) name space available
-to web components under the name _jakarta:comp/UserTransaction_ .
+to web components under the name java:comp/UserTransaction_ .
 * The Jakarta EE platform must provide classes
-that implement the transactional interceptors, as defined by the Jakarta Transaction
+that implement the transactional interceptors, as defined by the Jakarta Transactions
 specification.
 * If a web component invokes an enterprise bean
-from a thread associated with a Jakarta transaction, the Jakarta EE platform
+from a thread associated with a Jakarta Transactions, the Jakarta EE platform
 must propagate the transaction context with the enterprise bean
 invocation. Whether the target enterprise bean will be invoked in this
-transaction context or not is determined by the rules defined in the EJB
+transaction context or not is determined by the rules defined in the Jakarta Enterprise Beans
 specification.
 
 Note that this transaction propagation
 requirement applies only to invocations of enterprise beans in the same
 Jakarta EE product instancelink:#a3649[2] as the invoking component.
 Invocations of enterprise beans in another Jakarta EE product instance (for
-example, using the EJB interoperability protocol) need not propagate the
-transaction context. See the EJB specification for details.
+example, using the Jakarta Enterprise Beans interoperability protocol) need not propagate the
+transaction context. See the Jakarta Enterprise Beans specification for details.
 
 * If a web component accesses a transactional
-resource manager from a thread associated with a Jakarta transaction, the
+resource manager from a thread associated with a Jakarta Transactions, the
 Jakarta EE platform must ensure that the resource access is included as
-part of the Jakarta transaction.
+part of the Jakarta Transactions.
 * If a web component creates a thread, the Java
 EE platform must ensure that the newly created thread is not associated
-with any Jakarta transaction.
+with any Jakarta transactions.
 
 === [[a493]]Transaction Non-Requirements
 
@@ -139,7 +138,7 @@ propagated to the target servlet or page.
 
 However, when a web component is invoked
 through the _RequestDispatcher_ interface, any active transaction
-context must be propagated to the called servlet or JSP page.
+context must be propagated to the called servlet or server pages.
 
 === Transactions in Web Component Life Cycles
 
@@ -176,10 +175,10 @@ between the use of transactional resources and threads. To ensure
 correct operation, web components should obey the following guidelines,
 and the web container must support at least these usages.
 
-* Jakarta transactions should be started and
+* Jakarta Transactions should be started and
 completed in the thread in which the _service_ method is called.
 Additional threads that are created for any purpose should not attempt
-to start Jakarta transactions.
+to start Jakarta Transactions.
 * Transactional resources may be acquired and
 released by a thread other than the _service_ method thread, but should
 not be shared between threads.
@@ -209,12 +208,12 @@ components (using the _forward_ or _include_ methods) should not store
 transactional resource objects in class instance fields.
 * Enterprise beans may be invoked from any
 thread used by a web component. Transaction context propagation
-requirements are described above and in the EJB specification.
+requirements are described above and in the Jakarta Enterprise Beans specification.
 
 === Enterprise JavaBeans™ Components
 
 The Jakarta EE Product Provider must provide
-support for transactions as defined in the EJB specification.
+support for transactions as defined in the Jakarta Enterprise Beans specification.
 
 === Application Clients
 
@@ -250,16 +249,16 @@ operations. The Jakarta EE product may discover the XA capabilities of JDBC
 drivers through product-specific means, although normally such JDBC
 drivers would be delivered as resource adapters using the Connector API.
 
-=== [[a520]]Transactional JMS Support
+=== [[a520]]Transactional Jakarta Messaging Support
 
-A Jakarta EE product must support a JMS provider
+A Jakarta EE product must support a Jakarta Messaging provider
 as a transactional resource manager. The platform must enable
-transactional JMS access from servlets, JSP pages, and enterprise beans.
+transactional Jakarta Messaging access from servlets, server pages, and enterprise beans.
 
-It must be possible to access the JMS provider
+It must be possible to access the Jakarta Messaging provider
 from multiple application components within a single transaction. For
-example, a servlet may wish to start a transaction, send a JMS message,
-invoke an enterprise bean that also sends a JMS message as part of the
+example, a servlet may wish to start a transaction, send a Jakarta Messaging message,
+invoke an enterprise bean that also sends a Jakarta Messaging message as part of the
 same transaction, and, finally, commit the transaction.
 
 === Transactional Resource Adapter (Connector) Support
@@ -267,7 +266,7 @@ same transaction, and, finally, commit the transaction.
 A Jakarta EE product must support resource
 adapters that use _XATransaction_ mode as transactional resource
 managers. The platform must enable transactional access to the resource
-adapter from servlets, JSP pages, and enterprise beans.
+adapter from servlets, server pages, and enterprise beans.
 
 It must be possible to access the resource
 adapter from multiple application components within a single
@@ -290,7 +289,7 @@ multiple Product Providers.
 We recommend that Jakarta EE Product Providers use
 the IIOP transaction propagation protocol defined by OMG and described
 in the OTS specification (and implemented by the Java Transaction
-Service), for transaction interoperability when using the EJB
+Service), for transaction interoperability when using the Jakarta Enterprise Beans
 interoperability protocol based on RMI-IIOP.
 
 === Support for Transactional Resource Managers
@@ -300,15 +299,14 @@ products to support the _javax.transaction.xa.XAResource_ interface, as
 specified in the Connector specification. This specification also
 requires all Jakarta EE products to support the
 _javax.transaction.xa.XAResource_ interface for performing two-phase
-commit operations on JDBC drivers that support the JTA XA APIs. This
-specification does not require that JDBC drivers or JMS providers use
+commit operations on JDBC drivers that support the Jakarta Transactions XA APIs. This
+specification does not require that JDBC drivers or Jakarta Messaging providers use
 the _javax.transaction.xa.XAResource_ interface, although they may use
 this interface and in all cases they must meet the transactional
 resource manager requirements described in this chapter. In particular,
 it must be possible to combine operations on one or more JDBC databases,
-one or more JMS sessions, one or more enterprise beans, and multiple
-resource adapters supporting the _XATransaction_ mode in a single JTA
-transaction.
+one or more Jakarta Messaging sessions, one or more enterprise beans, and multiple
+resource adapters supporting the _XATransaction_ mode in a single Jakarta Transactions.
 
 === Local Transaction Optimization
 
@@ -392,7 +390,7 @@ optional deployment descriptor element _res-sharing-scope_ to indicate
 whether a connection to a resource manager is shareable or unshareable.
 Containers must assume connections to be shareable if no deployment hint
 is provided. link:#a3399[See Jakarta EE
-Application Client XML Schema]”, the EJB specification, and the Servlet
+Application Client XML Schema]”, the Jakarta Enterprise Beans specification, and the Servlet
 specification provide descriptions of the deployment descriptor element.
 
 Jakarta EE application components may cache
@@ -403,14 +401,14 @@ appropriate shared connection with the correct transaction scope. Refer
 to the Connector specification for a detailed description of connection
 sharing.
 
-=== JDBC and JMS Deployment Issues
+=== JDBC and Jakarta Messaging Deployment Issues
 
 The JDBC transaction requirements in
 link:#a516[See Transactional JDBC™
-Technology Support]” and the JMS transaction requirements in
-link:#a520[See Transactional JMS
+Technology Support]” and the Jakarta Messaging transaction requirements in
+link:#a520[See Transactional Jakarta Messaging
 Support]” may impose some restrictions on a Deployer’s configuration of
-an application’s JDBC and JMS resources. Jakarta EE Product Providers may
+an application’s JDBC and Jakarta Messaging resources. Jakarta EE Product Providers may
 impose the restrictions described in this section to meet these
 requirements.
 
@@ -429,19 +427,19 @@ component provided user name and password) may not be portable.
 
 A Jakarta EE Product Provider may make the same
 restrictions as above, resulting in a transaction being restricted to a
-single JMS resource manager and user identity.
+single Jakarta Messaging resource manager and user identity.
 
 In addition, when both a JDBC resource manager
-and a JMS resource manager are used in the same transaction, a Jakarta EE
+and a Jakarta Messaging resource manager are used in the same transaction, a Jakarta EE
 Product Provider may restrict both to a pairing that allows their
 combination to deliver the full transactional semantics required by the
 application, and may restrict the security identity of both to a single
 identity. To fully support such usage, portable applications that wish
-to include JDBC and JMS access in a single global transaction must not
+to include JDBC and Jakarta Messaging access in a single global transaction must not
 mark the corresponding transactional resources as “unshareable”.
 
 Although these restrictions are allowed, it is
-recommended that Jakarta EE Product Providers support JDBC and JMS resource
+recommended that Jakarta EE Product Providers support JDBC and Jakarta Messaging resource
 managers that provide full two-phase commit functionality and, as a
 result, do not impose these restrictions.
 
@@ -450,8 +448,8 @@ result, do not impose these restrictions.
 A Jakarta EE product must support the use of
 multiple XA-capable resource adapters in a single transaction. To
 support such a scenario, full two-phase commit support is required. A
-JMS provider may be provided as an XA-capable resource adapter. In such
-a case, it must be possible to include JMS operations in the same global
+Jakarta Messaging provider may be provided as an XA-capable resource adapter. In such
+a case, it must be possible to include Jakarta Messaging operations in the same global
 transaction as other resource adapters. While JDBC drivers are not
 required to be XA-capable, a JDBC driver may be delivered as an
 XA-capable resource adapter. In such a case, it must be possible to
