@@ -1,7 +1,7 @@
 == [[a2845]]Interoperability
 
 This chapter describes the interoperability
-requirements for the Jakarta EE™ Platform.
+requirements for the Jakarta™ EE Platform.
 
 === Introduction to Interoperability
 
@@ -90,14 +90,14 @@ are required as part of the Jakarta Enterprise Beans interoperability protocol i
 specification.
 * SOAP 1.1—SOAP is a presentation layer
 protocol for the exchange of XML messages. Support for SOAP layered on
-HTTP is required, as described in the JAX-RPC and Jakarta XML Web Services specifications.
+HTTP is required, as described in the Jakarta XML-based RPC and Jakarta XML Web Services specifications.
 * SOAP 1.2—SOAP 1.2 is the version of the SOAP
 protocol standardized through W3C and supported by Jakarta XML Web Services.
 * WS-I Basic Profile 1.1—The WS-I Basic
 Profile, in combination with the Simple SOAP Binding Profile and
 Attachment Profile, describes interoperability requirements for the use
 of SOAP 1.1, WSDL 1.1, and MIME-based SOAP with Attachments. It is
-required by the JAX-RPC and Jakarta XML Web Services specifications.
+required by the Jakarta XML-based RPC and Jakarta XML Web Services specifications.
 * WebSocket protocol—The WebSocket protocol
 enables two-way communication layered over TCP. It enables
 bi-directional communication over a single connection established by an
@@ -167,7 +167,7 @@ The following data formats must be supported:
 
 * XML 1.0—The XML format can be used to
 construct documents, RPC messages, etc. The JAXP API provides support
-for processing XML format data. The JAX-RPC API provides support for XML
+for processing XML format data. The Jakarta XML-based RPC API provides support for XML
 RPC messages, as well as a mapping between Java classes and XML.
 * JSON—JSON is a language-neutral plain text
 format commonly used to transfer structured data between a server and
