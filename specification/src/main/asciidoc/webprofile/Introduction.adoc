@@ -131,8 +131,8 @@ classes, component types and Jakarta Enterprise Beans container services are men
 requirement itself. Only if all of them fall inside the Jakarta Enterprise Beans Lite subset
 that requirement is considered applicable to Web Profile products.
 
-For example, since Jakarta Enterprise Beans Lite does not include
-any remote functionality, the _Jakarta Enterprise Beans_ annotation may not be used to inject
+For example, since EJB Lite does not include
+any remote functionality, the _EJB_ annotation may not be used to inject
 a remote reference, something that should be kept in mind when
 evaluating the requirements in the Platform specification section
 “Jakarta Enterprise Beans References”.
@@ -140,7 +140,7 @@ evaluating the requirements in the Platform specification section
 === Acknowledgements for Version 6
 
 Version 6 of this specification was created
-under the Java Community Specification Process as JSR-316. The spec leads for the
+under the Java Community Process as JSR-316. The spec leads for the
 JSR-316 Expert Group were Bill Shannon (Sun Microsystems, Inc.) and
 Roberto Chinnici (Sun Microsystems, Inc.). The expert group included the
 following members: Florent Benoit (Inria), Adam Bien (Individual), David
@@ -159,7 +159,7 @@ Technologies), Hani Suleiman (Individual).
 === Acknowledgements for Version 7
 
 Version 7 of this specification was created
-under the Java Community Specification Process as JSR-342. The Expert Group work for
+under the Java Community Process as JSR-342. The Expert Group work for
 this specification was conducted by means of the
 _http://javaee-spec.java.net_ project in order to provide transparency
 to the Java community. The specification leads for the JSR-342 Expert
@@ -178,7 +178,7 @@ Sutter (IBM), Spike Washburn (Individual), Kyung Koo Yoon (Tmax Soft).
 === Acknowledgements for Version 8
 
 Version 8 of this specification was created
-under the Java Community Specification Process as JSR-366. The Expert Group work for
+under the Java Community Process as JSR-366. The Expert Group work for
 this specification was conducted by means of the
 _http://javaee-spec.java.net_ and _https:javaee.github.io/javaee-spec_
 projects in order to provide transparency to the Java community. The
