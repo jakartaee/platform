@@ -1,7 +1,7 @@
 == Compatibility and Migration
 
 This chapter summarizes compatibility and
-migration issues for the Jakarta&trade; EE platform. The specifications for each
+migration issues for the Jakarta(TM) EE platform. The specifications for each
 of the component technologies included in Jakarta EE also describe
 compatibility and migration issues for that technology in much more
 detail.
