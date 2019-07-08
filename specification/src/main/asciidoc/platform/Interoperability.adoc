@@ -1,17 +1,17 @@
 == [[a2845]]Interoperability
 
 This chapter describes the interoperability
-requirements for the Java™ Platform, Enterprise Edition (Java EE).
+requirements for the Jakarta™ EE Platform.
 
 === Introduction to Interoperability
 
-The Java EE platform will be used by enterprise
+The Jakarta EE platform will be used by enterprise
 environments that support clients of many different types. The
 enterprise environments will add new services to existing Enterprise
 Information Systems (EISs). They will be using various hardware
 platforms and applications written in various languages.
 
-In particular, the Java EE platform may be used
+In particular, the Jakarta EE platform may be used
 in enterprise environments to bring together any of the following kinds
 of applications:
 
@@ -19,37 +19,37 @@ of applications:
 and Visual Basic.
 * applications running on a personal computer
 platform, or Unix® workstation.
-* standalone Java technology-based applications
-that are not directly supported by the Java EE platform.
+* standalone Java™ technology-based applications
+that are not directly supported by the Jakarta EE platform.
 
 It is the interoperability requirements of the
-Java EE platform, set out in this chapter, that make it possible for it
+Jakarta EE platform, set out in this chapter, that make it possible for it
 to provide indirect support for various types of clients, different
 hardware platforms, and a multitude of software applications. The
-interoperability features of the Java EE platform permit the underlying
+interoperability features of the Jakarta EE platform permit the underlying
 disparate systems to work together seamlessly, while hiding much of the
 complexity required to join these pieces together.
 
 The interoperability requirements for the
-current Java EE platform release allow:
+current Jakarta EE platform release allow:
 
-* Java EE applications to connect to legacy
+* Jakarta EE applications to connect to legacy
 systems using CORBA or low-level socket interfaces.
-* Java EE applications to connect to other Java
-EE applications across multiple Java EE products, whether from different
-Product Providers or from the same Provider, and multiple Java EE
+* Jakarta EE applications to connect to other Java
+Jakarta applications across multiple Jakarta EE products, whether from different
+Product Providers or from the same Provider, and multiple Jakarta EE
 platforms.
 
 In this version of the specification,
-interoperability between Java EE applications running in different
+interoperability between Jakarta EE applications running in different
 platforms is accomplished through the HTTP protocol, possibly using SSL,
-or the EJB interoperability protocol based on IIOP.
+or the Jakarta Enterprise Beans interoperability protocol based on IIOP.
 
 === Interoperability Protocols
 
-This specification requires that a Java EE
+This specification requires that a Jakarta EE
 product support a standard set of protocols and formats to ensure
-interoperability between Java EE applications and with other
+interoperability between Jakarta EE applications and with other
 applications that also implement these protocols and formats. The
 specification requires support for the following groups of protocols and
 formats:
@@ -67,7 +67,7 @@ supported by Java SE and by the underlying operating system.
 === [[a2865]]Internet and Web Protocols
 
 Standards based Internet protocols are the means
-by which different pieces of the platform communicate. The Java EE
+by which different pieces of the platform communicate. The Jakarta EE
 platform typically supports the following Internet protocols, as
 described in the corresponding technology specifications:
 
@@ -77,27 +77,27 @@ transport protocols for the Internet. TCP/IP is supported by Java SE and
 the underlying operating system.
 * HTTP 1.1—This is the core protocol of web
 communication. As with TCP/IP, HTTP 1.1 is supported by Java SE and the
-underlying operating system. A Java EE web container must be capable of
+underlying operating system. A Jakarta EE web container must be capable of
 advertising its HTTP services on the standard HTTP port, port 80.
 * HTTP/2—Server-side support for the HTTP/2
 protocol is required by the Servlet specification.
 * SSL 3.0, TLS 1.2—SSL 3.0 (Secure Socket Layer)
 represents the security layer for Web communication. It is available
 indirectly when using the _https_ URL as opposed to the _http_ URL. A
-Java EE web container must be capable of advertising its HTTPS service
+Jakarta EE web container must be capable of advertising its HTTPS service
 on the standard HTTPS port, port 443. Note that SSL 3.0 and only TLS 1.0
-are required as part of the EJB interoperability protocol in the EJB
+are required as part of the Jakarta Enterprise Beans interoperability protocol in the Jakarta Enterprise Beans
 specification.
 * SOAP 1.1—SOAP is a presentation layer
 protocol for the exchange of XML messages. Support for SOAP layered on
-HTTP is required, as described in the JAX-RPC and JAX-WS specifications.
+HTTP is required, as described in the Jakarta XML-based RPC and Jakarta XML Web Services specifications.
 * SOAP 1.2—SOAP 1.2 is the version of the SOAP
-protocol standardized through W3C and supported by JAX-WS.
+protocol standardized through W3C and supported by Jakarta XML Web Services.
 * WS-I Basic Profile 1.1—The WS-I Basic
 Profile, in combination with the Simple SOAP Binding Profile and
 Attachment Profile, describes interoperability requirements for the use
 of SOAP 1.1, WSDL 1.1, and MIME-based SOAP with Attachments. It is
-required by the JAX-RPC and JAX-WS specifications.
+required by the Jakarta XML-based RPC and Jakarta XML Web Services specifications.
 * WebSocket protocol—The WebSocket protocol
 enables two-way communication layered over TCP. It enables
 bi-directional communication over a single connection established by an
@@ -106,7 +106,7 @@ been standardized by IETF under RFC 6455.
 
 === [[a2875]]OMG Protocols (Proposed Optional)
 
-This specification requires the a full Java EE
+This specification requires the a full Jakarta EE
 product to support the following Object Management Group (OMG) based
 protocols:
 
@@ -120,16 +120,16 @@ and is typically found in an intranet setting. IIOP can be used as an
 RMI protocol using the RMI-IIOP technology. IIOP is defined in Chapters
 13 and 15 of the CORBA 2.3.1 specification, available at
 _http://omg.org/cgi-bin/doc?formal/99-10-07_ .
-* EJB interoperability protocol—The EJB
+* Jakarta Enterprise Beans interoperability protocol—The Jakarta Enterprise Beans
 interoperability protocol is based on IIOP (GIOP 1.2) and the CSIv2
-CORBA Secure Interoperability specification. The EJB interoperability
-protocol is defined in the EJB specification.
+CORBA Secure Interoperability specification. The Jakarta Enterprise Beans interoperability
+protocol is defined in the Jakarta Enterprise Beans specification.
 * CORBA Interoperable Naming Service
 protocol—The COSNaming-based INS protocol is an IIOP-based protocol for
-accessing a name service. The EJB interoperability protocol requires the
-use of the INS protocol for lookup of EJB objects using the JNDI API. In
+accessing a name service. The Jakarta Enterprise Beans interoperability protocol requires the
+use of the INS protocol for lookup of Jakarta Enterprise Beans objects using the JNDI API. In
 addition, it must be possible to use the Java IDL COSNaming API to
-access the INS name service. All Java EE products must provide a name
+access the INS name service. All Jakarta EE products must provide a name
 service that meets the requirements of the Interoperable Naming Service
 specification, available at
 _http://omg.org/cgi-bin/doc?formal/2000-06-19_ . This name service may
@@ -139,7 +139,7 @@ specification.
 
 === Java Technology Protocols
 
-This specification requires the Java EE platform
+This specification requires the Jakarta EE platform
 to support the JRMP protocol, which is the Java technology-specific
 Remote Method Invocation (RMI) protocol. JRMP is a required component of
 Java SE and is one of two required RMI protocols. (IIOP is the other
@@ -159,7 +159,7 @@ _http://docs.oracle.com/javase/8/docs/technotes/guides/rmi_ .
 === [[a2884]]Data Formats
 
 In addition to the protocols that allow
-communication between components, this specification requires Java EE
+communication between components, this specification requires Jakarta EE
 platform support for a number of data formats. These formats provide the
 definition for data exchanged between components.
 
@@ -167,27 +167,27 @@ The following data formats must be supported:
 
 * XML 1.0—The XML format can be used to
 construct documents, RPC messages, etc. The JAXP API provides support
-for processing XML format data. The JAX-RPC API provides support for XML
+for processing XML format data. The Jakarta XML-based RPC API provides support for XML
 RPC messages, as well as a mapping between Java classes and XML.
 * JSON—JSON is a language-neutral plain text
 format commonly used to transfer structured data between a server and
-web application. The JSON-P API provides support for the parsing,
-generation, transformation, and querying of JSON text. The JSON-B API
+web application. The Jakarta JSON Processing API provides support for the parsing,
+generation, transformation, and querying of JSON text. The Jakarta JSON Binding API
 provides support for mapping between JSON text and Java objects.
 * HTML 4.01—This represents the minimum web
-browser standard document format. While all Java EE APIs with the
-exception of JSF are agnostic to the version of the browser document
-format, Java EE web clients must be able to display HTML 4.01 documents.
-* Image file formats—The Java EE platform must
+browser standard document format. While all Jakarta EE APIs with the
+exception of Jakarta Server Faces are agnostic to the version of the browser document
+format, Jakarta EE web clients must be able to display HTML 4.01 documents.
+* Image file formats—The Jakarta EE platform must
 support GIF, JPEG, and PNG images. Support for these formats is provided
 by the _java.awt.image_ APIs (see the URL:
 _http://docs.oracle.com/javase/8/docs/api/java/awt/image/package-summary.html_
-) and by Java EE web clients.
+) and by Jakarta EE web clients.
 * JAR files—JAR (Java Archive) files are the
 standard packaging format for Java technology-based application
 components, including the ejb-jar specialized format, the Web
 application archive (WAR) format, the Resource Adapter archive (RAR),
-and the Java EE enterprise application archive (EAR) format. JAR is a
+and the Jakarta EE enterprise application archive (EAR) format. JAR is a
 platform-independent file format that permits many files to be
 aggregated into one file. This allows multiple Java components to be
 bundled into one JAR file and downloaded to a browser in a single HTTP

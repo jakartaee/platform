@@ -1,0 +1,46 @@
+= Binary Compatibility Levels
+
+This is a classification of the levels of binary compatibility support for Java EE 8 classic applications in terms of the level of difficulty/complexity of the associated implementation and tools.
+
+== Level 0 - Jakarta EE 8 Only
+* No transformation required
+* Requires a Jakarta EE 8 container
+* No mandated support for backwards compatibility
+** Up to implementors to decide what level of support to provide
+
+== Level 1 - Jakarta EE 8 Translation to EE 9
+* Requires a direct translation of javax.* packages to jakarta.* analog
+* Requires transformation of META-INF/services to jakarta analogs
+* Requires transformation of properties files referencing javax based properties
+* Requires transformation of server specific properties that are classic javax based properties
+** This could be a specfic build or deployment step that processes an EE 8 app
+* Requires only a Jakarta EE 9 container
+* Requires the big bang javax to jakarta approach
+** This simplifies the EE9 container
+
+== Level 2 - Colocated Jakarta EE 8/9 with Isolation
+* Requires an isolated Jakarta EE 8 container
+* Requires an isolated  Jakarta EE 9 container
+* No interaction of EE 8 and EE 9 components
+* Requires the big bang javax to jakarta approach
+** Simplifies the EE9 container implementation in terms of isolating javax packages from jakarta packages.
+
+== Level 3 - Jakarta EE 9 With Mapping from EE 8
+* Requires a Jakarta EE 9 container
+* Requires a Jakarta EE 8 to EE 9 compatibility layer
+* Requires either compatibility or mapping layer for services and properties
+* Requires mapping of server specific properties that are classic javax based properties
+* Components interact as peers as EE8 components are exposed as EE9
+** Unclear what holes exist in a compatibility layer solution
+*** Likely some runtime overhead cost
+* Could work with either big bang or incremental approach
+** Incremental approach has increasing complexity as more javax APIs evolve
+*** How to track how an EE8 app is handled beyond EE 9 is the issue
+** Big bang would have the simplest evolution path beyond EE 9
+
+== Level 4 - Colocated Jakarta EE 8 and EE 9 with API Mixing
+* Supports side by side javax.* and jakarta.* components in one application
+* Requires a Jakarta EE 9 container with native support for EE 8 components
+* Theoretically does not require any pre-processing of EE 8 application
+* Allows incremental approach
+* Likely large technical challenges in bridging between the EE 8 and 9 components
