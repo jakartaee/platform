@@ -210,7 +210,7 @@ transactional resource objects in class instance fields.
 thread used by a web component. Transaction context propagation
 requirements are described above and in the Jakarta Enterprise Beans specification.
 
-=== Enterprise JavaBeans™ Components
+=== Jakarta Enterprise Beans
 
 The Jakarta EE Product Provider must provide
 support for transactions as defined in the Jakarta Enterprise Beans specification.
@@ -242,7 +242,7 @@ transaction.
 A Jakarta EE product must provide a transaction
 manager that is capable of coordinating two-phase commit operations
 across multiple XA-capable JDBC databases. If a JDBC driver supports the
-Java Transaction API’s XA interfaces (in the _javax.transaction.xa_
+Jakarta Transactions API’s XA interfaces (in the _javax.transaction.xa_
 package), then the Jakarta EE product must be capable of using the XA
 interfaces provided by the JDBC driver to accomplish two-phase commit
 operations. The Jakarta EE product may discover the XA capabilities of JDBC
@@ -288,7 +288,7 @@ multiple Product Providers.
 
 We recommend that Jakarta EE Product Providers use
 the IIOP transaction propagation protocol defined by OMG and described
-in the OTS specification (and implemented by the Java Transaction
+in the OTS specification (and implemented by the Jakarta Transactions
 Service), for transaction interoperability when using the Jakarta Enterprise Beans
 interoperability protocol based on RMI-IIOP.
 
