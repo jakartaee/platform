@@ -24,7 +24,7 @@ not generally useful in a particular domain.
 
 A profile may also add one or more
 technologies which are not present in the platform itself. For example,
-a hypothetical Jakarta EE Portal Profile would likely include the Portlet
+a hypothetical Profile would likely include the Portlet
 API (JSR-286).
 
 Additionally, a profile may tag certain
@@ -33,7 +33,7 @@ profile may or may not include the technology in question. Naturally, if
 they do, they need to obey all the relevant requirements mandated by the
 profile specification.
 
-A product may implement two or more Jakarta EE
+A product may implement two or more 
 profiles, or the full platform and one or more Jakarta EE profiles, as long
 as their combined requirements do not give rise to conflicts.
 
@@ -321,7 +321,7 @@ object for use by application clients. Application clients can invoke
 enterprise beans that start transactions, and they can use the
 transaction facilities of the JDBC API. If a JDBC API transaction is
 open when an application client invokes an enterprise bean, the
-transaction context is not required to be propagated to the EJB server.
+transaction context is not required to be propagated to the Jakarta Enterprise Beans server.
 
 === Resources, Naming, and Injection
 
