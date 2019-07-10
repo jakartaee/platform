@@ -76,7 +76,7 @@ _http://download.oracle.com/otndocs/jcp/jaxm-1.3-mrel-spec-oth-JSpec/_ .
 Jakarta™ XML Registries 1.0 
 . Available at _http://jcp.org/en/jsr/detail?id=93_ .
 
- _JAX-RS: Jakarta RESTful Web
+_JAX-RS: Jakarta RESTful Web
 Services 2.1_ (JAX-RS specification). Available at
 _http://jcp.org/en/jsr/summary?id=370_ .
 
