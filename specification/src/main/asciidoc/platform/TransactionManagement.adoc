@@ -35,7 +35,7 @@ managers via connections.
 
 === [[a475]]Servlets/Server Pages Accessing Enterprise Beans
 
-image:images/Platform_Spec-8.png[image]
+image:../images/Platform_Spec-8.png[image]
 
 The Application Component Provider specifies, using a combination of
 programmatic and declarative transaction demarcation APIs, how the platform
