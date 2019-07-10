@@ -132,7 +132,7 @@ An application with this structure:
 
 bigapp.ear
 
- enterprisebeans
+ ejbs
 
  inventory.jar
 
@@ -147,8 +147,8 @@ bigapp.ear
 
 
 has a default application name of "bigapp",
-and defines four modules with default names "enterprisebeans/inventory",
-"enterprisebeans/accounts", "ui/store", and "ui/admin".
+and defines four modules with default names "ejbs/inventory",
+"ejbs/accounts", "ui/store", and "ui/admin".
 
 === Application Assembly
 
@@ -463,7 +463,7 @@ technique to load classes.
 
 The following example illustrates a simple
 use of the bundled library mechanism to reference a library of utility
-classes that are shared between enterprise beans in two separate enterprisebean-jar
+classes that are shared between enterprise beans in two separate ejb-jar
 files.
 
 
@@ -472,9 +472,9 @@ app1.ear:
 
  META-INF/application.xml
 
- enterprisebean1.jar Class-Path: util.jar
+ ejb1.jar Class-Path: util.jar
 
- enterprisebean2.jar Class-Path: util.jar
+ ejb2.jar Class-Path: util.jar
 
  util.jar
 
@@ -484,20 +484,20 @@ The next example illustrates a more complex
 use of the _Class-Path_ mechanism. In this example the Developer has
 chosen to package the enterprise bean client view classes in a separate
 JAR file and reference that JAR file from the other JAR files that need
-those classes. Those classes are needed both by _enterprisebean2.jar_ , packaged in
-the same application as _enterprisebean1.jar_ , and by _enterprisebean3.jar_ and
+those classes. Those classes are needed both by _ejb2.jar_ , packaged in
+the same application as _ejb1.jar_ , and by _ejb3.jar_ and
 _jakartaservlet1.jar_ , packaged in a different application. Those classes are
-also needed by _enterprisebean1.jar_ itself because they define the remote
-interface of the enterprise beans in _enterprisebean1.jar_ , and the developer has
+also needed by _ejb1.jar_ itself because they define the remote
+interface of the enterprise beans in _ejb1.jar_ , and the developer has
 chosen the by reference model of making these classes available, as
-described in the Jakarta Enterprise Beans spec. The deployment descriptor for _enterprisebean1.jar_
-names the client view JAR file in the _enterprisebean-client-jar_ element.
+described in the Jakarta Enterprise Beans spec. The deployment descriptor for _ejb1.jar_
+names the client view JAR file in the _ejb-client-jar_ element.
 
 The _Class-Path_ mechanism must be used by
 components in _app3.ear_ to reference the client view JAR file that
-corresponds to the enterprise beans packaged in _enterprisebean1.jar_ of _app2.ear_
+corresponds to the enterprise beans packaged in _ejb1.jar_ of _app2.ear_
 . These enterprise beans are referenced by enterprise beans in
-_enterprisebean3.jar_ and by the Jakarta Servlets packaged in _webapp.war_ .
+_ejb3.jar_ and by the Jakarta Servlets packaged in _webapp.war_ .
 
 
 
@@ -505,16 +505,16 @@ app2.ear:
 
  META-INF/application.xml
 
- enterprisebean1.jar Class-Path: enterprisebean1_client.jar
+ ejb1.jar Class-Path: ejb1_client.jar
 
  deployment descriptor contains:
 
 
-<enterprisebean-client-jar>enterprisebean1_client.jar</enterprisebean-client-jar>
+<ejb-client-jar>ejb1_client.jar</ejb-client-jar>
 
- enterprisebean1_client.jar
+ ejb1_client.jar
 
- enterprisebean2.jar Class-Path: enterprisebean1_client.jar
+ ejb2.jar Class-Path: ejb1_client.jar
 
 
 
@@ -522,11 +522,11 @@ app3.ear:
 
  META-INF/application.xml
 
- enterprisebean1_client.jar
+ ejb1_client.jar
 
- enterprisebean3.jar Class-Path: enterprisebean1_client.jar
+ ejb3.jar Class-Path: ejb1_client.jar
 
- webapp.war Class-Path: enterprisebean1_client.jar
+ webapp.war Class-Path: ejb1_client.jar
 
  WEB-INF/web.xml
 
@@ -544,7 +544,7 @@ app1.ear:
 
  META-INF/application.xml
 
- enterprisebean1.jar :
+ ejb1.jar :
 
  META-INF/MANIFEST.MF:
 
@@ -554,7 +554,7 @@ app1.ear:
 
  util-Specification-Version: 1.4
 
- META-INF/enterprisebean-jar.xml
+ META-INF/ejb-jar.xml
 
 
 
@@ -599,7 +599,7 @@ extension dependency mechanism.
 
 The following sections describe the
 requirements for each container type. In all cases, access to classes is
-governed by the rules of the Jakarta language and the Java virtual machine.
+governed by the rules of the Java language and the Java virtual machine.
 In all cases, access to classes and resources is governed by the rules
 of the Java security model.
 
@@ -613,9 +613,8 @@ if libraries need to access classes packaged in the application modules.
 
 Components in the web container must have
 access to the following classes
-
-and resources. Note that as of Java EE 6, Jakarta Enterprise Beans
-components may be packaged in a web component module. Such Jakarta Enterprise Beans
+and resources. Note that as of Java EE 6, Java Enterprise Beans
+components may be packaged in a web component module. Such Java Enterprise Beans
 components have the same access as other components in the web
 container. See the Jakarta Enterprise Beans specification for further detail.
 
@@ -882,9 +881,10 @@ descriptor to specify a unique name for one of the modules.
 of all components in every module contained in the application. For each
 component dependency, there must only be one corresponding component
 that fulfills that dependency in the scope of the application.
-. For each _enterprisebean-link_ , there must be only one
-matching _enterprisebean-name_ in the scope of the entire application (see
-link:#a936[See Jakarta™ Enterprise Bean References]”).
+. For each _ejb-link_ , there must be only one
+matching _ejb-name_ in the scope of the entire application (see
+link:#a936[See Enterprise JavaBeans™
+(EJB) References]”).
 . Dependencies that are not linked to internal
 components must be handled by the Deployer as external dependencies that
 must be met by resources previously installed on the platform. External
@@ -1177,7 +1177,7 @@ components listed in the Jakarta EE module deployment descriptor, or marked
 via annotations and discovered as described in the previous requirement,
 according to the deployment requirements of the respective Jakarta EE
 component specification. If the module is a type that contains JAR
-format files (for example, web and Jakarta Connector modules), all classes in
+format files (for example, web and Jakarta connector modules), all classes in
 _.jar_ files within the module referenced from other JAR files within
 the module using the _Class-Path_ manifest header must be included in
 the deployment. If the module, or any JAR format files within the
@@ -1191,7 +1191,7 @@ via annotations discovered in requirement 2.
 . The deployment tool must allow the Deployer
 to deploy the same module multiple times, as multiple independent
 applications, possibly with different configurations. For example, the
-enterprise beans in an enterprisebean-jar file might be deployed multiple times
+enterprise beans in an ejb-jar file might be deployed multiple times
 under different JNDI names and with different configurations of their
 resources.
 
@@ -1224,7 +1224,7 @@ _META-INF/MANIFEST.MF_ file with a _Main-Class_ attribute, or contains a
 _META-INF/application-client.xml_ file, consider the .jar file to be an
 application client module.
 . If the _.jar_ file contains a
-_META-INF/enterprisebean-jar.xml_ file, or contains any class with an Jakarta Enterprise Beans
+_META-INF/ejb-jar.xml_ file, or contains any class with an Jakarta Enterprise Beans
 component-defining annotation ( _Stateless_ , etc.), consider the .jar
 file to be an Jakarta Enterprise Beans module.
 . All other _.jar_ files are ignored unless
@@ -1284,7 +1284,7 @@ via annotations discovered in requirement 3.
 . The deployment tool must allow the Deployer
 to deploy the same Jakarta EE application multiple times, as multiple
 independent applications, possibly with different configurations. For
-example, the enterprise beans in an enterprisebean-jar file might be deployed
+example, the enterprise beans in an ejb-jar file might be deployed
 multiple times under different JNDI names and with different
 configurations of their resources.
 . When presenting security role descriptions to
