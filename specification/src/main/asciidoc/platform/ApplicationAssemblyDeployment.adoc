@@ -1177,7 +1177,7 @@ components listed in the Jakarta EE module deployment descriptor, or marked
 via annotations and discovered as described in the previous requirement,
 according to the deployment requirements of the respective Jakarta EE
 component specification. If the module is a type that contains JAR
-format files (for example, web and Jakarta connector modules), all classes in
+format files (for example, web and connector modules), all classes in
 _.jar_ files within the module referenced from other JAR files within
 the module using the _Class-Path_ manifest header must be included in
 the deployment. If the module, or any JAR format files within the
