@@ -45,7 +45,7 @@ specification). Available at _http://jcp.org/en/jsr/detail?id=343_ .
 _Jakarta™ Transactions, Version 1.2_ (JTA
 specification). Available at _http://jcp.org/en/jsr/detail?id=907_ .
 
- _Jakarta™ Transaction Service, Version 1.0_ (JTS
+_Jakarta™ Transaction Service, Version 1.0_ (JTS
 specification). Available at
 _http://www.oracle.com/technetwork/java/javaee/jts-spec095-1508547.pdf_
 .
@@ -141,7 +141,7 @@ _Jakarta Concurrency 1.0_
 (Concurrency Utilities specification). Available at
 _http://jcp.org/en/jsr/detail?id=236_ .
 
- _Jakarta Batch 1.0
+_Jakarta Batch 1.0
 rev A_ (Batch specification). Available at
 _http://jcp.org/en/jsr/detail?id=352_ .
 
@@ -156,7 +156,7 @@ _http://docs.oracle.com/javase/8/docs/technotes/guides/extensions/index.html_
 JAR File Specification, Available at
 _http://docs.oracle.com/javase/8/docs/technotes/guides/jar/jar.html_ .
 
- _Java The Common Object Request Broker: Architecture
+_Java The Common Object Request Broker: Architecture
 and Specification_ (CORBA 2.3.1 specification), Available at
 _http://www.omg.org/cgi-bin/doc?formal/99-10-07_ .
 
@@ -170,7 +170,7 @@ Available at _http://www.omg.org/cgi-bin/doc?ptc/2000-01-08_ .
 _Java™ Language To IDL Mapping Specification_ ,
 Available at _http://www.omg.org/cgi-bin/doc?ptc/2000-01-06_ .
 
- _Interoperable Naming Service,_ Available at
+_Interoperable Naming Service,_ Available at
 _http://www.omg.org/cgi-bin/doc?ptc/00-08-07_ .
 
 _Transaction Service Specification_ (OTS
