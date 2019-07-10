@@ -4,19 +4,19 @@ This specification refers to the following
 documents. The terms used to refer to the documents in this
 specification are included in parentheses.
 
- _Jakarta™ Platform, Enterprise Edition
+_Jakarta™ Platform, Enterprise Edition
 Specification Version 8_ (this specification). Available at
 _http://jcp.org/en/jsr/detail?id=366_ .
 
- _Java™ Platform, Standard Edition, v8 API
+_Java™ Platform, Standard Edition, v8 API
 Specification_ (Java SE specification). Available at
 _http://docs.oracle.com/javase/8/docs/[]http://docs.oracle.com/javase/8/docs/._
 
- _Jakarta™  Enterprise Beans, Version
+_Jakarta™  Enterprise Beans, Version
 3.2_ (EJB specification). Available at
 _http://jcp.org/en/jsr/detail?id=345_ .
 
- _Jakarta Server Pages™ , Version 2.3_
+_Jakarta Server Pages™ , Version 2.3_
 (JSP specification). Available at _http://jcp.org/en/jsr/detail?id=245_
 .
 
