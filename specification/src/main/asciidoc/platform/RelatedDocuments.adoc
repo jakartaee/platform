@@ -20,29 +20,29 @@ _Jakarta Server Pages™ , Version 2.3_
 (JSP specification). Available at _http://jcp.org/en/jsr/detail?id=245_
 .
 
- _Jakarta Expression Language, Version
+_Jakarta Expression Language, Version
 3.0_ (EL specification). Available at
 _http://jcp.org/en/jsr/detail?id=341_ .
 
- _Jakarta Annotations
+_Jakarta Annotations
  1.3_ . Available at _http://jcp.org/en/jsr/detail?id=250_
 .
 
- _Jakarta™ Servlet, Version 4.0_
+_Jakarta™ Servlet, Version 4.0_
 (Servlet specification). Available at
 _http://jcp.org/en/jsr/detail?id=369_ .
 
- _JDBC™ 4.2 API_ (JDBC specification). Available
+_JDBC™ 4.2 API_ (JDBC specification). Available
 at _http://jcp.org/en/jsr/detail?id=221_ .
 
- _Jakarta™ Naming and Directory Interface 1.2
+_Jakarta™ Naming and Directory Interface 1.2
 Specification_ (JNDI specification). Available at
 _http://docs.oracle.com/javase/8/docs/technotes/guides/jndi/index.html[]http://docs.oracle.com/javase/8/docs/technotes/guides/jndi/index.html._
 
- _Jakarta™ Messaging, Version 2.0_ (JMS
+_Jakarta™ Messaging, Version 2.0_ (JMS
 specification). Available at _http://jcp.org/en/jsr/detail?id=343_ .
 
- _Jakarta™ Transactions, Version 1.2_ (JTA
+_Jakarta™ Transactions, Version 1.2_ (JTA
 specification). Available at _http://jcp.org/en/jsr/detail?id=907_ .
 
  _Jakarta™ Transaction Service, Version 1.0_ (JTS
@@ -50,16 +50,16 @@ specification). Available at
 _http://www.oracle.com/technetwork/java/javaee/jts-spec095-1508547.pdf_
 .
 
- _Jakarta™ Mail Version 1.6_
+_Jakarta™ Mail Version 1.6_
 (Jakarta Mail specification). Available at
 _http://jcp.org/en/jsr/detail?id=919_ .
 
- _Jakarta™ Activation
+_Jakarta™ Activation
 Version 1.1_ (JAF specification). Available at
 _http://www.oracle.com/technetwork/java/javase/tech/index-jsp-138795.html_
 .
 
- _Jakarta™ EE Connector Architecture 1.7_
+_Jakarta™ EE Connector Architecture 1.7_
 (Connector specification). Available at
 _http://jcp.org/en/jsr/detail?id=322_ .
 
@@ -128,16 +128,16 @@ _http://jcp.org/en/jsr/detail?id=365_ .
 Jakarta Dependency Injection 1.0 (DI
 specification). Available at _http://jcp.org/en/jsr/detail?id=330_ .
 
- _Jakarta WebSocket 1.1_ (WebSocket
+_Jakarta WebSocket 1.1_ (WebSocket
 specification). Available at _http://jcp.org/en/jsr/detail?id=356_ .
 
- _Jakarta JSON Processing 1.1_ (JSON-P
+_Jakarta JSON Processing 1.1_ (JSON-P
 specification). Available at _http://jcp.org/en/jsr/detail?id=374_ .
 
- _Jakarta JSON Binding 1.0_ (JSON-B
+_Jakarta JSON Binding 1.0_ (JSON-B
 specification). Available at _http://jcp.org/en/jsr/detail?id=367_ .
 
- _Jakarta Concurrency 1.0_
+_Jakarta Concurrency 1.0_
 (Concurrency Utilities specification). Available at
 _http://jcp.org/en/jsr/detail?id=236_ .
 
@@ -164,20 +164,20 @@ CORBA 2.6 - Chapter 26 - Secure
 Interoperability, Available at
 _http://www.omg.org/cgi-bin/doc?formal/01-12-30_ .
 
- _IDL To Java™ Language Mapping Specification_ ,
+_IDL To Java™ Language Mapping Specification_ ,
 Available at _http://www.omg.org/cgi-bin/doc?ptc/2000-01-08_ .
 
- _Java™ Language To IDL Mapping Specification_ ,
+_Java™ Language To IDL Mapping Specification_ ,
 Available at _http://www.omg.org/cgi-bin/doc?ptc/2000-01-06_ .
 
  _Interoperable Naming Service,_ Available at
 _http://www.omg.org/cgi-bin/doc?ptc/00-08-07_ .
 
- _Transaction Service Specification_ (OTS
+_Transaction Service Specification_ (OTS
 specification), Available at
 _http://www.omg.org/cgi-bin/doc?formal/2001-11-03_ .
 
- _The SSL Protocol, Version 3.0._ Available at
+_The SSL Protocol, Version 3.0._ Available at
 _http://tools.ietf.org/html/rfc6101_ .
 
 Architectural Styles and the Design of
