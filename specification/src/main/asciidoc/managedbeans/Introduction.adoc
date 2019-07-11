@@ -1,0 +1,29 @@
+== Introduction
+
+This specification defines Managed Beans for the Jakarta(TM) EE Platform.
+
+=== What are Managed Beans?
+
+Managed Beans are container-managed objects with minimal requirements, otherwise known under the acronym “POJOs” (Plain Old Java Objects).
+They support a small set of basic services, such as resource injection, lifecycle callbacks, and interceptors.
+Other, more advanced, aspects will be introduced in companion specifications, so as to keep the basic model as simple and as universally useful as possible.
+
+=== Why Managed Beans?
+
+Managed Beans offer a lightweight component model aligned with the rest of the Jakarta EE Platform.
+
+By supporting the common resource injection and lifecycle services, Managed Beans fit well into the Jakarta EE programming model.
+At the same time, their lightweight nature makes them a natural starting point to encapsulate application functionality, with the knowledge that they can be morphed into more powerful components if and when the need occurs.
+In this sense, they can be seen as a Jakarta EE platform-enhanced version of the JavaBeans component model found on the Java(TM) SE platform.
+
+It won’t be missed by the reader that Managed Beans have a precursor in the homonymous facility found in the Jakarta Server Faces technology.
+Indeed, the web tier has seen ample use of lightweight components, tied together with a variety of mechanisms.
+Managed Beans as defined in this specification represent a generalization of those found in Jakarta Server Faces; in particular, Managed Beans can be used anywhere in a Jakarta EE application, not just in web modules.
+
+In introducing Managed Beans, we also have a longer-term goal: to provide a common foundation for the different kinds of components that exist in the Jakarta EE platform, allowing us to align them better and reconcile their differences as much as possible.
+
+Many of the distinctions that exist between component types in Jakarta EE are historical in nature.
+In hindsight, the platform might have adopted a more uniform model where components start their existence as undistinguished Java objects and grow into more powerful entities by drawing on container-provided services.
+The annotation-based programming model introduced in version 5 of the Java(TM) EE Platform naturally lends itself to such an interpretation.
+
+Managed Beans offers us a way to carry out such a refactoring of the existing components over time while offering developers some genuinely useful functionality in the short term.
