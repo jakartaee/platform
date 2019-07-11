@@ -28,7 +28,7 @@ The arrows represent required access to other
 parts of the Jakarta EE platform. The Application Client Container provides
 Application Clients with direct access to the Jakarta EE required Database
 through the Java API for connectivity with database systems, the JDBC™ 
-API. Similar access to databases is provided to Jakarta Server Pages, Jakarta Server Faces
+API. Similar access to databases is provided to server pages, server faces
 applications, and servlets by the Web Container, and to enterprise beans
 by the Enterprise Beans Container.
 
@@ -145,10 +145,10 @@ applications or devices that support the applet programming model.
 Applets can be used to provide a powerful user interface for Jakarta EE
 applications. (Simple HTML pages can also be used to provide a more
 limited user interface for Jakarta EE applications.)
-* servlets, Jakarta Server Pages pages, Jakarta Server Faces applications,
+* servlets, server pages, server faces applications,
 filters, and web event listeners typically execute in a web container
-and may respond to HTTP requests from web clients. Servlets, Jakarta Server Pages pages,
-Jakarta Server Faces applications, and filters may be used to generate HTML pages that
+and may respond to HTTP requests from web clients. Servlets, server pages,
+server faces applications, and filters may be used to generate HTML pages that
 are an application’s user interface. They may also be used to generate
 XML or other format data that is consumed by other application
 components. A special kind of servlet provides support for web services
@@ -846,7 +846,7 @@ details on the network protocol support required for interoperability.
 
 The Jakarta EE Product Provider is required to
 publish the installed application components on the industry-standard
-protocols. This specification defines the mapping of servlets and Jakarta Server Pages
+protocols. This specification defines the mapping of servlets and server
 pages to the HTTP and HTTPS protocols, and the mapping of Jakarta Enterprise Beans components
 to IIOP and SOAP protocols.
 
