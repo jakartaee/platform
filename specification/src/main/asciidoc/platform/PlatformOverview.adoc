@@ -92,7 +92,7 @@ transactions in a servlet container. In isolation, neither the Jakarta Servlet
 specification nor the Jakarta Transactions specification defines a
 complete programming model for portable applications. This specification
 fills that gap by introducing its own set of requirements that pertain
-to the combination of Jakarta Servlets and Jakarta Transactions. These requirements must be
+to the combination of servlets and Jakarta Transactions. These requirements must be
 satisfied by any Jakarta EE profile-based product that includes those two
 technologies, thus offering application developers a more complete
 programming model shared across all relevant Jakarta EE profiles.
@@ -145,9 +145,9 @@ applications or devices that support the applet programming model.
 Applets can be used to provide a powerful user interface for Jakarta EE
 applications. (Simple HTML pages can also be used to provide a more
 limited user interface for Jakarta EE applications.)
-* Jakarta Servlets, Jakarta Server Pages pages, Jakarta Server Faces applications,
+* servlets, Jakarta Server Pages pages, Jakarta Server Faces applications,
 filters, and web event listeners typically execute in a web container
-and may respond to HTTP requests from web clients. Jakarta Servlet, Jakarta Server Pages pages,
+and may respond to HTTP requests from web clients. Servlets, Jakarta Server Pages pages,
 Jakarta Server Faces applications, and filters may be used to generate HTML pages that
 are an application’s user interface. They may also be used to generate
 XML or other format data that is consumed by other application
@@ -386,11 +386,11 @@ parts: an application-level interface used by the application components
 to send mail, and a service provider interface used at the Jakarta EE SPI
 level.
 
-=== Jakarta Activation
+=== JavaBeans™ Activation Framework (JAF)
 
-The Jakarta Activation API provides a framework for handling
+The Java Activation API provides a framework for handling
 data in different MIME types, originating in different formats and
-locations. The Jakarta Mail API makes use of the Jakarta Activation API. The Jakarta Activation API is
+locations. The JavaMail API makes use of the JAF API. The JAF API is
 included in Java SE and so is available to Jakarta EE applications.
 
 === XML Processing
@@ -472,7 +472,7 @@ of web services as well as web service endpoints. Several Java
 technologies work together to provide support for web services. Jakarta
 XML Web Services and Jakarta XML-based RPC
 both provide support for web service calls using the SOAP/HTTP
-protocol. Jakarta XML Web Services, which is included in Java SE, is the primary API for
+protocol. JAX-WS, which is included in Java SE, is the primary API for
 web services and is a follow-on to Jakarta XML-based RPC. Jakarta XML Web Services offers extensive web
 services functionality, with support for multiple bindings/protocols.
 Jakarta XML Web Services and Jakarta XML-based RPC are fully interoperable when using the SOAP 1.1 over
@@ -481,8 +481,8 @@ Support for Jakarta XML-based RPC has been made optional as of Java EE 7. See
 link:#a2331[See Pruned Jakarta
 Technologies]”.
 
-Jakarta XML Web Services and the Jakarta XML
-Binding define the mapping between Java classes and XML as used
+JAX-WS and the Java Architecture for XML
+Binding (JAXB) define the mapping between Java classes and XML as used
 in SOAP calls, and provide support for 100% of XML Schema. JAXB is
 included in Java SE. Jakarta SOAP with Attachments,
 which is also included in Java SE, provides support for manipulating low
@@ -846,7 +846,7 @@ details on the network protocol support required for interoperability.
 
 The Jakarta EE Product Provider is required to
 publish the installed application components on the industry-standard
-protocols. This specification defines the mapping of Jakarta Servlets and Jakarta Server Pages
+protocols. This specification defines the mapping of servlets and Jakarta Server Pages
 pages to the HTTP and HTTPS protocols, and the mapping of Jakarta Enterprise Beans components
 to IIOP and SOAP protocols.
 
