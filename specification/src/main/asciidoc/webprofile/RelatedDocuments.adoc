@@ -62,7 +62,7 @@ specification). Available at _http://jcp.org/en/jsr/detail?id=318_ .
 
 Jakarta Contexts and Dependency Injection 
 2.0 (CDI specification). Available at
-_http://jcp.org/en/jsr/detail?id=365_ .
+_http://jcp.org/en/jsr/detail?id=365_ . 
 
 Jakarta Dependency Injection 1.0 (DI
 specification). Available at _http://jcp.org/en/jsr/detail?id=330_ .
