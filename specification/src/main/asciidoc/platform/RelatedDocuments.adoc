@@ -4,149 +4,85 @@ This specification refers to the following
 documents. The terms used to refer to the documents in this
 specification are included in parentheses.
 
- _Java™ Platform, Enterprise Edition
-Specification Version 8_ (this specification). Available at
-_http://jcp.org/en/jsr/detail?id=366_ .
+Jakarta™ EE Platform Specification Version 8. Available at: <link needed>.
 
- _Java™ Platform, Standard Edition, v8 API
-Specification_ (Java SE specification). Available at
-_http://docs.oracle.com/javase/8/docs/[]http://docs.oracle.com/javase/8/docs/._
+Java™ Platform, Standard Edition, v8 API Specification (Java SE specification). Available at: http://docs.oracle.com/javase/8/docs/.
 
- _Enterprise JavaBeans™ Specification, Version
-3.2_ (EJB specification). Available at
-_http://jcp.org/en/jsr/detail?id=345_ .
+Jakarta™ Enterprise Beans Specification, Version 3.2. Available at: <link needed>.
 
- _JavaServer Pages™ Specification, Version 2.3_
-(JSP specification). Available at _http://jcp.org/en/jsr/detail?id=245_
-.
+Jakarta™ Server Pages Specification, Version 2.3. Available at: <link needed>.
 
- _Expression Language Specification, Version
-3.0_ (EL specification). Available at
-_http://jcp.org/en/jsr/detail?id=341_ .
+Jakarta™ Expression Language Specification, Version 3.0. Available at: <link needed>.
 
- _Common Annotations for the Java Platform
-Specification 1.3_ . Available at _http://jcp.org/en/jsr/detail?id=250_
-.
+Jakarta™ Annotations Specification, Version 1.3. Available at: <link needed>.
 
- _Java™ Servlet Specification, Version 4.0_
-(Servlet specification). Available at
-_http://jcp.org/en/jsr/detail?id=369_ .
+Jakarta™ Servlet Specification, Version 4.0. Available at: <link needed>.
 
- _JDBC™ 4.2 API_ (JDBC specification). Available
-at _http://jcp.org/en/jsr/detail?id=221_ .
+JDBC™ 4.2 API (JDBC specification). Available at: http://jcp.org/en/jsr/detail?id=221
 
- _Java™ Naming and Directory Interface 1.2
-Specification_ (JNDI specification). Available at
-_http://docs.oracle.com/javase/8/docs/technotes/guides/jndi/index.html[]http://docs.oracle.com/javase/8/docs/technotes/guides/jndi/index.html._
+Java™ Naming and Directory Interface 1.2 Specification (JNDI specification). Available at: http://docs.oracle.com/javase/8/docs/technotes/guides/jndi/index.html
 
- _Java™ Message Service, Version 2.0_ (JMS
-specification). Available at _http://jcp.org/en/jsr/detail?id=343_ .
+Jakarta Messaging Specification, Version 2.0. Available at: <link needed>.
 
- _Java™ Transaction API, Version 1.2_ (JTA
-specification). Available at _http://jcp.org/en/jsr/detail?id=907_ .
+Jakarta™ Transaction API Specification, Version 1.2. Available at: <link needed>.
 
- _Java™ Transaction Service, Version 1.0_ (JTS
-specification). Available at
-_http://www.oracle.com/technetwork/java/javaee/jts-spec095-1508547.pdf_
-.
+Java™ Transaction Service, Version 1.0_ (JTS specification). Available at: http://www.oracle.com/technetwork/java/javaee/jts-spec095-1508547.pdf
 
- _JavaMail™ API Specification Version 1.6_
-(JavaMail specification). Available at
-_http://jcp.org/en/jsr/detail?id=919_ .
+Jakarta Mail Specification, Version 1.6. Available at: <link needed>.
 
- _JavaBeans™ Activation Framework Specification
-Version 1.1_ (JAF specification). Available at
-_http://www.oracle.com/technetwork/java/javase/tech/index-jsp-138795.html_
-.
+JavaBeans™ Activation Framework Specification Version 1.1 (JAF specification). Available at: http://www.oracle.com/technetwork/java/javase/tech/index-jsp-138795.html
 
- _Java EE™ Connector Architecture 1.7_
-(Connector specification). Available at
-_http://jcp.org/en/jsr/detail?id=322_ .
+Jakarta Connectors Specification, Version 1.7. Available at: <link needed>.
 
-Web Services for Java EE 1.4 (Web Services
-specification). Available at _http://jcp.org/en/jsr/detail?id=109_ .
+Jakarta XML Web Services Specification, Version 1.4. Available at: <link needed>.
 
-Java™ API for XML-based RPC 1.1 (JAX-RPC
-specification). Available at _http://jcp.org/en/jsr/detail?id=101_ .
+Jakarta XML RPC Specification, Version 1.1. Available at: <link needed>.
 
-SOAP with Attachments API for Java™ 1.3 (SAAJ
-specification). Available at
-_http://download.oracle.com/otndocs/jcp/jaxm-1.3-mrel-spec-oth-JSpec/_ .
+SOAP with Attachments API for Java™ 1.3 (SAAJ specification). Available at: http://download.oracle.com/otndocs/jcp/jaxm-1.3-mrel-spec-oth-JSpec/
 
-Java™ API for XML Registries 1.0 (JAXR
-specification). Available at _http://jcp.org/en/jsr/detail?id=93_ .
+Jakarta XML Registries Specification, Version 1.0. Available at: <link needed>.
 
- _JAX-RS: The JavaTM API for RESTful Web
-Services 2.1_ (JAX-RS specification). Available at
-_http://jcp.org/en/jsr/summary?id=370_ .
+Jakarta™ RESTful Web Services Specification, Version 2.1. Available at: <link needed>.
 
-Java™ Platform, Enterprise Edition Management
-Specification 1.1 (Java EE Management specification). Available at
-_http://jcp.org/en/jsr/detail?id=77_ .
+Jakarta Management Specification, Version 1.1. Available at: <link needed>.
 
-Java™ Platform, Enterprise Edition Deployment
-Specification 1.2 (Java EE Deployment specification). Available at
-_http://jcp.org/en/jsr/detail?id=88_ .
+Jakarta Deployment Specification, Version 1.2. Available at: <link needed>.
 
-Java™ Authorization Service Provider Contract
-for Containers 1.5 (JACC specification). Available at
-_http://jcp.org/en/jsr/detail?id=115_ .
+Jakarta Authorization Specification, Version 1.5. Available at: <link needed>.
 
-Java™ Authentication Service Provider Interface
-for Containers 1.1 (JASPIC specification). Available at
-_http://jcp.org/en/jsr/detail?id=196_ .
+Jakarta™ Authentication Specification, Version 1.1. Available at: <link needed>.
 
-Java™ EE Security API 1.0. Available at
-_http://jcp.org/en/jsr/detail?id=375_ .
+Jakarta™ Security Specification, Version 1.0. Available at: <link needed>.
 
-Debugging Support for Other Languages 1.0.
-Available at _http://jcp.org/en/jsr/detail?id=45_ .
+Jakarta™ Debugging Support for Other Languages Specification, Version 1.0. Available at: <link needed>.
 
-Standard Tag Library for JavaServer Pages 1.2
-(JSTL specification). Available at _http://jcp.org/en/jsr/detail?id=52_
-.
+Jakarta™ Standard Tag Library Specification, Version 1.2. Available at: <link needed>.
 
-Web Services Metadata for the Java Platform
-2.1. Available at _http://jcp.org/en/jsr/detail?id=181_ .
+Jakarta Web Services Metadata Specification, Version 2.1. Available at: <link needed>.
 
-JavaServer Faces 2.3 (JSF specification).
-Available at _http://jcp.org/en/jsr/detail?id=372_ .
+Jakarta™ Server Faces Specification, Version 2.3. Available at: <link needed>.
 
-Java Persistence 2.2 (Java Persistence
-specification). Available at _http://jcp.org/en/jsr/detail?id=338_ .
+Jakarta™ Persistence Specification, Version 2.2. Available at: <link needed>.
 
-Bean Validation 2.0 (Bean Validation
-specification). Available at _http://jcp.org/en/jsr/detail?id=380_ .
+Jakarta™ Bean Validation Specification, Version 2.0. Available at: <link needed>.
 
-Managed Beans 1.0 (Managed Beans
-specification). Available at _http://jcp.org/en/jsr/detail?id=316_ .
+Jakarta™ Managed Beans Specification, Version 1.0. Available at: <link needed>.
 
-Interceptors 1.2 _rev A_ (Interceptors
-specification). Available at _http://jcp.org/en/jsr/detail?id=318_ .
+Jakarta™ Interceptors Specification, Version 1.2. Available at: <link needed>.
 
-Contexts and Dependency Injection for the Java
-EE Platform 2.0 (CDI specification). Available at
-_http://jcp.org/en/jsr/detail?id=365_ .
+Jakarta™ Contexts and Dependency Injection Specification, Version 2.0. Available at: <link needed>.
 
-Dependency Injection for Java 1.0 (DI
-specification). Available at _http://jcp.org/en/jsr/detail?id=330_ .
+Dependency Injection for Java 1.0 (DI specification). Available at http://jcp.org/en/jsr/detail?id=330
 
- _Java API for WebSocket 1.1_ (WebSocket
-specification). Available at _http://jcp.org/en/jsr/detail?id=356_ .
+Jakarta™ WebSocket Specification, Version 1.1. Available at: <link needed>.
 
- _Java API for JSON Processing 1.1_ (JSON-P
-specification). Available at _http://jcp.org/en/jsr/detail?id=374_ .
+Jakarta™ JSON Processing Specification, Version 1.1. Available at: <link needed>.
 
- _Java API for JSON Binding 1.0_ (JSON-B
-specification). Available at _http://jcp.org/en/jsr/detail?id=367_ .
+Jakarta™ JSON Binding Specification, Version 1.0. Available at: <link needed>.
 
- _Concurrency Utilities for Java EE 1.0_
-(Concurrency Utilities specification). Available at
-_http://jcp.org/en/jsr/detail?id=236_ .
+Jakarta Concurrency Specification, Version 1.0. Available at: <link needed>.
 
- _Batch Applications for the Java Platform 1.0
-rev A_ (Batch specification). Available at
-_http://jcp.org/en/jsr/detail?id=352_ .
+Jakarta Batch Specification, Version 1.0. Available at: <link needed>.
 
 Extension Mechanism Architecture, Available at
 _http://docs.oracle.com/javase/8/docs/technotes/guides/extensions/index.html_
@@ -209,7 +145,7 @@ authentication protocol, the client can manage its own authentication
 context, and need not depend on references to the login session state.
 
 [.footnoteNumber]# 2.# [[a3649]]A product instance
-corresponds to a single installation of a Java EE product. A single
+corresponds to a single installation of a Jakarta EE product. A single
 product instance might use multiple operating system processes, or might
 support multiple host machines as part of a distributed container. In
 contrast, it might be possible to run multiple instances of a product on
@@ -220,39 +156,38 @@ instance and is independent of the number of Java virtual machines,
 operating system processes, or host machines used by the product
 instance.
 
-[.footnoteNumber]# 3.# [[a3650]]For a JSP page, this
-requirement applies to the _service_ method of the equivalent JSP page
+[.footnoteNumber]# 3.# [[a3650]]For a Jakarta Server Pages page, this
+requirement applies to the _service_ method of the equivalent Jakarta Server Pages page
 Implementation Class.
 
-[.footnoteNumber]# 4.# [[a3651]]Note that Java EE
-Managed Beans are required to have access to the JNDI naming environment
+[.footnoteNumber]# 4.# [[a3651]]Note that Jakarta Managed Beans are required to have access to the JNDI naming environment
 of their calling component.
 
 [.footnoteNumber]# 5.# [[a3652]]Note that the use of
 interceptors defined by means of the Interceptors annotation is
-supported in the absence of CDI for EJB and Managed Bean components.
+supported in the absence of Jakarta™ Contexts and Dependency Injection for Jakarta™ Enterprise Beans and Jakarta Managed Bean components.
 
-[.footnoteNumber]# 6.# [[a3653]]See the JSF
-specification section “JSF Managed Classes and Java EE Annotations” for
+[.footnoteNumber]# 6.# [[a3653]]See the Jakarta™ Server Faces
+specification section Jakarta™ Server Faces Managed Classes and Jakarta Annotations” for
 a list of these managed classes.
 
-[.footnoteNumber]# 7.# [[a3654]]Resource and CDI
-injection is supported only in JAX-RS components managed by CDI.
+[.footnoteNumber]# 7.# [[a3654]]Resource and Jakarta™ Contexts and Dependency Injection
+injection is supported only in Jakarta™ RESTful Web Services components managed by Jakarta™ Contexts and Dependency Injection.
 
-[.footnoteNumber]# 8.# [[a3655]]Interceptors cannot be
+[.footnoteNumber]# 8.# [[a3655]]Jakarta™ Interceptors cannot be
 bound to other interceptors.
 
-[.footnoteNumber]# 9.# [[a3656]]See the CDI
-specification for requirements related to resource injection in CDI
+[.footnoteNumber]# 9.# [[a3656]]See the Jakarta™ Contexts and Dependency Injection
+specification for requirements related to resource injection in Jakarta™ Contexts and Dependency Injection
 managed beans.
 
 [.footnoteNumber]# 10.# [[a3657]]We use this term to
-refer to classes that become managed beans per the rules in the CDI
+refer to classes that become managed beans per the rules in the Jakarta™ Contexts and Dependency Injection
 specification, thus excluding managed beans declared using the
-_ManagedBean_ annotation as well as EJB session beans, both of which
-would be managed beans even in the absence of CDI.
+_ManagedBean_ annotation as well as Jakarta™ Enterprise Beans session beans, both of which
+would be managed beans even in the absence of Jakarta™ Contexts and Dependency Injection.
 
-[.footnoteNumber]# 11.# [[a3658]]Interceptors cannot
+[.footnoteNumber]# 11.# [[a3658]]Jakarta Interceptors cannot
 be bound to decorators.
 
 [.footnoteNumber]# 12.# [[a3659]]Connections obtained
@@ -264,20 +199,19 @@ Deployer is not prohibited from overriding the resource address.
 
 [.footnoteNumber]# 14.# [[a3661]]Client APIs only.
 
-[.footnoteNumber]# 15.# [[a3662]]EJB entity beans and
-associated EJB QL only.
+[.footnoteNumber]# 15.# [[a3662]]Jakarta™ Enterprise Beans entity beans and
+associated Jakarta™ Enterprise Beans QL only.
 
 [.footnoteNumber]# 16.# [[a3663]]IIOP
 interoperability, including EJB 2.x and 1.x client view.
 
 [.footnoteNumber]# 17.# [[a3664]]See
-link:#a2730[See Java™ Platform,
-Enterprise Edition Deployment API 1.2 Requirements (Optional)] for
+link:#a2730[See Jakarta™ Enterprise Edition Deployment API 1.2 Requirements (Optional)] for
 details.
 
 [.footnoteNumber]# 18.# [[a3665]]Note that a component
 specification is permitted to specify an exception to this in order to
-accommodate interface type dependencies—for example, the EJB
+accommodate interface type dependencies—for example, the Jakarta™ Enterprise Beans
 SessionContext dependency on the javax.xml.rpc.handler.MessageContext
 type.
 
