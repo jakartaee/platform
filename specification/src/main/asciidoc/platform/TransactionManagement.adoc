@@ -139,7 +139,7 @@ clientlink:#a3650[3]. Returning from the _service_ or _doFilter_ method to the
 network client with an active transaction context is an error. The web container
 is required to detect this error and abort the transaction.
 
-As specified above in link:#a493[See Transaction Non-Requirements],” requests
+As specified above in link:#a493[See Transaction Non-Requirements], requests
 made within a web container using the _RequestDispatcher_ must propagate any
 transaction context to the called class. Unless the called class commits or
 aborts the transaction, the transaction must remain active when the called class
@@ -358,7 +358,7 @@ the _Resource_ annotation or the optional deployment descriptor element
 _res-sharing-scope_ to indicate whether a connection to a resource manager is
 shareable or unshareable. Containers must assume connections to be shareable if
 no deployment hint is provided. link:#a3399[See Jakarta EE Application Client
-XML Schema]”, the Jakarta Enterprise Beans specification, and the Servlet
+XML Schema], the Jakarta Enterprise Beans specification, and the Servlet
 specification provide descriptions of the deployment descriptor element.
 
 Jakarta EE application components may cache connection objects and reuse them
@@ -371,8 +371,8 @@ sharing.
 === JDBC and Jakarta Messaging Deployment Issues
 
 The JDBC transaction requirements in link:#a516[See Transactional JDBC™
-Technology Support]” and the Jakarta Messaging transaction requirements in
-link:#a520[See Transactional Jakarta Messaging Support]” may impose some
+Technology Support] and the Jakarta Messaging transaction requirements in
+link:#a520[See Transactional Jakarta Messaging Support] may impose some
 restrictions on a Deployer’s configuration of an application’s JDBC and Jakarta
 Messaging resources. Jakarta EE Product Providers may impose the restrictions
 described in this section to meet these requirements.
@@ -418,7 +418,7 @@ adapters. While JDBC drivers are not required to be XA-capable, a JDBC driver
 may be delivered as an XA-capable resource adapter. In such a case, it must be
 possible to include JDBC operations in the same global transaction as other
 XA-capable resource adapters. See also link:#a516[See Transactional JDBC™
-Technology Support].”
+Technology Support].
 
 === System Administration Tools
 
