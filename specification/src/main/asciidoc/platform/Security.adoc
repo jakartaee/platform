@@ -1,7 +1,7 @@
 == [[a235]]Security
 
 This chapter describes the security
-requirements for the Jakarta™ Platform, Enterprise Edition (Jakarta EE) that
+requirements for the Jakarta™, Enterprise Edition (Jakarta EE) that
 must be satisfied by Jakarta EE products.
 
 In addition to the Jakarta EE requirements, each
@@ -315,7 +315,7 @@ a Jakarta EE environment. A container provides two kinds of security
 Declarative security refers to the means of
 expressing an application’s security structure, including security
 roles, access control, and authentication requirements in
-non-programmatic form. Jakarta language annotations and the deployment
+non-programmatic form. Java language annotations and the deployment
 descriptor are the primary vehicles for declarative security in the Jakarta
 EE platform.
 
@@ -440,8 +440,8 @@ For example,
 
 . A Deployer may have mapped a security role to
 a user group in the operational environment or may depend on the default
-mapping of security roles to user groups as defined by the Jakarta EE
-Security API specification. In this case, the user group of the calling
+mapping of security roles to user groups as defined by the Jakarta
+Security specification. In this case, the user group of the calling
 principal is retrieved from its security attributes. The principal is in
 the security role if the principal’s user group matches a user group to
 which the security role has been mapped.
@@ -869,7 +869,7 @@ products.
 A Jakarta EE product may restrict the use of
 certain Java SE classes and methods to secure and ensure proper
 operation of the system. The minimum set of permissions that a Jakarta EE
-product is required to grant to a Java EE application is defined in
+product is required to grant to a Jakarta EE application is defined in
 link:#a2339[See Java Platform, Standard
 Edition (Java SE) Requirements].” All Jakarta EE products must be capable
 of deploying application components with exactly these permissions.
@@ -888,8 +888,8 @@ permissions that a component needs for access.
 A Jakarta EE product must enforce the access
 control rules specified at deployment time (see
 link:#a451[See Deployment
-Requirements]”) and more fully described in the EJB and Servlet
-specifications.
+Requirements]”) and more fully described in the Jakarta Enterprise Beans and
+Servlet specifications.
 
 === Propagated Caller Identities.
 
@@ -938,7 +938,8 @@ and the access control context used by the Java SE security manager.
 
 All Jakarta EE products must implement the access
 control semantics described in all included component specifications,
-such as the EJB, JSP, and Servlet specifications; provide a means of
+such as the Jakarta Enterprise Beans, Jakarta Server Pages, and
+Jakarta Servlet specifications; provide a means of
 mapping the security roles specified in metadata annotations or the
 deployment descriptor to the actual roles exposed by a Jakarta EE product;
 and support the default mapping from user groups to roles defined by the
