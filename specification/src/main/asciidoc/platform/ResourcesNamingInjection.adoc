@@ -2,7 +2,7 @@
 
 This chapter describes how applications
 declare dependencies on external resources and configuration parameters,
-and how those items are represented in the Java EE naming system and can
+and how those items are represented in the Jakarta EE naming system and can
 be injected into application components. These requirements are based on
 annotations defined in the Java Metadata specification and features
 defined in the Java Naming and Directory Interface™ (JNDI)
@@ -13,8 +13,8 @@ JavaBeans specification. The _PersistenceUnit_ and _PersistenceContext_
 annotations described here are defined in more detail in the Java
 Persistence specification. The _Inject_ annotation described here is
 defined in the Dependency Injection for Java specification, and its
-usage in Java EE applications is defined in the Contexts and Dependency
-Injection for the Java EE Platform specification.
+usage in Jakarta EE applications is defined in the Contexts and Dependency
+Injection for the Jakarta EE Platform specification.
 
 === Overview
 
@@ -34,7 +34,7 @@ provide this capability.
 
 === Chapter Organization
 
-The following sections contain the Java EE
+The following sections contain the Jakarta EE
 platform solutions to the above issues:
 
 * link:#a607[See
@@ -42,9 +42,9 @@ JNDI Naming Context],” defines general rules for the use of the JNDI
 naming context and its interaction with Java language annotations that
 reference entries in the naming context.
 * link:#a732[See
-Responsibilities by Java EE Role],” defines the general responsibilities
-for each of the Java EE roles such as Application Component Provider,
-Application Assembler, Deployer, and Java EE Product Provider.
+Responsibilities by Jakarta EE Role],” defines the general responsibilities
+for each of the Jakarta EE roles such as Application Component Provider,
+Application Assembler, Deployer, and Jakarta EE Product Provider.
 * link:#a751[See
 Simple Environment Entries],” defines the basic interfaces that specify
 and access the application component’s naming environment. The section
@@ -157,7 +157,7 @@ Dependency Injection APIs.
 
 === Required Access to the JNDI Naming Environment
 
-Java EE application clients, enterprise beans,
+Jakarta EE application clients, enterprise beans,
 and web components are required to have access to a JNDI naming
 environmentlink:#a3651[4]. The containers for these application
 component types are required to provide the naming environment support
@@ -322,7 +322,7 @@ _java:module_ name for an environment entry declared in the
 _application.xml_ descriptor must be reported as a deployment error to
 the Deployer.
 
-A Java EE product may impose security
+A Jakarta EE product may impose security
 restrictions on access of resources in the shared namespaces. However,
 it must be possible to deploy applications that define resources in the
 shared namespaces that are usable by different entities at the given
@@ -438,13 +438,13 @@ Component classes supporting injection].
 
 The component classes listed in
 link:#a651[See Component classes
-supporting injection] with support level “Standard” all support Java EE
+supporting injection] with support level “Standard” all support Jakarta EE
 resource injection, as well as PostConstruct and PreDestroy callbacks.
 In addition, if CDI is enabled—which it is by default—these classes also
 support CDI injection, as described in
 link:#a2112[See Support for Dependency
 Injection]”, and the use of interceptorslink:#a3652[5]. The
-component classes listed with support level “Limited” only support Java
+component classes listed with support level “Limited” only support Jakarta
 EE field injection and the PostConstruct callback. Note that these are
 application client main classes, where field injection is into static
 fields.
@@ -561,7 +561,7 @@ Standard
 
 Standard
 
-Java EE platform
+Jakarta EE platform
 
 main class (static)
 
@@ -681,7 +681,7 @@ The rules for how a deployment descriptor
 entry may override an _EJB_ annotation are included in the EJB
 specification. The rules for how a deployment descriptor entry may
 override a _WebServiceRef_ annotation are included in the Web Services
-for Java EE specification.
+for Jakarta EE specification.
 
 A PostConstruct method may be specified using
 either the _PostConstruct_ annotation on the method or the
@@ -714,10 +714,10 @@ and application name are defined in the _java:comp_ namespace. See
 link:#a1607[See Application Name and
 Module Name References].”
 
-=== [[a732]]Responsibilities by Java EE Role
+=== [[a732]]Responsibilities by Jakarta EE Role
 
 This section describes the responsibilities for
-each Java EE role that apply to all uses of the Java EE naming context.
+each Jakarta EE role that apply to all uses of the Jakarta EE naming context.
 The sections that follow describe the responsibilities that are specific
 to the different types of objects that may be stored in the naming
 context.
@@ -782,9 +782,9 @@ The _description_ deployment descriptor
 elements and annotation elements provided by the Application Component
 Provider or Application Assembler help the Deployer with this task.
 
-=== Java EE Product Provider’s Responsibilities
+=== Jakarta EE Product Provider’s Responsibilities
 
-The Java EE Product Provider has the following
+The Jakarta EE Product Provider has the following
 responsibilities:
 
 * Provide a deployment tool that allows the
@@ -828,7 +828,7 @@ _String_ , _Character_ , _Byte_ , _Short_ , _Integer_ , _Long_ ,
 _Boolean_ , _Double_ , _Float_ , _Class_ , and any subclass of _Enum_ .
 
 The following subsections describe the
-responsibilities of each Java EE Role.
+responsibilities of each Jakarta EE Role.
 
 === Application Component Provider’s Responsibilities
 
@@ -1310,7 +1310,7 @@ target operational environment.
 The deployment descriptor also allows the
 Application Assembler to link an EJB reference declared in one
 application component to an enterprise bean contained in an ejb-jar file
-in the same Java EE application. The link is an instruction to the tools
+in the same Jakarta EE application. The link is an instruction to the tools
 used by the Deployer describing the binding of the EJB reference to the
 business interface, no-interface view, or home interface of the
 specified target enterprise bean. The same linking can also be specified
@@ -1318,7 +1318,7 @@ by the Application Component Provider using annotations in the source
 code of the component.
 
 The requirements in this section only apply to
-Java EE products that include an EJB container.
+Jakarta EE products that include an EJB container.
 
 === Application Component Provider’s Responsibilities
 
@@ -1641,10 +1641,10 @@ referencing application component. The value of the _ejb-link_ element
 is the name of the target enterprise bean. This is the name as defined
 by the metadata annotation (or default) on the bean class or in the
 _ejb-name_ element for the target enterprise bean. The target enterprise
-bean can be in any ejb-jar file or war file in the same Java EE
+bean can be in any ejb-jar file or war file in the same Jakarta EE
 application as the referencing application component.
 * Alternatively, to avoid the need to rename
-enterprise beans to have unique names within an entire Java EE
+enterprise beans to have unique names within an entire Jakarta EE
 application, the Application Assembler may use either of the following
 two syntaxes in the _ejb-link_ element of the referencing application
 component.
@@ -1678,7 +1678,7 @@ _ejb-link_ element in the deployment descriptor. The enterprise bean
 reference should be satisfied by the bean named _EmployeeRecord_ . The
 _EmployeeRecord_ enterprise bean may be packaged in the same module as
 the component making this reference, or it may be packaged in another
-module within the same Java EE application as the component making this
+module within the same Jakarta EE application as the component making this
 reference.
 
 === ...
@@ -1713,7 +1713,7 @@ reference.
 
 The following example illustrates using the
 _ejb-link_ element to indicate an enterprise bean reference to the
-_ProductEJB_ enterprise bean that is in the same Java EE application
+_ProductEJB_ enterprise bean that is in the same Jakarta EE application
 unit but in a different ejb-jar file.
 
 === ...
@@ -1751,7 +1751,7 @@ unit but in a different ejb-jar file.
 
 The following example illustrates using the
 _ejb-link_ element to indicate an enterprise bean reference to the
-_ShoppingCart_ enterprise bean that is in the same Java EE application
+_ShoppingCart_ enterprise bean that is in the same Jakarta EE application
 unit but in a different ejb-jar file. The reference was originally
 declared in the application component’s code using an annotation. The
 Assembler provides only the link to the bean.
@@ -1836,11 +1836,11 @@ module _products.jar_ .
 
 </ejb-ref>
 
-=== Java EE Product Provider’s Responsibilities
+=== Jakarta EE Product Provider’s Responsibilities
 
-The Java EE Product Provider must provide the
+The Jakarta EE Product Provider must provide the
 deployment tools that allow the Deployer to perform the tasks described
-in the previous subsection. The deployment tools provided by the Java EE
+in the previous subsection. The deployment tools provided by the Jakarta EE
 Product Provider must be able to process the information supplied in
 class file annotations and in the _ejb-ref_ and _ejb-local-ref_ elements
 in the deployment descriptor.
@@ -2226,7 +2226,7 @@ _java:comp/env/url_ subcontext. Note that resource manager connection
 factory references declared via annotations will not, by default, appear
 in any subcontext.
 
-The Java EE Connector Architecture allows an
+The Jakarta EE Connector Architecture allows an
 application component to use the annotation or API described in this
 section to obtain resource objects that provide access to additional
 back-end systems.
@@ -2270,9 +2270,9 @@ resource manager, the Deployer or System Administrator must define the
 mapping. The mapping is performed in a manner specific to the container
 and resource manager; it is beyond the scope of this specification.
 
-=== Java EE Product Provider’s Responsibilities
+=== Jakarta EE Product Provider’s Responsibilities
 
-The Java EE Product Provider is responsible for
+The Jakarta EE Product Provider is responsible for
 the following:
 
 * Provide the deployment tools that allow the
@@ -2311,10 +2311,10 @@ the principal can be propagated (directly or through principal mapping)
 to a resource manager, if required by the application.
 
 While not required by this specification, most
-Java EE products will provide the following features:
+Jakarta EE products will provide the following features:
 
 * A tool to allow the System Administrator to
-add, remove, and configure a resource manager for the Java EE Server.
+add, remove, and configure a resource manager for the Jakarta EE Server.
 * A mechanism to pool resources for the
 application components and otherwise manage the use of resources by the
 container. The pooling must be transparent to the application
@@ -2326,7 +2326,7 @@ The System Administrator is typically
 responsible for the following:
 
 * Add, remove, and configure resource managers
-in the Java EE Server environment.
+in the Jakarta EE Server environment.
 
 In some scenarios, these tasks can be performed
 by the Deployer.
@@ -2442,11 +2442,11 @@ environment reference. This means that the target object must be of the
 type indicated in the _Resource_ annotation or the
 _resource-env-ref-type_ element.
 
-=== Java EE Product Provider’s Responsibilities
+=== Jakarta EE Product Provider’s Responsibilities
 
-The Java EE Product Provider must provide the
+The Jakarta EE Product Provider must provide the
 deployment tools that allow the Deployer to perform the tasks described
-in the previous subsection. The deployment tools provided by the Java EE
+in the previous subsection. The deployment tools provided by the Jakarta EE
 Product Provider must be able to process the information supplied in the
 class file annotations and the _resource-env-ref_ elements in the
 deployment descriptor.
@@ -2467,7 +2467,7 @@ environment. The Deployer binds the message destination references to
 administered message destinations in the target operational environment.
 
 The requirements in this section only apply to
-Java EE products that include support for JMS.
+Jakarta EE products that include support for JMS.
 
 === Application Component Provider’s Responsibilities
 
@@ -2674,7 +2674,7 @@ element of an application component that produces messages to link it to
 the target destination. The value of the _message-destination-link_
 element is the name of the target destination, as defined in the
 _message-destination-name_ element of the _message-destination_ element.
-The _message-destination_ element can be in any module in the same Java
+The _message-destination_ element can be in any module in the same Jakarta
 EE application as the referencing component. The Application Assembler
 uses the _message-destination-usage_ element of the
 _message-destination-ref_ element to indicate that the referencing
@@ -2693,7 +2693,7 @@ the Application Assembler uses the _message-destination-usage_ element
 of the _message-destination-ref_ element to indicate that the
 application component consumes messages from the referenced destination.
 * To avoid the need to rename message
-destinations to have unique names within an entire Java EE application,
+destinations to have unique names within an entire Jakarta EE application,
 the Application Assembler may use the following syntax in the
 _message-destination-link_ element of the referencing application
 component. The Application Assembler specifies the path name of the JAR
@@ -2725,11 +2725,11 @@ type indicated in the _message-destination-type_ element.
 * The Deployer must observe the message
 destination links specified by the Application Assembler.
 
-=== Java EE Product Provider’s Responsibilities
+=== Jakarta EE Product Provider’s Responsibilities
 
-The Java EE Product Provider must provide the
+The Jakarta EE Product Provider must provide the
 deployment tools that allow the Deployer to perform the tasks described
-in the previous subsection. The deployment tools provided by the Java EE
+in the previous subsection. The deployment tools provided by the Jakarta EE
 Product Provider must be able to process the information supplied in the
 _message-destination-ref_ elements in the deployment descriptor.
 
@@ -2740,7 +2740,7 @@ binding it to a specified compatible target object in the environment.
 
 === UserTransaction [[a1334]]References
 
-Certain Java EE application component types are
+Certain Jakarta EE application component types are
 allowed to use the JTA _UserTransaction_ interface to start, commit, and
 abort transactions. Such application components can find an appropriate
 object implementing the _UserTransaction_ interface by looking up the
@@ -2831,7 +2831,7 @@ environment reference. Such a deployment descriptor entry may be used to
 specify injection of a _UserTransaction_ object.
 
 The requirements in this section only apply to
-Java EE products that include support for JTA.
+Jakarta EE products that include support for JTA.
 
 === Application Component Provider’s Responsibilities
 
@@ -2842,13 +2842,13 @@ _UserTransaction_ object.
 
 Only some application component types are
 required to be able to access a _UserTransaction_ object; see
-_link:#a2159[See Java EE
+_link:#a2159[See Jakarta EE
 Technologies]_ in this specification and the EJB specification for
 details.
 
-=== Java EE Product Provider’s Responsibilities
+=== Jakarta EE Product Provider’s Responsibilities
 
-The Java EE Product Provider is responsible for
+The Jakarta EE Product Provider is responsible for
 providing an appropriate _UserTransaction_ object as required by this
 specification.
 
@@ -2878,7 +2878,7 @@ entry may be used to specify injection of a
 _TransactionSynchronizationRegistry_ object.
 
 The requirements in this section only apply to
-Java EE products that include support for JTA.
+Jakarta EE products that include support for JTA.
 
 === Application Component Provider’s Responsibilities
 
@@ -2890,18 +2890,18 @@ _TransactionSynchronizationRegistry_ object.
 
 Only some application component types are
 required to be able to access a _TransactionSynchronizationRegistry_
-object; see _link:#a2159[See Java
+object; see _link:#a2159[See Jakarta
 EE Technologies]_ in this specification for details.
 
-=== Java EE Product Provider’s Responsibilities
+=== Jakarta EE Product Provider’s Responsibilities
 
-The Java EE Product Provider is responsible for
+The Jakarta EE Product Provider is responsible for
 providing an appropriate _TransactionSynchronizationRegistry_ object as
 required by this specification.
 
 === [[a1385]]ORB References
 
-Some Java EE applications will need to make use
+Some Jakarta EE applications will need to make use
 of the CORBA ORB to perform certain operations. Such applications can
 find an appropriate object implementing the _ORB_ interface by looking
 up the JNDI name _java:comp/ORB_ or by requesting injection of an _ORB_
@@ -2975,7 +2975,7 @@ may set the _shareable_ element of the _Resource_ annotation to _false_
 descriptor to _Unshareable_ , to request a non-shared _ORB_ instance.
 
 The requirements in this section only apply to
-Java EE products that include support for interoperability using CORBA.
+Jakarta EE products that include support for interoperability using CORBA.
 
 === Application Component Provider’s Responsibilities
 
@@ -2987,9 +2987,9 @@ to _false_ , the ORB object injected will not be the shared instance
 used by other components in the application but instead will be a
 private ORB instance used only by this component.
 
-=== Java EE Product Provider’s Responsibilities
+=== Jakarta EE Product Provider’s Responsibilities
 
-The Java EE Product Provider is responsible for
+The Jakarta EE Product Provider is responsible for
 providing an appropriate _ORB_ object as required by this specification.
 
 === [[a1416]]Persistence Unit References
@@ -3005,7 +3005,7 @@ _persistence.xml_ specification for the persistence unit, as described
 in the Java Persistence specification.
 
 The requirements in this section only apply to
-Java EE products that include support for the Java Persistence API.
+Jakarta EE products that include support for the Java Persistence API.
 
 === Application Component Provider’s Responsibilities
 
@@ -3175,7 +3175,7 @@ disambiguate a reference to a persistence unit.The Application Assembler
 (or Application Component Provider) may use the following syntax in the
 _persistence-unit-name_ element of the referencing application component
 to avoid the need to rename persistence units to have unique names
-within a Java EE application. The Application Assembler specifies the
+within a Jakarta EE application. The Application Assembler specifies the
 path name of the root of the _persistence.xml_ file for the referenced
 persistence unit and appends the name of the persistence unit separated
 from the path name by _#_ . The path name is relative to the referencing
@@ -3255,9 +3255,9 @@ manager factory for the persistence unit specified as the target.
 information that the entity manager factory needs for managing the
 persistence unit, as described in the Java Persistence specification.
 
-=== Java EE Product Provider’s Responsibility
+=== Jakarta EE Product Provider’s Responsibility
 
-The Java EE Product Provider is responsible for
+The Jakarta EE Product Provider is responsible for
 the following:
 
 * Provide the
@@ -3295,7 +3295,7 @@ with their persistence unit, as described in the Java Persistence
 specification.
 
 The requirements in this section only apply to
-Java EE products that include support for the Java Persistence API.
+Jakarta EE products that include support for the Java Persistence API.
 
 === Application Component Provider’s Responsibilities
 
@@ -3573,9 +3573,9 @@ information that the entity manager factory needs for creating such an
 entity manager and for managing the persistence unit, as described in
 the Java Persistence specification.
 
-=== Java EE Product Provider’s Responsibility
+=== Jakarta EE Product Provider’s Responsibility
 
-The Java EE Product
+The Jakarta EE Product
 Provider is responsible for the following:
 
 * Provide the
@@ -3614,20 +3614,20 @@ responsible for requesting injection of the application name or module
 name using a _Resource_ annotation on a _String_ method or field, or
 using the defined name to look up the application name or module name.
 
-=== Java EE Product Provider’s Responsibilities
+=== Jakarta EE Product Provider’s Responsibilities
 
-The Java EE Product Provider is responsible
+The Jakarta EE Product Provider is responsible
 for providing the correct application name and module name _String_
 objects as required by this specification.
 
 === [[a1613]]Application Client Container Property
 
 An application may determine whether it is
-executing in a Java EE application client container by using the
+executing in a Jakarta EE application client container by using the
 pre-defined JNDI name _java:comp/InAppClientContainer_ . This property
 is represented by a _Boolean_ object. If the application is running in a
-Java EE application client container, the value of this property is
-true. If the application is running in a Java EE web or EJB container,
+Jakarta EE application client container, the value of this property is
+true. If the application is running in a Jakarta EE web or EJB container,
 the value of this property is false.
 
 === Application Component Provider’s Responsibilities
@@ -3638,9 +3638,9 @@ property using a _Resource_ annotation on a _Boolean_ or _boolean_
 method or field, or using the defined name to look up the application
 client container property.
 
-=== Java EE Product Provider’s Responsibilities
+=== Jakarta EE Product Provider’s Responsibilities
 
-The Java EE Product Provider is responsible
+The Jakarta EE Product Provider is responsible
 for providing the correct application client container property as
 required by this specification.
 
@@ -3730,9 +3730,9 @@ customize the _ValidatorFactory_ and (indirectly) _Validator_ instances
 by including a Bean Validation deployment descriptor inside a specific
 module of the application.
 
-=== Java EE Product Provider’s Responsibilities
+=== Jakarta EE Product Provider’s Responsibilities
 
-The Java EE Product Provider must make a
+The Jakarta EE Product Provider must make a
 default _ValidatorFactory_ available at _java:comp/ValidatorFactory_ .
 The default _ValidatorFactory_ available at _java:comp/ValidatorFactory_
 must support use of CDI if CDI is enabled for the module. In particular,
@@ -3770,7 +3770,7 @@ resources in its environment by means of resource definition metadata.
 The specification of resource definition
 metadata provides information that can be used at the application’s
 deployment to provision and configure the required resource. Further,
-resource definitions allow an application to be deployed into a Java EE
+resource definitions allow an application to be deployed into a Jakarta EE
 environment with more minimal administrative configuration.
 
 Resources may be defined in any of the JNDI
@@ -3845,7 +3845,7 @@ Provider or Assembler should specify values for elements which, if
 changed, would cause the application to break—for example, JNDI name,
 isolation level. If multiple resource definitions are specified for a
 given resource, they must be consistent.
-* The Java EE Product Provider may choose
+* The Jakarta EE Product Provider may choose
 suitable server-specific default values for optional elements for which
 values have not been specified.
 
@@ -3870,7 +3870,7 @@ provisioned for use by the application.
 
 === JNDI Name
 
-The Deployer and Java EE Product Provider
+The Deployer and Jakarta EE Product Provider
 must not alter the specified JNDI name. The requested resource must be
 made available in JNDI under the specified name.
 
@@ -3886,14 +3886,14 @@ is provisioned for use by the applicationlink:#a3660[13].
 
 If the resource has not been otherwise
 provisioned and if automatic provisioning of resources is supported, the
-Java EE Product Provider is responsible for provisioning the resource.
+Jakarta EE Product Provider is responsible for provisioning the resource.
 If the requested resource cannot be made available or created, the
 application must fail to deploy.
 
 === Quality of Service Elements
 
 Quality of service elements may be altered by
-the Deployer. The Java EE Product Provider is permitted to impose
+the Deployer. The Jakarta EE Product Provider is permitted to impose
 restrictions upon quality of service elements in accordance with its
 implementation limits and quality of service guarantees. If quality of
 service values that have been specified do not meet these restrictions,
@@ -3904,9 +3904,9 @@ use appropriate values).
 
 All resource definition annotations and XML
 elements support the use of property elements (elements named “
-_properties_ ” or “ _property_ ”). A Java EE Product Provider is
+_properties_ ” or “ _property_ ”). A Jakarta EE Product Provider is
 permitted to reject a deployment if a property that it recognizes has a
-value that it does not support. A Java EE Product Provider must not
+value that it does not support. A Jakarta EE Product Provider must not
 reject a deployment on the basis of a property that it does not
 recognize.
 
@@ -4078,7 +4078,7 @@ apply:
 * The transactional specification and
 isolation level must be used as specified.
 
-=== Java EE Product Provider’s Responsibilities
+=== Jakarta EE Product Provider’s Responsibilities
 
 Requirements common to all resource definition
 types are described in link:#a1676[See
@@ -4243,7 +4243,7 @@ used as specified.
 * If specified, the client id should be used
 as specified.
 
-=== Java EE Product Provider’s Responsibilities
+=== Jakarta EE Product Provider’s Responsibilities
 
 Requirements common to all resource
 definition types are described in
@@ -4365,7 +4365,7 @@ apply:
 
 === A resource of the specified interface type must be provided.
 
-=== Java EE Product Provider’s Responsibilities
+=== Jakarta EE Product Provider’s Responsibilities
 
 Requirements common to all resource
 definition types are described in
@@ -4506,7 +4506,7 @@ should be used as specified.
 * If specified, the from address should be
 used as specified.
 
-=== Java EE Product Provider’s Responsibilities
+=== Jakarta EE Product Provider’s Responsibilities
 
 Requirements common to all resource
 definition types are described in
@@ -4635,7 +4635,7 @@ apply:
 * A resource of the specified type must be
 provided.
 
-=== Java EE Product Provider’s Responsibilities
+=== Jakarta EE Product Provider’s Responsibilities
 
 Requirements common to all resource
 definition types are described in
@@ -4749,7 +4749,7 @@ apply:
 If a class name is specified, an administered
 object resource of the specified class (or a subclass) must be provided.
 
-=== Java EE Product Provider’s Responsibilities
+=== Jakarta EE Product Provider’s Responsibilities
 
 Requirements common to all resource
 definition types are described in
@@ -4758,13 +4758,13 @@ All Resource Definition Types].”
 
 === [[a2009]]Default Data Source
 
-The Java EE Platform requires that a Java EE
+The Jakarta EE Platform requires that a Jakarta EE
 Product Provider provide a database in the operational environment (see
-link:#a82[See Database]”). The Java
+link:#a82[See Database]”). The Jakarta
 EE Product Provider must also provide a preconfigured, default data
 source for use by the application in accessing this database.
 
-The Java EE Product Provider must make the
+The Jakarta EE Product Provider must make the
 default data source accessible to the application under the JNDI name
 _java:comp/DefaultDataSource_ .
 
@@ -4795,30 +4795,30 @@ preconfigured data source for the product's default database:
 
 DataSource myDS;
 
-=== Java EE Product Provider's Responsibilities
+=== Jakarta EE Product Provider's Responsibilities
 
-The Java EE Product Provider must provide a
-database in the operational environment. The Java EE Product Provider
+The Jakarta EE Product Provider must provide a
+database in the operational environment. The Jakarta EE Product Provider
 must also provide a preconfigured, default data source for use by the
 application in accessing this database under the JNDI name
 _java:comp/DefaultDataSource_ .
 
 If a DataSource resource reference is not
 mapped to a specific data source by the Application Component Provider,
-Application Assembler, or Deployer, it must be mapped by the Java EE
-Product Provider to a preconfigured data source for the Java EE Product
+Application Assembler, or Deployer, it must be mapped by the Jakarta EE
+Product Provider to a preconfigured data source for the Jakarta EE Product
 Provider's default database.
 
 === [[a2025]]Default JMS Connection Factory
 
-The Java EE Platform requires that a Java EE
+The Jakarta EE Platform requires that a Jakarta EE
 Product Provider provide a JMS provider in the operational environment
-(see link:#a104[See Java™ Message
-Service (JMS)]”) . The Java EE Product Provider must also provide a
+(see link:#a104[See Jakarta™ Message
+Service (JMS)]”) . The Jakarta EE Product Provider must also provide a
 preconfigured, JMS ConnectionFactory for use by the application in
 accessing this JMS provider.
 
-The Java EE Product Provider must make the
+The Jakarta EE Product Provider must make the
 default JMS connection factory accessible to the application under the
 JNDI name _java:comp/DefaultJMSConnectionFactory_ .
 
@@ -4852,10 +4852,10 @@ preconfigured connection factory for the product's default JMS provider:
 
 ConnectionFactory myJMScf;
 
-=== Java EE Product Provider's Responsibilities
+=== Jakarta EE Product Provider's Responsibilities
 
-The Java EE Product Provider must provide a
-JMS provider in the operational environment. The Java EE Product
+The Jakarta EE Product Provider must provide a
+JMS provider in the operational environment. The Jakarta EE Product
 Provider must also provide a preconfigured, default JMS connection
 factory for use by the application in accessing this provider under the
 JNDI name _java:comp/DefaultJMSConnectionFactory_ .
@@ -4863,19 +4863,19 @@ JNDI name _java:comp/DefaultJMSConnectionFactory_ .
 If a JMS ConnectionFactory resource reference
 is not mapped to a specific JMS connection factory by the Application
 Component Provider, Application Assembler, or Deployer, it must be
-mapped by the Java EE Product Provider to a preconfigured JMS connection
-factory for the Java EE Product Provider's default JMS provider.
+mapped by the Jakarta EE Product Provider to a preconfigured JMS connection
+factory for the Jakarta EE Product Provider's default JMS provider.
 
 === [[a2042]]Default Concurrency Utilities Objects
 
-The Java EE Platform requires that a Java EE
+The Jakarta EE Platform requires that a Jakarta EE
 Product Provider provide a preconfigured default managed executor
 service, a preconfigured default managed scheduled executor service, a
 preconfigured default managed thread factory, and a preconfigured
 default context service for use by the application.
 
-The Java EE Product Provider must make the
-default Concurrency Utilities for Java EE objects accessible to the
+The Jakarta EE Product Provider must make the
+default Concurrency Utilities for Jakarta EE objects accessible to the
 application under the following JNDI names:
 
 ===  _java:comp/ DefaultManagedExecutorService_ for the preconfigured managed executor service
@@ -4920,9 +4920,9 @@ preconfigured default managed executor service for the product:
 ManagedExecutorService
 myManagedExecutorService;
 
-=== Java EE Product Provider's Responsibilities
+=== Jakarta EE Product Provider's Responsibilities
 
-The Java EE Product Provider must provide the
+The Jakarta EE Product Provider must provide the
 following:
 
 === a preconfigured, default managed executor service for use by the application in accessing this service under the JNDI name _java:comp/DefaultManagedExecutorService_ ;
@@ -4940,8 +4940,8 @@ _java:comp/DefaultContextService_ .
 If a Concurrency Utilities object resource
 environment reference is not mapped to a specific configured object by
 the Application Component Provider, Application Assembler, or Deployer,
-it must be mapped by the Java EE Product Provider to a preconfigured
-Concurrency Utilities object for the Java EE Product Provider.
+it must be mapped by the Jakarta EE Product Provider to a preconfigured
+Concurrency Utilities object for the Jakarta EE Product Provider.
 
 === [[a2067]]Managed Bean References
 
@@ -5034,9 +5034,9 @@ The Application Component Provider is
 responsible for requesting injection of a Managed Bean or for looking it
 up in JNDI using an appropriate name.
 
-=== Java EE Product Provider’s Responsibilities
+=== Jakarta EE Product Provider’s Responsibilities
 
-The Java EE Product Provider is responsible
+The Jakarta EE Product Provider is responsible
 for providing appropriate instances of the requested Managed Bean class
 as required by this specification.
 
@@ -5077,15 +5077,15 @@ responsible for requesting injection of a _BeanManager_ instance using a
 _Resource_ annotation, or using the defined name to look up an instance
 in JNDI.
 
-=== Java EE Product Provider’s Responsibilities
+=== Jakarta EE Product Provider’s Responsibilities
 
-The Java EE Product Provider is responsible
+The Jakarta EE Product Provider is responsible
 for providing appropriate _BeanManager_ instances as required by this
 specification.
 
 === [[a2112]]Support for Dependency Injection
 
-In Java EE, support for dependency injection
+In Jakarta EE, support for dependency injection
 annotations as specified in the Dependency Injection for Java
 specification is mediated by CDI. Containers must support injection
 points annotated with the _javax.inject.Inject_ annotation only to the
@@ -5113,10 +5113,10 @@ managed beans if they are annotated with a CDI bean-defining annotation
 or contained in a bean archive for which CDI is enabled. However, if
 they are used as CDI managed beans (e.g., injected into other managed
 classes), the instances that are managed by CDI may not be the instances
-that are managed by the Java EE container.
+that are managed by the Jakarta EE container.
 
 Therefore, to make injection support more
-uniform across all Java EE component types, Java EE containers are
+uniform across all Jakarta EE component types, Jakarta EE containers are
 required to support field, method, and constructor injection using the
 _javax.inject.Inject_ annotation into all component classes listed in
 link:#a651[See Component classes
@@ -5129,7 +5129,7 @@ invocation of any methods annotated with the _PostConstruct_ annotation.
 In supporting such injection points, the container must behave as if it
 carried out the following steps, involving the use of the CDI SPI. Note
 that using these steps causes the container to create a non-contextual
-instance, which is not managed by CDI but rather by the Java EE
+instance, which is not managed by CDI but rather by the Jakarta EE
 container.
 
 . Obtain a _BeanManager_ instance.
@@ -5169,27 +5169,27 @@ Application Programming
 Interface
 
 This chapter describes API requirements
-for the Java™ Platform, Enterprise Edition (Java EE). Java EE requires
-the provision of a number of APIs for use by Java EE applications,
+for the Jakarta™ Platform, Enterprise Edition (Jakarta EE). Jakarta EE requires
+the provision of a number of APIs for use by Jakarta EE applications,
 starting with the core Java APIs and including many additional Java
 technologies.
 
 === [[a2136]]Required APIs
 
-Java EE application components execute in
+Jakarta EE application components execute in
 runtime environments provided by the containers that are a part of the
-Java EE platform. The full Java EE platform supports four types of
-containers corresponding to Java EE application component types:
+Jakarta EE platform. The full Jakarta EE platform supports four types of
+containers corresponding to Jakarta EE application component types:
 application client containers; applet containers; web containers for
 servlets, JSP pages, JSF applications, JAX-RS applications; and
-enterprise bean containers. A Java EE profile may support only a subset
-of these component types, as defined by the individual Java EE profile
+enterprise bean containers. A Jakarta EE profile may support only a subset
+of these component types, as defined by the individual Jakarta EE profile
 specification.
 
 The per-technology requirements in this
-chapter apply to any Java EE product that includes the technology. Note
-that even though a Java EE profile might not require support for a
-particular technology, a Java EE product based on that Java EE profile
+chapter apply to any Jakarta EE product that includes the technology. Note
+that even though a Jakarta EE profile might not require support for a
+particular technology, a Jakarta EE product based on that Jakarta EE profile
 might nonetheless include support for the technology. In such a case,
 the requirements for that technology described in this chapter would
 apply.
@@ -5199,7 +5199,7 @@ apply.
 The containers provide all application
 components with at least the Java Platform, Standard Edition, v8 (Java
 SE) APIs. Containers may provide newer versions of the Java SE platform,
-provided they meet all the Java EE platform requirements. The Java SE
+provided they meet all the Jakarta EE platform requirements. The Java SE
 platform includes the following enterprise technologies:
 
 === Java IDL
@@ -5220,7 +5220,7 @@ platform includes the following enterprise technologies:
 
 In particular, the applet execution
 environment must be Java SE 8 compatible. Since typical browsers don’t
-yet provide such support, Java EE products may make use of the Java
+yet provide such support, Jakarta EE products may make use of the Java
 Plugin to provide the required applet execution environment. Use of the
 Java Plugin is not required, but is one method of meeting the
 requirement to provide a Java SE 8 compatible applet execution
@@ -5237,17 +5237,17 @@ available at _http://docs.oracle.com/javase/8/docs/_ .
 
 === Required Java Technologies
 
-The full Java EE platform also provides a
+The full Jakarta EE platform also provides a
 number of Java technologies in each of the containers defined by this
 specification. _link:#a2159[See
-Java EE Technologies]_ indicates the technologies with their required
+Jakarta EE Technologies]_ indicates the technologies with their required
 versions, which containers include the technologies, and whether the
 technology is required (REQ), proposed optional (POPT), or optional
-(OPT). Each Java EE profile specification will include a similar table
+(OPT). Each Jakarta EE profile specification will include a similar table
 describing which technologies are required for the profile. Note that
 some technologies are marked Optional, as described in the next section.
 
-=== [[a2159]]Java EE Technologies
+=== [[a2159]]Jakarta EE Technologies
 
 Java Technology
 
@@ -5430,7 +5430,7 @@ Y
 
 OPT
 
-Java EE Management 1.1
+Jakarta EE Management 1.1
 
 Y
 
@@ -5440,7 +5440,7 @@ Y
 
 REQ
 
-{empty}Java EE Deployment
+{empty}Jakarta EE Deployment
 1.2link:#a3664[17]
 
 N
@@ -5471,7 +5471,7 @@ Y
 
 REQ
 
-Java EE Security API 1.0
+Jakarta EE Security API 1.0
 
 N
 
@@ -5571,7 +5571,7 @@ Y
 
 REQ
 
-Contexts and Dependency Injection for Java EE
+Contexts and Dependency Injection for Jakarta EE
 2.0
 
 Y
@@ -5593,11 +5593,11 @@ Y
 REQ
 
 {empty}All classes and interfaces required by
-the specifications for the APIs must be provided by the Java EE
-containers indicated above. In some cases, a Java EE product is not
+the specifications for the APIs must be provided by the Jakarta EE
+containers indicated above. In some cases, a Jakarta EE product is not
 required to provide objects that implement interfaces intended to be
 implemented by an application server, nevertheless, the definitions of
-such interfaces must be included in the Java EE platform. If an
+such interfaces must be included in the Jakarta EE platform. If an
 implementation includes support for a technology marked as Optional,
 that technology must be supported in the containers specified above. If
 a product implementation does not support a technology marked as
@@ -5606,10 +5606,10 @@ technology.link:#a3665[18]
 
 === [[a2331]]Pruned Java Technologies
 
-As the Java EE specification has evolved,
-some of the technologies originally included in Java EE are no longer as
+As the Jakarta EE specification has evolved,
+some of the technologies originally included in Jakarta EE are no longer as
 relevant as they were when they were introduced to the platform. The
-Java EE expert group follows a process first defined by the Java SE
+Jakarta EE expert group follows a process first defined by the Java SE
 expert group ( _http://mreinhold.org/blog/removing-features_ ) to prune
 technologies from the platform in a careful and orderly way that
 minimizes the impact to developers using these technologies, while
@@ -5634,86 +5634,86 @@ into an optional component. No actual removal from the specification
 occurs, although the feature may be removed from products at the choice
 of the product vendor.
 
-Technologies that have been pruned as of Java
+Technologies that have been pruned as of Jakarta
 EE 8 are marked Optional in
-link:#a2159[See Java EE
+link:#a2159[See Jakarta EE
 Technologies]. Technologies that may be pruned in a future release are
 marked Proposed Optional in
-link:#a2159[See Java EE
+link:#a2159[See Jakarta EE
 Technologies].
 
 === [[a2339]]Java Platform, Standard Edition (Java SE) Requirements
 
 === Programming Restrictions
 
- _The_ Java EE _programming model divides
-responsibilities between Application Component Providers and_ Java EE
+ _The_ Jakarta EE _programming model divides
+responsibilities between Application Component Providers and_ Jakarta EE
 _Product Providers: Application Component Providers focus on writing
-business logic and the_ Java EE _Product Providers focus on providing a
+business logic and the_ Jakarta EE _Product Providers focus on providing a
 managed system infrastructure in which the application components can be
 deployed._
 
  _This division leads to a restriction on the
 functionality that application components can contain. If application
-components contain the same functionality provided by Java EE system
+components contain the same functionality provided by Jakarta EE system
 infrastructure, there are clashes and mis-management of the
 functionality._
 
  _For example, if enterprise beans were
-allowed to manage threads, the_ Java EE _platform could not manage the
+allowed to manage threads, the_ Jakarta EE _platform could not manage the
 life cycle of the enterprise beans, and it could not properly manage
 transactions._
 
 Since we do not want to subset the Java SE
-platform, and we want Java EE Product Providers to be able to use Java
-SE products without modification in the Java EE platform, we use the
+platform, and we want Jakarta EE Product Providers to be able to use Java
+SE products without modification in the Jakarta EE platform, we use the
 Java SE security permissions mechanism to express the programming
 restrictions imposed on Application Component Providers.
 
 In this section, we specify the Java SE
-security permissions that the Java EE Product Provider must provide for
-each application component type. We call these permissions the Java EE
-security permissions set. The Java EE security permissions set is a
-required part of the Java EE API contract. We also specify the set of
-permissions that the Java EE Product Provider must be able to restrict
+security permissions that the Jakarta EE Product Provider must provide for
+each application component type. We call these permissions the Jakarta EE
+security permissions set. The Jakarta EE security permissions set is a
+required part of the Jakarta EE API contract. We also specify the set of
+permissions that the Jakarta EE Product Provider must be able to restrict
 from being provided to application components. In addition, we specify
 the means by which application component providers may declare the need
 for specific permissions and how these declarations must be processed by
-Java EE products.
+Jakarta EE products.
 
 The Java SE security permissions are fully
 described in
 _http://docs.oracle.com/javase/8/docs/technotes/guides/security/permissions.html_
 .
 
-=== Java EE Security Manager Related Requirements
+=== Jakarta EE Security Manager Related Requirements
 
-Every Java EE product must be capable of
+Every Jakarta EE product must be capable of
 running with a Java security manager that enforces Java security
 permissions and that prevents application components from performing
 operations for which they have not been provided the required
 permissions.
 
-=== Java EE Product Provider’s Responsibilities
+=== Jakarta EE Product Provider’s Responsibilities
 
-A Java EE product may allow application
-components to run without a security manager, but every Java EE product
+A Jakarta EE product may allow application
+components to run without a security manager, but every Jakarta EE product
 must be capable of running application components with a security
 manager that enforces security permissions, as described below.
 
 The set of security permissions provided to
 application components by a particular installation is a matter of
-policy outside the scope of this specification, however, every Java EE
+policy outside the scope of this specification, however, every Jakarta EE
 product must be capable of running with a configuration that provides
 application classes and packaged libraries the permissions defined in
-link:#a2366[See Java EE Security
+link:#a2366[See Jakarta EE Security
 Permissions Set].
 
-All Java EE products must allow the set of
+All Jakarta EE products must allow the set of
 permissions available to application classes in a module to be
 configurable, providing application components in some modules with
 different permissions than those described in
-link:#a2366[See Java EE Security
+link:#a2366[See Jakarta EE Security
 Permissions Set].
 
 As defined in
@@ -5725,33 +5725,33 @@ permissions required by a module, on successful deployment of the
 module, at least the declared permissions must have been granted to the
 application classes and libraries packaged in the module. If security
 permissions are declared that conflict with the policy of the product
-installation, the Java EE product must fail deployment of the
+installation, the Jakarta EE product must fail deployment of the
 application module. If an application module does not contain a
 declaration of required security permissions and deployment otherwise
-succeeds, the Java EE product must grant the application classes and
+succeeds, the Jakarta EE product must grant the application classes and
 libraries the permissions established by the security policy of the
-installation. The Java EE product must ensure that the system
+installation. The Jakarta EE product must ensure that the system
 administrator for the installation be able to define the security policy
 for the installation to include the permissions in
-link:#a2366[See Java EE Security
+link:#a2366[See Jakarta EE Security
 Permissions Set].
 
-Note that, on some installations of Java EE
+Note that, on some installations of Jakarta EE
 products, the security policy of the installation may be such that
 applications are granted fewer permissions than those defined in
-link:#a2366[See Java EE Security
+link:#a2366[See Jakarta EE Security
 Permissions Set] and, as a result, some applications that declare only
 the permissions defined in
-link:#a2366[See Java EE Security
+link:#a2366[See Jakarta EE Security
 Permissions Set] may not be deployable. Other applications that require
 the same permissions but do not declare them may deploy but will
 encounter runtime failures when the missing permission is required by
 the application component.
 
-Every Java EE product must be capable of
+Every Jakarta EE product must be capable of
 running with a Java security manager and with an installation policy
 that does not grant the permissions described in
-link:#a2438[See Restrictable Java EE
+link:#a2438[See Restrictable Jakarta EE
 Security Permissions] to Web, EJB, and resource adapter components. That
 environment must otherwise fully support the requirements of this
 specification.
@@ -5785,7 +5785,7 @@ environment. For example, cloud environments may require greater
 restrictions on the system resources available to applications than
 on-premise enterprise installations. Note that restricting the
 permissions beyond those in
-link:#a2366[See Java EE Security
+link:#a2366[See Jakarta EE Security
 Permissions Set] may prevent some applications from working correctly.
 
 Care should be taken by the system
@@ -5798,21 +5798,21 @@ made available through the ServletContext attribute
 _javax.servlet.context.tempdir_ should be available to deployed
 applications. The security policy of the operational environment should
 grant the application server process access to the corresponding part of
-the file system. The Java EE Product must be capable of using the
+the file system. The Jakarta EE Product must be capable of using the
 security manager to enforce that an application only has access to the
 part of the filesystem namespace named by the
 _javax.security.context.tempdir_ attribute, and that that part of the
 filesystem namespace is separate from the corresponding filesystem
 namespace available to other applications.
 
-=== Listing of the Java EE Security Permissions Set
+=== Listing of the Jakarta EE Security Permissions Set
 
 link:#a2366[See
-Java EE Security Permissions Set] lists the Java permissions that Java
-EE components (by type) can reliably be granted by a Java EE product,
+Jakarta EE Security Permissions Set] lists the Java permissions that Jakarta
+EE components (by type) can reliably be granted by a Jakarta EE product,
 given appropriate local installation configuration.
 
-=== [[a2366]]Java EE Security Permissions Set
+=== [[a2366]]Jakarta EE Security Permissions Set
 
 Security Permissions
 
@@ -5950,19 +5950,19 @@ file:$\{javax.servlet.context.tempdir}
 
 read
 
-=== Restrictable Java EE Security Permissions
+=== Restrictable Jakarta EE Security Permissions
 
 link:#a2438[See
-Restrictable Java EE Security Permissions] lists the Java permissions
-that a Java EE product must be capable of restricting when running a Web
-or EJB application component. If the Target field is empty, a Java EE
+Restrictable Jakarta EE Security Permissions] lists the Java permissions
+that a Jakarta EE product must be capable of restricting when running a Web
+or EJB application component. If the Target field is empty, a Jakarta EE
 product must be capable of deploying application modules such that no
 instances of that permission are granted to the components in the
 application module.
 
 
 
-=== [[a2438]]Restrictable Java EE Security Permissions
+=== [[a2438]]Restrictable Jakarta EE Security Permissions
 
 Security Permissions
 
@@ -6084,7 +6084,7 @@ javax.sound.sampled.AudioPermission
 By declaring the permissions required by an
 application as described in this section, an application component
 provider is ensured, through the successful deployment of his or her
-application, that the Java EE Product has granted at least the declared
+application, that the Jakarta EE Product has granted at least the declared
 permissions to the classes and libraries packaged in the application
 module.
 
@@ -6098,8 +6098,8 @@ that are declared within the application.
 Permission declarations must be stored in
 _META-INF/permissions.xml_ file within an EJB, web, application client,
 or resource adapter archive in order for them to be located and
-subsequently processed by the deployment machinery of the Java EE
-Product. The Java EE Product is not required to support
+subsequently processed by the deployment machinery of the Jakarta EE
+Product. The Jakarta EE Product is not required to support
 _permissions.xml_ files that specify permission classes that are
 packaged in the application.
 
@@ -6162,7 +6162,7 @@ set declaration:
 
 
 
-The Java EE permissions XML Schema is located
+The Jakarta EE permissions XML Schema is located
 at _http://xmlns.jcp.org/xml/ns/javaee/permissions_8.xsd_ .
 
 === Additional Requirements
@@ -6233,7 +6233,7 @@ RMI-IIOP, can pass through firewalls.
 These considerations have implications on the
 use of various protocols to communicate between application components.
 This specification requires that HTTP access through firewalls be
-possible where local policy allows. Some Java EE products may provide
+possible where local policy allows. Some Jakarta EE products may provide
 support for tunneling other communication through firewalls, but this is
 neither specified nor required. Application developers should consider
 the impact of these issues in the design of applications, particularly
@@ -6249,20 +6249,20 @@ Java Compatible™ quality standards provide a database that is accessible
 through the JDBC API.
 
 To allow for the development of portable
-applications, the Java EE specification does require that such a
-database be available and accessible from a Java EE product through the
+applications, the Jakarta EE specification does require that such a
+database be available and accessible from a Jakarta EE product through the
 JDBC API. Such a database must be accessible from web components,
 enterprise beans, and application clients, but need not be accessible
 from applets. In addition, the driver for the database must meet the
 JDBC Compatible requirements in the JDBC specification.
 
-Java EE applications should not attempt to
+Jakarta EE applications should not attempt to
 load JDBC drivers directly. Instead, they should use the technique
 recommended in the JDBC specification and perform a JNDI lookup to
 locate a _DataSource_ object. The JNDI name of the _DataSource_ object
 should be chosen as described in
 link:#a1120[See Resource Manager
-Connection Factory References].” The Java EE platform must be able to
+Connection Factory References].” The Jakarta EE platform must be able to
 supply a _DataSource_ that does not require the application to supply
 any authentication information when obtaining a database connection. Of
 course, applications may also supply a user name and password when
@@ -6283,7 +6283,7 @@ interface. The component should not attempt the operations listed above
 on the JDBC _Connection_ object that would conflict with the transaction
 context.
 
-Drivers supporting the JDBC API in a Java EE
+Drivers supporting the JDBC API in a Jakarta EE
 environment must meet the JDBC API Compliance requirements as specified
 in the JDBC specification.
 
@@ -6291,14 +6291,14 @@ The JDBC API includes APIs for connection
 naming via JNDI, connection pooling, and distributed transaction
 support. The connection pooling and distributed transaction features are
 intended for use by JDBC drivers to coordinate with an application
-server. Java EE products are not required to support the application
+server. Jakarta EE products are not required to support the application
 server facilities described by these APIs, although they may prove
 useful.
 
 The Connector architecture defines an SPI
 that essentially extends the functionality of the JDBC SPI with
 additional security functionality, and a full packaging and deployment
-functionality for resource adapters. A Java EE product that supports the
+functionality for resource adapters. A Jakarta EE product that supports the
 Connector architecture must support deploying and using a JDBC driver
 that has been written and packaged as a resource adapter using the
 Connector architecture.
@@ -6306,13 +6306,13 @@ Connector architecture.
 The JDBC 4.2 specification is available at
 _https://jcp.org/en/jsr/detail?id=221_ .
 
-=== [[a2553]]Java™ API for XML Web Services (JAX-WS) Requirements
+=== [[a2553]]Jakarta™ API for XML Web Services (JAX-WS) Requirements
 
 The JAX-WS specification provides support for
 web services that use the JAXB API for binding XML data to Java objects.
 The JAX-WS specification defines client APIs for accessing web services
 as well as techniques for implementing web service endpoints. The Web
-Services for Java EE specification describes the deployment of
+Services for Jakarta EE specification describes the deployment of
 JAX-WS-based services and clients. The EJB and Servlet specifications
 also describe aspects of such deployment. It must be possible to deploy
 JAX-WS-based applications using any of these deployment models.
@@ -6333,37 +6333,37 @@ _http://jcp.org/en/jsr/summary?id=224_ .
 === Java IDL (Proposed Optional)
 
 The requirements in this section only apply
-to Java EE products that support interoperability using CORBA.
+to Jakarta EE products that support interoperability using CORBA.
 
 Java IDL allows applications to access any
 CORBA object, written in any language, using the standard IIOP protocol.
-The Java EE security restrictions typically prevent all application
+The Jakarta EE security restrictions typically prevent all application
 component types except application clients from creating and exporting a
-CORBA object, but all Java EE application component types can be clients
+CORBA object, but all Jakarta EE application component types can be clients
 of CORBA objects.
 
-A Java EE product must support Java IDL as
+A Jakarta EE product must support Java IDL as
 defined by chapters 1 - 8, 13, and 15 of the CORBA 2.3.1 specification,
 available at _http://www.omg.org/cgi-bin/doc?formal/99-10-07_ , and the
 IDL To Java Language Mapping Specification, available at
 _http://www.omg.org/cgi-bin/doc?ptc/2000-01-08_ .
 
 The IIOP protocol supports the ability to
-multiplex calls over a single connection. All Java EE products must
+multiplex calls over a single connection. All Jakarta EE products must
 support requests from clients that multiplex calls on a connection to
 either Java IDL server objects or RMI-IIOP server objects (such as
 enterprise beans). The server must allow replies to be sent in any
 order, to avoid deadlocks where one call would be blocked waiting for
-another call to complete. Java EE clients are not required to multiplex
+another call to complete. Jakarta EE clients are not required to multiplex
 calls, although such support is highly recommended.
 
-A Java EE product must provide support for a
+A Jakarta EE product must provide support for a
 CORBA Portable Object Adapter (POA) to support portable stub, skeleton,
-and tie classes. A Java EE application that defines or uses CORBA
+and tie classes. A Jakarta EE application that defines or uses CORBA
 objects other than enterprise beans must include such portable stub,
 skeleton, and tie classes in the application package.
 
-Java EE applications need to use an instance
+Jakarta EE applications need to use an instance
 of _org.omg.CORBA.ORB_ to perform many Java IDL and RMI-IIOP operations.
 The default ORB returned by a call to _ORB.init(new String[0], null)_
 must be usable for such purposes; an application need not be aware of
@@ -6386,7 +6386,7 @@ restrict their usage of certain ORB APIs and functionality:
 methods _register_value_factory_ and _unregister_value_factory_ with an
 _id_ used by the container.
 
-A Java EE product must provide a COSNaming
+A Jakarta EE product must provide a COSNaming
 service to support the EJB interoperability requirements. It must be
 possible to access this COSNaming service using the Java IDL COSNaming
 APIs. Applications with appropriate privileges must be able to lookup
@@ -6397,21 +6397,21 @@ _http://www.omg.org/cgi-bin/doc?formal/2000-06-19_ .
 === RMI-JRMP
 
 JRMP is the Java technology-specific Remote
-Method Invocation (RMI) protocol. The Java EE security restrictions
+Method Invocation (RMI) protocol. The Jakarta EE security restrictions
 typically prevent all application component types except application
-clients from creating and exporting an RMI object, but all Java EE
+clients from creating and exporting an RMI object, but all Jakarta EE
 application component types can be clients of RMI objects.
 
 === RMI-IIOP (Proposed Optional)
 
 The requirements in this section only apply
-to Java EE products that include an EJB container and support
+to Jakarta EE products that include an EJB container and support
 interoperability using RMI-IIOP.
 
 RMI-IIOP allows objects defined using RMI
 style interfaces to be accessed using the IIOP protocol. It must be
 possible to make any remote _enterprise bean accessible via_ RMI-IIOP.
-Some Java EE products will simply make all remote enterprise beans
+Some Jakarta EE products will simply make all remote enterprise beans
 always (and only) accessible via RMI-IIOP; other products might control
 this via an administrative or deployment action. These and other
 approaches are allowed, provided that any remote enterprise bean (or by
@@ -6427,10 +6427,10 @@ characteristics of RMI-IIOP objects (for example, the use of the _Stub_
 and _Tie_ base classes) beyond what is specified in the EJB
 specification.
 
-The Java EE security restrictions typically
+The Jakarta EE security restrictions typically
 prevent all application component types, except application clients,
-from creating and exporting an RMI-IIOP object. All Java EE application
-component types can be clients of RMI-IIOP objects. Java EE applications
+from creating and exporting an RMI-IIOP object. All Jakarta EE application
+component types can be clients of RMI-IIOP objects. Jakarta EE applications
 should also use JNDI to lookup non-EJB RMI-IIOP objects. The JNDI names
 used for such non-EJB RMI-IIOP objects should be configured at
 deployment time using the standard environment entries mechanism (see
@@ -6442,7 +6442,7 @@ names will be configured to be names in the COSNaming name service.
 This specification does not provide a
 portable way for applications to bind objects to names in a name
 service. Some products may support use of JNDI and COSNaming for binding
-objects, but this is not required. Portable Java EE application clients
+objects, but this is not required. Portable Jakarta EE application clients
 can create non-EJB RMI-IIOP server objects for use as callback objects,
 or to pass in calls to other RMI-IIOP objects.
 
@@ -6460,26 +6460,26 @@ portable Stub and _Tie_ classes can be created. To be portable to all
 implementations that use a CORBA Portable Object Adapter (POA), the
 _Tie_ classes must extend the _org.omg.PortableServer.Servant_ class.
 This is typically done by using the _-poa_ option to the _rmic_ command.
-A Java EE product must provide support for these portable _Stub_ and
+A Jakarta EE product must provide support for these portable _Stub_ and
 _Tie_ classes, typically using the required CORBA POA. However, for
 portability to systems that do not use a POA to implement RMI-IIOP,
 applications should not depend on the fact that the _Tie_ extends the
-_Servant_ class. A Java EE application that defines or uses RMI-IIOP
+_Servant_ class. A Jakarta EE application that defines or uses RMI-IIOP
 objects other than enterprise beans must include such portable _Stub_
 and _Tie_ classes in the application package. _Stub_ and _Tie_ objects
 for enterprise beans, however, must not be included with the
-application: they will be generated, if needed, by the Java EE product
+application: they will be generated, if needed, by the Jakarta EE product
 at deployment time or at run time.
 
 RMI-IIOP is defined by chapters 5, 6, 13, 15,
 and section 10.6.2 of the CORBA 2.3.1 specification, available at
-_http://www.omg.org/cgi-bin/doc?formal/99-10-07_ , and by the Java™
+_http://www.omg.org/cgi-bin/doc?formal/99-10-07_ , and by the Jakarta™
 Language To IDL Mapping Specification, available at
 _http://www.omg.org/cgi-bin/doc?ptc/2000-01-06_ .
 
 === JNDI
 
-A Java EE product that supports the following
+A Jakarta EE product that supports the following
 types of objects must be able to make them available in the
 application’s JNDI namespace: _EJBHome_ objects, _EJBLocalHome_ objects,
 EJB business interface objects, JTA _UserTransaction_ objects, JDBC API
@@ -6489,7 +6489,7 @@ _ConnectionFactory_ objects (as specified in the Connector
 specification), _ORB_ objects, _EntityManagerFactory_ objects, and other
 Java language objects as described in
 link:#a567[See Resources, Naming, and
-Injection].” The JNDI implementation in a Java EE product must be
+Injection].” The JNDI implementation in a Jakarta EE product must be
 capable of supporting all of these uses in a single application
 component using a single JNDI _InitialContext_ . Application components
 will generally create a JNDI _InitialContext_ using the default
@@ -6497,7 +6497,7 @@ constructor with no arguments. The application component may then
 perform lookups on that _InitialContext_ to find objects as specified
 above.
 
-The names used to perform lookups for Java EE
+The names used to perform lookups for Jakarta EE
 objects are application dependent. The application component’s metadata
 annotations and/or deployment descriptor are used to list the names and
 types of objects expected. The Deployer configures the JNDI namespace to
@@ -6507,7 +6507,7 @@ link:#a567[See Resources, Naming, and
 Injection]” for details.
 
 Particular names are defined by this
-specification for the cases when the Java EE product includes the
+specification for the cases when the Jakarta EE product includes the
 corresponding technology. For all application components that have
 access to the JTA _UserTransaction_ interface, the appropriate
 _UserTransaction_ object can be found using the name
@@ -6521,7 +6521,7 @@ APIs, the appropriate _Validator_ and _ValidatorFactory_ objects can be
 found using the names _java:comp/Validator_ and
 _java:comp/ValidatorFactory_ respectively.
 
-The name used to lookup a particular Java EE
+The name used to lookup a particular Jakarta EE
 object may be different in different application components. In general,
 JNDI names can not be meaningfully passed as arguments in remote calls
 from one application component to another remote component (for example,
@@ -6530,17 +6530,17 @@ in a call to an _enterprise bean_ ).
 The JNDI _java:_ namespace is commonly
 implemented as symbolic links to other naming systems. Different
 underlying naming services may be used to store different kinds of
-objects, or even different instances of objects. It is up to a Java EE
+objects, or even different instances of objects. It is up to a Jakarta EE
 product to provide the necessary JNDI service providers for accessing
 the various objects defined in this specification.
 
-This specification requires that the Java EE
+This specification requires that the Jakarta EE
 platform provide the ability to perform lookup operations as described
 above. Different JNDI service providers may provide different
 capabilities, for instance, some service providers may provide only
 read-only access to the data in the name service.
 
-A Java EE product may be required to provide
+A Jakarta EE product may be required to provide
 a COSNaming name service to meet the EJB interoperability requirements.
 In such a case, a COSNaming JNDI service provider must be available
 through the web, EJB, and application client containers. It will also
@@ -6556,14 +6556,14 @@ _http://docs.oracle.com/javase/8/docs/technotes/guides/jndi/jndi-cos.html_
 
 See
 link:#a567[See Resources, Naming, and
-Injection]” for the complete naming requirements for the Java EE
+Injection]” for the complete naming requirements for the Jakarta EE
 platform. The JNDI specification is available at
 _http://docs.oracle.com/javase/8/docs/technotes/guides/jndi/index.html_
 .
 
 === Context Class Loader
 
-This specification requires that Java EE
+This specification requires that Jakarta EE
 containers provide a per thread context class loader for the use of
 system or library classes in dynamically loading classes provided by the
 application. The EJB specification requires that all EJB client
@@ -6586,7 +6586,7 @@ level application classes as described above. See
 link:#a2966[See Dynamic Class Loading]”
 for recommendations for libraries that dynamically load classes.
 
-=== Java™ Authentication and Authorization Service (JAAS) Requirements
+=== Jakarta™ Authentication and Authorization Service (JAAS) Requirements
 
 All EJB containers and all web containers
 must support the use of the JAAS APIs as specified in the Connector
@@ -6604,27 +6604,27 @@ _http://docs.oracle.com/javase/8/docs/technotes/guides/security/jaas/JAASRefGuid
 The Logging API provides classes and
 interfaces in the _java.util.logging_ package that are the Java™
 platform’s core logging facilities. This specification does not require
-any additional support for logging. A Java EE application typically will
+any additional support for logging. A Jakarta EE application typically will
 not have the _LoggingPermission_ necessary to control the logging
 configuration, but may use the logging API to produce log records. A
-future version of this specification may require that the Java EE
+future version of this specification may require that the Jakarta EE
 containers use the logging API to log certain events.
 
 === Preferences API Requirements
 
 The Preferences API in the _java.util.prefs_
 package allows applications to store and retrieve user and system
-preference and configuration data. A Java EE application typically will
+preference and configuration data. A Jakarta EE application typically will
 not have the _RuntimePermission("preferences")_ necessary to use the
 Preferences API. This specification does not define any relationship
-between the principal used by a Java EE application and the user
+between the principal used by a Jakarta EE application and the user
 preferences tree defined by the Preferences API. A future version of
-this specification may define the use of the Preferences API by Java EE
+this specification may define the use of the Preferences API by Jakarta EE
 applications.
 
 === Enterprise JavaBeans™ (EJB) 3.2 Requirements
 
-This specification requires that a Java EE
+This specification requires that a Jakarta EE
 product provide support for _enterprise beans_ as specified in the EJB
 specification. The EJB specification is available at
 _http://jcp.org/en/jsr/summary?id=345_ .
@@ -6633,13 +6633,13 @@ This specification does not impose any
 additional requirements at this time. Note that the EJB specification
 includes the specification of the EJB interoperability protocol based on
 RMI-IIOP. Support for the EJB interoperability protocol is Proposed
-Optional in Java EE 8. All containers that support EJB clients must be
+Optional in Jakarta EE 8. All containers that support EJB clients must be
 capable of using the EJB interoperability protocol to invoke enterprise
 beans. All EJB containers must support the invocation of enterprise
-beans using the EJB interoperability protocol. A Java EE product may
+beans using the EJB interoperability protocol. A Jakarta EE product may
 also support other protocols for the invocation of enterprise beans.
 
-A Java EE product may support multiple object
+A Jakarta EE product may support multiple object
 systems (for example, RMI-IIOP and RMI-JRMP). It may not always be
 possible to pass object references from one object system to objects in
 another object system. However, when an enterprise bean is using the
@@ -6652,7 +6652,7 @@ Remote interface to a method on an RMI-IIOP or Java IDL object, or to
 return such an enterprise bean object reference as a return value from
 such an RMI-IIOP or Java IDL object.
 
-In a Java EE product that includes both an
+In a Jakarta EE product that includes both an
 EJB container and a web container, both containers are required to
 support access to local enterprise beans. No support is provided for
 access to local enterprise beans from the application client container
@@ -6662,22 +6662,22 @@ or the applet container.
 
 The Servlet specification defines the
 packaging and deployment of web applications, whether standalone or as
-part of a Java EE application. The Servlet specification also addresses
-security, both standalone and within the Java EE platform. These
+part of a Jakarta EE application. The Servlet specification also addresses
+security, both standalone and within the Jakarta EE platform. These
 optional components of the Servlet specification are requirements of the
-Java EE platform.
+Jakarta EE platform.
 
 The Servlet specification includes additional
-requirements for web containers that are part of a Java EE product and a
-Java EE product must meet these requirements as well.
+requirements for web containers that are part of a Jakarta EE product and a
+Jakarta EE product must meet these requirements as well.
 
 The Servlet specification defines
-distributable web applications. To support Java EE applications that are
+distributable web applications. To support Jakarta EE applications that are
 distributable, this specification adds the following requirements.
 
-Web containers must support Java EE
+Web containers must support Jakarta EE
 distributable web applications placing objects of any of the following
-types (when supported by the Java EE product) into a
+types (when supported by the Jakarta EE product) into a
 _javax.servlet.http.HttpSession_ object using the _setAttribute_ or
 _putValue_ methods:
 
@@ -6698,7 +6698,7 @@ types as well. Web containers must throw a
 _java.lang.IllegalArgumentException_ if an object that is not one of the
 above types, or another type supported by the container, is passed to
 the _setAttribute_ or _putValue_ methods of an _HttpSession_ object
-corresponding to a Java EE distributable session. This exception
+corresponding to a Jakarta EE distributable session. This exception
 indicates to the programmer that the web container does not support
 moving the object between VMs. A web container that supports multi-VM
 operation must ensure that, when a session is moved from one VM to
@@ -6707,7 +6707,7 @@ target VM.
 
 The Servlet specification defines access to
 local enterprise beans as an optional feature. This specification
-requires that all Java EE products that include both a web container and
+requires that all Jakarta EE products that include both a web container and
 an EJB container provide support for access to local enterprise beans
 from the web container.
 
@@ -6717,7 +6717,7 @@ _http://jcp.org/en/jsr/detail?id=369_ .
 === JavaServer Pages™ (JSP) 2.3 Requirements
 
 The JSP specification depends on and builds
-on the servlet framework. A Java EE product must support the entire JSP
+on the servlet framework. A Jakarta EE product must support the entire JSP
 specification.
 
 The JSP specification is available at
@@ -6728,24 +6728,24 @@ _http://jcp.org/en/jsr/summary?id=245_ .
 The Expression Language specification was
 formerly a part of the JavaServer Pages specification. It was split off
 into its own specification so that it could be used independently of
-JavaServer Pages. A Java EE product must support the Expression
+JavaServer Pages. A Jakarta EE product must support the Expression
 Language.
 
 The Expression Language specification is
 available at _http://jcp.org/en/jsr/detail?id=341_ .
 
-=== Java™ Message Service (JMS) 2.0 Requirements
+=== Jakarta™ Message Service (JMS) 2.0 Requirements
 
 A Java Message Service provider must be
-included in a Java EE product that requires support for JMS. The JMS
+included in a Jakarta EE product that requires support for JMS. The JMS
 implementation must provide support for both JMS point-to-point and
 publish/subscribe messaging, and thus must make those facilities
 available using the _ConnectionFactory_ and _Destination_ APIs.
 
 The JMS specification defines several
-interfaces intended for integration with an application server. A Java
+interfaces intended for integration with an application server. A Jakarta
 EE product need not provide objects that implement these interfaces, and
-portable Java EE applications must not use the following interfaces:
+portable Jakarta EE applications must not use the following interfaces:
 
 * j _avax.jms.ServerSession_
 *  _javax.jms.ServerSessionPool_
@@ -6809,7 +6809,7 @@ _createDurableConnectionConsumer_
 
 ===  _javax.jms.Connection_ method _createSharedDurableConnectionConsumer_
 
-A Java EE container may throw a
+A Jakarta EE container may throw a
 _JMSException_ (if allowed by the method) or a _JMSRuntimeException_ (if
 throwing a _JMSException_ is not allowed by the method) if the
 application component violates any of the above restrictions.
@@ -6835,7 +6835,7 @@ EJB container and the web container.
 The JMS specification is available at
 _http://jcp.org/en/jsr/detail?id=343._
 
-=== Java™ Transaction API (JTA) 1.2 Requirements
+=== Jakarta™ Transaction API (JTA) 1.2 Requirements
 
 JTA defines the _UserTransaction_ interface
 that is used by applications to start, and commit or abort transactions.
@@ -6856,7 +6856,7 @@ by an application server to communicate with a transaction manager, and
 for a transaction manager to interact with a resource manager. These
 interfaces must be supported as described in the Connector
 specification. In addition, support for other transaction facilities may
-be provided transparently to the application by a Java EE product.
+be provided transparently to the application by a Jakarta EE product.
 
 The JTA specification is available at
 _http://jcp.org/en/jsr/detail?id=907_ .
@@ -6876,7 +6876,7 @@ store provider, and an SMTP message transport provider.
 Configuration of the JavaMail API is
 typically done by setting properties in a _Properties_ object that is
 used to create a _javax.mail.Session_ object using a static factory
-method. To allow the Java EE platform to configure and manage JavaMail
+method. To allow the Jakarta EE platform to configure and manage JavaMail
 API sessions, an application component that uses the JavaMail API should
 request a _Session_ object using JNDI, and should list its need for a
 _Session_ object in its deployment descriptor using a _resource-ref_
@@ -6884,10 +6884,10 @@ element, or by using a _Resource_ annotation. A JavaMail API _Session_
 object should be considered a resource factory, as described in
 link:#a1120[See Resource Manager
 Connection Factory References].” This specification requires that the
-Java EE platform support _javax.mail.Session_ objects as resource
+Jakarta EE platform support _javax.mail.Session_ objects as resource
 factories, as described in that section.
 
-The Java EE platform requires that a message
+The Jakarta EE platform requires that a message
 transport be provided that is capable of handling addresses of type
 _javax.mail.internet.InternetAddress_ and messages of type
 _javax.mail.internet.MimeMessage_ . The default message transport must
@@ -6897,7 +6897,7 @@ default transport must be handled without need for the application to
 provide a _javax.mail.Authenticator_ or to explicitly connect to the
 transport and supply authentication information.
 
-This specification does not require that a Java
+This specification does not require that a Jakarta
 EE product support any message store protocols.
 
 Note that the JavaMail API creates threads to
@@ -6943,12 +6943,12 @@ Java Type
 The JavaMail API specification is available
 at _http://jcp.org/en/jsr/detail?id=919_ .
 
-=== Java EE™ Connector Architecture 1.7 Requirements
+=== Jakarta™ EE Connector Architecture 1.7 Requirements
 
-In full Java EE products, all EJB containers
+In full Jakarta EE products, all EJB containers
 and all web containers must support the full set of Connector APIs. All
 such containers must support Resource Adapters that use any of the
-specified transaction capabilities. The Java EE deployment tools must
+specified transaction capabilities. The Jakarta EE deployment tools must
 support deployment of Resource Adapters, as defined in the Connector
 specification, and must support the deployment of applications that use
 Resource Adapters.
@@ -6956,25 +6956,25 @@ Resource Adapters.
 The Connector specification is available at
 _http://jcp.org/en/jsr/detail?id=322_ .
 
-=== Web Services for Java EE 1.4 Requirements
+=== Web Services for Jakarta EE 1.4 Requirements
 
-The Web Services for Java EE specification
-defines the capabilities a Java EE application server must support for
+The Web Services for Jakarta EE specification
+defines the capabilities a Jakarta EE application server must support for
 deployment of web service endpoints. A complete deployment model is
-defined, including several new deployment descriptors. All Java EE
+defined, including several new deployment descriptors. All Jakarta EE
 products must support the deployment and execution of web services as
-specified by the Web Services for Java EE specification (JSR-109).
+specified by the Web Services for Jakarta EE specification (JSR-109).
 
-The Web Services for Java EE specification is
+The Web Services for Jakarta EE specification is
 available at _http://jcp.org/en/jsr/detail?id=109_ .
 
-=== Java™ API for XML-based RPC (JAX-RPC) 1.1 Requirements (Optional)
+=== Jakarta™ API for XML-based RPC (JAX-RPC) 1.1 Requirements (Optional)
 
 The JAX-RPC specification defines client APIs
 for accessing web services as well as techniques for implementing web
-service endpoints. The Web Services for Java EE specification describes
+service endpoints. The Web Services for Jakarta EE specification describes
 the deployment of JAX-RPC-based services and clients. The EJB and
-Servlet specifications also describe aspects of such deployment. In Java
+Servlet specifications also describe aspects of such deployment. In Jakarta
 EE products that support JAX-RPC, it must be possible to deploy
 JAX-RPC-based applications using any of these deployment models.
 
@@ -6996,13 +6996,13 @@ facilities that make it easier to write web services.
 The JAX-RPC specification is available at
 _http://jcp.org/en/jsr/detail?id=101_ .
 
-=== Java™ API for RESTful Web Services (JAX-RS) 2.1 Requirements
+=== Jakarta™ API for RESTful Web Services (JAX-RS) 2.1 Requirements
 
 JAX-RS defines APIs for the development of
 Web services built according to the Representational State Transfer
 (REST) architectural style.
 
-In a full Java EE product, all Java EE web
+In a full Jakarta EE product, all Jakarta EE web
 containers are required to support applications that use JAX-RS
 technology.
 
@@ -7014,7 +7014,7 @@ extension of the JAX-RS _Application_ abstract class.
 
 The specification defines a set of optional
 container-managed facilities and resources that are intended to be
-available in a Java EE container — all such features and resources must
+available in a Jakarta EE container — all such features and resources must
 be made available.
 
 The JAX-RS specification is available at
@@ -7023,8 +7023,8 @@ _http://jcp.org/en/jsr/summary?id=370_ .
 === Java API for WebSocket 1.1 (WebSocket) Requirements
 
 The Java API for WebSocket (WebSocket) is a
-standard API for creating WebSocket applications. In a full Java EE
-product, all Java EE web containers are required to support the
+standard API for creating WebSocket applications. In a full Jakarta EE
+product, all Jakarta EE web containers are required to support the
 WebSocket API.
 
 The Java API for WebSocket specification can
@@ -7037,7 +7037,7 @@ lightweight data-interchange format used by many web services. The Java
 API for JSON Processing (JSON-P) provides a convenient way to process
 (parse, generate, transform, and query) JSON text.
 
-In a full Java EE product, all Java EE
+In a full Jakarta EE product, all Jakarta EE
 application client containers, web containers, and EJB containers are
 required to support the JSON-P API.
 
@@ -7049,28 +7049,28 @@ specification can be found at _http://jcp.org/en/jsr/detail?id=374_ .
 The Java API for JSON Binding (JSON-B)
 provides a convenient way to map between JSON text and Java objects.
 
-In a full Java EE product, all Java EE
+In a full Jakarta EE product, all Jakarta EE
 application client containers, web containers, and EJB containers are
 required to support the JSON-B API.
 
 The Java API for JSON Binding specification
 can be found at _http://jcp.org/en/jsr/detail?id=367_ .
 
-=== Concurrency Utilities for Java EE 1.0 (Concurrency Utilities) Requirements
+=== Concurrency Utilities for Jakarta EE 1.0 (Concurrency Utilities) Requirements
 
-Concurrency Utilities for Java EE is a
-standard API for providing asynchronous capabilities to Java EE
+Concurrency Utilities for Jakarta EE is a
+standard API for providing asynchronous capabilities to Jakarta EE
 application components through the following types of objects: managed
 executor service, managed scheduled executor service, managed thread
-factory, and context service. In a full Java EE product, all Java EE web
+factory, and context service. In a full Jakarta EE product, all Jakarta EE web
 containers and EJB containers are required to support the Concurrency
-Utilities API. The Java EE Product Provider must provide preconfigured
+Utilities API. The Jakarta EE Product Provider must provide preconfigured
 default managed executor service, managed scheduled executor service,
 managed thread factory, and context service objects for use by the
 application in the containers in which the Concurrency Utilities API is
 required to be supported.
 
-The Concurrency Utilities for Java EE
+The Concurrency Utilities for Jakarta EE
 specification can be found at _http://jcp.org/en/jsr/detail?id=236_ .
 
 === Batch Applications for the Java Platform 1.0 (Batch) Requirements
@@ -7079,62 +7079,62 @@ The Batch Applications for the Java Platform
 API (Batch) provides a programming model for batch applications and a
 runtime for scheduling and executing jobs.
 
-In a full Java EE product, all Java EE web
+In a full Jakarta EE product, all Jakarta EE web
 containers and EJB containers are required to support the Batch API.
 
 The Batch Application for the Java Platform
 specification can be found at _http://jcp.org/en/jsr/detail?id=352_ .
 
-=== Java™ API for XML Registries (JAXR) 1.0 Requirements (Optional)
+=== Jakarta™ API for XML Registries (JAXR) 1.0 Requirements (Optional)
 
 The JAXR specification defines APIs for
 client access to XML-based registries such as ebXML registries and UDDI
-registries. Java EE products that support JAXR must include a JAXR
+registries. Jakarta EE products that support JAXR must include a JAXR
 registry provider that meets at least the JAXR level 0 requirements.
 
 The JAXR specification is available at
 _http://jcp.org/en/jsr/detail?id=93_ .
 
-=== Java™ Platform, Enterprise Edition Management API 1.1 Requirements
+=== Jakarta™ Platform, Enterprise Edition Management API 1.1 Requirements
 
-The Java EE Management API provides APIs for
-management tools to query a Java EE application server to determine its
-current status, applications deployed, and so on. All Java EE products
+The Jakarta EE Management API provides APIs for
+management tools to query a Jakarta EE application server to determine its
+current status, applications deployed, and so on. All Jakarta EE products
 must support this API as described in its specification.
 
-The Java EE Management API specification is
+The Jakarta EE Management API specification is
 available at _http://jcp.org/en/jsr/detail?id=77_ .
 
-=== [[a2730]]Java™ Platform, Enterprise Edition Deployment API 1.2 Requirements (Optional)
+=== [[a2730]]Jakarta™ Platform, Enterprise Edition Deployment API 1.2 Requirements (Optional)
 
-The Java EE Deployment API defines the
+The Jakarta EE Deployment API defines the
 interfaces between the runtime environment of a deployment tool and
-plug-in components provided by a Java EE application server. These
-plug-in components execute in the deployment tool and implement the Java
-EE product-specific deployment mechanisms. Java EE products that support
-the Java EE Deployment API are required to supply these plug-in
+plug-in components provided by a Jakarta EE application server. These
+plug-in components execute in the deployment tool and implement the Jakarta
+EE product-specific deployment mechanisms. Jakarta EE products that support
+the Jakarta EE Deployment API are required to supply these plug-in
 components for use in tools from other vendors.
 
-Note that the Java EE Deployment
-specification does not define new APIs for direct use by Java EE
-applications. However, it would be possible to create a Java EE
+Note that the Jakarta EE Deployment
+specification does not define new APIs for direct use by Jakarta EE
+applications. However, it would be possible to create a Jakarta EE
 application that acts as a deployment tool and provides the runtime
-environment required by the Java EE Deployment specification.
+environment required by the Jakarta EE Deployment specification.
 
-The Java EE Deployment API specification is
+The Jakarta EE Deployment API specification is
 available at _http://jcp.org/en/jsr/detail?id=88_ .
 
-=== Java™ Authorization Contract for Containers (JACC) 1.5 Requirements
+=== Jakarta™ Authorization Contract for Containers (JACC) 1.5 Requirements
 
 The JACC specification defines a contract
-between a Java EE application server and an authorization policy
-provider. In a full Java EE product, all Java EE web containers and
+between a Jakarta EE application server and an authorization policy
+provider. In a full Jakarta EE product, all Jakarta EE web containers and
 enterprise bean containers are required to support this contract.
 
 The JACC specification can be found at
 _http://jcp.org/en/jsr/detail?id=115[]http://jcp.org/en/jsr/detail?id=115._
 
-=== [[a2737]]Java™ Authentication Service Provider Interface for Containers (JASPIC) 1.1 Requirements
+=== [[a2737]]Jakarta™ Authentication Service Provider Interface for Containers (JASPIC) 1.1 Requirements
 
 The JASPIC specification defines a service
 provider interface (SPI) by which authentication providers implementing
@@ -7148,12 +7148,12 @@ authenticated by the message sender. They authenticate incoming messages
 and return to their calling container the identity established as a
 result of the message authentication.
 
-In a full Java EE product, all Java EE web
+In a full Jakarta EE product, all Jakarta EE web
 containers and enterprise bean containers are required to support the
 baseline compatibility requirements as defined by the JASPIC
-specification. In a full Java EE product, all web containers must also
+specification. In a full Jakarta EE product, all web containers must also
 support the Servlet Container Profile as defined in the JASPIC
-specification. In a Java EE profile product that includes Servlet and
+specification. In a Jakarta EE profile product that includes Servlet and
 JASPIC, all web containers must also support the Servlet Container
 Profile as defined in the JASPIC specification. Support for the JASPIC
 SOAP Profile is not required.
@@ -7161,18 +7161,18 @@ SOAP Profile is not required.
 The JASPIC specification can be found at
 _http://jcp.org/en/jsr/detail?id=196_ .
 
-=== [[a2741]]Java EE Security API 1.0 Requirements
+=== [[a2741]]Jakarta EE Security API 1.0 Requirements
 
-The Java EE Security API leverages JASPIC,
+The Jakarta EE Security API leverages JASPIC,
 but provides an easier to use SPI for authentication of users of web
 applications and defines identity store APIs for authentication and
 authorization.
 
-In a full Java EE product, all Java EE web
+In a full Jakarta EE product, all Jakarta EE web
 containers and enterprise bean containers are required to support the
-requirements defined by the Java EE Security API specification.
+requirements defined by the Jakarta EE Security API specification.
 
-The Java EE Security API specification can be
+The Jakarta EE Security API specification can be
 found at _http://jcp.org/en/jsr/detail?id=375._
 
 === Debugging Support for Other Languages (JSR-45) Requirements
@@ -7181,7 +7181,7 @@ JSP pages are usually translated into Java
 language pages and then compiled to create class files. The Debugging
 Support for Other Languages specification describes information that can
 be included in a class file to relate class file data to data in the
-original source file. All Java EE products are required to be able to
+original source file. All Jakarta EE products are required to be able to
 include such information in class files that are generated from JSP
 pages.
 
@@ -7191,13 +7191,13 @@ specification can be found at _http://jcp.org/en/jsr/detail?id=45_ .
 === Standard Tag Library for JavaServer Pages™ (JSTL) 1.2 Requirements
 
 JSTL defines a standard tag library that
-makes it easier to develop JSP pages. All Java EE products are required
+makes it easier to develop JSP pages. All Jakarta EE products are required
 to provide JSTL for use by all JSP pages.
 
 The Standard Tag Library for JavaServer Pages
 specification can be found at _http://jcp.org/en/jsr/detail?id=52_ .
 
-=== Web Services Metadata for the Java™ Platform 2.1 Requirements
+=== Web Services Metadata for the Jakarta™ Platform 2.1 Requirements
 
 The Web Services Metadata for the Java
 Platform specification defines Java language annotations that can be
@@ -7215,14 +7215,14 @@ building user interfaces for JavaServer applications. Developers of
 various skill levels can quickly build web applications by: assembling
 reusable UI components in a page; connecting these components to an
 application data source; and wiring client-generated events to
-server-side event handlers. In a full Java EE product, all Java EE web
+server-side event handlers. In a full Jakarta EE product, all Jakarta EE web
 containers are required to support applications that use the JavaServer
 Faces technology.
 
 The JavaServer Faces specification can be
 found at _http://jcp.org/en/jsr/detail?id=372_ .
 
-=== Common Annotations for the Java™ Platform 1.3 Requirements
+=== Common Annotations for the Jakarta™ Platform 1.3 Requirements
 
 The Common Annotations specification defines
 Java language annotations that are used by several other specifications,
@@ -7358,7 +7358,7 @@ Y
 The Common Annotations for the Java Platform
 specification can be found at _http://jcp.org/en/jsr/detail?id=250_ .
 
-=== Java™ Persistence API 2.2 Requirements
+=== Jakarta™ Persistence API 2.2 Requirements
 
 Java Persistence is the standard API for the
 management of persistence and object/relational mapping. The Java
@@ -7367,7 +7367,7 @@ for application developers using a Java domain model to manage a
 relational database.
 
 As mandated by the Java Persistence
-specification, in a Java EE environment the classes of the persistence
+specification, in a Jakarta EE environment the classes of the persistence
 unit should not be loaded by the application class loader or any of its
 parent class loaders until after the entity manager factory for the
 persistence unit has been created.
@@ -7382,19 +7382,19 @@ metadata model and API for JavaBean validation. The default metadata
 source is annotations, with the ability to override and extend the
 metadata through the use of XML validation descriptors.
 
-The Java EE platform requires that web
+The Jakarta EE platform requires that web
 containers make an instance of _ValidatorFactory_ available to JSF
 implementations by storing it in a servlet context attribute named
 _javax.faces.validator.beanValidator.ValidatorFactory._
 
-The Java EE platform also requires that an
+The Jakarta EE platform also requires that an
 instance of _ValidatorFactory_ be made available to JPA providers as a
 property in the map that is passed as the second argument to the
 _createContainerEntityManagerFactory(PersistenceUnitInfo, Map)_ method
 of the _PersistenceProvider_ interface, under the name
 _javax.persistence.validation.factory_ .
 
-Additional requirements on Java EE platform
+Additional requirements on Jakarta EE platform
 containers are specified in the Bean Validation specification, which can
 be found at _http://jcp.org/en/jsr/detail?id=380_ .
 
@@ -7402,7 +7402,7 @@ be found at _http://jcp.org/en/jsr/detail?id=380_ .
 
 The Managed Beans specification defines a
 lightweight component model that supports the basic lifecycle model,
-resource injection facility and interceptor service present in the Java
+resource injection facility and interceptor service present in the Jakarta
 EE platform.
 
 The Managed Beans specification can be found
@@ -7417,10 +7417,10 @@ of the EJB 3.0 specification.
 The Interceptors specification can be found
 at _http://jcp.org/en/jsr/detail?id=318_ .
 
-=== Contexts and Dependency Injection for the Java EE Platform 2.0 Requirements
+=== Contexts and Dependency Injection for the Jakarta EE Platform 2.0 Requirements
 
 The Contexts and Dependency Injection (CDI)
-specification defines a set of contextual services, provided by Java EE
+specification defines a set of contextual services, provided by Jakarta EE
 containers, aimed at simplifying the creation of applications that use
 both web tier and business tier technologies.
 
@@ -7433,7 +7433,7 @@ The Dependency Injection for Java (DI)
 specification defines a standard set of annotations (and one interface)
 for use on injectable classes.
 
-In the Java EE platform, support for
+In the Jakarta EE platform, support for
 Dependency Injection is mediated by CDI. See
 link:#a2112[See Support for Dependency
 Injection]” for more detail.

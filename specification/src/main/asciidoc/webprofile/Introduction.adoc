@@ -1,7 +1,7 @@
 == Introduction
 
-This specification defines the Java EE Web
-Profile (“Web Profile”), a profile of the Java Platform, Enterprise
+This specification defines the Jakarta EE Web
+Profile (“Web Profile”), a profile of the Jakarta™ Platform, Enterprise
 Edition specifically targeted at web applications.
 
 === Target and Rationale for the Web Profile
@@ -21,9 +21,9 @@ which in turn use the services of the servlet container.
 Besides managing HTTP interactions, most web
 applications have significant requirements in the areas of transaction
 management, security and persistence. Such requirements can be readily
-addressed by technologies that have been part of the Java EE platform
-for quite some time, such as the Enterprise JavaBeans (EJB) 3.x
-technology and the Java Persistence API, but that are rarely supported
+addressed by technologies that have been part of the Jakarta EE platform
+for quite some time, such as the Jakarta Enterprise Beans 3.x
+technology and the Jakarta Persistence, but that are rarely supported
 by “plain” servlet containers. By incorporating many of these APIs, the
 Web Profile aims at raising the bar for what should be considered a
 basic stack for the development of web applications using the Java
@@ -48,13 +48,13 @@ a middle ground between these two sets of requirements.
 
 In terms of completeness, the Web Profile
 offers a complete stack, with technologies addressing presentation and
-state management (JavaServer Faces, JavaServer Pages), core web
-container funtionality (Servlet), business logic (Enterprise JavaBeans
-Lite), transactions (Java Transaction API), persistence (Java
-Persistence API) and more.
+state management (Jakarta Server Faces, Jakarta Server Pages), core web
+container funtionality (Jakarta Servlet), business logic (Jakarta Enterprise Beans
+Lite), transactions (Jakarta Transactions), persistence (Jakarta
+Persistence) and more.
 
 As for simplicity, it leaves out many of the
-enterprise backend APIs that are part of the Java EE platform. It also
+enterprise backend APIs that are part of the Jakarta EE platform. It also
 relies on the pluggability features in the Servlet specification to
 allow applications to use libraries that extend the servlet container
 with minimal configuration overhead.
@@ -70,16 +70,16 @@ core (“à la carte” installation).
 
 *
 
-As dictated by the general rules for Java EE
+As dictated by the general rules for Jakarta EE
 profiles in the Platform specification, products that implement the Web
 Profile must honor:
 
-. all requirements of the Java EE Platform
+. all requirements of the Jakarta EE Platform
 specification that apply to all profiles;
 . all requirements of this specification;
 . all requirements of the individual
 component specifications;
-. all requirements in the Java EE Platform
+. all requirements in the Jakarta EE Platform
 specification that are conditional on the presence of a specific
 technology or combinations of technologies.
 
@@ -89,11 +89,10 @@ from each grouping.
 For the first one, the Java EE Platform
 specification mandates support for the “ _java:_ ” naming context in all
 profiles. Consequently, Web Profile products must support it. For a
-similar reason, all Web Profile 8 products must support the Java
-Platform, Standard Edition 8 API.
+similar reason, all Web Profile 8 products must support the Java Platform, Standard Edition 8 API.
 
 In the second category one can point out the
-requirement to support Java EE web application modules ( _.war_ files)
+requirement to support Jakarta EE web application modules ( _.war_ files)
 (see link:WebProfile.html#a69[See Additional Requirements]”).
 
 The third category is hopefully
@@ -104,39 +103,39 @@ requirements listed in the Servlet specification.
 The fourth category is the most complex. As a
 first example, since a Web Profile product is required to implement the
 Servlet technology, it must also follow all general requirements for
-Java EE web containers in the Platform specification. Additionally, it
+Jakarta EE web containers in the Platform specification. Additionally, it
 must follow all security requirements in the Platform specification that
-pertain to Java EE web containers, all interoperability requirements for
+pertain to Jakarta EE web containers, all interoperability requirements for
 such containers, etc. Furthermore, since a Web Profile product must
-implement the Java Transaction API (JTA), it must also satisfy all the
+implement the Jakarta Transactions API, it must also satisfy all the
 Platform specification’s transaction management-related requirements for
 web components, which indeed are conditional on the presence of Servlet
 and JTA .
 
 As a negative example for the fourth category
-of requirements, consider the Java Message Service (JMS) technology.
+of requirements, consider the Jakarta Messaging technology.
 Since it is not a required component of the Web Profile, Web Profile
-products are not required to include an implementation of JMS, nor do
-they have to support other JMS-related requirements, like the ability to
+products are not required to include an implementation of Jakarta Messaging, nor do
+they have to support other Jakarta Messaging-related requirements, like the ability to
 inject message destination references. On the other hand, a Web Profile
-product that included an implementation of JMS would be required to
-honor all the JMS-related requirements in the Java EE Platform
+product that included an implementation of Jakarta Messaging would be required to
+honor all the Jakarta Messaging-related requirements in the Jakarta EE Platform
 specification.
 
 Particular care should be taken when
-determining applicable requirements based on the presence of EJB Lite in
-the Web Profile. As described in the EJB specification, EJB Lite is a
-subset of the EJB API. When examining an EJB-related requirement in the
-Java EE Platform spec, one must first of all determine which API
-classes, component types and EJB container services are mentioned in the
-requirement itself. Only if all of them fall inside the EJB Lite subset
+determining applicable requirements based on the presence of Jakarta Enterprise Beans Lite in
+the Web Profile. As described in the Jakarta Enterprise Beans specification, Jakarta Enterprise Beans Lite is a
+subset of the Jakarta Enterprise Beans API. When examining an Jakarta Enterprise Beans-related requirement in the
+Jakarta EE Platform spec, one must first of all determine which API
+classes, component types and Jakarta Enterprise Beans container services are mentioned in the
+requirement itself. Only if all of them fall inside the Jakarta Enterprise Beans Lite subset
 that requirement is considered applicable to Web Profile products.
 
 For example, since EJB Lite does not include
 any remote functionality, the _EJB_ annotation may not be used to inject
 a remote reference, something that should be kept in mind when
 evaluating the requirements in the Platform specification section
-“Enterprise JavaBeans References”.
+“Jakarta Enterprise Beans References”.
 
 === Acknowledgements for Version 6
 

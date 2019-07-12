@@ -1,31 +1,31 @@
 == Compatibility and Migration
 
 This chapter summarizes compatibility and
-migration issues for the Java EE platform. The specifications for each
-of the component technologies included in Java EE also describe
+migration issues for the Jakarta(TM) EE platform. The specifications for each
+of the component technologies included in Jakarta EE also describe
 compatibility and migration issues for that technology in much more
 detail.
 
 ===  Compatibility
 
 The word compatibility covers many different
-concepts. Java EE products are compatible with the Java EE specification
+concepts. Jakarta EE products are compatible with the Jakarta EE specification
 if they implement the APIs and behavior required by the specification.
-Applications are compatible with a release of the Java EE platform if
+Applications are compatible with a release of the Jakarta EE platform if
 they only depend on APIs and behavior defined by that release of the
-platform. A new release of the Java EE platform is compatible with
+platform. A new release of the Jakarta EE platform is compatible with
 previous releases of the platform if all portable applications written
 to the previous release of the platform will also run unchanged and with
 identical behavior on the new release of the platform.
 
-Compatibility is a core value of the Java EE
-platform. A Java EE product is required to support portable applications
+Compatibility is a core value of the Jakarta EE
+platform. A Jakarta EE product is required to support portable applications
 written to previous versions of the platform. Compatibility and
 portability work together to provide the Write Once, Run Anywhere value
-of the Java EE platform. Java EE products conform to the Java EE
+of the Jakarta EE platform. Jakarta EE products conform to the Jakarta EE
 specifications by providing APIs and behavior as required by the
 specifications. Portable applications depend only on the APIs and
-behavior required by the Java EE specifications. In general, portable
+behavior required by the Jakarta EE specifications. In general, portable
 applications written to a previous version of the platform will continue
 to work without change and with identical behavior on the current
 version of the platform.
@@ -35,14 +35,14 @@ version of the platform.
 Migration is the act of converting an
 application to use new facilities introduced in this release of the
 platform. Given the strong level of compatibility in this release of the
-Java EE platform, migration is largely an optional exercise. Still, an
+Jakarta EE platform, migration is largely an optional exercise. Still, an
 application may be improved (better performance, simpler to develop,
 more flexible, etc.) by converting it to use newer facilities of the
-Java EE platform.
+Jakarta EE platform.
 
-=== Java Persistence
+=== Jakarta Persistence
 
-Java Persistence provides a much richer set of
+Jakarta Persistence provides a much richer set of
 modeling capabilities and object/relational mapping capabilities than
 EJB CMP entity beans and is significantly easier to use.
 
@@ -50,15 +50,15 @@ Support for EJB CMP and BMP entity beans has
 been made optional with the Java EE 7 release. Support for EJB CMP 1.1
 entity beans has been deprecated since Java EE 5. Applications are
 strongly encouraged to migrate applications using EJB entity beans to
-the Java Persistence API.
+Jakarta Persistence.
 
-=== JAX-WS
+=== Jakarta XML Web Services
 
-JAX-WS, along with JAXB and the Metadata for
+Jakarta XML Web Services, along with Jakarta XML Binding and the Metadata for
 Web Services specification, provides simpler and more complete support
 for web services than is available using the JAX-RPC technology. Support
 for JAX-RPC has been made optional with the Java EE 7 release.
 Applications that provide web services using JAX-RPC should consider
-migrating to the JAX-WS API. Note that because both technologies support
+migrating to the Jakarta XML Web Services API. Note that because both technologies support
 the same web service interoperability standards, clients and services
 can be migrated to the new API independently.

@@ -169,11 +169,19 @@ Optional)]”)
 * Support for _java:comp/ORB_ (see
 link:#a1385[See ORB References]”)
 
+<<<<<<< HEAD
 === [[a3252]]Full Jakarta EE Product Requirements
 
 This section defines the requirements for
 full Jakarta EE platform products. These requirements correspond to the
 full set of requirements in previous versions of the Jakarta EE platform
+=======
+=== [[a3252]]Full Jakarta™ EE Product Requirements
+
+This section defines the requirements for
+full Jakarta EE platform products. These requirements correspond to the
+full set of requirements in previous versions of the Java EE platform
+>>>>>>> upstream/master
 specification and update those requirements for this new version of the
 platform.
 
@@ -231,9 +239,7 @@ The following technologies are optional:
 
 
 
-=== CHApter __ [[a3293]]
-
-[[a3294]]Application Clients
+=== [[a3294]]Application Clients
 
 This chapter describes application clients
 in the Jakarta™ Platform, Enterprise Edition (Jakarta EE).
