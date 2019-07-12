@@ -40,7 +40,7 @@ application may be improved (better performance, simpler to develop,
 more flexible, etc.) by converting it to use newer facilities of the
 Jakarta EE platform.
 
-=== Jakarta Persistence
+==== Jakarta Persistence
 
 Jakarta Persistence provides a much richer set of
 modeling capabilities and object/relational mapping capabilities than
@@ -52,7 +52,7 @@ entity beans has been deprecated since Java EE 5. Applications are
 strongly encouraged to migrate applications using EJB entity beans to
 Jakarta Persistence.
 
-=== Jakarta XML Web Services
+==== Jakarta XML Web Services
 
 Jakarta XML Web Services, along with Jakarta XML Binding and the Metadata for
 Web Services specification, provides simpler and more complete support
