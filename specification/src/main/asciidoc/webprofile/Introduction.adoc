@@ -93,7 +93,7 @@ similar reason, all Web Profile 8 products must support the Java Platform, Stand
 
 In the second category one can point out the
 requirement to support Jakarta EE web application modules ( _.war_ files)
-(see link:WebProfile.html#a69[See Additional Requirements]”).
+(<<a69, see Additional Requirements>>).
 
 The third category is hopefully
 self-explanatory. For example, Web Profile products must implement the
