@@ -2,7 +2,7 @@
 
 This appendix describes Document Type
 Definitions and XML schemas for Deployment Descriptors from previous
-versions of the Java EE specification. All Java EE products are required
+versions of the Java EE specification. All Jakarta EE products are required
 to support these DTDs and schemas as well as the schemas specified in
 this version of the specification. This ensures that applications
 written to previous versions of this specification can be deployed on
