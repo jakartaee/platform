@@ -388,7 +388,7 @@ level.
 
 === JavaBeans™ Activation Framework (JAF)
 
-The Java Activation API provides a framework for handling
+The JAF API provides a framework for handling
 data in different MIME types, originating in different formats and
 locations. The JavaMail API makes use of the JAF API. The JAF API is
 included in Java SE and so is available to Jakarta EE applications.
@@ -402,7 +402,7 @@ Streaming API for XML (StAX) provides a pull-parsing API for XML. The
 JAXP and StAX APIs are included in Java SE and so are available to Jakarta
 EE applications.
 
-=== Jakarta™ Connector Architecture
+=== Jakarta Connector Architecture
 
 The Connector architecture is a Jakarta EE SPI
 that allows resource adapters that support access to Enterprise
@@ -469,27 +469,27 @@ APIs for authentication and authorization.
 
 Jakarta EE provides full support for both clients
 of web services as well as web service endpoints. Several Java
-technologies work together to provide support for web services. Jakarta
-XML Web Services and Jakarta XML-based RPC
+technologies work together to provide support for web services. JAX-WS
+and Jakarta XML-based RPC
 both provide support for web service calls using the SOAP/HTTP
 protocol. JAX-WS, which is included in Java SE, is the primary API for
-web services and is a follow-on to Jakarta XML-based RPC. Jakarta XML Web Services offers extensive web
+web services and is a follow-on to Jakarta XML-based RPC. JAX-WS offers extensive web
 services functionality, with support for multiple bindings/protocols.
-Jakarta XML Web Services and Jakarta XML-based RPC are fully interoperable when using the SOAP 1.1 over
+JAX-WS and Jakarta XML-based RPC are fully interoperable when using the SOAP 1.1 over
 HTTP protocol as constrained by the WS-I Basic Profile specification.
-Support for Jakarta XML-based RPC has been made optional as of Java EE 7. See
+Support for Jakarta XML-based RPC is optional in Jakarta EE 8. See
 link:#a2331[See Pruned Jakarta
 Technologies]”.
 
 JAX-WS and the Java Architecture for XML
 Binding (JAXB) define the mapping between Java classes and XML as used
 in SOAP calls, and provide support for 100% of XML Schema. JAXB is
-included in Java SE. Jakarta SOAP with Attachments,
+included in Java SE. The SOAP with Attachments API for Java (SAAJ),
 which is also included in Java SE, provides support for manipulating low
 level SOAP messages. The Web Services for Jakarta EE specification fully
 defines the deployment of web service clients and web service endpoints
 in Java EE, as well as the implementation of web service endpoints using
-enterprise beans. The Jakarta Enterprise Web Services specification defines Java
+enterprise beans. The Web Services Metadata specification defines Java
 language annotations that make it easier to develop web services. The
 Jakarta XML Registries provides client access to XML
 registry servers. Support for Jakarta XML Registries is optional as of Jakarta EE
