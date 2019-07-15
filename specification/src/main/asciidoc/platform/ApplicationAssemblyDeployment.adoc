@@ -33,7 +33,7 @@ external to the application package as described in
 link:#a3125[See Assembling a Jakarta EE
 Application].”
 
-=== [[a2899]]Jakarta EE Deployment
+[[a2899]]Jakarta EE Deployment
 
 image:Platform_Spec-9.png[image]
 
@@ -50,11 +50,11 @@ deployment descriptor and deployed as a Jakarta EE application.
 _link:#a2903[See Jakarta EE Application
 Life Cycle]_ shows the life cycle of a Jakarta EE application.
 
-=== [[a2903]]Jakarta EE Application Life Cycle
+[[a2903]]Jakarta EE Application Life Cycle
 
 image:Platform_Spec-10.png[image]
 
-=== [[a2904]]Component Creation
+==== [[a2904]]Component Creation
 
 The Jakarta Enterprise Beans, Jakarta Servlet, application client, and
 Jakarta Connector specifications include the XML Schema definition of the
@@ -150,7 +150,7 @@ has a default application name of "bigapp",
 and defines four modules with default names "ejbs/inventory",
 "ejbs/accounts", "ui/store", and "ui/admin".
 
-=== Application Assembly
+==== Application Assembly
 
 A Jakarta EE application may consist of one or
 more Jakarta EE modules and one Jakarta EE application deployment descriptor.
@@ -207,7 +207,7 @@ name of the module is the base name of the module file with any
 extension ( _.war_ , _.jar_ , _.rar_ ) removed and with any directory
 names removed.
 
-=== Deployment
+==== Deployment
 
 During the deployment phase of an
 application’s life cycle, the application is installed on the Jakarta EE
@@ -266,7 +266,7 @@ other shared classes or resources packaged in a separate _.jar_ file or
 directory that is included in the same Jakarta EE application package, or
 that has been previously installed in the Jakarta EE containers.
 
-=== [[a2948]]Bundled Libraries
+==== [[a2948]]Bundled Libraries
 
 Libraries bundled with an application may be
 referenced in the following ways:
@@ -325,7 +325,7 @@ These libraries may reference other libraries, either bundled with the
 application or installed separately, using any of the techniques
 described herein.
 
-=== Installed Libraries
+==== Installed Libraries
 
 Libraries that have been installed separately
 may be referenced in the following way:
@@ -365,7 +365,7 @@ support multiple versions of an installed library, and by default only
 allow applications to access the installed libraries for which they have
 expressed a dependency.
 
-=== Library Conflicts
+==== Library Conflicts
 
 If an application includes a bundled version
 of a library, and the same library exists as an installed library, the
@@ -377,7 +377,7 @@ library is also a required component of the Jakarta EE version on
 which the application is being deployed, this version may (and
 typically will) take precedence.
 
-=== Library Resources
+==== Library Resources
 
 In addition to allowing access to referenced
 classes, as described above, any resources contained in the referenced
@@ -387,7 +387,7 @@ application. An application will typically have the security permissions
 required to access resources in any of the JAR files packaged with the
 application.
 
-=== [[a2966]]Dynamic Class Loading
+==== [[a2966]]Dynamic Class Loading
 
 Libraries that dynamically load classes must
 consider the class loading environment of a Jakarta EE application.
@@ -459,7 +459,7 @@ technique to load classes.
 
  clazz = Class.forName(name);
 
-=== Examples
+==== Examples
 
 The following example illustrates a simple
 use of the bundled library mechanism to reference a library of utility
@@ -609,7 +609,7 @@ the techniques described in
 link:#a2966[See Dynamic Class Loading]”
 if libraries need to access classes packaged in the application modules.
 
-=== [[a3046]]Web Container Class Loading Requirements
+==== [[a3046]]Web Container Class Loading Requirements
 
 Components in the web container must have
 access to the following classes
@@ -701,7 +701,7 @@ resources are covered by one of the rules above.
 application package. For example, the application should not have access
 to the classes in application client jar files.
 
-=== Jakarta Enterprise Beans Container Class Loading Requirements
+==== Jakarta Enterprise Beans Container Class Loading Requirements
 
 Components in the Jakarta Enterprise Beans container must have
 access to the following classes and resources.
@@ -784,7 +784,7 @@ rules above.
 application package. For example, the application should not have access
 to the classes in application client jar files.
 
-=== Application Client Container Class Loading Requirements
+==== Application Client Container Class Loading Requirements
 
 Components in the application client
 container must have access to the following classes and resources.
@@ -833,7 +833,7 @@ access to the classes in other application client jar files in the same
 ear file, nor should it have access to the classes in web applications
 or Jakarta Enterprise Beans jar files in the same ear file.
 
-=== Applet Container Class Loading Requirements
+==== Applet Container Class Loading Requirements
 
 The requirements for the applet container are
 completely specified by the Java SE 8 specification. This specification
@@ -844,7 +844,7 @@ adds no new requirements for the applet container.
 This section specifies the sequence of steps
 that are typically followed when composing a Jakarta EE application.
 
-=== [[a3125]]Assembling a Jakarta EE Application
+==== [[a3125]]Assembling a Jakarta EE Application
 
 . Select the Jakarta EE modules that will be used
 by the application.
@@ -965,7 +965,7 @@ _.ear_ filename extension.
 descriptor (“alt-dd”) for the application, external to the packaged
 application.
 
-=== Adding and Removing Modules
+==== Adding and Removing Modules
 
 After the application is created, Jakarta EE
 modules may be added or removed before deployment. When adding or
@@ -1142,7 +1142,7 @@ Specifications that define their own additional deployment descriptors
 should provide a _metadata-complete_ attribute of their own, if deemed
 useful, with the appropriate semantics.
 
-=== Deploying a Stand-Alone Jakarta EE Module
+==== Deploying a Stand-Alone Jakarta EE Module
 
 This section specifies the requirements for
 deploying a stand-alone Jakarta EE module.
@@ -1195,7 +1195,7 @@ enterprise beans in an ejb-jar file might be deployed multiple times
 under different JNDI names and with different configurations of their
 resources.
 
-=== [[a3179]]Deploying a Jakarta EE Application
+==== [[a3179]]Deploying a Jakarta EE Application
 
 This section specifies the requirements for
 deploying a Jakarta EE application.
@@ -1296,7 +1296,7 @@ descriptor but do not appear in the application deployment descriptor,
 the deployment tool must use the description provided in the module
 deployment descriptor.
 
-=== Deploying a Library
+==== Deploying a Library
 
 This section specifies the requirements for
 deploying a library.
@@ -1321,7 +1321,7 @@ Similarly, deployment of a library that is also used in the
 implementation of the Jakarta EE product may be rejected. Deployment of a
 library that is in active use by an application may be rejected.
 
-=== [[a3201]]Module Initialization
+==== [[a3201]]Module Initialization
 
 After a successful deployment, all the
 modules of an application other than application client modules are
@@ -1372,7 +1372,7 @@ of the structure of the Jakarta EE application XML schema.
 
 
 
-=== [[a3208]]Jakarta EE Application XML Schema Structure
+[[a3208]]Jakarta EE Application XML Schema Structure
 
 image:Platform_Spec-11.png[image]
 

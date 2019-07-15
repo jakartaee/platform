@@ -62,7 +62,7 @@ EE product in more detail.
 This section defines the transaction support requirements of Jakarta EE Products
 that must be supported by Product Providers.
 
-=== Web Components
+==== Web Components
 
 Web components may demarcate transactions using the
 _javax.transaction.UserTransaction_ interface or transactional interceptors,
@@ -80,7 +80,7 @@ within their _doFilter_ methods but should not use any transactional resources
 in the methods of any objects used to wrap the request or response
 objects.
 
-=== Transaction Requirements
+==== Transaction Requirements
 
 The Jakarta EE platform must meet the following requirements:
 
@@ -114,7 +114,7 @@ of the transaction defined by the Jakarta Transactions specification.
 newly created thread is not associated with any transaction defined by the
 Jakarta Transactions specification.
 
-=== [[a493]]Transaction Non-Requirements
+==== [[a493]]Transaction Non-Requirements
 
 The Product Provider is not required to support the importing of a transaction
 context from a client to a web component.
@@ -129,7 +129,7 @@ However, when a web component is invoked through the _RequestDispatcher_
 interface, any active transaction context must be propagated to the called
 servlet or server pages.
 
-=== Transactions in Web Component Life Cycles
+==== Transactions in Web Component Life Cycles
 
 Transactions may not span web requests from a client on the network. If a web
 component starts a transaction in the _service_ or _doFilter_ method (or
@@ -153,7 +153,7 @@ without error, or propagate the transaction context back to the caller.
 Portable servlets will complete any transaction they start before returning from
 the service method.
 
-=== Transactions and Threads
+==== Transactions and Threads
 
 There are many subtle and complex interactions between the use of transactional
 resources and threads. To ensure correct operation, web components should obey
@@ -192,22 +192,22 @@ resource objects in class instance fields.
 Transaction context propagation requirements are described above and in the
 Jakarta Enterprise Beans specification.
 
-=== Jakarta Enterprise Beans
+==== Jakarta Enterprise Beans
 
 The Jakarta EE Product Provider must provide support for transactions as defined
 in the Jakarta Enterprise Beans specification.
 
-=== Application Clients
+==== Application Clients
 
 The Jakarta EE Product Provider is not required to provide transaction
 management support for application clients.
 
-=== Applet Clients
+==== Applet Clients
 
 The Jakarta EE Product Provider is not required to provide transaction
 management support for applets.
 
-=== [[a516]]Transactional JDBC™ Technology Support
+==== [[a516]]Transactional JDBC™ Technology Support
 
 A Jakarta EE product must support a JDBC technology database as a transactional
 resource manager. The platform must enable transactional JDBC API access from
@@ -229,7 +229,7 @@ the XA capabilities of JDBC drivers through product-specific means, although
 normally such JDBC drivers would be delivered as resource adapters using the
 Connector API.
 
-=== [[a520]]Transactional Jakarta Messaging Support
+==== [[a520]]Transactional Jakarta Messaging Support
 
 A Jakarta EE product must support a Jakarta Messaging provider as a
 transactional resource manager. The platform must enable transactional Jakarta
@@ -241,7 +241,7 @@ wish to start a transaction, send a Jakarta Messaging message, invoke an
 enterprise bean that also sends a Jakarta Messaging message as part of the same
 transaction, and, finally, commit the transaction.
 
-=== Transactional Resource Adapter (Connector) Support
+==== Transactional Resource Adapter (Connector) Support
 
 A Jakarta EE product must support resource adapters that use _XATransaction_
 mode as transactional resource managers. The platform must enable transactional
@@ -256,7 +256,7 @@ finally, commit the transaction.
 
 === Transaction Interoperability
 
-=== Multiple Jakarta EE Platform Interoperability
+==== Multiple Jakarta EE Platform Interoperability
 
 This specification does not require the Product Provider to implement any
 particular protocol for transaction interoperability across multiple Jakarta EE
@@ -269,7 +269,7 @@ propagation protocol defined by OMG and described in the OTS specification,
 transaction interoperability when using the Jakarta Enterprise Beans
 interoperability protocol based on RMI-IIOP.
 
-=== Support for Transactional Resource Managers
+==== Support for Transactional Resource Managers
 
 This specification requires all Jakarta EE products to support the
 _javax.transaction.xa.XAResource_ interface, as specified in the Connector
@@ -287,7 +287,7 @@ the Jakarta Transactions specification.
 
 === Local Transaction Optimization
 
-=== Requirements
+==== Requirements
 
 If a transaction uses a single resource manager, performance may be improved by
 using a resource manager specific local optimization. A local transaction is
@@ -302,7 +302,7 @@ Jakarta EE application.
 The following section describes a possible mechanism for local transaction
 optimization by containers.
 
-=== A Possible Design
+==== A Possible Design
 
 This section illustrates how the previously described requirements might be
 implemented.
