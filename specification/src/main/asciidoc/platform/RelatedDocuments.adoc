@@ -206,7 +206,7 @@ associated Jakarta™ Enterprise Beans QL only.
 interoperability, including EJB 2.x and 1.x client view.
 
 [.footnoteNumber]# 17.# [[a3664]]See
-link:#a2730[See Jakarta™ Enterprise Edition Deployment API 1.2 Requirements (Optional)] for
+<<a2730, Jakarta™ Enterprise Edition Deployment API 1.2 Requirements (Optional)>> for
 details.
 
 [.footnoteNumber]# 18.# [[a3665]]Note that a component

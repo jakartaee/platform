@@ -1,4 +1,5 @@
-== [[a3212]]Profiles
+[[a3212]]
+== Profiles
 
 This chapter describes the requirements
 common to all Java EE profiles. It does not define any concrete
@@ -132,7 +133,8 @@ otherwise indicated.
 examples, or are otherwise non-normative, do not contain any
 requirements.
 
-=== [[a3240]]Requirements for All Java EE Profiles
+[[a3240]]
+=== Requirements for All Java EE Profiles
 
 The Java Platform, Standard Edition 8 is the
 required foundation for any Java EE 8 profile.
@@ -147,29 +149,30 @@ annotations defined by the Common Annotations specification ( _Resource_
 The following functionality is required to be
 supported in all Java EE profiles:
 
-=== JNDI “java:” naming context (see link:#a607[See JNDI Naming Context]”)
+=== JNDI “java:” naming context (see <<a607, JNDI Naming Context>>”)
 
 * Java Transaction API (JTA)
 
 === Optional Features for Java EE Profiles
 
 All the technologies listed in
-link:#a2136[See Required APIs]”, and
+<<a2136, Required APIs>>”, and
 not designated as required in
-link:#a3240[See Requirements for All
-Java EE Profiles]”, are designated as optional for use in Java EE
+<<a3240, Requirements for All
+Java EE Profiles>>”, are designated as optional for use in Java EE
 profiles.
 
 The following functionality is designated as
 optional for use in Java EE profiles:
 
 * RMI/IIOP interoperability requirements (see
-link:#a2875[See OMG Protocols (Proposed
-Optional)]”)
+<<a2875, OMG Protocols (Proposed
+Optional)>>”)
 * Support for _java:comp/ORB_ (see
-link:#a1385[See ORB References]”)
+<<a1385, ORB References>>”)
 
-=== [[a3252]]Full Jakarta™ EE Product Requirements
+[[a3252]]
+=== Full Jakarta™ EE Product Requirements
 
 This section defines the requirements for
 full Jakarta EE platform products. These requirements correspond to the
@@ -183,8 +186,8 @@ likely relax the requirements given here, specifically by marking as
 optional technologies that have been subject to pruning and that are
 required by the present specification. The set of technologies that have
 been made optional and/or identified as candidates for pruning is given
-in link:#a2331[See Pruned Java
-Technologies]”.
+in <<a2331, Pruned Java
+Technologies>>”.
 
 The following technologies are required:
 
@@ -231,7 +234,8 @@ The following technologies are optional:
 
 
 
-=== [[a3294]]Application Clients
+[[a3294]]
+=== Application Clients
 
 This chapter describes application clients
 in the Java™ Platform, Enterprise Edition (Java EE).
@@ -286,8 +290,8 @@ gather authentication data, the container must provide an appropriate
 user interface. In addition, an application client may provide a class
 that implements the _javax.security.auth.callback.CallbackHandler_
 interface and specify the class name in its deployment descriptor (see
-link:#a3399[See Java EE Application
-Client XML Schema]” for details). The Deployer may override the callback
+<<a3399, Java EE Application
+Client XML Schema>>” for details). The Deployer may override the callback
 handler specified by the application and use the container’s default
 authentication user interface instead.
 
@@ -306,8 +310,8 @@ Application clients typically execute in an
 environment with a SecurityManager installed, and have similar security
 permission requirements as servlets. The security permission
 requirements are described fully in
-link:#a2339[See Java Platform, Standard
-Edition (Java SE) Requirements].”
+<<a2339, Java Platform, Standard
+Edition (Java SE) Requirements>>.”
 
 === Transactions
 
@@ -326,8 +330,7 @@ As with all Java EE components, application
 clients use JNDI to look up enterprise beans, get access to resource
 managers, reference configurable parameters set at deployment time, and
 so on. Application clients use the _java:_ JNDI namespace to access
-these items (see link:#a567[See
-Resources, Naming, and Injection]” for details).
+these items (see <<a567, Resources, Naming, and Injection>>” for details).
 
 Injection is also supported for the
 application client main class. Because the application client container
@@ -351,7 +354,8 @@ typically execute before the application client itself, in order to
 prepare the environment of the container, install a _SecurityManager_ ,
 initialize the name service client library, and so on).
 
-=== [[a3315]]Packaging and Deployment
+[[a3315]]
+=== Packaging and Deployment
 
 Application clients are packaged in JAR format
 files with a _.jar_ extension and may include a deployment descriptor
@@ -372,7 +376,8 @@ process annotations depends on the presence and version of the
 deployment descriptor and the setting of the _metadata-complete_
 attribute.
 
-=== [[a3318]]Deployment Descriptor Processing Requirements
+[[a3318]]
+=== Deployment Descriptor Processing Requirements
 
 Deployment descriptor
 
@@ -466,8 +471,8 @@ annotations that specify such deployment information in the class files
 packaged in the application client jar file. Such annotations must also
 be ignored when processing the class files that are available to the
 application client module for the deployment of this module according to
-link:#a3179[See Deploying a Java EE
-Application]”.
+<<a3179, Deploying a Java EE
+Application>>”.
 
 Note that a _"true"_ value for the
 _metadata-complete_ attribute does _not_ preempt the processing of _all_
@@ -557,7 +562,8 @@ an application launcher that integrates with the application client
 machine’s native operating system, but the level of such integration is
 unspecified.
 
-=== [[a3399]]Java EE Application Client XML Schema
+[[a3399]]
+=== Java EE Application Client XML Schema
 
 The XML grammar for a Java EE application client
 deployment descriptor is defined by the Java EE application-client
@@ -570,14 +576,14 @@ _<res-auth>container</res-auth>_ .
 All valid _application-client_ deployment
 descriptors must conform to the XML Schema definition, or to a DTD or
 schema definition from a previous version of this specification. (See
-link:#a3447[See Previous Version
-Deployment Descriptors].”) The deployment descriptor must be named
+<<a3447, Previous Version
+Deployment Descriptors>>.”) The deployment descriptor must be named
 _META-INF/application-client.xml_ in the application client’s _.jar_
 file. Note that this name is case-sensitive.
 
 
-_link:#a3404[See Java EE Application
-Client XML Schema Structure]_ shows the structure of the Java EE
+_<<a3404, Java EE Application
+Client XML Schema Structure>>_ shows the structure of the Java EE
 application-client XML Schema. The Java EE application-client XML Schema
 is located at
 _http://xmlns.jcp.org/xml/ns/javaee/application-client_8.xsd_ .
@@ -586,4 +592,5 @@ _http://xmlns.jcp.org/xml/ns/javaee/application-client_8.xsd_ .
 
 image:Platform_Spec-12.png[image]
 
-=== [[a3404]]Java EE Application Client XML Schema Structure
+[[a3404]]
+=== Java EE Application Client XML Schema Structure

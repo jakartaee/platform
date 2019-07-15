@@ -7,8 +7,8 @@ Java™ Platform, Enterprise Edition (Java EE™).
 
 The required relationships of architectural
 elements of the Java EE platform are shown in
-_link:#a45[See Java EE Architecture
-Diagram]_ . Note that this figure shows the logical relationships of the
+_<<a45, Java EE Architecture Diagram>>_.
+Note that this figure shows the logical relationships of the
 elements; it is not meant to imply a physical partitioning of the
 elements into separate machines, processes, address spaces, or virtual
 machines.
@@ -21,8 +21,8 @@ lower half of the rectangle. For example, the Application Client
 Container provides Java Message Service (JMS) APIs to Application
 Clients, as well as the other services represented. All these services
 are explained below. See
-link:#a84[See Java EE Standard
-Services]”.
+<<a84, Java EE Standard
+Services>>”.
 
 The arrows represent required access to other
 parts of the Java EE platform. The Application Client Container provides
@@ -43,8 +43,8 @@ environments for each type of application component.
 image:Platform_Spec-1.png[image]
 
 
-
-=== [[a45]]Java EE Architecture Diagram
+[[a45]]
+=== Java EE Architecture Diagram
 
 The following sections describe the Java EE
 Platform requirements for each kind of Java EE platform element.
@@ -53,7 +53,7 @@ Platform requirements for each kind of Java EE platform element.
 
 The Java EE 6 specification introduced the
 notion of “profiles” (see
-link:#a3212[See Profiles]”).
+<<a3212, Profiles>>”).
 
 A profile is a configuration of the Java EE
 platform targeted at a specific class of applications.
@@ -188,7 +188,7 @@ embedded in HTML pages.
 not completely defined by this specification. Application Clients fall
 into this category. Future versions of this specification may more fully
 define deployment and management of Application Clients. See
-link:#a3294[See Application Clients],”
+<<a3294, Application Clients>>,”
 for a description of Application Clients.
 
 === Containers
@@ -223,8 +223,8 @@ formats for the packaging of application components for deployment.
 
 The containers are implemented by a Java EE
 Product Provider. See the description of the Product Provider role in
-link:#a162[See Java EE Product
-Provider]”.
+<<a162, Java EE Product
+Provider>>”.
 
 This specification defines a set of standard
 services that each Java EE product must support. These standard services
@@ -258,7 +258,8 @@ interfaces (Java EE SPI). A resource adapter that uses the Java EE SPIs
 to attach to the Java EE platform will be able to work with all Java EE
 products.
 
-=== [[a82]]Database
+[[a82]]
+=== Database
 
 The Java EE platform requires a database,
 accessible through the JDBC API, for the storage of business data. The
@@ -266,10 +267,11 @@ database is accessible from web components, enterprise beans, and
 application client components. The database need not be accessible from
 applets. The Java EE Product Provider must also provide a preconfigured,
 default data source for use by the application in accessing this
-database. See link:#a2009[See Default
-Data Source]”.
+database. See <<a2009, Default
+Data Source>>”.
 
-=== [[a84]]Java EE Standard Services
+[[a84]]
+=== Java EE Standard Services
 
 The Java EE standard services include the
 following (specified in more detail later in this document). Some of
@@ -324,8 +326,8 @@ details.
 
 Support for CORBA, including use of IIOP and
 Java IDL, is Proposed Optional as of Java EE 8. See
-link:#a2331[See Pruned Java
-Technologies].”
+<<a2331, Pruned Java
+Technologies>>.”
 
 === Java IDL (Proposed Optional)
 
@@ -358,7 +360,8 @@ developers using a Java domain model to manage a relational database.
 The Java Persistence API is required to be supported in Java EE. It can
 also be used in Java SE environments.
 
-=== [[a104]]Java™ Message Service (JMS)
+[[a104]]
+=== Java™ Message Service (JMS)
 
 The Java Message Service is a standard API for
 messaging that supports reliable point-to-point messaging as well as the
@@ -367,8 +370,8 @@ implements both point-to-point messaging as well as publish-subscribe
 messaging. The Java EE Product Provider must also provide a
 preconfigured, default JMS connection factory for use by the application
 in accessing this JMS provider. See
-link:#a2025[See Default JMS Connection
-Factory]”.
+<<a2025, Default JMS Connection
+Factory>>”.
 
 === Java Naming and Directory Interface™ (JNDI)
 
@@ -481,8 +484,8 @@ services functionality, with support for multiple bindings/protocols.
 JAX-WS and JAX-RPC are fully interoperable when using the SOAP 1.1 over
 HTTP protocol as constrained by the WS-I Basic Profile specification.
 Support for JAX-RPC has been made optional as of Java EE 7. See
-link:#a2331[See Pruned Java
-Technologies]”.
+<<a2331, Pruned Java
+Technologies>>”.
 
 JAX-WS and the Java Architecture for XML
 Binding (JAXB) define the mapping between Java classes and XML as used
@@ -496,8 +499,8 @@ enterprise beans. The Web Services Metadata specification defines Java
 language annotations that make it easier to develop web services. The
 Java API for XML Registries (JAXR) provides client access to XML
 registry servers. Support for JAXR has been made optional as of Java EE
-7. See link:#a2331[See Pruned Java
-Technologies]”.
+7. See <<a2331, Pruned Java
+Technologies>>”.
 
 The Java API for JSON Processing (JSON-P)
 provides a convenient way to process (parse, generate, transform, and
@@ -544,8 +547,8 @@ run in the deployment tool and allow the deployment tool to deploy
 applications into the Java EE product. The deployment tool provides
 services used by these plug-in components. Support for the Deployment
 Specification has been made optional as of Java EE 7. See
-link:#a2331[See Pruned Java
-Technologies].”
+<<a2331, Pruned Java
+Technologies>>.”
 
 === Interoperability
 
@@ -554,14 +557,15 @@ interoperability with components that are not a part of the Java EE
 platform, such as external web or CORBA services.
 
 
-_link:#a142[See Java EE
-Interoperability]_ illustrates the interoperability facilities of the
+_<<a142, Java EE
+Interoperability>>_ illustrates the interoperability facilities of the
 Java EE platform. (The directions of the arrows indicate the
 client/server relationships of the components.)
 
 .
 
-=== [[a142]]Java EE Interoperability
+[[a142]]
+=== Java EE Interoperability
 
 
 
@@ -596,7 +600,8 @@ configurations and implementations, all of which meet the requirements
 of this specification, are possible. A portable Java EE application will
 function correctly when successfully deployed in any of these products.
 
-=== [[a149]]Java EE Product Packaging
+[[a149]]
+=== Java EE Product Packaging
 
 This specification doesn't include requirements
 for the packaging of a Java EE product. A Java EE product might be
@@ -639,10 +644,10 @@ services.
 This specification describes a minimum set of
 facilities available to all Java EE products. A Java EE profile may
 include some or all of these facilities, as described in
-link:#a3212[See Profiles]”. Products
+<<a3212, Profiles>>”. Products
 implementing the full Java EE platform must provide all of them (see
-link:#a3252[See Full Java EE Product
-Requirements]”). Most Java EE products will provide facilities beyond
+<<a3252, Full Java EE Product
+Requirements>>”). Most Java EE products will provide facilities beyond
 the minimum required by this specification. This specification includes
 only a few limits to the ability of a product to provide extensions. In
 particular, it includes the same restrictions as Java SE on extensions
@@ -682,7 +687,8 @@ application development and deployment workflow.
 The roles are described in greater detail in
 later sections of this specification.
 
-=== [[a162]]Java EE Product Provider
+[[a162]]
+=== Java EE Product Provider
 
 A Java EE Product Provider is the implementor
 and supplier of a Java EE product that includes the component
@@ -702,10 +708,9 @@ implementation-specific way.
 
 A Java EE Product Provider must provide
 application deployment and management tools. Deployment tools enable a
-Deployer (see link:#a170[See
-Deployer]”) to deploy application components on the Java EE product.
+Deployer (see <<a170, Deployer>>”) to deploy application components on the Java EE product.
 Management tools allow a System Administrator (see
-link:#a178[See System Administrator]”)
+<<a178, System Administrator>>”)
 to manage the Java EE product and the applications deployed on the Java
 EE product. The form of these tools is not prescribed by this
 specification.
@@ -728,7 +733,8 @@ Provider. The Application Assembler is responsible for providing
 assembly instructions describing external dependencies of the
 application that the Deployer must resolve in the deployment process.
 
-=== [[a170]]Deployer
+[[a170]]
+=== Deployer
 
 The Deployer is responsible for deploying
 application clients, web applications, and Enterprise JavaBeans
@@ -769,7 +775,8 @@ in the cloud environment. The Deployer would install the application
 into the cloud environment, configure its external dependencies, and
 might handle aspects of provisioning its required resources.
 
-=== [[a178]]System Administrator
+[[a178]]
+=== System Administrator
 
 The System Administrator is responsible for the
 configuration and administration of the enterprise’s computing and
@@ -810,7 +817,7 @@ This section describes the Java Platform,
 Enterprise Edition contracts that must be fulfilled by a Java EE Product
 Provider implementing the full Java EE platform. Java EE profiles may
 include some or all of these facilities, as described in
-link:#a3212[See Profiles]”.
+<<a3212, Profiles>>”.
 
 === Java EE APIs
 
@@ -846,7 +853,7 @@ This specification defines the mapping of
 application components to industry-standard network protocols. The
 mapping allows client access to the application components from systems
 that have not installed Java EE product technology. See
-link:#a2845[See Interoperability],” for
+<<a2845, Interoperability>>,” for
 details on the network protocol support required for interoperability.
 
 The Java EE Product Provider is required to
@@ -1055,7 +1062,8 @@ release. Such features include resource definition metadata, improved
 security configuration, and support for database schema generation via
 the Java Persistence API.
 
-=== [[a231]]Changes in Java EE 8
+[[a231]]
+=== Changes in Java EE 8
 
 Java EE 8 continues the focus on modern web
 applications of Java EE 7 and broadening the range of such applications.
