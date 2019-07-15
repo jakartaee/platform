@@ -55,12 +55,12 @@ applications that also implement these protocols and formats. The
 specification requires support for the following groups of protocols and
 formats:
 
-=== Internet and web protocols
+Internet and web protocols
 
 * OMG protocols
 * Java technology protocols
 
-=== Data formats
+Data formats
 
 Most of these protocols and formats are
 supported by Java SE and by the underlying operating system.
@@ -140,7 +140,7 @@ be provided as a separate name server or as a protocol bridge or gateway
 to another name service. Either approach is consistent with this
 specification.
 
-=== Java Technology Protocols
+==== Java Technology Protocols
 
 This specification requires the Jakarta EE platform
 to support the JRMP protocol, which is the Java technology-specific

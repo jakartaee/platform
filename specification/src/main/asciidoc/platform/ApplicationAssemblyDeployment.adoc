@@ -153,7 +153,7 @@ has a default application name of "bigapp",
 and defines four modules with default names "ejbs/inventory",
 "ejbs/accounts", "ui/store", and "ui/admin".
 
-=== Application Assembly
+==== Application Assembly
 
 A Jakarta EE application may consist of one or
 more Jakarta EE modules and one Jakarta EE application deployment descriptor.
@@ -210,7 +210,7 @@ name of the module is the base name of the module file with any
 extension ( _.war_ , _.jar_ , _.rar_ ) removed and with any directory
 names removed.
 
-=== Deployment
+==== Deployment
 
 During the deployment phase of an
 application’s life cycle, the application is installed on the Jakarta EE
@@ -327,7 +327,7 @@ These libraries may reference other libraries, either bundled with the
 application or installed separately, using any of the techniques
 described herein.
 
-=== Installed Libraries
+==== Installed Libraries
 
 Libraries that have been installed separately
 may be referenced in the following way:
@@ -367,7 +367,7 @@ support multiple versions of an installed library, and by default only
 allow applications to access the installed libraries for which they have
 expressed a dependency.
 
-=== Library Conflicts
+==== Library Conflicts
 
 If an application includes a bundled version
 of a library, and the same library exists as an installed library, the
@@ -379,7 +379,7 @@ library is also a required component of the Jakarta EE version on
 which the application is being deployed, this version may (and
 typically will) take precedence.
 
-=== Library Resources
+==== Library Resources
 
 In addition to allowing access to referenced
 classes, as described above, any resources contained in the referenced
@@ -462,7 +462,7 @@ technique to load classes.
 
  clazz = Class.forName(name);
 
-=== Examples
+==== Examples
 
 The following example illustrates a simple
 use of the bundled library mechanism to reference a library of utility
@@ -705,7 +705,7 @@ resources are covered by one of the rules above.
 application package. For example, the application should not have access
 to the classes in application client jar files.
 
-=== Jakarta Enterprise Beans Container Class Loading Requirements
+==== Jakarta Enterprise Beans Container Class Loading Requirements
 
 Components in the Jakarta Enterprise Beans container must have
 access to the following classes and resources.
@@ -787,7 +787,7 @@ rules above.
 application package. For example, the application should not have access
 to the classes in application client jar files.
 
-=== Application Client Container Class Loading Requirements
+==== Application Client Container Class Loading Requirements
 
 Components in the application client
 container must have access to the following classes and resources.
@@ -836,7 +836,7 @@ access to the classes in other application client jar files in the same
 ear file, nor should it have access to the classes in web applications
 or Jakarta Enterprise Beans jar files in the same ear file.
 
-=== Applet Container Class Loading Requirements
+==== Applet Container Class Loading Requirements
 
 The requirements for the applet container are
 completely specified by the Java SE 8 specification. This specification
@@ -968,7 +968,7 @@ _.ear_ filename extension.
 descriptor (“alt-dd”) for the application, external to the packaged
 application.
 
-=== Adding and Removing Modules
+==== Adding and Removing Modules
 
 After the application is created, Jakarta EE
 modules may be added or removed before deployment. When adding or
@@ -1146,7 +1146,7 @@ Specifications that define their own additional deployment descriptors
 should provide a _metadata-complete_ attribute of their own, if deemed
 useful, with the appropriate semantics.
 
-=== Deploying a Stand-Alone Jakarta EE Module
+==== Deploying a Stand-Alone Jakarta EE Module
 
 This section specifies the requirements for
 deploying a stand-alone Jakarta EE module.
@@ -1301,7 +1301,7 @@ descriptor but do not appear in the application deployment descriptor,
 the deployment tool must use the description provided in the module
 deployment descriptor.
 
-=== Deploying a Library
+==== Deploying a Library
 
 This section specifies the requirements for
 deploying a library.
@@ -1376,8 +1376,6 @@ grammar for a Jakarta EE application deployment descriptor.
 link:#a3208[See
 Jakarta EE Application XML Schema Structure] shows a graphic representation
 of the structure of the Jakarta EE application XML schema.
-
-
 
 [[a3208]]
 === Jakarta EE Application XML Schema Structure

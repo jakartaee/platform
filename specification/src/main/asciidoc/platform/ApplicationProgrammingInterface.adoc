@@ -7,6 +7,7 @@ the provision of a number of APIs for use by Jakarta EE applications,
 starting with the core Java APIs and including many additional Java
 technologies.
 
+
 [[a2136]]
 === Required APIs
 
@@ -575,6 +576,7 @@ Permissions Set>>.
 Note that, on some installations of Jakarta EE
 products, the security policy of the installation may be such that
 applications are granted fewer permissions than those defined in
+
 <<a2366, Jakarta EE Security
 Permissions Set>> and, as a result, some applications that declare only
 the permissions defined in
@@ -646,8 +648,9 @@ namespace available to other applications.
 EE components (by type) can reliably be granted by a Jakarta EE product,
 given appropriate local installation configuration.
 
-=[[a2366]]
-==== Jakarta EE Security Permissions Set
+[[a2366]]
+===== Jakarta EE Security Permissions Set
+
 
 Security Permissions
 
@@ -796,8 +799,8 @@ application module.
 
 
 
-=[[a2438]]
-==== Restrictable Jakarta EE Security Permissions
+[[a2438]]
+===== Restrictable Jakarta EE Security Permissions
 
 Security Permissions
 
@@ -914,9 +917,8 @@ javax.sound.sampled.AudioPermission
 
 
 
-=[[a2496]]
-==== Declaring Permissions Required by Application Components
-
+[[a2496]]
+===== Declaring Permissions Required by Application Components
 By declaring the permissions required by an
 application as described in this section, an application component
 provider is ensured, through the successful deployment of his or her
@@ -1003,8 +1005,8 @@ at _http://xmlns.jcp.org/xml/ns/javaee/permissions_8.xsd_ .
 
 ==== Additional Requirements
 
-=[[a2523]]
-==== Networking
+[[a2523]]
+===== Networking
 
 The Java SE platform includes a pluggable
 mechanism for supporting multiple URL protocols through the
@@ -1143,8 +1145,8 @@ Connector architecture.
 The JDBC 4.2 specification is available at
 _https://jcp.org/en/jsr/detail?id=221_ .
 
-=[[a2553]]
-==== Jakarta™ API for XML Web Services (JAX-WS) Requirements
+[[a2553]]
+===== Jakarta™ API for XML Web Services (JAX-WS) Requirements
 
 The JAX-WS specification provides support for
 web services that use the JAXB API for binding XML data to Java objects.
