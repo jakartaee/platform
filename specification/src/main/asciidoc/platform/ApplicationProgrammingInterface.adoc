@@ -16,8 +16,9 @@ runtime environments provided by the containers that are a part of the
 Jakarta EE platform. The full Jakarta EE platform supports four types of
 containers corresponding to Jakarta EE application component types:
 application client containers; applet containers; web containers for
-servlets, JSP pages, JSF applications, JAX-RS applications; and
-enterprise bean containers. A Jakarta EE profile may support only a subset
+servlets, Jakarta Server Pages, Jakarta Server Faces applications,
+Jakarta RESTful Web Services applications;
+and enterprise bean containers. A Jakarta EE profile may support only a subset
 of these component types, as defined by the individual Jakarta EE profile
 specification.
 
@@ -90,11 +91,11 @@ App Client
 
 Web
 
-EJB
+Enterprise Beans
 
 Status
 
-EJB 3.2
+Enterprise Beans 3.2
 
 {empty}Ylink:#a3661[14]
 
@@ -115,7 +116,7 @@ N
 
 REQ
 
-JSP 2.3
+Server Pages 2.3
 
 N
 
@@ -135,7 +136,7 @@ N
 
 REQ
 
-JMS 2.0
+Messaging 2.0
 
 Y
 
@@ -145,7 +146,7 @@ Y
 
 REQ
 
-JTA 1.2
+Transactions 1.2
 
 N
 
@@ -185,7 +186,7 @@ Y
 
 REQ
 
-JAX-RPC 1.1
+XML RPC  1.1
 
 Y
 
@@ -195,7 +196,7 @@ Y
 
 OPT
 
-JAX-RS 2.1
+RESTful Web Services 2.1
 
 N
 
@@ -255,7 +256,7 @@ Y
 
 REQ
 
-JAXR 1.0
+XML Registries 1.0
 
 Y
 
@@ -265,7 +266,7 @@ Y
 
 OPT
 
-Jakarta EE Management 1.1
+Management 1.1
 
 Y
 
@@ -275,7 +276,7 @@ Y
 
 REQ
 
-{empty}Jakarta EE Deployment
+{empty}Deployment
 1.2link:#a3664[17]
 
 N
@@ -286,7 +287,7 @@ N
 
 OPT
 
-JACC 1.5
+Authorization 1.5
 
 N
 
@@ -296,7 +297,7 @@ Y
 
 REQ
 
-JASPIC 1.1
+Authentication  1.1
 
 N
 
@@ -306,7 +307,7 @@ Y
 
 REQ
 
-Jakarta EE Security API 1.0
+Security API 1.0
 
 N
 
@@ -316,7 +317,7 @@ Y
 
 REQ
 
-JSP Debugging 1.0
+Server Pages Debugging 1.0
 
 N
 
@@ -326,7 +327,7 @@ N
 
 REQ
 
-JSTL 1.2
+Standard Tag Library 1.2
 
 N
 
@@ -346,7 +347,7 @@ Y
 
 REQ
 
-JSF 2.3
+Server Faces 2.3
 
 N
 
@@ -366,7 +367,7 @@ Y
 
 REQ
 
-Java Persistence 2.2
+Persistence 2.2
 
 Y
 
@@ -590,7 +591,7 @@ Every Jakarta EE product must be capable of
 running with a Java security manager and with an installation policy
 that does not grant the permissions described in
 <<a2438, Restrictable Jakarta EE
-Security Permissions>> to Web, EJB, and resource adapter components. That
+Security Permissions>> to Web, enterprise beans, and resource adapter components. That
 environment must otherwise fully support the requirements of this
 specification.
 
@@ -650,7 +651,6 @@ given appropriate local installation configuration.
 
 [[a2366]]
 ===== Jakarta EE Security Permissions Set
-
 
 Security Permissions
 
@@ -744,7 +744,7 @@ connect
 
 read
 
-Web, EJB, and Resource Adapter
+Web, Enterprise Beans, and Resource Adapter
 
 Components
 
@@ -792,11 +792,10 @@ read
 
 <<a2438, Restrictable Jakarta EE Security Permissions>> lists the Java permissions
 that a Jakarta EE product must be capable of restricting when running a Web
-or EJB application component. If the Target field is empty, a Jakarta EE
+or Enterprise Beans application component. If the Target field is empty, a Jakarta EE
 product must be capable of deploying application modules such that no
 instances of that permission are granted to the components in the
 application module.
-
 
 
 [[a2438]]
@@ -808,7 +807,7 @@ Target
 
 Action
 
-Web, EJB, and Resource Adapter Components
+Web, Enterprise Beans, and Resource Adapter Components
 
 
 
@@ -919,6 +918,7 @@ javax.sound.sampled.AudioPermission
 
 [[a2496]]
 ===== Declaring Permissions Required by Application Components
+
 By declaring the permissions required by an
 application as described in this section, an application component
 provider is ensured, through the successful deployment of his or her
@@ -934,7 +934,7 @@ that the effective permission set consists of at least those permissions
 that are declared within the application.
 
 Permission declarations must be stored in
-_META-INF/permissions.xml_ file within an EJB, web, application client,
+_META-INF/permissions.xml_ file within an enterprise beans, web, application client,
 or resource adapter archive in order for them to be located and
 subsequently processed by the deployment machinery of the Jakarta EE
 Product. The Jakarta EE Product is not required to support
@@ -1037,7 +1037,8 @@ using the _getContent_ method, objects of the corresponding Java type
 listed in _<<a2531, Java Type of
 Objects Returned When Using the getContent Method>>_ must be returned.
 
-===== Java Type of Objects Returned When Using[[a2531]] the getContent Method
+[[a2531]]
+===== Java Type of Objects Returned When Using the getContent Method
 
 MIME Type
 
@@ -1113,11 +1114,11 @@ controlled by the container. The component should not attempt to change
 the transaction characteristics of the connection, commit the
 transaction, roll back the transaction, or set autocommit mode. Attempts
 to make changes that are incompatible with the current transaction
-context may result in a _SQLException_ being thrown. The EJB
+context may result in a _SQLException_ being thrown. The Jakarta Enterprise Beans
 specification contains the precise rules for _enterprise beans._
 
 Note that the same restrictions apply when a
-component creates a transaction using the JTA _UserTransaction_
+component creates a transaction using the Jakarta Transactions _UserTransaction_
 interface. The component should not attempt the operations listed above
 on the JDBC _Connection_ object that would conflict with the transaction
 context.
@@ -1146,14 +1147,14 @@ The JDBC 4.2 specification is available at
 _https://jcp.org/en/jsr/detail?id=221_ .
 
 [[a2553]]
-===== Jakarta™ API for XML Web Services (JAX-WS) Requirements
+===== Jakarta API for XML Web Services (JAX-WS) Requirements
 
 The JAX-WS specification provides support for
 web services that use the JAXB API for binding XML data to Java objects.
 The JAX-WS specification defines client APIs for accessing web services
 as well as techniques for implementing web service endpoints. The Web
 Services for Jakarta EE specification describes the deployment of
-JAX-WS-based services and clients. The EJB and Servlet specifications
+JAX-WS-based services and clients. The Enterprise Beans and Servlet specifications
 also describe aspects of such deployment. It must be possible to deploy
 JAX-WS-based applications using any of these deployment models.
 
@@ -1227,7 +1228,7 @@ methods _register_value_factory_ and _unregister_value_factory_ with an
 _id_ used by the container.
 
 A Jakarta EE product must provide a COSNaming
-service to support the EJB interoperability requirements. It must be
+service to support the Jakarta Enterprise Beans interoperability requirements. It must be
 possible to access this COSNaming service using the Java IDL COSNaming
 APIs. Applications with appropriate privileges must be able to lookup
 objects in the COSNaming service. COSNaming is defined in the
@@ -1245,13 +1246,13 @@ application component types can be clients of RMI objects.
 ===== RMI-IIOP (Proposed Optional)
 
 The requirements in this section only apply
-to Jakarta EE products that include an EJB container and support
+to Jakarta EE products that include an Enterprise Beans container and support
 interoperability using RMI-IIOP.
 
 RMI-IIOP allows objects defined using RMI
 style interfaces to be accessed using the IIOP protocol. It must be
 possible to make any remote _enterprise bean accessible via_ RMI-IIOP.
-Some Jakarta EE products will simply make all remote enterprise beans
+Some Jakarta  EE products will simply make all remote enterprise beans
 always (and only) accessible via RMI-IIOP; other products might control
 this via an administrative or deployment action. These and other
 approaches are allowed, provided that any remote enterprise bean (or by
@@ -1261,18 +1262,18 @@ RMI-IIOP.
 Components accessing remote _enterprise
 beans_ may need to use the _narrow_ method of the
 _javax.rmi.PortableRemoteObject_ class, under circumstances described in
-the EJB specification. Because remote enterprise beans may be deployed
+the Jakarta Enterprise Beans specification. Because remote enterprise beans may be deployed
 using other RMI protocols, portable applications must not depend on the
 characteristics of RMI-IIOP objects (for example, the use of the _Stub_
-and _Tie_ base classes) beyond what is specified in the EJB
+and _Tie_ base classes) beyond what is specified in the Jakarta Enterprise Beans
 specification.
 
 The Jakarta EE security restrictions typically
 prevent all application component types, except application clients,
 from creating and exporting an RMI-IIOP object. All Jakarta EE application
 component types can be clients of RMI-IIOP objects. Jakarta EE applications
-should also use JNDI to lookup non-EJB RMI-IIOP objects. The JNDI names
-used for such non-EJB RMI-IIOP objects should be configured at
+should also use JNDI to lookup non-Enterprise Beans RMI-IIOP objects. The JNDI names
+used for such non-Enterprise Beans RMI-IIOP objects should be configured at
 deployment time using the standard environment entries mechanism (see
 <<a607, JNDI Naming Context>>”).
 The application should fetch a name from JNDI using an environment
@@ -1283,14 +1284,14 @@ This specification does not provide a
 portable way for applications to bind objects to names in a name
 service. Some products may support use of JNDI and COSNaming for binding
 objects, but this is not required. Portable Jakarta EE application clients
-can create non-EJB RMI-IIOP server objects for use as callback objects,
+can create non-Enterprise Beans RMI-IIOP server objects for use as callback objects,
 or to pass in calls to other RMI-IIOP objects.
 
 Note that while RMI-IIOP doesn’t specify how
 to propagate the current security context or transaction context, the
-EJB interoperability specification does define such context propagation.
+Jakarta Enterprise Beans interoperability specification does define such context propagation.
 This specification only requires that the propagation of context
-information as defined in the EJB specification be supported in the use
+information as defined in the Jakarta Enterprise Beans specification be supported in the use
 of RMI-IIOP to access enterprise beans. The propagation of context
 information is not required in the uses of RMI-IIOP to access objects
 other than enterprise beans.
@@ -1313,7 +1314,7 @@ at deployment time or at run time.
 
 RMI-IIOP is defined by chapters 5, 6, 13, 15,
 and section 10.6.2 of the CORBA 2.3.1 specification, available at
-_http://www.omg.org/cgi-bin/doc?formal/99-10-07_ , and by the Jakarta™
+_http://www.omg.org/cgi-bin/doc?formal/99-10-07_ , and by the Java™
 Language To IDL Mapping Specification, available at
 _http://www.omg.org/cgi-bin/doc?ptc/2000-01-06_ .
 
@@ -1322,7 +1323,7 @@ _http://www.omg.org/cgi-bin/doc?ptc/2000-01-06_ .
 A Jakarta EE product that supports the following
 types of objects must be able to make them available in the
 application’s JNDI namespace: _EJBHome_ objects, _EJBLocalHome_ objects,
-EJB business interface objects, JTA _UserTransaction_ objects, JDBC API
+Enterprise Beans business interface objects, Jakarta Transactions _UserTransaction_ objects, JDBC API
 _DataSource_ objects, JMS _ConnectionFactory_ and _Destination_ objects,
 JavaMail _Session_ objects, _URL_ objects, resource manager
 _ConnectionFactory_ objects (as specified in the Connector
@@ -1349,7 +1350,7 @@ Injection>>” for details.
 Particular names are defined by this
 specification for the cases when the Jakarta EE product includes the
 corresponding technology. For all application components that have
-access to the JTA _UserTransaction_ interface, the appropriate
+access to the Jakarta Transaction _UserTransaction_ interface, the appropriate
 _UserTransaction_ object can be found using the name
 _java:comp/UserTransaction_ . In all containers except the applet
 container, application components may lookup a CORBA _ORB_ instance
@@ -1381,9 +1382,9 @@ capabilities, for instance, some service providers may provide only
 read-only access to the data in the name service.
 
 A Jakarta EE product may be required to provide
-a COSNaming name service to meet the EJB interoperability requirements.
-In such a case, a COSNaming JNDI service provider must be available
-through the web, EJB, and application client containers. It will also
+a COSNaming name service to meet the Jakarta Enterprise Beans interoperability 
+requirements.  In such a case, a COSNaming JNDI service provider must be available
+through the web, Enterprise Beans, and application client containers. It will also
 typically be available in the applet container, but this is not
 required.
 
@@ -1406,17 +1407,17 @@ _http://docs.oracle.com/javase/8/docs/technotes/guides/jndi/index.html_
 This specification requires that Jakarta EE
 containers provide a per thread context class loader for the use of
 system or library classes in dynamically loading classes provided by the
-application. The EJB specification requires that all EJB client
-containers provide a per thread context class loader for dynamically
-loading system value classes. The per thread context class loader is
-accessed using the _Thread_ method _getContextClassLoader_ .
+application. The Jakarta Enterprise Beans specification requires that all 
+Jakarta Enterprise Beans client containers provide a per thread context class 
+loader for dynamically loading system value classes. The per thread context 
+class loader is accessed using the _Thread_ method _getContextClassLoader_ .
 
 The classes used by an application will
 typically be loaded by a hierarchy of class loaders. There may be a top
 level application class loader, an extension class loader, and so on,
 down to a system class loader. The top level application class loader
 delegates to the lower class loaders as needed. Classes loaded by lower
-class loaders, such as portable EJB system value classes, need to be
+class loaders, such as portable Jakarta Enterprise Beans system value classes, need to be
 able to discover the top level application class loader used to
 dynamically load application classes.
 
@@ -1426,18 +1427,16 @@ level application classes as described above. See
 <<a2966, Dynamic Class Loading>>”
 for recommendations for libraries that dynamically load classes.
 
-===== Jakarta™ Authentication and Authorization Service (JAAS) Requirements
+===== Jakarta Authentication Requirements
 
-All EJB containers and all web containers
-must support the use of the JAAS APIs as specified in the Connector
+All enterprise beans containers and all web containers
+must support the use of the Jakarta Authentication APIs as specified in the Connector
 specification. All application client containers must support use of the
-JAAS APIs as specified in
-<<a3294, Application Clients>>.”
+Jakarta Authentication APIs.
 
-A reference guide to the JAAS APIs is
-available at
-_http://docs.oracle.com/javase/8/docs/technotes/guides/security/jaas/JAASRefGuide.html_
-.
+The Jakarta Authentication specification is
+available at _https://jakarta.ee/specifications/authentication_ .
+
 
 ===== Logging API Requirements
 
@@ -1462,22 +1461,23 @@ preferences tree defined by the Preferences API. A future version of
 this specification may define the use of the Preferences API by Jakarta EE
 applications.
 
-=== Enterprise JavaBeans™ (EJB) 3.2 Requirements
+=== Jakarta Enterprise Beans 3.2 Requirements
 
-This specification requires that a Jakarta EE
-product provide support for _enterprise beans_ as specified in the EJB
-specification. The EJB specification is available at
-_http://jcp.org/en/jsr/summary?id=345_ .
+This specification requires that a  Jakarta EE
+product provide support for _enterprise beans_ as specified in the Jakarta Enterprise 
+Beans specification. The Jakarta Enterprise Beans specification is available at
+_https://jakarta.ee/specifications/enterprise-beans_ .
 
 This specification does not impose any
-additional requirements at this time. Note that the EJB specification
-includes the specification of the EJB interoperability protocol based on
-RMI-IIOP. Support for the EJB interoperability protocol is Proposed
-Optional in Jakarta EE 8. All containers that support EJB clients must be
-capable of using the EJB interoperability protocol to invoke enterprise
-beans. All EJB containers must support the invocation of enterprise
-beans using the EJB interoperability protocol. A Jakarta EE product may
-also support other protocols for the invocation of enterprise beans.
+additional requirements at this time. Note that the Jakarta Enterprise Beans 
+specification includes the specification of the Jakarta Enterprise Beans 
+interoperability protocol based on RMI-IIOP. Support for the Jakarta Enterprise Beans
+interoperability protocol is Proposed Optional in Jakarta EE 8. All containers that 
+support Jakarta Enterprise Beans clients must be capable of using the 
+Jakarta Enterprise Beans interoperability protocol to invoke enterprise
+beans. All Jakarta Enterprise Beans containers must support the invocation of enterprise
+beans using the Jakarta Enterprise Beans interoperability protocol. A Jakarta EE 
+product may also support other protocols for the invocation of enterprise beans.
 
 A Jakarta EE product may support multiple object
 systems (for example, RMI-IIOP and RMI-JRMP). It may not always be
@@ -1493,14 +1493,14 @@ return such an enterprise bean object reference as a return value from
 such an RMI-IIOP or Java IDL object.
 
 In a Jakarta EE product that includes both an
-EJB container and a web container, both containers are required to
+enterprise beans container and a web container, both containers are required to
 support access to local enterprise beans. No support is provided for
 access to local enterprise beans from the application client container
 or the applet container.
 
-=== Servlet 4.0 Requirements
+=== Jakarta Servlet 4.0 Requirements
 
-The Servlet specification defines the
+The Jakarta Servlet specification defines the
 packaging and deployment of web applications, whether standalone or as
 part of a Jakarta EE application. The Servlet specification also addresses
 security, both standalone and within the Jakarta EE platform. These
@@ -1531,7 +1531,7 @@ _java.io.Serializable_
 * a _javax.naming.Context_ object for the
 _java:comp/env_ context
 
-a reference to an EJB local or remote business interface or no-interface view
+a reference to an Enterprise Bean local or remote business interface or no-interface view
 
 Web containers may support objects of other
 types as well. Web containers must throw a
@@ -1548,46 +1548,46 @@ target VM.
 The Servlet specification defines access to
 local enterprise beans as an optional feature. This specification
 requires that all Jakarta EE products that include both a web container and
-an EJB container provide support for access to local enterprise beans
+an Enterprise Beans container provide support for access to local enterprise beans
 from the web container.
 
-The Servlet specification is available at
-_http://jcp.org/en/jsr/detail?id=369_ .
+The Jakarta Servlet specification is available at
+_https://jakarta.ee/specifications/servlet_ .
 
-=== JavaServer Pages™ (JSP) 2.3 Requirements
+=== Jakarta Server Pages 2.3 Requirements
 
-The JSP specification depends on and builds
-on the servlet framework. A Jakarta EE product must support the entire JSP
-specification.
+The Jakarta Server Pages specification depends on and builds
+on the servlet framework. A Jakarta EE product must support the entire 
+Jakarta Server Pages specification.
 
-The JSP specification is available at
-_http://jcp.org/en/jsr/summary?id=245_ .
+The Jakarta Server Pages specification is available at
+_https://jakarta.ee/specifications/pages_ .
 
-=== Expression Language (EL) 3.0 Requirements
+=== Jakarta Expression Language  (EL) 3.0 Requirements
 
-The Expression Language specification was
-formerly a part of the JavaServer Pages specification. It was split off
+The Jakarta Expression Language specification was
+formerly a part of the Jakarta Server Pages specification. It was split off
 into its own specification so that it could be used independently of
-JavaServer Pages. A Jakarta EE product must support the Expression
+Jakarta Server Pages. A Jakarta EE product must support the Expression
 Language.
 
-The Expression Language specification is
-available at _http://jcp.org/en/jsr/detail?id=341_ .
+The Jakarta Expression Language specification is
+available at _https://jakarta.ee/specifications/expression-language_ .
 
-=== Jakarta™ Message Service (JMS) 2.0 Requirements
+=== Jakarta Messaging 2.0 Requirements
 
-A Java Message Service provider must be
-included in a Jakarta EE product that requires support for JMS. The JMS
-implementation must provide support for both JMS point-to-point and
-publish/subscribe messaging, and thus must make those facilities
-available using the _ConnectionFactory_ and _Destination_ APIs.
+A Jakarta Messaging provider must be
+included in a Jakarta EE product that requires support for Jakarta Messaging. 
+The Jakarta Messaging implementation must provide support for both 
+Jakarta Messaging point-to-point and publish/subscribe messaging, and thus 
+must make those facilities available using the _ConnectionFactory_ and _Destination_ APIs.
 
-The JMS specification defines several
+The Jakarta Messaging specification defines several
 interfaces intended for integration with an application server. A Jakarta
 EE product need not provide objects that implement these interfaces, and
 portable Jakarta EE applications must not use the following interfaces:
 
-* j _avax.jms.ServerSession_
+*  _javax.jms.ServerSession_
 *  _javax.jms.ServerSessionPool_
 *  _javax.jms.ConnectionConsumer_
 
@@ -1654,7 +1654,7 @@ _JMSException_ (if allowed by the method) or a _JMSRuntimeException_ (if
 throwing a _JMSException_ is not allowed by the method) if the
 application component violates any of the above restrictions.
 
-Application components in the web and EJB
+Application components in the web and enterprise bean
 containers must not attempt to create more than one active (not closed)
 _Session_ object per connection. An attempt to use the _Connection_
 object’s _createSession_ method when an active _Session_ object exists
@@ -1667,23 +1667,23 @@ a connection and session and this method would create a second session
 on the same connection. Application client containers must support the
 creation of multiple sessions for each connection.
 
-The JMS specification defines further
-restrictions on the use of JMS in the EJB and web containers. In
-general, the behavior of a JMS provider should be the same in both the
-EJB container and the web container.
+The Jakarta Messaging specification defines further
+restrictions on the use of Jakarta Messaging in the Enterprise Beans and web containers. In
+general, the behavior of a Jakarta Messaging provider should be the same in both the
+enterprise beans container and the web container.
 
-The JMS specification is available at
-_http://jcp.org/en/jsr/detail?id=343._
+The Jakarta Messaging specification is available at
+_ https://jakarta.ee/specifications/messaging_ .
 
-=== Jakarta™ Transaction API (JTA) 1.2 Requirements
+=== Jakarta Transaction 1.2 Requirements
 
-JTA defines the _UserTransaction_ interface
+Jakarta Transaction defines the _UserTransaction_ interface
 that is used by applications to start, and commit or abort transactions.
 Application components get a _UserTransaction_ object through a JNDI
 lookup using the name _java:comp/UserTransaction_ or by requesting
 injection of a _UserTransaction_ object.
 
-JTA also defines the
+Jakarta Transaction also defines the
 _TransactionSynchronizationRegistry_ interface that can be used by
 system level components such as persistence managers to interact with
 the transaction manager. These components get a
@@ -1691,36 +1691,36 @@ _TransactionSynchronizationRegistry_ object through a JNDI lookup using
 the name _java:comp/TransactionSynchronizationRegistry_ or by requesting
 injection of a _TransactionSynchronizationRegistry_ object.
 
-A number of interfaces defined by JTA are used
+A number of interfaces defined by Jakarta Transaction are used
 by an application server to communicate with a transaction manager, and
 for a transaction manager to interact with a resource manager. These
 interfaces must be supported as described in the Connector
 specification. In addition, support for other transaction facilities may
 be provided transparently to the application by a Jakarta EE product.
 
-The JTA specification is available at
-_http://jcp.org/en/jsr/detail?id=907_ .
+The Jakarta Transaction specification is available at
+_https://jakarta.ee/specifications/transactions_ .
 
-=== JavaMail™ 1.6 Requirements
+=== Jakarta Mail 1.6 Requirements
 
-The JavaMail API allows for access to email
+The Jakarta Mail API allows for access to email
 messages contained in message stores, and for the creation and sending
 of email messages using a message transport. Specific support is
 included for Internet standard MIME messages. Access to message stores
 and transports is through protocol providers supporting specific store
-and transport protocols. The JavaMail API specification does not require
+and transport protocols. The Jakarta Mail API specification does not require
 any specific protocol providers, but the JavaMail reference
 implementation includes an IMAP message store provider, a POP3 message
 store provider, and an SMTP message transport provider.
 
-Configuration of the JavaMail API is
+Configuration of the Jakarta Mail API is
 typically done by setting properties in a _Properties_ object that is
 used to create a _javax.mail.Session_ object using a static factory
 method. To allow the Jakarta EE platform to configure and manage JavaMail
 API sessions, an application component that uses the JavaMail API should
 request a _Session_ object using JNDI, and should list its need for a
 _Session_ object in its deployment descriptor using a _resource-ref_
-element, or by using a _Resource_ annotation. A JavaMail API _Session_
+element, or by using a _Resource_ annotation. A Jakarta Mail API _Session_
 object should be considered a resource factory, as described in
 <<a1120, Resource Manager
 Connection Factory References>>.” This specification requires that the
@@ -1740,21 +1740,22 @@ transport and supply authentication information.
 This specification does not require that a Jakarta
 EE product support any message store protocols.
 
-Note that the JavaMail API creates threads to
+Note that the Jakarta Mail API creates threads to
 deliver notifications of _Store_ , _Folder_ , and _Transport_ events.
 The use of these notification facilities may be limited by the
-restrictions on the use of threads in various containers. In EJB
+restrictions on the use of threads in various containers. In Enterprise Beans
 containers, for instance, it is typically not possible to create
 threads.
 
-The JavaMail API uses the JavaBeans Activation
-Framework API to support various MIME data types. The JavaMail API must
+The Jakarta Mail API uses the JavaBeans Activation
+Framework API to support various MIME data types. The Jakarta Mail API must
 include _javax.activation.DataContentHandlers_ for the following MIME
 data types, corresponding to the Java programming language type
 indicated in _<<a2675, JavaMail
 API MIME Data Type to Java Type Mappings>>_ .
 
-[[a2675]]JavaMail API MIME Data Type to Java Type Mappings
+[[a2675]]
+Jakarta Mail API MIME Data Type to Java Type Mappings
 
 Mime Type
 
@@ -1780,12 +1781,12 @@ Java Type
 
  _javax.mail.internet.MimeMessage_
 
-The JavaMail API specification is available
-at _http://jcp.org/en/jsr/detail?id=919_ .
+The Jakarta Mail API specification is available
+at _https://jakarta.ee/specifications/mail_ .
 
-=== Jakarta™ EE Connector Architecture 1.7 Requirements
+=== Jakarta EE Connectors 1.7 Requirements
 
-In full Jakarta EE products, all EJB containers
+In full Jakarta EE products, all Jakarta Enterprise Beans containers
 and all web containers must support the full set of Connector APIs. All
 such containers must support Resource Adapters that use any of the
 specified transaction capabilities. The Jakarta EE deployment tools must
@@ -1793,193 +1794,193 @@ support deployment of Resource Adapters, as defined in the Connector
 specification, and must support the deployment of applications that use
 Resource Adapters.
 
-The Connector specification is available at
-_http://jcp.org/en/jsr/detail?id=322_ .
+The Jakarta EE Connectors specification is available at
+_https://jakarta.ee/specifications/connectors_ .
 
-=== Web Services for Jakarta EE 1.4 Requirements
+=== Jakarta EE XML Web Services Requirements
 
-The Web Services for Jakarta EE specification
+The Jakarta EE XML Web Services specification
 defines the capabilities a Jakarta EE application server must support for
 deployment of web service endpoints. A complete deployment model is
 defined, including several new deployment descriptors. All Jakarta EE
 products must support the deployment and execution of web services as
-specified by the Web Services for Jakarta EE specification (JSR-109).
+specified by the Web Services for Jakarta EE specification.
 
-The Web Services for Jakarta EE specification is
-available at _http://jcp.org/en/jsr/detail?id=109_ .
+The Jakarta EE XML Web Services specification is
+available at _https://jakarta.ee/specifications/xml-ws_ .
 
-=== Jakarta™ API for XML-based RPC (JAX-RPC) 1.1 Requirements (Optional)
+=== Jakarta XML RPC 1.1 Requirements (Optional)
 
-The JAX-RPC specification defines client APIs
+The Jakarta XML RPC specification defines client APIs
 for accessing web services as well as techniques for implementing web
 service endpoints. The Web Services for Jakarta EE specification describes
-the deployment of JAX-RPC-based services and clients. The EJB and
-Servlet specifications also describe aspects of such deployment. In Jakarta
-EE products that support JAX-RPC, it must be possible to deploy
-JAX-RPC-based applications using any of these deployment models.
+the deployment of Jakarta XML RPC-based services and clients. The Jakarta Enterprise Beans
+and Servlet specifications also describe aspects of such deployment. In Jakarta
+EE products that support Jakarta XML RPC, it must be possible to deploy
+Jakarta XML RPC-based applications using any of these deployment models.
 
-The JAX-RPC specification describes the
+The Jakarta XML RPC specification describes the
 support for message handlers that can process message requests and
 responses. In general, these message handlers execute in the same
 container and with the same privileges and execution context as the
-JAX-RPC client or endpoint component with which they are associated.
+Jakarta XML RPC client or endpoint component with which they are associated.
 These message handlers have access to the same JNDI _java:comp/env_
 namespace as their associated component. Custom serializers and
 deserializers, if supported, are treated in the same way as message
 handlers.
 
 Note that neither web service annotations nor
-injection is supported for JAX-RPC service endpoints and handlers. New
-applications are encouraged to use JAX-WS to take advantage of these new
+injection is supported for Jakarta XML RPC service endpoints and handlers. New
+applications are encouraged to use Jakarta XML Web Services to take advantage of these new
 facilities that make it easier to write web services.
 
-The JAX-RPC specification is available at
-_http://jcp.org/en/jsr/detail?id=101_ .
+The Jakarta XML RPC  specification is available at
+_https://jakarta.ee/specifications/xml-rpc_ .
 
-=== Jakarta™ API for RESTful Web Services (JAX-RS) 2.1 Requirements
+=== Jakarta RESTful Web Services 2.1 Requirements
 
-JAX-RS defines APIs for the development of
+Jakarta RESTful Web Services defines APIs for the development of
 Web services built according to the Representational State Transfer
 (REST) architectural style.
 
 In a full Jakarta EE product, all Jakarta EE web
-containers are required to support applications that use JAX-RS
+containers are required to support applications that use Jakarta RESTful Web Services
 technology.
 
 The specification describes the deployment of
-services as a servlet. It must be possible to deploy JAX-RS-based
+services as a servlet. It must be possible to deploy Jakarta RESTful Web Services-based
 applications using this deployment model with the _servlet-class_
 element of the web.xml descriptor naming the application-supplied
-extension of the JAX-RS _Application_ abstract class.
+extension of the Jakarta RESTful Web Services _Application_ abstract class.
 
 The specification defines a set of optional
 container-managed facilities and resources that are intended to be
 available in a Jakarta EE container — all such features and resources must
 be made available.
 
-The JAX-RS specification is available at
-_http://jcp.org/en/jsr/summary?id=370_ .
+The Jakarta RESTful Web Services specification is available at
+_https://jakarta.ee/specifications/restful-ws_ .
 
-=== Java API for WebSocket 1.1 (WebSocket) Requirements
+=== Jakarta WebSocket  1.1 (WebSocket) Requirements
 
-The Java API for WebSocket (WebSocket) is a
+The Jakarta WebSocket (WebSocket) is a
 standard API for creating WebSocket applications. In a full Jakarta EE
 product, all Jakarta EE web containers are required to support the
 WebSocket API.
 
-The Java API for WebSocket specification can
-be found at _http://jcp.org/en/jsr/detail?id=356_ .
+The Jakarta WebSocket specification can
+be found at _https://jakarta.ee/specifications/websocket_ .
 
-=== Java API for JSON Processing 1.1 (JSON-P) Requirements
+=== Jakarta JSON Processing 1.1 (JSON-P) Requirements
 
 JSON (JavaScript Object Notation) is a
-lightweight data-interchange format used by many web services. The Java
-API for JSON Processing (JSON-P) provides a convenient way to process
+lightweight data-interchange format used by many web services. The 
+Jakarta JSON Processing (JSON-P) provides a convenient way to process
 (parse, generate, transform, and query) JSON text.
 
 In a full Jakarta EE product, all Jakarta EE
-application client containers, web containers, and EJB containers are
+application client containers, web containers, and enterprise beans containers are
 required to support the JSON-P API.
 
-The Java API for JSON Processing
-specification can be found at _http://jcp.org/en/jsr/detail?id=374_ .
+The Jakarta JSON Processing
+specification can be found at _https://jakarta.ee/specifications/jsonp_ .
 
 [[a2713]]
-=== Java API for JSON Binding 1.0 (JSON-B) Requirements
 
-The Java API for JSON Binding (JSON-B)
+=== Jakarta JSON Binding 1.0 (JSON-B) Requirements
+
+The Jakarta JSON Binding API for JSON Binding (JSON-B)
 provides a convenient way to map between JSON text and Java objects.
 
 In a full Jakarta EE product, all Jakarta EE
-application client containers, web containers, and EJB containers are
+application client containers, web containers, and enterprise beans containers are
 required to support the JSON-B API.
 
-The Java API for JSON Binding specification
-can be found at _http://jcp.org/en/jsr/detail?id=367_ .
+The Jakarta JSON Binding  specification
+can be found at _https://jakarta.ee/specifications/jsonb_.
 
-=== Concurrency Utilities for Jakarta EE 1.0 (Concurrency Utilities) Requirements
+=== Jakarta Concurrency 1.0 (Concurrency Utilities) Requirements
 
-Concurrency Utilities for Jakarta EE is a
+Jakarta Concurrency Utilities for Jakarta EE is a
 standard API for providing asynchronous capabilities to Jakarta EE
 application components through the following types of objects: managed
 executor service, managed scheduled executor service, managed thread
-factory, and context service. In a full Jakarta EE product, all Jakarta EE web
-containers and EJB containers are required to support the Concurrency
+factory, and context service. In a full Jakarta EE product, all web
+containers and enterprise beans containers are required to support the Concurrency
 Utilities API. The Jakarta EE Product Provider must provide preconfigured
 default managed executor service, managed scheduled executor service,
 managed thread factory, and context service objects for use by the
 application in the containers in which the Concurrency Utilities API is
 required to be supported.
 
-The Concurrency Utilities for Jakarta EE
-specification can be found at _http://jcp.org/en/jsr/detail?id=236_ .
+The Jakarta Concurrency
+specification can be found at _https://jakarta.ee/specifications/concurrency_ .
 
-=== Batch Applications for the Java Platform 1.0 (Batch) Requirements
+=== Jakarta Batch Specification Requirements
 
-The Batch Applications for the Java Platform
-API (Batch) provides a programming model for batch applications and a
-runtime for scheduling and executing jobs.
+The Jakarta Batch provides a programming model for batch 
+applications and a runtime for scheduling and executing jobs.
 
 In a full Jakarta EE product, all Jakarta EE web
-containers and EJB containers are required to support the Batch API.
+containers and Jakarta Enterprise Beans containers are required to support the Batch API.
 
-The Batch Application for the Java Platform
-specification can be found at _http://jcp.org/en/jsr/detail?id=352_ .
+The Jakarta Batch specification can be found 
+at _https://jakarta.ee/specifications/batch_ .
 
-=== Jakarta™ API for XML Registries (JAXR) 1.0 Requirements (Optional)
+=== Jakarta XML Registries 1.0 Requirements (Optional)
 
-The JAXR specification defines APIs for
+The Jakarta XML Registries specification defines APIs for
 client access to XML-based registries such as ebXML registries and UDDI
-registries. Jakarta EE products that support JAXR must include a JAXR
-registry provider that meets at least the JAXR level 0 requirements.
+registries. Jakarta EE products that support Jakarta XML Registries
+ must include a Jakarta XML registry provider that meets at least the 
+ Jakarta XML Registries level 0 requirements.
 
-The JAXR specification is available at
-_http://jcp.org/en/jsr/detail?id=93_ .
+The Jakarta XML Registries specification is available at
+_https://jakarta.ee/specifications/xml-registries_ .
 
-=== Jakarta™ Platform, Enterprise Edition Management API 1.1 Requirements
+=== Jakarta Management 1.1 Requirements
 
-The Jakarta EE Management API provides APIs for
+Jakarta Management provides APIs for
 management tools to query a Jakarta EE application server to determine its
 current status, applications deployed, and so on. All Jakarta EE products
 must support this API as described in its specification.
 
-The Jakarta EE Management API specification is
-available at _http://jcp.org/en/jsr/detail?id=77_ .
+The Jakarta Management specification is
+available at _https://jakarta.ee/specifications/management_ .
 
 [[a2730]]
-=== Jakarta™ Platform, Enterprise Edition Deployment API 1.2 Requirements (Optional)
+=== Jakarta Deployment API 1.2 Requirements (Optional)
 
-The Jakarta EE Deployment API defines the
+The Jakarta Deployment API defines the
 interfaces between the runtime environment of a deployment tool and
 plug-in components provided by a Jakarta EE application server. These
 plug-in components execute in the deployment tool and implement the Jakarta
 EE product-specific deployment mechanisms. Jakarta EE products that support
-the Jakarta EE Deployment API are required to supply these plug-in
+the Jakarta Deployment API are required to supply these plug-in
 components for use in tools from other vendors.
 
-Note that the Jakarta EE Deployment
+Note that the Jakarta Deployment
 specification does not define new APIs for direct use by Jakarta EE
 applications. However, it would be possible to create a Jakarta EE
 application that acts as a deployment tool and provides the runtime
-environment required by the Jakarta EE Deployment specification.
-
+environment required by the Jakarta Deployment
 The Jakarta EE Deployment API specification is
-available at _http://jcp.org/en/jsr/detail?id=88_ .
+available at _https://jakarta.ee/specifications/deployment_ .
 
-=== Jakarta™ Authorization Contract for Containers (JACC) 1.5 Requirements
+=== Jakarta Authorization 1.5 Requirements
 
-The JACC specification defines a contract
+The Jakarta Authorization specification defines a contract
 between a Jakarta EE application server and an authorization policy
 provider. In a full Jakarta EE product, all Jakarta EE web containers and
 enterprise bean containers are required to support this contract.
 
-The JACC specification can be found at
-_http://jcp.org/en/jsr/detail?id=115[]http://jcp.org/en/jsr/detail?id=115._
+The Jakarta Authorization specification can be found at
+_https://jakarta.ee/specifications/authorization_ .
 
 [[a2737]]
-=== Jakarta™ Authentication Service Provider Interface for Containers (JASPIC) 1.1 Requirements
+=== Jakarta Authentication 1.1 Requirements
 
-The JASPIC specification defines a service
+The Jakarta Authentication specification defines a service
 provider interface (SPI) by which authentication providers implementing
 message authentication mechanisms may be integrated in client or server
 message processing containers or runtimes. Authentication providers
@@ -1993,82 +1994,82 @@ result of the message authentication.
 
 In a full Jakarta EE product, all Jakarta EE web
 containers and enterprise bean containers are required to support the
-baseline compatibility requirements as defined by the JASPIC
+baseline compatibility requirements as defined by the Jakarta Authentication 
 specification. In a full Jakarta EE product, all web containers must also
-support the Servlet Container Profile as defined in the JASPIC
+support the Servlet Container Profile as defined in the Jakarta Authentication
 specification. In a Jakarta EE profile product that includes Servlet and
-JASPIC, all web containers must also support the Servlet Container
-Profile as defined in the JASPIC specification. Support for the JASPIC
-SOAP Profile is not required.
+Jakarta Authentication, all web containers must also support the Servlet Container
+Profile as defined in the Jakarta Authentication specification. 
+Support for the Jakarta Authentication SOAP Profile is not required.
 
-The JASPIC specification can be found at
-_http://jcp.org/en/jsr/detail?id=196_ .
+The Jakarta Authentication specification can be found at
+_https://jakarta.ee/specifications/authentication_ .
 
 [[a2741]]
-=== Jakarta EE Security API 1.0 Requirements
+=== Jakarta Security 1.0 Requirements
 
-The Jakarta EE Security API leverages JASPIC,
+Jakarta Security leverages Jakarta Authentication ,
 but provides an easier to use SPI for authentication of users of web
 applications and defines identity store APIs for authentication and
 authorization.
 
 In a full Jakarta EE product, all Jakarta EE web
 containers and enterprise bean containers are required to support the
-requirements defined by the Jakarta EE Security API specification.
+requirements defined by the Jakarta Security specification.
 
-The Jakarta EE Security API specification can be
-found at _http://jcp.org/en/jsr/detail?id=375._
+The Jakarta Security Specification can be
+found at _https://jakarta.ee/specifications/security_ .
 
-=== Debugging Support for Other Languages (JSR-45) Requirements
+=== Jakarta Debugging Support for Other Languages Requirements
 
-JSP pages are usually translated into Java
-language pages and then compiled to create class files. The Debugging
-Support for Other Languages specification describes information that can
+Jakarta Server Pages pages are usually translated into Java
+language pages and then compiled to create class files. The Jakarta Debugging Support for Other Languages
+specification describes information that can
 be included in a class file to relate class file data to data in the
 original source file. All Jakarta EE products are required to be able to
-include such information in class files that are generated from JSP
-pages.
+include such information in class files that are generated from
+Jakarta Server Pages.
 
-The Debugging Support for Other Languages
-specification can be found at _http://jcp.org/en/jsr/detail?id=45_ .
+The Jakarta Debugging Support for Other Languages
+specification can be found at _https://jakarta.ee/specifications/debugging_ .
 
-=== Standard Tag Library for JavaServer Pages™ (JSTL) 1.2 Requirements
+=== Jakarta Standard Tag Library for Jakarta Server Pages 1.2 Requirements
 
-JSTL defines a standard tag library that
-makes it easier to develop JSP pages. All Jakarta EE products are required
-to provide JSTL for use by all JSP pages.
+Jakarta Standard Tag Library specification defines a standard tag library that
+makes it easier to develop Jakarta Server Pages Pages. All Jakarta EE products are required
+to provide a Jakarta Standard Tag Library for use by all Jakarta Server Pages.
 
-The Standard Tag Library for JavaServer Pages
-specification can be found at _http://jcp.org/en/jsr/detail?id=52_ .
+The Jakarta Standard Tag Library for Jakarta Server Pages
+specification can be found at _https://jakarta.ee/specifications/tags_ .
 
-=== Web Services Metadata for the Jakarta™ Platform 2.1 Requirements
+=== Jakarta Web Services Metadata Platform 2.1 Requirements
 
-The Web Services Metadata for the Java
+The Jakarta Web Services Metadata
 Platform specification defines Java language annotations that can be
 used to simplify the development of web services. These annotations can
-be used with JAX-WS web service components.
+be used with Jakarta XML Web Services components.
 
-The Web Services Metadata for the Java
+The Jakarta Web Services Metadata
 Platform specification can be found at
-_http://jcp.org/en/jsr/detail?id=181_ .
+_https://jakarta.ee/specifications/ws-metadata_ .
 
-=== JavaServer Faces™ 2.3 Requirements
+=== Jakarta Server Faces 2.3 Requirements
 
-JavaServer Faces technology simplifies
-building user interfaces for JavaServer applications. Developers of
+Jakarta Server Faces technology simplifies
+building user interfaces for Jakarta applications. Developers of
 various skill levels can quickly build web applications by: assembling
 reusable UI components in a page; connecting these components to an
 application data source; and wiring client-generated events to
 server-side event handlers. In a full Jakarta EE product, all Jakarta EE web
-containers are required to support applications that use the JavaServer
+containers are required to support applications that use the Jakarta Server
 Faces technology.
 
-The JavaServer Faces specification can be
-found at _http://jcp.org/en/jsr/detail?id=372_ .
+The Jakarta Server Faces specification can be
+found at _https://jakarta.ee/specifications/faces_ .
 
-=== Common Annotations for the Jakarta™ Platform 1.3 Requirements
+=== Jakarta Annotations 1.3 Requirements
 
-The Common Annotations specification defines
+The Jakarta Annotations specification defines
 Java language annotations that are used by several other specifications,
 including this specification. The specifications that use these
 annotations fully define the requirements for these annotations. The
@@ -2085,7 +2086,7 @@ App Client
 
 Web
 
-EJB
+Enterprise Beans
 
  _Resource_
 
@@ -2199,25 +2200,25 @@ Y
 
 Y
 
-The Common Annotations for the Java Platform
-specification can be found at _http://jcp.org/en/jsr/detail?id=250_ .
+The Jakarta Annotations specification can be found at 
+_https://jakarta.ee/specifications/annotations_ .
 
-=== Jakarta™ Persistence API 2.2 Requirements
+=== Jakarta Persistence 2.2 Requirements
 
-Java Persistence is the standard API for the
-management of persistence and object/relational mapping. The Java
+Jakarta Persistence is the standard API for the
+management of persistence and object/relational mapping. The Jakarta
 Persistence specification provides an object/relational mapping facility
 for application developers using a Java domain model to manage a
 relational database.
 
-As mandated by the Java Persistence
+As mandated by the Jakarta Persistence
 specification, in a Jakarta EE environment the classes of the persistence
 unit should not be loaded by the application class loader or any of its
 parent class loaders until after the entity manager factory for the
 persistence unit has been created.
 
-The Java Persistence specification can be
-found at _http://jcp.org/en/jsr/detail?id=338_ .
+The Jakarta Persistence specification can be
+found at _https://jakarta.ee/specifications/persistence_ .
 
 === Bean Validation 2.0 Requirements
 
@@ -2227,12 +2228,12 @@ source is annotations, with the ability to override and extend the
 metadata through the use of XML validation descriptors.
 
 The Jakarta EE platform requires that web
-containers make an instance of _ValidatorFactory_ available to JSF
+containers make an instance of _ValidatorFactory_ available to Jakarta Server Faces
 implementations by storing it in a servlet context attribute named
 _javax.faces.validator.beanValidator.ValidatorFactory._
 
 The Jakarta EE platform also requires that an
-instance of _ValidatorFactory_ be made available to JPA providers as a
+instance of _ValidatorFactory_ be made available to Jakarta Persistence providers as a
 property in the map that is passed as the second argument to the
 _createContainerEntityManagerFactory(PersistenceUnitInfo, Map)_ method
 of the _PersistenceProvider_ interface, under the name
@@ -2240,7 +2241,7 @@ _javax.persistence.validation.factory_ .
 
 Additional requirements on Jakarta EE platform
 containers are specified in the Bean Validation specification, which can
-be found at _http://jcp.org/en/jsr/detail?id=380_ .
+be found at _https://jakarta.ee/specifications/bean-validation_ .
 
 === Managed Beans 1.0 Requirements
 
@@ -2250,16 +2251,16 @@ resource injection facility and interceptor service present in the Jakarta
 EE platform.
 
 The Managed Beans specification can be found
-at _http://jcp.org/en/jsr/detail?id=316_ .
+at _https://jakarta.ee/specifications/managed-beans_ .
 
 === Interceptors 1.2 Requirements
 
 The Interceptors specification makes more
 generally available the interceptor facility originally defined as part
-of the EJB 3.0 specification.
+of the Jakarta Enterprise Beans 3.0 specification.
 
 The Interceptors specification can be found
-at _http://jcp.org/en/jsr/detail?id=318_ .
+at _https://jakarta.ee/specifications/interceptors_ .
 
 === Contexts and Dependency Injection for the Jakarta EE Platform 2.0 Requirements
 
@@ -2269,7 +2270,7 @@ containers, aimed at simplifying the creation of applications that use
 both web tier and business tier technologies.
 
 The CDI specification can be found at
-_http://jcp.org/en/jsr/detail?id=365_ .
+_https://jakarta.ee/specifications/cdi_ .
 
 === Dependency Injection for Java 1.0 Requirements
 
@@ -2283,4 +2284,4 @@ Dependency Injection is mediated by CDI. See
 Injection>>” for more detail.
 
 The DI specification can be found at
-_http://jcp.org/en/jsr/detail?id=330_ .
+_https://jakarta.ee/specifications/dependency-injection_ .
