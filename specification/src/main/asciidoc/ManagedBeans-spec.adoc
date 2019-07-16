@@ -2,7 +2,7 @@
 // Copyright (c) 2017-2019 Contributors to the Eclipse Foundation
 //
 
-= Jakarta EE WebProfile
+= Jakarta Managed Beans
 :authors: Jakarta EE Platform Team, https://projects.eclipse.org/projects/ee4j.jakartaee-platform
 :email: https://dev.eclipse.org/mailman/listinfo/jakartaee-platform-dev
 :version-label!:
@@ -10,7 +10,7 @@
 :license: Eclipse Foundation Specification License v1.0
 :source-highlighter: coderay
 :toc: left
-:toclevels: 3
+:toclevels: 4
 :sectnumlevels: 4
 :sectanchors:
 ifdef::backend-pdf[]
@@ -25,4 +25,4 @@ include::license-efsl.adoc[]
 
 // == WebProfile
 :sectnums:
-include::webprofile/WebProfile.adoc[]
+include::managedbeans/ManagedBeans.adoc[]

@@ -5,9 +5,6 @@ This project generates the Jakarta EE Platform Specification
 the Jakarta EE Web Profile Specification, and the Managed Beans
 Specification.
 
-> NOTE:  The Managed Bean Specification is not being generated presently.
-> A skeletal Specification based on the Javadoc will be necessary.
-
 Building
 --------
 

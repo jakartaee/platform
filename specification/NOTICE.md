@@ -1,13 +1,13 @@
-# Notices for Eclipse Jakarta EE Platform
+# Notices for Jakarta EE Platform
 
-This content is produced and maintained by the Eclipse Jakarta EE Platform
+This content is produced and maintained by the Jakarta EE Platform
 project.
 
 * Project home: https://projects.eclipse.org/projects/ee4j.jakartaee-platform
 
 ## Trademarks
 
-Eclipse Jakarta EE Platform is a trademark of the Eclipse Foundation.
+Jakarta EE Platform is a trademark of the Eclipse Foundation.
 
 ## Copyright
 
