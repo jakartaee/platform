@@ -1,9 +1,10 @@
 == Web Profile Definition
 
 This chapter defines the contents of the
-Jakarta EE™ 8 Web Profile.
+Jakarta™ EE 8 Web Profile.
 
-=== [[a43]]Required Components
+[[a43]]
+=== Required Components
 
 The following technologies are required
 components of the Web Profile:
@@ -38,10 +39,11 @@ Profile.
 
 Web Profile products may support some of the
 technologies present in the full Jakarta EE Platform and not already listed
-in link:WebProfile.html#a43[See Required Components]”,
+in <<a43, Required Components>>, 
 consistently with their compatibility requirements.
 
-=== [[a69]]Additional Requirements
+[[a69]]
+=== Additional Requirements
 
 Web Profile products must support the
 deployment of Jakarta EE web application modules ( _.war_ files). No other

@@ -1,4 +1,5 @@
-== [[a3439]]Future Directions
+[[a3439]]
+== Future Directions
 
 This version of the Jakarta™ EE Platform specification includes most of the
 facilities needed by enterprise applications. Still, there is always

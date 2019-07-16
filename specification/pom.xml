@@ -27,7 +27,7 @@
     <groupId>jakarta.platform</groupId>
     <artifactId>platform-spec</artifactId>
     <packaging>pom</packaging>
-    <version>8.0-SNAPSHOT</version>
+    <version>8.0.1-SNAPSHOT</version>
     <name>Jakarta EE Platform Specification</name>
 
     <properties>
@@ -102,6 +102,7 @@
                     </dependency>
                 </dependencies>
                 <executions>
+                    <!-- Platform HTML generation -->
                     <execution>
                         <id>platform-asciidoc-to-html</id>
                         <phase>generate-resources</phase>
@@ -117,6 +118,7 @@
                             </attributes>
                         </configuration>
                     </execution>
+                    <!-- Platform PDF generation -->
                     <execution>
                         <id>platform-asciidoc-to-pdf</id>
                         <phase>generate-resources</phase>
@@ -136,6 +138,7 @@
                             </attributes>
                         </configuration>
                     </execution>
+                    <!-- WebProfile HTML generation -->
                     <execution>
                         <id>webprofile-asciidoc-to-html</id>
                         <phase>generate-resources</phase>
@@ -151,6 +154,7 @@
                             </attributes>
                         </configuration>
                     </execution>
+                    <!-- WebProfile PDF generation -->
                     <execution>
                         <id>webprofile-asciidoc-to-pdf</id>
                         <phase>generate-resources</phase>
@@ -167,6 +171,44 @@
                                 <pagenums />
                                 <toc />
                                 <embedAssets>true</embedAssets>
+                            </attributes>
+                        </configuration>
+                    </execution>
+                    <!-- ManagedBeans HTML generation -->
+                    <execution>
+                        <id>managedbeans-asciidoc-to-html</id>
+                        <phase>generate-resources</phase>
+                        <goals>
+                            <goal>process-asciidoc</goal>
+                        </goals>
+                        <configuration>
+                            <backend>html5</backend>
+                            <sourceDocumentName>ManagedBeans-spec.adoc</sourceDocumentName>
+                            <outputFile>${project.build.directory}/generated-docs/ManagedBeans-spec-${project.version}.html</outputFile>
+                            <attributes>
+                                <toc>left</toc>
+                                <revnumber>1.0</revnumber>
+                            </attributes>
+                        </configuration>
+                    </execution>
+                    <!-- ManagedBeans PDF generation -->
+                    <execution>
+                        <id>managedbeans-asciidoc-to-pdf</id>
+                        <phase>generate-resources</phase>
+                        <goals>
+                            <goal>process-asciidoc</goal>
+                        </goals>
+                        <configuration>
+                            <backend>pdf</backend>
+                            <sourceDocumentName>ManagedBeans-spec.adoc</sourceDocumentName>
+                            <outputFile>${project.build.directory}/generated-docs/ManagedBeans-spec-${project.version}.pdf</outputFile>
+                            <attributes>
+                                <pdf-stylesdir>${project.basedir}/src/theme</pdf-stylesdir>
+                                <pdf-style>jakartaee</pdf-style>
+                                <pagenums />
+                                <toc />
+                                <embedAssets>true</embedAssets>
+                                <revnumber>1.0</revnumber>
                             </attributes>
                         </configuration>
                     </execution>

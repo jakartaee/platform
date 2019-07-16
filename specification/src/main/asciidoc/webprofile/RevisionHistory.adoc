@@ -27,7 +27,7 @@ technologies.
 === Removed Requirements
 
 * Removed MVC 1.0 from
-link:WebProfile.html#a43[See Required Components].”
+<<a43, Required Components>>.
 
 === Editorial Changes
 

@@ -9,6 +9,8 @@ include::TransactionManagement.adoc[]
 
 include::ResourcesNamingInjection.adoc[]
 
+include::ApplicationProgrammingInterface.adoc[]
+
 include::Interoperability.adoc[]
 
 include::ApplicationAssemblyDeployment.adoc[]
