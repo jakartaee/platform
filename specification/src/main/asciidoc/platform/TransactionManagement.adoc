@@ -28,12 +28,13 @@ for the Connectors specification, each component may also acquire one or more
 connections to access one or more transactional resource managers.
 
 For example, in
-_link:#a475[See Servlets/Server Pages Accessing Enterprise Beans]_ , the call
+_<<a475, Servlets/Server Pages Accessing Enterprise Beans>>_ , the call
 tree starts from a servlet or server pages accessing multiple enterprise beans,
 which in turn may access other enterprise beans. The components access resource
 managers via connections.
 
-=== [[a475]]Servlets/Server Pages Accessing Enterprise Beans
+[[a475]]
+=== Servlets/Server Pages Accessing Enterprise Beans
 
 image:../images/Platform_Spec-8.png[image]
 
@@ -42,7 +43,7 @@ programmatic and declarative transaction demarcation APIs, how the platform
 must manage transactions on behalf of the application.
 
 For example, the application may require that all the components in
-_link:#a475[See Servlets/Server Pages Accessing Enterprise Beans]_ access
+_<<a475, Servlets/Server Pages Accessing Enterprise Beans>>_ access
 resources as part of a single transaction. The Platform Provider must provide
 the transaction capabilities to support such a scenario.
 
@@ -114,7 +115,8 @@ of the transaction defined by the Jakarta Transactions specification.
 newly created thread is not associated with any transaction defined by the
 Jakarta Transactions specification.
 
-==== [[a493]]Transaction Non-Requirements
+[[a493]]
+=== Transaction Non-Requirements
 
 The Product Provider is not required to support the importing of a transaction
 context from a client to a web component.
@@ -139,7 +141,7 @@ clientlink:#a3650[3]. Returning from the _service_ or _doFilter_ method to the
 network client with an active transaction context is an error. The web container
 is required to detect this error and abort the transaction.
 
-As specified above in link:#a493[See Transaction Non-Requirements], requests
+As specified above in <<a493, Transaction Non-Requirements>>, requests
 made within a web container using the _RequestDispatcher_ must propagate any
 transaction context to the called class. Unless the called class commits or
 aborts the transaction, the transaction must remain active when the called class
@@ -207,7 +209,8 @@ management support for application clients.
 The Jakarta EE Product Provider is not required to provide transaction
 management support for applets.
 
-==== [[a516]]Transactional JDBC™ Technology Support
+[[a516]]
+=== Transactional JDBC™ Technology Support
 
 A Jakarta EE product must support a JDBC technology database as a transactional
 resource manager. The platform must enable transactional JDBC API access from
@@ -229,7 +232,8 @@ the XA capabilities of JDBC drivers through product-specific means, although
 normally such JDBC drivers would be delivered as resource adapters using the
 Connector API.
 
-==== [[a520]]Transactional Jakarta Messaging Support
+[[a520]]
+=== Transactional Jakarta Messaging Support
 
 A Jakarta EE product must support a Jakarta Messaging provider as a
 transactional resource manager. The platform must enable transactional Jakarta
@@ -357,8 +361,8 @@ Jakarta EE application components may use the optional _shareable_ element of
 the _Resource_ annotation or the optional deployment descriptor element
 _res-sharing-scope_ to indicate whether a connection to a resource manager is
 shareable or unshareable. Containers must assume connections to be shareable if
-no deployment hint is provided. link:#a3399[See Jakarta EE Application Client
-XML Schema], the Jakarta Enterprise Beans specification, and the Servlet
+no deployment hint is provided. <<a3399, Jakarta EE Application Client
+XML Schema>>, the Jakarta Enterprise Beans specification, and the Servlet
 specification provide descriptions of the deployment descriptor element.
 
 Jakarta EE application components may cache connection objects and reuse them
@@ -370,9 +374,9 @@ sharing.
 
 === JDBC and Jakarta Messaging Deployment Issues
 
-The JDBC transaction requirements in link:#a516[See Transactional JDBC™
-Technology Support] and the Jakarta Messaging transaction requirements in
-link:#a520[See Transactional Jakarta Messaging Support] may impose some
+The JDBC transaction requirements in <<a516, Transactional JDBC™
+Technology Support>> and the Jakarta Messaging transaction requirements in
+<<a520, Transactional Jakarta Messaging Support>> may impose some
 restrictions on a Deployer’s configuration of an application’s JDBC and Jakarta
 Messaging resources. Jakarta EE Product Providers may impose the restrictions
 described in this section to meet these requirements.
@@ -417,8 +421,8 @@ Jakarta Messaging operations in the same global transaction as other resource
 adapters. While JDBC drivers are not required to be XA-capable, a JDBC driver
 may be delivered as an XA-capable resource adapter. In such a case, it must be
 possible to include JDBC operations in the same global transaction as other
-XA-capable resource adapters. See also link:#a516[See Transactional JDBC™
-Technology Support].
+XA-capable resource adapters. See also <<a516, Transactional JDBC™
+Technology Support>>.
 
 === System Administration Tools
 

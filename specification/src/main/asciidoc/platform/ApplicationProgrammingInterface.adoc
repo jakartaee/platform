@@ -1,4 +1,5 @@
-== [[a2133]]Application Programming Interface
+[[a2133]]
+== Application Programming Interface
 
 This chapter describes API requirements
 for the Jakarta™ Platform, Enterprise Edition (Jakarta EE). Jakarta EE requires
@@ -6,7 +7,9 @@ the provision of a number of APIs for use by Jakarta EE applications,
 starting with the core Java APIs and including many additional Java
 technologies.
 
-=== [[a2136]]Required APIs
+
+[[a2136]]
+=== Required APIs
 
 Jakarta EE application components execute in
 runtime environments provided by the containers that are a part of the
@@ -71,15 +74,15 @@ available at _http://docs.oracle.com/javase/8/docs/_ .
 
 The full Jakarta EE platform also provides a
 number of Java technologies in each of the containers defined by this
-specification. _link:#a2159[See
-Jakarta EE Technologies]_ indicates the technologies with their required
+specification. _<<a2159, Jakarta EE Technologies>>_ indicates the technologies with their required
 versions, which containers include the technologies, and whether the
 technology is required (REQ), proposed optional (POPT), or optional
 (OPT). Each Jakarta EE profile specification will include a similar table
 describing which technologies are required for the profile. Note that
 some technologies are marked Optional, as described in the next section.
 
-==== [[a2159]]Jakarta EE Technologies
+[[a2159]]
+==== Jakarta EE Technologies
 
 Java Technology
 
@@ -436,7 +439,8 @@ a product implementation does not support a technology marked as
 Optional, it must not include the APIs for that
 technology.link:#a3665[18]
 
-==== [[a2331]]Pruned Java Technologies
+[[a2331]]
+==== Pruned Java Technologies
 
 As the Jakarta EE specification has evolved,
 some of the technologies originally included in Jakarta EE are no longer as
@@ -468,13 +472,14 @@ of the product vendor.
 
 Technologies that have been pruned as of Jakarta
 EE 8 are marked Optional in
-link:#a2159[See Jakarta EE
-Technologies]. Technologies that may be pruned in a future release are
+<<a2159, Jakarta EE
+Technologies>>. Technologies that may be pruned in a future release are
 marked Proposed Optional in
-link:#a2159[See Jakarta EE
-Technologies].
+<<a2159, Jakarta EE
+Technologies>>.
 
-=== [[a2339]]Java Platform, Standard Edition (Java SE) Requirements
+[[a2339]]
+=== Java Platform, Standard Edition (Java SE) Requirements
 
 ==== Programming Restrictions
 
@@ -538,19 +543,19 @@ application components by a particular installation is a matter of
 policy outside the scope of this specification, however, every Jakarta EE
 product must be capable of running with a configuration that provides
 application classes and packaged libraries the permissions defined in
-link:#a2366[See Jakarta EE Security
-Permissions Set].
+<<a2366, Jakarta EE Security
+Permissions Set>>.
 
 All Jakarta EE products must allow the set of
 permissions available to application classes in a module to be
 configurable, providing application components in some modules with
 different permissions than those described in
-link:#a2366[See Jakarta EE Security
-Permissions Set].
+<<a2366, Jakarta EE Security
+Permissions Set>>.
 
 As defined in
-link:#a2496[See Declaring Permissions
-Required by Application Components],” a component provider may declare
+<<a2496, Declaring Permissions
+Required by Application Components>>,” a component provider may declare
 the permissions required by the application classes and libraries
 packaged in a module. When a component provider has declared the
 permissions required by a module, on successful deployment of the
@@ -565,17 +570,18 @@ libraries the permissions established by the security policy of the
 installation. The Jakarta EE product must ensure that the system
 administrator for the installation be able to define the security policy
 for the installation to include the permissions in
-link:#a2366[See Jakarta EE Security
-Permissions Set].
+<<a2366, Jakarta EE Security
+Permissions Set>>.
 
 Note that, on some installations of Jakarta EE
 products, the security policy of the installation may be such that
 applications are granted fewer permissions than those defined in
-link:#a2366[See Jakarta EE Security
-Permissions Set] and, as a result, some applications that declare only
+
+<<a2366, Jakarta EE Security
+Permissions Set>> and, as a result, some applications that declare only
 the permissions defined in
-link:#a2366[See Jakarta EE Security
-Permissions Set] may not be deployable. Other applications that require
+<<a2366, Jakarta EE Security
+Permissions Set>> may not be deployable. Other applications that require
 the same permissions but do not declare them may deploy but will
 encounter runtime failures when the missing permission is required by
 the application component.
@@ -583,8 +589,8 @@ the application component.
 Every Jakarta EE product must be capable of
 running with a Java security manager and with an installation policy
 that does not grant the permissions described in
-link:#a2438[See Restrictable Jakarta EE
-Security Permissions] to Web, EJB, and resource adapter components. That
+<<a2438, Restrictable Jakarta EE
+Security Permissions>> to Web, EJB, and resource adapter components. That
 environment must otherwise fully support the requirements of this
 specification.
 
@@ -596,8 +602,7 @@ of the installation environment, application component providers should
 declare all Java security permissions required by their application
 components.
 
-link:#a2496[See
-Declaring Permissions Required by Application Components],” defines the
+<<a2496, Declaring Permissions Required by Application Components>>,” defines the
 mechanism(s) by which required permissions may be declared.
 
 Note that, while FilePermissions or
@@ -617,8 +622,8 @@ environment. For example, cloud environments may require greater
 restrictions on the system resources available to applications than
 on-premise enterprise installations. Note that restricting the
 permissions beyond those in
-link:#a2366[See Jakarta EE Security
-Permissions Set] may prevent some applications from working correctly.
+<<a2366, Jakarta EE Security
+Permissions Set>> may prevent some applications from working correctly.
 
 Care should be taken by the system
 administrator to ensure that resources that are expected to be available
@@ -639,12 +644,13 @@ namespace available to other applications.
 
 ===== Listing of the Jakarta EE Security Permissions Set
 
-link:#a2366[See
-Jakarta EE Security Permissions Set] lists the Java permissions that Jakarta
+<<a2366, Jakarta EE Security Permissions Set>> lists the Java permissions that Jakarta
 EE components (by type) can reliably be granted by a Jakarta EE product,
 given appropriate local installation configuration.
 
-===== [[a2366]]Jakarta EE Security Permissions Set
+[[a2366]]
+===== Jakarta EE Security Permissions Set
+
 
 Security Permissions
 
@@ -784,8 +790,7 @@ read
 
 ===== Restrictable Jakarta EE Security Permissions
 
-link:#a2438[See
-Restrictable Jakarta EE Security Permissions] lists the Java permissions
+<<a2438, Restrictable Jakarta EE Security Permissions>> lists the Java permissions
 that a Jakarta EE product must be capable of restricting when running a Web
 or EJB application component. If the Target field is empty, a Jakarta EE
 product must be capable of deploying application modules such that no
@@ -794,7 +799,8 @@ application module.
 
 
 
-===== [[a2438]]Restrictable Jakarta EE Security Permissions
+[[a2438]]
+===== Restrictable Jakarta EE Security Permissions
 
 Security Permissions
 
@@ -911,8 +917,8 @@ javax.sound.sampled.AudioPermission
 
 
 
-===== [[a2496]]Declaring Permissions Required by Application Components
-
+[[a2496]]
+===== Declaring Permissions Required by Application Components
 By declaring the permissions required by an
 application as described in this section, an application component
 provider is ensured, through the successful deployment of his or her
@@ -999,7 +1005,8 @@ at _http://xmlns.jcp.org/xml/ns/javaee/permissions_8.xsd_ .
 
 ==== Additional Requirements
 
-===== [[a2523]]Networking
+[[a2523]]
+===== Networking
 
 The Java SE platform includes a pluggable
 mechanism for supporting multiple URL protocols through the
@@ -1027,8 +1034,8 @@ using the _getContent_ method of _URL_ and _URLConnection_ .
 
 When accessing data of the following MIME types
 using the _getContent_ method, objects of the corresponding Java type
-listed in _link:#a2531[See Java Type of
-Objects Returned When Using the getContent Method]_ must be returned.
+listed in _<<a2531, Java Type of
+Objects Returned When Using the getContent Method>>_ must be returned.
 
 ===== Java Type of Objects Returned When Using[[a2531]] the getContent Method
 
@@ -1093,8 +1100,8 @@ load JDBC drivers directly. Instead, they should use the technique
 recommended in the JDBC specification and perform a JNDI lookup to
 locate a _DataSource_ object. The JNDI name of the _DataSource_ object
 should be chosen as described in
-link:#a1120[See Resource Manager
-Connection Factory References].” The Jakarta EE platform must be able to
+<<a1120, Resource Manager
+Connection Factory References>>.” The Jakarta EE platform must be able to
 supply a _DataSource_ that does not require the application to supply
 any authentication information when obtaining a database connection. Of
 course, applications may also supply a user name and password when
@@ -1138,7 +1145,8 @@ Connector architecture.
 The JDBC 4.2 specification is available at
 _https://jcp.org/en/jsr/detail?id=221_ .
 
-===== [[a2553]]Jakarta™ API for XML Web Services (JAX-WS) Requirements
+[[a2553]]
+===== Jakarta™ API for XML Web Services (JAX-WS) Requirements
 
 The JAX-WS specification provides support for
 web services that use the JAXB API for binding XML data to Java objects.
@@ -1266,7 +1274,7 @@ component types can be clients of RMI-IIOP objects. Jakarta EE applications
 should also use JNDI to lookup non-EJB RMI-IIOP objects. The JNDI names
 used for such non-EJB RMI-IIOP objects should be configured at
 deployment time using the standard environment entries mechanism (see
-link:#a607[See JNDI Naming Context]”).
+<<a607, JNDI Naming Context>>”).
 The application should fetch a name from JNDI using an environment
 entry, and use the name to lookup the RMI-IIOP object. Typically such
 names will be configured to be names in the COSNaming name service.
@@ -1320,8 +1328,8 @@ JavaMail _Session_ objects, _URL_ objects, resource manager
 _ConnectionFactory_ objects (as specified in the Connector
 specification), _ORB_ objects, _EntityManagerFactory_ objects, and other
 Java language objects as described in
-link:#a567[See Resources, Naming, and
-Injection].” The JNDI implementation in a Jakarta EE product must be
+<<a567, Resources, Naming, and
+Injection>>.” The JNDI implementation in a Jakarta EE product must be
 capable of supporting all of these uses in a single application
 component using a single JNDI _InitialContext_ . Application components
 will generally create a JNDI _InitialContext_ using the default
@@ -1335,8 +1343,8 @@ annotations and/or deployment descriptor are used to list the names and
 types of objects expected. The Deployer configures the JNDI namespace to
 make appropriate components available. The JNDI names used to lookup
 such objects must be in the JNDI _java:_ namespace. See
-link:#a567[See Resources, Naming, and
-Injection]” for details.
+<<a567, Resources, Naming, and
+Injection>>” for details.
 
 Particular names are defined by this
 specification for the cases when the Jakarta EE product includes the
@@ -1387,8 +1395,8 @@ _http://docs.oracle.com/javase/8/docs/technotes/guides/jndi/jndi-cos.html_
 .
 
 See
-link:#a567[See Resources, Naming, and
-Injection]” for the complete naming requirements for the Jakarta EE
+<<a567, Resources, Naming, and
+Injection>>” for the complete naming requirements for the Jakarta EE
 platform. The JNDI specification is available at
 _http://docs.oracle.com/javase/8/docs/technotes/guides/jndi/index.html_
 .
@@ -1415,7 +1423,7 @@ dynamically load application classes.
 This specification requires that containers
 provide a per thread context class loader that can be used to load top
 level application classes as described above. See
-link:#a2966[See Dynamic Class Loading]”
+<<a2966, Dynamic Class Loading>>”
 for recommendations for libraries that dynamically load classes.
 
 ===== Jakarta™ Authentication and Authorization Service (JAAS) Requirements
@@ -1424,7 +1432,7 @@ All EJB containers and all web containers
 must support the use of the JAAS APIs as specified in the Connector
 specification. All application client containers must support use of the
 JAAS APIs as specified in
-link:#a3294[See Application Clients].”
+<<a3294, Application Clients>>.”
 
 A reference guide to the JAAS APIs is
 available at
@@ -1714,8 +1722,8 @@ request a _Session_ object using JNDI, and should list its need for a
 _Session_ object in its deployment descriptor using a _resource-ref_
 element, or by using a _Resource_ annotation. A JavaMail API _Session_
 object should be considered a resource factory, as described in
-link:#a1120[See Resource Manager
-Connection Factory References].” This specification requires that the
+<<a1120, Resource Manager
+Connection Factory References>>.” This specification requires that the
 Jakarta EE platform support _javax.mail.Session_ objects as resource
 factories, as described in that section.
 
@@ -1743,8 +1751,8 @@ The JavaMail API uses the JavaBeans Activation
 Framework API to support various MIME data types. The JavaMail API must
 include _javax.activation.DataContentHandlers_ for the following MIME
 data types, corresponding to the Java programming language type
-indicated in _link:#a2675[See JavaMail
-API MIME Data Type to Java Type Mappings]_ .
+indicated in _<<a2675, JavaMail
+API MIME Data Type to Java Type Mappings>>_ .
 
 [[a2675]]JavaMail API MIME Data Type to Java Type Mappings
 
@@ -1876,7 +1884,8 @@ required to support the JSON-P API.
 The Java API for JSON Processing
 specification can be found at _http://jcp.org/en/jsr/detail?id=374_ .
 
-=== [[a2713]]Java API for JSON Binding 1.0 (JSON-B) Requirements
+[[a2713]]
+=== Java API for JSON Binding 1.0 (JSON-B) Requirements
 
 The Java API for JSON Binding (JSON-B)
 provides a convenient way to map between JSON text and Java objects.
@@ -1937,7 +1946,8 @@ must support this API as described in its specification.
 The Jakarta EE Management API specification is
 available at _http://jcp.org/en/jsr/detail?id=77_ .
 
-=== [[a2730]]Jakarta™ Platform, Enterprise Edition Deployment API 1.2 Requirements (Optional)
+[[a2730]]
+=== Jakarta™ Platform, Enterprise Edition Deployment API 1.2 Requirements (Optional)
 
 The Jakarta EE Deployment API defines the
 interfaces between the runtime environment of a deployment tool and
@@ -1966,7 +1976,8 @@ enterprise bean containers are required to support this contract.
 The JACC specification can be found at
 _http://jcp.org/en/jsr/detail?id=115[]http://jcp.org/en/jsr/detail?id=115._
 
-=== [[a2737]]Jakarta™ Authentication Service Provider Interface for Containers (JASPIC) 1.1 Requirements
+[[a2737]]
+=== Jakarta™ Authentication Service Provider Interface for Containers (JASPIC) 1.1 Requirements
 
 The JASPIC specification defines a service
 provider interface (SPI) by which authentication providers implementing
@@ -1993,7 +2004,8 @@ SOAP Profile is not required.
 The JASPIC specification can be found at
 _http://jcp.org/en/jsr/detail?id=196_ .
 
-=== [[a2741]]Jakarta EE Security API 1.0 Requirements
+[[a2741]]
+=== Jakarta EE Security API 1.0 Requirements
 
 The Jakarta EE Security API leverages JASPIC,
 but provides an easier to use SPI for authentication of users of web
@@ -2267,8 +2279,8 @@ for use on injectable classes.
 
 In the Jakarta EE platform, support for
 Dependency Injection is mediated by CDI. See
-link:#a2112[See Support for Dependency
-Injection]” for more detail.
+<<a2112, Support for Dependency
+Injection>>” for more detail.
 
 The DI specification can be found at
 _http://jcp.org/en/jsr/detail?id=330_ .
