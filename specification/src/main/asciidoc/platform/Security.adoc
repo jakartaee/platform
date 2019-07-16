@@ -1,7 +1,7 @@
 == [[a235]]Security
 
 This chapter describes the security
-requirements for the Jakarta™, Enterprise Edition (Jakarta EE) that
+requirements for the Jakarta™ Enterprise Edition (Jakarta EE) that
 must be satisfied by Jakarta EE products.
 
 In addition to the Jakarta EE requirements, each
@@ -108,7 +108,7 @@ each role to determine if it can map the user to the role.
 _link:#a261[See URL Authorization]_
 shows this process.
 
-image:images/Platform_Spec-5.png[image]
+image:Platform_Spec-5.png[image]
 
 === [[a261]]URL Authorization
 
