@@ -139,17 +139,17 @@ the enterprise bean, using the user’s credential to establish a secure
 association between the JSP page and the enterprise bean (as shown in
 _link:#a269[See Invoking an Enterprise
 Bean Business Method]_ ). The association is implemented as two related
-security contexts, one in the web server and one in the EJB container.
+security contexts, one in the web server and one in the Jakarta Enterprise Beans container.
 
 image:Platform_Spec-7.png[image]
 
 === [[a269]]Invoking an Enterprise Bean Business Method
 
-The EJB container is responsible for enforcing
+The Jakarta Enterprise Beans container is responsible for enforcing
 access control on the enterprise bean method. It consults the security
 policy (derived from the deployment descriptor) associated with the
 enterprise bean to determine the security roles that are permitted
-access to the method. For each role, the EJB container uses the security
+access to the method. For each role, the Jakarta Enterprise Beans container uses the security
 context associated with the call to determine if it can map the caller
 to the role.
 
@@ -344,7 +344,7 @@ decisions made by security aware applications. Programmatic security is
 useful when declarative security alone is not sufficient to express the
 security model of the application. The API for programmatic security
 consists of methods of the Jakarta Security _SecurityContext_
-interface, and methods of the EJB _EJBContext_ interface and the servlet
+interface, and methods of the Jakarta Enterprise Beans _EJBContext_ interface and the servlet
 _HttpServletRequest_ interface. The methods of the Jakarta  Security 
 _SecurityContext_ interface are intended to supersede the corresponding
 methods of the _EJBContext_ and _HttpServletRequest_ interfaces.
@@ -387,7 +387,7 @@ association between the components.
 Since a container provides security in Jakarta EE,
 secure associations for a component are typically established by a
 container. Secure associations for web access are specified here. Secure
-associations for access to enterprise beans are described in the EJB
+associations for access to enterprise beans are described in the Jakarta Enterprise Beans
 specification.
 
 Product Providers may allow for control over
@@ -462,7 +462,7 @@ service or a security service.
 === HTTP Login Gateways
 
 Secure interoperability between enterprise
-beans in different security policy domains is addressed in the EJB
+beans in different security policy domains is addressed in the Jakarta Enterprise Beans
 specification. In addition, a component may choose to log in to a
 foreign server via HTTP. An application component can be configured to
 use SSL mutual authentication for security when accessing a remote
@@ -719,14 +719,14 @@ A web container reports that no user has been
 authenticated by returning _null_ from the _SecurityContext_ method
 _getCallerPrincipal_ or the _HttpServletRequest_ method
 _getUserPrincipal_ . This is different than the result of the
-_EJBContext_ method _getCallerPrincipal_ . The EJB specification
+_EJBContext_ method _getCallerPrincipal_ . The Jakarta Enterprise Beans specification
 requires that the _EJBContext_ method _getCallerPrincipal_ always return
 a valid _Principal_ object. This method can never return _null_ . The
 _SecurityContext_ method _getCallerPrincipal_ can also be called in the
-EJB container, and still returns _null_ for anonymous users.
+Jakarta Enterprise Beans container, and still returns _null_ for anonymous users.
 
 In Jakarta EE products that contain both a web
-container and an EJB container, components running in a web container
+container and an Jakarta Enterprise Beans container, components running in a web container
 must be able to call enterprise beans even when no user has been
 authenticated in the web container. When a call is made in such a case
 from a component in a web container to an enterprise bean, a Jakarta EE
@@ -746,10 +746,10 @@ and enterprise bean containers.
 This specification does not specify how a Jakarta
 EE product should choose a principal to represent unauthenticated users,
 although future versions of this specification may add requirements in
-this area. Note that the EJB specification does include requirements in
-this area when using the EJB interoperability protocol. Applications are
+this area. Note that the Jakarta Enterprise Beans specification does include requirements in
+this area when using the Jakarta Enterprise Beans interoperability protocol. Applications are
 encouraged to use the Run As capability in cases where the web component
-may be unauthenticated and needs to call EJB components.
+may be unauthenticated and needs to call Jakarta Enterprise Beans components.
 
 === Application Client User Authentication
 
@@ -893,7 +893,7 @@ Servlet specifications.
 
 === Propagated Caller Identities.
 
-In a Jakarta EE product that contains an EJB
+In a Jakarta EE product that contains an Jakarta Enterprise Beans
 container, it must be possible to configure the Jakarta EE product so that
 a propagated caller identity is used in all authorization decisions.
 With this configuration, for all calls to all enterprise beans from a
@@ -924,7 +924,7 @@ Jakarta EE products must also support the Run As
 capability that allows the Application Component Provider and the
 Deployer to specify an identity under which an enterprise bean or web
 component must run. In this case it is the Run As identity that is
-propagated to subsequent EJB components, rather than the original caller
+propagated to subsequent Jakarta Enterprise Beans components, rather than the original caller
 identity.
 
 Note that this specification doesn’t specify
@@ -952,7 +952,7 @@ deploy applications and components using exactly the mappings and
 assignments specified in their metadata annotations or deployment
 descriptors.
 
-As described in the EJB specification and the
+As described in the Jakarta Enterprise Beans specification and the
 Servlet specification, a Jakarta EE product must provide a deployment tool
 or tools capable of assigning the security roles in metadata annotations
 or deployment descriptors to the entities that are used to determine
