@@ -1,10 +1,10 @@
-# Contributing to Eclipse Jakarta EE Platform
+# Contributing to Jakarta EE Platform
 
 Thanks for your interest in this project.
 
 ## Project description
 
-The Eclipse Jakarta EE Platform project produces the Jakarta EE
+The Jakarta EE Platform project produces the Jakarta EE
 platform specification, which is an umbrella specification that
 aggregates all other Jakarta EE specifications.
 
