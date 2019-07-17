@@ -83,352 +83,218 @@ describing which technologies are required for the profile. Note that
 some technologies are marked Optional, as described in the next section.
 
 [[a2159]]
-==== Jakarta EE Technologies
-
-Java Technology
-
-App Client
-
-Web
-
-Enterprise Beans
-
-Status
-
-Enterprise Beans 3.2
-
-{empty}Ylink:#a3661[14]
-
-Y
-
-Y
-
-{empty}REQ, OPTlink:#a3662[15],
-POPTlink:#a3663[16]
-
-Servlet 4.0
-
-N
-
-Y
-
-N
-
-REQ
-
-Server Pages 2.3
-
-N
-
-Y
-
-N
-
-REQ
-
-EL 3.0
-
-N
-
-Y
-
-N
-
-REQ
-
-Messaging 2.0
-
-Y
-
-Y
-
-Y
-
-REQ
-
-Transactions 1.2
-
-N
-
-Y
-
-Y
-
-REQ
-
-JavaMail 1.6
-
-Y
-
-Y
-
-Y
-
-REQ
-
-Connector 1.7
-
-N
-
-Y
-
-Y
-
-REQ
-
-Web Services 1.4
-
-Y
-
-Y
-
-Y
-
-REQ
-
-XML RPC  1.1
-
-Y
-
-Y
-
-Y
-
-OPT
-
-RESTful Web Services 2.1
-
-N
-
-Y
-
-N
-
-REQ
-
-WebSocket 1.1
-
-N
-
-Y
-
-N
-
-REQ
-
-JSON-P 1.1
-
-Y
-
-Y
-
-Y
-
-REQ
-
-JSON-B 1.0
-
-Y
-
-Y
-
-Y
-
-REQ
-
-Concurrency Utilities for Java EE 1.0
-
-N
-
-Y
-
-Y
-
-REQ
-
-Batch 1.0
-
-N
-
-Y
-
-Y
-
-REQ
-
-XML Registries 1.0
-
-Y
-
-Y
-
-Y
-
-OPT
-
-Management 1.1
-
-Y
-
-Y
-
-Y
-
-REQ
-
-{empty}Deployment
-1.2link:#a3664[17]
-
-N
-
-N
-
-N
-
-OPT
-
-Authorization 1.5
-
-N
-
-Y
-
-Y
-
-REQ
-
-Authentication  1.1
-
-N
-
-Y
-
-Y
-
-REQ
-
-Security API 1.0
-
-N
-
-Y
-
-Y
-
-REQ
-
-Server Pages Debugging 1.0
-
-N
-
-Y
-
-N
-
-REQ
-
-Standard Tag Library 1.2
-
-N
-
-Y
-
-N
-
-REQ
-
-Web Services Metadata 2.1
-
-Y
-
-Y
-
-Y
-
-REQ
-
-Server Faces 2.3
-
-N
-
-Y
-
-N
-
-REQ
-
-Common Annotations 1.3
-
-Y
-
-Y
-
-Y
-
-REQ
-
-Persistence 2.2
-
-Y
-
-Y
-
-Y
-
-REQ
-
-Bean Validation 2.0
-
-Y
-
-Y
-
-Y
-
-REQ
-
-Managed Beans 1.0
-
-Y
-
-Y
-
-Y
-
-REQ
-
-Interceptors 1.2
-
-Y
-
-Y
-
-Y
-
-REQ
-
-Contexts and Dependency Injection for Jakarta EE
+[cols=5, options=header]
+.Jakarta EE Technologies
+|===
+|Java Technology
+|App Client
+|Web
+|Enterprise Beans
+|Status
+
+|Enterprise Beans 3.2
+|{empty}Y<<a3661, 14>>
+|Y
+|Y
+|{empty}REQ, OPT<<a3662, 15>>,
+POPT<<a3663, 16>>
+
+|Servlet 4.0
+|N
+|Y
+|N
+|REQ
+
+|Server Pages 2.3
+|N
+|Y
+|N
+|REQ
+
+|EL 3.0
+|N
+|Y
+|N
+|REQ
+
+|Messaging 2.0
+|Y
+|Y
+|Y
+|REQ
+
+|Transactions 1.2
+|N
+|Y
+|Y
+|REQ
+
+|JavaMail 1.6
+|Y
+|Y
+|Y
+|REQ
+
+|Connector 1.7
+|N
+|Y
+|Y
+|REQ
+
+|Web Services 1.4
+|Y
+|Y
+|Y
+|REQ
+
+|XML RPC  1.1
+|Y
+|Y
+|Y
+|OPT
+
+|RESTful Web Services 2.1
+|N
+|Y
+|N
+|REQ
+
+|WebSocket 1.1
+|N
+|Y
+|N
+|REQ
+
+|JSON-P 1.1
+|Y
+|Y
+|Y
+|REQ
+
+|JSON-B 1.0
+|Y
+|Y
+|Y
+|REQ
+
+|Concurrency Utilities for Java EE 1.0
+|N
+|Y
+|Y
+|REQ
+
+|Batch 1.0
+|N
+|Y
+|Y
+|REQ
+
+|XML Registries 1.0
+|Y
+|Y
+|Y
+|OPT
+
+|Management 1.1
+|Y
+|Y
+|Y
+|REQ
+
+|{empty}Deployment
+1.2<<a3664, 17>>
+|N
+|N
+|N
+|OPT
+
+|Authorization 1.5
+|N
+|Y
+|Y
+|REQ
+
+|Authentication  1.1
+|N
+|Y
+|Y
+|REQ
+
+|Security API 1.0
+|N
+|Y
+|Y
+|REQ
+
+|Server Pages Debugging 1.0
+|N
+|Y
+|N
+|REQ
+
+|Standard Tag Library 1.2
+|N
+|Y
+|N
+|REQ
+
+|Web Services Metadata 2.1
+|Y
+|Y
+|Y
+|REQ
+
+|Server Faces 2.3
+|N
+|Y
+|N
+|REQ
+
+|Common Annotations 1.3
+|Y
+|Y
+|Y
+|REQ
+
+|Persistence 2.2
+|Y
+|Y
+|Y
+|REQ
+
+|Bean Validation 2.0
+|Y
+|Y
+|Y
+|REQ
+
+|Managed Beans 1.0
+|Y
+|Y
+|Y
+|REQ
+
+|Interceptors 1.2
+|Y
+|Y
+|Y
+|REQ
+
+|Contexts and Dependency Injection
 2.0
+|Y
+|Y
+|Y
+|REQ
 
-Y
+|Dependency Injection 1.0
+|Y
+|Y
+|Y
+|REQ
+|===
 
-Y
-
-Y
-
-REQ
-
-Dependency Injection for Java 1.0
-
-Y
-
-Y
-
-Y
-
-REQ
-
-{empty}All classes and interfaces required by
+All classes and interfaces required by
 the specifications for the APIs must be provided by the Jakarta EE
 containers indicated above. In some cases, a Jakarta EE product is not
 required to provide objects that implement interfaces intended to be
@@ -438,7 +304,7 @@ implementation includes support for a technology marked as Optional,
 that technology must be supported in the containers specified above. If
 a product implementation does not support a technology marked as
 Optional, it must not include the APIs for that
-technology.link:#a3665[18]
+technology.<<a3665, 18>>
 
 [[a2331]]
 ==== Pruned Java Technologies
@@ -650,143 +516,99 @@ EE components (by type) can reliably be granted by a Jakarta EE product,
 given appropriate local installation configuration.
 
 [[a2366]]
-===== Jakarta EE Security Permissions Set
+[cols=3, options=header]
+.Jakarta EE Security Permissions Set
+|===
+|Security Permissions
+|Target
+|Action
 
-Security Permissions
+|Application Clients
+|
+|
 
-Target
+|java.awt.AWTPermission
+|accessClipboard
+|
 
-Action
+|java.awt.AWTPermission
+|accessEventQueue
+|
 
-Application Clients
-
-
-
-
-
- _java.awt.AWTPermission_
-
-accessClipboard
-
-
-
- _java.awt.AWTPermission_
-
-accessEventQueue
-
-
-
- _java.awt.AWTPermission_
-
-showWindowWithout
-
+|java.awt.AWTPermission
+|showWindowWithout
 WarningBanner
+|
 
+|java.lang.RuntimePermission
+|exitVM
+|
 
+|java.lang.RuntimePermission
+|loadLibrary.*
+|
 
- _java.lang.RuntimePermission_
+|java.lang.RuntimePermission
+|queuePrintJob
+|
 
-exitVM
+|java.net.SocketPermission
+|*
+|connect
 
+|java.net.SocketPermission
+|localhost:1024-
+|accept,listen
 
+|java.io.FilePermission
+|*
+|read,write
 
- _java.lang.RuntimePermission_
+|java.util.PropertyPermission
+|*
+|read
 
-loadLibrary.*
+|Applet Clients
+|
+|
 
+|java.net.SocketPermission
+|codebase
+|connect
 
+|java.util.PropertyPermission
+|limited
+|read
 
- _java.lang.RuntimePermission_
-
-queuePrintJob
-
-
-
- _java.net.SocketPermission_
-
-*
-
-connect
-
- _java.net.SocketPermission_
-
-localhost:1024-
-
-accept,listen
-
- _java.io.FilePermission_
-
-*
-
-read,write
-
- _java.util.PropertyPermission_
-
-*
-
-read
-
-Applet Clients
-
-
-
-
-
- _java.net.SocketPermission_
-
- _codebase_
-
-connect
-
- _java.util.PropertyPermission_
-
- _limited_
-
-read
-
-Web, Enterprise Beans, and Resource Adapter
-
+|Web, Enterprise Beans, and Resource Adapter
 Components
+|
+|
 
+|java.lang.RuntimePermission
+|loadLibrary.*
+|
 
+|java.lang.RuntimePermission
+|queuePrintJob
+|
 
+|java.net.SocketPermission
+|*
+|connect
 
+|java.io.FilePermission
+|*
+|read,write <<a3666, 19>>
 
- _java.lang.RuntimePermission_
+|java.io.FilePermission
+|file:${javax.servlet.context.tempdir}
+|read, write <<a3667, 20>>
 
-loadLibrary.*
-
-
-
- _java.lang.RuntimePermission_
-
-queuePrintJob
-
-
-
- _java.net.SocketPermission_
-
-*
-
-connect
-
- _java.io.FilePermission_
-
-*
-
-{empty}read,write link:#a3666[19]
-
-java.io.FilePermission
-
-file:$\{javax.servlet.context.tempdir}
-
-{empty}read, write link:#a3667[20]
-
- _java.util.PropertyPermission_
-
-*
-
-read
+|java.util.PropertyPermission
+|*
+|read
+|===
 
 ===== Restrictable Jakarta EE Security Permissions
 
@@ -799,122 +621,86 @@ application module.
 
 
 [[a2438]]
-===== Restrictable Jakarta EE Security Permissions
-
-Security Permissions
-
-Target
-
-Action
-
-Web, Enterprise Beans, and Resource Adapter Components
-
-
-
-
-
-java.security.AllPermission
-
-
-
-
-
-java.security.SecurityPermission
-
-
-
-
-
-java.security.UnresolvedPermission
-
-
-
-
-
-java.awt.AWTPermission
-
-
-
-
-
-java.io.SerializablePermission
-
-
-
-
-
-java.lang.reflect.ReflectPermission
-
-
-
-
-
- _java.lang.RuntimePermission_
-
-{empty}<any except loadLibrary.* and
-queuePrintJob> link:#a3668[21]
-
-
-
- _java.net.NetPermission_
-
-
-
-
-
- _java.sql.SQLPermission_
-
-
-
-
-
- _java.util.PropertyPermission_
-
-<any>
-
-{empty}write link:#a3669[22]
-
-java.util.logging.LoggingPermission
-
-
-
-
-
-javax.net.ssl.SSLPermission
-
-
-
-
-
-java.security.auth.AuthPermission
-
-
-
-
-
-java.security.auth.PrivateCredentialPermission
-
-
-
-
-
-java.security.auth.kerberos.DelegationPermission
-
-
-
-
-
-java.security.auth.kerberos.ServicePermission
-
-
-
-
-
-javax.sound.sampled.AudioPermission
-
-
-
-
+[cols=3, options=header]
+.Restrictable Jakarta EE Security Permissions
+|===
+|Security Permissions
+|Target
+|Action
+
+|Web, Enterprise Beans, and Resource Adapter Components
+|
+|
+
+|java.security.AllPermission
+|
+|
+
+|java.security.SecurityPermission
+|
+|
+
+|java.security.UnresolvedPermission
+|
+|
+
+|java.awt.AWTPermission
+|
+|
+
+|java.io.SerializablePermission
+|
+|
+
+|java.lang.reflect.ReflectPermission
+|
+|
+
+|java.lang.RuntimePermission
+|<any except loadLibrary.* and
+queuePrintJob> <<a3668, 21>>
+|
+
+|java.net.NetPermission
+|
+|
+
+|java.sql.SQLPermission
+|
+|
+
+|java.util.PropertyPermission
+|<any>
+|write <<a3669, 22>>
+
+|java.util.logging.LoggingPermission
+|
+|
+
+|javax.net.ssl.SSLPermission
+|
+|
+
+|java.security.auth.AuthPermission
+|
+|
+
+|java.security.auth.PrivateCredentialPermission
+|
+|
+
+|java.security.auth.kerberos.DelegationPermission
+|
+|
+
+|java.security.auth.kerberos.ServicePermission
+|
+|
+
+|javax.sound.sampled.AudioPermission
+|
+|
+|===
 
 [[a2496]]
 ===== Declaring Permissions Required by Application Components
@@ -1038,23 +824,21 @@ listed in _<<a2531, Java Type of
 Objects Returned When Using the getContent Method>>_ must be returned.
 
 [[a2531]]
-===== Java Type of Objects Returned When Using the getContent Method
+[cols=2, options=header]
+.Java Type of Objects Returned When Using the getContent Method
+|===
+|MIME Type
+|Java Type
 
-MIME Type
+|image/gif
+|java.awt.Image
 
-Java Type
+|image/jpeg
+|java.awt.Image
 
- _image/gif_
-
- _java.awt.Image_
-
- _image/jpeg_
-
- _java.awt.Image_
-
- _image/png_
-
- _java.awt.Image_
+|image/png
+|java.awt.Image
+|===
 
 Many environments will use HTTP proxies rather
 than connecting directly to HTTP servers. If HTTP proxies are being used
@@ -1382,7 +1166,7 @@ capabilities, for instance, some service providers may provide only
 read-only access to the data in the name service.
 
 A Jakarta EE product may be required to provide
-a COSNaming name service to meet the Jakarta Enterprise Beans interoperability 
+a COSNaming name service to meet the Jakarta Enterprise Beans interoperability
 requirements.  In such a case, a COSNaming JNDI service provider must be available
 through the web, Enterprise Beans, and application client containers. It will also
 typically be available in the applet container, but this is not
@@ -1407,9 +1191,9 @@ _http://docs.oracle.com/javase/8/docs/technotes/guides/jndi/index.html_
 This specification requires that Jakarta EE
 containers provide a per thread context class loader for the use of
 system or library classes in dynamically loading classes provided by the
-application. The Jakarta Enterprise Beans specification requires that all 
-Jakarta Enterprise Beans client containers provide a per thread context class 
-loader for dynamically loading system value classes. The per thread context 
+application. The Jakarta Enterprise Beans specification requires that all
+Jakarta Enterprise Beans client containers provide a per thread context class
+loader for dynamically loading system value classes. The per thread context
 class loader is accessed using the _Thread_ method _getContextClassLoader_ .
 
 The classes used by an application will
@@ -1464,19 +1248,19 @@ applications.
 === Jakarta Enterprise Beans 3.2 Requirements
 
 This specification requires that a  Jakarta EE
-product provide support for _enterprise beans_ as specified in the Jakarta Enterprise 
+product provide support for _enterprise beans_ as specified in the Jakarta Enterprise
 Beans specification. The Jakarta Enterprise Beans specification is available at
 _https://jakarta.ee/specifications/enterprise-beans_ .
 
 This specification does not impose any
-additional requirements at this time. Note that the Jakarta Enterprise Beans 
-specification includes the specification of the Jakarta Enterprise Beans 
+additional requirements at this time. Note that the Jakarta Enterprise Beans
+specification includes the specification of the Jakarta Enterprise Beans
 interoperability protocol based on RMI-IIOP. Support for the Jakarta Enterprise Beans
-interoperability protocol is Proposed Optional in Jakarta EE 8. All containers that 
-support Jakarta Enterprise Beans clients must be capable of using the 
+interoperability protocol is Proposed Optional in Jakarta EE 8. All containers that
+support Jakarta Enterprise Beans clients must be capable of using the
 Jakarta Enterprise Beans interoperability protocol to invoke enterprise
 beans. All Jakarta Enterprise Beans containers must support the invocation of enterprise
-beans using the Jakarta Enterprise Beans interoperability protocol. A Jakarta EE 
+beans using the Jakarta Enterprise Beans interoperability protocol. A Jakarta EE
 product may also support other protocols for the invocation of enterprise beans.
 
 A Jakarta EE product may support multiple object
@@ -1557,7 +1341,7 @@ _https://jakarta.ee/specifications/servlet_ .
 === Jakarta Server Pages 2.3 Requirements
 
 The Jakarta Server Pages specification depends on and builds
-on the servlet framework. A Jakarta EE product must support the entire 
+on the servlet framework. A Jakarta EE product must support the entire
 Jakarta Server Pages specification.
 
 The Jakarta Server Pages specification is available at
@@ -1577,9 +1361,9 @@ available at _https://jakarta.ee/specifications/expression-language_ .
 === Jakarta Messaging 2.0 Requirements
 
 A Jakarta Messaging provider must be
-included in a Jakarta EE product that requires support for Jakarta Messaging. 
-The Jakarta Messaging implementation must provide support for both 
-Jakarta Messaging point-to-point and publish/subscribe messaging, and thus 
+included in a Jakarta EE product that requires support for Jakarta Messaging.
+The Jakarta Messaging implementation must provide support for both
+Jakarta Messaging point-to-point and publish/subscribe messaging, and thus
 must make those facilities available using the _ConnectionFactory_ and _Destination_ APIs.
 
 The Jakarta Messaging specification defines several
@@ -1755,31 +1539,27 @@ indicated in _<<a2675, JavaMail
 API MIME Data Type to Java Type Mappings>>_ .
 
 [[a2675]]
-Jakarta Mail API MIME Data Type to Java Type Mappings
+[cols=2, options=header]
+.Jakarta Mail API MIME Data Type to Java Type Mappings
+|===
+|Mime Type
+|Java Type
 
-Mime Type
+|text/plain
+|java.lang.String
 
-Java Type
+|text/html_
+|java.lang.String
 
- _text/plain_
+|text/xml
+|java.lang.String
 
- _java.lang.String_
+|multipart/*
+|javax.mail.internet.MimeMultipart
 
- _text/html_
-
- _java.lang.String_
-
- _text/xml_
-
- _java.lang.String_
-
- _multipart/*_
-
- _javax.mail.internet.MimeMultipart_
-
- _message/rfc822_
-
- _javax.mail.internet.MimeMessage_
+|message/rfc822
+|javax.mail.internet.MimeMessage
+|===
 
 The Jakarta Mail API specification is available
 at _https://jakarta.ee/specifications/mail_ .
@@ -1874,7 +1654,7 @@ be found at _https://jakarta.ee/specifications/websocket_ .
 === Jakarta JSON Processing 1.1 (JSON-P) Requirements
 
 JSON (JavaScript Object Notation) is a
-lightweight data-interchange format used by many web services. The 
+lightweight data-interchange format used by many web services. The
 Jakarta JSON Processing (JSON-P) provides a convenient way to process
 (parse, generate, transform, and query) JSON text.
 
@@ -1918,13 +1698,13 @@ specification can be found at _https://jakarta.ee/specifications/concurrency_ .
 
 === Jakarta Batch Specification Requirements
 
-The Jakarta Batch provides a programming model for batch 
+The Jakarta Batch provides a programming model for batch
 applications and a runtime for scheduling and executing jobs.
 
 In a full Jakarta EE product, all Jakarta EE web
 containers and Jakarta Enterprise Beans containers are required to support the Batch API.
 
-The Jakarta Batch specification can be found 
+The Jakarta Batch specification can be found
 at _https://jakarta.ee/specifications/batch_ .
 
 === Jakarta XML Registries 1.0 Requirements (Optional)
@@ -1932,7 +1712,7 @@ at _https://jakarta.ee/specifications/batch_ .
 The Jakarta XML Registries specification defines APIs for
 client access to XML-based registries such as ebXML registries and UDDI
 registries. Jakarta EE products that support Jakarta XML Registries
- must include a Jakarta XML registry provider that meets at least the 
+ must include a Jakarta XML registry provider that meets at least the
  Jakarta XML Registries level 0 requirements.
 
 The Jakarta XML Registries specification is available at
@@ -1994,12 +1774,12 @@ result of the message authentication.
 
 In a full Jakarta EE product, all Jakarta EE web
 containers and enterprise bean containers are required to support the
-baseline compatibility requirements as defined by the Jakarta Authentication 
+baseline compatibility requirements as defined by the Jakarta Authentication
 specification. In a full Jakarta EE product, all web containers must also
 support the Servlet Container Profile as defined in the Jakarta Authentication
 specification. In a Jakarta EE profile product that includes Servlet and
 Jakarta Authentication, all web containers must also support the Servlet Container
-Profile as defined in the Jakarta Authentication specification. 
+Profile as defined in the Jakarta Authentication specification.
 Support for the Jakarta Authentication SOAP Profile is not required.
 
 The Jakarta Authentication specification can be found at
@@ -2078,129 +1858,85 @@ containers must provide definitions for all of these annotations, and
 must support the semantics of these annotations as described in the
 corresponding specifications and summarized in the following table.
 
-===== Common Annotations Support by Container
+[cols=4, options=header]
+.Common Annotations Support by Container
+|===
+|Annotation
+|App Client
+|Web
+|Enterprise Beans
 
-Annotation
+|Resource
+|Y
+|Y
+|Y
 
-App Client
+|Resources
+|Y
+|Y
+|Y
 
-Web
+|PostConstruct
+|Y
+|Y
+|Y
 
-Enterprise Beans
+|PreDestroy
+|Y
+|Y
+|Y
 
- _Resource_
+|Generated
+|N
+|N
+|N
 
-Y
+|RunAs
+|N
+|Y
+|Y
 
-Y
+|DeclareRoles
+|N
+|Y
+|Y
 
-Y
+|RolesAllowed
+|N
+|Y
+|Y
 
- _Resources_
+|PermitAll
+|N
+|Y
+|Y
 
-Y
+|DenyAll
+|N
+|Y
+|Y
 
-Y
+|ManagedBean
+|Y
+|Y
+|Y
 
-Y
+|DataSourceDefinition
+|Y
+|Y
+|Y
 
- _PostConstruct_
+|DataSourceDefinitions
+|Y
+|Y
+|Y
 
-Y
-
-Y
-
-Y
-
- _PreDestroy_
-
-Y
-
-Y
-
-Y
-
- _Generated_
-
-N
-
-N
-
-N
-
- _RunAs_
-
-N
-
-Y
-
-Y
-
- _DeclareRoles_
-
-N
-
-Y
-
-Y
-
- _RolesAllowed_
-
-N
-
-Y
-
-Y
-
- _PermitAll_
-
-N
-
-Y
-
-Y
-
- _DenyAll_
-
-N
-
-Y
-
-Y
-
- _ManagedBean_
-
-Y
-
-Y
-
-Y
-
- _DataSourceDefinition_
-
-Y
-
-Y
-
-Y
-
- _DataSourceDefinitions_
-
-Y
-
-Y
-
-Y
-
-Priority
-
-Y
-
-Y
-
-Y
-
-The Jakarta Annotations specification can be found at 
+|Priority
+|Y
+|Y
+|Y
+|===
+The Jakarta Annotations specification can be found at
 _https://jakarta.ee/specifications/annotations_ .
 
 === Jakarta Persistence 2.2 Requirements

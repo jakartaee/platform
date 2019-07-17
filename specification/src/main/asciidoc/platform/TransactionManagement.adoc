@@ -34,9 +34,8 @@ which in turn may access other enterprise beans. The components access resource
 managers via connections.
 
 [[a475]]
-Servlets/Server Pages Accessing Enterprise Beans
-
-image:../images/Platform_Spec-8.png[image]
+.Servlets/Server Pages Accessing Enterprise Beans
+image::Platform_Spec-8.png[]
 
 The Application Component Provider specifies, using a combination of
 programmatic and declarative transaction demarcation APIs, how the platform
@@ -137,7 +136,7 @@ Transactions may not span web requests from a client on the network. If a web
 component starts a transaction in the _service_ or _doFilter_ method (or
 transactional interceptor of _service_ or _doFilter_ method), it must be
 completed before the _service_ or _doFilter_ method returns to the network
-clientlink:#a3650[3]. Returning from the _service_ or _doFilter_ method to the
+client<<a3650, 3>>. Returning from the _service_ or _doFilter_ method to the
 network client with an active transaction context is an error. The web container
 is required to detect this error and abort the transaction.
 

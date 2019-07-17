@@ -34,9 +34,8 @@ external to the application package as described in
 Application>>.”
 
 [[a2899]]
-Jakarta EE Deployment
-
-image:Platform_Spec-9.png[image]
+.Jakarta EE Deployment
+image::Platform_Spec-9.png[]
 
 === Application Development Life Cycle
 
@@ -52,9 +51,8 @@ _<<a2903, Jakarta EE Application
 Life Cycle>>_ shows the life cycle of a Jakarta EE application.
 
 [[a2903]]
-Jakarta EE Application Life Cycle
-
-image:Platform_Spec-10.png[image]
+.Jakarta EE Application Life Cycle
+image::Platform_Spec-10.png[]
 
 [[a2904]]
 ==== Component Creation
@@ -1367,20 +1365,18 @@ All valid Jakarta EE application deployment
 descriptors must conform to the XML Schema definition, or the DTD or
 schema definition from a previous version of this specification. (See
 <<a3447, Previous Version
-Deployment Descriptors>>.”) The deployment descriptor must be named
+Deployment Descriptors>>.) The deployment descriptor must be named
 _META-INF/application.xml_ in the _.ear_ file. Note that this name is
 case-sensitive. The XML Schema located at
 _http://xmlns.jcp.org/xml/ns/javaee/application_8.xsd_ defines the XML
 grammar for a Jakarta EE application deployment descriptor.
 
-link:#a3208[See
-Jakarta EE Application XML Schema Structure] shows a graphic representation
+<<a3208, Jakarta EE Application XML Schema Structure>> shows a graphic representation
 of the structure of the Jakarta EE application XML schema.
 
 [[a3208]]
-Jakarta EE Application XML Schema Structure
-
-image:Platform_Spec-11.png[image]
+.Jakarta EE Application XML Schema Structure
+image::Platform_Spec-11.png[]
 
 === Common Jakarta EE XML Schema Definitions
 
