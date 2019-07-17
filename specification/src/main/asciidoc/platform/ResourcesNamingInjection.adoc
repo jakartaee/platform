@@ -196,7 +196,7 @@ interfaces or component context lookup methods to obtain the values of
 the environment entries. __
 
 [[a616]]
-=== Application Component Environment Namespaces
+==== Application Component Environment Namespaces
 
 The application component’s naming environment
 is composed of four logical namespaces, representing naming environments
@@ -431,7 +431,7 @@ injection, initialization of the class must fail, and the class must not
 be put into service.<<a653, Classes supporting injection>>
 
 [[a651]]
-=== Component classes supporting injection
+Component classes supporting injection
 
 Spec
 
@@ -1303,7 +1303,7 @@ annotations for injecting EJB references, the second describing the API
 for accessing EJB references, and the third describing the syntax for
 declaring the EJB references in a deployment descriptor
 
-Injection of EJB Entries
+===== Injection of EJB Entries
 
 A field or a method of an application component
 may be annotated with the _EJB_ annotation. The _EJB_ annotation
@@ -1426,7 +1426,7 @@ application"
 
 private ShoppingCartBean myCart;
 
-Programming Interfaces for EJB References
+===== Programming Interfaces for EJB References
 
 The Application Component Provider may use EJB
 references to locate the business interface, no-interface view, or home
@@ -1489,7 +1489,7 @@ reference name to refer to the remote home interface of an enterprise
 bean.
 
 [[a1011]]
-=== Declaration of EJB References
+===== Declaration of EJB References
 
 Although the EJB reference is an entry in the
 application component’s environment, the Application Component Provider
@@ -1546,7 +1546,7 @@ name of an environment entry that provides a value for the reference.
 The following example illustrates the
 declaration of EJB references in the deployment descriptor.
 
-=== ...
+...
 
 <ejb-ref>
 
@@ -1877,7 +1877,7 @@ factory references, the second describing the API for accessing resource
 manager connection factory references, and the third describing the
 syntax for declaring the factory references in a deployment descriptor
 
-Injection of Resource Manager Connection Factory References
+===== Injection of Resource Manager Connection Factory References
 
 A field or a method of an application component
 may be annotated with the _Resource_ annotation. The name and type of
@@ -1955,7 +1955,7 @@ resource definition, see
 Definition>>”. Of course, nothing prevents the Deployer from separately
 binding each data source reference if necessary.
 
-Programming Interfaces for Resource Manager Connection Factory References
+===== Programming Interfaces for Resource Manager Connection Factory References
 
 The Application Component Provider may use
 resource manager connection factory references to obtain connections to
@@ -2065,7 +2065,7 @@ Deployer.
 }
 
 [[a1183]]
-=== Declaration of Resource Manager Connection Factory References in Deployment Descriptor
+===== Declaration of Resource Manager Connection Factory References in Deployment Descriptor
 
 Although a resource manager connection factory
 reference is an entry in the application component’s environment, the
@@ -2176,7 +2176,7 @@ using a well-known JNDI name for the latter.
 
 </resource-ref>
 
-Standard Resource Manager Connection Factory Types
+===== Standard Resource Manager Connection Factory Types
 
 The Application Component Provider must use the
 _javax.sql.DataSource_ resource manager connection factory type for
@@ -2327,7 +2327,7 @@ This subsection describes the Application
 Component Provider’s view and responsibilities with respect to resource
 environment references.
 
-Injection of Resource Environment References
+===== Injection of Resource Environment References
 
 A field or a method of an application component
 may be annotated with the _Resource_ annotation to request injection of
@@ -2341,7 +2341,7 @@ annotation to declare other environment references only in that the type
 of a resource environment reference is not one of the Java language
 types used for other environment references.
 
-Resource Environment Reference Programming Interfaces
+===== Resource Environment Reference Programming Interfaces
 
 The Application Component Provider may use
 resource environment references to locate administered objects that are
@@ -2362,7 +2362,7 @@ will not, by default, appear in any subcontext.
 application component’s environment using JNDI.
 
 [[a1253]]
-=== Declaration of Resource Environment References in Deployment Descriptor
+===== Declaration of Resource Environment References in Deployment Descriptor
 
 Although the resource environment reference is
 an entry in the application component’s environment, the Application
@@ -2455,7 +2455,7 @@ This subsection describes the Application
 Component Provider’s view and responsibilities with respect to message
 destination references.
 
-Injection of Message Destination References
+===== Injection of Message Destination References
 
 A field or a method of an application component
 may be annotated with the _Resource_ annotation to request injection of
@@ -2498,7 +2498,7 @@ lookup element.
 
 javax.jms.Queue orderQueue;
 
-Message Destination Reference Programming Interfaces
+===== Message Destination Reference Programming Interfaces
 
 The Application Component Provider may use
 message destination references to locate message destinations, as
@@ -2546,7 +2546,7 @@ Provider assigned the environment entry _jms/StockQueue_ as the message
 destination reference name to refer to a JMS queue.
 
 [[a1295]]
-=== Declaration of Message Destination References in Deployment Descriptor
+===== Declaration of Message Destination References in Deployment Descriptor
 
 Although the message destination reference is
 an entry in the application component’s environment, the Application
@@ -2719,7 +2719,8 @@ inform the Deployer of any unresolved message destination references,
 and allow him or her to resolve a message destination reference by
 binding it to a specified compatible target object in the environment.
 
-=== UserTransaction [[a1334]]References
+[[a1334]]
+=== UserTransaction References
 
 Certain Jakarta EE application component types are
 allowed to use the JTA _UserTransaction_ interface to start, commit, and
@@ -3002,7 +3003,7 @@ accessing an entity manager factory using a persistence unit reference;
 and the third describes syntax for declaring persistence unit references
 in a deployment descriptor.
 
-Injection of Persistence Unit References
+===== Injection of Persistence Unit References
 
 A field or a method of an application component
 may be annotated with the _PersistenceUnit_ annotation. The _name_
@@ -3024,7 +3025,7 @@ EntityManagerFactory emf;
 
 EntityManagerFactory inventoryEMF;
 
-Programming Interfaces for Persistence Unit References
+===== Programming Interfaces for Persistence Unit References
 
 The Application
 Component Provider must use persistence unit references to obtain
@@ -3090,7 +3091,7 @@ entity manager
 }
 
 [[a1454]]
-=== Declaration of Persistence Unit References in Deployment Descriptor
+===== Declaration of Persistence Unit References in Deployment Descriptor
 
 Although a persistence unit reference is an
 entry in the application component’s environment, the Application
@@ -3153,7 +3154,7 @@ bean illustrated in the previous subsection.
 ...
 
 [[a1475]]
-=== Application Assembler’s Responsibilities
+==== Application Assembler’s Responsibilities
 
 The Application Assembler can use the
 _persistence-unit-name_ element in the deployment descriptor to
@@ -3294,7 +3295,7 @@ managers; the second describes the API for accessing references to
 container-managed entity managers; and the third describes syntax for
 declaring these references in a deployment descriptor.
 
-Injection of Persistence Context References
+===== Injection of Persistence Context References
 
 A field or a method of an application component
 may be annotated with the _PersistenceContext_ annotation. The _name_
@@ -3382,7 +3383,7 @@ entity manager
 }
 
 [[a1545]]
-=== Declaration of Persistence Context References in Deployment Descriptor
+===== Declaration of Persistence Context References in Deployment Descriptor
 
 Although a persistence context reference is an
 entry in the application component’s environment, the Application
@@ -3841,7 +3842,7 @@ suitable server-specific default values for optional elements for which
 values have not been specified.
 
 [[a1676]]
-=== Requirements Common to All Resource Definition Types
+==== Requirements Common to All Resource Definition Types
 
 The following requirements apply to the
 resource definitions described in Sections
@@ -3859,13 +3860,13 @@ supported, it is the Deployer’s responsibility (possibly in conjunction
 with the System Administrator) to insure that the physical resource is
 provisioned for use by the application.
 
-JNDI Name
+===== JNDI Name
 
 The Deployer and Jakarta EE Product Provider
 must not alter the specified JNDI name. The requested resource must be
 made available in JNDI under the specified name.
 
-Resource Address
+===== Resource Address
 
 If the Application Component Provider or
 Application Assembler has specified an address for a resource (server
@@ -3881,7 +3882,7 @@ Jakarta EE Product Provider is responsible for provisioning the resource.
 If the requested resource cannot be made available or created, the
 application must fail to deploy.
 
-Quality of Service Elements
+===== Quality of Service Elements
 
 Quality of service elements may be altered by
 the Deployer. The Jakarta EE Product Provider is permitted to impose
@@ -3891,7 +3892,7 @@ service values that have been specified do not meet these restrictions,
 the Product Provider must not reject the deployment (but must instead
 use appropriate values).
 
-Properties
+===== Properties
 
 All resource definition annotations and XML
 elements support the use of property elements (elements named “
@@ -3902,7 +3903,7 @@ reject a deployment on the basis of a property that it does not
 recognize.
 
 [[a1688]]
-=== DataSource Resource Definition
+==== DataSource Resource Definition
 
 An application may define a _DataSource_
 resource. A _DataSource_ resource is used to access a database using a
@@ -4040,7 +4041,7 @@ elements) are considered to be quality of service elements:
 _loginTimeout_ , _initialPoolSize_ , _maxPoolSize_ , _minPoolSize_ ,
 _maxIdleTime_ , _maxStatements_ .
 
-==== Application Component Provider’s Responsibilities
+===== Application Component Provider’s Responsibilities
 
 The Application Component Provider is
 responsible for the definition of a _DataSource_ resource using a
@@ -4057,7 +4058,7 @@ A URL should not be specified in conjunction
 with address elements such as server name and port. If it is, the
 precedence order is undefined and implementation specific.
 
-==== Deployer’s Responsibilities
+===== Deployer’s Responsibilities
 
 Requirements common to all resource
 definition types are described in
@@ -4070,7 +4071,7 @@ If specified, user name and password should be used as specified.
 * The transactional specification and
 isolation level must be used as specified.
 
-==== Jakarta EE Product Provider’s Responsibilities
+===== Jakarta EE Product Provider’s Responsibilities
 
 Requirements common to all resource definition
 types are described in <<a1676, Requirements Common to All Resource Definition Types>>”. The following
@@ -4086,7 +4087,7 @@ isolation. If the request cannot be satisfied, the Product Provider must
 reject the deployment.
 
 [[a1756]]
-=== JMS Connection Factory Resource Definition
+==== JMS Connection Factory Resource Definition
 
 An application may define a JMS
 _ConnectionFactory_ resource.
@@ -4211,14 +4212,14 @@ _JMSConnectionFactoryDefinition_ annotation elements (and corresponding
 XML deployment descriptor elements) are considered to be quality of
 service elements: _maxPoolSize_ , _minPoolSize_ .
 
-==== Application Component Provider’s Responsibilities
+===== Application Component Provider’s Responsibilities
 
 The Application Component Provider is
 responsible for the definition of a JMS _ConnectionFactory_ using a
 _JMSConnectionFactoryDefinition_ annotation or the
 _jms-connection-factory_ deployment descriptor element.
 
-==== Deployer’s Responsibilities
+===== Deployer’s Responsibilities
 
 Requirements common to all resource
 definition types are described in
@@ -4235,7 +4236,7 @@ used as specified.
 * If specified, the client id should be used
 as specified.
 
-==== Jakarta EE Product Provider’s Responsibilities
+===== Jakarta EE Product Provider’s Responsibilities
 
 Requirements common to all resource
 definition types are described in
@@ -4243,7 +4244,7 @@ definition types are described in
 All Resource Definition Types>>”.
 
 [[a1817]]
-=== JMS Destination Definition
+==== JMS Destination Definition
 
 An application may define a JMS _Destination_
 resource. A JMS _Destination_ resource is a JMS Queue or Topic.
@@ -4341,14 +4342,14 @@ annotation elements (and corresponding XML deployment descriptor
 elements) are considered to specify an address for a JMS _Destination_
 resource: _resourceAdapter_ , _destinationName_ .
 
-==== Application Component Provider’s Responsibilities
+===== Application Component Provider’s Responsibilities
 
 The Application Component Provider is
 responsible for the definition of a JMS _Destination_ using a
 _JMSDestinationDefinition_ annotation or the _jms-destination_
 deployment descriptor element.
 
-==== Deployer’s Responsibilities
+===== Deployer’s Responsibilities
 
 Requirements common to all resource
 definition types are described in
@@ -4358,7 +4359,7 @@ apply:
 
 A resource of the specified interface type must be provided.
 
-==== Jakarta EE Product Provider’s Responsibilities
+===== Jakarta EE Product Provider’s Responsibilities
 
 Requirements common to all resource
 definition types are described in
@@ -4366,7 +4367,7 @@ definition types are described in
 All Resource Definition Types>>”.
 
 [[a1863]]
-=== Mail Session Definition
+==== Mail Session Definition
 
 An application may define a Mail _Session_
 resource.
@@ -4472,7 +4473,7 @@ annotation elements (and corresponding XML deployment descriptor
 elements) are considered to specify an address for a Mail _Session_
 resource: _host_ .
 
-==== Application Component Provider’s Responsibilities
+===== Application Component Provider’s Responsibilities
 
 The Application Component Provider is
 responsible for the definition of a Mail Session using a
@@ -4484,7 +4485,7 @@ provisioned for the application (e.g., by administrative action), it is
 the responsibility of the Application Component Provider to specify the
 mail server host name.
 
-==== Deployer’s Responsibilities
+===== Deployer’s Responsibilities
 
 Requirements common to all resource
 definition types are described in
@@ -4500,7 +4501,7 @@ should be used as specified.
 * If specified, the from address should be
 used as specified.
 
-==== Jakarta EE Product Provider’s Responsibilities
+===== Jakarta EE Product Provider’s Responsibilities
 
 Requirements common to all resource
 definition types are described in
@@ -4508,7 +4509,7 @@ definition types are described in
 All Resource Definition Types>>”.
 
 [[a1917]]
-=== Connector Connection Factory Definition
+==== Connector Connection Factory Definition
 
 An application may define Connector
 connection factory resources.
@@ -4612,14 +4613,14 @@ follows:
 
  _}_
 
-==== Application Component Provider’s Responsibilities
+===== Application Component Provider’s Responsibilities
 
 The Application Component Provider is
 responsible for the definition of a Connector connection factory
 resource using a _ConnectionFactoryDefinition_ annotation or the
 _connection-factory_ deployment descriptor element.
 
-==== Deployer’s Responsibilities
+===== Deployer’s Responsibilities
 
 Requirements common to all resource
 definition types are described in
@@ -4630,7 +4631,7 @@ apply:
 * A resource of the specified type must be
 provided.
 
-==== Jakarta EE Product Provider’s Responsibilities
+===== Jakarta EE Product Provider’s Responsibilities
 
 Requirements common to all resource
 definition types are described in
@@ -4638,7 +4639,7 @@ definition types are described in
 All Resource Definition Types>>”.
 
 [[a1967]]
-=== Connector Administered Object Definition
+==== Connector Administered Object Definition
 
 An application may define a Connector
 administered object resource. The administered object resource may be
@@ -4727,14 +4728,14 @@ administered object resource could be referenced as follows:
 
  _}_
 
-==== Application Component Provider’s Responsibilities
+===== Application Component Provider’s Responsibilities
 
 The Application Component Provider is
 responsible for the definition of an administered object resource using
 an _AdministeredObjectDefinition_ annotation or the
 _administered-object_ deployment descriptor element.
 
-==== Deployer’s Responsibilities
+===== Deployer’s Responsibilities
 
 Requirements common to all resource
 definition types are described in
@@ -4745,7 +4746,7 @@ apply:
 If a class name is specified, an administered
 object resource of the specified class (or a subclass) must be provided.
 
-==== Jakarta EE Product Provider’s Responsibilities
+===== Jakarta EE Product Provider’s Responsibilities
 
 Requirements common to all resource
 definition types are described in

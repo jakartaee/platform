@@ -34,7 +34,7 @@ external to the application package as described in
 Application>>.”
 
 [[a2899]]
-=== Jakarta EE Deployment
+Jakarta EE Deployment
 
 image:Platform_Spec-9.png[image]
 
@@ -52,12 +52,12 @@ _<<a2903, Jakarta EE Application
 Life Cycle>>_ shows the life cycle of a Jakarta EE application.
 
 [[a2903]]
-=== Jakarta EE Application Life Cycle
+Jakarta EE Application Life Cycle
 
 image:Platform_Spec-10.png[image]
 
 [[a2904]]
-=== Component Creation
+==== Component Creation
 
 The Jakarta Enterprise Beans, Jakarta Servlet, application client, and
 Jakarta Connector specifications include the XML Schema definition of the
@@ -268,7 +268,7 @@ directory that is included in the same Jakarta EE application package, or
 that has been previously installed in the Jakarta EE containers.
 
 [[a2948]]
-=== Bundled Libraries
+==== Bundled Libraries
 
 Libraries bundled with an application may be
 referenced in the following ways:
@@ -390,7 +390,7 @@ required to access resources in any of the JAR files packaged with the
 application.
 
 [[a2966]]
-=== Dynamic Class Loading
+==== Dynamic Class Loading
 
 Libraries that dynamically load classes must
 consider the class loading environment of a Jakarta EE application.
@@ -614,7 +614,7 @@ the techniques described in
 if libraries need to access classes packaged in the application modules.
 
 [[a3046]]
-=== Web Container Class Loading Requirements
+==== Web Container Class Loading Requirements
 
 Components in the web container must have
 access to the following classes
@@ -848,7 +848,7 @@ This section specifies the sequence of steps
 that are typically followed when composing a Jakarta EE application.
 
 [[a3125]]
-=== Assembling a Jakarta EE Application
+==== Assembling a Jakarta EE Application
 
 . Select the Jakarta EE modules that will be used
 by the application.
@@ -1200,7 +1200,7 @@ under different JNDI names and with different configurations of their
 resources.
 
 [[a3179]]
-=== Deploying a Jakarta EE Application
+==== Deploying a Jakarta EE Application
 
 This section specifies the requirements for
 deploying a Jakarta EE application.
@@ -1327,7 +1327,7 @@ implementation of the Jakarta EE product may be rejected. Deployment of a
 library that is in active use by an application may be rejected.
 
 [[a3201]]
-=== Module Initialization
+==== Module Initialization
 
 After a successful deployment, all the
 modules of an application other than application client modules are
@@ -1378,7 +1378,7 @@ Jakarta EE Application XML Schema Structure] shows a graphic representation
 of the structure of the Jakarta EE application XML schema.
 
 [[a3208]]
-=== Jakarta EE Application XML Schema Structure
+Jakarta EE Application XML Schema Structure
 
 image:Platform_Spec-11.png[image]
 

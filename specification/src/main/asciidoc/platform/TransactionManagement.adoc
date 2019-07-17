@@ -34,7 +34,7 @@ which in turn may access other enterprise beans. The components access resource
 managers via connections.
 
 [[a475]]
-=== Servlets/Server Pages Accessing Enterprise Beans
+Servlets/Server Pages Accessing Enterprise Beans
 
 image:../images/Platform_Spec-8.png[image]
 
@@ -81,7 +81,7 @@ within their _doFilter_ methods but should not use any transactional resources
 in the methods of any objects used to wrap the request or response
 objects.
 
-==== Transaction Requirements
+===== Transaction Requirements
 
 The Jakarta EE platform must meet the following requirements:
 
@@ -116,7 +116,7 @@ newly created thread is not associated with any transaction defined by the
 Jakarta Transactions specification.
 
 [[a493]]
-=== Transaction Non-Requirements
+===== Transaction Non-Requirements
 
 The Product Provider is not required to support the importing of a transaction
 context from a client to a web component.
@@ -194,7 +194,7 @@ resource objects in class instance fields.
 Transaction context propagation requirements are described above and in the
 Jakarta Enterprise Beans specification.
 
-==== Jakarta Enterprise Beans
+==== Jakarta Enterprise Beans Components
 
 The Jakarta EE Product Provider must provide support for transactions as defined
 in the Jakarta Enterprise Beans specification.
@@ -210,7 +210,7 @@ The Jakarta EE Product Provider is not required to provide transaction
 management support for applets.
 
 [[a516]]
-=== Transactional JDBC™ Technology Support
+==== Transactional JDBC™ Technology Support
 
 A Jakarta EE product must support a JDBC technology database as a transactional
 resource manager. The platform must enable transactional JDBC API access from
@@ -233,7 +233,7 @@ normally such JDBC drivers would be delivered as resource adapters using the
 Connector API.
 
 [[a520]]
-=== Transactional Jakarta Messaging Support
+==== Transactional Jakarta Messaging Support
 
 A Jakarta EE product must support a Jakarta Messaging provider as a
 transactional resource manager. The platform must enable transactional Jakarta
