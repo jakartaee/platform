@@ -26,7 +26,7 @@ are explained below. See
 The arrows represent required access to other
 parts of the Jakarta EE platform. The Application Client Container provides
 Application Clients with direct access to the Jakarta EE required Database
-through the Java API for connectivity with database systems, the JDBC™ 
+through the Java API for connectivity with database systems, the JDBC™
 API. Similar access to databases is provided to server pages, server faces
 applications, and servlets by the Web Container, and to enterprise beans
 by the Enterprise Beans Container.
@@ -43,7 +43,7 @@ image:Platform_Spec-1.png[image]
 
 
 [[a45]]
-=== Jakarta EE Architecture Diagram
+Jakarta EE Architecture Diagram
 
 The following sections describe the Jakarta EE
 Platform requirements for each kind of Jakarta EE platform element.
@@ -355,7 +355,7 @@ Jakarta Persistence is required to be supported in Jakarta EE. It can
 also be used in Java SE environments.
 
 [[a104]]
-=== Jakarta™ Messaging
+==== Jakarta™ Messaging
 
 Jakarta Messaging is a standard API for
 messaging that supports reliable point-to-point messaging as well as the
@@ -554,7 +554,7 @@ client/server relationships of the components.)
 .
 
 [[a142]]
-=== Java EE Interoperability
+Java EE Interoperability
 
 
 
@@ -677,7 +677,7 @@ The roles are described in greater detail in
 later sections of this specification.
 
 [[a162]]
-=== Jakarta EE Product Provider
+==== Jakarta EE Product Provider
 
 A Jakarta EE Product Provider is the implementor
 and supplier of a Jakarta EE product that includes the component
@@ -723,7 +723,7 @@ assembly instructions describing external dependencies of the
 application that the Deployer must resolve in the deployment process.
 
 [[a170]]
-=== Deployer
+==== Deployer
 
 The Deployer is responsible for deploying
 application clients, web applications, and Enterprise JavaBeans
@@ -765,7 +765,7 @@ into the cloud environment, configure its external dependencies, and
 might handle aspects of provisioning its required resources.
 
 [[a178]]
-=== System Administrator
+==== System Administrator
 
 The System Administrator is responsible for the
 configuration and administration of the enterprise’s computing and
