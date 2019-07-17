@@ -17,6 +17,8 @@ include::ApplicationAssemblyDeployment.adoc[]
 
 include::Profiles.adoc[]
 
+include::ApplicationClients.adoc[]
+
 include::ServiceProviderInterface.adoc[]
 
 include::CompatibilityMigration.adoc[]

@@ -55,18 +55,16 @@ applications that also implement these protocols and formats. The
 specification requires support for the following groups of protocols and
 formats:
 
-Internet and web protocols
-
+* Internet and web protocols
 * OMG protocols
 * Java technology protocols
-
-Data formats
+* Data formats
 
 Most of these protocols and formats are
 supported by Java SE and by the underlying operating system.
 
 [[a2865]]
-=== Internet and Web Protocols
+==== Internet and Web Protocols
 
 Standards based Internet protocols are the means
 by which different pieces of the platform communicate. The Jakarta EE
@@ -107,7 +105,7 @@ initial HTTP handshake and upgrade request. The WebSocket protocol has
 been standardized by IETF under RFC 6455.
 
 [[a2875]]
-=== OMG Protocols (Proposed Optional)
+==== OMG Protocols (Proposed Optional)
 
 This specification requires the a full Jakarta EE
 product to support the following Object Management Group (OMG) based
@@ -160,7 +158,7 @@ can be found at
 _http://docs.oracle.com/javase/8/docs/technotes/guides/rmi_ .
 
 [[a2884]]
-=== Data Formats
+==== Data Formats
 
 In addition to the protocols that allow
 communication between components, this specification requires Jakarta EE

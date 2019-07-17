@@ -1,3 +1,4 @@
+[appendix]
 == Related Documents
 
 This specification refers to the following

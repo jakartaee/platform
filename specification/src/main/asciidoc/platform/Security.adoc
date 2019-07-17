@@ -1,4 +1,5 @@
-== [[a235]]Security
+[[a235]]
+== Security
 
 This chapter describes the security
 requirements for the Jakarta™ Enterprise Edition (Jakarta EE) that
@@ -48,8 +49,8 @@ This chapter specifies how Jakarta EE platform
 requirements address security requirements, and identifies requirements
 that may be addressed by Jakarta EE Product Providers. Finally, issues
 being considered for future versions of this specification are briefly
-mentioned in link:#a457[See Future
-Directions]”.
+mentioned in <<a457, Future
+Directions>>.
 
 === A Simple Example
 
@@ -63,15 +64,14 @@ web server to act as its authentication proxy by collecting user
 authentication data from the client and using it to establish an
 authenticated session.
 
-=== Initial Request
+Initial Request::
 
 The web client requests the main application
-URL, shown in _link:#a253[See Initial
-Request]_ .
+URL, shown in _<<a253, Initial
+Request>>_ .
 
 image:Platform_Spec-3.png[image]
-
-=== [[a253]]Initial Request
+[[a253]]Initial Request
 
 Since the client has not yet authenticated
 itself to the application environment, the server responsible for
@@ -79,24 +79,23 @@ delivering the web portion of the application (hereafter referred to as
 “web server”) detects this and invokes the appropriate authentication
 mechanism for this resource.
 
-=== Initial Authentication
+Initial Authentication::
 
 The web server returns a form that the web
 client uses to collect authentication data (for example, username and
 password) from the user. The web client forwards the authentication data
 to the web server, where it is validated by the web server, as shown in
-_link:#a257[See Initial
-Authentication]_ .
+_<<a257, Initial
+Authentication>>_ .
 
 image:Platform_Spec-4.png[image]
-
-=== [[a257]]Initial Authentication
+[[a257]]Initial Authentication
 
 The validation mechanism may be local to the
 server, or it may leverage the underlying security services. On the
 basis of the validation, the web server sets a credential for the user.
 
-=== URL Authorization
+URL Authorization::
 
 The credential is used for future
 determinations of whether the user is authorized to access restricted
@@ -105,45 +104,42 @@ resources it may request. The web server consults the security policy
 resource to determine the security roles that are permitted access to
 the resource. The web container then tests the user’s credential against
 each role to determine if it can map the user to the role.
-_link:#a261[See URL Authorization]_
+_<<a261, URL Authorization>>_
 shows this process.
 
 image:Platform_Spec-5.png[image]
-
-=== [[a261]]URL Authorization
+[[a261]]URL Authorization
 
 The web server’s evaluation stops with an “is
 authorized” outcome when the web server is able to map the user to a
 role. A “not authorized” outcome is reached if the web server is unable
 to map the user to any of the permitted roles.
 
-=== Fulfilling the Original Request
+Fulfilling the Original Request::
 
 If the user is authorized, the web server
 returns the result of the original URLrequest, as shown in
-_link:#a265[See Fulfilling the
-Original Request]_ .
+_<<a265, Fulfilling the
+Original Request>>_ .
 
 image:Platform_Spec-6.png[image]
-
-=== [[a265]]Fulfilling the Original Request
+[[a265]]Fulfilling the Original Request
 
 In our example, the response URL of a JSP page
 is returned, enabling the user to post form data that needs to be
 handled by the business logic component of the application.
 
-=== Invoking Enterprise Bean Business Methods
+Invoking Enterprise Bean Business Methods::
 
 The JSP page performs the remote method call to
 the enterprise bean, using the user’s credential to establish a secure
 association between the JSP page and the enterprise bean (as shown in
-_link:#a269[See Invoking an Enterprise
-Bean Business Method]_ ). The association is implemented as two related
+_<<a269, Invoking an Enterprise
+Bean Business Method>>_ ). The association is implemented as two related
 security contexts, one in the web server and one in the Jakarta Enterprise Beans container.
 
 image:Platform_Spec-7.png[image]
-
-=== [[a269]]Invoking an Enterprise Bean Business Method
+[[a269]]Invoking an Enterprise Bean Business Method
 
 The Jakarta Enterprise Beans container is responsible for enforcing
 access control on the enterprise bean method. It consults the security
@@ -171,7 +167,7 @@ This section describes the Jakarta EE security
 architecture on which the security requirements defined by this
 specification are based.
 
-=== Goals
+==== Goals
 
 The following are goals for the Jakarta EE
 security architecture:
@@ -224,7 +220,7 @@ services provided in a Jakarta EE product from a different vendor, whether
 with the same or a different security policy. The services may be
 provided by web components or enterprise beans.
 
-=== Non Goals
+==== Non Goals
 
 The following are not goals for the Jakarta EE
 security architecture:
@@ -243,12 +239,12 @@ security technologies.
 . This specification does not provide any
 warranty or assurance of the effective security of a Jakarta EE product.
 
-=== Terminology
+==== Terminology
 
 This section introduces the terminology that is
 used to describe the security requirements of the Jakarta EE platform.
 
-=== Principal
+Principal::
 
 A principal is an entity that can be
 authenticated by an authentication protocol in a security service that
@@ -257,7 +253,7 @@ principal name and authenticated using authentication data. The content
 and format of the principal name and the authentication data can vary
 depending upon the authentication protocol.
 
-=== Security Policy Domain
+Security Policy Domain::
 
 A security policy domain, also referred to as a
 security domain, is a scope over which a common security policy is
@@ -268,7 +264,7 @@ A security policy domain is also sometimes
 referred to as a realm. This specification uses the security policy
 domain, or security domain, terminology.
 
-=== Security Technology Domain
+Security Technology Domain::
 
 A security technology domain is the scope over
 which the same security mechanism (for example Kerberos) is used to
@@ -277,7 +273,7 @@ enforce a security policy.
 A single security technology domain may include
 multiple security policy domains, for example.
 
-=== Security Attributes
+Security Attributes::
 
 A set of security attributes is associated with
 every principal. The security attributes have many uses (for example,
@@ -288,7 +284,7 @@ protocol and/or by the Jakarta EE Product Provider.
 The Jakarta EE platform does not specify what
 security attributes are associated with a principal.
 
-=== Credential
+Credential::
 
 A credential contains or references information
 (security attributes) used to authenticate a principal for Jakarta EE
@@ -300,7 +296,7 @@ This specification does not specify the
 contents or the format of a credential. The contents and format of a
 credential can vary widely.
 
-=== Container Based Security
+==== Container Based Security
 
 Security for components is provided by their
 containers in order to achieve the goals for security specified above in
@@ -310,7 +306,7 @@ a Jakarta EE environment. A container provides two kinds of security
 * Declarative security
 * Programmatic security
 
-=== Declarative Security
+===== Declarative Security
 
 Declarative security refers to the means of
 expressing an application’s security structure, including security
@@ -335,9 +331,9 @@ At runtime, the container uses the security
 policy security structure derived from the declarative security
 information expressed in annotations and the deployment descriptor and
 configured by the Deployer to enforce authorization (see
-link:#a331[See Authorization Model]”).
+<<a331, Authorization Model>>).
 
-=== Programmatic Security
+===== Programmatic Security
 
 Programmatic security refers to security
 decisions made by security aware applications. Programmatic security is
@@ -345,7 +341,7 @@ useful when declarative security alone is not sufficient to express the
 security model of the application. The API for programmatic security
 consists of methods of the Jakarta Security _SecurityContext_
 interface, and methods of the Jakarta Enterprise Beans _EJBContext_ interface and the servlet
-_HttpServletRequest_ interface. The methods of the Jakarta  Security 
+_HttpServletRequest_ interface. The methods of the Jakarta  Security
 _SecurityContext_ interface are intended to supersede the corresponding
 methods of the _EJBContext_ and _HttpServletRequest_ interfaces.
 
@@ -363,7 +359,7 @@ used as a key into a database table, and that database table is accessed
 from multiple components, containers, or products, the same logical
 principal may map to different entries in the database.)
 
-=== Distributed Security
+==== Distributed Security
 
 Some Product Providers may produce Jakarta EE
 products in which the containers for various component types are
@@ -400,7 +396,8 @@ This specification does not define mechanisms
 that an Application Component Provider can use to communicate
 requirements for secure associations with an enterprise bean.
 
-=== [[a331]]Authorization Model
+[[a331]]
+==== Authorization Model
 
 The Jakarta EE authorization model is based on the
 concept of security roles. A security role is a logical grouping of
@@ -429,7 +426,7 @@ _isCallerInRole_ , and the _HttpServletRequest_ method _isUserInRole_ .
 Each method returns _true_ if the calling principal is in the specified
 security role.
 
-=== Role Mapping
+===== Role Mapping
 
 Enforcement of security constraints on web
 resources or enterprise beans, whether programmatic or declarative,
@@ -459,7 +456,7 @@ context. In other cases, security attributes may be retrieved from an
 identity store, or from a trusted third party, such as a directory
 service or a security service.
 
-=== HTTP Login Gateways
+==== HTTP Login Gateways
 
 Secure interoperability between enterprise
 beans in different security policy domains is addressed in the Jakarta Enterprise Beans
@@ -472,10 +469,10 @@ use XML or some other structured format, rather than HTML.
 We call the use of HTTP with SSL mutual
 authentication to access a remote service an HTTP Login Gateway.
 Requirements in this area are specified in
-link:#a347[See Authentication by Web
-Clients].”
+<<a347, Authentication by Web
+Clients>>.
 
-=== User Authentication
+==== User Authentication
 
 User authentication is the process by which a
 user proves his or her identity to the system. This authenticated
@@ -486,7 +483,8 @@ either of the two supported client types:
 * Web client
 * Application client
 
-=== [[a347]]Authentication by Web Clients
+[[a347]]
+===== Authentication by Web Clients
 
 It is required that a web client be able to
 authenticate a user to a web server using any of the following
@@ -525,7 +523,7 @@ e-commerce applications and also for a single-signon from within the
 browser. For these reasons, HTTPS client authentication is a required
 feature of the Jakarta EE platform.
 
-=== Form Based Authentication
+* Form Based Authentication
 
 The look and feel of a login screen cannot be
 varied using the web browser’s built-in authentication mechanisms. This
@@ -544,7 +542,7 @@ to perform authorization decisions, to act as the client in calls to
 enterprise beans, or to negotiate secure associations with resources.
 Current web browsers commonly rely on proxy authentication.
 
-=== Web Single Signon
+===== Web Single Signon
 
 HTTP is a stateless protocol. However, many web
 applications need support for sessions that can maintain state across
@@ -564,7 +562,7 @@ container uses the security context to determine authorization for
 access to web resources and for the establishment of secure associations
 with other components (including enterprise beans).
 
-=== Login Session
+===== Login Session
 
 {empty}In the Jakarta EE platform, login session
 support is provided by a web container. When a user successfully
@@ -572,10 +570,10 @@ authenticates with a web server, the container establishes a login
 session context for the user. The login session contains the credentials
 associated with the user.link:#a3648[1]
 
-=== Authentication by Application Clients
+===== Authentication by Application Clients
 
 Application clients (described in detail in
-link:#a3294[See Application Clients]”)
+<<a3294, Application Clients>>)
 are client programs that may interact with enterprise beans directly
 (that is, without the help of a web browser and without traversing a web
 server). Application clients may also access web resources.
@@ -590,7 +588,7 @@ Application clients are used to authenticate
 end users to the Jakarta EE platform, when the users access protected web
 resources or enterprise beans.
 
-=== Lazy Authentication
+==== Lazy Authentication
 
 There is a cost associated with authentication.
 For example, an authentication process may require exchanging multiple
@@ -610,7 +608,7 @@ successfully authenticated, the user is allowed to access the resource.
 The Jakarta EE Product Provider must meet the
 following requirements concerning user authentication.
 
-=== Login Sessions
+==== Login Sessions
 
 All Jakarta EE web servers must maintain a login
 session for each web user. It must be possible for a login session to
@@ -630,7 +628,7 @@ servers for protected web resources. When authentication is required,
 one of the three required login mechanisms listed in the next section
 may be used.
 
-=== Required Login Mechanisms
+==== Required Login Mechanisms
 
 All Jakarta EE products are required to support
 three login mechanisms: HTTP basic authentication, SSL mutual
@@ -638,13 +636,14 @@ authentication, and form-based login. An application is not required to
 use any of these mechanisms, but they are required to be available for
 any application’s use.
 
-=== HTTP Basic Authentication
+===== HTTP Basic Authentication
 
 All Jakarta EE products are required to support
 HTTP basic authentication (RFC2068). Platform Providers are also
 required to support basic authentication over SSL.
 
-=== [[a384]]SSL Mutual Authentication
+[[a384]]
+===== SSL Mutual Authentication
 
 TLS 1.2 and the means to perform mutual (client
 and server) certificate-based authentication are required by this
@@ -695,7 +694,7 @@ or higher, and to negotiate a stronger cipher suite, whenever possible.
 SSL 3.0, and the above listed cipher suites, should be disabled if not
 needed for interoperability in a given deployment.
 
-=== Form Based Login
+===== Form Based Login
 
 The web application deployment descriptor
 contains an element that causes a Jakarta EE product to associate an HTML
@@ -708,7 +707,8 @@ The form based login mechanism and web
 application deployment descriptors are described in the Servlet
 specification.
 
-=== [[a408]]Unauthenticated Users
+[[a408]]
+==== Unauthenticated Users
 
 Web containers are required to support access
 to web resources by clients that have not authenticated themselves to
@@ -751,7 +751,7 @@ this area when using the Jakarta Enterprise Beans interoperability protocol. App
 encouraged to use the Run As capability in cases where the web component
 may be unauthenticated and needs to call Jakarta Enterprise Beans components.
 
-=== Application Client User Authentication
+==== Application Client User Authentication
 
 The application client container must provide
 authentication of application users to satisfy the authentication and
@@ -769,8 +769,8 @@ interface for interactions with the user to gather authentication data.
 In addition, an application client may provide a class that implements
 the _javax.security.auth.callback.CallbackHandler_ interface and specify
 the class name in its deployment descriptor (see
-link:#a3399[See Jakarta EE Application
-Client XML Schema]” for details). The Deployer may override the callback
+<<a3399, Jakarta EE Application
+Client XML Schema>> for details). The Deployer may override the callback
 handler specified by the application and require use of the container’s
 default authentication user interface instead.
 
@@ -784,16 +784,16 @@ _javax.security.auth.callback_ package.
 Application clients may execute in an
 environment controlled by a Java SE security manager and are subject to
 the security permissions defined in
-link:#a2339[See Java Platform, Standard
-Edition (Java SE) Requirements].” Although this specification does not
+<<a2339, Java Platform, Standard
+Edition (Java SE) Requirements>>. Although this specification does not
 define the relationship between the operating system identity associated
 with a running application client and the authenticated user identity,
 support for single signon requires that the Jakarta EE product be able to
 relate these identities. Additional application client requirements are
-described in link:#a3293[See CHApter]
+described in <<a3293, CHApter>>
 of this specification.
 
-=== Resource Authentication Requirements
+==== Resource Authentication Requirements
 
 Resources within an enterprise are often
 deployed in security policy domains different from the security policy
@@ -864,14 +864,14 @@ To support the authorization models described
 in this chapter, the following requirements are imposed on Jakarta EE
 products.
 
-=== Code Authorization
+==== Code Authorization
 
 A Jakarta EE product may restrict the use of
 certain Java SE classes and methods to secure and ensure proper
 operation of the system. The minimum set of permissions that a Jakarta EE
 product is required to grant to a Jakarta EE application is defined in
-link:#a2339[See Java Platform, Standard
-Edition (Java SE) Requirements].” All Jakarta EE products must be capable
+<<a2339, Java Platform, Standard
+Edition (Java SE) Requirements>>. All Jakarta EE products must be capable
 of deploying application components with exactly these permissions.
 
 A Jakarta EE Product Provider may choose to enable
@@ -879,19 +879,19 @@ selective access to resources using the Java protection model. The
 mechanism used is Jakarta EE product dependent.
 
 The _permissions.xml_ descriptor (see
-link:#a2496[See Declaring Permissions
-Required by Application Components]”) makes it possible to express
+<<a2496, Declaring Permissions
+Required by Application Components>>) makes it possible to express
 permissions that a component needs for access.
 
-=== Caller Authorization
+==== Caller Authorization
 
 A Jakarta EE product must enforce the access
 control rules specified at deployment time (see
-link:#a451[See Deployment
-Requirements]”) and more fully described in the Jakarta Enterprise Beans and
+<<a451, Deployment
+Requirements>>) and more fully described in the Jakarta Enterprise Beans and
 Servlet specifications.
 
-=== Propagated Caller Identities.
+==== Propagated Caller Identities.
 
 In a Jakarta EE product that contains an Jakarta Enterprise Beans
 container, it must be possible to configure the Jakarta EE product so that
@@ -918,7 +918,7 @@ enterprise beans in the call chain. The requirements in this section
 apply only when a Jakarta EE product has been configured to propagate
 caller identity.
 
-=== Run As Identities
+==== Run As Identities
 
 Jakarta EE products must also support the Run As
 capability that allows the Application Component Provider and the
@@ -934,7 +934,8 @@ such as files. However, the Jakarta Authorization
 specification does specify the relationship between the Run As identity
 and the access control context used by the Java SE security manager.
 
-=== [[a451]]Deployment Requirements
+[[a451]]
+=== Deployment Requirements
 
 All Jakarta EE products must implement the access
 control semantics described in all included component specifications,
@@ -962,8 +963,7 @@ Application developers will need to specify (in
 the application’s metadata annotations or deployment descriptors) the
 security requirements of an application in which some components may be
 accessed by unauthenticated users as well as authenticated users (as
-described above in link:#a408[See
-Unauthenticated Users]”). Applications express their security
+described above in <<a408, Unauthenticated Users>>). Applications express their security
 requirements in terms of security roles, which the Deployer maps to
 users (principals) in the operational environment at deployment time. An
 application might define a role representing all authenticated and
@@ -975,9 +975,10 @@ requires that it be possible to map an application defined security role
 to the universal set of application principals independent of
 authentication. __
 
-=== [[a457]]Future Directions
+[[a457]]
+=== Future Directions
 
-=== Auditing
+==== Auditing
 
 This specification does not specify
 requirements for the auditing of security relevant events, nor APIs for
@@ -985,7 +986,7 @@ application components to generate audit records. A future version of
 this specification may include such a specification for products that
 choose to provide auditing.
 
-=== Instance-based Access Control
+==== Instance-based Access Control
 
 Some applications need to control access to
 their data based on the content of the data, rather than simply the type
@@ -993,7 +994,7 @@ of the data. We refer to this as “instance-based” rather than
 “class-based” access control. We hope to address this in a future
 release.
 
-=== User Registration
+==== User Registration
 
 Web-based internet applications often need to
 manage a set of customers dynamically, allowing users to register
@@ -1002,4 +1003,3 @@ Servlet expert group (JSR-53) but we were unable to achieve consensus on
 the appropriate solution. We had to abandon this work for J2EE 1.3, and
 were not able to address it for J2EE 1.4, but hope to pursue it further
 in a future release.
-

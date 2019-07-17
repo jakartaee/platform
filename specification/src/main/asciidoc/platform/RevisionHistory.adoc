@@ -1,113 +1,98 @@
+[appendix]
 ==  Revision History
 
 === Changes in Early Draft
 
-=== Additional Requirements
+==== Additional Requirements
 
 * Java EE 8 requires Java SE 8.
 * Added
-<<a2713, Java API for JSON
-Binding 1.0 (JSON-B) Requirements>>.”
+<<a2713, Java API for JSON Binding 1.0 (JSON-B) Requirements>>.”
 * Added link:api.html#UNKNOWN[].”
 * Added
-<<a149, Java EE Product
-Packaging>>”; updated <<a3153, Deployment>>.”
+<<a149, Java EE Product Packaging>>”; updated <<a3153, Deployment>>.”
 * Clarified semantics of _metadata-complete_
 for application clients.
 
-=== Editorial Changes
+==== Editorial Changes
 
 * Updated
-<<a651, Component classes
-supporting injection>>,
-<<a2159, Java EE
-Technologies>>, and Section
-<<a3252, Full Java EE Product
-Requirements>> to reflect requirements for JSON-B and MVC.
+<<a651, Component classes supporting injection>>,
+<<a2159, Java EE Technologies>>, and Section
+<<a3252, Full Java EE Product Requirements>> to reflect requirements for JSON-B and MVC.
 * Updated URLs for many referenced documents.
 * Updated version numbers for component
 technologies.
 
 === Changes in Early Draft 2
 
-=== Additional Requirements
+==== Additional Requirements
 
-=== Added CORBA, including RMI/IIOP and Java IDL, to list of “Proposed Optional” technologies.
+* Added CORBA, including RMI/IIOP and Java IDL, to list of “Proposed Optional” technologies.
 
-=== Removed Requirements
+==== Removed Requirements
 
-=== Removed MVC 1.0 from required APIs in <<a2159, Component classes supporting injection>> and link:#50581515_TABLE%206-1[See Java EE Technologies];
+* Removed MVC 1.0 from required APIs in <<a2159, Component classes supporting injection>> and link:#50581515_TABLE%206-1[See Java EE Technologies];
 removed section on “Model-View-Controller (MVC) 1.0 Requirements” from Chapter <<a2133, CHAPTER>>.
 
-=== Editorial Changes
+==== Editorial Changes
 
-=== Changed version of Bean Validation from 1.1 to 2.0.
-
-* Changed version of JMS from 2.1 to 2.0.
+* Changed version of Bean Validation from 1.1 to 2.0.
+* Changed version of Jakarta Messaging from 2.1 to 2.0.
 * Removed section on JNLP from
-<<a3439, Future Directions>>.”
+<<a3439, Future Directions>>.
 
 === Changes in Public Review Draft
 
-=== Additional Requirements
+==== Additional Requirements
 
 * Added
-<<a2741, Java EE Security API
-1.0 Requirements>>.”
+<<a2741, Java EE Security API 1.0 Requirements>>.”
 * Updated
-<<a3125, Assembling a Java EE
-Application>>,” to reflect Servlet requirements of context root naming.
+<<a3125, Assembling a Java EE Application>>,” to reflect Servlet requirements of context root naming.
 * Updated version of TLS that must be supported
 to 1.2 in <<a2523, Networking>>.”
 * Updated version of HTML that Java EE web
 clients must be able to display to 4.01 in
 <<a2884, Data Formats>>.”
 
-=== Editorial Changes
+==== Editorial Changes
 
-=== Added acknowledgements for Java EE 8 work.
-
+* Added acknowledgements for Java EE 8 work.
 * Added
 <<a231, Changes in Java EE 8>>.”
 * Updated
-<<a2159, Java EE
-Technologies>> and Section
-<<a3252, Full Java EE Product
-Requirements>> to reflect requirements for Java EE Security API.
+<<a2159, Java EE Technologies>> and Section
+<<a3252, Full Java EE Product Requirements>> to reflect requirements for Java EE Security API.
 * Corrected version of Web Socket to 1.1.
 * Removed references to JAX-WS and JAXB from
-<<a2159, Java EE
-Technologies>> as they are included as part of Java SE.
+<<a2159, Java EE Technologies>> as they are included as part of Java SE.
 * Removed section on JAXB from
 <<a2133, CHAPTER>>.
 * Moved contents of previous section on JAX-WS
-to Section <<a2553, Java™ API
-for XML Web Services (JAX-WS) Requirements>>.
+to Section <<a2553, Java™ API for XML Web Services (JAX-WS) Requirements>>.
 * Removed section on JAX-WS from
-<<UNKNOWN, CHAPTeR>>.
+<<UNKNOWN, CHAPTER>>.
 * Removed requirement inconsistent with Bean
 Validation specification from
-<<a1619, Validator and Validator
-Factory References>>.”
+<<a1619, Validator and Validator Factory References>>.”
 * Clarified requirements for JASPIC Servlet
 Container Profile and JASPIC SOAP Profile in
-<<a2737, Java™ Authentication
-Service Provider Interface for Containers (JASPIC) 1.1 Requirements>>.”
+<<a2737, Java™ Authentication Service Provider Interface for Containers (JASPIC) 1.1 Requirements>>.”
 
 === Changes in Proposed Final Draft
 
-=== Additional Requirements
+==== Additional Requirements
 
 * Updated
 <<a235, Security>>,” to reflect
 requirements of the Java EE Security API.
 
-=== Editorial Changes
+==== Editorial Changes
 
 * Corrected version of Batch to 1.0.
 * Added clarification regarding TLS support in
-“<<a2865, Internet and Web
-Protocols>>.
+“<<a2865, Internet and Web Protocols>>.
 * Updated “Related Documents.”
 * Added reference to
 _https:javaee.github.io/javaee-spec[]http:javaee.github.io/javaee-spec[]https:javaee.github.io/javaee-spec
@@ -115,18 +100,17 @@ project._
 
 === Changes in Final Release Draft
 
-=== Additional Requirements
+==== Additional Requirements
 
 * Updated
-<<a384, SSL Mutual
-Authentication>>,” to reflect requirements for support of TLS 1.2 and
+<<a384, SSL Mutual Authentication>>,” to reflect requirements for support of TLS 1.2 and
 related cipher suites.
 * Updated
 <<a235, Security>>,” to reflect
 Java EE Security API specification requirement to support default
 mapping from user groups to roles.
 
-=== Editorial Changes
+==== Editorial Changes
 
 * Made clarifications to list of annotations
 and requirements in <<a3315, Packaging and Deployment>>.”

@@ -2078,7 +2078,7 @@ containers must provide definitions for all of these annotations, and
 must support the semantics of these annotations as described in the
 corresponding specifications and summarized in the following table.
 
-==== Common Annotations Support by Container
+===== Common Annotations Support by Container
 
 Annotation
 

@@ -15,10 +15,16 @@ including JDBC drivers, Jakarta Messaging providers, and Jakarta XML Registries
 providers. All Jakarta EE products must support the Connector APIs, as specified
 in the Connector specification.
 
+The Jakarta EE Connectors specification is available at
+_https://jakarta.ee/specifications/connectors_ .
+
 === Jakarta™ Authorization
 
 The Jakarta Authorization specification defines the contract
 between a Jakarta EE container and an authorization policy provider.
+
+The Jakarta Authorization specification can be found at
+_https://jakarta.ee/specifications/authorization_ .
 
 === Jakarta™ Transactions
 
@@ -32,11 +38,17 @@ the current transaction, get the transaction context of the current
 transaction, get current transaction status, and mark the current
 transaction for rollback.
 
+The Jakarta Transaction specification is available at
+_https://jakarta.ee/specifications/transactions_ .
+
 === Jakarta™ Persistence
 
 Jakarta Persistence provides interfaces in the
 _javax.persistence.spi_ package that allow a persistence provider to be
 plugged into the Jakarta Persistence framework.
+
+The Jakarta Persistence specification can be
+found at _https://jakarta.ee/specifications/persistence_ .
 
 === Jakarta™ Mail
 
@@ -46,16 +58,5 @@ can be discovered and used through the Jakarta Mail API. This allows the
 Jakarta Mail API to be extended with support for new mail protocols and
 mailbox formats.
 
-=== Specification documents
-
-==== Original Java™ EE specification documents
-
-- Java™ EE Connector Architecture: _http://jcp.org/en/jsr/detail?id=322_ 
-- Java™ Authorization Service Provider Contract for Containers: _http://jcp.org/en/jsr/detail?id=115_
-- Java™ Transaction API: _http://jcp.org/en/jsr/detail?id=907_
-- Java™ Persistence: _http://jcp.org/en/jsr/detail?id=338_
-- JavaMail™: _http://jcp.org/en/jsr/detail?id=919_
-
-==== Jakarta EE specification documents
-
-- Not available yet
+The Jakarta Mail API specification is available
+at _https://jakarta.ee/specifications/mail_ .
