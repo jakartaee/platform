@@ -142,85 +142,61 @@ deployment descriptor and the setting of the _metadata-complete_
 attribute.
 
 [[a3318]]
-Deployment Descriptor Processing Requirements
+[cols=3, options=header]
+.Deployment Descriptor Processing Requirements
+|===
+|Deployment descriptor
+|metadata-complete?
+|process annotations?
 
-Deployment descriptor
+|application-client_1_2
+|N/A
+|No
 
-metadata-complete?
+|application-client_1_3
+|N/A
+|No
 
-process annotations?
+|application-client_1_4
+|N/A
+|No
 
-application-client_1_2
+|application-client_5
+|Yes
+|No
 
-N/A
+|application-client_5
+|No
+|Yes
 
-No
+|application-client_6
+|Yes
+|No
 
-application-client_1_3
+|application-client_6
+|No
+|Yes
 
-N/A
+|application-client_7
+|Yes
+|No
 
-No
+|application-client_7
+|No
+|Yes
 
-application-client_1_4
+|application-client_8
+|Yes
+|No
 
-N/A
+|application-client_8
+|No
+|Yes
 
-No
-
-application-client_5
-
-Yes
-
-No
-
-application-client_5
-
-No
-
-Yes
-
-application-client_6
-
-Yes
-
-No
-
-application-client_6
-
-No
-
-Yes
-
-application-client_7
-
-Yes
-
-No
-
-application-client_7
-
-No
-
-Yes
-
-application-client_8
-
-Yes
-
-No
-
-application-client_8
-
-No
-
-Yes
-
-none
-
-N/A
-
-Yes
+|none
+|N/A
+|Yes
+|===
 
 The _metadata-complete_ attribute defines
 whether the application client deployment descriptor is complete, or
@@ -344,9 +320,6 @@ application-client XML Schema. The Jakarta EE application-client XML Schema
 is located at
 _http://xmlns.jcp.org/xml/ns/javaee/application-client_8.xsd_ .
 
-
-
-image:Platform_Spec-12.png[image]
-
 [[a3404]]
-Jakarta EE Application Client XML Schema Structure
+.Jakarta EE Application Client XML Schema Structure
+image::Platform_Spec-12.png[]

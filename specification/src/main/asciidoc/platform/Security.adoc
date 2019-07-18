@@ -70,8 +70,9 @@ The web client requests the main application
 URL, shown in _<<a253, Initial
 Request>>_ .
 
-image:Platform_Spec-3.png[image]
-[[a253]]Initial Request
+[[a253]]
+.Initial Request
+image::Platform_Spec-3.png[]
 
 Since the client has not yet authenticated
 itself to the application environment, the server responsible for
@@ -88,8 +89,9 @@ to the web server, where it is validated by the web server, as shown in
 _<<a257, Initial
 Authentication>>_ .
 
-image:Platform_Spec-4.png[image]
-[[a257]]Initial Authentication
+[[a257]]
+.Initial Authentication
+image::Platform_Spec-4.png[]
 
 The validation mechanism may be local to the
 server, or it may leverage the underlying security services. On the
@@ -107,8 +109,9 @@ each role to determine if it can map the user to the role.
 _<<a261, URL Authorization>>_
 shows this process.
 
-image:Platform_Spec-5.png[image]
-[[a261]]URL Authorization
+[[a261]]
+.URL Authorization
+image::Platform_Spec-5.png[]
 
 The web server’s evaluation stops with an “is
 authorized” outcome when the web server is able to map the user to a
@@ -122,8 +125,9 @@ returns the result of the original URLrequest, as shown in
 _<<a265, Fulfilling the
 Original Request>>_ .
 
-image:Platform_Spec-6.png[image]
-[[a265]]Fulfilling the Original Request
+[[a265]]
+.Fulfilling the Original Request
+image::Platform_Spec-6.png[]
 
 In our example, the response URL of a JSP page
 is returned, enabling the user to post form data that needs to be
@@ -138,8 +142,9 @@ _<<a269, Invoking an Enterprise
 Bean Business Method>>_ ). The association is implemented as two related
 security contexts, one in the web server and one in the Jakarta Enterprise Beans container.
 
-image:Platform_Spec-7.png[image]
-[[a269]]Invoking an Enterprise Bean Business Method
+[[a269]]
+.Invoking an Enterprise Bean Business Method
+image::Platform_Spec-7.png[]
 
 The Jakarta Enterprise Beans container is responsible for enforcing
 access control on the enterprise bean method. It consults the security
@@ -568,7 +573,7 @@ with other components (including enterprise beans).
 support is provided by a web container. When a user successfully
 authenticates with a web server, the container establishes a login
 session context for the user. The login session contains the credentials
-associated with the user.link:#a3648[1]
+associated with the user.<<a3648, 1>>
 
 ===== Authentication by Application Clients
 

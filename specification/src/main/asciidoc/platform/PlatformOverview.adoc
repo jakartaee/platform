@@ -21,7 +21,7 @@ lower half of the rectangle. For example, the Application Client
 Container provides Jakarta Messaging APIs to Application
 Clients, as well as the other services represented. All these services
 are explained below. See
-<<a84, Jakarta EE Standard Services>>”.
+<<a84, Jakarta EE Standard Services>>.
 
 The arrows represent required access to other
 parts of the Jakarta EE platform. The Application Client Container provides
@@ -35,15 +35,9 @@ As indicated, the APIs of the Java™
 Platform, Standard Edition (Java SE), are supported by Java SE runtime
 environments for each type of application component.
 
-
-
-
-
-image:Platform_Spec-1.png[image]
-
-
 [[a45]]
-Jakarta EE Architecture Diagram
+.Jakarta EE Architecture Diagram
+image::Platform_Spec-1.png[]
 
 The following sections describe the Jakarta EE
 Platform requirements for each kind of Jakarta EE platform element.
@@ -554,11 +548,8 @@ client/server relationships of the components.)
 .
 
 [[a142]]
-Java EE Interoperability
-
-
-
-image:Platform_Spec-2.png[image]
+.Java EE Interoperability
+image::Platform_Spec-2.png[]
 
 
 

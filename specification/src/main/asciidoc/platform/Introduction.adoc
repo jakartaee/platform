@@ -9,11 +9,11 @@ services must combine existing enterprise information systems (EISs)
 with new business functions that deliver services to a broad range of
 users. The services need to be:
 
-* Highly available, to meet the needs of today’s
+* _Highly available_, to meet the needs of today’s
 global business environment.
-* Secure, to protect the privacy of users and
+* _Secure_, to protect the privacy of users and
 the integrity of the enterprise.
-* Reliable and scalable, to ensure that business
+* _Reliable and scalable_, to ensure that business
 transactions are accurately and promptly processed.
 
 In most cases, enterprise services are
@@ -30,12 +30,12 @@ enhanced as the enterprise responds to competitive pressures.
 Jakarta EE achieves these benefits by defining a
 standard architecture with the following elements:
 
-*  _Jakarta EE Platform_ - A standard platform for
+*  *Jakarta EE Platform* - A standard platform for
 hosting Jakarta EE applications.
-*  _Jakarta EE Compatibility Test Suite_ - A suite
+*  *Jakarta EE Compatibility Test Suite* - A suite
 of compatibility tests for verifying that a Jakarta EE platform product
 complies with the Jakarta EE platform standard.
-*  _Jakarta Compatible Implementations_ - Certified implementations for building and deploying Jakarta EE applications.
+*  *Jakarta Compatible Implementations* - Certified implementations for building and deploying Jakarta EE applications.
 
 This document is the Jakarta EE platform
 specification. It sets out the requirements that a Jakarta EE platform
@@ -180,5 +180,5 @@ consulting). Reza Rahman (Individual) participated as a contributor.
 
 === Acknowledgements for Jakarta EE 8
 
-The Jakarta EE 8 specification was created by the Jakarta EE Working Group within 
+The Jakarta EE 8 specification was created by the Jakarta EE Working Group within
 the Eclipse Foundation _https://jakarta.ee/_

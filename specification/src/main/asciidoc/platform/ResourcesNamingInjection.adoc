@@ -131,7 +131,7 @@ Dependency Injection APIs.
 
 Jakarta EE application clients, enterprise beans,
 and web components are required to have access to a JNDI naming
-environmentlink:#a3651[4]. The containers for these application
+environment<<a3651, 4>>. The containers for these application
 component types are required to provide the naming environment support
 described here.
 
@@ -416,33 +416,30 @@ resource injection, as well as PostConstruct and PreDestroy callbacks.
 In addition, if CDI is enabled—which it is by default—these classes also
 support CDI injection, as described in
 <<a2112, Support for Dependency
-Injection>>”, and the use of interceptorslink:#a3652[5]. The
+Injection>>”, and the use of interceptors<<a3652, 5>>. The
 component classes listed with support level “Limited” only support Jakarta
 EE field injection and the PostConstruct callback. Note that these are
 application client main classes, where field injection is into static
 fields.
 
-{empty}The specifications for the various
+The specifications for the various
 application component types also describe when injection occurs in the
 lifecycle of the component. Typically injection will occur after an
 instance of the class is constructed, but before any business methods
 are called. If the container fails to find a resource needed for
 injection, initialization of the class must fail, and the class must not
-be put into service.<<a653, Classes supporting injection>>
+be put into service.
 
 [[a651]]
-Component classes supporting injection
+[cols=3, options=header]
+.Component classes supporting injection
+|===
+|Spec
+|Classes supporting injection
+|Support level
 
-Spec
-
-[[a653]]Classes supporting
-injection
-
-Support level
-
-Servlet
-
-servlets
+|Servlet
+|servlets
 
 servlet filters
 
@@ -450,7 +447,7 @@ event listeners
 
 HTTP upgrade handlers
 
-Standard
+|Standard
 
 Standard
 
@@ -458,91 +455,72 @@ Standard
 
 Standard
 
-JSP
-
-tag handlers
+|JSP
+|tag handlers
 
 tag library event listeners
 
-Standard
+|Standard
 
 Standard
 
-JSF
+|JSF
+|managed classes<<a3653, 6>>
+|Standard
 
-{empty}managed classeslink:#a3653[6]
-
-Standard
-
-JAX-WS
-
-service endpoints
+|JAX-WS
+|service endpoints
 
 handlers
 
-Standard
+|Standard
 
 Standard
 
-JAX-RS
+|JAX-RS
+|JAX-RS components<<a3654, 7>>
 
-{empty}JAX-RS
-componentslink:#a3654[7]
+|Standard
 
-Standard
+|WebSocket
+|endpoints
+|Standard
 
-WebSocket
+|EJB
+|beans
+|Standard
 
-endpoints
+|Interceptor
+|interceptors<<a3655, 8>>
+|Standard
 
-Standard
+|Java Persistence
+|entity listeners
+|Standard
 
-EJB
+|Managed Beans
+|managed beans
+|Standard
 
-beans
+|CDI<<a3656, 9>>
+|CDI-style managed beans<<a3657, 10>>
 
-Standard
+decorators<<a3658, 11>>
 
-Interceptor
-
-{empty}interceptorslink:#a3655[8]
-
-Standard
-
-Java Persistence
-
-entity listeners
-
-Standard
-
-Managed Beans
-
-managed beans
+|Standard
 
 Standard
 
-{empty}CDIlink:#a3656[9]
+|Jakarta EE platform
 
-
-
-{empty}CDI-style managed
-beanslink:#a3657[10]
-
-{empty}decoratorslink:#a3658[11]
-
-Standard
-
-Standard
-
-Jakarta EE platform
-
-main class (static)
+|main class (static)
 
 login callback handler
 
-Limited
+|Limited
 
 Standard
+|===
 
 Annotations may also be applied to the class
 itself. These annotations declare an entry in the application
@@ -2268,7 +2246,7 @@ the _shareable_ element of the _Resource_ annotation to _false_ or sets
 the _res-sharing-scope_ of a resource manager connection factory
 reference to _Unshareable_ , the container must not attempt to share the
 connections obtained from the resource manager connection factory
-referencelink:#a3659[12].
+reference<<a3659, 12>>.
 * The container must provide tools that allow
 the Deployer to set up resource sign on information for the resource
 manager references whose _authenticationType_ is set to
@@ -3874,7 +3852,7 @@ name, port, etc.), a resource at the specified location should already
 exist. If it does not, and if the automatic provisioning of resources is
 not supported, it is the Deployer’s responsibility (possibly in
 conjunction with the System Administrator) to insure that the resource
-is provisioned for use by the applicationlink:#a3660[13].
+is provisioned for use by the application<<a3660, 13>>.
 
 If the resource has not been otherwise
 provisioned and if automatic provisioning of resources is supported, the
