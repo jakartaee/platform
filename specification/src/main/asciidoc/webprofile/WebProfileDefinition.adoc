@@ -39,7 +39,7 @@ Profile.
 
 Web Profile products may support some of the
 technologies present in the full Jakarta EE Platform and not already listed
-in <<a43, Required Components>>, 
+in <<a43, Required Components>>,
 consistently with their compatibility requirements.
 
 [[a69]]
