@@ -2,10 +2,10 @@
 == Application Clients
 
 This chapter describes application clients
-in the Java™ Platform, Enterprise Edition (Java EE).
+in the Jakarta™ Enterprise Edition (Jakarta EE).
 
-A full Java EE product must support the
-application client container as described in this chapter. A Java EE
+A full Jakarta EE product must support the
+application client container as described in this chapter. A Jakarta EE
 profile may or may not require support for the application client
 container.
 
@@ -15,17 +15,17 @@ Application clients are first tier client
 programs that execute in their own Java™ virtual machines. Application
 clients follow the model for Java technology-based applications: they
 are invoked at their _main_ method and run until the virtual machine is
-terminated. However, like other Java EE application components,
+terminated. However, like other Jakarta EE application components,
 application clients depend on a container to provide system services.
 The application client container may be very light-weight compared to
-other Java EE containers, providing only the security and deployment
-services described below
+other Jakarta EE containers, providing only the security and deployment
+services described below.
 
 === Security
 
-The Java EE authentication requirements for
-application clients are the same as for other Java EE components, and
-the same authentication techniques may be used as for other Java EE
+The Jakarta EE authentication requirements for
+application clients are the same as for other Jakarta EE components, and
+the same authentication techniques may be used as for other Jakarta EE
 application components.
 
 No authentication is necessary when accessing
@@ -36,8 +36,8 @@ authentication. Lazy authentication may be used.
 
 Authentication is required when accessing
 protected enterprise beans. The authentication mechanisms for enterprise
-beans include those required in the EJB specification for enterprise
-bean interoperability. Lazy authentication may be used.
+beans include those required in the Jakarta Enterprise Beans specification
+for enterprise bean interoperability. Lazy authentication may be used.
 
 An application client makes use of an
 authentication service provided by the application client container for
@@ -54,7 +54,7 @@ gather authentication data, the container must provide an appropriate
 user interface. In addition, an application client may provide a class
 that implements the _javax.security.auth.callback.CallbackHandler_
 interface and specify the class name in its deployment descriptor (see
-<<a3399, Java EE Application
+<<a3399, Jakarta EE Application
 Client XML Schema>>” for details). The Deployer may override the callback
 handler specified by the application and use the container’s default
 authentication user interface instead.
@@ -80,17 +80,18 @@ Edition (Java SE) Requirements>>.”
 === Transactions
 
 Application clients are not required to have
-direct access to the transaction facilities of the Java EE platform. A
-Java EE product is not required to provide a JTA _UserTransaction_
+direct access to the transaction facilities of the Jakarta EE platform. A
+Jakarta EE product is not required to provide a Jakarta Transactions _UserTransaction_
 object for use by application clients. Application clients can invoke
 enterprise beans that start transactions, and they can use the
 transaction facilities of the JDBC API. If a JDBC API transaction is
 open when an application client invokes an enterprise bean, the
-transaction context is not required to be propagated to the EJB server.
+transaction context is not required to be propagated to the Jakarta Enterprise
+Beans server.
 
 === Resources, Naming, and Injection
 
-As with all Java EE components, application
+As with all Jakarta EE components, application
 clients use JNDI to look up enterprise beans, get access to resource
 managers, reference configurable parameters set at deployment time, and
 so on. Application clients use the _java:_ JNDI namespace to access
@@ -101,13 +102,13 @@ application client main class. Because the application client container
 does not create instances of the application client main class, but
 merely loads the class and invokes the static _main_ method, injection
 into the application client class uses _static_ fields and methods,
-unlike other Java EE components. Injection occurs before the _main_
+unlike other Jakarta EE components. Injection occurs before the _main_
 method is called.
 
 === Application Programming Interfaces
 
 Application clients have all the facilities of
-the JavaTM Platform, Standard Edition (subject to security
+the Java™ Platform, Standard Edition (subject to security
 restrictions), as well as various standard extensions, as described in
 Chapter EE.6 “Application Programming Interface.” Each application
 client executes in its own Java virtual machine. Application clients
@@ -123,13 +124,13 @@ initialize the name service client library, and so on).
 
 Application clients are packaged in JAR format
 files with a _.jar_ extension and may include a deployment descriptor
-similar to other Java EE application components. The deployment
+similar to other Jakarta EE application components. The deployment
 descriptor describes the enterprise beans, web services, and other types
 of external resources referenced by the application. If the deployment
 descriptor is not included, or is included but not marked
 _metadata-complete_ , annotations on the main class of the application
 client may also be used to describe the resources needed by the
-application. As with other Java EE application components, access to
+application. As with other Jakarta EE application components, access to
 resources must be configured at deployment time, names assigned for
 enterprise beans and resources, and so on.
 
@@ -235,7 +236,7 @@ annotations that specify such deployment information in the class files
 packaged in the application client jar file. Such annotations must also
 be ignored when processing the class files that are available to the
 application client module for the deployment of this module according to
-<<a3179, Deploying a Java EE
+<<a3179, Deploying a Jakarta EE
 Application>>”.
 
 Note that a _"true"_ value for the
@@ -300,13 +301,13 @@ the class files for all such annotations.
 
 The tool used to deploy an application client
 to the client machine, and the mechanism used to install the application
-client, is not specified. Very sophisticated Java EE products may allow
-the application client to be deployed on a Java EE server and
+client, is not specified. Very sophisticated Jakarta EE products may allow
+the application client to be deployed on a Jakarta EE server and
 automatically made available to some set of (usually intranet) clients.
-Other Java EE products may require the Java EE application bundle
+Other Jakarta EE products may require the Jakarta EE application bundle
 containing the application client to be manually deployed and installed
 on each client machine. And yet another approach would be for the
-deployment tool on the Java EE server to produce an installation package
+deployment tool on the Jakarta EE server to produce an installation package
 that could be used by each client to install the application client.
 There are many possibilities here and this specification doesn’t
 prescribe any one. It only defines the package format for the
@@ -314,16 +315,16 @@ application client and the things that must be possible during the
 deployment process.
 
 How an application client is invoked by an end
-user is unspecified. Typically a Java EE Product Provider will provide
+user is unspecified. Typically a Jakarta EE Product Provider will provide
 an application launcher that integrates with the application client
 machine’s native operating system, but the level of such integration is
 unspecified.
 
 [[a3399]]
-=== Java EE Application Client XML Schema
+=== Jakarta EE Application Client XML Schema
 
-The XML grammar for a Java EE application client
-deployment descriptor is defined by the Java EE application-client
+The XML grammar for a Jakarta EE application client
+deployment descriptor is defined by the Jakarta EE application-client
 schema. The root element of the deployment descriptor for an application
 client is _application-client_ . The content of the XML elements is in
 general case sensitive. This means, for example, that
@@ -338,8 +339,8 @@ _META-INF/application-client.xml_ in the application client’s _.jar_
 file. Note that this name is case-sensitive.
 
 
-_<<a3404, Java EE Application Client XML Schema Structure>>_ shows the structure of the Java EE
-application-client XML Schema. The Java EE application-client XML Schema
+_<<a3404, Jakarta EE Application Client XML Schema Structure>>_ shows the structure of the Jakarta EE
+application-client XML Schema. The Jakarta EE application-client XML Schema
 is located at
 _http://xmlns.jcp.org/xml/ns/javaee/application-client_8.xsd_ .
 
@@ -348,4 +349,4 @@ _http://xmlns.jcp.org/xml/ns/javaee/application-client_8.xsd_ .
 image:Platform_Spec-12.png[image]
 
 [[a3404]]
-Java EE Application Client XML Schema Structure
+Jakarta EE Application Client XML Schema Structure
