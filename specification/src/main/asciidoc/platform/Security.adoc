@@ -569,11 +569,17 @@ with other components (including enterprise beans).
 
 ===== Login Session
 
-{empty}In the Jakarta EE platform, login session
+In the Jakarta EE platform, login session
 support is provided by a web container. When a user successfully
 authenticates with a web server, the container establishes a login
 session context for the user. The login session contains the credentials
-associated with the user.<<a3648, 1>>
+associated with the user.footnote:[While the client is
+stateless with respect to authentication, the client requires that the
+server act as its proxy and maintain its login context. A reference to
+the login session state is made available to the client through cookies
+or URL re-writing. If SSL mutual authentication is used as the
+authentication protocol, the client can manage its own authentication
+context, and need not depend on references to the login session state.]
 
 ===== Authentication by Application Clients
 
@@ -1008,3 +1014,5 @@ Servlet expert group (JSR-53) but we were unable to achieve consensus on
 the appropriate solution. We had to abandon this work for J2EE 1.3, and
 were not able to address it for J2EE 1.4, but hope to pursue it further
 in a future release.
+
+'''
