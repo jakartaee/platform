@@ -1,4 +1,4 @@
-[[a567]]
+Jakarta Enterprise Beans[[a567]]
 == Resources, Naming, and Injection
 
 This chapter describes how applications
@@ -8,7 +8,7 @@ be injected into application components. These requirements are based on
 annotations defined in the Java Metadata specification and features
 defined in the Java Naming and Directory Interface™ (JNDI)
 specification. The _Resource_ annotation described here is defined in
-more detail in the Common Annotations specification. The _EJB_
+more detail in the Jakarta Annotations specification. The _EJB_
 annotation described here is defined in more detail in the Enterprise
 JavaBeans specification. The _PersistenceUnit_ and _PersistenceContext_
 annotations described here are defined in more detail in the Java
@@ -48,10 +48,11 @@ Application Assembler, Deployer, and Jakarta EE Product Provider.
 and access the application component’s naming environment. The section
 illustrates the use of the application component’s naming environment
 for generic customization of the application component’s business logic.
-* <<a936, Enterprise JavaBeans™ (EJB) References>>,” defines the interfaces for
+* <<a936, Jakarta Enterprise Beans References>>,” defines the interfaces for
 obtaining the business interface, no-interface view, or home interface
-of an enterprise bean using an EJB reference. An EJB reference is a
-special entry in the application component’s environment.
+of an enterprise bean using a Jakarta Enterprise Bean reference. A Jakarta
+Enterprise Bean reference is a special entry in the application component’s
+environment.
 * <<a1118, Web Service References>>,” refers to the specification for web service
 references.
 * <<a1120, Resource Manager Connection Factory References>>,” defines the interfaces
@@ -95,11 +96,11 @@ in the component’s environment.
 * <<a1688, DataSource Resource Definition>>,” describes the use by eligible
 application components of references to _DataSource_ resources in the
 component’s environment.
-* <<a1756, JMS Connection Factory Resource Definition>>,” describes the use by
-eligible application components of references to JMS _ConnectionFactory_
+* <<a1756, Jakarta Messaging Connection Factory Resource Definition>>,” describes the use by
+eligible application components of references to Jakarta Messaging _ConnectionFactory_
 resources in the component’s environment.
-* <<a1817, JMS Destination Definition>>,” describes the use by eligible application
-components of references to JMS _Destination_ resources in the
+* <<a1817, Jakarta Messaging Destination Definition>>,” describes the use by eligible application
+components of references to Jakarta Messaging _Destination_ resources in the
 component’s environment.
 * <<a1863, Mail Session Definition>>,” describes the use by eligible application
 components of references to Mail _Session_ resources in the component’s
@@ -113,12 +114,12 @@ object resources in the component’s environment.
 * <<a2009, Default Data Source>>,” describes the use by eligible application
 components of references to the default DataSource in the component’s
 environment.
-* <<a2025, Default JMS Connection Factory>>,” describes the use by eligible
-application components of references to the default JMS
+* <<a2025, Default Jakarta Messaging Connection Factory>>,” describes the use by eligible
+application components of references to the default Jakarta Messaging
 ConnectionFactory in the component’s environment.
-* <<a2042, Default Concurrency Utilities Objects>>,” describes the use by eligible
-application components of references to the default Concurrency
-Utilities objects in the component’s environment.
+* <<a2042, Default Jakarta Concurrency Objects>>,” describes the use by eligible
+application components of references to the default Jakarta Concurrency objects
+in the component’s environment.
 * <<a2067, Managed Bean References>>,” describes the use by eligible application
 components of references to Managed Beans.
 * <<a2099, Bean Manager References>>,” describes the use by eligible application
@@ -209,12 +210,12 @@ shared with any other component. Components in a web module do not have
 their own private component namespace. __ See note below.
 *  _java:module_ – Names in this namespace are
 shared by all components in a module (for example, all enterprise beans
-in a single EJB module, or all components in a web module). __
+in a single enterprise bean module, or all components in a web module). __
 *  _java:app_ – Names in this namespace are
 shared by all components in all modules in a single application, where
 “single application” means a single deployment unit, such as a single
 ear file, a single module deployed standalone, etc. For example, a war
-file and an EJB jar file in the same ear file would both have access to
+file and a Jakarta Enterprise Beans jar file in the same ear file would both have access to
 resources in the _java:app_ namespace. __
 *  _java:global_ – Names in this namespace are
 shared by all applications deployed in an application server instance.
@@ -455,7 +456,7 @@ Standard
 
 Standard
 
-|JSP
+|Jakarta Server Pages
 |tag handlers
 
 tag library event listeners
@@ -464,7 +465,7 @@ tag library event listeners
 
 Standard
 
-|JSF
+|Jakarta Server Faces
 |managed classes<<a3653, 6>>
 |Standard
 
@@ -477,8 +478,8 @@ handlers
 
 Standard
 
-|JAX-RS
-|JAX-RS components<<a3654, 7>>
+|Jakarta RESTful Web Services
+|Jakarta RESTful Web Services components<<a3654, 7>>
 
 |Standard
 
@@ -486,7 +487,7 @@ Standard
 |endpoints
 |Standard
 
-|EJB
+|Jakarta Enterprise Beans
 |beans
 |Standard
 
@@ -571,7 +572,7 @@ hierarchy with methods on a superclass being called before methods on a
 subclass.
 
 The _PostConstruct_ and _PreDestroy_
-annotations are specified by the Common Annotations specification. All
+annotations are specified by the Jakarta Annotations specification. All
 classes that support injection also support the _PostConstruct_
 annotation. All classes for which the container manages the full
 lifecycle of the object also support the _PreDestroy_ annotation.
@@ -629,8 +630,8 @@ resources into the same target. The behavior of an application that does
 so is undefined.
 
 The rules for how a deployment descriptor
-entry may override an _EJB_ annotation are included in the EJB
-specification. The rules for how a deployment descriptor entry may
+entry may override an _EJB_ annotation are included in the Jakarta Enterprise
+Beans specification. The rules for how a deployment descriptor entry may
 override a _WebServiceRef_ annotation are included in the Web Services
 for Jakarta EE specification.
 
@@ -649,7 +650,7 @@ these entries. This is not an exhaustive list; consult the corresponding
 specification for details.
 
 * All enterprise beans in an application are
-given entries in the shared namespaces. See the EJB specification for
+given entries in the shared namespaces. See the Jakarta Enterprise Beans specification for
 details.
 * All web applications are given names in the
 shared namespaces. The names correspond to the complete URL of the web
@@ -1248,50 +1249,51 @@ descriptor, either directly ( _env-entry-value_ ) or indirectly (
 _lookup-name_ ), overrides any assignments made via annotations.
 
 [[a936]]
-=== Enterprise JavaBeans™ (EJB) References
+=== Jakarta Enterprise Beans References
 
 This section describes the programming and
 deployment descriptor interfaces that allow the Application Component
 Provider to refer to the homes of enterprise beans or to enterprise bean
-instances using “logical” names called EJB references. The EJB
-references are special entries in the application component’s naming
-environment. The Deployer binds the EJB reference to the enterprise
-bean’s business interface, no-interface view, or home interface in the
-target operational environment.
+instances using “logical” names called Jakarta Enterprise Beans references.
+The Jakarta Enterprise Beans references are special entries in the application
+component’s naming environment. The Deployer binds the Jakarta Enterprise Beans
+reference to the enterprise bean’s business interface, no-interface view, or
+home interface in the target operational environment.
 
 The deployment descriptor also allows the
-Application Assembler to link an EJB reference declared in one
+Application Assembler to link a Jakarta Enterprise Bean reference declared in one
 application component to an enterprise bean contained in an ejb-jar file
 in the same Jakarta EE application. The link is an instruction to the tools
-used by the Deployer describing the binding of the EJB reference to the
-business interface, no-interface view, or home interface of the
+used by the Deployer describing the binding of the Jakarta Enterprise Beans
+reference to the business interface, no-interface view, or home interface of the
 specified target enterprise bean. The same linking can also be specified
 by the Application Component Provider using annotations in the source
 code of the component.
 
 The requirements in this section only apply to
-Jakarta EE products that include an EJB container.
+Jakarta EE products that include a Jakarta Enterprise Beans container.
 
 ==== Application Component Provider’s Responsibilities
 
 This subsection describes the Application
-Component Provider’s view and responsibilities with respect to EJB
-references. It does so in three sections, the first describing
-annotations for injecting EJB references, the second describing the API
-for accessing EJB references, and the third describing the syntax for
-declaring the EJB references in a deployment descriptor
+Component Provider’s view and responsibilities with respect to Jakarta
+Enterprise Beans references. It does so in three sections, the first describing
+annotations for injecting Jakarta Enterprise Beans references, the second
+describing the API for accessing Jakarta Enterprise Beans references, and the
+third describing the syntax for declaring the Jakarta Enterprise Beans
+references in a deployment descriptor
 
-===== Injection of EJB Entries
+===== Injection of Jakarta Enterprise Beans Entries
 
 A field or a method of an application component
 may be annotated with the _EJB_ annotation. The _EJB_ annotation
-represents a reference to an EJB session bean or entity bean. The
-reference may be to a session bean’s business interface, to a session
+represents a reference to a Jakarta Enterprise Beans session bean or entity
+bean. The reference may be to a session bean’s business interface, to a session
 bean’s no-interface view, or to the local or remote home interface of a
 session bean or entity bean.
 
 The following example illustrates how an
-application component uses the EJB annotation to reference an instance
+application component uses the _EJB_ annotation to reference an instance
 of an enterprise bean. The referenced bean is a stateful session bean.
 The enterprise bean reference will have the name
 _java:comp/env/com.example.ExampleBean/myCart_ in the naming context,
@@ -1299,7 +1301,7 @@ where _ExampleBean_ is the name of the class of the referencing bean and
 _com.acme.example_ is its package. The target of the reference is not
 named and must be resolved by the Deployer, unless there is only one
 session bean component within the application that exposes a client view
-type that matches the EJB reference.
+type that matches the Jakarta Enterprise Bean reference.
 
 
 
@@ -1341,10 +1343,10 @@ private ShoppingCart myCart;
 
 
 As an alternative to _beanName_ , a reference
-to an EJB can use the global JNDI name for that EJB, or any of the other
-names mandated by the EJB specifications, by means of the _lookup_
-annotation element. The following example uses a JNDI name in the
-application namespace.
+to an enterprise bean can use the global JNDI name for that enterprise bean,
+or any of the other names mandated by the Jakarta Enterprise Beans
+specifications, by means of the _lookup_ annotation element. The following
+example uses a JNDI name in the application namespace.
 
 @EJB(
 
@@ -1360,8 +1362,8 @@ private ShoppingCart myOtherCart;
 
 
 If the _ShoppingCart_ bean were instead
-written to the EJB 2.x client view, the EJB reference would be to the
-bean’s home interface. For example:
+written to the Jakarta Enterprise Beans 2.x client view, the Jakarta Enterprise
+Bean reference would be to the bean’s home interface. For example:
 
 
 
@@ -1384,8 +1386,8 @@ private ShoppingCartHome myCartHome;
 
 If the _ShoppingCart_ bean were instead
 written to the no-interface client view and implemented by bean class
-_ShoppingCartBean.class_ , the EJB reference would have type
-_ShoppingCartBean.class_ . For example:
+_ShoppingCartBean.class_ , the Jakarta Enterprise Bean reference would have
+type _ShoppingCartBean.class_ . For example:
 
 
 
@@ -1404,17 +1406,17 @@ application"
 
 private ShoppingCartBean myCart;
 
-===== Programming Interfaces for EJB References
+===== Programming Interfaces for Jakarta Enterprise Beans References
 
-The Application Component Provider may use EJB
+The Application Component Provider may use Jakarta Enterprise Beans
 references to locate the business interface, no-interface view, or home
 interface of an enterprise bean as follows.
 
 * Assign an entry in the application component’s
 environment to the reference. (See subsection
-<<a1011, Declaration of EJB
-References>> for information on how EJB references are declared in the
-deployment descriptor.)
+<<a1011, Declaration of Jakarta Enterprise Beans
+References>> for information on how Jakarta Enterprise Beans references are
+declared in the deployment descriptor.)
 * This specification recommends, but does not
 require, that references to enterprise beans be organized in the _ejb_
 subcontext of the application component’s environment (that is, in the
@@ -1425,8 +1427,8 @@ view, or home interface of the referenced enterprise bean in the
 application component’s environment using JNDI.
 
 The following example illustrates how an
-application component uses an EJB reference to locate the home interface
-of an enterprise bean.
+application component uses a Jakarta Enterprise Bean reference to locate the
+home interface of an enterprise bean.
 
 public void changePhoneNumber(...) \{
 
@@ -1462,23 +1464,24 @@ initCtx.lookup("java:comp/env/ejb/EmplRecord");
 }
 
 In the example, the Application Component
-Provider assigned the environment entry _ejb/EmplRecord_ as the EJB
-reference name to refer to the remote home interface of an enterprise
-bean.
+Provider assigned the environment entry _ejb/EmplRecord_ as the Jakarta
+Enterprise Bean reference name to refer to the remote home interface of an
+enterprise bean.
 
 [[a1011]]
-===== Declaration of EJB References
+===== Declaration of Jakarta Enterprise Beans References
 
-Although the EJB reference is an entry in the
+Although the Jakarta Enterprise Bean reference is an entry in the
 application component’s environment, the Application Component Provider
 must not use a _env-entry_ element to declare it. Instead, the
-Application Component Provider must declare all the EJB references using
-either annotations on the application component’s code or the _ejb-ref_
-or _ejb-local-ref_ elements of the deployment descriptor. This allows
+Application Component Provider must declare all the Jakarta Enterprise Beans
+references using either annotations on the application component’s code or the
+_ejb-ref_ or _ejb-local-ref_ elements of the deployment descriptor. This allows
 the consumer of the application component’s JAR file (the Application
-Assembler or Deployer) to discover all the EJB references used by the
-application component. Deployment descriptor entries may also be used to
-specify injection of an EJB reference into an application component.
+Assembler or Deployer) to discover all the Jakarta Enterprise Beans references
+used by the application component. Deployment descriptor entries may also be used to
+specify injection of a Jakarta Enterprise Bean reference into an application
+component.
 
 Each _ejb-ref_ or _ejb-local-ref_ element
 describes the interface requirements that the referencing application
@@ -1493,27 +1496,28 @@ and _remote_ elements. The _ejb-local-ref_ element contains a
 _description_ element and the _ejb-ref-name_ , _ejb-ref-type_ ,
 _local-home_ , and _local_ elements
 
-The _ejb-ref-name_ element specifies the EJB
+The _ejb-ref-name_ element specifies the Jakarta Enterprise Bean
 reference name. Its value is the environment entry name used in the
 application component code. The optional _ejb-ref-type_ element
 specifies the expected type of the enterprise bean. Its value must be
 either _Entity_ or _Session_ . The _home_ and _remote_ or _local-home_
 and _local_ elements specify the expected Java programming language
 types of the referenced enterprise bean’s interface(s). If the reference
-is to an EJB 2.x remote client view interface, the _home_ element is
-required. Likewise, if the reference is to an EJB 2.x local client view
-interface, the _local-home_ element is required. The _remote_ element of
-the _ejb-ref_ element refers to either the business interface type or
-the component interface, depending on whether the reference is to a
-bean’s EJB 3.x or EJB 2.x remote client view. Likewise, the _local_
-element of the _ejb-local-ref_ element refers to either the business
-interface type, bean class type, or the component interface type,
-depending on whether the reference is to a bean’s EJB 3.x local business
-interface, no-interface view, or EJB 2.x local client view respectively.
+is to a Jakarta Enterprise Beans 2.x remote client view interface, the _home_
+element is required. Likewise, if the reference is to a Jakarta Enterprise
+Beans 2.x local client view interface, the _local-home_ element is required. The
+_remote_ element of the _ejb-ref_ element refers to either the business
+interface type or the component interface, depending on whether the reference is
+to a bean’s Jakarta Enterprise Beans 3.x or Jakarta Enterprise Beans 2.x remote
+client view. Likewise, the _local_ element of the _ejb-local-ref_ element refers
+to either the business interface type, bean class type, or the component
+interface type, depending on whether the reference is to a bean’s Jakarta
+Enterprise Beans 3.x local business interface, no-interface view, or Jakarta
+Enterprise Beans 2.x local client view respectively.
 
-An EJB reference is scoped to the application
+A Jakarta Enterprise Bean reference is scoped to the application
 component whose declaration contains the _ejb-ref_ or _ejb-local-ref_
-element. This means that the EJB reference is not accessible from other
+element. This means that the Jakarta Enterprise Bean reference is not accessible from other
 application components at runtime and that other application components
 may define _ejb-ref_ or _ejb-local-ref_ elements with the same
 _ejb-ref-name_ without causing a name conflict.
@@ -1522,7 +1526,7 @@ The lookup-name element specifies the JNDI
 name of an environment entry that provides a value for the reference.
 
 The following example illustrates the
-declaration of EJB references in the deployment descriptor.
+declaration of Jakarta Enterprise Beans references in the deployment descriptor.
 
 ...
 
@@ -1582,8 +1586,8 @@ declaration of EJB references in the deployment descriptor.
 ==== Application Assembler’s Responsibilities
 
 The Application Assembler can use the _ejb-link_
-element in the deployment descriptor to link an EJB reference to a
-target enterprise bean.
+element in the deployment descriptor to link a Jakarta Enterprise Beans
+reference to a target enterprise bean.
 
 The Application Assembler specifies the link to
 an enterprise bean as follows:
@@ -1603,7 +1607,7 @@ two syntaxes in the _ejb-link_ element of the referencing application
 component.
 * The Application Assembler specifies the
 module name of the ejb-jar file or war file containing the referenced
-enterprise bean and appends the ejb-name of the target bean separated by
+enterprise bean and appends the _ejb-name_ of the target bean separated by
 “/”. The module name is the base name of the bundle with no filename
 extension, unless specified in the deployment descriptor.
 * The Application Assembler specifies the
@@ -1612,19 +1616,19 @@ and appends the _ejb-name_ of the target bean separated from the path
 name by “ _#_ ”. The path name is relative to the referencing
 application component JAR file. In this manner, multiple beans with the
 same _ejb-name_ may be uniquely identified when the Application
-Assembler cannot change ejb-names.
+Assembler cannot change _ejb-name_s.
 * Alternatively to the use of _ejb-link_ , the
 Application Assembler may use the _lookup-name_ element to reference the
-target EJB component by means of one of its JNDI names. It is an error
-for both _ejb-link_ and _lookup-name_ to appear inside an _ejb-ref_
+target enterprise bean component by means of one of its JNDI names. It is an
+error for both _ejb-link_ and _lookup-name_ to appear inside an _ejb-ref_
 element.
 * The Application Assembler must ensure that
-the target enterprise bean is type-compatible with the declared EJB
+the target enterprise bean is type-compatible with the declared Jakarta Enterprise Beans
 reference. This means that the target enterprise bean must be of the
 type indicated in the _ejb-ref-type_ element, if present, and that the
 business interface, no-interface view, or home and remote interfaces of
 the target enterprise bean must be Java type-compatible with the type
-declared in the EJB reference.
+declared in the Jakarta Enterprise Bean reference.
 
 The following example illustrates the use of the
 _ejb-link_ element in the deployment descriptor. The enterprise bean
@@ -1748,27 +1752,27 @@ target bean.
 The Deployer is responsible for the following:
 
 * The Deployer must ensure that all the declared
-EJB references are bound to the business interfaces, no-interface views,
-or home interfaces of enterprise beans that exist in the operational
-environment. The Deployer may use, for example, the JNDI _LinkRef_
+Jakarta Enterprise Beans references are bound to the business interfaces,
+no-interface views, or home interfaces of enterprise beans that exist in the
+operational environment. The Deployer may use, for example, the JNDI _LinkRef_
 mechanism to create a symbolic link to the actual JNDI name of the
 target enterprise bean.
 * The Deployer must ensure that the target
-enterprise bean is type-compatible with the types declared for the EJB
-reference. This means that the target enterprise bean must be of the
-type indicated in the _ejb-ref-type_ element or specified via the _EJB_
+enterprise bean is type-compatible with the types declared for the Jakarta
+Enterprise Bean reference. This means that the target enterprise bean must be of
+the type indicated in the _ejb-ref-type_ element or specified via the _EJB_
 annotation, and that the business interface, no-interface view, or home
 and remote interfaces of the target enterprise bean must be Java
-type-compatible with the type declared in the EJB reference (if
+type-compatible with the type declared in the Jakarta Enterprise Bean reference (if
 specified).
-* If an EJB reference declaration includes the
+* If a Jakarta Enterprise Bean reference declaration includes the
 _ejb-link_ element, the Deployer should bind the enterprise bean
 reference to the enterprise bean specified as the link’s target. If an
-EJB annotation includes the _lookup_ element or the EJB reference
-declaration includes the _lookup-name_ element, the Deployer should bind
-the enterprise bean reference to the enterprise bean specified as the
-target of the lookup. It is an error for an EJB reference declaration to
-include both an _ejb-link_ and a _lookup-name_ element.
+_EJB_ annotation includes the _lookup_ element or the Jakarta Enterprise Beans
+reference declaration includes the _lookup-name_ element, the Deployer should
+bind the enterprise bean reference to the enterprise bean specified as the
+target of the lookup. It is an error for a Jakarta Enterprise Bean reference
+declaration to include both an _ejb-link_ and a _lookup-name_ element.
 
 The following example illustrates the use of
 the _lookup-name_ element to bind an _ejb-ref_ to a target enterprise
@@ -1801,18 +1805,18 @@ in the deployment descriptor.
 At the minimum, the tools must be able to:
 
 * Preserve the application assembly information
-in annotations or in the _ejb-link_ elements by binding an EJB reference
-to the business interface, no-interface view, or home interface of the
-specified target enterprise bean.
-* Inform the Deployer of any unresolved EJB
-references, and allow him or her to resolve an EJB reference by binding
-it to a specified compatible target enterprise bean.
+in annotations or in the _ejb-link_ elements by binding a Jakarta Enterprise
+Bean reference to the business interface, no-interface view, or home interface
+of the specified target enterprise bean.
+* Inform the Deployer of any unresolved Jakarta Enterprise Beans
+references, and allow him or her to resolve a Jakarta Enterprise Bean reference
+by binding it to a specified compatible target enterprise bean.
 
 [[a1118]]
 === Web Service References
 
 A web service reference is similar to an
-Enterprise JavaBeans reference, but is used to reference a web service.
+Jakarta Enterprise Bean reference, but is used to reference a web service.
 Web service references are fully specified in the Web Service
 specification and the JAX-WS specification.
 
@@ -1950,8 +1954,8 @@ require, that all resource manager connection factory references be
 organized in the subcontexts of the application component’s environment,
 using a different subcontext for each resource manager type. For
 example, all JDBC™ DataSource references should be declared in the
-_java:comp/env/jdbc_ subcontext, all JMS connection factories in the
-_java:comp/env/jms_ subcontext, all JavaMail connection factories in the
+_java:comp/env/jdbc_ subcontext, all Jakarta Messaging connection factories in the
+_java:comp/env/jms_ subcontext, all Jakarta Mail connection factories in the
 _java:comp/env/mail_ subcontext, and all URL connection factories in the
 _java:comp/env/url_ subcontext. Note that resource manager connection
 factory references declared via annotations will not, by default, appear
@@ -2162,11 +2166,11 @@ obtaining JDBC API connections.
 
 The Application Component Provider must use the
 _javax.jms.ConnectionFactory_ , the _javax.jms.QueueConnectionFactory_ ,
-or the _javax.jms.TopicConnectionFactory_ for obtaining JMS connections.
+or the _javax.jms.TopicConnectionFactory_ for obtaining Jakarta Messaging connections.
 
 The Application Component Provider must use the
 _javax.mail.Session_ resource manager connection factory type for
-obtaining JavaMail API connections.
+obtaining Jakarta Mail API connections.
 
 The Application Component Provider must use the
 _java.net.URL_ resource manager connection factory type for obtaining
@@ -2174,8 +2178,8 @@ URL connections.
 
 It is recommended that the Application Component
 Provider name JDBC API data sources in the _java:comp/env/jdbc_
-subcontext, all JMS connection factories in the _java:comp/env/jms_
-subcontext, all JavaMail API connection factories in the
+subcontext, all Jakarta Messaging connection factories in the _java:comp/env/jms_
+subcontext, all Jakarta Mail API connection factories in the
 _java:comp/env/mail_ subcontext, and all URL connection factories in the
 _java:comp/env/url_ subcontext. Note that resource manager connection
 factory references declared via annotations will not, by default, appear
@@ -2425,7 +2429,7 @@ environment. The Deployer binds the message destination references to
 administered message destinations in the target operational environment.
 
 The requirements in this section only apply to
-Jakarta EE products that include support for JMS.
+Jakarta EE products that include support for Jakarta Messaging.
 
 ==== Application Component Provider’s Responsibilities
 
@@ -2491,7 +2495,7 @@ descriptor.)
 * This specification recommends, but does not
 require, that all message destination references be organized in the
 appropriate subcontext of the component’s environment for the resource
-type (for example, in the _java:comp/env/jms_ JNDI context for JMS
+type (for example, in the _java:comp/env/jms_ JNDI context for Jakarta Messaging
 Destinations). Note that message destination references declared via
 annotations will not, by default, appear in any subcontext.
 * Look up the administered object in the
@@ -2499,7 +2503,7 @@ application component’s environment using JNDI.
 
 The following example illustrates how an
 application component uses a message destination reference to locate a
-JMS Destination.
+Jakarta Messaging Destination.
 
 // Obtain the default initial JNDI context.
 
@@ -2507,7 +2511,7 @@ Context initCtx = new InitialContext();
 
 
 
-// Look up the JMS StockQueue in the
+// Look up the Jakarta Messaging StockQueue in the
 environment.
 
 Object result =
@@ -2521,7 +2525,7 @@ javax.jms.Queue queue = (javax.jms.Queue)result;
 
 In the example, the Application Component
 Provider assigned the environment entry _jms/StockQueue_ as the message
-destination reference name to refer to a JMS queue.
+destination reference name to refer to a Jakarta Messaging queue.
 
 [[a1295]]
 ===== Declaration of Message Destination References in Deployment Descriptor
@@ -2552,7 +2556,7 @@ default, the name of the message destination reference is relative to
 the _java:comp/env_ context (for example, the name should be
 _jms/StockQueue_ rather than _java:comp/env/jms/StockQueue_ ). The
 _message-destination-type_ element specifies the expected type of the
-referenced destination. For example, in the case of a JMS Destination,
+referenced destination. For example, in the case of a Jakarta Messaging Destination,
 its value might be _javax.jms.Queue_ . The _message-destination-type_
 element is optional if an injection target is specified for this message
 destination reference; in this case the _message-destination-type_
@@ -2580,7 +2584,7 @@ descriptor.
 
  <description>
 
- This is a reference to a JMS queue used in the
+ This is a reference to a Jakarta Messaging queue used in the
 
  processing of Stock info
 
@@ -2701,7 +2705,7 @@ binding it to a specified compatible target object in the environment.
 === UserTransaction References
 
 Certain Jakarta EE application component types are
-allowed to use the JTA _UserTransaction_ interface to start, commit, and
+allowed to use the Jakarta Transactions _UserTransaction_ interface to start, commit, and
 abort transactions. Such application components can find an appropriate
 object implementing the _UserTransaction_ interface by looking up the
 JNDI name _java:comp/UserTransaction_ or by requesting injection of a
@@ -2791,7 +2795,7 @@ environment reference. Such a deployment descriptor entry may be used to
 specify injection of a _UserTransaction_ object.
 
 The requirements in this section only apply to
-Jakarta EE products that include support for JTA.
+Jakarta EE products that include support for Jakarta Transactions.
 
 ==== Application Component Provider’s Responsibilities
 
@@ -2803,7 +2807,7 @@ _UserTransaction_ object.
 Only some application component types are
 required to be able to access a _UserTransaction_ object; see
 _<<a2159, Jakarta EE
-Technologies>>_ in this specification and the EJB specification for
+Technologies>>_ in this specification and the Jakarta Enterprise Beans specification for
 details.
 
 ==== Jakarta EE Product Provider’s Responsibilities
@@ -2815,9 +2819,9 @@ specification.
 [[a1376]]
 === TransactionSynchronizationRegistry References
 
-The JTA _TransactionSynchronizationRegistry_
+The Jakarta Transactions _TransactionSynchronizationRegistry_
 interface may be used by system level components such as persistence
-managers that may be packaged with EJB or web application components.
+managers that may be packaged with enterprise bean or web application components.
 Such components can find an appropriate object implementing the
 _TransactionSynchronizationRegistry_ interface by looking up the JNDI
 name _java:comp/TransactionSynchronizationRegistry_ or by requesting
@@ -2839,7 +2843,7 @@ entry may be used to specify injection of a
 _TransactionSynchronizationRegistry_ object.
 
 The requirements in this section only apply to
-Jakarta EE products that include support for JTA.
+Jakarta EE products that include support for Jakarta Transactions.
 
 ==== Application Component Provider’s Responsibilities
 
@@ -3596,8 +3600,8 @@ executing in a Jakarta EE application client container by using the
 pre-defined JNDI name _java:comp/InAppClientContainer_ . This property
 is represented by a _Boolean_ object. If the application is running in a
 Jakarta EE application client container, the value of this property is
-true. If the application is running in a Jakarta EE web or EJB container,
-the value of this property is false.
+true. If the application is running in a Jakarta EE web or enterprise bean
+container, the value of this property is false.
 
 ==== Application Component Provider’s Responsibilities
 
@@ -3678,7 +3682,7 @@ reference may also be declared in a deployment descriptor in the same
 way as a resource environment reference.
 
 In order to customize the returned
-_ValidatorFactory_ , an EJB, web or application client module may
+_ValidatorFactory_ , a Jakarta Enterprise Beans, web or application client module may
 specify a Bean Validation XML deployment descriptor, as described in the
 Bean Validation specification.
 
@@ -3893,7 +3897,7 @@ any of the JNDI namespaces described in
 Environment Namespaces>>”.
 
 A _DataSource_ resource may be defined in a
-web module, EJB module, application client module, or application
+web module, enterprise bean module, application client module, or application
 deployment descriptor using the _data-source_ element.
 
 For example:
@@ -4065,18 +4069,18 @@ isolation. If the request cannot be satisfied, the Product Provider must
 reject the deployment.
 
 [[a1756]]
-==== JMS Connection Factory Resource Definition
+==== Jakarta Messaging Connection Factory Resource Definition
 
-An application may define a JMS
+An application may define a Jakarta Messaging
 _ConnectionFactory_ resource.
 
-The JMS _ConnectionFactory_ resource may be
+The Jakarta Messaging _ConnectionFactory_ resource may be
 defined in any of the JNDI namespaces described in
 <<a616, Application Component
 Environment Namespaces>>”.
 
-A JMS _ConnectionFactory_ resource may be
-defined in a web module, EJB module, application client module, or
+A Jakarta Messaging _ConnectionFactory_ resource may be
+defined in a web module, enterprise bean module, application client module, or
 application deployment descriptor using the jms-connection-factory
 element.
 
@@ -4088,7 +4092,7 @@ For example:
 
  <description>
 
- Sample JMS ConnectionFactory definition
+ Sample Jakarta Messaging ConnectionFactory definition
 
  </description>
 
@@ -4134,7 +4138,7 @@ For example:
 
 
 
-A JMS _ConnectionFactory_ resource may also
+A Jakarta Messaging _ConnectionFactory_ resource may also
 be defined using the _JMSConnectionFactoryDefinition_ annotation on a
 container-managed class, such as a servlet or enterprise bean class.
 
@@ -4159,10 +4163,10 @@ it's often useful while testing. Passwords, or other parts of the
 _JMSConnectionFactoryDefinition_ annotation, can be overridden by a
 deployment descriptor when the application is deployed.)
 
-Once defined, a JMS _ConnectionFactory_
+Once defined, a Jakarta Messaging _ConnectionFactory_
 resource may be referenced by a component using the _resource-ref_
 deployment descriptor element or the _Resource_ annotation. For example,
-the above JMS _ConnectionFactory_ could be referenced as follows:
+the above Jakarta Messaging _ConnectionFactory_ could be referenced as follows:
 
 
 
@@ -4183,7 +4187,7 @@ the above JMS _ConnectionFactory_ could be referenced as follows:
 The following
 _JMSConnectionFactoryDefinition_ annotation elements (and corresponding
 XML deployment descriptor elements) are considered to specify an address
-for a JMS _ConnectionFactory_ resource: _resourceAdapter_ .
+for a Jakarta Messaging _ConnectionFactory_ resource: _resourceAdapter_ .
 
 The following
 _JMSConnectionFactoryDefinition_ annotation elements (and corresponding
@@ -4193,7 +4197,7 @@ service elements: _maxPoolSize_ , _minPoolSize_ .
 ===== Application Component Provider’s Responsibilities
 
 The Application Component Provider is
-responsible for the definition of a JMS _ConnectionFactory_ using a
+responsible for the definition of a Jakarta Messaging _ConnectionFactory_ using a
 _JMSConnectionFactoryDefinition_ annotation or the
 _jms-connection-factory_ deployment descriptor element.
 
@@ -4222,25 +4226,25 @@ definition types are described in
 All Resource Definition Types>>”.
 
 [[a1817]]
-==== JMS Destination Definition
+==== Jakarta Messaging Destination Definition
 
-An application may define a JMS _Destination_
-resource. A JMS _Destination_ resource is a JMS Queue or Topic.
+An application may define a Jakarta Messaging _Destination_
+resource. A Jakarta Messaging _Destination_ resource is a Jakarta Messaging Queue or Topic.
 
-The JMS _Destination_ resource may be defined
+The Jakarta Messaging _Destination_ resource may be defined
 in any of the JNDI namespaces described in
 <<a616, Application Component
 Environment Namespaces>>”.
 
-A JMS _Destination_ resource may be defined
-in a web module, EJB module, application client module, or application
+A Jakarta Messaging _Destination_ resource may be defined
+in a web module, enterprise bean module, application client module, or application
 deployment descriptor using the _jms-destination_ element.
 
 For example:
 
 <jms-destination>
 
- <description>Sample JMS Destination
+ <description>Sample Jakarta Messaging Destination
 definition</description>
 
  <name> _java:app/MyJMSDestination_ </name>
@@ -4273,7 +4277,7 @@ definition</description>
 
 
 
-A JMS _Destination_ resource may also be
+A Jakarta Messaging _Destination_ resource may also be
 defined using the _JMSDestinationDefinition_ annotation on a
 container-managed class, such as a servlet or enterprise bean class.
 
@@ -4293,7 +4297,7 @@ The _JMSDestinationDefinition_ annotation can
 be overridden by a deployment descriptor when the application is
 deployed.
 
-Once defined, a JMS _Destination_ resource
+Once defined, a Jakarta Messaging _Destination_ resource
 may be referenced by a component using either the _resource-env-ref_ or
 _message-destination-ref_ deployment descriptor element or the
 _Resource_ annotation. For example, the above _Destination_ could be
@@ -4317,13 +4321,13 @@ referenced as follows:
 
 The following _JMSDestinationDefinition_
 annotation elements (and corresponding XML deployment descriptor
-elements) are considered to specify an address for a JMS _Destination_
+elements) are considered to specify an address for a Jakarta Messaging _Destination_
 resource: _resourceAdapter_ , _destinationName_ .
 
 ===== Application Component Provider’s Responsibilities
 
 The Application Component Provider is
-responsible for the definition of a JMS _Destination_ using a
+responsible for the definition of a Jakarta Messaging _Destination_ using a
 _JMSDestinationDefinition_ annotation or the _jms-destination_
 deployment descriptor element.
 
@@ -4356,7 +4360,7 @@ any of the JNDI namespaces described in
 Environment Namespaces>>”.
 
 A Mail _Session_ resource may be defined in a
-web module, EJB module, application client module, or application
+web module, enterprise bean module, application client module, or application
 deployment descriptor using the _mail-session_ element.
 
 For example:
@@ -4498,7 +4502,7 @@ JNDI namespaces described in
 Environment Namespaces>>”.
 
 A Connector connection factory resource may
-be defined in a web module, EJB module, or application deployment
+be defined in a web module, enterprise bean module, or application deployment
 descriptor using the _connection-factory_ element.
 
 For example:
@@ -4626,7 +4630,7 @@ defined in any of the JNDI namespaces described in
 Environment Namespaces>>”.
 
 An administered object resource may be
-defined in a web module, EJB module, or application deployment
+defined in a web module, enterprise bean module, or application deployment
 descriptor using the _administered-object_ element. Properties that are
 specified are used in the configuration of the administered object, as
 described in the Connector specification.
@@ -4786,21 +4790,21 @@ Product Provider to a preconfigured data source for the Jakarta EE Product
 Provider's default database.
 
 [[a2025]]
-=== Default JMS Connection Factory
+=== Default Jakarta Messaging Connection Factory
 
 The Jakarta EE Platform requires that a Jakarta EE
-Product Provider provide a JMS provider in the operational environment
+Product Provider provide a Jakarta Messaging provider in the operational environment
 (see <<a104, Jakarta™ Message
-Service (JMS)>>”) . The Jakarta EE Product Provider must also provide a
-preconfigured, JMS ConnectionFactory for use by the application in
-accessing this JMS provider.
+Service (Jakarta Messaging)>>”) . The Jakarta EE Product Provider must also provide a
+preconfigured, Jakarta Messaging ConnectionFactory for use by the application in
+accessing this Jakarta Messaging provider.
 
 The Jakarta EE Product Provider must make the
-default JMS connection factory accessible to the application under the
+default Jakarta Messaging connection factory accessible to the application under the
 JNDI name _java:comp/DefaultJMSConnectionFactory_ .
 
 The Application Component Provider or
-Application Assembler may explicitly bind a JMS ConnectionFactory
+Application Assembler may explicitly bind a Jakarta Messaging ConnectionFactory
 resource reference to the default connection factory using the _lookup_
 element of the _Resource_ annotation or the _lookup-name_ element of the
 _resource-ref_ deployment descriptor element. For example,
@@ -4818,10 +4822,10 @@ ConnectionFactory myJMScf;
 
 In the absence of such a binding, or an
 equivalent product-specific binding, the mapping of the reference will
-default to a JMS connection factory for the product's JMS provider.
+default to a Jakarta Messaging connection factory for the product's Jakarta Messaging provider.
 
 For example, the following will map to a
-preconfigured connection factory for the product's default JMS provider:
+preconfigured connection factory for the product's default Jakarta Messaging provider:
 
 
 
@@ -4832,19 +4836,19 @@ ConnectionFactory myJMScf;
 ==== Jakarta EE Product Provider's Responsibilities
 
 The Jakarta EE Product Provider must provide a
-JMS provider in the operational environment. The Jakarta EE Product
-Provider must also provide a preconfigured, default JMS connection
+Jakarta Messaging provider in the operational environment. The Jakarta EE Product
+Provider must also provide a preconfigured, default Jakarta Messaging connection
 factory for use by the application in accessing this provider under the
 JNDI name _java:comp/DefaultJMSConnectionFactory_ .
 
-If a JMS ConnectionFactory resource reference
-is not mapped to a specific JMS connection factory by the Application
+If a Jakarta Messaging ConnectionFactory resource reference
+is not mapped to a specific Jakarta Messaging connection factory by the Application
 Component Provider, Application Assembler, or Deployer, it must be
-mapped by the Jakarta EE Product Provider to a preconfigured JMS connection
-factory for the Jakarta EE Product Provider's default JMS provider.
+mapped by the Jakarta EE Product Provider to a preconfigured Jakarta Messaging connection
+factory for the Jakarta EE Product Provider's default Jakarta Messaging provider.
 
 [[a2042]]
-=== Default Concurrency Utilities Objects
+=== Default Jakarta Concurrency Objects
 
 The Jakarta EE Platform requires that a Jakarta EE
 Product Provider provide a preconfigured default managed executor
@@ -4853,7 +4857,7 @@ preconfigured default managed thread factory, and a preconfigured
 default context service for use by the application.
 
 The Jakarta EE Product Provider must make the
-default Concurrency Utilities for Jakarta EE objects accessible to the
+default Jakarta Concurrency objects accessible to the
 application under the following JNDI names:
 
 _java:comp/ DefaultManagedExecutorService_ for the preconfigured managed executor service
@@ -4868,7 +4872,7 @@ preconfigured context service
 
 The Application Component Provider or
 Application Assembler may explicitly bind a resource reference to a
-default Concurrency Utilities object using the _lookup_ element of the
+default Jakarta Concurrency object using the _lookup_ element of the
 _Resource_ annotation or the _lookup-name_ element of the _resource-ref_
 deployment descriptor element. For example,
 
@@ -4915,11 +4919,11 @@ JNDI name _java:comp/DefaultManagedThreadFactory_ ;
 for use by the application in accessing this service under the JNDI name
 _java:comp/DefaultContextService_ .
 
-If a Concurrency Utilities object resource
+If a Jakarta Concurrency object resource
 environment reference is not mapped to a specific configured object by
 the Application Component Provider, Application Assembler, or Deployer,
 it must be mapped by the Jakarta EE Product Provider to a preconfigured
-Concurrency Utilities object for the Jakarta EE Product Provider.
+Jakarta Concurrency object for the Jakarta EE Product Provider.
 
 [[a2067]]
 === Managed Bean References
@@ -4930,7 +4934,7 @@ to obtain instances of a Managed Bean.
 
 An instance of a named Managed Bean can be
 obtained by looking up its name in JNDI using the same naming scheme
-used for EJB components:
+used for Jakarta Enterprise Beans components:
 
 
 
@@ -5076,7 +5080,7 @@ Per the CDI specification, dependency
 injection is supported on managed beans. There are currently three ways
 for a class to become a managed bean:
 
-. Being an EJB session bean component.
+. Being a Jakarta Enterprise Beans session bean component.
 . Being annotated with the _ManagedBean_
 annotation.
 . Satisfying the conditions described in the
