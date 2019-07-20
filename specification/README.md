@@ -11,7 +11,7 @@ Building
 Prerequisites:
 
 * JDK8+
-* Maven 3.0.3+
+* Maven 3.0.5+
 
 Run the full build:
 
