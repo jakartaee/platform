@@ -93,11 +93,12 @@ some technologies are marked Optional, as described in the next section.
 |Status
 
 |Enterprise Beans 3.2
-|{empty}Y<<a3661, 14>>
+|Y footnote:[Client APIs only.]
 |Y
 |Y
-|{empty}REQ, OPT<<a3662, 15>>,
-POPT<<a3663, 16>>
+|REQ, OPT footnote:[Jakarta™ Enterprise Beans entity beans and associated query
+language only.],
+POPT footnote:[IIOP interoperability, including Jakarta(TM) Enterprise Beans 2.x and 1.x client view.]
 
 |Servlet 4.0
 |N
@@ -201,8 +202,9 @@ POPT<<a3663, 16>>
 |Y
 |REQ
 
-|{empty}Deployment
-1.2<<a3664, 17>>
+|Deployment 1.2 footnote:[See
+<<a2730, Jakarta™ Enterprise Edition Deployment API 1.2 Requirements (Optional)>> for
+details.]
 |N
 |N
 |N
@@ -304,7 +306,10 @@ implementation includes support for a technology marked as Optional,
 that technology must be supported in the containers specified above. If
 a product implementation does not support a technology marked as
 Optional, it must not include the APIs for that
-technology.<<a3665, 18>>
+technology.footnote:[Note that a component specification is permitted to specify
+an exception to this in order to accommodate interface type dependencies—for example,
+the Jakarta™ Enterprise Beans SessionContext dependency on the
+_javax.xml.rpc.handler.MessageContext_ type.]
 
 [[a2331]]
 ==== Pruned Java Technologies
@@ -599,11 +604,16 @@ Components
 
 |java.io.FilePermission
 |*
-|read,write <<a3666, 19>>
+|read,write footnote:[The FilePermission * specifically refers to all files
+under the current directory.]
 
 |java.io.FilePermission
 |file:${javax.servlet.context.tempdir}
-|read, write <<a3667, 20>>
+|read, write footnote:[(For Web components only.) It must be possible to grant
+FilePermission for the tempdir provided to web components through the ServletContext
+regardless of its physical location. In addition, it must be possible to grant
+FilePermission for the tempdir without granting it for all files under
+the current directory.]
 
 |java.util.PropertyPermission
 |*
@@ -658,7 +668,12 @@ application module.
 
 |java.lang.RuntimePermission
 |<any except loadLibrary.* and
-queuePrintJob> <<a3668, 21>>
+queuePrintJob> footnote:[It must be possible
+to deploy an application module such that no instances of
+java.lang.RuntimePermission are granted to the components in the
+application module except those with a target of loadlibrary.* for any
+specific library or a target of queuePrintJob. Ideally a container would
+be capable of restricting those as well, but that is not a requirement.]
 |
 
 |java.net.NetPermission
@@ -671,7 +686,9 @@ queuePrintJob> <<a3668, 21>>
 
 |java.util.PropertyPermission
 |<any>
-|write <<a3669, 22>>
+|write footnote:[It must be possible to deploy an application module such that no
+instances of java.util.PropertyPermission are granted that allow writing any
+property.]
 
 |java.util.logging.LoggingPermission
 |
@@ -2021,3 +2038,5 @@ Injection>>” for more detail.
 
 The DI specification can be found at
 _https://jakarta.ee/specifications/dependency-injection_ .
+
+'''

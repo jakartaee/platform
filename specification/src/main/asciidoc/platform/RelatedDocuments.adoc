@@ -7,7 +7,7 @@ specification are included in parentheses.
 
 _Jakarta™ EE Platform Specification Version 8_. Available at: _https://jakarta.ee/specifications/full-platform/8.0.1_
 
-_Java™ Platform, Standard Edition, v8 API Specification (Java SE specification)_. Available at: _http://docs.oracle.com/javase/8/docs/_
+_Java™ Platform, Standard Edition, v8 API Specification (Java SE specification)_. Available at: _https://docs.oracle.com/javase/8/docs/_
 
 _Jakarta™ Enterprise Beans Specification, Version 3.2_. Available at: _https://jakarta.ee/specifications/enterprise-beans/3.2.3_
 
@@ -19,19 +19,19 @@ _Jakarta™ Annotations Specification, Version 1.3_. Available at: _https://jaka
 
 _Jakarta™ Servlet Specification, Version 4.0_. Available at: _https://jakarta.ee/specifications/servlet/4.0.2_
 
-_JDBC™ 4.2 API (JDBC specification)_. Available at: _http://jcp.org/en/jsr/detail?id=221_
+_JDBC™ 4.2 API (JDBC specification)_. Available at: _https://jcp.org/en/jsr/detail?id=221_
 
-_Java™ Naming and Directory Interface 1.2 Specification (JNDI specification)_. Available at: _http://docs.oracle.com/javase/8/docs/technotes/guides/jndi/index.html_
+_Java™ Naming and Directory Interface 1.2 Specification (JNDI specification)_. Available at: _https://docs.oracle.com/javase/8/docs/technotes/guides/jndi/index.html_
 
 _Jakarta™ Messaging Specification, Version 2.0_. Available at: _https://jakarta.ee/specifications/messaging/2.0.2_
 
 _Jakarta™ Transaction Specification, Version 1.2_. Available at: _https://jakarta.ee/specifications/transactions/1.3.2_
 
-_Java™ Transaction Service, Version 1.0_ (JTS specification)_. Available at: _http://www.oracle.com/technetwork/java/javaee/jts-spec095-1508547.pdf_
+_Java™ Transaction Service, Version 1.0_ (JTS specification)_. Available at: _https://www.oracle.com/technetwork/java/javaee/jts-spec095-1508547.pdf_
 
 _Jakarta™ Mail Specification, Version 1.6_. Available at: _https://jakarta.ee/specifications/mail/1.6.3_
 
-_JavaBeans™ Activation Framework Specification Version 1.1 (JAF specification)_. Available at: _http://www.oracle.com/technetwork/java/javase/tech/index-jsp-138795.html_
+_JavaBeans™ Activation Framework Specification Version 1.1 (JAF specification)_. Available at: _https://www.oracle.com/technetwork/java/javase/tech/index-jsp-138795.html_
 
 _Jakarta™ Connectors Specification, Version 1.7_. Available at: _https://jakarta.ee/specifications/connectors/1.7.2_
 
@@ -39,7 +39,7 @@ _Jakarta™ XML Web Services Specification, Version 1.4_. Available at: _https:/
 
 _Jakarta™ XML RPC Specification, Version 1.1_. Available at: _https://jakarta.ee/specifications/xml-rpc/1.1.3_
 
-_SOAP with Attachments API for Java™ 1.3 (SAAJ specification)_. Available at: _http://download.oracle.com/otndocs/jcp/jaxm-1.3-mrel-spec-oth-JSpec/_
+_SOAP with Attachments API for Java™ 1.3 (SAAJ specification)_. Available at: _https://download.oracle.com/otndocs/jcp/jaxm-1.3-mrel-spec-oth-JSpec/_
 
 _Jakarta™ XML Registries Specification, Version 1.0_. Available at: _https://jakarta.ee/specifications/xml-registries/1.0.9_
 
@@ -86,154 +86,45 @@ _Jakarta™ Concurrency Specification, Version 1.0_. Available at: _https://jaka
 _Jakarta™ Batch Specification, Version 1.0_. Available at: _https://jakarta.ee/specifications/batch/1.0_
 
 Extension Mechanism Architecture, Available at
-_http://docs.oracle.com/javase/8/docs/technotes/guides/extensions/index.html_
-.
+_https://docs.oracle.com/javase/8/docs/technotes/guides/extensions/index.html_.
 
 Optional Package Versioning, Available at
-_http://docs.oracle.com/javase/8/docs/technotes/guides/extensions/index.html_
-.
+_https://docs.oracle.com/javase/8/docs/technotes/guides/extensions/index.html_.
 
 JAR File Specification, Available at
-_http://docs.oracle.com/javase/8/docs/technotes/guides/jar/jar.html_ .
+_https://docs.oracle.com/javase/8/docs/technotes/guides/jar/jar.html_ .
 
- _The Common Object Request Broker: Architecture
+_The Common Object Request Broker: Architecture
 and Specification_ (CORBA 2.3.1 specification), Available at
-_http://www.omg.org/cgi-bin/doc?formal/99-10-07_ .
+_https://www.omg.org/cgi-bin/doc?formal/99-10-07_ .
 
 CORBA 2.6 - Chapter 26 - Secure
 Interoperability, Available at
-_http://www.omg.org/cgi-bin/doc?formal/01-12-30_ .
+_https://www.omg.org/cgi-bin/doc?formal/01-12-30_ .
 
- _IDL To Java™ Language Mapping Specification_ ,
-Available at _http://www.omg.org/cgi-bin/doc?ptc/2000-01-08_ .
+_IDL To Java™ Language Mapping Specification_ ,
+Available at _https://www.omg.org/cgi-bin/doc?ptc/2000-01-08_ .
 
- _Java™ Language To IDL Mapping Specification_ ,
-Available at _http://www.omg.org/cgi-bin/doc?ptc/2000-01-06_ .
+_Java™ Language To IDL Mapping Specification_ ,
+Available at _https://www.omg.org/cgi-bin/doc?ptc/2000-01-06_ .
 
- _Interoperable Naming Service,_ Available at
-_http://www.omg.org/cgi-bin/doc?ptc/00-08-07_ .
+_Interoperable Naming Service,_ Available at
+_https://www.omg.org/cgi-bin/doc?ptc/00-08-07_ .
 
- _Transaction Service Specification_ (OTS
+_Transaction Service Specification_ (OTS
 specification), Available at
-_http://www.omg.org/cgi-bin/doc?formal/2001-11-03_ .
+_https://www.omg.org/cgi-bin/doc?formal/2001-11-03_ .
 
- _The SSL Protocol, Version 3.0._ Available at
-_http://tools.ietf.org/html/rfc6101_ .
+_The SSL Protocol, Version 3.0._ Available at
+_https://tools.ietf.org/html/rfc6101_ .
 
 Architectural Styles and the Design of
 Network-based Software Architectures (REST), R. Fielding, Ph.d
 dissertation, University of California, Irvine, 2000. Available at
-_http://roy.gbiv.com/pubs/dissertation/top.html_ .
+_https://roy.gbiv.com/pubs/dissertation/top.html_ .
 
-Java _™_ Community Process
+Java™ Community Process
 _SM_ 2: Process Document, Version 2.10 (March 21, 2016). Available at
-_http://jcp.org/en/procedures/jcp2_ .
+_https://jcp.org/en/procedures/jcp2_ .
 
-
-
-
-
-
-
-'''''
-
-[.footnoteNumber]# 1.# [[a3648]]While the client is
-stateless with respect to authentication, the client requires that the
-server act as its proxy and maintain its login context. A reference to
-the login session state is made available to the client through cookies
-or URL re-writing. If SSL mutual authentication is used as the
-authentication protocol, the client can manage its own authentication
-context, and need not depend on references to the login session state.
-
-[.footnoteNumber]# 2.# [[a3649]]A product instance
-corresponds to a single installation of a Jakarta™ EE product. A single
-product instance might use multiple operating system processes, or might
-support multiple host machines as part of a distributed container. In
-contrast, it might be possible to run multiple instances of a product on
-a single host machine, or possibly even in a single Java virtual
-machine, for example, as part of a virtual hosting solution. The
-transaction propagation requirement applies within a single product
-instance and is independent of the number of Java virtual machines,
-operating system processes, or host machines used by the product
-instance.
-
-[.footnoteNumber]# 3.# [[a3650]]For a Jakarta™ Server Pages page, this
-requirement applies to the _service_ method of the equivalent Jakarta™ Server Pages page
-Implementation Class.
-
-[.footnoteNumber]# 4.# [[a3651]]Note that Jakarta™ Managed Beans are required to have access to the JNDI naming environment
-of their calling component.
-
-[.footnoteNumber]# 5.# [[a3652]]Note that the use of
-interceptors defined by means of the Interceptors annotation is
-supported in the absence of Jakarta™ Contexts and Dependency Injection for Jakarta™ Enterprise Beans and Jakarta™ Managed Bean components.
-
-[.footnoteNumber]# 6.# [[a3653]]See the Jakarta™ Server Faces
-specification section Jakarta™ Server Faces Managed Classes and Jakarta™ Annotations” for
-a list of these managed classes.
-
-[.footnoteNumber]# 7.# [[a3654]]Resource, context, and dependency
-injection is supported only in Jakarta™ RESTful Web Services components managed by Jakarta™ Contexts and Dependency Injection.
-
-[.footnoteNumber]# 8.# [[a3655]]Interceptors cannot be
-bound to other interceptors.
-
-[.footnoteNumber]# 9.# [[a3656]]See the Jakarta™ Contexts and Dependency Injection
-specification for requirements related to resource injection in Jakarta™ Contexts and Dependency Injection
-managed beans.
-
-[.footnoteNumber]# 10.# [[a3657]]We use this term to
-refer to classes that become managed beans per the rules in the Jakarta™ Contexts and Dependency Injection
-specification, thus excluding managed beans declared using the
-_ManagedBean_ annotation as well as Jakarta™ Enterprise Beans session beans, both of which
-would be managed beans even in the absence of Jakarta™ Contexts and Dependency Injection.
-
-[.footnoteNumber]# 11.# [[a3658]]Interceptors cannot
-be bound to decorators.
-
-[.footnoteNumber]# 12.# [[a3659]]Connections obtained
-from the same resource manager connection factory through a different
-resource manager connection factory reference may be shareable.
-
-[.footnoteNumber]# 13.# [[a3660]]Note that the
-Deployer is not prohibited from overriding the resource address.
-
-[.footnoteNumber]# 14.# [[a3661]]Client APIs only.
-
-[.footnoteNumber]# 15.# [[a3662]]Jakarta™ Enterprise Beans entity beans and
-associated Jakarta™ Enterprise Beans QL only.
-
-[.footnoteNumber]# 16.# [[a3663]]IIOP
-interoperability, including EJB 2.x and 1.x client view.
-
-[.footnoteNumber]# 17.# [[a3664]]See
-<<a2730, Jakarta™ Enterprise Edition Deployment API 1.2 Requirements (Optional)>> for
-details.
-
-[.footnoteNumber]# 18.# [[a3665]]Note that a component
-specification is permitted to specify an exception to this in order to
-accommodate interface type dependencies—for example, the Jakarta™ Enterprise Beans
-SessionContext dependency on the javax.xml.rpc.handler.MessageContext
-type.
-
-[.footnoteNumber]# 19.# [[a3666]]The FilePermission *
-specifically refers to all files under the current directory.
-
-[.footnoteNumber]# 20.# [[a3667]](For Web components
-only.) It must be possible to grant FilePermission for the tempdir
-provided to web components through the ServletContext regardless of its
-physical location. In addition, it must be possible to grant
-FilePermission for the tempdir without granting it for all files under
-the current directory.
-
-[.footnoteNumber]# 21.# [[a3668]]It must be possible
-to deploy an application module such that no instances of
-java.lang.RuntimePermission are granted to the components in the
-application module except those with a target of loadlibrary.* for any
-specific library or a target of queuePrintJob. Ideally a container would
-be capable of restricting those as well, but that is not a requirement.
-
-[.footnoteNumber]# 22.# [[a3669]]It must be possible
-to deploy an application module such that no instances of
-java.util.PropertyPermission are granted that allow writing any
-property.
+'''

@@ -101,7 +101,17 @@ Enterprise Beans specification.
 
 Note that this transaction propagation
 requirement applies only to invocations of enterprise beans in the same
-Jakarta EE product instance as the invoking component. Invocations of enterprise
+Jakarta EE product instance footnote:[A product instance
+corresponds to a single installation of a Jakarta™ EE product. A single
+product instance might use multiple operating system processes, or might
+support multiple host machines as part of a distributed container. In
+contrast, it might be possible to run multiple instances of a product on
+a single host machine, or possibly even in a single Java virtual
+machine, for example, as part of a virtual hosting solution. The
+transaction propagation requirement applies within a single product
+instance and is independent of the number of Java virtual machines,
+operating system processes, or host machines used by the product
+instance.] as the invoking component. Invocations of enterprise
 beans in another Jakarta EE product instance (for example, using the Jakarta
 Enterprise Beans interoperability protocol) need not propagate the transaction
 context. See the Jakarta Enterprise Beans specification for details.
@@ -136,7 +146,9 @@ Transactions may not span web requests from a client on the network. If a web
 component starts a transaction in the _service_ or _doFilter_ method (or
 transactional interceptor of _service_ or _doFilter_ method), it must be
 completed before the _service_ or _doFilter_ method returns to the network
-client<<a3650, 3>>. Returning from the _service_ or _doFilter_ method to the
+client.footnote:[For a Jakarta™ Server Pages page, this requirement applies to
+the _service_ method of the equivalent Jakarta™ Server Pages page Implementation
+Class.] Returning from the _service_ or _doFilter_ method to the
 network client with an active transaction context is an error. The web container
 is required to detect this error and abort the transaction.
 
@@ -434,3 +446,5 @@ allow the System Administrator to perform the following tasks:
 * Monitor transactions at runtime.
 * Receive notifications of abnormal transaction processing conditions (such as
 abnormally high number of transaction rollbacks).
+
+'''

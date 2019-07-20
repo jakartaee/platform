@@ -14,8 +14,7 @@ JavaBeans specification. The _PersistenceUnit_ and _PersistenceContext_
 annotations described here are defined in more detail in the Java
 Persistence specification. The _Inject_ annotation described here is
 defined in the Dependency Injection for Java specification, and its
-usage in Jakarta EE applications is defined in the Contexts and Dependency
-Injection for the Jakarta EE Platform specification.
+usage in Jakarta EE applications is defined in the CDI specification.
 
 === Overview
 
@@ -132,7 +131,9 @@ Dependency Injection APIs.
 
 Jakarta EE application clients, enterprise beans,
 and web components are required to have access to a JNDI naming
-environment<<a3651, 4>>. The containers for these application
+environment.footnote:[Note that Jakarta™ Managed Beans are required to have
+access to the JNDI naming environment of their calling component.]
+The containers for these application
 component types are required to provide the naming environment support
 described here.
 
@@ -417,8 +418,10 @@ resource injection, as well as PostConstruct and PreDestroy callbacks.
 In addition, if CDI is enabled—which it is by default—these classes also
 support CDI injection, as described in
 <<a2112, Support for Dependency
-Injection>>”, and the use of interceptors<<a3652, 5>>. The
-component classes listed with support level “Limited” only support Jakarta
+Injection>>”, and the use of interceptors.footnote:[Note that the use of
+interceptors defined by means of the Interceptors annotation is supported in the
+absence of CDI for Jakarta™ Enterprise Beans and Jakarta™ Managed Bean components.]
+The component classes listed with support level “Limited” only support Jakarta
 EE field injection and the PostConstruct callback. Note that these are
 application client main classes, where field injection is into static
 fields.
@@ -466,7 +469,9 @@ tag library event listeners
 Standard
 
 |Jakarta Server Faces
-|managed classes<<a3653, 6>>
+|managed classes footnote:[See the Jakarta™ Server Faces
+specification section Jakarta™ Server Faces Managed Classes and Jakarta™ Annotations” for
+a list of these managed classes.]
 |Standard
 
 |JAX-WS
@@ -479,7 +484,8 @@ handlers
 Standard
 
 |Jakarta RESTful Web Services
-|Jakarta RESTful Web Services components<<a3654, 7>>
+|Jakarta RESTful Web Services components footnote:[Resource and CDI injection is
+supported only in Jakarta™ RESTful Web Services components managed by CDI.]
 
 |Standard
 
@@ -492,7 +498,7 @@ Standard
 |Standard
 
 |Interceptor
-|interceptors<<a3655, 8>>
+|interceptors footnote:[Interceptors cannot be bound to other interceptors.]
 |Standard
 
 |Java Persistence
@@ -503,10 +509,14 @@ Standard
 |managed beans
 |Standard
 
-|CDI<<a3656, 9>>
-|CDI-style managed beans<<a3657, 10>>
+|CDI footnote:[See the CDI specification for requirements related to resource
+injection in CDI managed beans.]
+|CDI-style managed beans footnote:[We use this term to refer to classes that become
+managed beans per the rules in the CDI specification, thus excluding managed beans
+declared using the _ManagedBean_ annotation as well as Jakarta™ Enterprise Beans
+session beans, both of which would be managed beans even in the absence of CDI.]
 
-decorators<<a3658, 11>>
+decorators footnote:[Interceptors cannot be bound to decorators.]
 
 |Standard
 
@@ -2250,7 +2260,8 @@ the _shareable_ element of the _Resource_ annotation to _false_ or sets
 the _res-sharing-scope_ of a resource manager connection factory
 reference to _Unshareable_ , the container must not attempt to share the
 connections obtained from the resource manager connection factory
-reference<<a3659, 12>>.
+reference.footnote:[Connections obtained from the same resource manager connection
+factory through a different resource manager connection factory reference may be shareable.]
 * The container must provide tools that allow
 the Deployer to set up resource sign on information for the resource
 manager references whose _authenticationType_ is set to
@@ -3856,7 +3867,8 @@ name, port, etc.), a resource at the specified location should already
 exist. If it does not, and if the automatic provisioning of resources is
 not supported, it is the Deployer’s responsibility (possibly in
 conjunction with the System Administrator) to insure that the resource
-is provisioned for use by the application<<a3660, 13>>.
+is provisioned for use by the application.footnote:[Note that the
+Deployer is not prohibited from overriding the resource address.]
 
 If the resource has not been otherwise
 provisioned and if automatic provisioning of resources is supported, the
@@ -5147,3 +5159,5 @@ Containers may optimize the steps above,
 e.g., by avoiding calls to the actual CDI SPI and relying on
 container-specific interfaces instead, as long as the outcome is the
 same.
+
+'''
