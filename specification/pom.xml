@@ -76,6 +76,10 @@
                                     <version>[1.8.0,)</version>
                                     <message>You need JDK8 or later</message>
                                 </requireJavaVersion>
+                                <requireMavenVersion>
+                                    <version>3.0.5</version>
+                                    <message>You need Maven 3.0.5 or later</message>
+                                </requireMavenVersion>
                             </rules>
                         </configuration>
                     </execution>
