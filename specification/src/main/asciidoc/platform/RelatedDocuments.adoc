@@ -7,7 +7,7 @@ specification are included in parentheses.
 
 _Jakarta™ EE Platform Specification Version 8_. Available at: _https://jakarta.ee/specifications/full-platform/8.0.1_
 
-_Java™ Platform, Standard Edition, v8 API Specification (Java SE specification)_. Available at: _http://docs.oracle.com/javase/8/docs/_
+_Java™ Platform, Standard Edition, v8 API Specification (Java SE specification)_. Available at: _https://docs.oracle.com/javase/8/docs/_
 
 _Jakarta™ Enterprise Beans Specification, Version 3.2_. Available at: _https://jakarta.ee/specifications/enterprise-beans/3.2.3_
 
@@ -19,19 +19,19 @@ _Jakarta™ Annotations Specification, Version 1.3_. Available at: _https://jaka
 
 _Jakarta™ Servlet Specification, Version 4.0_. Available at: _https://jakarta.ee/specifications/servlet/4.0.2_
 
-_JDBC™ 4.2 API (JDBC specification)_. Available at: _http://jcp.org/en/jsr/detail?id=221_
+_JDBC™ 4.2 API (JDBC specification)_. Available at: _https://jcp.org/en/jsr/detail?id=221_
 
-_Java™ Naming and Directory Interface 1.2 Specification (JNDI specification)_. Available at: _http://docs.oracle.com/javase/8/docs/technotes/guides/jndi/index.html_
+_Java™ Naming and Directory Interface 1.2 Specification (JNDI specification)_. Available at: _https://docs.oracle.com/javase/8/docs/technotes/guides/jndi/index.html_
 
 _Jakarta™ Messaging Specification, Version 2.0_. Available at: _https://jakarta.ee/specifications/messaging/2.0.2_
 
 _Jakarta™ Transaction Specification, Version 1.2_. Available at: _https://jakarta.ee/specifications/transactions/1.3.2_
 
-_Java™ Transaction Service, Version 1.0_ (JTS specification)_. Available at: _http://www.oracle.com/technetwork/java/javaee/jts-spec095-1508547.pdf_
+_Java™ Transaction Service, Version 1.0_ (JTS specification)_. Available at: _https://www.oracle.com/technetwork/java/javaee/jts-spec095-1508547.pdf_
 
 _Jakarta™ Mail Specification, Version 1.6_. Available at: _https://jakarta.ee/specifications/mail/1.6.3_
 
-_JavaBeans™ Activation Framework Specification Version 1.1 (JAF specification)_. Available at: _http://www.oracle.com/technetwork/java/javase/tech/index-jsp-138795.html_
+_JavaBeans™ Activation Framework Specification Version 1.1 (JAF specification)_. Available at: _https://www.oracle.com/technetwork/java/javase/tech/index-jsp-138795.html_
 
 _Jakarta™ Connectors Specification, Version 1.7_. Available at: _https://jakarta.ee/specifications/connectors/1.7.2_
 
@@ -39,7 +39,7 @@ _Jakarta™ XML Web Services Specification, Version 1.4_. Available at: _https:/
 
 _Jakarta™ XML RPC Specification, Version 1.1_. Available at: _https://jakarta.ee/specifications/xml-rpc/1.1.3_
 
-_SOAP with Attachments API for Java™ 1.3 (SAAJ specification)_. Available at: _http://download.oracle.com/otndocs/jcp/jaxm-1.3-mrel-spec-oth-JSpec/_
+_SOAP with Attachments API for Java™ 1.3 (SAAJ specification)_. Available at: _https://download.oracle.com/otndocs/jcp/jaxm-1.3-mrel-spec-oth-JSpec/_
 
 _Jakarta™ XML Registries Specification, Version 1.0_. Available at: _https://jakarta.ee/specifications/xml-registries/1.0.9_
 
@@ -86,45 +86,45 @@ _Jakarta™ Concurrency Specification, Version 1.0_. Available at: _https://jaka
 _Jakarta™ Batch Specification, Version 1.0_. Available at: _https://jakarta.ee/specifications/batch/1.0_
 
 Extension Mechanism Architecture, Available at
-_http://docs.oracle.com/javase/8/docs/technotes/guides/extensions/index.html_.
+_https://docs.oracle.com/javase/8/docs/technotes/guides/extensions/index.html_.
 
 Optional Package Versioning, Available at
-_http://docs.oracle.com/javase/8/docs/technotes/guides/extensions/index.html_.
+_https://docs.oracle.com/javase/8/docs/technotes/guides/extensions/index.html_.
 
 JAR File Specification, Available at
-_http://docs.oracle.com/javase/8/docs/technotes/guides/jar/jar.html_ .
+_https://docs.oracle.com/javase/8/docs/technotes/guides/jar/jar.html_ .
 
 _The Common Object Request Broker: Architecture
 and Specification_ (CORBA 2.3.1 specification), Available at
-_http://www.omg.org/cgi-bin/doc?formal/99-10-07_ .
+_https://www.omg.org/cgi-bin/doc?formal/99-10-07_ .
 
 CORBA 2.6 - Chapter 26 - Secure
 Interoperability, Available at
-_http://www.omg.org/cgi-bin/doc?formal/01-12-30_ .
+_https://www.omg.org/cgi-bin/doc?formal/01-12-30_ .
 
 _IDL To Java™ Language Mapping Specification_ ,
-Available at _http://www.omg.org/cgi-bin/doc?ptc/2000-01-08_ .
+Available at _https://www.omg.org/cgi-bin/doc?ptc/2000-01-08_ .
 
 _Java™ Language To IDL Mapping Specification_ ,
-Available at _http://www.omg.org/cgi-bin/doc?ptc/2000-01-06_ .
+Available at _https://www.omg.org/cgi-bin/doc?ptc/2000-01-06_ .
 
 _Interoperable Naming Service,_ Available at
-_http://www.omg.org/cgi-bin/doc?ptc/00-08-07_ .
+_https://www.omg.org/cgi-bin/doc?ptc/00-08-07_ .
 
 _Transaction Service Specification_ (OTS
 specification), Available at
-_http://www.omg.org/cgi-bin/doc?formal/2001-11-03_ .
+_https://www.omg.org/cgi-bin/doc?formal/2001-11-03_ .
 
 _The SSL Protocol, Version 3.0._ Available at
-_http://tools.ietf.org/html/rfc6101_ .
+_https://tools.ietf.org/html/rfc6101_ .
 
 Architectural Styles and the Design of
 Network-based Software Architectures (REST), R. Fielding, Ph.d
 dissertation, University of California, Irvine, 2000. Available at
-_http://roy.gbiv.com/pubs/dissertation/top.html_ .
+_https://roy.gbiv.com/pubs/dissertation/top.html_ .
 
 Java™ Community Process
 _SM_ 2: Process Document, Version 2.10 (March 21, 2016). Available at
-_http://jcp.org/en/procedures/jcp2_ .
+_https://jcp.org/en/procedures/jcp2_ .
 
 '''

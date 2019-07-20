@@ -309,7 +309,7 @@ Optional, it must not include the APIs for that
 technology.footnote:[Note that a component specification is permitted to specify
 an exception to this in order to accommodate interface type dependencies—for example,
 the Jakarta™ Enterprise Beans SessionContext dependency on the
-javax.xml.rpc.handler.MessageContext type.]
+_javax.xml.rpc.handler.MessageContext_ type.]
 
 [[a2331]]
 ==== Pruned Java Technologies

@@ -14,8 +14,7 @@ JavaBeans specification. The _PersistenceUnit_ and _PersistenceContext_
 annotations described here are defined in more detail in the Java
 Persistence specification. The _Inject_ annotation described here is
 defined in the Dependency Injection for Java specification, and its
-usage in Jakarta EE applications is defined in the Contexts and Dependency
-Injection for the Jakarta EE Platform specification.
+usage in Jakarta EE applications is defined in the CDI specification.
 
 === Overview
 
@@ -421,8 +420,7 @@ support CDI injection, as described in
 <<a2112, Support for Dependency
 Injection>>”, and the use of interceptors.footnote:[Note that the use of
 interceptors defined by means of the Interceptors annotation is supported in the
-absence of Jakarta™ Contexts and Dependency Injection for Jakarta™ Enterprise
-Beans and Jakarta™ Managed Bean components.]
+absence of CDI for Jakarta™ Enterprise Beans and Jakarta™ Managed Bean components.]
 The component classes listed with support level “Limited” only support Jakarta
 EE field injection and the PostConstruct callback. Note that these are
 application client main classes, where field injection is into static
