@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<graphml>
+  <graph id="Graph" uidGraph="41" uidEdge="10326">
+    <nodes>
+      <node positionX="285.0946804596015" positionY="-91.55825692173244" id="4" mainText="Jakarta Enterprise Beans"
+            upText="1"></node>
+      <node positionX="327.0946804596015" positionY="-0.5582569217324362" id="5"
+            mainText="Jakarta Annotations" upText="1"></node>
+      <node positionX="157.09468045960148" positionY="-296.55825692173244" id="6" mainText="Jakarta Dependency Injection"
+            upText="1"></node>
+      <node positionX="-200.90531954039852" positionY="-169.55825692173244" id="7"
+            mainText="Jakarta Interceptors" upText="1"></node>
+      <node positionX="126.09468045960148" positionY="27.441743078267564" id="8" mainText="Jakarta XML RPC"
+            upText="1"></node>
+      <node positionX="-137.90531954039852" positionY="-302.55825692173244" id="9"
+            mainText="Jakarta Transactions" upText="1"></node>
+      <node positionX="312.0946804596015" positionY="-226.55825692173244" id="11"
+            mainText="Jakarta Contexts and Dependency Injection" upText="1"></node>
+      <node positionX="-197.90531954039852" positionY="54.441743078267564" id="12" mainText="Jakarta Expression Language"
+            upText="1"></node>
+      <node positionX="315.0946804596015" positionY="-347.55825692173244" id="13" mainText="Jakarta Batch"
+            upText="1"></node>
+      <node positionX="1110.0946804596015" positionY="-314.55825692173244" id="14"
+            mainText="Jakarta Concurrency" upText="2"></node>
+      <node positionX="1123.0946804596015" positionY="-453.55825692173244" id="15"
+            mainText="Jakarta Deployment" upText="3"></node>
+      <node positionX="-531.9053195403985" positionY="110.44174307826756" id="16"
+            mainText="Jakarta Authorization" upText="1"></node>
+      <node positionX="252.09468045960148" positionY="101.44174307826756" id="17" mainText="Jakarta Servlet"
+            upText="1"></node>
+      <node positionX="614.0946804596015" positionY="-432.55825692173244" id="18"
+            mainText="Jakarta Activation" upText="1"></node>
+      <node positionX="-502.9053195403985" positionY="-101.55825692173244" id="19"
+            mainText="Jakarta Authentication" upText="1"></node>
+      <node positionX="760.0946804596015" positionY="292.44174307826756" id="20" mainText="Jakarta Server Faces"
+            upText="1"></node>
+      <node positionX="870.0946804596015" positionY="149.44174307826756" id="21"
+            mainText="Jakarta Bean Validation" upText="1"></node>
+      <node positionX="479.0946804596015" positionY="360.44174307826756" id="22" mainText="jakarta.json:jakarta.json-api"
+            upText="1"></node>
+      <node positionX="-201.90531954039852" positionY="305.44174307826756" id="23"
+            mainText="Jakarta Server Pages" upText="1"></node>
+      <node positionX="129.09468045960148" positionY="236.44174307826756" id="24"
+            mainText="Jakarta Standard Tag Library" upText="1"></node>
+      <node positionX="1195.0946804596015" positionY="315.44174307826756" id="25"
+            mainText="Jakarta WebSocket" upText="1"></node>
+      <node positionX="610.0946804596015" positionY="-537.5582569217324" id="26" mainText="Jakarta Mail"
+            upText="1"></node>
+      <node positionX="924.0946804596015" positionY="11.441743078267564" id="27" mainText="Jakarta Web Services Metadata"
+            upText="1"></node>
+      <node positionX="614.0946804596015" positionY="-91.55825692173244" id="28" mainText="Jakarta XML Web Services"
+            upText="1"></node>
+      <node positionX="618.0946804596015" positionY="-296.55825692173244" id="29"
+            mainText="Jakarta XML Binding" upText="1"></node>
+      <node positionX="787.0946804596015" positionY="-187.55825692173244" id="30"
+            mainText="Jakarta SOAP Attachments" upText="1"></node>
+      <node positionX="1103.0946804596015" positionY="-514.5582569217324" id="31"
+            mainText="Jakarta XML Registries" upText="4"></node>
+      <node positionX="1122.0946804596015" positionY="-387.55825692173244" id="32" mainText="Jakarta RESTful Web Services"
+            upText="5"></node>
+      <node positionX="-134.90531954039852" positionY="-498.55825692173244" id="33"
+            mainText="Jakarta Connectors" upText="1"></node>
+      <node positionX="1091.0946804596015" positionY="-556.5582569217324" id="34" mainText="Jakarta Messaging"
+            upText="6"></node>
+      <node positionX="1138.0946804596015" positionY="-248.55825692173244" id="35"
+            mainText="Jakarta Persistence" upText="7"></node>
+      <node positionX="1124.0946804596015" positionY="-170.55825692173244" id="36" mainText="Jakarta JSON Processing"
+            upText="8"></node>
+      <node positionX="1129.0946804596015" positionY="-47.558256921732436" id="37"
+            mainText="Jakarta JSON Binding" upText="8"></node>
+      <node positionX="-524.9053195403985" positionY="-289.55825692173244" id="38"
+            mainText="Jakarta Management" upText="1"></node>
+      <node positionX="-205.90531954039852" positionY="-50.558256921732436" id="39"
+            mainText="Jakarta Security" upText="1"></node>
+      <node positionX="1196.0946804596015" positionY="209.44174307826756" id="40"
+            mainText="Jakarta WebSocketClient" upText="1"></node>
+    </nodes>
+    <edges>
+      <edge vertex1="7" vertex2="4" isDirect="true" weight="1" useWeight="true" hasPair="false" id="10284" text=""
+            arrayStyleStart="" arrayStyleFinish="" model_width="4" model_type="0" model_curvedValue="0.1"></edge>
+      <edge vertex1="4" vertex2="8" isDirect="true" weight="1" useWeight="true" hasPair="false" id="10285" text=""
+            arrayStyleStart="" arrayStyleFinish="" model_width="4" model_type="0" model_curvedValue="0.1"></edge>
+      <edge vertex1="4" vertex2="9" isDirect="true" weight="1" useWeight="true" hasPair="false" id="10286" text=""
+            arrayStyleStart="" arrayStyleFinish="" model_width="4" model_type="0" model_curvedValue="0.1"></edge>
+      <edge vertex1="11" vertex2="7" isDirect="true" weight="1" useWeight="true" hasPair="false" id="10287" text=""
+            arrayStyleStart="" arrayStyleFinish="" model_width="4" model_type="0" model_curvedValue="0.1"></edge>
+      <edge vertex1="11" vertex2="12" isDirect="true" weight="1" useWeight="true" hasPair="false" id="10288" text=""
+            arrayStyleStart="" arrayStyleFinish="" model_width="4" model_type="0" model_curvedValue="0.1"></edge>
+      <edge vertex1="7" vertex2="5" isDirect="true" weight="1" useWeight="true" hasPair="false" id="10289" text=""
+            arrayStyleStart="" arrayStyleFinish="" model_width="4" model_type="0" model_curvedValue="0.1"></edge>
+      <edge vertex1="11" vertex2="6" isDirect="true" weight="1" useWeight="true" hasPair="false" id="10290" text=""
+            arrayStyleStart="" arrayStyleFinish="" model_width="4" model_type="0" model_curvedValue="0.1"></edge>
+      <edge vertex1="13" vertex2="11" isDirect="true" weight="1" useWeight="true" hasPair="false" id="10291" text=""
+            arrayStyleStart="" arrayStyleFinish="" model_width="4" model_type="0" model_curvedValue="0.1"></edge>
+      <edge vertex1="16" vertex2="17" isDirect="true" weight="1" useWeight="true" hasPair="false" id="10292" text=""
+            arrayStyleStart="" arrayStyleFinish="" model_width="4" model_type="0" model_curvedValue="0.1"></edge>
+      <edge vertex1="20" vertex2="12" isDirect="true" weight="1" useWeight="true" hasPair="false" id="10293" text=""
+            arrayStyleStart="" arrayStyleFinish="" model_width="4" model_type="0" model_curvedValue="0.1"></edge>
+      <edge vertex1="20" vertex2="11" isDirect="true" weight="1" useWeight="true" hasPair="false" id="10294" text=""
+            arrayStyleStart="" arrayStyleFinish="" model_width="4" model_type="0" model_curvedValue="0.1"></edge>
+      <edge vertex1="20" vertex2="21" isDirect="true" weight="1" useWeight="true" hasPair="false" id="10295" text=""
+            arrayStyleStart="" arrayStyleFinish="" model_width="4" model_type="0" model_curvedValue="0.1"></edge>
+      <edge vertex1="20" vertex2="22" isDirect="true" weight="1" useWeight="true" hasPair="false" id="10296" text=""
+            arrayStyleStart="" arrayStyleFinish="" model_width="4" model_type="0" model_curvedValue="0.1"></edge>
+      <edge vertex1="20" vertex2="4" isDirect="true" weight="1" useWeight="true" hasPair="false" id="10297" text=""
+            arrayStyleStart="" arrayStyleFinish="" model_width="4" model_type="0" model_curvedValue="0.1"></edge>
+      <edge vertex1="20" vertex2="25" isDirect="true" weight="1" useWeight="true" hasPair="false" id="10298" text=""
+            arrayStyleStart="" arrayStyleFinish="" model_width="4" model_type="0" model_curvedValue="0.1"></edge>
+      <edge vertex1="20" vertex2="23" isDirect="true" weight="1" useWeight="true" hasPair="false" id="10299" text=""
+            arrayStyleStart="" arrayStyleFinish="" model_width="4" model_type="0" model_curvedValue="0.1"></edge>
+      <edge vertex1="20" vertex2="24" isDirect="true" weight="1" useWeight="true" hasPair="false" id="10300" text=""
+            arrayStyleStart="" arrayStyleFinish="" model_width="4" model_type="0" model_curvedValue="0.1"></edge>
+      <edge vertex1="20" vertex2="17" isDirect="true" weight="1" useWeight="true" hasPair="false" id="10301" text=""
+            arrayStyleStart="" arrayStyleFinish="" model_width="4" model_type="0" model_curvedValue="0.1"></edge>
+      <edge vertex1="26" vertex2="18" isDirect="true" weight="1" useWeight="true" hasPair="false" id="10302" text=""
+            arrayStyleStart="" arrayStyleFinish="" model_width="4" model_type="0" model_curvedValue="0.1"></edge>
+      <edge vertex1="8" vertex2="17" isDirect="true" weight="1" useWeight="true" hasPair="false" id="10303" text=""
+            arrayStyleStart="" arrayStyleFinish="" model_width="4" model_type="0" model_curvedValue="0.1"></edge>
+      <edge vertex1="28" vertex2="27" isDirect="true" weight="1" useWeight="true" hasPair="false" id="10304" text=""
+            arrayStyleStart="" arrayStyleFinish="" model_width="4" model_type="0" model_curvedValue="0.1"></edge>
+      <edge vertex1="28" vertex2="29" isDirect="true" weight="1" useWeight="true" hasPair="false" id="10305" text=""
+            arrayStyleStart="" arrayStyleFinish="" model_width="4" model_type="0" model_curvedValue="0.1"></edge>
+      <edge vertex1="28" vertex2="30" isDirect="true" weight="1" useWeight="true" hasPair="false" id="10306" text=""
+            arrayStyleStart="" arrayStyleFinish="" model_width="4" model_type="0" model_curvedValue="0.1"></edge>
+      <edge vertex1="28" vertex2="5" isDirect="true" weight="1" useWeight="true" hasPair="false" id="10307" text=""
+            arrayStyleStart="" arrayStyleFinish="" model_width="4" model_type="0" model_curvedValue="0.1"></edge>
+      <edge vertex1="29" vertex2="18" isDirect="true" weight="1" useWeight="true" hasPair="false" id="10308" text=""
+            arrayStyleStart="" arrayStyleFinish="" model_width="4" model_type="0" model_curvedValue="0.1"></edge>
+      <edge vertex1="33" vertex2="9" isDirect="true" weight="1" useWeight="true" hasPair="false" id="10309" text=""
+            arrayStyleStart="" arrayStyleFinish="" model_width="4" model_type="0" model_curvedValue="0.1"></edge>
+      <edge vertex1="37" vertex2="36" isDirect="true" weight="1" useWeight="true" hasPair="false" id="10310" text=""
+            arrayStyleStart="" arrayStyleFinish="" model_width="4" model_type="0" model_curvedValue="0.1"></edge>
+      <edge vertex1="23" vertex2="17" isDirect="true" weight="1" useWeight="true" hasPair="false" id="10311" text=""
+            arrayStyleStart="" arrayStyleFinish="" model_width="4" model_type="0" model_curvedValue="0.1"></edge>
+      <edge vertex1="23" vertex2="12" isDirect="true" weight="1" useWeight="true" hasPair="false" id="10312" text=""
+            arrayStyleStart="" arrayStyleFinish="" model_width="4" model_type="0" model_curvedValue="0.1"></edge>
+      <edge vertex1="24" vertex2="23" isDirect="true" weight="1" useWeight="true" hasPair="false" id="10313" text=""
+            arrayStyleStart="" arrayStyleFinish="" model_width="4" model_type="0" model_curvedValue="0.1"></edge>
+      <edge vertex1="24" vertex2="17" isDirect="true" weight="1" useWeight="true" hasPair="false" id="10314" text=""
+            arrayStyleStart="" arrayStyleFinish="" model_width="4" model_type="0" model_curvedValue="0.1"></edge>
+      <edge vertex1="24" vertex2="12" isDirect="true" weight="1" useWeight="true" hasPair="false" id="10315" text=""
+            arrayStyleStart="" arrayStyleFinish="" model_width="4" model_type="0" model_curvedValue="0.1"></edge>
+      <edge vertex1="9" vertex2="11" isDirect="true" weight="1" useWeight="true" hasPair="false" id="10316" text=""
+            arrayStyleStart="" arrayStyleFinish="" model_width="4" model_type="0" model_curvedValue="0.1"></edge>
+      <edge vertex1="38" vertex2="4" isDirect="true" weight="1" useWeight="true" hasPair="false" id="10317" text=""
+            arrayStyleStart="" arrayStyleFinish="" model_width="4" model_type="0" model_curvedValue="0.1"></edge>
+      <edge vertex1="39" vertex2="7" isDirect="true" weight="1" useWeight="true" hasPair="false" id="10318" text=""
+            arrayStyleStart="" arrayStyleFinish="" model_width="4" model_type="0" model_curvedValue="0.1"></edge>
+      <edge vertex1="39" vertex2="17" isDirect="true" weight="1" useWeight="true" hasPair="false" id="10319" text=""
+            arrayStyleStart="" arrayStyleFinish="" model_width="4" model_type="0" model_curvedValue="0.1"></edge>
+      <edge vertex1="39" vertex2="12" isDirect="true" weight="1" useWeight="true" hasPair="false" id="10320" text=""
+            arrayStyleStart="" arrayStyleFinish="" model_width="4" model_type="0" model_curvedValue="0.1"></edge>
+      <edge vertex1="39" vertex2="4" isDirect="true" weight="1" useWeight="true" hasPair="false" id="10321" text=""
+            arrayStyleStart="" arrayStyleFinish="" model_width="4" model_type="0" model_curvedValue="0.1"></edge>
+      <edge vertex1="39" vertex2="11" isDirect="true" weight="1" useWeight="true" hasPair="false" id="10322" text=""
+            arrayStyleStart="" arrayStyleFinish="" model_width="4" model_type="0" model_curvedValue="0.1"></edge>
+      <edge vertex1="39" vertex2="19" isDirect="true" weight="1" useWeight="true" hasPair="false" id="10323" text=""
+            arrayStyleStart="" arrayStyleFinish="" model_width="4" model_type="0" model_curvedValue="0.1"></edge>
+      <edge vertex1="39" vertex2="16" isDirect="true" weight="1" useWeight="true" hasPair="false" id="10324" text=""
+            arrayStyleStart="" arrayStyleFinish="" model_width="4" model_type="0" model_curvedValue="0.1"></edge>
+      <edge vertex1="25" vertex2="40" isDirect="true" weight="1" useWeight="true" hasPair="false" id="10325" text=""
+            arrayStyleStart="" arrayStyleFinish="" model_width="4" model_type="0" model_curvedValue="0.1"></edge>
+    </edges>
+  </graph>
+</graphml>
