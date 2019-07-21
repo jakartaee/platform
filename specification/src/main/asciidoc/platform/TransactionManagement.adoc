@@ -447,4 +447,5 @@ allow the System Administrator to perform the following tasks:
 * Receive notifications of abnormal transaction processing conditions (such as
 abnormally high number of transaction rollbacks).
 
+// generates a line between text and footnotes for pdf and html generation.
 '''

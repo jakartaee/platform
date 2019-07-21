@@ -1015,4 +1015,5 @@ the appropriate solution. We had to abandon this work for J2EE 1.3, and
 were not able to address it for J2EE 1.4, but hope to pursue it further
 in a future release.
 
+// generates a line between text and footnotes for pdf and html generation.
 '''

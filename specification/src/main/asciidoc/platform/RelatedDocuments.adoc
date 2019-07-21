@@ -127,4 +127,5 @@ Java™ Community Process
 _SM_ 2: Process Document, Version 2.10 (March 21, 2016). Available at
 _https://jcp.org/en/procedures/jcp2_ .
 
+// generates a line between text and footnotes for pdf and html generation.
 '''
