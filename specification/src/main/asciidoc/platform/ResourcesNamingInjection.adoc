@@ -1,4 +1,4 @@
-Jakarta Enterprise Beans[[a567]]
+[[a567]]
 == Resources, Naming, and Injection
 
 This chapter describes how applications
@@ -817,47 +817,34 @@ require authentication.
 The following code example illustrates how an
 application component uses annotations to declare environment entries.
 
+[source,java]
+----
 // The maximum number of tax exemptions, configured by the Deployer.
-
 @Resource int maxExemptions;
-
-// The minimum number of tax exemptions,
-configured by the Deployer.
-
+// The minimum number of tax exemptions, configured by the Deployer.
 @Resource int minExemptions;
 
-
-
-public void setTaxInfo(int
-numberOfExemptions,...)
-
- throws InvalidNumberOfExemptionsException \{
-
+public void setTaxInfo(int numberOfExemptions,...)
+       throws InvalidNumberOfExemptionsException {
+  ...
+  // Use the environment entries to
+  // customize business logic.
+  if (numberOfExemptions > maxExemptions ||
+         numberOfExemptions < minExemptions)
+    throw new InvalidNumberOfExemptionsException();
  ...
-
- // Use the environment entries to
-
- // customize business logic.
-
- if (numberOfExemptions > maxExemptions ||
-
- numberOfExemptions < minExemptions)
-
- throw new
-InvalidNumberOfExemptionsException();
-
- ...
-
 }
+----
 
 The following code example illustrates how an
 environment entry can be assigned a value by referring to another entry,
 potentially in a different namespace.
 
+[source,java]
+----
 // an entry that gets its value from an application-wide entry
-
-@Resource(lookup="java:app/env/timeout") int
-timeout;
+@Resource(lookup="java:app/env/timeout") int timeout;
+----
 
 Programming Interfaces for Accessing Simple Environment Entries
 
@@ -878,81 +865,42 @@ deployment descriptor.
 The following code example illustrates how an
 application component accesses its environment entries.
 
+[source,java]
+----
 public void setTaxInfo(int numberOfExemptions,...)
+       throws InvalidNumberOfExemptionsException {
+  ...
+  // Obtain the application component’s
+  // environment naming context.
+  Context initCtx = new InitialContext();
+  Context myEnv = (Context)initCtx.lookup("java:comp/env");
 
- throws InvalidNumberOfExemptionsException \{
+  // Obtain the maximum number of tax exemptions
+  // configured by the Deployer.
+  Integer max = (Integer)myEnv.lookup("maxExemptions");
 
- ...
+  // Obtain the minimum number of tax exemptions
+  // configured by the Deployer.
+  Integer min = (Integer)myEnv.lookup("minExemptions");
 
- // Obtain the application component’s
+  // Use the environment entries to
+  // customize business logic.
+  if (numberOfExemptions > max.intValue() ||
+         numberOfExemptions < min.intValue())
+     throw new InvalidNumberOfExemptionsException();
 
- // environment naming context.
+  // Get some more environment entries. These environment
+  // entries are stored in subcontexts.
+  String val1 = (String)myEnv.lookup("foo/name1");
+  Boolean val2 = (Boolean)myEnv.lookup("foo/bar/name2");
 
- Context initCtx = new InitialContext();
-
- Context myEnv =
-(Context)initCtx.lookup("java:comp/env");
-
-
-
- // Obtain the maximum number of tax exemptions
-
- // configured by the Deployer.
-
- Integer max =
-(Integer)myEnv.lookup("maxExemptions");
-
-
-
- // Obtain the minimum number of tax exemptions
-
- // configured by the Deployer.
-
- Integer min =
-(Integer)myEnv.lookup("minExemptions");
-
-
-
- // Use the environment entries to
-
- // customize business logic.
-
- if (numberOfExemptions > max.intValue() ||
-
- numberOfExemptions < min.intValue())
-
- throw new InvalidNumberOfExemptionsException();
-
-
-
- // Get some more environment entries. These
-environment
-
- // entries are stored in subcontexts.
-
- String val1 =
-(String)myEnv.lookup("foo/name1");
-
- Boolean val2 =
-(Boolean)myEnv.lookup("foo/bar/name2");
-
-
-
- // The application component can also
-
- // lookup using full pathnames.
-
- Integer val3 =
-(Integer)initCtx.lookup("java:comp/env/name3");
-
- Integer val4 =
-
-
-(Integer)initCtx.lookup("java:comp/env/foo/name4");
-
- ...
-
+  // The application component can also
+  // lookup using full pathnames.
+  Integer val3 = (Integer)initCtx.lookup("java:comp/env/name3");
+  Integer val4 = (Integer)initCtx.lookup("java:comp/env/foo/name4");
+  ...
 }
+----
 
 Declaration of Simple Environment Entries
 
@@ -986,225 +934,123 @@ The following example is the declaration of
 environment entries used by the application component whose code was
 illustrated in the previous subsection.
 
+[source,xml]
+----
 ...
-
 <env-entry>
-
- <description>
-
- The maximum number of tax exemptions
-
- allowed to be set.
-
- </description>
-
- <env-entry-name>maxExemptions</env-entry-name>
-
-
-<env-entry-type>java.lang.Integer</env-entry-type>
-
- <env-entry-value>15</env-entry-value>
-
+  <description>
+     The maximum number of tax exemptions
+     allowed to be set.
+  </description>
+  <env-entry-name>maxExemptions</env-entry-name>
+  <env-entry-type>java.lang.Integer</env-entry-type>
+  <env-entry-value>15</env-entry-value>
 </env-entry>
-
 <env-entry>
-
- <description>
-
- The minimum number of tax exemptions allowed to
-be set.
-
- </description>
-
- <env-entry-name>minExemptions</env-entry-name>
-
-
-<env-entry-type>java.lang.Integer</env-entry-type>
-
- <env-entry-value>1</env-entry-value>
-
+  <description>
+     The minimum number of tax exemptions allowed to
+     be set.
+  </description>
+  <env-entry-name>minExemptions</env-entry-name>
+  <env-entry-type>java.lang.Integer</env-entry-type>
+  <env-entry-value>1</env-entry-value>
 </env-entry>
-
 <env-entry>
-
- <env-entry-name>foo/name1</env-entry-name>
-
-
-<env-entry-type>java.lang.String</env-entry-type>
-
- <env-entry-value>value1</env-entry-value>
-
+  <env-entry-name>foo/name1</env-entry-name>
+  <env-entry-type>java.lang.String</env-entry-type>
+  <env-entry-value>value1</env-entry-value>
 </env-entry>
-
 <env-entry>
-
- <env-entry-name>foo/bar/name2</env-entry-name>
-
-
-<env-entry-type>java.lang.Boolean</env-entry-type>
-
- <env-entry-value>true</env-entry-value>
-
+  <env-entry-name>foo/bar/name2</env-entry-name>
+  <env-entry-type>java.lang.Boolean</env-entry-type>
+  <env-entry-value>true</env-entry-value>
 </env-entry>
-
 <env-entry>
-
- <description>Some description.</description>
-
- <env-entry-name>name3</env-entry-name>
-
-
-<env-entry-type>java.lang.Integer</env-entry-type>
-
+  <description>Some description.</description>
+  <env-entry-name>name3</env-entry-name>
+  <env-entry-type>java.lang.Integer</env-entry-type>
 </env-entry>
-
 <env-entry>
-
- <env-entry-name>foo/name4</env-entry-name>
-
-
-<env-entry-type>java.lang.Integer</env-entry-type>
-
- <env-entry-value>10</env-entry-value>
-
+  <env-entry-name>foo/name4</env-entry-name>
+  <env-entry-type>java.lang.Integer</env-entry-type>
+  <env-entry-value>10</env-entry-value>
 </env-entry>
-
 <env-entry>
-
- <env-entry-name>helperClass</env-entry-name>
-
-
-<env-entry-type>java.lang.Class</env-entry-type>
-
-
-<env-entry-value>com.acme.helper.Helper</env-entry-value>
-
+  <env-entry-name>helperClass</env-entry-name>
+  <env-entry-type>java.lang.Class</env-entry-type>
+  <env-entry-value>com.acme.helper.Helper</env-entry-value>
 </env-entry>
-
 <env-entry>
-
- <env-entry-name>timeUnit</env-entry-name>
-
-
-<env-entry-type>java.util.concurrent.TimeUnit</env-entry-type>
-
-
-<env-entry-value>NANOSECONDS</env-entry-value>
-
+  <env-entry-name>timeUnit</env-entry-name>
+  <env-entry-type>java.util.concurrent.TimeUnit</env-entry-type>
+  <env-entry-value>NANOSECONDS</env-entry-value>
 </env-entry>
-
 <env-entry>
-
- <env-entry-name>bar</env-entry-name>
-
-
-<env-entry-type>java.lang.Integer</env-entry-type>
-
-
-<lookup-name>java:app/env/appBar</lookup-name>
-
+  <env-entry-name>bar</env-entry-name>
+  <env-entry-type>java.lang.Integer</env-entry-type>
+  <lookup-name>java:app/env/appBar</lookup-name>
 </env-entry>
-
 ...
+----
 
 Injection of environment entries may also be
 specified using the deployment descriptor, without need for Java
 language annotations. The following example is the declaration of
 environment entries corresponding to the earlier injection example.
 
+[source,xml]
+----
 ...
-
 <env-entry>
-
- <description>
-
- The maximum number of tax exemptions
-
- allowed to be set.
-
- </description>
-
- <env-entry-name>
-
- com.example.PayrollService/maxExemptions
-
- </env-entry-name>
-
-
-<env-entry-type>java.lang.Integer</env-entry-type>
-
- <env-entry-value>15</env-entry-value>
-
- <injection-target>
-
- <injection-target-class>
-
- com.example.PayrollService
-
- </injection-target-class>
-
- <injection-target-name>
-
- maxExemptions
-
- </injection-target-name>
-
- </injection-target>
-
+  <description>
+     The maximum number of tax exemptions
+     allowed to be set.
+  </description>
+  <env-entry-name>
+     com.example.PayrollService/maxExemptions
+  </env-entry-name>
+  <env-entry-type>java.lang.Integer</env-entry-type>
+  <env-entry-value>15</env-entry-value>
+  <injection-target>
+    <injection-target-class>
+       com.example.PayrollService
+    </injection-target-class>
+    <injection-target-name>
+       maxExemptions
+    </injection-target-name>
+  </injection-target>
 </env-entry>
-
 <env-entry>
-
- <description>
-
- The minimum number of tax exemptions
-
- allowed to be set.
-
- </description>
-
- <env-entry-name>
-
- com.example.PayrollService/minExemptions
-
- </env-entry-name>
-
-
-<env-entry-type>java.lang.Integer</env-entry-type>
-
- <env-entry-value>1</env-entry-value>
-
- <injection-target>
-
- <injection-target-class>
-
- com.example.PayrollService
-
- </injection-target-class>
-
- <injection-target-name>
-
- minExemptions
-
- </injection-target-name>
-
- </injection-target>
-
+  <description>
+     The minimum number of tax exemptions
+     allowed to be set.
+  </description>
+  <env-entry-name>
+     com.example.PayrollService/minExemptions
+  </env-entry-name>
+  <env-entry-type>java.lang.Integer</env-entry-type>
+  <env-entry-value>1</env-entry-value>
+  <injection-target>
+    <injection-target-class>
+       com.example.PayrollService
+    </injection-target-class>
+    <injection-target-name>
+       minExemptions
+    </injection-target-name>
+  </injection-target>
 </env-entry>
-
-
+...
+----
 
 It’s often convenient to declare a field or
 method as an injection target, but specify a default value in the code,
 as illustrated in the following example.
 
-
-
-// The maximum number of tax exemptions,
-configured by the Deployer.
-
-@Resource int maxExemptions = 4; // defaults to 4
-
+[source,java]
+----
+// The maximum number of tax exemptions, configured by the Deployer.
+@Resource int maxExemptions = 4;        // defaults to 4
+----
 
 
 To support this case, the container must only
@@ -1220,35 +1066,20 @@ _lookup_ element of the _@Resource_ annotation is _lookup-name_ . The
 following deployment descriptor fragment is equivalent to the earlier
 example that used _lookup_ .
 
-
-
+[source,xml]
+----
 <env-entry>
-
-
-<env-entry-name>somePackage.SomeClass/timeout</env-entry-name>
-
-
-<env-entry-type>java.lang.Integer</env-entry-type>
-
- <injection-target>
-
- <injection-target-class>
-
- somePackage.SomeClass
-
- </injection-target-class>
-
-
-<injection-target-name>timeout</injection-target-name>
-
- </injection-target>
-
-
-<lookup-name>java:app/env/timeout</lookup-name>
-
+  <env-entry-name>somePackage.SomeClass/timeout</env-entry-name>
+  <env-entry-type>java.lang.Integer</env-entry-type>
+  <injection-target>
+    <injection-target-class>
+       somePackage.SomeClass
+    </injection-target-class>
+    <injection-target-name>timeout</injection-target-name>
+  </injection-target>
+  <lookup-name>java:app/env/timeout</lookup-name>
 </env-entry>
-
-
+----
 
 It is an error for both the _env-entry-value_
 and _lookup-name_ elements to be specified for a given _env-entry_
@@ -1313,44 +1144,30 @@ named and must be resolved by the Deployer, unless there is only one
 session bean component within the application that exposes a client view
 type that matches the Jakarta Enterprise Bean reference.
 
-
-
+[source,java]
+----
 package com.acme.example;
 
-
-
-@Stateless public class ExampleBean
-implements Example \{
-
- ...
-
- @EJB private ShoppingCart myCart;
-
- ...
-
+@Stateless public class ExampleBean implements Example {
+  ...
+  @EJB private ShoppingCart myCart;
+  ...
 }
-
-
+----
 
 The following example illustrates use of almost
 all elements of the _EJB_ annotation.
 
+[source,java]
+----
 @EJB(
-
- name = "ejb/shopping-cart",
-
- beanName = "cart1”,
-
- beanInterface = ShoppingCart.class,
-
- description = "The shopping cart for this
-application"
-
+  name = "ejb/shopping-cart",
+  beanName = "cart1",
+  beanInterface = ShoppingCart.class,
+  description = "The shopping cart for this application"
 )
-
 private ShoppingCart myCart;
-
-
+----
 
 As an alternative to _beanName_ , a reference
 to an enterprise bean can use the global JNDI name for that enterprise bean,
@@ -1358,63 +1175,45 @@ or any of the other names mandated by the Jakarta Enterprise Beans
 specifications, by means of the _lookup_ annotation element. The following
 example uses a JNDI name in the application namespace.
 
+[source,java]
+----
 @EJB(
-
- lookup="java:app/cartModule/ShoppingCart",
-
- description = "The shopping cart for this
-application"
-
+  lookup="java:app/cartModule/ShoppingCart",
+  description = "The shopping cart for this application"
 )
-
 private ShoppingCart myOtherCart;
-
-
+----
 
 If the _ShoppingCart_ bean were instead
 written to the Jakarta Enterprise Beans 2.x client view, the Jakarta Enterprise
 Bean reference would be to the bean’s home interface. For example:
 
-
-
+[source,java]
+----
 @EJB(
-
- name="ejb/shopping-cart",
-
- beanInterface=ShoppingCartHome.class,
-
- beanName="cart1",
-
- description="The shopping cart for this
-application"
-
+  name="ejb/shopping-cart",
+  beanInterface=ShoppingCartHome.class,
+  beanName="cart1",
+  description="The shopping cart for this application"
 )
-
 private ShoppingCartHome myCartHome;
-
-
+----
 
 If the _ShoppingCart_ bean were instead
 written to the no-interface client view and implemented by bean class
 _ShoppingCartBean.class_ , the Jakarta Enterprise Bean reference would have
 type _ShoppingCartBean.class_ . For example:
 
-
-
+[source,java]
+----
 @EJB(
-
- name="ejb/shopping-cart",
-
- beanInterface=ShoppingCartBean.class,
-
- beanName="cart1",
-
- description="The shopping cart for this
-application"
-
+  name="ejb/shopping-cart",
+  beanInterface=ShoppingCartBean.class,
+  beanName="cart1",
+  description="The shopping cart for this application"
 )
-
 private ShoppingCartBean myCart;
+----
 
 ===== Programming Interfaces for Jakarta Enterprise Beans References
 
@@ -1440,38 +1239,24 @@ The following example illustrates how an
 application component uses a Jakarta Enterprise Bean reference to locate the
 home interface of an enterprise bean.
 
-public void changePhoneNumber(...) \{
+[source,java]
+----
+public void changePhoneNumber(...) {
+  ...
+  // Obtain the default initial JNDI context.
+  Context initCtx = new InitialContext();
 
+  // Look up the home interface of the EmployeeRecord
+  // enterprise bean in the environment.
+  Object result = initCtx.lookup("java:comp/env/ejb/EmplRecord");
+
+  // Convert the result to the proper type.
+  EmployeeRecordHome emplRecordHome = (EmployeeRecordHome)
+         javax.rmi.PortableRemoteObject.narrow(result,
+            EmployeeRecordHome.class);
  ...
-
- // Obtain the default initial JNDI context.
-
- Context initCtx = new InitialContext();
-
-
-
- // Look up the home interface of the
-EmployeeRecord
-
- // enterprise bean in the environment.
-
- Object result =
-initCtx.lookup("java:comp/env/ejb/EmplRecord");
-
-
-
- // Convert the result to the proper type.
-
- EmployeeRecordHome emplRecordHome =
-(EmployeeRecordHome)
-
- javax.rmi.PortableRemoteObject.narrow(result,
-
- EmployeeRecordHome.class);
-
- ...
-
 }
+----
 
 In the example, the Application Component
 Provider assigned the environment entry _ejb/EmplRecord_ as the Jakarta
@@ -1538,60 +1323,36 @@ name of an environment entry that provides a value for the reference.
 The following example illustrates the
 declaration of Jakarta Enterprise Beans references in the deployment descriptor.
 
+[source,xml]
+----
 ...
-
 <ejb-ref>
-
- <description>
-
- This is a reference to the entity bean that
-
- encapsulates access to employee records.
-
- </description>
-
- <ejb-ref-name>ejb/EmplRecord</ejb-ref-name>
-
- <ejb-ref-type>Entity</ejb-ref-type>
-
- <home>com.wombat.empl.EmployeeRecordHome</home>
-
- <remote>com.wombat.empl.EmployeeRecord</remote>
-
+  <description>
+     This is a reference to the entity bean that
+     encapsulates access to employee records.
+  </description>
+  <ejb-ref-name>ejb/EmplRecord</ejb-ref-name>
+  <ejb-ref-type>Entity</ejb-ref-type>
+  <home>com.wombat.empl.EmployeeRecordHome</home>
+  <remote>com.wombat.empl.EmployeeRecord</remote>
 </ejb-ref>
 
-
-
 <ejb-ref>
-
- <ejb-ref-name>ejb/Payroll</ejb-ref-name>
-
- <ejb-ref-type>Entity</ejb-ref-type>
-
- <home>com.aardvark.payroll.PayrollHome</home>
-
- <remote>com.aardvark.payroll.Payroll</remote>
-
+  <ejb-ref-name>ejb/Payroll</ejb-ref-name>
+  <ejb-ref-type>Entity</ejb-ref-type>
+  <home>com.aardvark.payroll.PayrollHome</home>
+  <remote>com.aardvark.payroll.Payroll</remote>
 </ejb-ref>
 
-
-
 <ejb-ref>
-
- <ejb-ref-name>ejb/PensionPlan</ejb-ref-name>
-
- <ejb-ref-type>Session</ejb-ref-type>
-
- <home>com.wombat.empl.PensionPlanHome</home>
-
- <remote>com.wombat.empl.PensionPlan</remote>
-
-
-<lookup-name>java:global/personnel/retirement/PensionPlan</lookup-name>
-
+  <ejb-ref-name>ejb/PensionPlan</ejb-ref-name>
+  <ejb-ref-type>Session</ejb-ref-type>
+  <home>com.wombat.empl.PensionPlanHome</home>
+  <remote>com.wombat.empl.PensionPlan</remote>
+  <lookup-name>java:global/personnel/retirement/PensionPlan</lookup-name>
 </ejb-ref>
-
 ...
+----
 
 ==== Application Assembler’s Responsibilities
 
@@ -1648,73 +1409,49 @@ the component making this reference, or it may be packaged in another
 module within the same Jakarta EE application as the component making this
 reference.
 
+[source,xml]
+----
 ...
-
 <ejb-ref>
-
- <description>
-
- This is a reference to the entity bean that
-
- encapsulates access to employee records. It
-
- has been linked to the entity bean named
-
- EmployeeRecord in this application.
-
- </description>
-
- <ejb-ref-name>ejb/EmplRecord</ejb-ref-name>
-
- <ejb-ref-type>Entity</ejb-ref-type>
-
- <home>com.wombat.empl.EmployeeRecordHome</home>
-
- <remote>com.wombat.empl.EmployeeRecord</remote>
-
- <ejb-link>EmployeeRecord</ejb-link>
-
+  <description>
+     This is a reference to the entity bean that
+     encapsulates access to employee records. It
+     has been linked to the entity bean named
+     EmployeeRecord in this application.
+  </description>
+  <ejb-ref-name>ejb/EmplRecord</ejb-ref-name>
+  <ejb-ref-type>Entity</ejb-ref-type>
+  <home>com.wombat.empl.EmployeeRecordHome</home>
+  <remote>com.wombat.empl.EmployeeRecord</remote>
+  <ejb-link>EmployeeRecord</ejb-link>
 </ejb-ref>
-
 ...
+----
 
 The following example illustrates using the
 _ejb-link_ element to indicate an enterprise bean reference to the
 _ProductEJB_ enterprise bean that is in the same Jakarta EE application
 unit but in a different ejb-jar file.
 
+[source,xml]
+----
 ...
-
 <ejb-ref>
-
- <description>
-
- This is a reference to the entity bean that
-
- encapsulates access to a product. It
-
- has been linked to the entity bean named
-
- ProductEJB in the product.jar file in this
-
- application.
-
- </description>
-
- <ejb-ref-name>ejb/Product</ejb-ref-name>
-
- <ejb-ref-type>Entity</ejb-ref-type>
-
- <home>com.acme.products.ProductHome</home>
-
- <remote>com.acme.products.Product</remote>
-
-
-<ejb-link>../products/product.jar#ProductEJB</ejb-link>
-
+  <description>
+     This is a reference to the entity bean that
+     encapsulates access to a product. It
+     has been linked to the entity bean named
+     ProductEJB in the product.jar file in this
+     application.
+  </description>
+  <ejb-ref-name>ejb/Product</ejb-ref-name>
+  <ejb-ref-type>Entity</ejb-ref-type>
+  <home>com.acme.products.ProductHome</home>
+  <remote>com.acme.products.Product</remote>
+  <ejb-link>../products/product.jar#ProductEJB</ejb-link>
 </ejb-ref>
-
 ...
+----
 
 The following example illustrates using the
 _ejb-link_ element to indicate an enterprise bean reference to the
@@ -1723,39 +1460,29 @@ unit but in a different ejb-jar file. The reference was originally
 declared in the application component’s code using an annotation. The
 Assembler provides only the link to the bean.
 
+[source,xml]
+----
 ...
-
 <ejb-ref>
-
-
-<ejb-ref-name>ShoppingService/myCart</ejb-ref-name>
-
-
-<ejb-link>../products/product.jar#ShoppingCart</ejb-link>
-
+  <ejb-ref-name>ShoppingService/myCart</ejb-ref-name>
+  <ejb-link>../products/product.jar#ShoppingCart</ejb-link>
 </ejb-ref>
-
 ...
+----
 
 The same effect can be obtained by using the
 _lookup-name_ element instead, using an appropriate JNDI name for the
 target bean.
 
-
-
+[source,xml]
+----
 ...
-
 <ejb-ref>
-
-
-<ejb-ref-name>ShoppingService/myCart</ejb-ref-name>
-
-
-<lookup-name>java:app/products/ShoppingCart</lookup-name>
-
+  <ejb-ref-name>ShoppingService/myCart</ejb-ref-name>
+  <lookup-name>java:app/products/ShoppingCart</lookup-name>
 </ejb-ref>
-
 ...
+----
 
 ==== Deployer’s Responsibilities
 
@@ -1791,17 +1518,14 @@ declared in the bean’s code using an annotation. The target enterprise
 bean has _ejb-name_ _ShoppingCart_ and is deployed in the stand-alone
 module _products.jar_ .
 
+[source,xml]
+----
 ...
-
 <ejb-ref>
-
-
-<ejb-ref-name>ShoppingService/myCart</ejb-ref-name>
-
-
-<lookup-name>java:global/products/ShoppingCart</lookup-name>
-
+  <ejb-ref-name>ShoppingService/myCart</ejb-ref-name>
+  <lookup-name>java:global/products/ShoppingCart</lookup-name>
 </ejb-ref>
+----
 
 ==== Jakarta EE Product Provider’s Responsibilities
 
@@ -1883,58 +1607,43 @@ The following code example illustrates how an
 application component uses annotations to declare resource manager
 connection factory references.
 
+[source,java]
+----
 // The employee database.
-
 @Resource javax.sql.DataSource employeeAppDB;
 
-public void changePhoneNumber(...) \{
-
- ...
-
- // Invoke factory to obtain a resource. The
-security
-
- // principal for the resource is not given,
-and
-
- // therefore it will be configured by the
-Deployer.
-
- java.sql.Connection con =
-employeeAppDB.getConnection();
-
- ...
-
+public void changePhoneNumber(...) {
+  ...
+  // Invoke factory to obtain a resource. The security
+  // principal for the resource is not given, and
+  // therefore it will be configured by the Deployer.
+  java.sql.Connection con = employeeAppDB.getConnection();
+  ...
 }
+----
 
 It is possible to specify as part of the
 _@Resource_ annotation the JNDI name of an entry to which the resource
 being defined will be bound.
 
+[source,java]
+----
 // The customer database, looked up in the application environment.
-
 @Resource(lookup="java:app/env/customerDB")
-
 javax.sql.DataSource customerAppDB;
-
-
+----
 
 The data source object being looked up in the
 previous example may have been declared as follows.
 
-
-
+[source,java]
+----
 @Resource(name="java:app/env/customerDB",
-
- type=javax.sql.DataSource.class)
-
-public class AnApplicationClass \{
-
- ...
-
+          type=javax.sql.DataSource.class)
+public class AnApplicationClass {
+  ...
 }
-
-
+----
 
 From a practical standpoint, declaring a
 commonly used data source at the application level and referring to it
@@ -2017,44 +1726,25 @@ approach used by most application components.
 The following code sample illustrates obtaining
 a JDBC connection.
 
-public void changePhoneNumber(...) \{
+[source,java]
+----
+public void changePhoneNumber(...) {
+  ...
+  // obtain the initial JNDI context
+  Context initCtx = new InitialContext();
 
- ...
+  // perform JNDI lookup to obtain resource manager
+  // connection factory
+  javax.sql.DataSource ds = (javax.sql.DataSource)
+     initCtx.lookup("java:comp/env/jdbc/EmployeeAppDB");
 
-
-
- // obtain the initial JNDI context
-
- Context initCtx = new InitialContext();
-
-
-
- // perform JNDI lookup to obtain resource
-manager
-
- // connection factory
-
- javax.sql.DataSource ds =
-(javax.sql.DataSource)
-
-
-initCtx.lookup("java:comp/env/jdbc/EmployeeAppDB");
-
-
-
- // Invoke factory to obtain a resource. The
-security
-
- // principal for the resource is not given, and
-
- // therefore it will be configured by the
-Deployer.
-
- java.sql.Connection con = ds.getConnection();
-
- ...
-
+  // Invoke factory to obtain a resource. The security
+  // principal for the resource is not given, and
+  // therefore it will be configured by the Deployer.
+  java.sql.Connection con = ds.getConnection();
+  ...
 }
+----
 
 [[a1183]]
 ===== Declaration of Resource Manager Connection Factory References in Deployment Descriptor
@@ -2119,54 +1809,37 @@ The following example is the declaration of the
 resource reference used by the application component illustrated in the
 previous subsection.
 
+[source,xml]
+----
 ...
-
 <resource-ref>
-
- <description>
-
- A data source for the database in which
-
- the EmployeeService enterprise bean will
-
- record a log of all transactions.
-
- </description>
-
- <res-ref-name>jdbc/EmployeeAppDB</res-ref-name>
-
- <res-type>javax.sql.DataSource</res-type>
-
- <res-auth>Container</res-auth>
-
-
-<res-sharing-scope>Shareable</res-sharing-scope>
-
+  <description>
+     A data source for the database in which
+     the EmployeeService enterprise bean will
+     record a log of all transactions.
+  </description>
+  <res-ref-name>jdbc/EmployeeAppDB</res-ref-name>
+  <res-type>javax.sql.DataSource</res-type>
+  <res-auth>Container</res-auth>
+  <res-sharing-scope>Shareable</res-sharing-scope>
 </resource-ref>
-
-
+...
+----
 
 The following example modifies the previous
 one by linking the resource reference being defined to another one,
 using a well-known JNDI name for the latter.
 
-
-
+[source,xml]
+----
 <resource-ref>
-
-<res-ref-name>jdbc/EmployeeAppDB</res-ref-name>
-
- <res-type>javax.sql.DataSource</res-type>
-
- <res-auth>Container</res-auth>
-
-
-<res-sharing-scope>Shareable</res-sharing-scope>
-
-
-<lookup-name>java:app/env/TheEmployeeDB</lookup-name>
-
+  <res-ref-name>jdbc/EmployeeAppDB</res-ref-name>
+  <res-type>javax.sql.DataSource</res-type>
+  <res-auth>Container</res-auth>
+  <res-sharing-scope>Shareable</res-sharing-scope>
+  <lookup-name>java:app/env/TheEmployeeDB</lookup-name>
 </resource-ref>
+----
 
 ===== Standard Resource Manager Connection Factory Types
 
@@ -2478,18 +2151,21 @@ The following example illustrates how an
 application component uses the Resource annotation to request injection
 of a message destination reference.
 
+[source,java]
+----
 @Resource javax.jms.Queue stockQueue;
+----
 
 The following example illustrates how a
 message destination reference can be linked to another one by specifying
 its JNDI name, perhaps in a different namespace, as a value for the
 lookup element.
 
-
-
+[source,java]
+----
 @Resource(lookup="java:app/env/TheOrderQueue")
-
 javax.jms.Queue orderQueue;
+----
 
 ===== Message Destination Reference Programming Interfaces
 
@@ -2516,23 +2192,17 @@ The following example illustrates how an
 application component uses a message destination reference to locate a
 Jakarta Messaging Destination.
 
+[source,java]
+----
 // Obtain the default initial JNDI context.
-
 Context initCtx = new InitialContext();
 
-
-
-// Look up the Jakarta Messaging StockQueue in the
-environment.
-
-Object result =
-initCtx.lookup("java:comp/env/jms/StockQueue");
-
-
+// Look up the Jakarta Messaging StockQueue in the environment.
+Object result = initCtx.lookup("java:comp/env/jms/StockQueue");
 
 // Convert the result to the proper type.
-
 javax.jms.Queue queue = (javax.jms.Queue)result;
+----
 
 In the example, the Application Component
 Provider assigned the environment entry _jms/StockQueue_ as the message
@@ -2589,39 +2259,26 @@ The following example illustrates the
 declaration of message destination references in the deployment
 descriptor.
 
+[source,xml]
+----
 ...
-
 <message-destination-ref>
-
- <description>
-
- This is a reference to a Jakarta Messaging queue used in the
-
- processing of Stock info
-
- </description>
-
- <message-destination-ref-name>
-
- jms/StockInfo
-
- </message-destination-ref-name>
-
- <message-destination-type>
-
- javax.jms.Queue
-
- </message-destination-type>
-
- _<message-destination-usage>_
-
- _Produces_
-
- _</message-destination-usage>_
-
+  <description>
+     This is a reference to a Jakarta Messaging queue used in the
+     processing of Stock info
+  </description>
+  <message-destination-ref-name>
+     jms/StockInfo
+  </message-destination-ref-name>
+  <message-destination-type>
+     javax.jms.Queue
+  </message-destination-type>
+  <message-destination-usage>
+     Produces
+  </message-destination-usage>
 </message-destination-ref>
-
 ...
+----
 
 ==== Application Assembler’s Responsibilities
 
@@ -2733,72 +2390,47 @@ The following example illustrates how an
 application component acquires and uses a _UserTransaction_ object via
 injection.
 
+[source,java]
+----
 @Resource UserTransaction tx;
-
-
-
-public void updateData(...) \{
-
- ...
-
- // Start a transaction.
-
- tx.begin();
-
- ...
-
- // Perform transactional operations on data.
-
- ...
-
- // Commit the transaction.
-
- tx.commit();
-
- ...
-
+public void updateData(...) {
+  ...
+  // Start a transaction.
+  tx.begin();
+  ...
+  // Perform transactional operations on data.
+  ...
+  // Commit the transaction.
+  tx.commit();
+  ...
 }
+----
 
 The following example illustrates how an
 application component acquires and uses a _UserTransaction_ object using
 a JNDI lookup.
 
-public void updateData(...) \{
+[source,java]
+----
+public void updateData(...) {
+  ...
+  // Obtain the default initial JNDI context.
+  Context initCtx = new InitialContext();
 
- ...
+  // Look up the UserTransaction object.
+  UserTransaction tx = (UserTransaction)initCtx.lookup(
+                                 "java:comp/UserTransaction");
 
- // Obtain the default initial JNDI context.
-
- Context initCtx = new InitialContext();
-
-
-
- // Look up the UserTransaction object.
-
- UserTransaction tx =
-(UserTransaction)initCtx.lookup(
-
- "java:comp/UserTransaction");
-
-
-
- // Start a transaction.
-
- tx.begin();
-
- ...
-
- // Perform transactional operations on data.
-
- ...
-
- // Commit the transaction.
-
- tx.commit();
-
- ...
-
+  // Start a transaction.
+  tx.begin();
+  ...
+  // Perform transactional operations on data.
+  ...
+  // Commit the transaction.
+  tx.commit();
+  ...
 }
+----
 
 A _UserTransaction_ object reference may also
 be declared in a deployment descriptor in the same way as a resource
@@ -2889,54 +2521,37 @@ is only valid within the component instance that performed the lookup.
 The following example illustrates how an
 application component acquires and uses an _ORB_ object via injection.
 
+[source,java]
+----
 @Resource ORB orb;
 
-
-
-public void method(...) \{
-
- ...
-
- // Get the POA to use when creating object
-references.
-
- POA rootPOA =
-(POA)orb.resolve_initial_references("RootPOA");
-
- ...
-
+public void method(...) {
+  ...
+  // Get the POA to use when creating object references.
+  POA rootPOA = (POA)orb.resolve_initial_references("RootPOA");
+  ...
 }
+----
 
 The following example illustrates how an
 application component acquires and uses an _ORB_ object using a JNDI
 lookup.
 
-public void method(...) \{
+[source,java]
+----
+public void method(...) {
+  ...
+  // Obtain the default initial JNDI context.
+  Context initCtx = new InitialContext();
 
- ...
+  // Look up the ORB object.
+  ORB orb = (ORB)initCtx.lookup("java:comp/ORB");
 
- // Obtain the default initial JNDI context.
-
- Context initCtx = new InitialContext();
-
-
-
- // Look up the ORB object.
-
- ORB orb =
-(ORB)initCtx.lookup("java:comp/ORB");
-
-
-
- // Get the POA to use when creating object
-references.
-
- POA rootPOA =
-(POA)orb.resolve_initial_references("RootPOA");
-
- ...
-
+  // Get the POA to use when creating object references.
+  POA rootPOA = (POA)orb.resolve_initial_references("RootPOA");
+  ...
 }
+----
 
 An _ORB_ object reference may also be declared
 in a deployment descriptor in the same way as a resource manager
@@ -3010,13 +2625,14 @@ The following code example illustrates how an
 application component uses annotations to declare persistence unit
 references.
 
+[source,java]
+----
 @PersistenceUnit
-
 EntityManagerFactory emf;
 
 @PersistenceUnit(unitName="InventoryManagement")
-
 EntityManagerFactory inventoryEMF;
+----
 
 ===== Programming Interfaces for Persistence Unit References
 
@@ -3040,48 +2656,29 @@ manager factory to obtain an entity manager instance.
 The following code sample illustrates obtaining
 an entity manager factory.
 
+[source,java]
+----
 @PersistenceUnit(name="persistence/InventoryAppDB")
-
 @Stateless
+public class InventoryManagerBean implements InventoryManager {
+  EJBContext ejbContext;
+  ...
+  public void updateInventory(...) {
+    ...
+    // obtain the initial JNDI context
+    Context initCtx = new InitialContext();
 
-public class InventoryManagerBean implements
-InventoryManager \{
+    // perform JNDI lookup to obtain entity manager factory
+    EntityManagerFactory = (EntityManagerFactory)
+       initCtx.lookup(
+          "java:comp/env/persistence/InventoryAppDB");
 
- EJBContext ejbContext;
-
- ...
-
- public void updateInventory(...) \{
-
- ...
-
- // obtain the initial JNDI context
-
- Context initCtx = new InitialContext();
-
-
-
- // perform JNDI lookup to obtain entity
-manager factory
-
- EntityManagerFactory = (EntityManagerFactory)
-
- initCtx.lookup(
-
- "java:comp/env/persistence/InventoryAppDB");
-
-
-
- // use factory to obtain application-managed
-entity manager
-
- EntityManager em = emf.createEntityManager();
-
- ...
-
- }
-
+    // use factory to obtain application-managed entity manager
+    EntityManager em = emf.createEntityManager();
+    ...
+  }
 }
+----
 
 [[a1454]]
 ===== Declaration of Persistence Unit References in Deployment Descriptor
@@ -3118,33 +2715,23 @@ The following example is the declaration of a
 persistence unit reference used by the _InventoryManager_ enterprise
 bean illustrated in the previous subsection.
 
+[source,xml]
+----
 ...
-
- <persistence-unit-ref>
-
- <description>
-
- Persistence unit for the inventory management
-
- application.
-
- </description>
-
- <persistence-unit-ref-name>
-
- persistence/InventoryAppDB
-
- </persistence-unit-ref-name>
-
- <persistence-unit-name>
-
- InventoryManagement
-
- </persistence-unit-name>
-
- </persistence-unit-ref>
-
+  <persistence-unit-ref>
+    <description>
+       Persistence unit for the inventory management
+       application.
+    </description>
+    <persistence-unit-ref-name>
+       persistence/InventoryAppDB
+    </persistence-unit-ref-name>
+    <persistence-unit-name>
+       InventoryManagement
+    </persistence-unit-name>
+  </persistence-unit-ref>
 ...
+----
 
 [[a1475]]
 ==== Application Assembler’s Responsibilities
@@ -3165,33 +2752,23 @@ when the Application Assembler cannot change persistence unit names.
 
 For example,
 
+[source,xml]
+----
 ...
-
- <persistence-unit-ref>
-
- <description>
-
- Persistence unit for the inventory management
-
- application.
-
- </description>
-
- <persistence-unit-ref-name>
-
- persistence/InventoryAppDB
-
- </persistence-unit-ref-name>
-
- <persistence-unit-name>
-
- ../lib/inventory.jar#InventoryManagement
-
- </persistence-unit-name>
-
- </persistence-unit-ref>
-
+  <persistence-unit-ref>
+    <description>
+       Persistence unit for the inventory management
+       application.
+    </description>
+    <persistence-unit-ref-name>
+       persistence/InventoryAppDB
+    </persistence-unit-ref-name>
+    <persistence-unit-name>
+       ../lib/inventory.jar#InventoryManagement
+    </persistence-unit-name>
+  </persistence-unit-ref>
 ...
+----
 
 The Application Assembler uses the
 _persistence-unit-name_ element to link the persistence unit name
@@ -3313,9 +2890,11 @@ The following code example illustrates how an
 application component uses annotations to declare persistence context
 references.
 
+[source,java]
+----
 @PersistenceContext(type=EXTENDED)
-
 EntityManager em;
+----
 
 Programming Interfaces for Persistence Context References
 
@@ -3339,41 +2918,26 @@ using the JNDI API.
 The following code sample illustrates obtaining
 an entity manager for a persistence context.
 
+[source,java]
+----
 @PersistenceContext(name="persistence/InventoryAppMgr")
-
 @Stateless
+public class InventoryManagerBean implements InventoryManager {
 
-public class InventoryManagerBean implements
-InventoryManager \{
+  public void updateInventory(...) {
+    ...
 
+    // obtain the initial JNDI context
+    Context initCtx = new InitialContext();
 
-
- public void updateInventory(...) \{
-
- ...
-
-
-
- // obtain the initial JNDI context
-
- Context initCtx = new InitialContext();
-
-
-
- // JNDI lookup to obtain container-managed
-entity manager
-
- EntityManager = (EntityManager)
-
- initCtx.lookup(
-
- "java:comp/env/persistence/InventoryAppMgr");
-
- ...
-
- }
-
+    // JNDI lookup to obtain container-managed entity manager
+    EntityManager = (EntityManager)
+       initCtx.lookup(
+          "java:comp/env/persistence/InventoryAppMgr");
+    ...
+  }
 }
+----
 
 [[a1545]]
 ===== Declaration of Persistence Context References in Deployment Descriptor
@@ -3425,34 +2989,23 @@ The following example is the declaration of a
 persistence context reference used by the _InventoryManager_ enterprise
 bean illustrated in the previous subsection.
 
+[source,xml]
+----
 ...
-
- <persistence-context-ref>
-
- <description>
-
- Persistence context for the inventory
-management
-
- application.
-
- </description>
-
- <persistence-context-ref-name>
-
- persistence/InventoryAppDB
-
- </persistence-context-ref-name>
-
- <persistence-unit-name>
-
- InventoryManagement
-
- </persistence-unit-name>
-
- </persistence-context-ref>
-
+  <persistence-context-ref>
+    <description>
+       Persistence context for the inventory management
+       application.
+    </description>
+    <persistence-context-ref-name>
+       persistence/InventoryAppDB
+    </persistence-context-ref-name>
+    <persistence-unit-name>
+       InventoryManagement
+    </persistence-unit-name>
+  </persistence-context-ref>
 ...
+----
 
 ====  Application Assembler’s Responsibilities
 
@@ -3466,34 +3019,23 @@ persistence unit names cannot be changed.
 
 For example,
 
+[source,xml]
+----
 ...
-
- <persistence-context-ref>
-
- <description>
-
- Persistence context for the inventory
-management
-
- application.
-
- </description>
-
- <persistence-context-ref-name>
-
- persistence/InventoryAppDB
-
- </persistence-context-ref-name>
-
- <persistence-unit-name>
-
- ../lib/inventory.jar#InventoryManagement
-
- </persistence-unit-name>
-
- </persistence-context-ref>
-
+  <persistence-context-ref>
+    <description>
+       Persistence context for the inventory management
+       application.
+    </description>
+    <persistence-context-ref-name>
+       persistence/InventoryAppDB
+    </persistence-context-ref-name>
+    <persistence-unit-name>
+       ../lib/inventory.jar#InventoryManagement
+    </persistence-unit-name>
+  </persistence-context-ref>
 ...
+----
 
 The Application Assembler uses the
 _persistence-unit-name_ element to link the persistence unit name
@@ -3644,13 +3186,12 @@ the appropriate type via the _Resource_ annotation. The
 _authenticationType_ and _shareable_ elements of the _Resource_
 annotation must not be specified.
 
+[source,java]
+----
 @Resource ValidatorFactory validatorFactory;
 
-
-
 @Resource Validator validator;
-
-
+----
 
 For Validator objects, the default validation
 context is used. This means that all such Validators will be equivalent
@@ -3660,33 +3201,20 @@ invoking the getValidator method on it with no arguments.
 In other words, the following two code
 snippets are equivalent:
 
-
-
+[source,java]
+----
 // obtaining a Validator directly
-
 Context initCtx = new InitialContext();
+Validator validator = (Validator)initCtx.lookup(
+                            "java:comp/Validator");
 
-Validator validator =
-(Validator)initCtx.lookup(
-
- "java:comp/Validator");
-
-
-
-// obtaining a Validator from a
-ValidatorFactory
-
+// obtaining a Validator from a ValidatorFactory
 Context initCtx = new InitialContext();
-
 Validator validator =
-
- ((ValidatorFactory) initCtx.lookup(
-
- "java:comp/ValidatorFactory"))
-
- .getValidator();
-
-
+       ((ValidatorFactory) initCtx.lookup(
+                             "java:comp/ValidatorFactory"))
+       .getValidator();
+----
 
 A _Validator_ or _ValidatorFactory_ object
 reference may also be declared in a deployment descriptor in the same
@@ -3814,10 +3342,9 @@ _JMSDestinationDefinition_ , _MailSessionDefinition_ , and
 _ConnectionFactoryDefinition_ annotations indicate that an element value
 is optional and has not been set:
 
-integer-valued elements: _-1_
-
+* integer-valued elements: _-1_
 * string-valued elements: _“”_
-* array-valued elements: _\{}_
+* array-valued elements: _{}_
 
 ==== Guidelines
 
@@ -3914,64 +3441,35 @@ deployment descriptor using the _data-source_ element.
 
 For example:
 
-
-
+[source,xml]
+----
 <data-source>
-
- <description>Sample DataSource
-definition</description>
-
- <name> _java:app/MyDataSource_ </name>
-
- <class-name> _com.example.MyDataSource_
-</class-name>
-
- <server-name>myserver.com</server-name>
-
- <port-number>6689</port-number>
-
- <database-name>myDatabase</database-name>
-
- <user>lance</user>
-
- <password>secret</password>
-
- <property>
-
- <name>Property1</name>
-
- <value>10</value>
-
- </property>
-
- <property>
-
- <name>Property2</name>
-
- <value>20</value>
-
- </property>
-
- <login-timeout>0</login-timeout>
-
- <transactional>false</transactional>
-
-
-<isolation-level>TRANSACTION_READ_COMMITTED</isolation-level>
-
- <initial-pool-size>0</initial-pool-size>
-
- <max-pool-size>30</max-pool-size>
-
- <min-pool-size>20</min-pool-size>
-
- <max-idle-time>0</max-idle-time>
-
- <max-statements>50</max-statements>
-
+  <description>Sample DataSource definition</description>
+  <name>java:app/MyDataSource</name>
+  <class-name>com.example.MyDataSource</class-name>
+  <server-name>myserver.com</server-name>
+  <port-number>6689</port-number>
+  <database-name>myDatabase</database-name>
+  <user>lance</user>
+  <password>secret</password>
+  <property>
+    <name>Property1</name>
+    <value>10</value>
+  </property>
+  <property>
+    <name>Property2</name>
+    <value>20</value>
+  </property>
+  <login-timeout>0</login-timeout>
+  <transactional>false</transactional>
+  <isolation-level>TRANSACTION_READ_COMMITTED</isolation-level>
+  <initial-pool-size>0</initial-pool-size>
+  <max-pool-size>30</max-pool-size>
+  <min-pool-size>20</min-pool-size>
+  <max-idle-time>0</max-idle-time>
+  <max-statements>50</max-statements>
 </data-source>
-
-
+----
 
 A _DataSource_ resource may also be defined
 using the _DataSourceDefinition_ annotation on a container-managed
@@ -3979,23 +3477,16 @@ class, such as a servlet or enterprise bean class.
 
 For example:
 
-
-
- _@DataSourceDefinition(_
-
- _name="java:app/MyDataSource",_
-
- _className="com.example.MyDataSource",_
-
- _portNumber=6689,_
-
- _serverName="myserver.com",_
-
- _user="lance",_
-
- _password="secret")_
-
-
+[source,java]
+----
+  @DataSourceDefinition(
+     name="java:app/MyDataSource",
+     className="com.example.MyDataSource",
+     portNumber=6689,
+     serverName="myserver.com",
+     user="lance",
+     password="secret")
+----
 
 (Of course, we do not recommend including
 passwords to production systems in the code, but it's often useful while
@@ -4008,20 +3499,15 @@ referenced by a component using the _resource-ref_ deployment descriptor
 element or the _Resource_ annotation. For example, the above
 _DataSource_ could be referenced as follows:
 
-
-
- _@Stateless_
-
- _public class MySessionBean \{_
-
- _@Resource(lookup = "java:app/MyDataSource")_
-
- _DataSource myDB;_
-
- _..._
-
- _}_
-
+[source,java]
+----
+  @Stateless
+  public class MySessionBean {
+    @Resource(lookup = "java:app/MyDataSource")
+    DataSource myDB;
+    ...
+  }
+----
 
 
 The following _DataSourceDefinition_
@@ -4098,57 +3584,33 @@ element.
 
 For example:
 
-
-
+[source,xml]
+----
 <jms-connection-factory>
-
- <description>
-
- Sample Jakarta Messaging ConnectionFactory definition
-
- </description>
-
- <name> _java:app/MyJMSCF_ </name>
-
- <interface-name>
-
- _javax.jms.QueueConnectionFactory_
-
- </interface-name>
-
- <resource-adapter>myJMSRA</resource-adapter>
-
- <user>scott</user>
-
- <password>secret</password>
-
- <client-id>MyId</client-id>
-
- <property>
-
- <name>Property1</name>
-
- <value>10</value>
-
- </property>
-
- <property>
-
- <name>Property2</name>
-
- <value>20</value>
-
- </property>
-
- <transactional>false</transactional>
-
- <max-pool-size>30</max-pool-size>
-
- <min-pool-size>20</min-pool-size>
-
+  <description>
+     Sample Jakarta Messaging ConnectionFactory definition
+  </description>
+  <name>java:app/MyJMSCF</name>
+  <interface-name>
+     javax.jms.QueueConnectionFactory
+  </interface-name>
+  <resource-adapter>myJMSRA</resource-adapter>
+  <user>scott</user>
+  <password>secret</password>
+  <client-id>MyId</client-id>
+  <property>
+    <name>Property1</name>
+    <value>10</value>
+   </property>
+   <property>
+     <name>Property2</name>
+     <value>20</value>
+   </property>
+   <transactional>false</transactional>
+   <max-pool-size>30</max-pool-size>
+   <min-pool-size>20</min-pool-size>
 </jms-connection-factory>
-
-
+----
 
 A Jakarta Messaging _ConnectionFactory_ resource may also
 be defined using the _JMSConnectionFactoryDefinition_ annotation on a
@@ -4156,18 +3618,13 @@ container-managed class, such as a servlet or enterprise bean class.
 
 For example:
 
-
-
- _@JMSConnectionFactoryDefinition(_
-
- _name="java:app/MyJMSCF",_
-
-
-_interfaceName="javax.jms.QueueConnectionFactory",_
-
- _resourceAdapter="myJMSRA")_
-
-
+[source,java]
+----
+  @JMSConnectionFactoryDefinition(
+     name="java:app/MyJMSCF",
+     interfaceName="javax.jms.QueueConnectionFactory",
+     resourceAdapter="myJMSRA")
+----
 
 (As with the _DataSource_ definition, we do
 not recommend including passwords to production systems in the code, but
@@ -4180,20 +3637,15 @@ resource may be referenced by a component using the _resource-ref_
 deployment descriptor element or the _Resource_ annotation. For example,
 the above Jakarta Messaging _ConnectionFactory_ could be referenced as follows:
 
-
-
- _@Stateless_
-
- _public class MySessionBean \{_
-
- _@Resource(lookup = "java:app/MyJMSCF")_
-
- _ConnectionFactory myCF;_
-
- _..._
-
- _}_
-
+[source,java]
+----
+  @Stateless_
+  public class MySessionBean {
+    @Resource(lookup = "java:app/MyJMSCF")
+    ConnectionFactory myCF;
+    ...
+  }
+----
 
 
 The following
@@ -4254,40 +3706,24 @@ deployment descriptor using the _jms-destination_ element.
 
 For example:
 
+[source,xml]
+----
 <jms-destination>
-
- <description>Sample Jakarta Messaging Destination
-definition</description>
-
- <name> _java:app/MyJMSDestination_ </name>
-
- <interface-name> _javax.jms.Queue_
-</interface-name>
-
- <resource-adapter>myJMSRA</resource-adapter>
-
-
-<destination-name>myQueue1</destination-name>
-
- <property>
-
- <name>Property1</name>
-
- <value>10</value>
-
- </property>
-
- <property>
-
- <name>Property2</name>
-
- <value>20</value>
-
- </property>
-
+  <description>Sample Jakarta Messaging Destination definition</description>
+  <name>java:app/MyJMSDestination</name>
+  <interface-name>javax.jms.Queue</interface-name>
+  <resource-adapter>myJMSRA</resource-adapter>
+  <destination-name>myQueue1</destination-name>
+  <property>
+    <name>Property1</name>
+    <value>10</value>
+  </property>
+  <property>
+    <name>Property2</name>
+    <value>20</value>
+  </property>
 </jms-destination>
-
-
+----
 
 A Jakarta Messaging _Destination_ resource may also be
 defined using the _JMSDestinationDefinition_ annotation on a
@@ -4295,15 +3731,13 @@ container-managed class, such as a servlet or enterprise bean class.
 
 For example:
 
- _@JMSDestinationDefinition(_
-
- _name="java:app/MyJMSQueue",_
-
- _interfaceName="javax.jms.Queue",_
-
- _destinationName="myQueue1")_
-
-
+[source,java]
+----
+  @JMSDestinationDefinition(
+     name="java:app/MyJMSQueue",
+     interfaceName="javax.jms.Queue",
+     destinationName="myQueue1")
+----
 
 The _JMSDestinationDefinition_ annotation can
 be overridden by a deployment descriptor when the application is
@@ -4315,21 +3749,15 @@ _message-destination-ref_ deployment descriptor element or the
 _Resource_ annotation. For example, the above _Destination_ could be
 referenced as follows:
 
-
-
- _@Stateless_
-
- _public class MySessionBean \{_
-
- _@Resource(lookup = "java:app/MyJMSQueue")_
-
- _Queue myQueue;_
-
- _..._
-
- _}_
-
-
+[source,java]
+----
+  @Stateless
+  public class MySessionBean {
+    @Resource(lookup = "java:app/MyJMSQueue")
+    Queue myQueue;
+    ...
+  }
+----
 
 The following _JMSDestinationDefinition_
 annotation elements (and corresponding XML deployment descriptor
@@ -4377,47 +3805,27 @@ deployment descriptor using the _mail-session_ element.
 
 For example:
 
-
-
+[source,xml]
+----
 <mail-session>
-
- <description>Sample Mail Session
-definition</description>
-
- <name> _java:app/mail/MySession_ </name>
-
- <store-protocol> _imap_ </store-protocol>
-
-
-<transport-protocol>smtp</transport-protocol>
-
- <host>somewhere.myco.com</host>
-
- <user>linda</user>
-
- <password>secret</password>
-
- <from>some.body@myco.com</from>
-
- <property>
-
- <name>mail.smtp.starttls.enable</name>
-
- <value>true</value>
-
- </property>
-
- <property>
-
- <name>mail.imap.connectiontimeout</name>
-
- <value>500</value>
-
- </property>
-
+  <description>Sample Mail Session definition</description>
+  <name>java:app/mail/MySession</name>
+  <store-protocol>imap</store-protocol>
+  <transport-protocol>smtp</transport-protocol>
+  <host>somewhere.myco.com</host>
+  <user>linda</user>
+  <password>secret</password>
+  <from>some.body@myco.com</from>
+  <property>
+    <name>mail.smtp.starttls.enable</name>
+    <value>true</value>
+  </property>
+  <property>
+    <name>mail.imap.connectiontimeout</name>
+    <value>500</value>
+  </property>
 </mail-session>
-
-
+----
 
 A Mail _Session_ resource may also be defined
 using the _MailSessionDefinition_ annotation on a container-managed
@@ -4425,17 +3833,13 @@ class, such as a servlet or enterprise bean class.
 
 For example:
 
-
-
- _@MailSessionDefinition(_
-
- _name="java:app/mail/MySession",_
-
- _host="somewhere.myco.com",_
-
- _from="some.body@myco.com")_
-
-
+[source,java]
+----
+  @MailSessionDefinition(_
+       name="java:app/mail/MySession",
+       host="somewhere.myco.com",
+       from="some.body@myco.com")
+----
 
 The _MailSessionDefinition_ annotation can be
 overridden by a deployment descriptor when the application is deployed.
@@ -4445,22 +3849,15 @@ be referenced by a component using the _resource-ref_ deployment
 descriptor element or the _Resource_ annotation. For example, the above
 _Destination_ could be referenced as follows:
 
-
-
- _@Stateless_
-
- _public class MySessionBean \{_
-
- _@Resource(lookup =
-"java:app/mail/MySession")_
-
- _Session myMailSession;_
-
- _..._
-
- _}_
-
-
+[source,java]
+----
+  @Stateless
+  public class MySessionBean {
+    @Resource(lookup = "java:app/mail/MySession")
+    Session myMailSession;
+    ...
+  }
+----
 
 The following _MailSessionDefinition_
 annotation elements (and corresponding XML deployment descriptor
@@ -4519,50 +3916,28 @@ descriptor using the _connection-factory_ element.
 
 For example:
 
-
-
-< _connection-factory_ >
-
- <description>Sample Connector resource
-definition</description>
-
- <name> _java:app/myConnectionFactory_
-</name>
-
- <interface-name>
-
- com.eis.ConnectionFactory
-
- </interface-name>
-
- <resource-adapter>MyEISRA</resource-adapter>
-
- <max-pool-size>20</max-pool-size>
-
- <min-pool-size>10</min-pool-size>
-
-
-<transaction-support>XATransaction</transaction-support>
-
- <property>
-
- <name>Property1</name>
-
- <value>prop1val</value>
-
- </property>
-
- <property>
-
- <name>Property2</name>
-
- <value>prop2val</value>
-
- </property>
-
-</ _connection-factory_ >
-
-
+[source,xml]
+----
+<connection-factory>
+  <description>Sample Connector resource definition</description>
+  <name>java:app/myConnectionFactory</name>
+  <interface-name>
+     com.eis.ConnectionFactory
+   </interface-name>
+   <resource-adapter>MyEISRA</resource-adapter>
+   <max-pool-size>20</max-pool-size>
+   <min-pool-size>10</min-pool-size>
+   <transaction-support>XATransaction</transaction-support>
+   <property>
+     <name>Property1</name>
+     <value>prop1val</value>
+   </property>
+   <property>
+     <name>Property2</name>
+     <value>prop2val</value>
+   </property>
+</connection-factory>
+----
 
 A Connector connection factory resource may
 also be defined using the _ConnectionFactoryDefinition_ annotation on a
@@ -4570,17 +3945,13 @@ container-managed class, such as a servlet or enterprise bean class.
 
 For example:
 
-
-
- _@ConnectionFactoryDefinition(_
-
- _name="java:app/myConnectionFactory",_
-
- _interfaceName="com.eis.ConnectionFactory",_
-
- _resourceAdapter="MyESRA")_
-
-
+[source,java]
+----
+  @ConnectionFactoryDefinition(
+       name="java:app/myConnectionFactory",
+       interfaceName="com.eis.ConnectionFactory",
+       resourceAdapter="MyESRA")
+----
 
 The _ConnectionFactoryDefinition_ annotation
 can be overridden by a deployment descriptor when the application is
@@ -4592,20 +3963,15 @@ deployment descriptor element or the _Resource_ annotation. For example,
 the above Connector connection factory resource could be referenced as
 follows:
 
-
-
- _@Stateless_
-
- _public class MySessionBean \{_
-
- _@Resource(lookup =
-"java:app/myConnectionFactory")_
-
- _ConnectionFactory myCF;_
-
- _..._
-
- _}_
+[source,java]
+----
+  @Stateless
+  public class MySessionBean {
+    @Resource(lookup = "java:app/myConnectionFactory")
+    ConnectionFactory myCF;
+    ...
+  }
+----
 
 ===== Application Component Provider’s Responsibilities
 
@@ -4649,37 +4015,23 @@ described in the Connector specification.
 
 For example:
 
+[source,xml]
+----
 <administered-object>
-
- <description>Sample Admin Object
-definition</description>
-
- <name> _java:app/MyAdminObject_ </name>
-
- <class-name> _com.extraServices.AdminObject_
-</class-name>
-
- <resource-adapter>myESRA</resource-adapter>
-
- <property>
-
- <name>Property1</name>
-
- <value>10</value>
-
- </property>
-
- <property>
-
- <name>Property2</name>
-
- <value>20</value>
-
- </property>
-
+  <description>Sample Admin Object definition</description>
+  <name>java:app/MyAdminObject</name>
+  <class-name>com.extraServices.AdminObject</class-name>
+  <resource-adapter>myESRA</resource-adapter>
+  <property>
+    <name>Property1</name>
+    <value>10</value>
+  </property>
+  <property>
+    <name>Property2</name>
+    <value>20</value>
+  </property>
 </administered-object>
-
-
+----
 
 An administered object resource may also be
 defined using the _AdministeredObjectDefinition_ annotation on a
@@ -4687,18 +4039,13 @@ container-managed class, such as a servlet or enterprise bean class.
 
 For example:
 
-
-
+[source,java]
+----
 @AdministeredObjectDefinition(
-
- name= _"_ java:app/myAdminObject _"_ ,
-
- className= _"_ com.extraServices.AdminObject
-_",_
-
- resourceAdapter= _"_ myESRA _"_ )
-
-
+    name="java:app/myAdminObject",
+    className="com.extraServices.AdminObject",
+    resourceAdapter="myESRA")
+----
 
 The _AdministeredObjectDefinition_ annotation
 can be overridden by a deployment descriptor when the application is
@@ -4709,18 +4056,14 @@ may be referenced by a component using the _resource-env-ref_ deployment
 descriptor element or the _Resource_ annotation. For example, the above
 administered object resource could be referenced as follows:
 
-
-
- _@Stateless public class MySessionBean \{_
-
- _@Resource(lookup =
-"java:app/myAdminObject")_
-
- _AdminObject myAdminObject;_
-
- _..._
-
- _}_
+[source,java]
+----
+  @Stateless public class MySessionBean {
+    @Resource(lookup="java:app/myAdminObject")
+    AdminObject myAdminObject;
+    ...
+  }
+----
 
 ===== Application Component Provider’s Responsibilities
 
@@ -4766,13 +4109,11 @@ reference to the default data source using the _lookup_ element of the
 _Resource_ annotation or the _lookup-name_ element of the _resource-ref_
 deployment descriptor element. For example,
 
-
-
+[source,java]
+----
 @Resource(lookup="java:comp/DefaultDataSource")
-
 DataSource myDS;
-
-
+----
 
 In the absence of such a binding, or an
 equivalent product-specific binding, the mapping of the reference will
@@ -4781,11 +4122,11 @@ default to the product's default data source.
 For example, the following will map to a
 preconfigured data source for the product's default database:
 
-
-
+[source,java]
+----
 @Resource
-
 DataSource myDS;
+----
 
 ==== Jakarta EE Product Provider's Responsibilities
 
@@ -4821,16 +4162,12 @@ resource reference to the default connection factory using the _lookup_
 element of the _Resource_ annotation or the _lookup-name_ element of the
 _resource-ref_ deployment descriptor element. For example,
 
-
-
+[source,java]
+----
 @Resource(name="myJMSCF",
-
-
-lookup="java:comp/DefaultJMSConnectionFactory")
-
+          lookup="java:comp/DefaultJMSConnectionFactory")
 ConnectionFactory myJMScf;
-
-
+----
 
 In the absence of such a binding, or an
 equivalent product-specific binding, the mapping of the reference will
@@ -4839,11 +4176,11 @@ default to a Jakarta Messaging connection factory for the product's Jakarta Mess
 For example, the following will map to a
 preconfigured connection factory for the product's default Jakarta Messaging provider:
 
-
-
+[source,java]
+----
 @Resource(name="myJMSCF")
-
 ConnectionFactory myJMScf;
+----
 
 ==== Jakarta EE Product Provider's Responsibilities
 
@@ -4872,15 +4209,10 @@ The Jakarta EE Product Provider must make the
 default Jakarta Concurrency objects accessible to the
 application under the following JNDI names:
 
-_java:comp/ DefaultManagedExecutorService_ for the preconfigured managed executor service
-
-*
-_java:comp/DefaultManagedScheduledExecutorService_ for the preconfigured
-managed scheduled executor service
-* j _ava:comp/DefaultManagedThreadFactory_
-for the preconfigured managed thread factory
-*  _java:comp/DefaultContextService_ for the
-preconfigured context service
+* _java:comp/ DefaultManagedExecutorService_ for the preconfigured managed executor service
+* _java:comp/DefaultManagedScheduledExecutorService_ for the preconfigured managed scheduled executor service
+* _java:comp/DefaultManagedThreadFactory_ for the preconfigured managed thread factory
+* _java:comp/DefaultContextService_ for the preconfigured context service
 
 The Application Component Provider or
 Application Assembler may explicitly bind a resource reference to a
@@ -4888,17 +4220,12 @@ default Jakarta Concurrency object using the _lookup_ element of the
 _Resource_ annotation or the _lookup-name_ element of the _resource-ref_
 deployment descriptor element. For example,
 
-
-
-@Resource(name="myManagedExecutorService,
-
-
-lookup="java:comp/DefaultManagedExecutorService")
-
-ManagedExecutorService
-myManagedExecutorService;
-
-
+[source,java]
+----
+@Resource(name="myManagedExecutorService",
+          lookup="java:comp/DefaultManagedExecutorService")
+ManagedExecutorService myManagedExecutorService;
+----
 
 In the absence of such a binding, or an
 equivalent product-specific binding, the mapping of the reference will
@@ -4907,12 +4234,11 @@ default to the product's default managed executor service.
 For example, the following will map to a
 preconfigured default managed executor service for the product:
 
-
-
+[source,java]
+----
 @Resource(name="myManagedExecutorService")
-
-ManagedExecutorService
-myManagedExecutorService;
+ManagedExecutorService myManagedExecutorService;
+----
 
 ==== Jakarta EE Product Provider's Responsibilities
 
@@ -4948,15 +4274,11 @@ An instance of a named Managed Bean can be
 obtained by looking up its name in JNDI using the same naming scheme
 used for Jakarta Enterprise Beans components:
 
-
-
+----
 java:app/<module-name>/<bean-name>
 
-
-
 java:module/<bean-name>
-
-
+----
 
 The latter will only work within the module
 the Managed Bean is declared in.
@@ -4979,21 +4301,14 @@ named _“cart”_ defined in the same module as the client code and
 implementing the _ShoppingCart_ interface, a client may use any of the
 following methods to obtain an instance of the bean class:
 
-
-
+[source,java]
+----
 @Resource ShoppingCartBean cart;
 
+@Resource(lookup="java:module/cart") ShoppingCart cart;
 
-
-@Resource(lookup= _"_ java:module/cart")
-ShoppingCart cart;
-
-
-
-ShoppingCart cart = (ShoppingCart)
-context.lookup("java:module/cart");
-
-
+ShoppingCart cart = (ShoppingCart) context.lookup("java:module/cart");
+----
 
 References to managed beans can be declared in
 the deployment descriptor using the _resource-ref_ element. The
@@ -5009,19 +4324,14 @@ references to the shopping cart bean of the previous example, this time
 using descriptors. (To make the example somewhat more realistic, one
 should add an _injection-target_ child element to _resource-ref_ .)
 
-
-
+[source,xml]
+----
 <resource-ref>
-
- <res-ref-name>bean/cart</ref-ref-name>
-
- <ref-type>com.acme.ShoppingCart</ref-type>
-
- <lookup-name>java:module/cart</lookup-name>
-
+  <res-ref-name>bean/cart</ref-ref-name>
+  <ref-type>com.acme.ShoppingCart</ref-type>
+  <lookup-name>java:module/cart</lookup-name>
 </resource-ref>
-
-
+----
 
 ==== Application Component Provider’s Responsibilities
 
@@ -5051,16 +4361,18 @@ of type _javax.enterprise.inject.spi.BeanManager_ via the _Resource_
 annotation. If the latter, the _authenticationType_ and _shareable_
 elements of the _Resource_ annotation must not be specified.
 
+[source,java]
+----
 @Resource BeanManager manager;
-
-
+----
 
 Per the CDI specification, a bean can also
 request the injection of a _BeanManager_ using the _Inject_ annotation.
 
+[source,java]
+----
 @Inject BeanManager manager;
-
-
+----
 
 A _BeanManager_ object reference may also be
 declared in a deployment descriptor in the same way as a resource
@@ -5160,4 +4472,5 @@ e.g., by avoiding calls to the actual CDI SPI and relying on
 container-specific interfaces instead, as long as the outcome is the
 same.
 
+// generates a line between text and footnotes for pdf and html generation.
 '''

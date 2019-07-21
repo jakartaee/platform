@@ -111,17 +111,13 @@ algorithm for choosing unique names in such a case is product specific.
 Applications that depend on the names of their modules must ensure that
 their module names are unique.
 
-For example, an application with this
-structure:
+For example, an application with this structure:
 
-
-
+----
 myapp.ear
-
  inventory.jar
-
  ui.war
-
+----
 
 
 has a default application name of "myapp",
@@ -129,22 +125,15 @@ and defines two modules with default names "inventory" and "ui".
 
 An application with this structure:
 
-
-
+----
 bigapp.ear
-
  ejbs
-
- inventory.jar
-
- accounts.jar
-
+   inventory.jar
+   accounts.jar
  ui
-
- store.war
-
- admin.war
-
+   store.war
+   admin.war
+----
 
 
 has a default application name of "bigapp",
@@ -408,57 +397,37 @@ as the following to assert their privilege when accessing the context
 class loader. This technique will work in both Java SE and Jakarta EE.
 
 
-
-public ClassLoader getContextClassLoader() \{
-
- return AccessController.doPrivileged(
-
- new PrivilegedAction<ClassLoader>() \{
-
- public ClassLoader run() \{
-
- ClassLoader cl = null;
-
- try \{
-
- cl = Thread.currentThread().
-
- getContextClassLoader();
-
- } catch (SecurityException ex) \{ }
-
- return cl;
-
- }
-
- });
-
+[source,java]
+----
+public ClassLoader getContextClassLoader() {
+  return AccessController.doPrivileged(
+    new PrivilegedAction<ClassLoader>() {
+      public ClassLoader run() {
+        ClassLoader cl = null;
+        try {
+          cl = Thread.currentThread().
+                        getContextClassLoader();
+        } catch (SecurityException ex) { }
+        return cl;
+      }
+    });
 }
+----
 
+Libraries should then use the following technique to load classes.
 
-
-Libraries should then use the following
-technique to load classes.
-
-
-
- ClassLoader cl = getContextClassLoader();
-
- if (cl != null) \{
-
- try \{
-
- clazz = Class.forName(name, false, cl);
-
- } catch (ClassNotFoundException ex) \{
-
- clazz = Class.forName(name);
-
- }
-
+[source,java]
+----
+ClassLoader cl = getContextClassLoader();
+if (cl != null) {
+  try {
+    clazz = Class.forName(name, false, cl);
+  } catch (ClassNotFoundException ex) {
+    clazz = Class.forName(name);
+  }
  } else
-
- clazz = Class.forName(name);
+  clazz = Class.forName(name);
+----
 
 ==== Examples
 
@@ -467,18 +436,13 @@ use of the bundled library mechanism to reference a library of utility
 classes that are shared between enterprise beans in two separate ejb-jar
 files.
 
-
-
+----
 app1.ear:
-
  META-INF/application.xml
-
- ejb1.jar Class-Path: util.jar
-
- ejb2.jar Class-Path: util.jar
-
+ ejb1.jar      Class-Path: util.jar
+ ejb2.jar      Class-Path: util.jar
  util.jar
-
+----
 
 
 The next example illustrates a more complex
@@ -500,79 +464,47 @@ corresponds to the enterprise beans packaged in _ejb1.jar_ of _app2.ear_
 . These enterprise beans are referenced by enterprise beans in
 _ejb3.jar_ and by the Jakarta Servlets packaged in _webapp.war_ .
 
-
-
+[subs=+quotes]
+----
 app2.ear:
-
- META-INF/application.xml
-
- ejb1.jar Class-Path: ejb1_client.jar
-
- deployment descriptor contains:
-
-
-<ejb-client-jar>ejb1_client.jar</ejb-client-jar>
-
- ejb1_client.jar
-
- ejb2.jar Class-Path: ejb1_client.jar
-
-
+  META-INF/application.xml
+  ejb1.jar      Class-Path: ejb1_client.jar
+    _deployment descriptor contains_:
+        <ejb-client-jar>ejb1_client.jar</ejb-client-jar>
+  ejb1_client.jar
+  ejb2.jar      Class-Path: ejb1_client.jar
 
 app3.ear:
-
- META-INF/application.xml
-
- ejb1_client.jar
-
- ejb3.jar Class-Path: ejb1_client.jar
-
- webapp.war Class-Path: ejb1_client.jar
-
- WEB-INF/web.xml
-
- WEB-INF/lib/jakartaservlet1.jar
-
-
+  META-INF/application.xml
+  ejb1_client.jar
+  ejb3.jar      Class-Path: ejb1_client.jar
+  webapp.war    Class-Path: ejb1_client.jar
+     WEB-INF/web.xml
+     WEB-INF/lib/jakartaservlet1.jar
+----
 
 The following example illustrates a simple
 use of the installed library mechanism to reference a library of utility
 classes that is installed separately.
 
-
-
+----
 app1.ear:
-
- META-INF/application.xml
-
- ejb1.jar :
-
- META-INF/MANIFEST.MF:
-
- Extension-List: util
-
- util-Extension-Name: com/example/util
-
- util-Specification-Version: 1.4
-
- META-INF/ejb-jar.xml
-
-
+  META-INF/application.xml
+  ejb1.jar :
+    META-INF/MANIFEST.MF:
+      Extension-List: util
+      util-Extension-Name: com/example/util
+      util-Specification-Version: 1.4
+    META-INF/ejb-jar.xml
 
 util.jar:
-
- META-INF/MANIFEST.MF:
-
- Extension-Name: com/example/util
-
- Specification-Title: example.com’s util
-package
-
- Specification-Version: 1.4
-
- Specification-Vendor: example.com
-
- Implementation-Version: build96
+  META-INF/MANIFEST.MF:
+  Extension-Name: com/example/util
+  Specification-Title: example.com’s util package
+  Specification-Version: 1.4
+  Specification-Vendor: example.com
+  Implementation-Version: build96
+----
 
 [[a3040]]
 === Class Loading Requirements

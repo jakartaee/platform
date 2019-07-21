@@ -763,44 +763,29 @@ and two String arguments. This aligns the declaration syntax with the
 default policy language and the constructor signature for permissions
 that is compliant with the default policy syntax.
 
-
-
-permission <class> [<name> [, <action
-list>]];
-
+----
+permission <class> [<name> [, <action list>]];
+----
 
 
 The following is an example of a permission
 set declaration:
 
+----
 ...
-
 <permissions>
-
- <permission>
-
-
-<class-name>java.io.FilePermission</class-name>
-
- <name>/tmp/abc</name>
-
- <actions>read,write</actions>
-
- </permission>
-
- <permission>
-
-
-<class-name>java.lang.RuntimePermission</class-name>
-
- <name>createClassLoader</name>
-
- </permission>
-
+  <permission>
+    <class-name>java.io.FilePermission</class-name>
+    <name>/tmp/abc</name>
+    <actions>read,write</actions>
+  </permission>
+  <permission>
+    <class-name>java.lang.RuntimePermission</class-name>
+    <name>createClassLoader</name>
+  </permission>
 </permissions>
-
 ...
-
+----
 
 
 The Jakarta EE permissions XML Schema is located
@@ -2039,4 +2024,5 @@ Injection>>” for more detail.
 The DI specification can be found at
 _https://jakarta.ee/specifications/dependency-injection_ .
 
+// generates a line between text and footnotes for pdf and html generation.
 '''
