@@ -322,4 +322,4 @@ _http://xmlns.jcp.org/xml/ns/javaee/application-client_8.xsd_ .
 
 [[a3404]]
 .Jakarta EE Application Client XML Schema Structure
-image::Platform_Spec-12.png[]
+image::JavaEEapplication-client_schema_7.png[]

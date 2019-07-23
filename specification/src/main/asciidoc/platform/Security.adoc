@@ -127,7 +127,7 @@ Original Request>>_ .
 
 [[a265]]
 .Fulfilling the Original Request
-image::Platform_Spec-6.png[]
+image::Step4.png[]
 
 In our example, the response URL of a JSP page
 is returned, enabling the user to post form data that needs to be
