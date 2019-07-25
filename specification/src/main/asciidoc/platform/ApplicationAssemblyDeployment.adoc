@@ -35,7 +35,7 @@ Application>>.”
 
 [[a2899]]
 .Jakarta EE Deployment
-image::Platform_Spec-9.png[]
+image::deployment-schema.png[]
 
 === Application Development Life Cycle
 
@@ -52,7 +52,7 @@ Life Cycle>>_ shows the life cycle of a Jakarta EE application.
 
 [[a2903]]
 .Jakarta EE Application Life Cycle
-image::Platform_Spec-10.png[]
+image::deploy.png[]
 
 [[a2904]]
 ==== Component Creation
@@ -1308,7 +1308,7 @@ of the structure of the Jakarta EE application XML schema.
 
 [[a3208]]
 .Jakarta EE Application XML Schema Structure
-image::Platform_Spec-11.png[]
+image::JavaEEapplication_schema_7.png[]
 
 === Common Jakarta EE XML Schema Definitions
 
