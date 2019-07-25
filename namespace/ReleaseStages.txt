@@ -1,0 +1,56 @@
+Stage -1, No dependencies, and nothing depend on; minimal schedule impact
+Jakarta Messaging
+Jakarta XML Registries
+Jakarta Deployment
+Jakarta Concurrency
+Jakarta Persistence
+
+Stage 0, No dependencies, is depended on; highest schedule impact
+Jakarta Dependency Injection
+Jakarta Expression Language
+Jakarta JSON Processing
+Jakarta Annotations
+Jakarta Activation
+Jakarta Servlet
+Jakarta Authentication
+Jakarta Bean Validation
+Jakarta Web Services Metadata
+Jakarta SOAP Attachments
+Jakarta WebSocket
+
+Stage 1
+Jakarta Interceptors (* has cycle due to javadoc usage)
+Jakarta Server Pages
+Jakarta XML RPC
+Jakarta Mail
+Jakarta XML Binding
+Jakarta JSON Binding
+Jakarta Authorization
+Jakarta Enterprise Web Services
+
+Stage 2
+Jakarta Contexts and Dependency Injection
+Jakarta Standard Tag Library
+Jakarta XML Web Services
+Jakarta RESTful Web Services
+
+Stage 3
+Jakarta Transactions
+Jakarta Batch
+
+Stage 4
+Jakarta Enterprise Beans
+Jakarta Connectors
+
+Stage 5
+Jakarta Management
+Jakarta Security
+Jakarta Server Faces
+
+Stage 6
+Jakarta EE Full Profile
+Jakarta EE Web Profile
+
+
+* Cycle:
+Jakarta Interceptors -> Jakarta Enterprise Beans -> Jakarta Transactions -> Jakarta Contexts and Dependency Injection -> Jakarta Interceptors
