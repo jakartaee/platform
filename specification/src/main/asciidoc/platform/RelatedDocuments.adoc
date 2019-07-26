@@ -5,83 +5,83 @@ This specification refers to the following
 documents. The terms used to refer to the documents in this
 specification are included in parentheses.
 
-_Jakarta™ EE Platform Specification Version 8_. Available at: _https://jakarta.ee/specifications/full-platform/8.0.1_
+_Jakarta™ EE Platform Specification Version 8_. Available at: _https://jakarta.ee/specifications/full-platform/8.0_
 
 _Java™ Platform, Standard Edition, v8 API Specification (Java SE specification)_. Available at: _https://docs.oracle.com/javase/8/docs/_
 
-_Jakarta™ Enterprise Beans Specification, Version 3.2_. Available at: _https://jakarta.ee/specifications/enterprise-beans/3.2.3_
+_Jakarta™ Enterprise Beans Specification, Version 3.2_. Available at: _https://jakarta.ee/specifications/enterprise-beans/3.2_
 
-_Jakarta™ Server Pages Specification, Version 2.3_. Available at: _https://jakarta.ee/specifications/pages/2.3.4_
+_Jakarta™ Server Pages Specification, Version 2.3_. Available at: _https://jakarta.ee/specifications/pages/2.3_
 
-_Jakarta™ Expression Language Specification, Version 3.0_. Available at: _https://jakarta.ee/specifications/expression-language/3.0.2_
+_Jakarta™ Expression Language Specification, Version 3.0_. Available at: _https://jakarta.ee/specifications/expression-language/3.0_
 
-_Jakarta™ Annotations Specification, Version 1.3_. Available at: _https://jakarta.ee/specifications/annotations/1.3.4_
+_Jakarta™ Annotations Specification, Version 1.3_. Available at: _https://jakarta.ee/specifications/annotations/1.3_
 
-_Jakarta™ Servlet Specification, Version 4.0_. Available at: _https://jakarta.ee/specifications/servlet/4.0.2_
+_Jakarta™ Servlet Specification, Version 4.0_. Available at: _https://jakarta.ee/specifications/servlet/4.0_
 
 _JDBC™ 4.2 API (JDBC specification)_. Available at: _https://jcp.org/en/jsr/detail?id=221_
 
 _Java™ Naming and Directory Interface 1.2 Specification (JNDI specification)_. Available at: _https://docs.oracle.com/javase/8/docs/technotes/guides/jndi/index.html_
 
-_Jakarta™ Messaging Specification, Version 2.0_. Available at: _https://jakarta.ee/specifications/messaging/2.0.2_
+_Jakarta™ Messaging Specification, Version 2.0_. Available at: _https://jakarta.ee/specifications/messaging/2.0_
 
-_Jakarta™ Transaction Specification, Version 1.2_. Available at: _https://jakarta.ee/specifications/transactions/1.3.2_
+_Jakarta™ Transaction Specification, Version 1.2_. Available at: _https://jakarta.ee/specifications/transactions/1.3_
 
 _Java™ Transaction Service, Version 1.0_ (JTS specification)_. Available at: _https://www.oracle.com/technetwork/java/javaee/jts-spec095-1508547.pdf_
 
-_Jakarta™ Mail Specification, Version 1.6_. Available at: _https://jakarta.ee/specifications/mail/1.6.3_
+_Jakarta™ Mail Specification, Version 1.6_. Available at: _https://jakarta.ee/specifications/mail/1.6_
 
 _JavaBeans™ Activation Framework Specification Version 1.1 (JAF specification)_. Available at: _https://www.oracle.com/technetwork/java/javase/tech/index-jsp-138795.html_
 
-_Jakarta™ Connectors Specification, Version 1.7_. Available at: _https://jakarta.ee/specifications/connectors/1.7.2_
+_Jakarta™ Connectors Specification, Version 1.7_. Available at: _https://jakarta.ee/specifications/connectors/1.7_
 
-_Jakarta™ XML Web Services Specification, Version 1.4_. Available at: _https://jakarta.ee/specifications/xml-ws/2.3.2_
+_Jakarta™ XML Web Services Specification, Version 1.4_. Available at: _https://jakarta.ee/specifications/xml-web-services/2.3_
 
-_Jakarta™ XML RPC Specification, Version 1.1_. Available at: _https://jakarta.ee/specifications/xml-rpc/1.1.3_
+_Jakarta™ XML RPC Specification, Version 1.1_. Available at: _https://jakarta.ee/specifications/xml-rpc/1.1_
 
 _SOAP with Attachments API for Java™ 1.3 (SAAJ specification)_. Available at: _https://download.oracle.com/otndocs/jcp/jaxm-1.3-mrel-spec-oth-JSpec/_
 
-_Jakarta™ XML Registries Specification, Version 1.0_. Available at: _https://jakarta.ee/specifications/xml-registries/1.0.9_
+_Jakarta™ XML Registries Specification, Version 1.0_. Available at: _https://jakarta.ee/specifications/xml-registries/1.0_
 
-_Jakarta™ RESTful Web Services Specification, Version 2.1_. Available at: _https://jakarta.ee/specifications/restful-ws/2.1.5_
+_Jakarta™ RESTful Web Services Specification, Version 2.1_. Available at: _https://jakarta.ee/specifications/restful-web-services/2.1_
 
-_Jakarta™ Management Specification, Version 1.1_. Available at: _https://jakarta.ee/specifications/management/1.1.3_
+_Jakarta™ Management Specification, Version 1.1_. Available at: _https://jakarta.ee/specifications/management/1.1_
 
-_Jakarta™ Deployment Specification, Version 1.2_. Available at: _https://jakarta.ee/specifications/deployment/1.7.1_
+_Jakarta™ Deployment Specification, Version 1.2_. Available at: _https://jakarta.ee/specifications/deployment/1.7_
 
-_Jakarta™ Authorization Specification, Version 1.5_. Available at: _https://jakarta.ee/specifications/authorization/1.6.1_
+_Jakarta™ Authorization Specification, Version 1.5_. Available at: _https://jakarta.ee/specifications/authorization/1.6_
 
-_Jakarta™ Authentication Specification, Version 1.1_. Available at: _https://jakarta.ee/specifications/authentication/1.1.2_
+_Jakarta™ Authentication Specification, Version 1.1_. Available at: _https://jakarta.ee/specifications/authentication/1.1_
 
-_Jakarta™ Security Specification, Version 1.0_. Available at: _https://jakarta.ee/specifications/security/1.0.1_
+_Jakarta™ Security Specification, Version 1.0_. Available at: _https://jakarta.ee/specifications/security/1.0_
 
 _Jakarta™ Debugging Support for Other Languages Specification, Version 1.0_. Available at: _https://jakarta.ee/specifications/debugging/1.0_
 
-_Jakarta™ Standard Tag Library Specification, Version 1.2_. Available at: _https://jakarta.ee/specifications/tags/1.2.3_
+_Jakarta™ Standard Tag Library Specification, Version 1.2_. Available at: _https://jakarta.ee/specifications/jstl/1.2_
 
-_Jakarta™ Web Services Metadata Specification, Version 2.1_. Available at: _https://jakarta.ee/specifications/ws-metadata/1.0_
+_Jakarta™ Web Services Metadata Specification, Version 2.1_. Available at: _https://jakarta.ee/specifications/web-services-metadata/1.1_
 
-_Jakarta™ Server Faces Specification, Version 2.3_. Available at: _https://jakarta.ee/specifications/faces/2.3.1_
+_Jakarta™ Server Faces Specification, Version 2.3_. Available at: _https://jakarta.ee/specifications/faces/2.3_
 
-_Jakarta™ Persistence Specification, Version 2.2_. Available at: _https://jakarta.ee/specifications/persistence/2.2.2_
+_Jakarta™ Persistence Specification, Version 2.2_. Available at: _https://jakarta.ee/specifications/persistence/2.2_
 
 _Jakarta™ Bean Validation Specification, Version 2.0_. Available at: _https://jakarta.ee/specifications/bean-validation/2.0_
 
-_Jakarta™ Managed Beans Specification, Version 1.0_. Available at: _https://jakarta.ee/specifications/managed-beans/1.0.0_
+_Jakarta™ Managed Beans Specification, Version 1.0_. Available at: _https://jakarta.ee/specifications/managed-beans/1.0_
 
-_Jakarta™ Interceptors Specification, Version 1.2_. Available at: _https://jakarta.ee/specifications/interceptors/1.2.3_
+_Jakarta™ Interceptors Specification, Version 1.2_. Available at: _https://jakarta.ee/specifications/interceptors/1.2_
 
 _Jakarta™ Contexts and Dependency Injection Specification, Version 2.0_. Available at: _https://jakarta.ee/specifications/cdi/2.0_
 
 _Jakarta™ Dependency Injection Specification, Version 1.0_. Available at: _https://jakarta.ee/specifications/dependency-injection/1.0_
 
-_Jakarta™ WebSocket Specification, Version 1.1_. Available at: _https://jakarta.ee/specifications/websocket/1.1.1_
+_Jakarta™ WebSocket Specification, Version 1.1_. Available at: _https://jakarta.ee/specifications/websocket/1.1_
 
-_Jakarta™ JSON Processing Specification, Version 1.1_. Available at: _https://jakarta.ee/specifications/jsonp/1.1.5_
+_Jakarta™ JSON Processing Specification, Version 1.1_. Available at: _https://jakarta.ee/specifications/jsonp/1.1_
 
-_Jakarta™ JSON Binding Specification, Version 1.0_. Available at: _https://jakarta.ee/specifications/jsonb/1.0.1_
+_Jakarta™ JSON Binding Specification, Version 1.0_. Available at: _https://jakarta.ee/specifications/jsonb/1.0_
 
-_Jakarta™ Concurrency Specification, Version 1.0_. Available at: _https://jakarta.ee/specifications/concurrency/1.1.1_
+_Jakarta™ Concurrency Specification, Version 1.0_. Available at: _https://jakarta.ee/specifications/concurrency/1.1_
 
 _Jakarta™ Batch Specification, Version 1.0_. Available at: _https://jakarta.ee/specifications/batch/1.0_
 
