@@ -116,8 +116,8 @@
                         </goals>
                         <configuration>
                             <backend>html5</backend>
-                            <sourceDocumentName>Platform-spec.adoc</sourceDocumentName>
-                            <outputFile>${project.build.directory}/generated-docs/Platform-spec-${project.version}.html</outputFile>
+                            <sourceDocumentName>platform-spec.adoc</sourceDocumentName>
+                            <outputFile>${project.build.directory}/generated-docs/platform-spec-${project.version}.html</outputFile>
                             <attributes>
                                 <toc>left</toc>
                             </attributes>
@@ -132,8 +132,8 @@
                         </goals>
                         <configuration>
                             <backend>pdf</backend>
-                            <sourceDocumentName>Platform-spec.adoc</sourceDocumentName>
-                            <outputFile>${project.build.directory}/generated-docs/Platform-spec-${project.version}.pdf</outputFile>
+                            <sourceDocumentName>platform-spec.adoc</sourceDocumentName>
+                            <outputFile>${project.build.directory}/generated-docs/platform-spec-${project.version}.pdf</outputFile>
                             <attributes>
                                 <pdf-stylesdir>${project.basedir}/src/theme</pdf-stylesdir>
                                 <pdf-style>jakartaee</pdf-style>
@@ -152,8 +152,8 @@
                         </goals>
                         <configuration>
                             <backend>html5</backend>
-                            <sourceDocumentName>WebProfile-spec.adoc</sourceDocumentName>
-                            <outputFile>${project.build.directory}/generated-docs/WebProfile-spec-${project.version}.html</outputFile>
+                            <sourceDocumentName>webprofile-spec.adoc</sourceDocumentName>
+                            <outputFile>${project.build.directory}/generated-docs/webprofile-spec-${project.version}.html</outputFile>
                             <attributes>
                                 <toc>left</toc>
                             </attributes>
@@ -168,8 +168,8 @@
                         </goals>
                         <configuration>
                             <backend>pdf</backend>
-                            <sourceDocumentName>WebProfile-spec.adoc</sourceDocumentName>
-                            <outputFile>${project.build.directory}/generated-docs/WebProfile-spec-${project.version}.pdf</outputFile>
+                            <sourceDocumentName>webprofile-spec.adoc</sourceDocumentName>
+                            <outputFile>${project.build.directory}/generated-docs/webprofile-spec-${project.version}.pdf</outputFile>
                             <attributes>
                                 <pdf-stylesdir>${project.basedir}/src/theme</pdf-stylesdir>
                                 <pdf-style>jakartaee</pdf-style>
@@ -188,8 +188,8 @@
                         </goals>
                         <configuration>
                             <backend>html5</backend>
-                            <sourceDocumentName>ManagedBeans-spec.adoc</sourceDocumentName>
-                            <outputFile>${project.build.directory}/generated-docs/ManagedBeans-spec-${managedbean.version}.html</outputFile>
+                            <sourceDocumentName>managedbeans-spec.adoc</sourceDocumentName>
+                            <outputFile>${project.build.directory}/generated-docs/managedbeans-spec-${managedbean.version}.html</outputFile>
                             <attributes>
                                 <toc>left</toc>
                                 <revnumber>${managedbean.version}</revnumber>
@@ -205,8 +205,8 @@
                         </goals>
                         <configuration>
                             <backend>pdf</backend>
-                            <sourceDocumentName>ManagedBeans-spec.adoc</sourceDocumentName>
-                            <outputFile>${project.build.directory}/generated-docs/ManagedBeans-spec-${managedbean.version}.pdf</outputFile>
+                            <sourceDocumentName>managedbeans-spec.adoc</sourceDocumentName>
+                            <outputFile>${project.build.directory}/generated-docs/managedbeans-spec-${managedbean.version}.pdf</outputFile>
                             <attributes>
                                 <pdf-stylesdir>${project.basedir}/src/theme</pdf-stylesdir>
                                 <pdf-style>jakartaee</pdf-style>
