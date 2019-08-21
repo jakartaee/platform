@@ -26,7 +26,7 @@ not generally useful in a particular domain.
 A profile may also add one or more
 technologies which are not present in the platform itself. For example,
 a hypothetical Jakarta EE Portal Profile would likely include the Portlet
-API (JSR-286).
+API (JSR-362).
 
 Additionally, a profile may tag certain
 technologies as optional. In this case, products implementing the
