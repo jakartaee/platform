@@ -196,7 +196,7 @@ associated Jakarta Enterprise Beans QL, which have been made optional)
 * Jakarta Transactions 1.3
 * Jakarta Mail 1.6
 * Jakarta Connectors 1.7
-* Jakarta XML Web Services 2.3
+* Jakarta Enterprise Web Services 1.4
 * Jakarta RESTful Web Services 2.1
 * Jakarta WebSocket 1.1
 * Jakarta JSON Processing 1.1
