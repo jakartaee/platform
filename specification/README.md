@@ -18,11 +18,11 @@ Run the full build:
 `mvn install`
 
 Locate the html files:
-- `target/generated-docs/Platform-spec-<version>.html`
-- `target/generated-docs/WebProfile-spec-<version>.html`
-- `target/generated-docs/ManagedBeans-spec-<version>.html`
+- `target/generated-docs/platform-spec-<version>.html`
+- `target/generated-docs/webprofile-spec-<version>.html`
+- `target/generated-docs/managedbeans-spec-<version>.html`
 
 Locate the PDF files:
-- `target/generated-docs/Platform-spec-<version>.pdf`
-- `target/generated-docs/WebProfile-spec-<version>.pdf`
-- `target/generated-docs/ManagedBeans-spec-<version>.pdf`
+- `target/generated-docs/platform-spec-<version>.pdf`
+- `target/generated-docs/webprofile-spec-<version>.pdf`
+- `target/generated-docs/managedbeans-spec-<version>.pdf`
