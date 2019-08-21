@@ -2,19 +2,19 @@
 == Profiles
 
 This chapter describes the requirements
-common to all Java EE profiles. It does not define any concrete
+common to all Jakarta(TM) EE profiles. It does not define any concrete
 profiles, delegating this task to separate specifications.
 
-The Java EE Web Profile Specification,
+The Jakarta EE Web Profile Specification,
 published in conjunction with the present specification, defines the
-first Java EE profile, the Web Profile.
+first Jakarta EE profile, the Web Profile.
 
 The definition of other profiles is left to
 future specifications.
 
 === Introduction
 
-A Java EE profile (from now on, simply “a
+A Jakarta EE profile (from now on, simply “a
 profile”) represents a configuration of the platform suited to a
 particular class of applications.
 
@@ -25,7 +25,7 @@ not generally useful in a particular domain.
 
 A profile may also add one or more
 technologies which are not present in the platform itself. For example,
-a hypothetical Java EE Portal Profile would likely include the Portlet
+a hypothetical Jakarta EE Portal Profile would likely include the Portlet
 API (JSR-286).
 
 Additionally, a profile may tag certain
@@ -34,56 +34,56 @@ profile may or may not include the technology in question. Naturally, if
 they do, they need to obey all the relevant requirements mandated by the
 profile specification.
 
-A product may implement two or more Java EE
-profiles, or the full platform and one or more Java EE profiles, as long
+A product may implement two or more Jakarta EE
+profiles, or the full platform and one or more Jakarta EE profiles, as long
 as their combined requirements do not give rise to conflicts.
 
 === Profile Definition
 
 A profile is defined in accordance with the
-rules of the Java Community Process. Typically, a proposal to create a
-new profile, or to revise an existing one, will be submitted as a Java
-Specification Request (JSR). Once the JSR is approved, an expert group
-will be formed and conduct work as dictated by the process. The JSR for
-a profile must mention the version of the Java EE Platform that it
+rules of the Jakarta EE Specification Process. Typically, a proposal to create a
+new profile, or to revise an existing one, will be submitted as a Jakarta Specification
+Project. Once the Project is approved, a group of interested parties
+will be formed and conduct work as dictated by the process. The Project proposal for
+a profile must mention the version of the Jakarta EE Platform that it
 builds on. Additionally, if it builds on an existing profile, it must
 mention this fact as well.
 
 Although profiles can be created and evolved
-independently of the Java EE platform, modulo the rules contained in
+independently of the Jakarta EE platform, modulo the rules contained in
 this specification, it is envisioned that profiles will maintain a
 reasonable level of alignment with the platform itself, in order to
 avoid fragmenting the development space into progressively incompatible
 islands. To this end, a profile must build on the most recent version of
-the Java EE platform available at the time the JSR for the profile is
-approved. It is also recommended that profile expert groups go beyond
+the Jakarta EE platform available at the time the Project for the profile is
+approved. It is also recommended that profile community groups go beyond
 this requirement and, as much as it is practical, ensure that their
-profile builds on the most recent version of the Java EE platform at the
+profile builds on the most recent version of the Jakarta EE platform at the
 time the profile is finalized.
 
 === General Rules for Profiles
 
 A profile must include all technologies that
-are required components of the Java EE platform or of any profiles on
+are required components of the Jakarta EE platform or of any profiles on
 which it builds. These technologies will be listed as required in the
 profile.
 
 A profile may promote to required status any
-technologies that are optional components of the Java EE platform or of
+technologies that are optional components of the Jakarta EE platform or of
 any profile on which it builds.
 
 Unless otherwise mandated by a profile, any
-technologies that are optional components of the Java EE platform, or of
+technologies that are optional components of the Jakarta EE platform, or of
 any profile on which the profile in question builds, must be optional
 components of the profile itself.
 
 A profile may include as a required or as an
-optional component any technology outside of those included in the Java
+optional component any technology outside of those included in the Jakarta
 EE platform or any profile on which it builds, as long as the
 corresponding compatibility requirements are satisfied.
 
 A profile must preserve any requirements
-defined in the Java EE platform specification, or in the specification
+defined in the Jakarta EE platform specification, or in the specification
 of any profile on which it builds, as long as the preconditions for
 those requirements are satisfied. Typically, the preconditions will
 involve the presence of one or more technologies among those included in
@@ -91,13 +91,13 @@ the profile. Unconditional requirements must be obeyed unconditionally.
 
 A profile may add any requirements that
 pertain to one or more technologies whose inclusion it allows or
-requires. Such requirements must not conflict with those set by the Java
+requires. Such requirements must not conflict with those set by the Jakarta
 EE platform or by any profile on which the present one builds.
 
 The specification for individual technologies
 may allow for certain features of the technology in question to be
 optional. In this case, a profile may promote one or more of these
-features to required status, assuming the Java EE platform or any
+features to required status, assuming the Jakarta EE platform or any
 profile on which it builds hasn’t done so already.
 
 A profile must not conflict with the
@@ -134,39 +134,37 @@ examples, or are otherwise non-normative, do not contain any
 requirements.
 
 [[a3240]]
-=== Requirements for All Java EE Profiles
+=== Requirements for All Jakarta EE Profiles
 
 The Java Platform, Standard Edition 8 is the
-required foundation for any Java EE 8 profile.
+required foundation for any Jakarta EE 8 profile.
 
 The following technologies are required to be
-present in all Java EE profiles:
+present in all Jakarta EE profiles:
 
 * Resource and component lifecycle
 annotations defined by the Common Annotations specification ( _Resource_
 , _Resources_ , _PostConstruct_ , _PreDestroy_ )
 
 The following functionality is required to be
-supported in all Java EE profiles:
+supported in all Jakarta EE profiles:
 
 * JNDI “java:” naming context (see <<a607, JNDI Naming Context>>”)
-* Java Transaction API (JTA)
+* Jakarta Transactions
 
-=== Optional Features for Java EE Profiles
+=== Optional Features for Jakarta EE Profiles
 
 All the technologies listed in
 <<a2136, Required APIs>>”, and
 not designated as required in
-<<a3240, Requirements for All
-Java EE Profiles>>”, are designated as optional for use in Java EE
+<<a3240, Requirements for All Jakarta EE Profiles>>”, are designated as optional for use in Jakarta EE
 profiles.
 
 The following functionality is designated as
-optional for use in Java EE profiles:
+optional for use in Jakarta EE profiles:
 
 * RMI/IIOP interoperability requirements (see
-<<a2875, OMG Protocols (Proposed
-Optional)>>”)
+<<a2875, OMG Protocols (Proposed Optional)>>”)
 * Support for _java:comp/ORB_ (see
 <<a1385, ORB References>>”)
 
@@ -175,7 +173,7 @@ Optional)>>”)
 
 This section defines the requirements for
 full Jakarta EE platform products. These requirements correspond to the
-full set of requirements in previous versions of the Java EE platform
+full set of requirements in previous versions of the Jakarta EE platform
 specification and update those requirements for this new version of the
 platform.
 
@@ -185,8 +183,7 @@ likely relax the requirements given here, specifically by marking as
 optional technologies that have been subject to pruning and that are
 required by the present specification. The set of technologies that have
 been made optional and/or identified as candidates for pruning is given
-in <<a2331, Pruned Java
-Technologies>>”.
+in <<a2331, Pruned Java Technologies>>”.
 
 The following technologies are required:
 
@@ -199,7 +196,7 @@ associated Jakarta Enterprise Beans QL, which have been made optional)
 * Jakarta Transactions 1.3
 * Jakarta Mail 1.6
 * Jakarta Connectors 1.7
-* Jakarta XML Web Services 1.4
+* Jakarta XML Web Services 2.3
 * Jakarta RESTful Web Services 2.1
 * Jakarta WebSocket 1.1
 * Jakarta JSON Processing 1.1
@@ -212,7 +209,7 @@ associated Jakarta Enterprise Beans QL, which have been made optional)
 * Jakarta Security 1.0
 * Jakarta Debugging Support for Other Languages 1.0
 * Jakarta Standard Tag Library 1.2
-* Jakarta Web Services Metadata 2.1
+* Jakarta Web Services Metadata 1.1
 * Jakarta Server Faces 2.3
 * Jakarta Annotations 1.3
 * Jakarta Persistence 2.2

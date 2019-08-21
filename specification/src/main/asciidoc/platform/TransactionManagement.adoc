@@ -120,7 +120,7 @@ context. See the Jakarta Enterprise Beans specification for details.
 associated with a transaction defined by the Jakarta Transactions specification,
 the Jakarta EE platform must ensure that the resource access is included as part
 of the transaction defined by the Jakarta Transactions specification.
-* If a web component creates a thread, the Java EE platform must ensure that the
+* If a web component creates a thread, the Jakarta EE platform must ensure that the
 newly created thread is not associated with any transaction defined by the
 Jakarta Transactions specification.
 

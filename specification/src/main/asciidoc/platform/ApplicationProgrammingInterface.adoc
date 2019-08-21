@@ -178,7 +178,7 @@ POPT footnote:[IIOP interoperability, including Jakarta(TM) Enterprise Beans 2.x
 |Y
 |REQ
 
-|Concurrency Utilities for Java EE 1.0
+|Concurrency Utilities 1.0
 |N
 |Y
 |Y
