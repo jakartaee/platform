@@ -355,23 +355,23 @@ Technologies>>.
 
 ==== Programming Restrictions
 
- _The_ Jakarta EE _programming model divides
-responsibilities between Application Component Providers and_ Jakarta EE
-_Product Providers: Application Component Providers focus on writing
-business logic and the_ Jakarta EE _Product Providers focus on providing a
+The Jakarta EE programming model divides
+responsibilities between Application Component Providers and Jakarta EE
+Product Providers: Application Component Providers focus on writing
+business logic and the Jakarta EE Product Providers focus on providing a
 managed system infrastructure in which the application components can be
-deployed._
+deployed.
 
- _This division leads to a restriction on the
+This division leads to a restriction on the
 functionality that application components can contain. If application
 components contain the same functionality provided by Jakarta EE system
 infrastructure, there are clashes and mis-management of the
-functionality._
+functionality.
 
- _For example, if enterprise beans were
-allowed to manage threads, the_ Jakarta EE _platform could not manage the
+For example, if enterprise beans were
+allowed to manage threads, the Jakarta EE platform could not manage the
 life cycle of the enterprise beans, and it could not properly manage
-transactions._
+transactions.
 
 Since we do not want to subset the Java SE
 platform, and we want Jakarta EE Product Providers to be able to use Java

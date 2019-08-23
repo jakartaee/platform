@@ -222,8 +222,6 @@ annotations, only those that specify deployment information.
 The list of annotations to which the
 _metadata-complete_ attribute applies currently includes the following:
 
-
-
 *  _javax.annotation.PostConstruct_
 *  _javax.annotation.PreDestroy_
 *  _javax.annotation.Resource_
@@ -231,45 +229,32 @@ _metadata-complete_ attribute applies currently includes the following:
 *  _javax.annotation.sql.DataSourceDefinition_
 *  _javax.annotation.sql.DataSourceDefinitions_
 
- __
-
 *  _javax.ejb.EJB_
 *  _javax.ejb.EJBs_
-
- __
 
 *  _javax.jms.JMSConnectionFactoryDefinition_
 *  _javax.jms.JMSConnectionFactoryDefinitions_
 *  _javax.jms.JMSDestinationDefinition_
 *  _javax.jms.JMSDestinationDefinitions_
 
- __
-
 *  _javax.mail.MailSessionDefinition_
 *  _javax.mail.MailSessionDefinitions_
 
- __
-
 *  _javax.persistence.PersistenceUnit_
 *  _javax.persistence.PersistenceUnits_
-
- __
 
 *  _javax.resource.AdministeredObjectDefinition_
 *  _javax.resource.AdministeredObjectDefinitions_
 *  _javax.resource.ConnectionFactoryDefinition_
 *  _javax.resource.ConnectionFactoryDefinitions_
 
- __
 
 * All annotations in the following packages:
-*  _javax.jws_
-* javax.jws.soap
-* javax.xml.ws
-* javax.xml.ws.soap
-* javax.xml.ws.spi
-
- __
+** _javax.jws_
+** _javax.jws.soap_
+** _javax.xml.ws_
+** _javax.xml.ws.soap_
+** _javax.xml.ws.spi_
 
 If the _metadata-complete_ attribute is not
 specified or its value is _"false"_ , the deployment tool must examine
