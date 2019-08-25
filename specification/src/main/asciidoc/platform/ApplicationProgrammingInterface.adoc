@@ -112,7 +112,7 @@ POPT footnote:[IIOP interoperability, including Jakarta(TM) Enterprise Beans 2.x
 |N
 |REQ
 
-|EL 3.0
+|Expression Language 3.0
 |N
 |Y
 |N
@@ -124,13 +124,13 @@ POPT footnote:[IIOP interoperability, including Jakarta(TM) Enterprise Beans 2.x
 |Y
 |REQ
 
-|Transactions 1.2
+|Transactions 1.3
 |N
 |Y
 |Y
 |REQ
 
-|JavaMail 1.6
+|Mail 1.6
 |Y
 |Y
 |Y
@@ -142,7 +142,7 @@ POPT footnote:[IIOP interoperability, including Jakarta(TM) Enterprise Beans 2.x
 |Y
 |REQ
 
-|Web Services 1.4
+|Enterprise Web Services 1.4
 |Y
 |Y
 |Y
@@ -166,19 +166,19 @@ POPT footnote:[IIOP interoperability, including Jakarta(TM) Enterprise Beans 2.x
 |N
 |REQ
 
-|JSON-P 1.1
+|JSON Processing 1.1
 |Y
 |Y
 |Y
 |REQ
 
-|JSON-B 1.0
+|JSON Binding 1.0
 |Y
 |Y
 |Y
 |REQ
 
-|Concurrency Utilities 1.0
+|Concurrency 1.1
 |N
 |Y
 |Y
@@ -202,8 +202,8 @@ POPT footnote:[IIOP interoperability, including Jakarta(TM) Enterprise Beans 2.x
 |Y
 |REQ
 
-|Deployment 1.2 footnote:[See
-<<a2730, Jakarta™ Enterprise Edition Deployment API 1.2 Requirements (Optional)>> for
+|Deployment 1.7 footnote:[See
+<<a2730, Jakarta™ Enterprise Edition Deployment API 1.7 Requirements (Optional)>> for
 details.]
 |N
 |N
@@ -240,7 +240,7 @@ details.]
 |N
 |REQ
 
-|Web Services Metadata 2.1
+|Web Services Metadata 1.1
 |Y
 |Y
 |Y
@@ -282,8 +282,7 @@ details.]
 |Y
 |REQ
 
-|Contexts and Dependency Injection
-2.0
+|Contexts and Dependency Injection 2.0
 |Y
 |Y
 |Y
