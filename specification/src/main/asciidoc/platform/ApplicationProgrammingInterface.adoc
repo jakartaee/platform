@@ -240,12 +240,6 @@ details.]
 |N
 |REQ
 
-|Web Services Metadata 1.1
-|Y
-|Y
-|Y
-|REQ
-
 |Server Faces 2.3
 |N
 |Y
@@ -336,6 +330,12 @@ The following specifications are outside Jakarta EE, provided by the Java™ run
 |REQ
 
 |XML Binding 2.3
+|Y
+|Y
+|Y
+|REQ
+
+|Web Services Metadata 1.1
 |Y
 |Y
 |Y
