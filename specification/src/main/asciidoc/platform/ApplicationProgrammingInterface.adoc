@@ -306,9 +306,9 @@ _javax.xml.rpc.handler.MessageContext_ type.]
 
 The following specifications are outside Jakarta EE, provided by the Java™ runtime.
 
-[[a2159]]
+[[a21591]]
 [cols=5, options=header]
-.Jakarta EE Technologies
+.Java Technologies outside Jakarta EE
 |===
 |Java Technology
 |App Client
