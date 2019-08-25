@@ -2063,5 +2063,12 @@ Injection>>” for more detail.
 The DI specification can be found at
 _https://jakarta.ee/specifications/dependency-injection_ .
 
+=== Enterprise Web Services 1.4 Requirements
+
+The Enterprise Web Services specification defines the integration between the various Web Service technologies in Jakarta EE, including XML-RPC, XMl Web Services and XML Web Service Metadata.
+
+The Enterprise Web Services specification can be found
+at _https://jakarta.ee/specifications/enterprise-ws_ .
+
 // generates a line between text and footnotes for pdf and html generation.
 '''
