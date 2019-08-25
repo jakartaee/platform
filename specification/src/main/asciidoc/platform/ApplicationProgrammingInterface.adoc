@@ -1500,7 +1500,7 @@ enterprise beans container and the web container.
 The Jakarta Messaging specification is available at
 _ https://jakarta.ee/specifications/messaging_ .
 
-=== Jakarta Transaction 1.2 Requirements
+=== Jakarta Transaction 1.3 Requirements
 
 Jakarta Transaction defines the _UserTransaction_ interface
 that is used by applications to start, and commit or abort transactions.
@@ -1618,7 +1618,7 @@ Resource Adapters.
 The Jakarta EE Connectors specification is available at
 _https://jakarta.ee/specifications/connectors_ .
 
-=== Jakarta EE XML Web Services Requirements
+=== Jakarta EE XML Web Services 2.3 Requirements
 
 The Jakarta EE XML Web Services specification
 defines the capabilities a Jakarta EE application server must support for
@@ -1720,7 +1720,7 @@ required to support the JSON-B API.
 The Jakarta JSON Binding  specification
 can be found at _https://jakarta.ee/specifications/jsonb_.
 
-=== Jakarta Concurrency 1.0 (Concurrency Utilities) Requirements
+=== Jakarta Concurrency 1.1 (Concurrency Utilities) Requirements
 
 Jakarta Concurrency Utilities for Jakarta EE is a
 standard API for providing asynchronous capabilities to Jakarta EE
@@ -1737,7 +1737,7 @@ required to be supported.
 The Jakarta Concurrency
 specification can be found at _https://jakarta.ee/specifications/concurrency_ .
 
-=== Jakarta Batch Specification Requirements
+=== Jakarta Batch 1.0 Specification Requirements
 
 The Jakarta Batch provides a programming model for batch
 applications and a runtime for scheduling and executing jobs.
@@ -1770,7 +1770,7 @@ The Jakarta Management specification is
 available at _https://jakarta.ee/specifications/management_ .
 
 [[a2730]]
-=== Jakarta Deployment API 1.2 Requirements (Optional)
+=== Jakarta Deployment API 1.7 Requirements (Optional)
 
 The Jakarta Deployment API defines the
 interfaces between the runtime environment of a deployment tool and
@@ -1841,7 +1841,7 @@ requirements defined by the Jakarta Security specification.
 The Jakarta Security Specification can be
 found at _https://jakarta.ee/specifications/security_ .
 
-=== Jakarta Debugging Support for Other Languages Requirements
+=== Jakarta Debugging Support for Other Languages Requirements 1.0
 
 Jakarta Server Pages pages are usually translated into Java
 language pages and then compiled to create class files. The Jakarta Debugging Support for Other Languages
@@ -1863,7 +1863,7 @@ to provide a Jakarta Standard Tag Library for use by all Jakarta Server Pages.
 The Jakarta Standard Tag Library for Jakarta Server Pages
 specification can be found at _https://jakarta.ee/specifications/tags_ .
 
-=== Jakarta Web Services Metadata Platform 2.1 Requirements
+=== Jakarta Web Services Metadata Platform 1.1 Requirements
 
 The Jakarta Web Services Metadata
 Platform specification defines Java language annotations that can be
