@@ -1,0 +1,170 @@
+[appendix]
+[[a4422]]
+== Java EE 8 and Jakarta EE 8 Comparison
+
+The intent of this section is to explain any differences in specification names and versions between those referenced in the last Java EE 8 Platform specification, dated July 31st, 2017 and the Jakarta EE 8 Platform specification.
+
+In some cases the versions changed in preparation for donation and therefore the official JCP versions changed over those referenced in the July 31st, 2017 Platform specification.  In other cases the versions were changed after the donation.  This section explains both sets of changes and encompasses all specifications donated.
+
+It is important to understand that despite any name or version changes, the specifications detailed are functionally equivalent.
+
+[cols=2, options=header]
+.Java EE 8 and Jakarta EE 8 Specification Comparison
+|===
+|Java EE 8 Specification
+|Jakarta EE 8 Specification
+
+|Java™ Platform, Enterprise Edition 8
+|Jakarta™ EE Platform 8
+
+|Enterprise JavaBeans™ 3.2
+|Jakarta™ Enterprise Beans 3.2
+
+|Common Annotations for the Java Platform 1.3
+|Jakarta™ Annotations 1.3
+
+|Java™ Servlet 4.0
+|Jakarta™ Servlet 4.0
+
+|Java API for WebSocket 1.1
+|Jakarta™ WebSocket 1.1
+
+|JavaServer Faces 2.3
+|Jakarta™ Server Faces 2.3
+
+|JavaServer Pages™ 2.3
+|Jakarta™ Server Pages 2.3
+
+|Standard Tag Library for JavaServer Pages 1.2
+|Jakarta™ Standard Tag Library 1.2
+
+|Expression Language 3.0
+|Jakarta™ Expression Language 3.0
+
+|Debugging Support for Other Languages 1.0
+|Jakarta™ Debugging Support for Other Languages 1.0
+
+|Java™ Message Service 2.0
+|Jakarta™ Messaging 2.0
+
+|Java™ Transaction API 1.2
+|Jakarta™ Transaction 1.3
+
+|JavaMail™ API 1.6
+|Jakarta™ Mail 1.6
+
+|JavaBeans™ Activation Framework 1.1
+|Jakarta™ Activation 1.2
+
+|Java EE™ Connector Architecture 1.7
+|Jakarta™ Connectors 1.7
+
+|Java™ Architecture for XML Binding 2.3
+|Jakarta™ XML Binding 2.3
+
+|Java™ API for XML Web Services 2.3
+|Jakarta™ XML Web Services 2.3
+
+|Web Services for Java EE 1.4
+|Jakarta™ Enterprise Web Services 1.4
+
+|Web Services Metadata for the Java Platform 2.1
+|Jakarta™ Web Services Metadata 1.1
+
+|Java™ API for XML-based RPC 1.1
+|Jakarta™ XML RPC 1.1
+
+|SOAP with Attachments API for Java™ 1.3
+|Jakarta™ SOAP with Attachments 1.4
+
+|Java™ API for XML Registries 1.0
+|Jakarta™ XML Registries 1.0
+
+|Java™ API for RESTful Web Services 2.1
+|Jakarta™ RESTful Web Services 2.1
+
+|Java API for JSON Processing 1.1
+|Jakarta™ JSON Processing 1.1
+
+|Java API for JSON Binding 1.0
+|Jakarta™ JSON Binding 1.0
+
+|Java™ Platform, Enterprise Edition Management 1.1
+|Jakarta™ Management 1.1
+
+|Java™ Platform, Enterprise Edition Deployment 1.2
+|Jakarta™ Deployment 1.7
+
+|Java™ Authorization Service Provider Contract for Containers 1.5
+|Jakarta™ Authorization 1.5
+
+|Java™ Authentication Service Provider Interface for Containers 1.1
+|Jakarta™ Authentication 1.1
+
+|Java™ EE Security API 1.0
+|Jakarta™ Security 1.0
+
+|Java Persistence 2.2
+|Jakarta™ Persistence 2.2
+
+|Bean Validation 2.0
+|Jakarta™ Bean Validation 2.0
+
+|Managed Beans 1.0
+|Jakarta™ Managed Beans 1.0
+
+|Interceptors 1.2 rev A
+|Jakarta™ Interceptors 1.2
+
+|Contexts and Dependency Injection for the Java EE Platform 2.0
+|Jakarta™ Contexts and Dependency Injection 2.0
+
+|Dependency Injection for Java 1.0
+|Jakarta™ Dependency Injection 1.0
+
+|Concurrency Utilities for Java EE 1.0
+|Jakarta™ Concurrency 1.1
+
+|Batch Applications for the Java Platform 1.0 rev A
+|Jakarta™ Batch 1.0
+|===
+
+=== Transaction 1.2 vs 1.3
+
+To address cleanly separating the `javax.transaction` package in the JVM from the classes being donated, a Maintenance Release of the Java™ Transaction API (JTA) was created in the JCP and released as version 1.3.  The official Jakarta version is therefore 1.3 and not 1.2.
+
+No API changes were made in this Maintenance Release or after donation and Java™ Transaction API 1.2, Java™ Transaction API 1.3 and Jakarta Transaction 1.3 are functionally equivalent.
+
+=== Activation 1.1 vs 1.2
+
+The Java EE 8 Platform specification, dated July 31st, 2017, references JavaBeans™ Activation Framework Specification Version 1.1 in appendix EE.C Related Documents.  A Maintenance Release of the JavaBeans™ Activation Framework was created and released in the JCP as version 1.2 dated July 2017.  The reference to JAF 1.1 in the Java EE 8 Platform specification, released at the same time is simply an error.
+
+The official Java EE 8 version of JAF is 1.2 and therefore the official version for Jakarta EE 8 is Jakarta Activation 1.2.
+
+JavaBeans™ Activation Framework 1.1 and 1.2 distinct specifications and may be functionally different.  JavaBeans™ Activation Framework 1.2 and Jakarta Activation 1.2 are functionally equivalent.
+
+=== Web Services Metadata 2.1 vs 1.1
+
+In JSR-000181 Web Services Metadata for the JavaTM Platform Maintenance Release 2, the specification version was mistakenly incremented from 1.0 to 2.1.  No binaries were released with this version and was only an error of documentation, therefore the version was corrected after donation.
+
+The official version of Web Services Metadata for Jakarta EE 8 is version 1.1, which is functionally equivalent to Web Services Metadata 2.1 in Java EE 8.
+
+===  SOAP with Attachments 1.3 vs 1.4
+
+TODO: I do not know the explanation for this one
+
+=== Deployment 1.2 vs 1.7
+
+The last Maintenance Release of JSR-88 Java™ EE Application Deployment in the JCP is version 1.2.  After donation and before completion of the Jakarta EE Specification Process a version 1.7 was released under the `jakarta` groupId in efforts to ship a Java EE 8 certified version of Eclipse GlassFish.
+
+The mistaken change from 1.2 to 1.7 was discovered while following the completed Jakarta EE Specification Process.  The Specification Committee decided to leave the version as 1.7 to avoid any potential future version conflicts.
+
+Java™ EE Application Deployment 1.2 and Jakarta™ Deployment 1.7 are functionally equivalent.
+
+=== Concurrency 1.0 vs 1.1
+
+The last and only official release of JSR 236: Concurrency Utilities for JavaTM EE was 1.0.  A version 1.1 was published under the `javax` groupId in Feb 2018 and again as 1.1 under the `jakarta` groupId in Jan 2019 for the previously mentioned Java EE 8 certified version of Eclipse GlassFish.
+
+The mistaken change from 1.0 to 1.1 was discovered while following the Jakarta EE Specification Process and, as with Deployment, the Specification Committee decided to leave the version 1.1 to avoid future version conflicts.
+
+Concurrency Utilities for Java EE 1.0 and Jakarta Concurrency 1.1 are functionally equivalent.
