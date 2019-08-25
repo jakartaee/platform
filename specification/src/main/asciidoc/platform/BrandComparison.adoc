@@ -6,10 +6,10 @@ The intent of this section is to explain any differences in specification names 
 
 In some cases the versions changed in preparation for donation and therefore the official JCP versions changed over those referenced in the July 31st, 2017 Platform specification.  In other cases the versions were changed after the donation.  This section explains both sets of changes and encompasses all specifications donated.
 
-It is important to understand that despite any name or version changes, the specifications detailed are functionally equivalent.
+It is important to understand that despite any name or version changes, Java EE 8 and Jakarta EE 8 are functionally equivalent.
 
 [cols=2, options=header]
-.Java EE 8 and Jakarta EE 8 Specification Comparison
+.Java EE 8 and Jakarta EE 8 Specification References
 |===
 |Java EE 8 Specification
 |Jakarta EE 8 Specification
@@ -141,7 +141,7 @@ The Java EE 8 Platform specification, dated July 31st, 2017, references JavaBean
 
 The official Java EE 8 version of JAF is 1.2 and therefore the official version for Jakarta EE 8 is Jakarta Activation 1.2.
 
-JavaBeans™ Activation Framework 1.1 and 1.2 distinct specifications and may be functionally different.  JavaBeans™ Activation Framework 1.2 and Jakarta Activation 1.2 are functionally equivalent.
+JavaBeans™ Activation Framework 1.1 and 1.2 are distinct specifications and may be functionally different.  JavaBeans™ Activation Framework 1.2 and Jakarta Activation 1.2 are functionally equivalent.
 
 === Web Services Metadata 2.1 vs 1.1
 
@@ -163,7 +163,7 @@ Java™ EE Application Deployment 1.2 and Jakarta™ Deployment 1.7 are function
 
 === Concurrency 1.0 vs 1.1
 
-The last and only official release of JSR 236: Concurrency Utilities for JavaTM EE was 1.0.  A version 1.1 was published under the `javax` groupId in Feb 2018 and again as 1.1 under the `jakarta` groupId in Jan 2019 for the previously mentioned Java EE 8 certified version of Eclipse GlassFish.
+The last official release of JSR 236: Concurrency Utilities for JavaTM EE was 1.0.  A version 1.1 was published under the `javax` groupId in Feb 2018 and again as 1.1 under the `jakarta` groupId in Jan 2019 for the previously mentioned Java EE 8 certified version of Eclipse GlassFish.
 
 The mistaken change from 1.0 to 1.1 was discovered while following the Jakarta EE Specification Process and, as with Deployment, the Specification Committee decided to leave the version 1.1 to avoid future version conflicts.
 
