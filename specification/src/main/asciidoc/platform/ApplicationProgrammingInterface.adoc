@@ -310,6 +310,46 @@ an exception to this in order to accommodate interface type dependencies—for e
 the Jakarta™ Enterprise Beans SessionContext dependency on the
 _javax.xml.rpc.handler.MessageContext_ type.]
 
+The following specifications are outside Jakarta EE, provided by the Java™ runtime.
+
+[[a2159]]
+[cols=5, options=header]
+.Jakarta EE Technologies
+|===
+|Java Technology
+|App Client
+|Web
+|Enterprise Beans
+|Status
+
+
+|Activation 1.2
+|Y
+|Y
+|Y
+|REQ
+
+|SOAP with Attachments 1.4
+|Y
+|Y
+|Y
+|REQ
+
+|XML Binding 2.3
+|Y
+|Y
+|Y
+|REQ
+
+|XML Web Services 2.3
+|Y
+|Y
+|Y
+|REQ
+
+|===
+
+
 [[a2331]]
 ==== Pruned Java Technologies
 
