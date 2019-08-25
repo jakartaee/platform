@@ -1618,18 +1618,6 @@ Resource Adapters.
 The Jakarta EE Connectors specification is available at
 _https://jakarta.ee/specifications/connectors_ .
 
-=== Jakarta EE XML Web Services 2.3 Requirements
-
-The Jakarta EE XML Web Services specification
-defines the capabilities a Jakarta EE application server must support for
-deployment of web service endpoints. A complete deployment model is
-defined, including several new deployment descriptors. All Jakarta EE
-products must support the deployment and execution of web services as
-specified by the Web Services for Jakarta EE specification.
-
-The Jakarta EE XML Web Services specification is
-available at _https://jakarta.ee/specifications/xml-ws_ .
-
 === Jakarta XML RPC 1.1 Requirements (Optional)
 
 The Jakarta XML RPC specification defines client APIs
@@ -1862,17 +1850,6 @@ to provide a Jakarta Standard Tag Library for use by all Jakarta Server Pages.
 
 The Jakarta Standard Tag Library for Jakarta Server Pages
 specification can be found at _https://jakarta.ee/specifications/tags_ .
-
-=== Jakarta Web Services Metadata Platform 1.1 Requirements
-
-The Jakarta Web Services Metadata
-Platform specification defines Java language annotations that can be
-used to simplify the development of web services. These annotations can
-be used with Jakarta XML Web Services components.
-
-The Jakarta Web Services Metadata
-Platform specification can be found at
-_https://jakarta.ee/specifications/ws-metadata_ .
 
 === Jakarta Server Faces 2.3 Requirements
 
