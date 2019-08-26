@@ -29,6 +29,6 @@ include::PreviousVersionDeploymentDescriptors.adoc[]
 
 include::RevisionHistory.adoc[]
 
-include::BrandComparison.adoc[]
+include::SpecificationComparison.adoc[]
 
 include::RelatedDocuments.adoc[]
