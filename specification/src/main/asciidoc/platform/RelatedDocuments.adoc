@@ -32,7 +32,7 @@ _Java™ Transaction Service, Version 1.0_ (JTS specification)_. Available at: _
 
 _Jakarta™ Mail Specification, Version 1.6_. Available at: _https://jakarta.ee/specifications/mail/1.6_
 
-_JavaBeans™ Activation Framework Specification Version 1.1 (JAF specification)_. Available at: _https://www.oracle.com/technetwork/java/javase/tech/index-jsp-138795.html_
+_JavaBeans™ Activation Framework Specification Version 1.2 (JAF specification)_. Available at: _https://www.oracle.com/technetwork/java/javase/tech/index-jsp-138795.html_
 
 _Jakarta™ Connectors Specification, Version 1.7_. Available at: _https://jakarta.ee/specifications/connectors/1.7_
 
@@ -40,7 +40,7 @@ _Jakarta™ XML Web Services Specification, Version 2.3_. Available at: _https:/
 
 _Jakarta™ XML RPC Specification, Version 1.1_. Available at: _https://jakarta.ee/specifications/xml-rpc/1.1_
 
-_SOAP with Attachments API for Java™ 1.3 (SAAJ specification)_. Available at: _https://download.oracle.com/otndocs/jcp/jaxm-1.3-mrel-spec-oth-JSpec/_
+_SOAP with Attachments API for Java™ 1.4 (SAAJ specification)_. Available at: _https://download.oracle.com/otn-pub/jcp/saaj-1_4-mrel4-spec/saaj-1.4.pdf_
 
 _Jakarta™ XML Registries Specification, Version 1.0_. Available at: _https://jakarta.ee/specifications/xml-registries/1.0_
 
@@ -50,7 +50,7 @@ _Jakarta™ Management Specification, Version 1.1_. Available at: _https://jakar
 
 _Jakarta™ Deployment Specification, Version 1.7_. Available at: _https://jakarta.ee/specifications/deployment/1.7_
 
-_Jakarta™ Authorization Specification, Version 1.5_. Available at: _https://jakarta.ee/specifications/authorization/1.6_
+_Jakarta™ Authorization Specification, Version 1.5_. Available at: _https://jakarta.ee/specifications/authorization/1.5_
 
 _Jakarta™ Authentication Specification, Version 1.1_. Available at: _https://jakarta.ee/specifications/authentication/1.1_
 

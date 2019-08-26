@@ -38,8 +38,7 @@ SE) APIs. Containers may provide newer versions of the Java SE platform,
 provided they meet all the Jakarta EE platform requirements. The Java SE
 platform includes the following enterprise technologies:
 
-Java IDL
-
+* Java IDL
 * JDBC
 * RMI-IIOP
 * JNDI
@@ -51,8 +50,7 @@ Java IDL
 * JAXB
 * JAF
 * SAAJ
-
-Common Annotations
+* Common Annotations
 
 In particular, the applet execution
 environment must be Java SE 8 compatible. Since typical browsers don’t
@@ -112,7 +110,7 @@ POPT footnote:[IIOP interoperability, including Jakarta(TM) Enterprise Beans 2.x
 |N
 |REQ
 
-|EL 3.0
+|Expression Language 3.0
 |N
 |Y
 |N
@@ -124,13 +122,13 @@ POPT footnote:[IIOP interoperability, including Jakarta(TM) Enterprise Beans 2.x
 |Y
 |REQ
 
-|Transactions 1.2
+|Transactions 1.3
 |N
 |Y
 |Y
 |REQ
 
-|JavaMail 1.6
+|Mail 1.6
 |Y
 |Y
 |Y
@@ -142,7 +140,7 @@ POPT footnote:[IIOP interoperability, including Jakarta(TM) Enterprise Beans 2.x
 |Y
 |REQ
 
-|Web Services 1.4
+|Enterprise Web Services 1.4
 |Y
 |Y
 |Y
@@ -166,19 +164,19 @@ POPT footnote:[IIOP interoperability, including Jakarta(TM) Enterprise Beans 2.x
 |N
 |REQ
 
-|JSON-P 1.1
+|JSON Processing 1.1
 |Y
 |Y
 |Y
 |REQ
 
-|JSON-B 1.0
+|JSON Binding 1.0
 |Y
 |Y
 |Y
 |REQ
 
-|Concurrency Utilities 1.0
+|Concurrency 1.1
 |N
 |Y
 |Y
@@ -202,8 +200,8 @@ POPT footnote:[IIOP interoperability, including Jakarta(TM) Enterprise Beans 2.x
 |Y
 |REQ
 
-|Deployment 1.2 footnote:[See
-<<a2730, Jakarta™ Enterprise Edition Deployment API 1.2 Requirements (Optional)>> for
+|Deployment 1.7 footnote:[See
+<<a2730, Jakarta™ Enterprise Edition Deployment API 1.7 Requirements (Optional)>> for
 details.]
 |N
 |N
@@ -238,12 +236,6 @@ details.]
 |N
 |Y
 |N
-|REQ
-
-|Web Services Metadata 2.1
-|Y
-|Y
-|Y
 |REQ
 
 |Server Faces 2.3
@@ -282,8 +274,7 @@ details.]
 |Y
 |REQ
 
-|Contexts and Dependency Injection
-2.0
+|Contexts and Dependency Injection 2.0
 |Y
 |Y
 |Y
@@ -310,6 +301,7 @@ technology.footnote:[Note that a component specification is permitted to specify
 an exception to this in order to accommodate interface type dependencies—for example,
 the Jakarta™ Enterprise Beans SessionContext dependency on the
 _javax.xml.rpc.handler.MessageContext_ type.]
+
 
 [[a2331]]
 ==== Pruned Java Technologies
@@ -1461,7 +1453,7 @@ enterprise beans container and the web container.
 The Jakarta Messaging specification is available at
 _ https://jakarta.ee/specifications/messaging_ .
 
-=== Jakarta Transaction 1.2 Requirements
+=== Jakarta Transaction 1.3 Requirements
 
 Jakarta Transaction defines the _UserTransaction_ interface
 that is used by applications to start, and commit or abort transactions.
@@ -1579,18 +1571,6 @@ Resource Adapters.
 The Jakarta EE Connectors specification is available at
 _https://jakarta.ee/specifications/connectors_ .
 
-=== Jakarta EE XML Web Services Requirements
-
-The Jakarta EE XML Web Services specification
-defines the capabilities a Jakarta EE application server must support for
-deployment of web service endpoints. A complete deployment model is
-defined, including several new deployment descriptors. All Jakarta EE
-products must support the deployment and execution of web services as
-specified by the Web Services for Jakarta EE specification.
-
-The Jakarta EE XML Web Services specification is
-available at _https://jakarta.ee/specifications/xml-ws_ .
-
 === Jakarta XML RPC 1.1 Requirements (Optional)
 
 The Jakarta XML RPC specification defines client APIs
@@ -1681,7 +1661,7 @@ required to support the JSON-B API.
 The Jakarta JSON Binding  specification
 can be found at _https://jakarta.ee/specifications/jsonb_.
 
-=== Jakarta Concurrency 1.0 (Concurrency Utilities) Requirements
+=== Jakarta Concurrency 1.1 (Concurrency Utilities) Requirements
 
 Jakarta Concurrency Utilities for Jakarta EE is a
 standard API for providing asynchronous capabilities to Jakarta EE
@@ -1698,7 +1678,7 @@ required to be supported.
 The Jakarta Concurrency
 specification can be found at _https://jakarta.ee/specifications/concurrency_ .
 
-=== Jakarta Batch Specification Requirements
+=== Jakarta Batch 1.0 Specification Requirements
 
 The Jakarta Batch provides a programming model for batch
 applications and a runtime for scheduling and executing jobs.
@@ -1731,7 +1711,7 @@ The Jakarta Management specification is
 available at _https://jakarta.ee/specifications/management_ .
 
 [[a2730]]
-=== Jakarta Deployment API 1.2 Requirements (Optional)
+=== Jakarta Deployment API 1.7 Requirements (Optional)
 
 The Jakarta Deployment API defines the
 interfaces between the runtime environment of a deployment tool and
@@ -1802,7 +1782,7 @@ requirements defined by the Jakarta Security specification.
 The Jakarta Security Specification can be
 found at _https://jakarta.ee/specifications/security_ .
 
-=== Jakarta Debugging Support for Other Languages Requirements
+=== Jakarta Debugging Support for Other Languages Requirements 1.0
 
 Jakarta Server Pages pages are usually translated into Java
 language pages and then compiled to create class files. The Jakarta Debugging Support for Other Languages
@@ -1823,17 +1803,6 @@ to provide a Jakarta Standard Tag Library for use by all Jakarta Server Pages.
 
 The Jakarta Standard Tag Library for Jakarta Server Pages
 specification can be found at _https://jakarta.ee/specifications/tags_ .
-
-=== Jakarta Web Services Metadata Platform 2.1 Requirements
-
-The Jakarta Web Services Metadata
-Platform specification defines Java language annotations that can be
-used to simplify the development of web services. These annotations can
-be used with Jakarta XML Web Services components.
-
-The Jakarta Web Services Metadata
-Platform specification can be found at
-_https://jakarta.ee/specifications/ws-metadata_ .
 
 === Jakarta Server Faces 2.3 Requirements
 
@@ -2023,6 +1992,13 @@ Injection>>” for more detail.
 
 The DI specification can be found at
 _https://jakarta.ee/specifications/dependency-injection_ .
+
+=== Enterprise Web Services 1.4 Requirements
+
+The Enterprise Web Services specification defines the integration between the various Web Service technologies in Jakarta EE, including XML-RPC, XMl Web Services and XML Web Service Metadata.
+
+The Enterprise Web Services specification can be found
+at _https://jakarta.ee/specifications/enterprise-ws_ .
 
 // generates a line between text and footnotes for pdf and html generation.
 '''
