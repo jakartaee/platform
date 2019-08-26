@@ -1,5 +1,5 @@
 [appendix]
-[[a4422]]
+[[specificationComparison]]
 == Java EE 8 and Jakarta EE 8 Comparison
 
 The intent of this section is to explain any differences in specification names and versions between those referenced in the last Java EE 8 Platform specification, dated July 31st, 2017 and the Jakarta EE 8 Platform specification.
@@ -152,7 +152,7 @@ The official version of Web Services Metadata for Jakarta EE 8 is version 1.1, w
 ===  SOAP with Attachments 1.3 vs 1.4
 
 The Java EE 8 Platform specification, dated July 31st, 2017, references SOAP with Attachments API for Java™ Version 1.3 in appendix EE.C Related Documents.
-A Maintenance Release of the SOAP with Attachments API for Java™ was created and released as version 1.4 dated July 2017. 
+A Maintenance Release of the SOAP with Attachments API for Java™ was created and released as version 1.4 dated July 2017.
 The reference to SOAP with Attachments API for Java™ Version 1.3 in the Java EE 8 Platform specification, released at the same time was simply an error, and it should have referenced version 1.4.
 
 === Deployment 1.2 vs 1.7
