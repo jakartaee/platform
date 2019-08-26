@@ -51,8 +51,7 @@ Java IDL
 * JAXB
 * JAF
 * SAAJ
-
-Common Annotations
+* Common Annotations
 
 In particular, the applet execution
 environment must be Java SE 8 compatible. Since typical browsers don’t
@@ -303,51 +302,6 @@ technology.footnote:[Note that a component specification is permitted to specify
 an exception to this in order to accommodate interface type dependencies—for example,
 the Jakarta™ Enterprise Beans SessionContext dependency on the
 _javax.xml.rpc.handler.MessageContext_ type.]
-
-The following specifications are outside Jakarta EE, provided by the Java™ runtime.
-
-[[a21591]]
-[cols=5, options=header]
-.Java Technologies outside Jakarta EE
-|===
-|Java Technology
-|App Client
-|Web
-|Enterprise Beans
-|Status
-
-
-|Activation 1.2
-|Y
-|Y
-|Y
-|REQ
-
-|SOAP with Attachments 1.4
-|Y
-|Y
-|Y
-|REQ
-
-|XML Binding 2.3
-|Y
-|Y
-|Y
-|REQ
-
-|Web Services Metadata 1.1
-|Y
-|Y
-|Y
-|REQ
-
-|XML Web Services 2.3
-|Y
-|Y
-|Y
-|REQ
-
-|===
 
 
 [[a2331]]
