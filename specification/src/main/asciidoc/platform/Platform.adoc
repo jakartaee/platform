@@ -27,6 +27,8 @@ include::FutureDirections.adoc[]
 
 include::PreviousVersionDeploymentDescriptors.adoc[]
 
+include::SpecificationComparison.adoc[]
+
 include::RevisionHistory.adoc[]
 
 include::RelatedDocuments.adoc[]

@@ -60,7 +60,7 @@ _Jakarta™ Debugging Support for Other Languages Specification, Version 1.0_. A
 
 _Jakarta™ Standard Tag Library Specification, Version 1.2_. Available at: _https://jakarta.ee/specifications/tags/1.2_
 
-_Jakarta™ Web Services Metadata Specification, Version 1.1_. Available at: _https://jakarta.ee/specifications/web-services-metadata/1.1_
+_Jakarta™ Web Services Metadata Specification, Version 2.1_. Available at: _https://jcp.org/aboutJava/communityprocess/mrel/jsr181/index2.html_
 
 _Jakarta™ Server Faces Specification, Version 2.3_. Available at: _https://jakarta.ee/specifications/faces/2.3_
 

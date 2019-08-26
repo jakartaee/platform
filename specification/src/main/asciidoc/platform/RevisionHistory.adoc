@@ -1,4 +1,5 @@
 [appendix]
+[[revisionHistory]]
 == Revision History
 
 === Changes in Final Release Draft
@@ -7,4 +8,5 @@
 
 * Changed most instances of "Java EE" to "Jakarta EE", except where the previous technology was clearly the target.
 * Modified references to Oracle(TM)-related items per the https://jakarta.ee/legal/acronym_guidelines/[documented guidelines].
-* Updated <<relateddocs, “Related Documents">>.
+* Added <<specificationComparison, "Specification Comparison">> appendix.
+* Updated <<relateddocs, “Related Documents">> appendix.
