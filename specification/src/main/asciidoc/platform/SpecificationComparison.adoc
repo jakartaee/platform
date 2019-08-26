@@ -144,21 +144,32 @@ Java SE as described in https://openjdk.java.net/jeps/320[JEP 320]. These specif
 platform and will be considered for inclusion in a version of Jakarta EE that targets versions of
 Java SE where they have been removed.
 
-[cols=1, options=header]
+[cols=2, options=header]
 .Additional Java EE 8 Specification References
 |===
-|Java EE 8 Specifications
+|Java EE 8 Specification
+|Jakarta EE Specification (future)
 
 |JavaBeans™ Activation Framework 1.1
+|Jakarta Activation 1.2
 
 |Java™ Architecture for XML Binding 2.3
+|Jakarta XML Binding 2.3
 
 |Java™ API for XML Web Services 2.3
+|Jakarta XML Web Services 2.3
 
 |SOAP with Attachments API for Java™ 1.3
+|Jakarta SOAP with Attachments 1.4
 
 |Web Services Metadata for the Java Platform 2.1
+|Jakarta Web Services Metadata 2.1
 |===
+
+====  Activation 1.1 vs 1.2
+The Java EE 8 Platform specification, dated July 31st, 2017, references JavaBeans™ Activation Framework Specification Version 1.1 in appendix EE.C Related Documents.
+A Maintenance Release of the JavaBeans™ Activation Framework was created and released in the JCP as version 1.2 dated July 2017.
+The reference to JAF 1.1 in the Java EE 8 Platform specification, released at the same time is simply an error.
 
 ====  SOAP with Attachments 1.3 vs 1.4
 
