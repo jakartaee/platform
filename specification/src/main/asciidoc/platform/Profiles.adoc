@@ -209,7 +209,7 @@ associated Jakarta Enterprise Beans QL, which have been made optional)
 * Jakarta Security 1.0
 * Jakarta Debugging Support for Other Languages 1.0
 * Jakarta Standard Tag Library 1.2
-* Jakarta Web Services Metadata 1.1
+* Jakarta Web Services Metadata 2.1
 * Jakarta Server Faces 2.3
 * Jakarta Annotations 1.3
 * Jakarta Persistence 2.2
