@@ -1063,3 +1063,4 @@ event processing and alignment on Java SE 8 features.
 === Changes in Jakarta EE 8
 
 Jakarta EE 8 is the migration of Java EE 8 from the JCP to the Eclipse Foundation.
+Reference the <<a4422, "Specification Comparison">> and <<relateddocs, “Related Documents">> appendices for more information.
