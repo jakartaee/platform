@@ -38,8 +38,7 @@ SE) APIs. Containers may provide newer versions of the Java SE platform,
 provided they meet all the Jakarta EE platform requirements. The Java SE
 platform includes the following enterprise technologies:
 
-Java IDL
-
+* Java IDL
 * JDBC
 * RMI-IIOP
 * JNDI
