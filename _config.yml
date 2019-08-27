@@ -1,0 +1,19 @@
+remote_theme: jakartaee/jekyll-theme-jakarta-ee
+
+title: [Jakarta EE Platform Specification]
+description: [Project for the Jakarta EE Platform Group]
+
+# sidebar links url
+links:
+  download: https://jakarta.ee/specifications/platform
+  source: https://github.com/eclipse-ee4j/jakartaee-platform
+  license: LICENSE
+  issues_url: site.github.issues_url # project's issue tracker
+  mailinglist: http://accounts.eclipse.org/mailing-list/jakartaee-platform-dev
+  javadocs: https://jakarta.ee/specifications/platform/8/apidocs
+  #docs:
+  #faq:
+
+include:
+  - LICENSE
+  - CONTRIBUTING.adoc
