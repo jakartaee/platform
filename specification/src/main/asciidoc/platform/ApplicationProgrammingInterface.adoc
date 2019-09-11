@@ -1958,7 +1958,7 @@ resource injection facility and interceptor service present in the Jakarta
 EE platform.
 
 The Managed Beans specification can be found
-at _https://jakarta.ee/specifications/managed-beans_ .
+at _https://jakarta.ee/specifications/managedbeans_ .
 
 === Interceptors 1.2 Requirements
 
