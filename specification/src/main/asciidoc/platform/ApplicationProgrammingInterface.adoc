@@ -1451,7 +1451,7 @@ general, the behavior of a Jakarta Messaging provider should be the same in both
 enterprise beans container and the web container.
 
 The Jakarta Messaging specification is available at
-_ https://jakarta.ee/specifications/messaging_ .
+_https://jakarta.ee/specifications/messaging_ .
 
 === Jakarta Transaction 1.3 Requirements
 
