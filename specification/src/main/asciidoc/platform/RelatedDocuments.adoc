@@ -122,7 +122,7 @@ _https://tools.ietf.org/html/rfc6101_ .
 Architectural Styles and the Design of
 Network-based Software Architectures (REST), R. Fielding, Ph.d
 dissertation, University of California, Irvine, 2000. Available at
-_https://roy.gbiv.com/pubs/dissertation/top.html_ .
+_https://www.ics.uci.edu/~fielding/pubs/dissertation/top.htm_ .
 
 Java™ Community Process
 _SM_ 2: Process Document, Version 2.10 (March 21, 2016). Available at
