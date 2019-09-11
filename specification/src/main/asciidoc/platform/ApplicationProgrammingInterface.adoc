@@ -781,7 +781,7 @@ set declaration:
 
 
 The Jakarta EE permissions XML Schema is located
-at _http://xmlns.jcp.org/xml/ns/javaee/permissions_8.xsd_ .
+at _http://xmlns.jcp.org/xml/ns/javaee/permissions_7.xsd_ .
 
 ==== Additional Requirements
 
