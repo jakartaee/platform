@@ -36,7 +36,7 @@ _JavaBeans™ Activation Framework Specification Version 1.2 (JAF specification)
 
 _Jakarta™ Connectors Specification, Version 1.7_. Available at: _https://jakarta.ee/specifications/connectors/1.7_
 
-_Jakarta™ XML Web Services Specification, Version 2.3_. Available at: _https://jakarta.ee/specifications/xml-web-services/2.3_
+_Jakarta™ XML Web Services Specification, Version 2.3_. Available soon from: _https://jakarta.ee/specifications/xml-web-services/2.3_
 
 _Jakarta™ XML RPC Specification, Version 1.1_. Available at: _https://jakarta.ee/specifications/xml-rpc/1.1_
 
