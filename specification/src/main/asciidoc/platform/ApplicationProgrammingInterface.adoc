@@ -781,7 +781,7 @@ set declaration:
 
 
 The Jakarta EE permissions XML Schema is located
-at _http://xmlns.jcp.org/xml/ns/javaee/permissions_8.xsd_ .
+at _http://xmlns.jcp.org/xml/ns/javaee/permissions_7.xsd_ .
 
 ==== Additional Requirements
 
@@ -1451,7 +1451,7 @@ general, the behavior of a Jakarta Messaging provider should be the same in both
 enterprise beans container and the web container.
 
 The Jakarta Messaging specification is available at
-_ https://jakarta.ee/specifications/messaging_ .
+_https://jakarta.ee/specifications/messaging_ .
 
 === Jakarta Transaction 1.3 Requirements
 
@@ -1958,7 +1958,7 @@ resource injection facility and interceptor service present in the Jakarta
 EE platform.
 
 The Managed Beans specification can be found
-at _https://jakarta.ee/specifications/managed-beans_ .
+at _https://jakarta.ee/specifications/managedbeans_ .
 
 === Interceptors 1.2 Requirements
 

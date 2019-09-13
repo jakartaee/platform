@@ -801,7 +801,7 @@ define the relationship between the operating system identity associated
 with a running application client and the authenticated user identity,
 support for single signon requires that the Jakarta EE product be able to
 relate these identities. Additional application client requirements are
-described in <<a3293, CHApter>>
+described in <<a3294, Application Clients chapter>>
 of this specification.
 
 ==== Resource Authentication Requirements

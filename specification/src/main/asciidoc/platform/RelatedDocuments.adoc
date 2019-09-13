@@ -6,7 +6,7 @@ This specification refers to the following
 documents. The terms used to refer to the documents in this
 specification are included in parentheses.
 
-_Jakarta™ EE Platform Specification Version 8_. Available at: _https://jakarta.ee/specifications/full-platform/8.0_
+_Jakarta™ EE Platform Specification Version 8_. Available at: _https://jakarta.ee/specifications/full-platform/8_
 
 _Java™ Platform, Standard Edition, v8 API Specification (Java SE specification)_. Available at: _https://docs.oracle.com/javase/8/docs/_
 
@@ -36,7 +36,7 @@ _JavaBeans™ Activation Framework Specification Version 1.2 (JAF specification)
 
 _Jakarta™ Connectors Specification, Version 1.7_. Available at: _https://jakarta.ee/specifications/connectors/1.7_
 
-_Jakarta™ XML Web Services Specification, Version 2.3_. Available at: _https://jakarta.ee/specifications/xml-web-services/2.3_
+_Jakarta™ XML Web Services Specification, Version 2.3_. Available soon from: _https://jakarta.ee/specifications/xml-web-services/2.3_
 
 _Jakarta™ XML RPC Specification, Version 1.1_. Available at: _https://jakarta.ee/specifications/xml-rpc/1.1_
 
@@ -44,7 +44,7 @@ _SOAP with Attachments API for Java™ 1.4 (SAAJ specification)_. Available at: 
 
 _Jakarta™ XML Registries Specification, Version 1.0_. Available at: _https://jakarta.ee/specifications/xml-registries/1.0_
 
-_Jakarta™ RESTful Web Services Specification, Version 2.1_. Available at: _https://jakarta.ee/specifications/restful-web-services/2.1_
+_Jakarta™ RESTful Web Services Specification, Version 2.1_. Available at: _https://jakarta.ee/specifications/restful-ws/2.1_
 
 _Jakarta™ Management Specification, Version 1.1_. Available at: _https://jakarta.ee/specifications/management/1.1_
 
@@ -68,7 +68,7 @@ _Jakarta™ Persistence Specification, Version 2.2_. Available at: _https://jaka
 
 _Jakarta™ Bean Validation Specification, Version 2.0_. Available at: _https://jakarta.ee/specifications/bean-validation/2.0_
 
-_Jakarta™ Managed Beans Specification, Version 1.0_. Available at: _https://jakarta.ee/specifications/managed-beans/1.0_
+_Jakarta™ Managed Beans Specification, Version 1.0_. Available at: _https://jakarta.ee/specifications/managedbeans/1.0_
 
 _Jakarta™ Interceptors Specification, Version 1.2_. Available at: _https://jakarta.ee/specifications/interceptors/1.2_
 
@@ -122,7 +122,7 @@ _https://tools.ietf.org/html/rfc6101_ .
 Architectural Styles and the Design of
 Network-based Software Architectures (REST), R. Fielding, Ph.d
 dissertation, University of California, Irvine, 2000. Available at
-_https://roy.gbiv.com/pubs/dissertation/top.html_ .
+_https://www.ics.uci.edu/~fielding/pubs/dissertation/top.htm_ .
 
 Java™ Community Process
 _SM_ 2: Process Document, Version 2.10 (March 21, 2016). Available at
