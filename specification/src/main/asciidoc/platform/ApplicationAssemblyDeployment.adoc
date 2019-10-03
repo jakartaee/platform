@@ -62,7 +62,7 @@ Jakarta Connector specifications include the XML Schema definition of the
 associated module level deployment descriptors and component packaging
 architecture required to produce Jakarta EE modules. (The application
 client specification is found in
-<<a3293, CHApter>> of this
+<<a3294, Application Clients chapter>> of this
 document.)
 
 A Jakarta EE module is a collection of one or more
