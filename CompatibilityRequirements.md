@@ -58,7 +58,7 @@ use of the previous version of the specification. However if it is
 considered that there will be no or few such implementations, or if
 they would always be provided as an add-on by the developers of vendor
 implementations, then this requirement may be relaxed after careful
-consideration by the specification project team.
+consideration by the specification project.
 
 ## Behaviour compatibility
 
@@ -138,7 +138,7 @@ in Jakarta EE 9, similar to what's done for the Java SE platform.
 
 ## Deprecated methods
 
-**6.** A specificaiton project may decide to designate a method or interface as
+**6.** A specification project may decide to designate a method or interface as
 being "deprecated" when its use is no longer recommended or when the
 specification project considers that a different interface or method should be
 used instead. This can be stated in the specification and in the
@@ -188,7 +188,7 @@ will be no or few wrapper implementations of the interface, or if they
 would always be provided as an add-on by the developers of vendor
 implementations, it may be permissible to add a new method to an
 existing interface after careful consideration by the specification
-project team  (see Rule 3 for a full description).
+project (see Rule 3 for a full description).
 
 **Q4. Is it permissible to remove an existing method from an existing
 interface?**
@@ -203,7 +203,7 @@ behavior in a later version.  In deciding whether such a change is
 permissible, the specification project must give consideration to the behavior
 of existing implementations.
 Just because a particular behavior wasn't specified doesn't mean
-applications haven't come to depend on it.  Specifcation projects should strive
+applications haven't come to depend on it.  Specification projects should strive
 to completely define behavior, leaving behavior explicitly undefined or
 optional only when necessary to accommodate existing implementations or
 anticipated implementation flexibility.
