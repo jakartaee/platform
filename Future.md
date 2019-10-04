@@ -1,5 +1,7 @@
 # Future wishlist - pain points, rough edges, and problems
 
+**XXX** - This page has not been updated for Jakarta EE.
+
 This page is intended as a public space to collect areas of the EE
 platform and its included specifications that community members view as
 needing improvement. Entries here should focus on issues of usability

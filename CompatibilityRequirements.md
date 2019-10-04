@@ -1,10 +1,10 @@
-# Backwards Compatibility Requirements for Java EE Specifications 
+# Backwards Compatibility Requirements for Jakarta EE Specifications 
 
 These requirements define the kind of changes that are permissible when
-a Java EE expert group updates a Java EE API specification from one
-version to the next. They were written in conjunction with the Java EE
-spec leads and are intended to apply equally to all Java EE
-specifications.
+a Jakarta EE specification project updates a Jakarta EE API
+specification from one version to the next. They were written in
+conjunction with the Jakarta EE specification project leads and are
+intended to apply equally to all Jakarta EE specifications.
 
 ## Classes of users
 
@@ -58,7 +58,7 @@ use of the previous version of the specification. However if it is
 considered that there will be no or few such implementations, or if
 they would always be provided as an add-on by the developers of vendor
 implementations, then this requirement may be relaxed after careful
-consideration by the specification's expert group.
+consideration by the specification project team.
 
 ## Behaviour compatibility
 
@@ -78,10 +78,9 @@ explicit behaviour in a later version. If the previous version of the
 specification does not define or mandate how a particular API method
 behaves in a particular use case then it may be permissible for a later
 version to define it. In deciding whether such a change is permissible,
-the expert group must give consideration to the behaviour of existing
-implementations, especially the reference implementation.  Just because
-a particular behaviour wasn't specified doesn't mean applications
-haven't come to depend on it.
+the specification project must give consideration to the behaviour of existing
+implementations.  Just because a particular behaviour wasn't specified
+doesn't mean applications haven't come to depend on it.
 
 Determining the compatibility impact of cases that throw exceptions can
 be tricky. In many cases exceptions are defined to be thrown if certain
@@ -92,7 +91,7 @@ would no longer be thrown. However, if the exception is thrown in a
 case where the application might reasonably be written to depend on
 this exception in normal operation, changing the behavior would break
 the application. Knowing the difference between these cases is a
-judgement call.
+judgment call.
 
 **Example:** if the previous version of the specification either
 stated that the effect of calling X under certain circumstances is
@@ -114,7 +113,7 @@ to throw an exception.
 
 ## Making an interface or method optional
 
-The Java EE 6 specification, section EE 6.1.3 "Pruned Java
+The Jakarta EE specification, section EE 6.1.3 "Pruned Java
 Technologies" defines a process to "prune" technologies from the
 platform. "The result of successfully applying this policy to a feature
 is not the actual deletion of the feature but rather the conversion of
@@ -126,18 +125,22 @@ vendor."
 This process is intended to apply to entire specifications (in which
 case all its API definitions become optional) though in rare cases it
 could apply to major pieces of functionality in an existing
-specification, such as EJB entity beans, which may become optional in
-Java EE 7. This process is not intended to apply to individual methods,
+specification, such as entity beans, which may become optional in
+Jakarta EE 9. This process is not intended to apply to individual methods,
 and is not intended for the case where the functionality remains
 unchanged but one set of interfaces or methods is replaced by another,
 especially when many applications are known to still use the existing
 interfaces or methods.
 
+**XXX** - This section needs to be updated with new rules for the actual
+removal of APIs and specifications from the Jakarta EE platform as anticipated
+in Jakarta EE 9, similar to what's done for the Java SE platform.
+
 ## Deprecated methods
 
-**6.** An expert group may decide to designate a method or interface as
+**6.** A specificaiton project may decide to designate a method or interface as
 being "deprecated" when its use is no longer recommended or when the
-expert group considers that a different interface or method should be
+specification project considers that a different interface or method should be
 used instead. This can be stated in the specification and in the
 relevant javadoc. However the @Deprecated annotation must not be used
 as this is noisy and annoying for users. The only exception to this is
@@ -146,7 +149,7 @@ interface.
 
 ## Serialization compatibility
 
-**7.** Some Java EE specifications define classes that implement the
+**7.** Some Jakarta EE specifications define classes that implement the
 javax.io.Serializable interface.  The
 [Serialization Specification](http://docs.oracle.com/javase/8/docs/platform/serialization/spec/version.html)
 has details on the allowed changes to a class that retain serialization
@@ -184,8 +187,8 @@ were a listener or callback interface) then this is never permissible
 will be no or few wrapper implementations of the interface, or if they
 would always be provided as an add-on by the developers of vendor
 implementations, it may be permissible to add a new method to an
-existing interface after careful consideration by the specification's
-expert group  (see Rule 3 for a full description).
+existing interface after careful consideration by the specification
+project team  (see Rule 3 for a full description).
 
 **Q4. Is it permissible to remove an existing method from an existing
 interface?**
@@ -197,10 +200,10 @@ No, because this would violates rules 2 and 3 above.
 Where behavior was undefined or optional in the previous version of the
 specification then it may be permissible to define more explicit
 behavior in a later version.  In deciding whether such a change is
-permissible, the expert group must give consideration to the behavior
-of existing implementations, especially the reference implementation.
+permissible, the specification project must give consideration to the behavior
+of existing implementations.
 Just because a particular behavior wasn't specified doesn't mean
-applications haven't come to depend on it.  Expert groups should strive
+applications haven't come to depend on it.  Specifcation projects should strive
 to completely define behavior, leaving behavior explicitly undefined or
 optional only when necessary to accommodate existing implementations or
 anticipated implementation flexibility.
@@ -208,7 +211,7 @@ anticipated implementation flexibility.
 If the change would change behavior that is explicitly defined in the
 previous version of the specification, then it is not permitted because
 it would violate rules 2 and 3 above. However, if there is a serious
-security or functional defect in the method, then the expert group may
+security or functional defect in the method, then the specification project may
 decide to waive this restriction.
 
 **Q6. Is it permissible to define new behavior for what was previously
