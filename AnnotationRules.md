@@ -26,10 +26,14 @@ annotations.
 
 Some frameworks have defined additional annotations that specify
 how **their** annotations behave with regard to inheritance.
-For example, see the JPA @Inheritance and @DiscriminatorColumn
+For example, see the Jakarta Persistence @Inheritance and @DiscriminatorColumn
 annotations.
 
-Note that CDI is an exception to this, and recommends that scopes and interceptor bindings are declared @Inherited. It also recommends that stereotypes may be @Inherited depending on their intended usage. It recommends that qualifiers are not declared @Inherited.
+Note that CDI is an exception to this, and recommends that scopes and
+interceptor bindings are declared @Inherited. It also recommends that
+stereotypes may be @Inherited depending on their intended usage. It
+recommends that qualifiers are not declared @Inherited.
+
 ##### General rules
 
 A resource annotation (@Resource, @EJB, etc.) on a superclass
@@ -53,16 +57,19 @@ in effect.
 
 ##### Exceptions
 
-JAX-RS allows per-method annotations on the methods of an interface.
-If the implementing class doesn't declare **any** JAX-RS annotations
-on a method (other annotations are allowed), the JAX-RS annotations
-on the interface's method apply.  Any JAX-RS annotation on a method
-overrides **all** JAX-RS annotations on the corresponding interface method.
+Jakarta RESTful Web Services allows per-method annotations on the
+methods of an interface.  If the implementing class doesn't declare
+**any** Jakarta RESTful Web Services annotations on a method (other
+annotations are allowed), the Jakarta RESTful Web Services annotations
+on the interface's method apply.  Any Jakarta RESTful Web Services
+annotation on a method overrides **all** Jakarta RESTful Web Services
+annotations on the corresponding interface method.
 
-JAX-RS defines a similar rule for annotations on methods of a superclass,
-again violating the general rule above.  If a subclass overrides a method
-but does not include any JAX-RS annotations on the method declaration, the
-JAX-RS annotations from the superclass apply.
+Jakarta RESTful Web Services defines a similar rule for annotations on
+methods of a superclass, again violating the general rule above.  If a
+subclass overrides a method but does not include any Jakarta RESTful
+Web Services annotations on the method declaration, the Jakarta RESTful
+Web Services annotations from the superclass apply.
 
 >XXX - what happens if the class implements multiple interfaces with the same method but different annotations?
 >Santiago - The spec is mute about this case. It does say that annotations from superclasses take precedence over annotations in implemented interfaces.
@@ -70,27 +77,33 @@ JAX-RS annotations from the superclass apply.
 In some cases, an annotation on a method will "show through" to subclasses
 that override the method.  Since this prevents the normal approach of
 "disabling" the annotation by omitting it, the annotation will need an
-attribute that undoes its normal effect.  For example, JAX-WS has
+attribute that undoes its normal effect.  For example, Jakarta XML Web Services has
 @WebMethod(exclude=true) and Connectors has @ConfigProprty(ignore=true).
 Generally this style is discouraged.
 
-EJB allows the @Local and @Remote annotations to appear on interfaces.
+Jakarta Enterprise Beans allows the @Local and @Remote annotations to
+appear on interfaces.
 
-The JPA annotations @Table, @SecondaryTable, and @SecondaryTables
-interact with the @Inheritance annotation to control how they behave
-with respect to inheritance.
+The Jakarta Persistence annotations @Table, @SecondaryTable, and
+@SecondaryTables interact with the @Inheritance annotation to control
+how they behave with respect to inheritance.
 
 CDI producer fields or methods are not inherited by subclasses, even if they
 are not overridden.  The superclass would not know how to produce an
 instance of the subclass.
 
-CDI introduces specialization, which affects inheritance. If a subclass is defined @Specializes, then
+CDI introduces specialization, which affects inheritance. If a subclass
+is defined @Specializes, then
 
 * all qualifiers are inherited, regardless of whether they are declared @Inherited
 * the EL name of the bean is inherited (@Named is not declared @Inherited)
 
 
-The following component-defining annotations do have @Inherited on them due to historical accident.  In common usage, these annotations are not involved in inheritance hierarchies so it was decided to leave them in a state of non-compliance with these rules rather than risk introducing unforeseen problems.
+The following component-defining annotations do have @Inherited on them
+due to historical accident.  In common usage, these annotations are not
+involved in inheritance hierarchies so it was decided to leave them in
+a state of non-compliance with these rules rather than risk introducing
+unforeseen problems.
 
 * javax.faces.validator.FacesValidator
 * javax.faces.view.facelets.FaceletsResourceResolver
@@ -160,7 +173,7 @@ service methods" acts as an implicit class level annotation.
 Some class level annotations don't effect the semantics of
 the class, but are just attached to some class "for convenience".
 For example, @Resource doesn't effect the semantics of the class.
-Many JPA annotations don't effect the specific class they're
+Many Jakarta Persistence annotations don't effect the specific class they're
 attached to, but instead effect the persistence unit the class
 is a part of.
 
@@ -175,7 +188,7 @@ subclass.
 
 ##### Package level annotations
 
-We've made very little use of package level annotations in Java EE.
+We've made very little use of package level annotations in Jakarta EE.
 Where they are used, they effectively act as another level of defaulting
 above classes.  That is, package level annotations are overridden by
 class level annotations, which in turn are overridden by method level
@@ -189,7 +202,7 @@ should look for the annotation on the package for the class [XXX - possibly
 following the superclass hierarchy and considering the package for each
 superclass if the annotation isn't marked @Inherited].
 
-JAXB uses package level annotations in this way.
+Jakarta XML Binding uses package level annotations in this way.
 
 > XXX - It's unclear what the inheritance rules for package level annotations should be.
 
@@ -203,7 +216,7 @@ such as for injection target specifications or for interceptors.
 In rare cases, an annotation can override a deployment descriptor entry;
 see the web fragments section below.
 
-From (the proposed update to) the Java EE platform spec:
+From (the proposed update to) the Jakarta EE platform spec:
 
         The following list describes the rules for how a deployment
         descriptor entry may override a Resource annotation.
