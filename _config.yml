@@ -11,6 +11,7 @@ links:
   issues_url: site.github.issues_url # project's issue tracker
   mailinglist: http://accounts.eclipse.org/mailing-list/jakartaee-platform-dev
   javadocs: https://jakarta.ee/specifications/platform/8/apidocs
+  minutes: minutes/minutes.md
   #docs:
   #faq:
 
