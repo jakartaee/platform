@@ -44,6 +44,8 @@ You can find the drafts of proposals and other working
 documents on the [Documents](Documents) page.
 (Currently this contains only historical Java EE proposals.)
 
+[Meeting minutes](minutes/minutes.md)
+
 ## Compatibility Requirements
 
 The rules we follow to ensure backwards compatibility when revising
