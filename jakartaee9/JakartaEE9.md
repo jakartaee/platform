@@ -3,8 +3,9 @@
 ## Jakarta EE 9 Release Plan
 
 The [Jakarta EE 9 Release Plan](JakartaEE9ReleasePlan) is now available!  
-It was recently reviewed and endorsed by the Platform Project, as well as the Jakarta EE Steering Committee (need approved minutes link here when ready).
+It was recently reviewed and endorsed by the Platform Project, as well as the Jakarta EE Steering Committee (_need approved minutes link here when ready_).
 In the new year, an official ballot will be initiated with the Jakarta EE Specification Committee to make it "official".
+_(A link to the final ballot will also be posted here.)_
 In the mean time, let's continue with our development efforts as if it's all approved...
 
 ### Individual Component Release Plans

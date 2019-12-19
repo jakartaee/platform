@@ -1,4 +1,6 @@
-# Jakarta EE Platform Project <img src="assets/images/jakarta_ee_logo_schooner_color_stacked_default.png" width="250"/>
+<img src="assets/images/jakarta_ee_logo_schooner_color_stacked_default.png" width="100" style="float: right; margin-right: 10px;"/>
+
+# Jakarta EE Platform Project
 
 This is the project for the Jakarta EE Platform specification.  The Jakarta
 EE Platform specification is the umbrella specification that defines
@@ -48,7 +50,9 @@ You can find the drafts of proposals and other working
 documents on the [Documents](Documents) page.
 (Currently this contains only historical Java EE proposals.)
 
-[Meeting minutes](minutes/minutes.md)
+### Meeting minutes
+
+The Platform Project holds regular meetings.  The [meeting minutes](minutes/minutes.md) provides information on time, location, decisions, and frequency.
 
 ## Compatibility Requirements
 
