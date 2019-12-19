@@ -1,4 +1,6 @@
-# Jakarta EE Platform Specification <img src="assets/images/jakarta_ee_logo_schooner_color_stacked_default.png" width="250"/>
+<img src="assets/images/jakarta_ee_logo_schooner_color_stacked_default.png" width="100" style="float: right; margin-right: 10px;"/>
+
+# Jakarta EE Platform Project
 
 This is the project for the Jakarta EE Platform specification.  The Jakarta
 EE Platform specification is the umbrella specification that defines
@@ -9,24 +11,28 @@ overall Jakarta EE platform.  The platform specification also defines
 other attributes of the platform such as security, deployment,
 transactions, and interoperability.
 
-## API Specifications
+> Be sure to view this page at
+[https://eclipse-ee4j.github.io/jakartaee-platform/](https://eclipse-ee4j.github.io/jakartaee-platform/),
+not at the GitHub source code repository README view, so that the links in
+this page will work correctly.
 
-The API specifications for the Jakarta EE platform are collected together here:
+## API Specifications and Javadocs
+
+The [Specifications](Specifications) page contains links to the project
+pages for all Jakarta EE specifications.
+
+The API Javadocs for the Jakarta EE platform are collected together here:
 
 * [Jakarta EE APIs](https://jakarta.ee/specifications/platform/8/apidocs/)
 * [Jakarta Server Faces Tag Libraries](https://jakarta.ee/specifications/faces/2.3/vdldoc/)
 * [Jakarta Server Faces Standard HTML RenderKit](https://jakarta.ee/specifications/faces/2.3/renderkitdoc)
 * [Jakarta Server Faces JavaScript Documentation](https://jakarta.ee/specifications/faces/2.3/jsdoc)
 
-The [Specifications](Specifications) page contains links to the project
-pages for all Jakarta EE specifications.
+## Jakarta EE 9 (under development)
 
-(Be sure to view this page at
-[https://javaee.github.io/javaee-spec/](https://javaee.github.io/javaee-spec/),
-not at the GitHub source code repository view, so that the links in
-this page will work correctly.)
+The [Jakarta EE 9](jakartaee9/JakartaEE9) page contains links to the documentation and processes required for a successful Jakarta EE 9 release.
 
-## Jakarta EE 8
+## Jakarta EE 8 (latest release)
 
 Java EE 8 was approved by the Jakarta EE Specification Committee
 on Sep 10, 2019.
@@ -44,7 +50,9 @@ You can find the drafts of proposals and other working
 documents on the [Documents](Documents) page.
 (Currently this contains only historical Java EE proposals.)
 
-[Meeting minutes](minutes/minutes.md)
+### Meeting minutes
+
+The Platform Project holds regular meetings.  The [meeting minutes](minutes/minutes.md) provides information on time, location, decisions, and frequency.
 
 ## Compatibility Requirements
 
