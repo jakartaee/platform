@@ -52,7 +52,7 @@ documents on the [Documents](Documents) page.
 
 ### Meeting minutes
 
-The Platform Project holds regular meetings.  The [meeting minutes](minutes/minutes.md) provides information on time, location, decisions, and frequency.
+The Platform Project holds regular meetings.  The [meeting minutes](minutes) provides information on time, location, decisions, and frequency.
 
 ## Compatibility Requirements
 
