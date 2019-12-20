@@ -1,3 +1,7 @@
+---
+title: "Meeting Minutes"
+summary: "Meeting Minutes from Jakarta EE Platform Calls"
+---
 # Meeting Minutes
 
 * [2019-12-17](2019-12-17.md)
