@@ -39,6 +39,8 @@ on Sep 10, 2019.
 The final specification is available for download on the
 [Jakarta EE specification page](https://jakarta.ee/specifications/platform/8/).
 
+Summary of the [Community Retrospective](jakartaee8/Summary_of_Community_Retrospective_on_Jakarta_EE_8_Release.pdf) on the Jakarta EE 8 Release.
+
 ## Project Communication
 
 You can track all the platform project communication by
