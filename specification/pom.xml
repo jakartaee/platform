@@ -20,7 +20,7 @@
     <parent>
         <groupId>org.eclipse.ee4j</groupId>
         <artifactId>project</artifactId>
-        <version>1.0.5</version>
+        <version>1.0.6</version>
         <relativePath/>
     </parent>
     <modelVersion>4.0.0</modelVersion>
@@ -41,7 +41,7 @@
         <status>DRAFT</status>
         <maven.build.timestamp.format>MMMM dd, yyyy</maven.build.timestamp.format>
         <revisiondate>${maven.build.timestamp}</revisiondate>
-        <managedbean.version>1.1-SNAPSHOT</managedbean.version>  <!-- override <version> for Managed Beans spec-->
+        <managedbean.version>2.0-SNAPSHOT</managedbean.version>  <!-- override <version> for Managed Beans spec-->
     </properties>
 
     <scm>
