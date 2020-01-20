@@ -10,7 +10,7 @@
 :license: Eclipse Foundation Specification License v1.0
 :source-highlighter: coderay
 :toc: left
-:toclevels: 4
+:toclevels: 3
 :sectnumlevels: 4
 :sectanchors:
 ifdef::backend-pdf[]
@@ -23,6 +23,6 @@ endif::[]
 :sectnums!:
 include::license-efsl.adoc[]
 
-// == WebProfile
+// == ManagedBeans
 :sectnums:
 include::managedbeans/ManagedBeans.adoc[]
