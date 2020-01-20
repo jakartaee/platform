@@ -46,13 +46,11 @@ _String_ .
 The name can be specified using an element of
 the _ManagedBean_ annotation.
 
-(TODO)
-
- _@ManagedBean(“cart“)_
-
- _public class ShoppingCart \{ ... }_
-
- __
+[source, java]
+----
+ @ManagedBean(“cart“)
+ public class ShoppingCart \{ ... }
+----
 
 Managed Bean names must be unique within a Jakarta
 EE module. It is an error if a Jakarta EE module contains a Jakarta Enterprise Bean component
@@ -62,24 +60,20 @@ For each named Managed Bean, Jakarta EE containers
 must make available the following entries in JNDI, using the same naming
 scheme used for Jakarta Enterprise Bean components.
 
-
-
 In the application namespace:
-
+----
  java:app/<module-name>/<bean-name>
-
-
+----
 
 In the module namespace of the module
 containing the Managed Bean:
-
+----
  java:module/<bean-name>
-
-
+----
 
 Jakarta EE applications may obtain a new instance
 of a Managed Bean by looking up the corresponding names in JNDI or by
-using resource injection. See Chapter (TODO) EE.5 of the Jakarta EE Platform
+using resource injection. See Chapter 5 of the Jakarta EE Platform
 specification for more details.
 
 
@@ -92,7 +86,7 @@ annotations to identify methods to be called back by the container at
 the appropriate points in the bean’s lifecycle.
 
 In a Jakarta EE implementation, a Managed Bean may
-use any of the resource injection functionality laid out in (TODO) Chapter EE.5
+use any of the resource injection functionality laid out in Chapter 5
 of the Jakarta EE Platform specification, “Resources, Naming and
 Injection“. A Managed Bean does not have its own component-scoped
 _“java:comp”_ namespace. For this reason, Managed Beans should define
@@ -120,7 +114,7 @@ aspects of the basic model, as detailed in the rest of this section.
 ==== Component Definition
 
 An extension specification may provide ways to
-declare a Managed Bean that go beyond those in
+declare a Managed Bean that go beyond those in the Basic Model
 <<a24, Component Definition>>.
 
 An extension specification may allow a Managed
@@ -133,19 +127,19 @@ An extension specification may offer
 alternative ways to name a Managed Bean, e.g. as a side-effect of
 placing some other annotation on the bean class, but, if specified, the
 _ManagedBean(”...”)_ annotation takes priority, and with it the rules in
-<<a29, Naming>>.
+the Basic Model <<a29, Naming>>.
 
 Of course an extension specification may also
 introduce one or more additional namespaces in which some or all Managed
-Beans get registered, either with the Managed Bean name defined in
-<<a29, Naming>> or with an
+Beans get registered, either with the Managed Bean name defined in the
+Basic Model <<a29, Naming>> or with an
 independently defined name.
 
 ==== Lifecycle and Resource Injection
 
 An extension specification may define its own
 lifecycle model, adding e.g. pooling, sharing of instances, etc., beyond
-the basic model described in <<a47, Lifecycle and Resource Injection>>.
+the basic model described in the Basic Model <<a47, Lifecycle and Resource Injection>>.
 
 An extension specification may allow Managed
 Beans to have their own _“java:comp”_ namespace.
@@ -154,7 +148,7 @@ Beans to have their own _“java:comp”_ namespace.
 
 An extension specification may add its own
 threading requirements, overriding any requirements set in
-<<a50, Threading>>.
+the Basic Model <<a50, Threading>>.
 
 For example, invocations on a [proxy for] a
 Managed Bean may be performed using a different thread than the
