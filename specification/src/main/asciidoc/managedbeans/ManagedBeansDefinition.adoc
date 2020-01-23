@@ -26,7 +26,7 @@ XML-based way to turn a class into a Managed Bean.
 ==== Component Definition
 
 A Managed Bean can be declared by annotating
-its class with the _javax.annotation.ManagedBean_ annotation.
+its class with the _jakarta.annotation.ManagedBean_ annotation.
 
 A Managed Bean must not be: a final class, an
 abstract class, a non-static inner class.
@@ -81,7 +81,7 @@ specification for more details.
 ==== Lifecycle and Resource Injection
 
 Managed Beans may use the
-_javax.annotation.PostConstruct_ and _javax.annotation.PreDestroy_
+_jakarta.annotation.PostConstruct_ and _jakarta.annotation.PreDestroy_
 annotations to identify methods to be called back by the container at
 the appropriate points in the bean’s lifecycle.
 
@@ -161,4 +161,4 @@ interceptor-like facilities to the predefined one.
 
 For example, an extension specification may
 allow declaring type-safe interceptors, defined using a different set of
-APIs than those in the _javax.interceptor_ package.
+APIs than those in the _jakarta.interceptor_ package.
