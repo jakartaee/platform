@@ -600,7 +600,7 @@ Components
 under the current directory.]
 
 |java.io.FilePermission
-|file:${_jakarta.servlet.context.tempdir}
+|file:${jakarta.servlet.context.tempdir}
 |read, write footnote:[(For Web components only.) It must be possible to grant
 FilePermission for the tempdir provided to web components through the ServletContext
 regardless of its physical location. In addition, it must be possible to grant
@@ -1549,10 +1549,10 @@ API MIME Data Type to Java Type Mappings>>_ .
 |java.lang.String
 
 |multipart/*
-|_jakarta.mail.internet.MimeMultipart
+|jakarta.mail.internet.MimeMultipart
 
 |message/rfc822
-|_jakarta.mail.internet.MimeMessage
+|jakarta.mail.internet.MimeMessage
 |===
 
 The Jakarta Mail API specification is available
