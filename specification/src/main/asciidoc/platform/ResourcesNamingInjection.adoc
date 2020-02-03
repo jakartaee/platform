@@ -2153,7 +2153,7 @@ of a message destination reference.
 
 [source,java]
 ----
-@Resource _jakarta.jms.Queue stockQueue;
+@Resource jakarta.jms.Queue stockQueue;
 ----
 
 The following example illustrates how a
@@ -2164,7 +2164,7 @@ lookup element.
 [source,java]
 ----
 @Resource(lookup="java:app/env/TheOrderQueue")
-_jakarta.jms.Queue orderQueue;
+jakarta.jms.Queue orderQueue;
 ----
 
 ===== Message Destination Reference Programming Interfaces
