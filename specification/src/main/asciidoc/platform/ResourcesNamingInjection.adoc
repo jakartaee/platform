@@ -1848,11 +1848,11 @@ _javax.sql.DataSource_ resource manager connection factory type for
 obtaining JDBC API connections.
 
 The Application Component Provider must use the
-_javax.jms.ConnectionFactory_ , the _javax.jms.QueueConnectionFactory_ ,
-or the _javax.jms.TopicConnectionFactory_ for obtaining Jakarta Messaging connections.
+_jakarta.jms.ConnectionFactory_ , the _jakarta.jms.QueueConnectionFactory_ ,
+or the _jakarta.jms.TopicConnectionFactory_ for obtaining Jakarta Messaging connections.
 
 The Application Component Provider must use the
-_javax.mail.Session_ resource manager connection factory type for
+_jakarta.mail.Session_ resource manager connection factory type for
 obtaining Jakarta Mail API connections.
 
 The Application Component Provider must use the
@@ -2153,7 +2153,7 @@ of a message destination reference.
 
 [source,java]
 ----
-@Resource javax.jms.Queue stockQueue;
+@Resource _jakarta.jms.Queue stockQueue;
 ----
 
 The following example illustrates how a
@@ -2164,7 +2164,7 @@ lookup element.
 [source,java]
 ----
 @Resource(lookup="java:app/env/TheOrderQueue")
-javax.jms.Queue orderQueue;
+_jakarta.jms.Queue orderQueue;
 ----
 
 ===== Message Destination Reference Programming Interfaces
@@ -2201,7 +2201,7 @@ Context initCtx = new InitialContext();
 Object result = initCtx.lookup("java:comp/env/jms/StockQueue");
 
 // Convert the result to the proper type.
-javax.jms.Queue queue = (javax.jms.Queue)result;
+jakarta.jms.Queue queue = (jakarta.jms.Queue)result;
 ----
 
 In the example, the Application Component
@@ -2238,7 +2238,7 @@ the _java:comp/env_ context (for example, the name should be
 _jms/StockQueue_ rather than _java:comp/env/jms/StockQueue_ ). The
 _message-destination-type_ element specifies the expected type of the
 referenced destination. For example, in the case of a Jakarta Messaging Destination,
-its value might be _javax.jms.Queue_ . The _message-destination-type_
+its value might be _jakarta.jms.Queue_ . The _message-destination-type_
 element is optional if an injection target is specified for this message
 destination reference; in this case the _message-destination-type_
 defaults to the type of the injection target. The
@@ -2271,7 +2271,7 @@ descriptor.
      jms/StockInfo
   </message-destination-ref-name>
   <message-destination-type>
-     javax.jms.Queue
+     jakarta.jms.Queue
   </message-destination-type>
   <message-destination-usage>
      Produces
@@ -3250,7 +3250,7 @@ default _ValidatorFactory_ available at _java:comp/ValidatorFactory_ .
 The default _ValidatorFactory_ available at _java:comp/ValidatorFactory_
 must support use of CDI if CDI is enabled for the module. In particular,
 all of the classes specified by the
-_javax.validation.BootstrapConfiguration_ interface must be created as
+_jakarta.validation.BootstrapConfiguration_ interface must be created as
 non-contextual objects using CDI, as described in
 <<a2112, Support for Dependency
 Injection>>”. These objects must be used to configure the default
@@ -3592,7 +3592,7 @@ For example:
   </description>
   <name>java:app/MyJMSCF</name>
   <interface-name>
-     javax.jms.QueueConnectionFactory
+     jakarta.jms.QueueConnectionFactory
   </interface-name>
   <resource-adapter>myJMSRA</resource-adapter>
   <user>scott</user>
@@ -3622,7 +3622,7 @@ For example:
 ----
   @JMSConnectionFactoryDefinition(
      name="java:app/MyJMSCF",
-     interfaceName="javax.jms.QueueConnectionFactory",
+     interfaceName="jakarta.jms.QueueConnectionFactory",
      resourceAdapter="myJMSRA")
 ----
 
@@ -3711,7 +3711,7 @@ For example:
 <jms-destination>
   <description>Sample Jakarta Messaging Destination definition</description>
   <name>java:app/MyJMSDestination</name>
-  <interface-name>javax.jms.Queue</interface-name>
+  <interface-name>jakarta.jms.Queue</interface-name>
   <resource-adapter>myJMSRA</resource-adapter>
   <destination-name>myQueue1</destination-name>
   <property>
@@ -3735,7 +3735,7 @@ For example:
 ----
   @JMSDestinationDefinition(
      name="java:app/MyJMSQueue",
-     interfaceName="javax.jms.Queue",
+     interfaceName="jakarta.jms.Queue",
      destinationName="myQueue1")
 ----
 
@@ -4357,7 +4357,7 @@ CDI SPI need to access a _BeanManager_ . Application code may
 occasionally require access to that interface; in that case, the
 application should either look up a _BeanManager_ instance in JNDI under
 the name _java:comp/BeanManager_ , or request the injection of an object
-of type _javax.enterprise.inject.spi.BeanManager_ via the _Resource_
+of type _jakarta.enterprise.inject.spi.BeanManager_ via the _Resource_
 annotation. If the latter, the _authenticationType_ and _shareable_
 elements of the _Resource_ annotation must not be specified.
 
@@ -4397,7 +4397,7 @@ specification.
 In Jakarta EE, support for dependency injection
 annotations as specified in the Dependency Injection for Java
 specification is mediated by CDI. Containers must support injection
-points annotated with the _javax.inject.Inject_ annotation only to the
+points annotated with the _jakarta.inject.Inject_ annotation only to the
 extent dictated by CDI.
 
 Per the CDI specification, dependency
@@ -4427,7 +4427,7 @@ that are managed by the Jakarta EE container.
 Therefore, to make injection support more
 uniform across all Jakarta EE component types, Jakarta EE containers are
 required to support field, method, and constructor injection using the
-_javax.inject.Inject_ annotation into all component classes listed in
+_jakarta.inject.Inject_ annotation into all component classes listed in
 <<a651, Component classes
 supporting injection>> as having the “Standard” level of injection
 support, as well as the use of interceptors for these classes. Such

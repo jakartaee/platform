@@ -222,39 +222,39 @@ annotations, only those that specify deployment information.
 The list of annotations to which the
 _metadata-complete_ attribute applies currently includes the following:
 
-*  _javax.annotation.PostConstruct_
-*  _javax.annotation.PreDestroy_
-*  _javax.annotation.Resource_
-*  _javax.annotation.Resources_
-*  _javax.annotation.sql.DataSourceDefinition_
-*  _javax.annotation.sql.DataSourceDefinitions_
+*  _jakarta.annotation.PostConstruct_
+*  _jakarta.annotation.PreDestroy_
+*  _jakarta.annotation.Resource_
+*  _jakarta.annotation.Resources_
+*  _jakarta.annotation.sql.DataSourceDefinition_
+*  _jakarta.annotation.sql.DataSourceDefinitions_
 
-*  _javax.ejb.EJB_
-*  _javax.ejb.EJBs_
+*  _jakarta.ejb.EJB_
+*  _jakarta.ejb.EJBs_
 
-*  _javax.jms.JMSConnectionFactoryDefinition_
-*  _javax.jms.JMSConnectionFactoryDefinitions_
-*  _javax.jms.JMSDestinationDefinition_
-*  _javax.jms.JMSDestinationDefinitions_
+*  _jakarta.jms.JMSConnectionFactoryDefinition_
+*  _jakarta.jms.JMSConnectionFactoryDefinitions_
+*  _jakarta.jms.JMSDestinationDefinition_
+*  _jakarta.jms.JMSDestinationDefinitions_
 
-*  _javax.mail.MailSessionDefinition_
-*  _javax.mail.MailSessionDefinitions_
+*  _jakarta.mail.MailSessionDefinition_
+*  _jakarta.mail.MailSessionDefinitions_
 
-*  _javax.persistence.PersistenceUnit_
-*  _javax.persistence.PersistenceUnits_
+*  _jakarta.persistence.PersistenceUnit_
+*  _jakarta.persistence.PersistenceUnits_
 
-*  _javax.resource.AdministeredObjectDefinition_
-*  _javax.resource.AdministeredObjectDefinitions_
-*  _javax.resource.ConnectionFactoryDefinition_
-*  _javax.resource.ConnectionFactoryDefinitions_
+*  _jakarta.resource.AdministeredObjectDefinition_
+*  _jakarta.resource.AdministeredObjectDefinitions_
+*  _jakarta.resource.ConnectionFactoryDefinition_
+*  _jakarta.resource.ConnectionFactoryDefinitions_
 
 
 * All annotations in the following packages:
-** _javax.jws_
-** _javax.jws.soap_
-** _javax.xml.ws_
-** _javax.xml.ws.soap_
-** _javax.xml.ws.spi_
+** _jakarta.jws_
+** _jakarta.jws.soap_
+** _jakarta.xml.ws_
+** _jakarta.xml.ws.soap_
+** _jakarta.xml.ws.spi_
 
 If the _metadata-complete_ attribute is not
 specified or its value is _"false"_ , the deployment tool must examine
