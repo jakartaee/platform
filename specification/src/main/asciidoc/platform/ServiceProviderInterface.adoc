@@ -45,7 +45,7 @@ _https://jakarta.ee/specifications/transactions_ .
 === Jakarta™ Persistence
 
 Jakarta Persistence provides interfaces in the
-_javax.persistence.spi_ package that allow a persistence provider to be
+_jakarta.persistence.spi_ package that allow a persistence provider to be
 plugged into the Jakarta Persistence framework.
 
 The Jakarta Persistence specification can be

@@ -65,7 +65,7 @@ that must be supported by Product Providers.
 ==== Web Components
 
 Web components may demarcate transactions using the
-_javax.transaction.UserTransaction_ interface or transactional interceptors,
+_jakarta.transaction.UserTransaction_ interface or transactional interceptors,
 which are defined in the Jakarta Transactions specification. They may access
 multiple resource managers and invoke multiple enterprise beans within a single
 transaction. The specified transaction context is automatically propagated to
@@ -74,7 +74,7 @@ propagation may be subject to the enterprise bean transaction attributes
 (for example, a bean may be required to use Container Managed Transactions).
 
 Web application event listeners and upgrade handlers must not demarcate
-transactions using the _javax.transaction.UserTransaction_ interface or
+transactions using the _jakarta.transaction.UserTransaction_ interface or
 transactional interceptors. Servlet filters may use transactional resources
 within their _doFilter_ methods but should not use any transactional resources
 in the methods of any objects used to wrap the request or response
@@ -85,7 +85,7 @@ objects.
 The Jakarta EE platform must meet the following requirements:
 
 * The Jakarta EE platform must provide an object implementing the
-_javax.transaction.UserTransaction_ interface to all web components.
+_jakarta.transaction.UserTransaction_ interface to all web components.
 The platform must publish the _UserTransaction_ object in the Java™ Naming
 and Directory Interface (JNDI) name space available to web components under the
 name _java:comp/UserTransaction_.
@@ -236,7 +236,7 @@ commit the transaction.
 A Jakarta EE product must provide a transaction manager that is capable of
 coordinating two-phase commit operations across multiple XA-capable JDBC
 databases. If a JDBC driver supports the Jakarta Transactions API’s XA
-interfaces (in the _javax.transaction.xa_ package), then the Jakarta EE product
+interfaces (in the _jakarta.transaction.xa_ package), then the Jakarta EE product
 must be capable of using the XA interfaces provided by the JDBC driver to
 accomplish two-phase commit operations. The Jakarta EE product may discover
 the XA capabilities of JDBC drivers through product-specific means, although
@@ -287,12 +287,12 @@ interoperability protocol based on RMI-IIOP.
 ==== Support for Transactional Resource Managers
 
 This specification requires all Jakarta EE products to support the
-_javax.transaction.xa.XAResource_ interface, as specified in the Connector
+_jakarta.transaction.xa.XAResource_ interface, as specified in the Connector
 specification. This specification also requires all Jakarta EE products to
-support the _javax.transaction.xa.XAResource_ interface for performing two-phase
+support the _jakarta.transaction.xa.XAResource_ interface for performing two-phase
 commit operations on JDBC drivers that support the JTA XA APIs. This
 specification does not require that JDBC drivers or Jakarta Messaging providers
-use the _javax.transaction.xa.XAResource_ interface, although they may use
+use the _jakarta.transaction.xa.XAResource_ interface, although they may use
 this interface and in all cases they must meet the transactional resource
 manager requirements described in this chapter. In particular, it must be
 possible to combine operations on one or more JDBC databases, one or more

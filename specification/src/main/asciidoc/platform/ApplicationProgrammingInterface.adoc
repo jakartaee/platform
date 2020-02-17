@@ -300,7 +300,7 @@ Optional, it must not include the APIs for that
 technology.footnote:[Note that a component specification is permitted to specify
 an exception to this in order to accommodate interface type dependencies—for example,
 the Jakarta™ Enterprise Beans SessionContext dependency on the
-_javax.xml.rpc.handler.MessageContext_ type.]
+_jakarta.xml.rpc.handler.MessageContext_ type.]
 
 
 [[a2331]]
@@ -496,7 +496,7 @@ policy of the operational environment.
 
 In particular, the temporary file directory
 made available through the ServletContext attribute
-_javax.servlet.context.tempdir_ should be available to deployed
+_jakarta.servlet.context.tempdir_ should be available to deployed
 applications. The security policy of the operational environment should
 grant the application server process access to the corresponding part of
 the file system. The Jakarta EE Product must be capable of using the
@@ -600,7 +600,7 @@ Components
 under the current directory.]
 
 |java.io.FilePermission
-|file:${javax.servlet.context.tempdir}
+|file:${jakarta.servlet.context.tempdir}
 |read, write footnote:[(For Web components only.) It must be possible to grant
 FilePermission for the tempdir provided to web components through the ServletContext
 regardless of its physical location. In addition, it must be possible to grant
@@ -1296,17 +1296,17 @@ distributable, this specification adds the following requirements.
 Web containers must support Jakarta EE
 distributable web applications placing objects of any of the following
 types (when supported by the Jakarta EE product) into a
-_javax.servlet.http.HttpSession_ object using the _setAttribute_ or
+_jakarta.servlet.http.HttpSession_ object using the _setAttribute_ or
 _putValue_ methods:
 
 _java.io.Serializable_
 
-*  _javax.ejb.EJBObject_
-*  _javax.ejb.EJBHome_
-*  _javax.ejb.EJBLocalObject_
-*  _javax.ejb.EJBLocalHome_
-*  _javax.transaction.UserTransaction_
-* a _javax.naming.Context_ object for the
+*  _jakarta.ejb.EJBObject_
+*  _jakarta.ejb.EJBHome_
+*  _jakarta.ejb.EJBLocalObject_
+*  _jakarta.ejb.EJBLocalHome_
+*  _jakarta.transaction.UserTransaction_
+* a _jakarta.naming.Context_ object for the
 _java:comp/env_ context
 
 a reference to an Enterprise Bean local or remote business interface or no-interface view
@@ -1365,45 +1365,45 @@ interfaces intended for integration with an application server. A Jakarta
 EE product need not provide objects that implement these interfaces, and
 portable Jakarta EE applications must not use the following interfaces:
 
-*  _javax.jms.ServerSession_
-*  _javax.jms.ServerSessionPool_
-*  _javax.jms.ConnectionConsumer_
+*  _jakarta.jms.ServerSession_
+*  _jakarta.jms.ServerSessionPool_
+*  _jakarta.jms.ConnectionConsumer_
 
-all _javax.jms_ XA interfaces
+all _jakarta.jms_ XA interfaces
 
 The following methods may only be used by
 application components executing in the application client container:
 
-*  _javax.jms.MessageConsumer_ method
+*  _jakarta.jms.MessageConsumer_ method
 _getMessageListener_
-*  _javax.jms.MessageConsumer_ method
+*  _jakarta.jms.MessageConsumer_ method
 _setMessageListener_
-*  _javax.jms.JMSConsumer_ method
+*  _jakarta.jms.JMSConsumer_ method
 _getMessageListener_
-*  _javax.jms.JMSConsumer_ method
+*  _jakarta.jms.JMSConsumer_ method
 _setMessageListener_
-*  _javax.jms.Connection_ method
+*  _jakarta.jms.Connection_ method
 _setExceptionListener_
-*  _javax.jms.Connection_ method _stop_
-*  _javax.jms.Connection_ method
+*  _jakarta.jms.Connection_ method _stop_
+*  _jakarta.jms.Connection_ method
 _setClientID_
-*  _javax.jms.JMSContext_ method _stop_
-*  _javax.jms.JMSContext_ method
+*  _jakarta.jms.JMSContext_ method _stop_
+*  _jakarta.jms.JMSContext_ method
 _setClientID_
-*  _javax.jms.JMSContext_ method
+*  _jakarta.jms.JMSContext_ method
 _setExceptionListener_
-*  _javax.jms.JMSContext_ method
+*  _jakarta.jms.JMSContext_ method
 _createContext_
-*  _javax.jms.Producer_ method _setAsync_
-*  _javax.jms.MessageProducer_ method
+*  _jakarta.jms.Producer_ method _setAsync_
+*  _jakarta.jms.MessageProducer_ method
 _send(Message_ _message, CompletionListener_ _completionListener)_
-*  _javax.jms.MessageProducer_ method
+*  _jakarta.jms.MessageProducer_ method
 _send(Message_ _message,_ _int_ _deliveryMode,_ _int_ _priority,_ _long_
 _timeToLive,_ _CompletionListener completionListener)_
-*  _javax.jms.MessageProducer_ method
+*  _jakarta.jms.MessageProducer_ method
 _send(Destination_ _destination, Message_ _message,_
 _CompletionListener_ _completionListener)_
-*  _javax.jms.MessageProducer_ method
+*  _jakarta.jms.MessageProducer_ method
 _send(Destination_ _destination, Message_ _message,_ _int_
 _deliveryMode,_ _int_ _priority,_ _long_ _timeToLive,
 CompletionListener_ _completionListener)_
@@ -1413,19 +1413,19 @@ application components executing in the application client container.
 Note, however, that these methods provide an expert facility not used by
 ordinary applications. See the JMS specification for further detail.
 
-_javax.jms.Session_ method _setMessageListener_
+_jakarta.jms.Session_ method _setMessageListener_
 
-*  _javax.jms.Session_ method
+*  _jakarta.jms.Session_ method
 _getMessageListener_
-*  _javax.jms.Session_ method _run_
-*  _javax.jms.Connection_ method
+*  _jakarta.jms.Session_ method _run_
+*  _jakarta.jms.Connection_ method
 _createConnectionConsumer_
-*  _javax.jms.Connection_ method
+*  _jakarta.jms.Connection_ method
 _createSharedConnectionConsumer_
-*  _javax.jms.Connection_ method
+*  _jakarta.jms.Connection_ method
 _createDurableConnectionConsumer_
 
-_javax.jms.Connection_ method _createSharedDurableConnectionConsumer_
+_jakarta.jms.Connection_ method _createSharedDurableConnectionConsumer_
 
 A Jakarta EE container may throw a
 _JMSException_ (if allowed by the method) or a _JMSRuntimeException_ (if
@@ -1493,7 +1493,7 @@ store provider, and an SMTP message transport provider.
 
 Configuration of the Jakarta Mail API is
 typically done by setting properties in a _Properties_ object that is
-used to create a _javax.mail.Session_ object using a static factory
+used to create a _jakarta.mail.Session_ object using a static factory
 method. To allow the Jakarta EE platform to configure and manage JavaMail
 API sessions, an application component that uses the JavaMail API should
 request a _Session_ object using JNDI, and should list its need for a
@@ -1502,17 +1502,17 @@ element, or by using a _Resource_ annotation. A Jakarta Mail API _Session_
 object should be considered a resource factory, as described in
 <<a1120, Resource Manager
 Connection Factory References>>.” This specification requires that the
-Jakarta EE platform support _javax.mail.Session_ objects as resource
+Jakarta EE platform support _jakarta.mail.Session_ objects as resource
 factories, as described in that section.
 
 The Jakarta EE platform requires that a message
 transport be provided that is capable of handling addresses of type
-_javax.mail.internet.InternetAddress_ and messages of type
-_javax.mail.internet.MimeMessage_ . The default message transport must
+_jakarta.mail.internet.InternetAddress_ and messages of type
+_jakarta.mail.internet.MimeMessage_ . The default message transport must
 be properly configured to send such messages using the _send_ method of
-the _javax.mail.Transport_ class. Any authentication needed by the
+the _jakarta.mail.Transport_ class. Any authentication needed by the
 default transport must be handled without need for the application to
-provide a _javax.mail.Authenticator_ or to explicitly connect to the
+provide a _jakarta.mail.Authenticator_ or to explicitly connect to the
 transport and supply authentication information.
 
 This specification does not require that a Jakarta
@@ -1527,7 +1527,7 @@ threads.
 
 The Jakarta Mail API uses the JavaBeans Activation
 Framework API to support various MIME data types. The Jakarta Mail API must
-include _javax.activation.DataContentHandlers_ for the following MIME
+include _jakarta.activation.DataContentHandlers_ for the following MIME
 data types, corresponding to the Java programming language type
 indicated in _<<a2675, JavaMail
 API MIME Data Type to Java Type Mappings>>_ .
@@ -1549,10 +1549,10 @@ API MIME Data Type to Java Type Mappings>>_ .
 |java.lang.String
 
 |multipart/*
-|javax.mail.internet.MimeMultipart
+|jakarta.mail.internet.MimeMultipart
 
 |message/rfc822
-|javax.mail.internet.MimeMessage
+|jakarta.mail.internet.MimeMessage
 |===
 
 The Jakarta Mail API specification is available
@@ -1937,14 +1937,14 @@ metadata through the use of XML validation descriptors.
 The Jakarta EE platform requires that web
 containers make an instance of _ValidatorFactory_ available to Jakarta Server Faces
 implementations by storing it in a servlet context attribute named
-_javax.faces.validator.beanValidator.ValidatorFactory._
+_jakarta.faces.validator.beanValidator.ValidatorFactory._
 
 The Jakarta EE platform also requires that an
 instance of _ValidatorFactory_ be made available to Jakarta Persistence providers as a
 property in the map that is passed as the second argument to the
 _createContainerEntityManagerFactory(PersistenceUnitInfo, Map)_ method
 of the _PersistenceProvider_ interface, under the name
-_javax.persistence.validation.factory_ .
+_jakarta.persistence.validation.factory_ .
 
 Additional requirements on Jakarta EE platform
 containers are specified in the Bean Validation specification, which can
