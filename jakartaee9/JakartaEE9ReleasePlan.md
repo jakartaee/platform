@@ -266,3 +266,7 @@ The JESP requires us to have a Compatible Implementation of the Full Profile and
 
 
 <!-- Docs to Markdown version 1.0β17 -->
+
+## FAQ
+
+Additional clarifications for this Release Plan can be found in the [Jakarta EE 9 Release Plan FAQ](https://eclipse-ee4j.github.io/jakartaee-platform/jakartaee9/JakartaEE9ReleasePlanFAQ).
