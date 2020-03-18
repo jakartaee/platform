@@ -5,11 +5,15 @@ This FAQ should be used to complement the [Jakarta EE 9 Release Plan](https://ec
 
 ## FAQ
 
+**API**
 - [Is adding @Deprecated allowed?](#is-adding-deprecated-allowed)
 - [Is introducing Generics in the API signatures allowed?](#is-introducing-generics-in-the-api-signatures-allowed)
 - [Is adding @Repeatable allowed?](#is-adding-repeatable-allowed)
 - [Should `javax` property names be renamed to `jakarta`?](#should-javax-property-names-be-renamed-to-jakarta)
 - [Will the target namespace change for schemas?](#will-the-target-namespace-change-for-schemas)
+
+**TCK**
+- [Keep the old `javax` signature files?](#keep-the-old-javax-signature-files)
 
 ### Is adding @Deprecated allowed?
 
@@ -34,4 +38,9 @@ Pruned Jakarta EE Projects will leave their property names in the `javax.*` name
 ### Will the target namespace change for schemas?
 
 Yes, the proposed target namespace is `https://jakarta.ee/xml/ns/jakartaee/`.  
-This work is being tracked [via this bug](https://github.com/jakartaee/jakarta.ee/issues/592).
+This work is being tracked [via this bug](https://github.com/jartaee/jakarta.ee/issues/592).
+
+### Keep the old `javax` signature files?
+
+There is no reason to keep these old `javax` signature files since only the `jakarta` signatures will be developed, maintained, and tested.
+To clarify, this question is referring to the `javax` signature files in [this directory](https://github.com/eclipse-ee4j/jakartaee-tck/tree/master/src/com/sun/ts/tests/signaturetest/signature-repository).
