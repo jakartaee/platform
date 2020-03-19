@@ -38,7 +38,7 @@ Pruned Jakarta EE Projects will leave their property names in the `javax.*` name
 ### Will the target namespace change for schemas?
 
 Yes, the proposed target namespace is `https://jakarta.ee/xml/ns/jakartaee/`.  
-This work is being tracked [via this bug](https://github.com/jartaee/jakarta.ee/issues/592).
+This work is being tracked [via this bug](https://github.com/jakartaee/jakarta.ee/issues/592).
 
 ### Keep the old `javax` signature files?
 
