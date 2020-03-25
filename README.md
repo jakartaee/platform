@@ -62,6 +62,10 @@ The rules we follow to ensure backwards compatibility when revising
 Jakarta EE specifications are described on the
 [Compatibility Requirements](CompatibilityRequirements) page.
 
+## Publishing XML Schemas
+
+Read [How to Publish XML Schemas](publish-xml-schemas) for instructions for how to publish XML Schemas to https://jakarta.ee/xml/ns/jakartaee.
+
 ## JCP Processes
 
 The use of JCP processes by the Java EE group at Oracle is described on the
