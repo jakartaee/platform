@@ -6,7 +6,7 @@ Jakarta™ EE Platform.
 === Architecture
 
 The required relationships of architectural
-elements of the Java EE platform are shown in
+elements of the Jakarta EE platform are shown in
 _<<a45, Jakarta EE Architecture Diagram>>_.
 Note that this figure shows the logical relationships of the
 elements; it is not meant to imply a physical partitioning of the
@@ -202,7 +202,7 @@ bean container.
 ==== Container Requirements
 
 This specification requires that containers
-provide a Java Compatible™ runtime environment, as defined by the Java
+provide a Java™ runtime environment, as defined by the Java
 Platform, Standard Edition, v8 specification (Java SE). The applet
 container may use the Java Plugin product to provide this environment,
 or it may provide it natively. The use of applet containers providing
