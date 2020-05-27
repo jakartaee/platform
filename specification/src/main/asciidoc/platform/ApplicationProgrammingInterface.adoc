@@ -40,6 +40,7 @@ platform includes the following enterprise technologies:
 
 * Java IDL footnote:javaremoval[Removed from Java SE 11. See <<a2161, Required Jakarta Technologies>>.]
 * JDBC
+* RMI-JRMP
 * RMI-IIOP footnote:javaremoval[]
 * JNDI
 * JAXP
@@ -81,12 +82,12 @@ technology is required (REQ), proposed optional (POPT), or optional
 describing which technologies are required for the profile. Note that
 some technologies are marked Optional, as described in the next section.
 
-*Note:* Jakarta EE 9 introduced the concept of "pruned" technologies.
+*Note:* Jakarta EE 9 introduced the concept of "removed" technologies.
 This is the final stage of a technology's lifecycle where the technology is
 officially removed from the Jakarta EE Platform.
-This is a stronger statement than making a technology "optional", since a "pruned"
+This is a stronger statement than making a technology "optional", since a "removed"
 technology will no longer be maintained for future versions of the Platform.
-<<a2333, Pruned Jakarta Technologies>> documents these removed technologies.
+<<a2333, Removed Jakarta Technologies>> documents these removed technologies.
 
 *Table TODO* There doesn't seem to be any rhyme or reason to the ordering of the contents
 of this table.  Maybe it was done in the order of the specs getting added to the platform?
@@ -327,7 +328,7 @@ As the Jakarta EE specification has evolved,
 some of the technologies originally included in Jakarta EE are no longer as
 relevant as they were when they were introduced to the platform. The
 Jakarta EE Platform Specification Project follows a process similar to the one first defined by the Java SE
-expert group ( _http://mreinhold.org/blog/removing-features_ ) to stabilize and deprecate
+expert group ( _http://mreinhold.org/blog/removing-features_ ) to stabilize and remove
 technologies from the platform in a careful and orderly way that
 minimizes the impact to developers using these technologies, while
 allowing the platform to grow even stronger. In short, our process
@@ -340,37 +341,40 @@ marked "proposed optional". The specification for that release documents the pro
 mark the feature as "optional" for this N+1 release, retain it as a required component,
 or leave it in the "proposed optional" state for the next N+2 release cycle to decide.
 . Eventually, the Platform Specification Project for release N+2 (or beyond) can decide
-to officially "prune" (remove) the "optional" feature from the Platform.
+to officially "remove" the "optional" feature from the Platform.
 
 The result of successfully applying this
 policy to a feature is to allow a gradual deprecation and possible removal
-of the feature from a required component of the platform.
-Product vendors can _choose_ to remove an "optional" feature from their products.
-Product vendors are _required_ to remove a "pruned" feature from their products for
-the respective Platform release..
+of the feature as a required component of the platform.
+Product vendors can _choose_ to remove or include an "optional" feature in their
+products.
+Although a "removed" feature can still be included in a vendor's product, vendors 
+need to realize that the "removed" feature is no longer defined as part of the Platform
+and, thus, the integration of this "removed" feature with the rest of the Platform
+is left as an exercise for the vendor.
 
 Technologies that are "proposed optional" are marked Proposed Optional (POPT) in
 <<a2159, Jakarta EE Technologies>>.
 Technologies that are "optional" as of Jakarta EE 9 are marked Optional (OPT) in
 <<a2159, Jakarta EE Technologies>>.
-Technologies that are "pruned" from the Jakarta EE Platform are documented in 
-<<a2333, Pruned Jakarta Technologies>>.
+Technologies that are "removed" from the Jakarta EE Platform are documented in 
+<<a2333, Removed Jakarta Technologies>>.
 
 *Note:* In order to get on a level playing field, Jakarta EE 9 took a couple of liberties
-with the application of "proposed optional", "optional", and "pruned" technologies per
+with the application of "proposed optional", "optional", and "removed" technologies per
 the Jakarta EE 9 Release Plan, available at _https://eclipse-ee4j.github.io/jakartaee-platform/jakartaee9/JakartaEE9ReleasePlan_.  
 Going forward, it is the expectation that Jakarta EE
 releases will follow these defined policies.
 
 [[a2333]]
-==== Pruned Jakarta Technologies
-Jakarta EE 9 introduced the concept of "pruned" technologies.
+==== Removed Jakarta Technologies
+Jakarta EE 9 introduced the concept of "removed" technologies.
 This is the final stage of a technology's lifecycle where the technology is
 officially *removed* from the Jakarta EE Platform.
 This is a stronger statement than making a technology "optional", since a "pruned"
 technology will no longer be maintained for future versions of the Platform.
 
-The following Jakarta EE Technologies were pruned/removed from the Jakarta EE Platform.
+The following Jakarta EE Technologies were removed from the Jakarta EE Platform.
 [[a2160]]
 [cols=2, options=header]
 .Jakarta EE Technologies
@@ -379,19 +383,22 @@ The following Jakarta EE Technologies were pruned/removed from the Jakarta EE Pl
 |Status
 
 |XML Registries 1.0
-|Pruned in Jakarta EE 9
+|Removed in Jakarta EE 9
 
 |XML RPC 1.1
-|Pruned in Jakarta EE 9
+|Removed in Jakarta EE 9
 
 |Deployment 1.7
-|Pruned in Jakarta EE 9
+|Removed in Jakarta EE 9
 
 |Management 1.1
-|Pruned in Jakarta EE 9
+|Removed in Jakarta EE 9
 
 |Distributed Interoperability (EJB 3.2 Core Specification, Chapter 10)
-|Pruned in Jakarta EE 9
+|Removed in Jakarta EE 9
+
+|CORBA, Java IDL, RMI-IIOP
+|Removed in Jakarta EE 9
 |===
 
 [[a2339]]

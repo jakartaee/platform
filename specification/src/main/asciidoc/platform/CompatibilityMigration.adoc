@@ -48,7 +48,7 @@ EJB CMP entity beans and is significantly easier to use.
 
 Support for EJB CMP and BMP entity beans has
 been made optional with the Java EE 7 release. Support for EJB CMP 1.1
-entity beans has been deprecated since Java EE 5. Applications are
+entity beans has been optional since Java EE 5. Applications are
 strongly encouraged to migrate applications using EJB entity beans to
 Jakarta Persistence.
 
