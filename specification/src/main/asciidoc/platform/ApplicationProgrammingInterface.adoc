@@ -344,7 +344,7 @@ or leave it in the "proposed optional" state for the next N+2 release cycle to d
 to officially "remove" the "optional" feature from the Platform.
 
 The result of successfully applying this
-policy to a feature is to allow a gradual deprecation and possible removal
+policy to a feature is to allow a gradual removal
 of the feature as a required component of the platform.
 Product vendors can _choose_ to remove or include an "optional" feature in their
 products.
@@ -997,73 +997,6 @@ handlers.
 
 The Jakarta XML Web Services specification is available at
 _https://jakarta.ee/specifications/xml-web-services/_ .
-
-===== Java IDL (Proposed Optional)
-
-*TODO Note:* Since the CORBA module didn't get picked up for Jakarta EE 9, do we remove
-this section completely?  Or, just indicate it's Optional (vs Proposed Optional) due to the Java SE 8 inclusion?
-
-The requirements in this section only apply
-to Jakarta EE products that support interoperability using CORBA.
-
-Java IDL allows applications to access any
-CORBA object, written in any language, using the standard IIOP protocol.
-The Jakarta EE security restrictions typically prevent all application
-component types except application clients from creating and exporting a
-CORBA object, but all Jakarta EE application component types can be clients
-of CORBA objects.
-
-A Jakarta EE product must support Java IDL as
-defined by chapters 1 - 8, 13, and 15 of the CORBA 2.3.1 specification,
-available at _http://www.omg.org/cgi-bin/doc?formal/99-10-07_ , and the
-IDL To Java Language Mapping Specification, available at
-_http://www.omg.org/cgi-bin/doc?ptc/2000-01-08_ .
-
-The IIOP protocol supports the ability to
-multiplex calls over a single connection. All Jakarta EE products must
-support requests from clients that multiplex calls on a connection to
-either Java IDL server objects or RMI-IIOP server objects (such as
-enterprise beans). The server must allow replies to be sent in any
-order, to avoid deadlocks where one call would be blocked waiting for
-another call to complete. Jakarta EE clients are not required to multiplex
-calls, although such support is highly recommended.
-
-A Jakarta EE product must provide support for a
-CORBA Portable Object Adapter (POA) to support portable stub, skeleton,
-and tie classes. A Jakarta EE application that defines or uses CORBA
-objects other than enterprise beans must include such portable stub,
-skeleton, and tie classes in the application package.
-
-Jakarta EE applications need to use an instance
-of _org.omg.CORBA.ORB_ to perform many Java IDL and RMI-IIOP operations.
-The default ORB returned by a call to _ORB.init(new String[0], null)_
-must be usable for such purposes; an application need not be aware of
-the implementation classes used for the ORB and RMI-IIOP support.
-
-In addition, for performance reasons it is
-often advantageous to share an ORB instance among components in an
-application. To support such usage, all web, enterprise bean, and
-application client containers are required to provide an ORB instance in
-the JNDI namespace under the name _java:comp/ORB_ . The container is
-allowed, but not required, to share this instance between components.
-The container may also use this ORB instance itself. To support
-isolation between applications, an ORB instance should not be shared
-between components in different applications. To allow this ORB instance
-to be safely shared between components, portable components must
-restrict their usage of certain ORB APIs and functionality:
-
-* Do not call the ORB _shutdown_ method.
-* Do not call the _org.omg.CORBA_2_3.ORB_
-methods _register_value_factory_ and _unregister_value_factory_ with an
-_id_ used by the container.
-
-A Jakarta EE product must provide a COSNaming
-service to support the Jakarta Enterprise Beans interoperability requirements. It must be
-possible to access this COSNaming service using the Java IDL COSNaming
-APIs. Applications with appropriate privileges must be able to lookup
-objects in the COSNaming service. COSNaming is defined in the
-Interoperable Naming Service specification, available at
-_http://www.omg.org/cgi-bin/doc?formal/2000-06-19_ .
 
 ===== RMI-JRMP
 
