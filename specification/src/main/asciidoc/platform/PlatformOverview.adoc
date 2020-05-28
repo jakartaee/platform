@@ -6,7 +6,7 @@ Jakarta™ EE Platform.
 === Architecture
 
 The required relationships of architectural
-elements of the Java EE platform are shown in
+elements of the Jakarta EE platform are shown in
 _<<a45, Jakarta EE Architecture Diagram>>_.
 Note that this figure shows the logical relationships of the
 elements; it is not meant to imply a physical partitioning of the
@@ -34,6 +34,8 @@ by the Enterprise Beans Container.
 As indicated, the APIs of the Java™
 Platform, Standard Edition (Java SE), are supported by Java SE runtime
 environments for each type of application component.
+
+*TODO:* This diagram needs adjustments for Jakarta EE 9...
 
 [[a45]]
 .Jakarta EE Architecture Diagram
@@ -144,7 +146,7 @@ and may respond to HTTP requests from web clients. Servlets, server pages,
 server faces applications, and filters may be used to generate HTML pages that
 are an application’s user interface. They may also be used to generate
 XML or other format data that is consumed by other application
-components. A special kind of servlet provides support for web services
+components. A special kind of servlet may provide support for web services
 using the SOAP/HTTP protocol. Servlets, pages created with the
 Jakarta Server Pages technology or Jakarta Server Faces technology, web
 filters, and web event listeners are referred to collectively in this
@@ -171,15 +173,12 @@ executed on a Jakarta EE server. These components include web components
 and Jakarta Enterprise Beans components. See the separate specifications for
 these components.
 * Components that are deployed and managed on a
-Jakarta EE server, but are loaded to and executed on a client machine.
+Jakarta EE server, but are loaded and executed on a client machine.
 These components include web resources such as HTML pages and applets
 embedded in HTML pages.
 * Components whose deployment and management is
 not completely defined by this specification. Application Clients fall
-into this category. Future versions of this specification may more fully
-define deployment and management of Application Clients. See
-<<a3294, Application Clients>>,”
-for a description of Application Clients.
+into this category.
 
 === Containers
 
@@ -256,8 +255,7 @@ database is accessible from web components, enterprise beans, and
 application client components. The database need not be accessible from
 applets. The Jakarta EE Product Provider must also provide a preconfigured,
 default data source for use by the application in accessing this
-database. See <<a2009, Default
-Data Source>>”.
+database. See <<a2009, Default Data Source>>”.
 
 [[a84]]
 === Jakarta EE Standard Services
@@ -270,7 +268,7 @@ these standard services are actually provided by Java SE.
 
 The HTTP client-side API is defined by the
 _java.net_ package. The HTTP server-side API is defined by the Jakarta Servlet,
-Jakarta Server Pages, and Jakarta Server Faces interfaces and by the web services support that is a part
+Jakarta Server Pages, and Jakarta Server Faces interfaces and by the web services support that is an optional part
 of the Jakarta EE platform.
 
 ==== HTTPS
@@ -287,44 +285,6 @@ that is used by the container and application components to demarcate
 transaction boundaries.
 * An interface between the transaction manager
 and a resource manager used at the Jakarta EE SPI level.
-
-==== RMI-IIOP (Proposed Optional)
-
-The RMI-IIOP subsystem is composed of APIs that
-allow for the use of RMI-style programming that is independent of the
-underlying protocol, as well as an implementation of those APIs that
-supports both the Java SE native RMI protocol (JRMP) and the CORBA IIOP
-protocol. Jakarta EE applications can use RMI-IIOP, with IIOP protocol
-support, to access CORBA services that are compatible with the RMI
-programming restrictions (see the RMI-IIOP specification for details).
-Such CORBA services would typically be defined by components that live
-outside of a Jakarta EE product, usually in a legacy system. Only Jakarta EE
-application clients are required to be able to define their own CORBA
-services directly, using the RMI-IIOP APIs. Typically such CORBA objects
-would be used for callbacks when accessing other CORBA objects.
-
-Jakarta EE products must be capable of exporting
-Jakarta Enterprise Beans components using the IIOP protocol and accessing
-enterprise beans using the IIOP protocol, as specified in the Jakarta Enterprise Beans
-specification. The ability to use the IIOP protocol is required to
-enable interoperability between Jakarta EE products, however a Jakarta EE
-product may also use other protocols. Requirements for use of the
-RMI-IIOP APIs when accessing Jakarta Enterprise Beans components have been
-relaxed as of EJB 3.0. See the Jakarta Enterprise Beans specification for
-details.
-
-Support for CORBA, including use of IIOP and
-Java IDL, is Proposed Optional as of Jakarta EE 8. See
-<<a2331, Pruned Java Technologies>>.”
-
-==== Java IDL (Proposed Optional)
-
-Java IDL allows Jakarta EE application components
-to invoke external CORBA objects using the IIOP protocol. These CORBA
-objects may be written in any language and typically live outside a Jakarta
-EE product. Jakarta EE applications may use Java IDL to act as clients of
-CORBA services, but only Jakarta EE application clients are required to be
-allowed to use Java IDL directly to present CORBA services themselves.
 
 ==== JDBC™ API
 
@@ -379,12 +339,12 @@ parts: an application-level interface used by the application components
 to send mail, and a service provider interface used at the Jakarta EE SPI
 level.
 
-==== JavaBeans™ Activation Framework (JAF)
+==== Jakarta Activation Framework (JAF)
 
 The JAF API provides a framework for handling
 data in different MIME types, originating in different formats and
-locations. The JavaMail API makes use of the JAF API. The JAF API is
-included in Java SE and so is available to Jakarta EE applications.
+locations. The Jakarta Mail API makes use of the JAF API. As of Jakarta EE 9, 
+the Jakarta Activation Framework is now part of the Jakarta EE Platform.
 
 ==== XML Processing
 
@@ -395,9 +355,9 @@ Streaming API for XML (StAX) provides a pull-parsing API for XML. The
 JAXP and StAX APIs are included in Java SE and so are available to Jakarta
 EE applications.
 
-==== Jakarta Connector Architecture
+==== Jakarta Connectors
 
-The Connector architecture is a Jakarta EE SPI
+Jakarta Connectors is a Jakarta EE SPI
 that allows resource adapters that support access to Enterprise
 Information Systems to be plugged in to any Jakarta EE product. The
 Connector architecture defines a standard set of system-level contracts
@@ -458,34 +418,33 @@ Security leverages Jakarta Authentication, but provides an easier to use SPI for
 authentication of users of web applications and defines identity store
 APIs for authentication and authorization.
 
-==== Web Services
+==== XML Web Services (Optional)
 
-Jakarta EE provides full support for both clients
-of web services as well as web service endpoints. Several Java
-technologies work together to provide support for web services. JAX-WS
-and Jakarta XML-based RPC
-both provide support for web service calls using the SOAP/HTTP
-protocol. JAX-WS, which is included in Java SE, is the primary API for
-web services and is a follow-on to Jakarta XML-based RPC. JAX-WS offers extensive web
+Jakarta EE optionally provides full support for both clients
+of web services as well as web service endpoints. Several Jakarta
+technologies work together to provide support for web services.
+Jakarta XML Web Services
+provides support for web service calls using the SOAP/HTTP
+protocol. XML Web Services is the primary API for
+web services and is a follow-on to Jakarta XML-based RPCfootnote:[Removed from Jakarta EE 9.]. 
+Jakarta XML Web Services offers extensive web
 services functionality, with support for multiple bindings/protocols.
-JAX-WS and Jakarta XML-based RPC are fully interoperable when using the SOAP 1.1 over
-HTTP protocol as constrained by the WS-I Basic Profile specification.
-Support for Jakarta XML-based RPC has been made optional as of Java EE 7. See
-<<a2331, Pruned Java Technologies>>”.
+Support for Jakarta XML-based RPC has been removed from the Platform as of Jakarta EE 9. See
+<<a2331, Removed Java Technologies>>”.
 
-JAX-WS and the Java Architecture for XML
-Binding (JAXB) define the mapping between Java classes and XML as used
-in SOAP calls, and provide support for 100% of XML Schema. JAXB is
-included in Java SE. The SOAP with Attachments API for Java (SAAJ),
-which is also included in Java SE, provides support for manipulating low
+Jakarta XML Web Services and Jakarta XML Binding
+define the mapping between Java classes and XML as used
+in SOAP calls, and provide support for 100% of XML Schema. 
+The Jakarta SOAP with Attachments provides support for manipulating low
 level SOAP messages. The Web Services for Jakarta EE specification fully
 defines the deployment of web service clients and web service endpoints
-in Java EE, as well as the implementation of web service endpoints using
-enterprise beans. The Web Services Metadata specification defines Java
+in Jakarta EE, as well as the implementation of web service endpoints using
+enterprise beans. The XML Web Services Metadata specification defines Java
 language annotations that make it easier to develop web services. The
-Jakarta XML Registries provides client access to XML
-registry servers. Support for JAXR has been made optional as of Java EE
-7. See <<a2331, Pruned Java Technologies>>”.
+Jakarta XML Registries support has been removed from the Platform as of Jakarta EE
+9. See <<a2331, Removed Java Technologies>>”.
+
+==== Jakarta JSON Processing
 
 Jakarta JSON Processing
 provides a convenient way to process (parse, generate, transform, and
@@ -493,6 +452,8 @@ query) JSON text. Jakarta JSON Binding provides a
 convenient way to convert between JSON text and Java objects. Jakarta
 WebSocket is a standard API for creating WebSocket
 applications.
+
+==== Jakarta RESTful Web Services
 
 Jakarta RESTful Web Services
 provides support for web services using the REST style. RESTful web
@@ -513,28 +474,23 @@ factory, and context service.
 ==== Jakarta Batch
 
 The Jakarta Batch
-API (Batch) provides a programming model for batch applications and a
+API provides a programming model for batch applications and a
 runtime for scheduling and executing jobs.
 
 ==== Jakarta Management
 
-The Jakarta
-Management Specification defines APIs for managing Jakarta EE servers using
-a special management enterprise bean. The Java™ Management Extensions
-(JMX) API is also used to provide some management support.
+Although the Jakarta Management Specification was removed from the Platform as of Jakarta EE
+9 (see <<a2331, Removed Java Technologies>>), the Java™ Management Extensions
+(JMX) API can be used to provide some management support.
 
 ==== Jakarta Deployment
 
-The Jakarta
-Deployment Specification defines a contract between deployment tools and
-Jakarta EE products. The Jakarta EE products provide plug-in components that
-run in the deployment tool and allow the deployment tool to deploy
-applications into the Jakarta EE product. The deployment tool provides
-services used by these plug-in components. Support for the Deployment
-Specification has been made optional as of Java EE 7. See
-<<a2331, Pruned Jakarta Technologies>>.”
+The Jakarta Deployment Specification was removed from the Platform as of Jakarta EE
+9 (see <<a2331, Removed Java Technologies>>).
 
 === Interoperability
+
+*TODO:* This section needs some work...
 
 Many of the APIs described above provide
 interoperability with components that are not a part of the Jakarta EE
@@ -546,6 +502,8 @@ Jakarta EE platform. (The directions of the arrows indicate the
 client/server relationships of the components.)
 
 .
+
+*TODO:*  This diagram needs some adjusting to Jakarta EE 9 and the removal of Distributed Interop from the EJB spec...
 
 [[a142]]
 .Java EE Interoperability
@@ -626,8 +584,8 @@ facilities available to all Jakarta EE products. A Jakarta EE profile may
 include some or all of these facilities, as described in
 <<a3212, Profiles>>”. Products
 implementing the full Jakarta EE platform must provide all of them (see
-<<a3252, Full Jakarta EE Product
-Requirements>>”). Most Jakarta EE products will provide facilities beyond
+<<a3252, Full Jakarta EE Product Requirements>>”). 
+Most Jakarta EE products will provide facilities beyond
 the minimum required by this specification. This specification includes
 only a few limits to the ability of a product to provide extensions. In
 particular, it includes the same restrictions as Java SE on extensions
@@ -659,8 +617,8 @@ allow applications to describe their requirements in these areas.
 
 === Platform Roles
 
-This section describes typical Java Platform,
-Enterprise Edition roles. In an actual instance, an organization may
+This section describes typical Jakarta Enterprise Edition roles.
+In an actual instance, an organization may
 divide role functionality differently to match that organization’s
 application development and deployment workflow.
 
@@ -717,7 +675,7 @@ application that the Deployer must resolve in the deployment process.
 ==== Deployer
 
 The Deployer is responsible for deploying
-application clients, web applications, and Enterprise JavaBeans
+application clients, web applications, and Enterprise Beans
 components into a specific operational environment. The Deployer uses
 tools supplied by the Jakarta EE Product Provider to carry out deployment
 tasks. Deployment is typically a three-stage process:
@@ -783,7 +741,7 @@ application and the management and monitoring of an application server.
 ==== System Component Provider
 
 A variety of system level components may be
-provided by System Component Providers. The Connector Architecture
+provided by System Component Providers. Jakarta Connectors
 defines the primary APIs used to provide resource adapters of many
 types. These resource adapters may connect to existing enterprise
 information systems of many types, including databases and messaging
@@ -826,6 +784,8 @@ example, a Connector Provider) should provide components that conform to
 these SPIs and policies.
 
 ==== Network Protocols
+
+*TODO:* Might need some tweaking due to the lack of CORBA support in Jakarta EE 9...
 
 This specification defines the mapping of
 application components to industry-standard network protocols. The
@@ -1064,3 +1024,16 @@ event processing and alignment on Java SE 8 features.
 
 Jakarta EE 8 is the migration of Java EE 8 from the JCP to the Eclipse Foundation.
 Reference the <<specificationComparison, "Specification Comparison">> and <<revisionHistory, “Revision History">> appendices for more information.
+
+=== Changes in Jakarta EE 9
+
+The goal of the Jakarta EE 9 release is to deliver a set of specifications functionally similar to Jakarta EE 8 but in the new Jakarta EE 9 namespace `jakarta.*`.
+
+In addition, the Jakarta EE 9 release removes a small set of specifications from Jakarta EE 8 that were old, optional, or deprecated in order to reduce the surface area of the APIs to ensure that it is easier for new vendors to enter the ecosystem – as well as reduce the burden on implementation, migration, and maintenance of these old APIs.
+
+Predominantly, Jakarta EE 9 is a tooling release:
+
+- A platform from which tooling vendors can create and update their tools to support the new `jakarta.*` namespace.
+- A platform that development teams can use as a stable target for testing migration of their applications to the new namespace.
+- A platform that runtime vendors can use to test and deliver options and capabilities that support migration and backwards compatibility with Jakarta EE 8.
+- A foundation for innovation that Jakarta EE specification projects can use to drive new features for release in Jakarta EE 10 and beyond.
