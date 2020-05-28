@@ -286,6 +286,18 @@ transaction boundaries.
 * An interface between the transaction manager
 and a resource manager used at the Jakarta EE SPI level.
 
+==== RMI-IIOP (Removed)
+
+Support for CORBA, including use of IIOP and
+Java IDL, was Removed as of Jakarta EE 9. See
+<<a2331, Removed Java Technologies>>.”
+
+==== Java IDL (Removed)
+
+Support for CORBA, including use of IIOP and
+Java IDL, was Removed as of Jakarta EE 9. See
+<<a2331, Removed Java Technologies>>.”
+
 ==== JDBC™ API
 
 The JDBC API is the API for connectivity with
@@ -477,20 +489,20 @@ The Jakarta Batch
 API provides a programming model for batch applications and a
 runtime for scheduling and executing jobs.
 
-==== Jakarta Management
+==== Jakarta Management (Removed)
 
 Although the Jakarta Management Specification was removed from the Platform as of Jakarta EE
 9 (see <<a2331, Removed Java Technologies>>), the Java™ Management Extensions
 (JMX) API can be used to provide some management support.
 
-==== Jakarta Deployment
+==== Jakarta Deployment (Removed)
 
 The Jakarta Deployment Specification was removed from the Platform as of Jakarta EE
 9 (see <<a2331, Removed Java Technologies>>).
 
 === Interoperability
 
-*TODO:* This section needs some work...
+*TODO:* This section needs some work due to Jakarta EE 9 and the removal of Distributed Interop from the EJB spec...
 
 Many of the APIs described above provide
 interoperability with components that are not a part of the Jakarta EE
@@ -503,7 +515,7 @@ client/server relationships of the components.)
 
 .
 
-*TODO:*  This diagram needs some adjusting to Jakarta EE 9 and the removal of Distributed Interop from the EJB spec...
+*TODO:*  This diagram needs some adjusting due to Jakarta EE 9 and the removal of Distributed Interop from the EJB spec...
 
 [[a142]]
 .Java EE Interoperability
