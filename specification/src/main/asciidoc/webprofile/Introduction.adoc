@@ -22,7 +22,7 @@ Besides managing HTTP interactions, most web
 applications have significant requirements in the areas of transaction
 management, security and persistence. Such requirements can be readily
 addressed by technologies that have been part of the Jakarta EE platform
-for quite some time, such as the Jakarta Enterprise Beans 4.x
+for quite some time, such as the Jakarta Enterprise Beans 3.x
 technology and the Jakarta Persistence, but that are rarely supported
 by “plain” servlet containers. By incorporating many of these APIs, the
 Web Profile aims at raising the bar for what should be considered a
@@ -93,8 +93,8 @@ from each grouping.
 For the first one, the Jakarta EE Platform
 specification mandates support for the “ _java:_ ” naming context in all
 profiles. Consequently, Web Profile products must support it. For a
-similar reason, all Web Profile 9 products must support the Java(TM) Platform, Standard Edition 8 API,
-and must run on a Java runtime defined as Java Platform, Standard Edition 11 Specification.
+similar reason, all Web Profile 9 APIs must support the Java(TM) Platform, Standard Edition 8 API,
+and all Web Profile 9 products must run on Java(TM) Platform, Standard Edition 11 runtime.
 
 In the second category one can point out the
 requirement to support Jakarta EE web application modules ( _.war_ files)
