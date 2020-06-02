@@ -22,7 +22,7 @@ _Jakarta™ Servlet Specification, Version 5.0_. Available at: _https://jakarta.
 
 _Jakarta™ Transaction Specification, Version 2.0_. Available at: _https://jakarta.ee/specifications/transactions/2.0_
 
-_Jakarta™ RESTful Web Services Specification, Version 3.0_. Available at: _https://jakarta.ee/specifications/restful-web-services/3.0_
+_Jakarta™ RESTful Web Services Specification, Version 3.0_. Available at: _https://jakarta.ee/specifications/restful-ws/3.0_
 
 _Jakarta™ Annotations Specification, Version 2.0_. Available at: _https://jakarta.ee/specifications/annotations/2.0_
 
@@ -36,7 +36,7 @@ _Jakarta™ Persistence Specification, Version 3.0_. Available at: _https://jaka
 
 _Jakarta™ Bean Validation Specification, Version 3.0_. Available at: _https://jakarta.ee/specifications/bean-validation/3.0_
 
-_Jakarta™ Managed Beans Specification, Version 2.0_. Available at: _https://jakarta.ee/specifications/managed-beans/2.0_
+_Jakarta™ Managed Beans Specification, Version 2.0_. Available at: _https://jakarta.ee/specifications/managedbeans/2.0_
 
 _Jakarta™ Interceptors Specification, Version 2.0_. Available at: _https://jakarta.ee/specifications/interceptors/2.0_
 
