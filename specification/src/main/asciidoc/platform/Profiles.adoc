@@ -137,14 +137,14 @@ requirements.
 === Requirements for All Jakarta EE Profiles
 
 The Java Platform, Standard Edition 8 is the
-required foundation for any Jakarta EE 8 profile.
+required API foundation for any Jakarta EE profile.
 
 The following technologies are required to be
 present in all Jakarta EE profiles:
 
 * Resource and component lifecycle
-annotations defined by the Common Annotations specification ( _Resource_
-, _Resources_ , _PostConstruct_ , _PreDestroy_ )
+annotations defined by the Common Annotations specification ( _Resource_,
+ _Resources_, _PostConstruct_, _PreDestroy_ )
 
 The following functionality is required to be
 supported in all Jakarta EE profiles:
@@ -159,6 +159,8 @@ All the technologies listed in
 not designated as required in
 <<a3240, Requirements for All Jakarta EE Profiles>>”, are designated as optional for use in Jakarta EE
 profiles.
+
+**TODO** Since CORBA support was removed for Jakarta EE 9, do we just remove this paragraph?
 
 The following functionality is designated as
 optional for use in Jakarta EE profiles:
@@ -178,52 +180,61 @@ specification and update those requirements for this new version of the
 platform.
 
 Please note that, due to the effects of the
-pruning process, future versions of the Jakarta EE specification will
+feature lifecycle process, future versions of the Jakarta EE specification will
 likely relax the requirements given here, specifically by marking as
-optional technologies that have been subject to pruning and that are
+optional technologies that are
 required by the present specification. The set of technologies that have
-been made optional and/or identified as candidates for pruning is given
-in <<a2331, Pruned Java Technologies>>”.
+been made optional and/or identified as proposed optional is given
+in <<a2331, Optional Java Technologies>>.
 
 The following technologies are required:
 
-* Jakarta Enterprise Beans 3.2 (except for Jakarta Enterprise Beans entity beans and
+* Jakarta Enterprise Beans 4.0 (except for Jakarta Enterprise Beans entity beans and
 associated Jakarta Enterprise Beans QL, which have been made optional)
-* Jakarta Servlet 4.0
-* Jakarta Server Pages 2.3
-* Jakarta Expression Language 3.0
-* Jakarta Messaging 2.0
-* Jakarta Transactions 1.3
-* Jakarta Mail 1.6
-* Jakarta Connectors 1.7
-* Jakarta Enterprise Web Services 1.4
-* Jakarta RESTful Web Services 2.1
-* Jakarta WebSocket 1.1
-* Jakarta JSON Processing 1.1
-* Jakarta JSON Binding 1.0
-* Jakarta Concurrency 1.0
-* Jakarta Batch 1.0
-* Jakarta Management 1.1
-* Jakarta Authorization 1.5
-* Jakarta Authentication 1.1
-* Jakarta Security 1.0
-* Jakarta Debugging Support for Other Languages 1.0
-* Jakarta Standard Tag Library 1.2
-* Jakarta Web Services Metadata 2.1
-* Jakarta Server Faces 2.3
-* Jakarta Annotations 1.3
-* Jakarta Persistence 2.2
-* Jakarta Bean Validation 2.0
-* Jakarta Managed Beans 1.0
-* Jakarta Interceptors 1.2
-* Jakarta Contexts and Dependency Injection 2.0
-* Jakarta Dependency Injection 1.0
+* Jakarta Servlet 5.0
+* Jakarta Server Pages 3.0
+* Jakarta Expression Language 4.0
+* Jakarta Messaging 3.0
+* Jakarta Transactions 2.0
+* Jakarta Activation 2.0
+* Jakarta Mail 2.0
+* Jakarta Connectors 2.0
+* Jakarta RESTful Web Services 3.0
+* Jakarta WebSocket 2.0
+* Jakarta JSON Processing 2.0
+* Jakarta JSON Binding 2.0
+* Jakarta Concurrency 2.0
+* Jakarta Batch 2.0
+* Jakarta Authorization 2.0
+* Jakarta Authentication 2.0
+* Jakarta Security 2.0
+* Jakarta Debugging Support for Other Languages 2.0
+* Jakarta Standard Tag Library 2.0
+* Jakarta Server Faces 3.0
+* Jakarta Annotations 2.0
+* Jakarta Persistence 3.0
+* Jakarta Bean Validation 3.0
+* Jakarta Managed Beans 2.0
+* Jakarta Interceptors 2.0
+* Jakarta Contexts and Dependency Injection 3.0
+* Jakarta Dependency Injection 2.0
 
 
 
 The following technologies are optional:
 
 * Jakarta Enterprise Beans 3.2 and earlier entity beans and associated Jakarta Enterprise Beans QL
+* Jakarta Enterprise Beans 2.x API group
+* Jakarta Enterprise Web Services 2.0
+* Jakarta SOAP with Attachments 2.0
+* Jakarta Web Services Metadata 3.0
+* Jakarta XML Web Services 3.0
+* Jakarta XML Binding 3.0
+
+The following technologies are removed:
+
+* Distributed Interoperability in the Jakarta Enterprise Beans 3.2 Core Specification, Chapter 10 
 * Jakarta XML RPC 1.1
 * Jakarta XML Registries 1.0
 * Jakarta Deployment 1.2
+* Jakarta Management 1.1
