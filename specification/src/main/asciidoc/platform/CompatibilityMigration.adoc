@@ -34,10 +34,13 @@ version of the platform.
 
 Migration is the act of converting an
 application to use new facilities introduced in this release of the
-platform. Given the strong level of compatibility in this release of the
-Jakarta EE platform, migration is largely an optional exercise. Still, an
-application may be improved (better performance, simpler to develop,
-more flexible, etc.) by converting it to use newer facilities of the
+platform.
+Given the required move from the `javax` namespace to the `jakarta` namespace in
+Jakarta EE 9, some migration of an application may be required.
+Some application servers may provide additional facilities to make this migration 
+more consumable.
+Still, an application may be better positioned for the future 
+by converting it to use the new `jakarta` namespace of the
 Jakarta EE platform.
 
 ==== Jakarta Persistence
@@ -52,12 +55,13 @@ entity beans has been deprecated since Java EE 5. Applications are
 strongly encouraged to migrate applications using EJB entity beans to
 Jakarta Persistence.
 
-==== Jakarta XML Web Services
+==== Jakarta XML Web Services (optional)
 
-Jakarta XML Web Services, along with Jakarta XML Binding and the Metadata for
-Web Services specification, provides simpler and more complete support
-for web services than is available using the JAX-RPC technology. Support
-for JAX-RPC has been made optional with the Java EE 7 release.
+Jakarta XML Web Services, along with the Jakarta XML Binding and the Metadata for
+Web Services specifications, provides simpler and more complete support
+for web services than is available using the older JAX-RPC technology. Support
+for JAX-RPC was made optional with the Java EE 7 release, and is now removed
+from the Jakarta EE 9 platform.
 Applications that provide web services using JAX-RPC should consider
 migrating to the Jakarta XML Web Services API. Note that because both technologies support
 the same web service interoperability standards, clients and services
