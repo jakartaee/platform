@@ -30,9 +30,9 @@ Reference this page, https://jakarta.ee/xml/ns/jakartaee/#8, for the schema defi
 
 ==== Java EE 7 Application XML Schema
 
-The XML grammar for a Java EE application
-deployment descriptor is defined by the Java EE application schema. The
-root element of the deployment descriptor for a Jaav EE application is
+The XML grammar for a Java EE 7 application
+deployment descriptor is defined by the Java EE 7 application schema. The
+root element of the deployment descriptor for a Java EE application is
 _application_ . The granularity of composition for Java EE application
 assembly is the Java EE module. A Java EE application deployment
 descriptor contains a name and description for the application and the
@@ -54,7 +54,7 @@ the Java EE application 7 XML Schema.
 .Java EE 7 Application XML Schema Structure
 image::JavaEEapplication_schema_7.png[]
 
-<<a3483, Java EE Application XML Schema Structure>> The XML Schema located at
+<<a3483, Java EE 7 Application XML Schema Structure>> The XML Schema located at
 _http://xmlns.jcp.org/xml/ns/javaee/application_7.xsd_ defines the XML
 grammar for a Java EE 7 application deployment descriptor.
 
@@ -67,8 +67,8 @@ specification and in other specifications.
 
 ==== Java EE 7 Application Client XML Schema
 
-The XML grammar for a Java EE application
-client deployment descriptor is defined by the Java EE
+The XML grammar for a Java EE 7 application
+client deployment descriptor is defined by the Java EE 7
 application-client schema. The root element of the deployment descriptor
 for an application client is _application-client_ . The content of the
 XML elements is in general case sensitive. This means, for example, that
@@ -83,7 +83,7 @@ the application client’s _.jar_ file. Note that this name is
 case-sensitive.
 
 
-<<a3462, Java EE 7 Application Client XML Schema Structure>> shows the structure of the Java EE
+<<a3462, Java EE 7 Application Client XML Schema Structure>> shows the structure of the Java EE 7
 application-client XML Schema. The Java EE 7 application-client XML Schema
 is located at
 _http://xmlns.jcp.org/xml/ns/javaee/application-client_7.xsd_ .
@@ -113,14 +113,14 @@ descriptors must conform to the XML Schema definition, or the DTD or
 schema definition from a previous version of this specification. The
 deployment descriptor must be named _META-INF/application.xml_ in the
 _.ear_ file. Note that this name is case-sensitive.
-<<a3467, Java EE Application XML Schema Structure>> shows a graphic representation of the structure of the
+<<a3467, Java EE 6 Application XML Schema Structure>> shows a graphic representation of the structure of the
 Java EE 6 application XML Schema.
 
 [[a3467]]
 .Java EE 6 Application XML Schema Structure
 image::JavaEEapplication_schema.png[]
 
-<<a3483, Java EE Application XML Schema Structure>> The XML Schema located at
+<<a3483, Java EE 6 Application XML Schema Structure>> The XML Schema located at
 _http://java.sun.com/xml/ns/javaee/application_6.xsd_ defines the XML
 grammar for a Java EE 6 application deployment descriptor.
 
@@ -148,7 +148,7 @@ deployment descriptor must be named _META-INF/application-client.xml_ in
 the application client’s _.jar_ file. Note that this name is
 case-sensitive.
 
-<<a3476, Java EE Application Client XML Schema Structure>> shows the structure of the Java EE 6
+<<a3476, Java EE 6 Application Client XML Schema Structure>> shows the structure of the Java EE 6
 application-client XML Schema. The Java EE 6 application-client XML Schema
 is located at
 _http://java.sun.com/xml/ns/javaee/application-client_6.xsd_ .
@@ -314,7 +314,6 @@ Microsystems, Inc.//DTD J2EE Application 1.3//EN"
 
 The deployment descriptor must be named
 _META-INF/application.xml_ in the _.ear_ file.
-
 
 <<a3509, J2EE:1.3 application XML DTD Structure>>_ shows a graphic representation of the structure of the
 _J2EE:application_ XML DTD.
