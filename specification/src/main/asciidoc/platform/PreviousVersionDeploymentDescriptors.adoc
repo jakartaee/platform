@@ -18,13 +18,13 @@ descriptor versions must be supported.
 
 === Jakarta EE 9 schemas
 
-A new namespace has been specified,
-https://jakarta.ee/xml/ns/jakartaee/.
-Reference this page for the schema definitions defined for Jakarta EE 9.
+A new namespace has been specified for Jakarta EE 9, https://jakarta.ee/xml/ns/jakartaee/.
+Reference this page, https://jakarta.ee/xml/ns/jakartaee/#9, for the schema definitions defined for Jakarta EE 9.
 
 === Java EE 8 / Jakarta EE 8 Schemas
 
 No updates to the schemas defined in previous releases of Java EE were required for Java EE 8 or Jakarta EE 8.
+Reference this page, https://jakarta.ee/xml/ns/jakartaee/#8, for the schema definitions defined for Java EE 8 and Jakarta EE 8.
 
 === Java EE 7 Schemas
 
