@@ -371,7 +371,7 @@ releases will follow these defined policies.
 Jakarta EE 9 introduced the concept of "removed" technologies.
 This is the final stage of a technology's lifecycle where the technology is
 officially *removed* from the Jakarta EE Platform.
-This is a stronger statement than making a technology "optional", since a "pruned"
+This is a stronger statement than making a technology "optional", since a "removed"
 technology will no longer be maintained for future versions of the Platform.
 
 The following Jakarta EE Technologies were removed from the Jakarta EE Platform.
