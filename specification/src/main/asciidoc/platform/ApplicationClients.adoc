@@ -193,6 +193,14 @@ attribute.
 |No
 |Yes
 
+|application-client_9
+|Yes
+|No
+
+|application-client_9
+|No
+|Yes
+
 |none
 |N/A
 |Yes
@@ -303,7 +311,7 @@ file. Note that this name is case-sensitive.
 _<<a3404, Jakarta EE Application Client XML Schema Structure>>_ shows the structure of the Jakarta EE
 application-client XML Schema. The Jakarta EE application-client XML Schema
 is located at
-_http://xmlns.jcp.org/xml/ns/javaee/application-client_8.xsd_ .
+_https://jakarta.ee/xml/ns/jakartaee/application-client_9.xsd_.
 
 [[a3404]]
 .Jakarta EE Application Client XML Schema Structure
