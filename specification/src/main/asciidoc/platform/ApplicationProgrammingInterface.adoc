@@ -38,19 +38,20 @@ SE) APIs. Containers may provide newer versions of the Java SE platform,
 provided they meet all the Jakarta EE platform requirements. The Java SE
 platform includes the following enterprise technologies:
 
-* Java IDL
+* Java IDL footnote:javaremoval[Removed from Java SE 11. See <<a2161, Required Jakarta Technologies>>.]
 * JDBC
-* RMI-IIOP
+* RMI-JRMP
+* RMI-IIOP footnote:javaremoval[]
 * JNDI
 * JAXP
 * StAX
 * JAAS
 * JMX
-* JAX-WS
-* JAXB
-* JAF
-* SAAJ
-* Common Annotations
+* JAX-WS footnote:javaremoval[]
+* JAXB footnote:javaremoval[]
+* JAF footnote:javaremoval[]
+* SAAJ footnote:javaremoval[]
+* Common Annotations footnote:javaremoval[]
 
 In particular, the applet execution
 environment must be Java SE 8 compatible. Since typical browsers don’t
@@ -69,222 +70,239 @@ these technologies, as described in the following section.
 The specifications for the Java SE APIs are
 available at _http://docs.oracle.com/javase/8/docs/_ .
 
-==== Required Java Technologies
+[[a2161]]
+==== Required Jakarta Technologies
 
 The full Jakarta EE platform also provides a
-number of Java technologies in each of the containers defined by this
-specification. _<<a2159, Jakarta EE Technologies>>_ indicates the technologies with their required
+number of technologies in each of the containers defined by this
+specification. <<a2159, Jakarta EE Technologies>> indicates the technologies with their required
 versions, which containers include the technologies, and whether the
 technology is required (REQ), proposed optional (POPT), or optional
 (OPT). Each Jakarta EE profile specification will include a similar table
 describing which technologies are required for the profile. Note that
 some technologies are marked Optional, as described in the next section.
 
+*Note:* Jakarta EE 9 introduced the concept of "removed" technologies.
+This is the final stage of a technology's lifecycle where the technology is
+officially removed from the Jakarta EE Platform.
+This is a stronger statement than making a technology "optional", since a "removed"
+technology will no longer be maintained for future versions of the Platform.
+<<a2333, Removed Jakarta Technologies>> documents these removed technologies.
+
+*Table TODO* There doesn't seem to be any rhyme or reason to the ordering of the contents
+of this table.  Maybe it was done in the order of the specs getting added to the platform?
+Maybe we should just alphabetize the technologies? Reminder -- If the rows in this table
+get re-organized, then the Requirements sections at the end of this API section also need to
+be similarly re-organized.
+
 [[a2159]]
 [cols=5, options=header]
 .Jakarta EE Technologies
 |===
-|Java Technology
+|Jakarta EE Technology
 |App Client
 |Web
 |Enterprise Beans
 |Status
 
-|Enterprise Beans 3.2
+|Enterprise Beans 4.0
 |Y footnote:[Client APIs only.]
 |Y
 |Y
 |REQ, OPT footnote:[Jakarta™ Enterprise Beans entity beans and associated query
-language only.],
-POPT footnote:[IIOP interoperability, including Jakarta(TM) Enterprise Beans 2.x and 1.x client view.]
+language. Jakarta Enterprise Beans 2.x API group.]
 
-|Servlet 4.0
+|Servlet 5.0
 |N
 |Y
 |N
 |REQ
 
-|Server Pages 2.3
+|Server Pages 3.0
 |N
 |Y
 |N
 |REQ
 
-|Expression Language 3.0
+|Expression Language 4.0
 |N
 |Y
 |N
 |REQ
 
-|Messaging 2.0
+|Messaging 3.0
 |Y
 |Y
 |Y
 |REQ
 
-|Transactions 1.3
+|Transactions 2.0
 |N
 |Y
 |Y
 |REQ
 
-|Mail 1.6
+|Activation 2.0
 |Y
 |Y
 |Y
 |REQ
 
-|Connector 1.7
+|Mail 2.0
+|Y
+|Y
+|Y
+|REQ
+
+|Connectors 2.0
 |N
 |Y
 |Y
 |REQ
 
-|Enterprise Web Services 1.4
+|RESTful Web Services 3.0
+|N
+|Y
+|N
+|REQ
+
+|WebSocket 2.0
+|N
+|Y
+|N
+|REQ
+
+|JSON Processing 2.0
 |Y
 |Y
 |Y
 |REQ
 
-|XML RPC  1.1
+|JSON Binding 2.0
+|Y
+|Y
+|Y
+|REQ
+
+|Concurrency 2.0
+|N
+|Y
+|Y
+|REQ
+
+|Batch 2.0
+|N
+|Y
+|Y
+|REQ
+
+|Authorization 2.0
+|N
+|Y
+|Y
+|REQ
+
+|Authentication 2.0
+|N
+|Y
+|Y
+|REQ
+
+|Security API 2.0
+|N
+|Y
+|Y
+|REQ
+
+|Server Pages Debugging 2.0
+|N
+|Y
+|N
+|REQ
+
+|Standard Tag Library 2.0
+|N
+|Y
+|N
+|REQ
+
+|Server Faces 3.0
+|N
+|Y
+|N
+|REQ
+
+|Common Annotations 2.0
+|Y
+|Y
+|Y
+|REQ
+
+|Persistence 3.0
+|Y
+|Y
+|Y
+|REQ
+
+|Bean Validation 3.0
+|Y
+|Y
+|Y
+|REQ
+
+|Managed Beans 2.0
+|Y
+|Y
+|Y
+|REQ
+
+|Interceptors 2.0
+|Y
+|Y
+|Y
+|REQ
+
+|Contexts and Dependency Injection 3.0
+|Y
+|Y
+|Y
+|REQ
+
+|Dependency Injection 2.0
+|Y
+|Y
+|Y
+|REQ
+
+|XML Binding 3.0
 |Y
 |Y
 |Y
 |OPT
 
-|RESTful Web Services 2.1
-|N
-|Y
-|N
-|REQ
-
-|WebSocket 1.1
-|N
-|Y
-|N
-|REQ
-
-|JSON Processing 1.1
-|Y
-|Y
-|Y
-|REQ
-
-|JSON Binding 1.0
-|Y
-|Y
-|Y
-|REQ
-
-|Concurrency 1.1
-|N
-|Y
-|Y
-|REQ
-
-|Batch 1.0
-|N
-|Y
-|Y
-|REQ
-
-|XML Registries 1.0
+|Enterprise Web Services 2.0
 |Y
 |Y
 |Y
 |OPT
 
-|Management 1.1
+|XML Web Services 3.0
 |Y
 |Y
 |Y
-|REQ
-
-|Deployment 1.7 footnote:[See
-<<a2730, Jakarta™ Enterprise Edition Deployment API 1.7 Requirements (Optional)>> for
-details.]
-|N
-|N
-|N
 |OPT
 
-|Authorization 1.5
-|N
+|Web Services Metadata 3.0
 |Y
 |Y
-|REQ
+|Y
+|OPT
 
-|Authentication  1.1
-|N
-|Y
-|Y
-|REQ
-
-|Security API 1.0
-|N
-|Y
-|Y
-|REQ
-
-|Server Pages Debugging 1.0
-|N
-|Y
-|N
-|REQ
-
-|Standard Tag Library 1.2
-|N
-|Y
-|N
-|REQ
-
-|Server Faces 2.3
-|N
-|Y
-|N
-|REQ
-
-|Common Annotations 1.3
+|SOAP with Attachments 2.0
 |Y
 |Y
 |Y
-|REQ
-
-|Persistence 2.2
-|Y
-|Y
-|Y
-|REQ
-
-|Bean Validation 2.0
-|Y
-|Y
-|Y
-|REQ
-
-|Managed Beans 1.0
-|Y
-|Y
-|Y
-|REQ
-
-|Interceptors 1.2
-|Y
-|Y
-|Y
-|REQ
-
-|Contexts and Dependency Injection 2.0
-|Y
-|Y
-|Y
-|REQ
-
-|Dependency Injection 1.0
-|Y
-|Y
-|Y
-|REQ
+|OPT
 |===
 
 All classes and interfaces required by
@@ -304,43 +322,84 @@ _jakarta.xml.rpc.handler.MessageContext_ type.]
 
 
 [[a2331]]
-==== Pruned Java Technologies
+==== Optional Jakarta Technologies
 
 As the Jakarta EE specification has evolved,
 some of the technologies originally included in Jakarta EE are no longer as
 relevant as they were when they were introduced to the platform. The
-Jakarta EE expert group follows a process first defined by the Java SE
-expert group ( _http://mreinhold.org/blog/removing-features_ ) to prune
+Jakarta EE Platform Specification Project follows a process similar to the one first defined by the Java SE
+expert group ( _http://mreinhold.org/blog/removing-features_ ) to stabilize and remove
 technologies from the platform in a careful and orderly way that
 minimizes the impact to developers using these technologies, while
-allowing the platform to grow even stronger. In short, the process
-defines two steps:
+allowing the platform to grow even stronger. In short, our process
+defines three steps:
 
-
-
-. The Umbrella Expert Group (UEG) for release
-N of the platform decides to propose that a particular feature be
-removed. The specification for that release documents the proposal.
-. The UEG for release N+1 decides whether to
-remove the feature from that release, retain it as a required component,
-or leave it in the "proposed removal" state for the next UEG to decide.
-
-
+. The Platform Specification Project for release N 
+of the platform decides to propose that a particular feature be
+marked "proposed optional". The specification for that release documents the proposal.
+. The Platform Specification Project for release N+1 decides whether to
+mark the feature as "optional" for this N+1 release, retain it as a required component,
+or leave it in the "proposed optional" state for the next N+2 release cycle to decide.
+. Eventually, the Platform Specification Project for release N+2 (or beyond) can decide
+to officially "remove" the "optional" feature from the Platform.
 
 The result of successfully applying this
-policy to a feature is not the actual deletion of the feature but rather
-the conversion of the feature from a required component of the platform
-into an optional component. No actual removal from the specification
-occurs, although the feature may be removed from products at the choice
-of the product vendor.
+policy to a feature is to allow a gradual removal
+of the feature as a required component of the platform.
+Product vendors can _choose_ to remove or include an "optional" feature in their
+products.
+Although a "removed" feature can still be included in a vendor's product, vendors 
+need to realize that the "removed" feature is no longer defined as part of the Platform
+and, thus, the integration of this "removed" feature with the rest of the Platform
+is left as an exercise for the vendor.
 
-Technologies that have been pruned as of Jakarta
-EE 8 are marked Optional in
-<<a2159, Jakarta EE
-Technologies>>. Technologies that may be pruned in a future release are
-marked Proposed Optional in
-<<a2159, Jakarta EE
-Technologies>>.
+Technologies that are "proposed optional" are marked Proposed Optional (POPT) in
+<<a2159, Jakarta EE Technologies>>.
+Technologies that are "optional" as of Jakarta EE 9 are marked Optional (OPT) in
+<<a2159, Jakarta EE Technologies>>.
+Technologies that are "removed" from the Jakarta EE Platform are documented in 
+<<a2333, Removed Jakarta Technologies>>.
+
+*Note:* In order to get on a level playing field, Jakarta EE 9 took a couple of liberties
+with the application of "proposed optional", "optional", and "removed" technologies per
+the Jakarta EE 9 Release Plan, available at _https://eclipse-ee4j.github.io/jakartaee-platform/jakartaee9/JakartaEE9ReleasePlan_.  
+Going forward, it is the expectation that Jakarta EE
+releases will follow these defined policies.
+
+[[a2333]]
+==== Removed Jakarta Technologies
+Jakarta EE 9 introduced the concept of "removed" technologies.
+This is the final stage of a technology's lifecycle where the technology is
+officially *removed* from the Jakarta EE Platform.
+This is a stronger statement than making a technology "optional", since a "removed"
+technology will no longer be maintained for future versions of the Platform.
+
+The following Jakarta EE Technologies were removed from the Jakarta EE Platform.
+[[a2160]]
+[cols=2, options=header]
+.Jakarta EE Technologies
+|===
+|Jakarta EE Technology
+|Status
+
+|XML Registries 1.0
+|Removed in Jakarta EE 9
+
+|XML RPC 1.1
+|Removed in Jakarta EE 9
+
+|Deployment 1.7
+|Removed in Jakarta EE 9
+
+|Management 1.1
+|Removed in Jakarta EE 9
+
+|Distributed Interoperability (EJB 3.2 Core Specification, Chapter 10)
+|Removed in Jakarta EE 9
+
+|CORBA, Java IDL, RMI-IIOP
+|Removed in Jakarta EE 9
+|===
 
 [[a2339]]
 === Java Platform, Standard Edition (Java SE) Requirements
@@ -407,19 +466,16 @@ application components by a particular installation is a matter of
 policy outside the scope of this specification, however, every Jakarta EE
 product must be capable of running with a configuration that provides
 application classes and packaged libraries the permissions defined in
-<<a2366, Jakarta EE Security
-Permissions Set>>.
+<<a2366, Jakarta EE Security Permissions Set>>.
 
 All Jakarta EE products must allow the set of
 permissions available to application classes in a module to be
 configurable, providing application components in some modules with
 different permissions than those described in
-<<a2366, Jakarta EE Security
-Permissions Set>>.
+<<a2366, Jakarta EE Security Permissions Set>>.
 
 As defined in
-<<a2496, Declaring Permissions
-Required by Application Components>>,” a component provider may declare
+<<a2496, Declaring Permissions Required by Application Components>>,” a component provider may declare
 the permissions required by the application classes and libraries
 packaged in a module. When a component provider has declared the
 permissions required by a module, on successful deployment of the
@@ -434,18 +490,15 @@ libraries the permissions established by the security policy of the
 installation. The Jakarta EE product must ensure that the system
 administrator for the installation be able to define the security policy
 for the installation to include the permissions in
-<<a2366, Jakarta EE Security
-Permissions Set>>.
+<<a2366, Jakarta EE Security Permissions Set>>.
 
 Note that, on some installations of Jakarta EE
 products, the security policy of the installation may be such that
 applications are granted fewer permissions than those defined in
 
-<<a2366, Jakarta EE Security
-Permissions Set>> and, as a result, some applications that declare only
+<<a2366, Jakarta EE Security Permissions Set>> and, as a result, some applications that declare only
 the permissions defined in
-<<a2366, Jakarta EE Security
-Permissions Set>> may not be deployable. Other applications that require
+<<a2366, Jakarta EE Security Permissions Set>> may not be deployable. Other applications that require
 the same permissions but do not declare them may deploy but will
 encounter runtime failures when the missing permission is required by
 the application component.
@@ -453,8 +506,7 @@ the application component.
 Every Jakarta EE product must be capable of
 running with a Java security manager and with an installation policy
 that does not grant the permissions described in
-<<a2438, Restrictable Jakarta EE
-Security Permissions>> to Web, enterprise beans, and resource adapter components. That
+<<a2438, Restrictable Jakarta EE Security Permissions>> to Web, enterprise beans, and resource adapter components. That
 environment must otherwise fully support the requirements of this
 specification.
 
@@ -486,8 +538,7 @@ environment. For example, cloud environments may require greater
 restrictions on the system resources available to applications than
 on-premise enterprise installations. Note that restricting the
 permissions beyond those in
-<<a2366, Jakarta EE Security
-Permissions Set>> may prevent some applications from working correctly.
+<<a2366, Jakarta EE Security Permissions Set>> may prevent some applications from working correctly.
 
 Care should be taken by the system
 administrator to ensure that resources that are expected to be available
@@ -814,8 +865,7 @@ using the _getContent_ method of _URL_ and _URLConnection_ .
 
 When accessing data of the following MIME types
 using the _getContent_ method, objects of the corresponding Java type
-listed in _<<a2531, Java Type of
-Objects Returned When Using the getContent Method>>_ must be returned.
+listed in <<a2531, Java Type of Objects Returned When Using the getContent Method>> must be returned.
 
 [[a2531]]
 [cols=2, options=header]
@@ -879,8 +929,7 @@ load JDBC drivers directly. Instead, they should use the technique
 recommended in the JDBC specification and perform a JNDI lookup to
 locate a _DataSource_ object. The JNDI name of the _DataSource_ object
 should be chosen as described in
-<<a1120, Resource Manager
-Connection Factory References>>.” The Jakarta EE platform must be able to
+<<a1120, Resource Manager Connection Factory References>>.” The Jakarta EE platform must be able to
 supply a _DataSource_ that does not require the application to supply
 any authentication information when obtaining a database connection. Of
 course, applications may also supply a user name and password when
@@ -925,95 +974,33 @@ The JDBC 4.2 specification is available at
 _https://jcp.org/en/jsr/detail?id=221_ .
 
 [[a2553]]
-===== Jakarta API for XML Web Services (JAX-WS) Requirements
+===== Jakarta XML Web Services (JAX-WS™) Requirements (Optional)
 
-The JAX-WS specification provides support for
-web services that use the JAXB API for binding XML data to Java objects.
-The JAX-WS specification defines client APIs for accessing web services
+The Jakarta XML Web Services specification provides support for
+web services that use the Jakarta XML Binding API for binding XML data to Java objects.
+The XML Web Services specification defines client APIs for accessing web services
 as well as techniques for implementing web service endpoints. The Web
 Services for Jakarta EE specification describes the deployment of
-JAX-WS-based services and clients. The Enterprise Beans and Servlet specifications
+XML Web Services-based services and clients. The Enterprise Beans and Servlet specifications
 also describe aspects of such deployment. It must be possible to deploy
-JAX-WS-based applications using any of these deployment models.
+XML Web Services-based applications using any of these deployment models.
 
-The JAX-WS specification describes the
+The Jakarta XML Web Services specification describes the
 support for message handlers that can process message requests and
 responses. In general, these message handlers execute in the same
 container and with the same privileges and execution context as the
-JAX-WS client or endpoint component with which they are associated.
+Web Services client or endpoint component with which they are associated.
 These message handlers have access to the same JNDI _java:comp/env_
 namespace as their associated component. Custom serializers and
 deserializers, if supported, are treated in the same way as message
 handlers.
 
-The JAX-WS specification is available at
-_http://jcp.org/en/jsr/summary?id=224_ .
-
-===== Java IDL (Proposed Optional)
-
-The requirements in this section only apply
-to Jakarta EE products that support interoperability using CORBA.
-
-Java IDL allows applications to access any
-CORBA object, written in any language, using the standard IIOP protocol.
-The Jakarta EE security restrictions typically prevent all application
-component types except application clients from creating and exporting a
-CORBA object, but all Jakarta EE application component types can be clients
-of CORBA objects.
-
-A Jakarta EE product must support Java IDL as
-defined by chapters 1 - 8, 13, and 15 of the CORBA 2.3.1 specification,
-available at _http://www.omg.org/cgi-bin/doc?formal/99-10-07_ , and the
-IDL To Java Language Mapping Specification, available at
-_http://www.omg.org/cgi-bin/doc?ptc/2000-01-08_ .
-
-The IIOP protocol supports the ability to
-multiplex calls over a single connection. All Jakarta EE products must
-support requests from clients that multiplex calls on a connection to
-either Java IDL server objects or RMI-IIOP server objects (such as
-enterprise beans). The server must allow replies to be sent in any
-order, to avoid deadlocks where one call would be blocked waiting for
-another call to complete. Jakarta EE clients are not required to multiplex
-calls, although such support is highly recommended.
-
-A Jakarta EE product must provide support for a
-CORBA Portable Object Adapter (POA) to support portable stub, skeleton,
-and tie classes. A Jakarta EE application that defines or uses CORBA
-objects other than enterprise beans must include such portable stub,
-skeleton, and tie classes in the application package.
-
-Jakarta EE applications need to use an instance
-of _org.omg.CORBA.ORB_ to perform many Java IDL and RMI-IIOP operations.
-The default ORB returned by a call to _ORB.init(new String[0], null)_
-must be usable for such purposes; an application need not be aware of
-the implementation classes used for the ORB and RMI-IIOP support.
-
-In addition, for performance reasons it is
-often advantageous to share an ORB instance among components in an
-application. To support such usage, all web, enterprise bean, and
-application client containers are required to provide an ORB instance in
-the JNDI namespace under the name _java:comp/ORB_ . The container is
-allowed, but not required, to share this instance between components.
-The container may also use this ORB instance itself. To support
-isolation between applications, an ORB instance should not be shared
-between components in different applications. To allow this ORB instance
-to be safely shared between components, portable components must
-restrict their usage of certain ORB APIs and functionality:
-
-* Do not call the ORB _shutdown_ method.
-* Do not call the _org.omg.CORBA_2_3.ORB_
-methods _register_value_factory_ and _unregister_value_factory_ with an
-_id_ used by the container.
-
-A Jakarta EE product must provide a COSNaming
-service to support the Jakarta Enterprise Beans interoperability requirements. It must be
-possible to access this COSNaming service using the Java IDL COSNaming
-APIs. Applications with appropriate privileges must be able to lookup
-objects in the COSNaming service. COSNaming is defined in the
-Interoperable Naming Service specification, available at
-_http://www.omg.org/cgi-bin/doc?formal/2000-06-19_ .
+The Jakarta XML Web Services specification is available at
+_https://jakarta.ee/specifications/xml-web-services/_ .
 
 ===== RMI-JRMP
+
+*TODO Note:* What to do with this section? Leave as-is, mark Optional, remove?
 
 JRMP is the Java technology-specific Remote
 Method Invocation (RMI) protocol. The Jakarta EE security restrictions
@@ -1022,6 +1009,9 @@ clients from creating and exporting an RMI object, but all Jakarta EE
 application component types can be clients of RMI objects.
 
 ===== RMI-IIOP (Proposed Optional)
+
+*TODO Note:* Since distributed interop is being removed from the EJB spec, do we remove
+this section completely?
 
 The requirements in this section only apply
 to Jakarta EE products that include an Enterprise Beans container and support
@@ -1053,7 +1043,7 @@ component types can be clients of RMI-IIOP objects. Jakarta EE applications
 should also use JNDI to lookup non-Enterprise Beans RMI-IIOP objects. The JNDI names
 used for such non-Enterprise Beans RMI-IIOP objects should be configured at
 deployment time using the standard environment entries mechanism (see
-<<a607, JNDI Naming Context>>”).
+<<a607, JNDI Naming Context>>).
 The application should fetch a name from JNDI using an environment
 entry, and use the name to lookup the RMI-IIOP object. Typically such
 names will be configured to be names in the COSNaming name service.
@@ -1107,8 +1097,7 @@ JavaMail _Session_ objects, _URL_ objects, resource manager
 _ConnectionFactory_ objects (as specified in the Connector
 specification), _ORB_ objects, _EntityManagerFactory_ objects, and other
 Java language objects as described in
-<<a567, Resources, Naming, and
-Injection>>.” The JNDI implementation in a Jakarta EE product must be
+<<a567, Resources, Naming, and Injection>>. The JNDI implementation in a Jakarta EE product must be
 capable of supporting all of these uses in a single application
 component using a single JNDI _InitialContext_ . Application components
 will generally create a JNDI _InitialContext_ using the default
@@ -1122,8 +1111,7 @@ annotations and/or deployment descriptor are used to list the names and
 types of objects expected. The Deployer configures the JNDI namespace to
 make appropriate components available. The JNDI names used to lookup
 such objects must be in the JNDI _java:_ namespace. See
-<<a567, Resources, Naming, and
-Injection>>” for details.
+<<a567, Resources, Naming, and Injection>> for details.
 
 Particular names are defined by this
 specification for the cases when the Jakarta EE product includes the
@@ -1174,8 +1162,7 @@ _http://docs.oracle.com/javase/8/docs/technotes/guides/jndi/jndi-cos.html_
 .
 
 See
-<<a567, Resources, Naming, and
-Injection>>” for the complete naming requirements for the Jakarta EE
+<<a567, Resources, Naming, and Injection>> for the complete naming requirements for the Jakarta EE
 platform. The JNDI specification is available at
 _http://docs.oracle.com/javase/8/docs/technotes/guides/jndi/index.html_
 .
@@ -1202,7 +1189,7 @@ dynamically load application classes.
 This specification requires that containers
 provide a per thread context class loader that can be used to load top
 level application classes as described above. See
-<<a2966, Dynamic Class Loading>>”
+<<a2966, Dynamic Class Loading>>
 for recommendations for libraries that dynamically load classes.
 
 ===== Jakarta Authentication Requirements
@@ -1239,7 +1226,10 @@ preferences tree defined by the Preferences API. A future version of
 this specification may define the use of the Preferences API by Jakarta EE
 applications.
 
-=== Jakarta Enterprise Beans 3.2 Requirements
+=== Enterprise Beans 4.0 Requirements
+
+*TODO Note:*  This section still needs some work due to the revamping of the EJB 4.0
+spec for Jakarta EE 9...
 
 This specification requires that a  Jakarta EE
 product provide support for _enterprise beans_ as specified in the Jakarta Enterprise
@@ -1276,7 +1266,7 @@ support access to local enterprise beans. No support is provided for
 access to local enterprise beans from the application client container
 or the applet container.
 
-=== Jakarta Servlet 4.0 Requirements
+=== Servlet 5.0 Requirements
 
 The Jakarta Servlet specification defines the
 packaging and deployment of web applications, whether standalone or as
@@ -1332,7 +1322,7 @@ from the web container.
 The Jakarta Servlet specification is available at
 _https://jakarta.ee/specifications/servlet_ .
 
-=== Jakarta Server Pages 2.3 Requirements
+=== Server Pages 3.0 Requirements
 
 The Jakarta Server Pages specification depends on and builds
 on the servlet framework. A Jakarta EE product must support the entire
@@ -1341,7 +1331,7 @@ Jakarta Server Pages specification.
 The Jakarta Server Pages specification is available at
 _https://jakarta.ee/specifications/pages_ .
 
-=== Jakarta Expression Language  (EL) 3.0 Requirements
+=== Expression Language  (EL) 4.0 Requirements
 
 The Jakarta Expression Language specification was
 formerly a part of the Jakarta Server Pages specification. It was split off
@@ -1352,7 +1342,7 @@ Language.
 The Jakarta Expression Language specification is
 available at _https://jakarta.ee/specifications/expression-language_ .
 
-=== Jakarta Messaging 2.0 Requirements
+=== Messaging 3.0 Requirements
 
 A Jakarta Messaging provider must be
 included in a Jakarta EE product that requires support for Jakarta Messaging.
@@ -1453,7 +1443,7 @@ enterprise beans container and the web container.
 The Jakarta Messaging specification is available at
 _https://jakarta.ee/specifications/messaging_ .
 
-=== Jakarta Transaction 1.3 Requirements
+=== Transaction 2.0 Requirements
 
 Jakarta Transaction defines the _UserTransaction_ interface
 that is used by applications to start, and commit or abort transactions.
@@ -1479,7 +1469,17 @@ be provided transparently to the application by a Jakarta EE product.
 The Jakarta Transaction specification is available at
 _https://jakarta.ee/specifications/transactions_ .
 
-=== Jakarta Mail 1.6 Requirements
+=== Activation 2.0 Requirements
+
+Jakarta Activation defines a set of standard services to: determine the MIME
+type of an arbitrary piece of data; encapsulate access to it; discover the operations
+available on it; and instantiate the appropriate bean to perform the operation(s).
+A Jakarta EE product must support Activation.
+
+The Jakarta Activation specification is available at
+_https://jakarta.ee/specifications/activation_ .
+
+=== Mail 2.0 Requirements
 
 The Jakarta Mail API allows for access to email
 messages contained in message stores, and for the creation and sending
@@ -1500,8 +1500,7 @@ request a _Session_ object using JNDI, and should list its need for a
 _Session_ object in its deployment descriptor using a _resource-ref_
 element, or by using a _Resource_ annotation. A Jakarta Mail API _Session_
 object should be considered a resource factory, as described in
-<<a1120, Resource Manager
-Connection Factory References>>.” This specification requires that the
+<<a1120, Resource Manager Connection Factory References>>. This specification requires that the
 Jakarta EE platform support _jakarta.mail.Session_ objects as resource
 factories, as described in that section.
 
@@ -1529,8 +1528,7 @@ The Jakarta Mail API uses the JavaBeans Activation
 Framework API to support various MIME data types. The Jakarta Mail API must
 include _jakarta.activation.DataContentHandlers_ for the following MIME
 data types, corresponding to the Java programming language type
-indicated in _<<a2675, JavaMail
-API MIME Data Type to Java Type Mappings>>_ .
+indicated in <<a2675, JavaMail API MIME Data Type to Java Type Mappings>> .
 
 [[a2675]]
 [cols=2, options=header]
@@ -1558,7 +1556,7 @@ API MIME Data Type to Java Type Mappings>>_ .
 The Jakarta Mail API specification is available
 at _https://jakarta.ee/specifications/mail_ .
 
-=== Jakarta EE Connectors 1.7 Requirements
+=== Connectors 2.0 Requirements
 
 In full Jakarta EE products, all Jakarta Enterprise Beans containers
 and all web containers must support the full set of Connector APIs. All
@@ -1571,35 +1569,7 @@ Resource Adapters.
 The Jakarta EE Connectors specification is available at
 _https://jakarta.ee/specifications/connectors_ .
 
-=== Jakarta XML RPC 1.1 Requirements (Optional)
-
-The Jakarta XML RPC specification defines client APIs
-for accessing web services as well as techniques for implementing web
-service endpoints. The Web Services for Jakarta EE specification describes
-the deployment of Jakarta XML RPC-based services and clients. The Jakarta Enterprise Beans
-and Servlet specifications also describe aspects of such deployment. In Jakarta
-EE products that support Jakarta XML RPC, it must be possible to deploy
-Jakarta XML RPC-based applications using any of these deployment models.
-
-The Jakarta XML RPC specification describes the
-support for message handlers that can process message requests and
-responses. In general, these message handlers execute in the same
-container and with the same privileges and execution context as the
-Jakarta XML RPC client or endpoint component with which they are associated.
-These message handlers have access to the same JNDI _java:comp/env_
-namespace as their associated component. Custom serializers and
-deserializers, if supported, are treated in the same way as message
-handlers.
-
-Note that neither web service annotations nor
-injection is supported for Jakarta XML RPC service endpoints and handlers. New
-applications are encouraged to use Jakarta XML Web Services to take advantage of these new
-facilities that make it easier to write web services.
-
-The Jakarta XML RPC  specification is available at
-_https://jakarta.ee/specifications/xml-rpc_ .
-
-=== Jakarta RESTful Web Services 2.1 Requirements
+=== RESTful Web Services 3.0 Requirements
 
 Jakarta RESTful Web Services defines APIs for the development of
 Web services built according to the Representational State Transfer
@@ -1623,7 +1593,7 @@ be made available.
 The Jakarta RESTful Web Services specification is available at
 _https://jakarta.ee/specifications/restful-ws_ .
 
-=== Jakarta WebSocket  1.1 (WebSocket) Requirements
+=== WebSocket 2.0 (WebSocket) Requirements
 
 The Jakarta WebSocket (WebSocket) is a
 standard API for creating WebSocket applications. In a full Jakarta EE
@@ -1633,7 +1603,7 @@ WebSocket API.
 The Jakarta WebSocket specification can
 be found at _https://jakarta.ee/specifications/websocket_ .
 
-=== Jakarta JSON Processing 1.1 (JSON-P) Requirements
+=== JSON Processing 2.0 (JSON-P) Requirements
 
 JSON (JavaScript Object Notation) is a
 lightweight data-interchange format used by many web services. The
@@ -1649,7 +1619,7 @@ specification can be found at _https://jakarta.ee/specifications/jsonp_ .
 
 [[a2713]]
 
-=== Jakarta JSON Binding 1.0 (JSON-B) Requirements
+=== JSON Binding 2.0 (JSON-B) Requirements
 
 The Jakarta JSON Binding API for JSON Binding (JSON-B)
 provides a convenient way to map between JSON text and Java objects.
@@ -1661,7 +1631,7 @@ required to support the JSON-B API.
 The Jakarta JSON Binding  specification
 can be found at _https://jakarta.ee/specifications/jsonb_.
 
-=== Jakarta Concurrency 1.1 (Concurrency Utilities) Requirements
+=== Concurrency 2.0 (Concurrency Utilities) Requirements
 
 Jakarta Concurrency Utilities for Jakarta EE is a
 standard API for providing asynchronous capabilities to Jakarta EE
@@ -1678,7 +1648,7 @@ required to be supported.
 The Jakarta Concurrency
 specification can be found at _https://jakarta.ee/specifications/concurrency_ .
 
-=== Jakarta Batch 1.0 Specification Requirements
+=== Batch 2.0 Specification Requirements
 
 The Jakarta Batch provides a programming model for batch
 applications and a runtime for scheduling and executing jobs.
@@ -1689,47 +1659,7 @@ containers and Jakarta Enterprise Beans containers are required to support the B
 The Jakarta Batch specification can be found
 at _https://jakarta.ee/specifications/batch_ .
 
-=== Jakarta XML Registries 1.0 Requirements (Optional)
-
-The Jakarta XML Registries specification defines APIs for
-client access to XML-based registries such as ebXML registries and UDDI
-registries. Jakarta EE products that support Jakarta XML Registries
- must include a Jakarta XML registry provider that meets at least the
- Jakarta XML Registries level 0 requirements.
-
-The Jakarta XML Registries specification is available at
-_https://jakarta.ee/specifications/xml-registries_ .
-
-=== Jakarta Management 1.1 Requirements
-
-Jakarta Management provides APIs for
-management tools to query a Jakarta EE application server to determine its
-current status, applications deployed, and so on. All Jakarta EE products
-must support this API as described in its specification.
-
-The Jakarta Management specification is
-available at _https://jakarta.ee/specifications/management_ .
-
-[[a2730]]
-=== Jakarta Deployment API 1.7 Requirements (Optional)
-
-The Jakarta Deployment API defines the
-interfaces between the runtime environment of a deployment tool and
-plug-in components provided by a Jakarta EE application server. These
-plug-in components execute in the deployment tool and implement the Jakarta
-EE product-specific deployment mechanisms. Jakarta EE products that support
-the Jakarta Deployment API are required to supply these plug-in
-components for use in tools from other vendors.
-
-Note that the Jakarta Deployment
-specification does not define new APIs for direct use by Jakarta EE
-applications. However, it would be possible to create a Jakarta EE
-application that acts as a deployment tool and provides the runtime
-environment required by the Jakarta Deployment
-The Jakarta EE Deployment API specification is
-available at _https://jakarta.ee/specifications/deployment_ .
-
-=== Jakarta Authorization 1.5 Requirements
+=== Authorization 2.0 Requirements
 
 The Jakarta Authorization specification defines a contract
 between a Jakarta EE application server and an authorization policy
@@ -1740,7 +1670,7 @@ The Jakarta Authorization specification can be found at
 _https://jakarta.ee/specifications/authorization_ .
 
 [[a2737]]
-=== Jakarta Authentication 1.1 Requirements
+=== Authentication 2.0 Requirements
 
 The Jakarta Authentication specification defines a service
 provider interface (SPI) by which authentication providers implementing
@@ -1768,7 +1698,7 @@ The Jakarta Authentication specification can be found at
 _https://jakarta.ee/specifications/authentication_ .
 
 [[a2741]]
-=== Jakarta Security 1.0 Requirements
+=== Security 2.0 Requirements
 
 Jakarta Security leverages Jakarta Authentication ,
 but provides an easier to use SPI for authentication of users of web
@@ -1782,7 +1712,7 @@ requirements defined by the Jakarta Security specification.
 The Jakarta Security Specification can be
 found at _https://jakarta.ee/specifications/security_ .
 
-=== Jakarta Debugging Support for Other Languages Requirements 1.0
+=== Debugging Support for Other Languages Requirements 2.0
 
 Jakarta Server Pages pages are usually translated into Java
 language pages and then compiled to create class files. The Jakarta Debugging Support for Other Languages
@@ -1795,7 +1725,7 @@ Jakarta Server Pages.
 The Jakarta Debugging Support for Other Languages
 specification can be found at _https://jakarta.ee/specifications/debugging_ .
 
-=== Jakarta Standard Tag Library for Jakarta Server Pages 1.2 Requirements
+=== Standard Tag Library for Jakarta Server Pages 2.0 Requirements
 
 Jakarta Standard Tag Library specification defines a standard tag library that
 makes it easier to develop Jakarta Server Pages Pages. All Jakarta EE products are required
@@ -1804,7 +1734,7 @@ to provide a Jakarta Standard Tag Library for use by all Jakarta Server Pages.
 The Jakarta Standard Tag Library for Jakarta Server Pages
 specification can be found at _https://jakarta.ee/specifications/tags_ .
 
-=== Jakarta Server Faces 2.3 Requirements
+=== Server Faces 3.0 Requirements
 
 Jakarta Server Faces technology simplifies
 building user interfaces for Jakarta applications. Developers of
@@ -1818,7 +1748,7 @@ Faces technology.
 The Jakarta Server Faces specification can be
 found at _https://jakarta.ee/specifications/faces_ .
 
-=== Jakarta Annotations 1.3 Requirements
+=== Annotations 2.0 Requirements
 
 The Jakarta Annotations specification defines
 Java language annotations that are used by several other specifications,
@@ -1910,7 +1840,7 @@ corresponding specifications and summarized in the following table.
 The Jakarta Annotations specification can be found at
 _https://jakarta.ee/specifications/annotations_ .
 
-=== Jakarta Persistence 2.2 Requirements
+=== Persistence 3.0 Requirements
 
 Jakarta Persistence is the standard API for the
 management of persistence and object/relational mapping. The Jakarta
@@ -1927,7 +1857,7 @@ persistence unit has been created.
 The Jakarta Persistence specification can be
 found at _https://jakarta.ee/specifications/persistence_ .
 
-=== Bean Validation 2.0 Requirements
+=== Bean Validation 3.0 Requirements
 
 The Bean Validation specification defines a
 metadata model and API for JavaBean validation. The default metadata
@@ -1950,7 +1880,7 @@ Additional requirements on Jakarta EE platform
 containers are specified in the Bean Validation specification, which can
 be found at _https://jakarta.ee/specifications/bean-validation_ .
 
-=== Managed Beans 1.0 Requirements
+=== Managed Beans 2.0 Requirements
 
 The Managed Beans specification defines a
 lightweight component model that supports the basic lifecycle model,
@@ -1960,7 +1890,7 @@ EE platform.
 The Managed Beans specification can be found
 at _https://jakarta.ee/specifications/managedbeans_ .
 
-=== Interceptors 1.2 Requirements
+=== Interceptors 2.0 Requirements
 
 The Interceptors specification makes more
 generally available the interceptor facility originally defined as part
@@ -1969,7 +1899,7 @@ of the Jakarta Enterprise Beans 3.0 specification.
 The Interceptors specification can be found
 at _https://jakarta.ee/specifications/interceptors_ .
 
-=== Contexts and Dependency Injection for the Jakarta EE Platform 2.0 Requirements
+=== Contexts and Dependency Injection (CDI) 3.0 Requirements
 
 The Contexts and Dependency Injection (CDI)
 specification defines a set of contextual services, provided by Jakarta EE
@@ -1979,7 +1909,7 @@ both web tier and business tier technologies.
 The CDI specification can be found at
 _https://jakarta.ee/specifications/cdi_ .
 
-=== Dependency Injection for Java 1.0 Requirements
+=== Dependency Injection for Java 2.0 Requirements
 
 The Dependency Injection for Java (DI)
 specification defines a standard set of annotations (and one interface)
@@ -1987,18 +1917,58 @@ for use on injectable classes.
 
 In the Jakarta EE platform, support for
 Dependency Injection is mediated by CDI. See
-<<a2112, Support for Dependency
-Injection>>” for more detail.
+<<a2112, Support for Dependency Injection>> for more detail.
 
 The DI specification can be found at
 _https://jakarta.ee/specifications/dependency-injection_ .
 
-=== Enterprise Web Services 1.4 Requirements
+=== Enterprise Web Services 2.0 Requirements (Optional)
 
-The Enterprise Web Services specification defines the integration between the various Web Service technologies in Jakarta EE, including XML-RPC, XMl Web Services and XML Web Service Metadata.
+The Enterprise Web Services specification defines the integration between the
+various Web Service technologies in Jakarta EE, including XML Web Services and 
+XML Web Service Metadata.
+A Jakarta EE product may support Enterprise Web Services.
 
 The Enterprise Web Services specification can be found
 at _https://jakarta.ee/specifications/enterprise-ws_ .
+
+=== XML Binding 3.0 Requirements (Optional)
+
+The Jakarta XML Binding provides an API and tools that automate the mapping
+between XML documents and Java objects.
+A Jakarta EE product may support XML Binding.
+
+The Enterprise Web Services specification can be found
+at _https://jakarta.ee/specifications/xml-binding_ .
+
+=== XML Web Services 3.0 Requirements (Optional)
+
+Jakarta XML Web Services defines a means for implementing XML-Based Web Services
+based on Jakarta SOAP with Attachments and Jakarta Web Services Metadata.
+A Jakarta EE product may support XML Web Services.
+
+The Enterprise Web Services specification can be found
+at _https://jakarta.ee/specifications/xml-web-services_ .
+
+=== Web Services Metadata 3.0 Requirements (Optional)
+
+Jakarta Web Services Metadata defines a programming model for Web Services in Java,
+use of metadata, a non-normative processing model for metadata annotated web service
+source files, runtime requirements for a container, and annotations used for WSDL,
+binding, and configuration.
+A Jakarta EE product may support Web Services Metadata.
+
+The Enterprise Web Services specification can be found
+at _https://jakarta.ee/specifications/web-services-metadata_ .
+
+=== SOAP with Attachments 2.0 Requirements (Optional)
+
+Jakarta SOAP with Attachments defines an API enabling developers to produce and
+consume messages conforming to the SOAP 1.1, SOAP 1.2, and SOAP Attachments Feature.
+A Jakarta EE product may support SOAP with Attachments.
+
+The Enterprise Web Services specification can be found
+at _https://jakarta.ee/specifications/soap-attachments_ .
 
 // generates a line between text and footnotes for pdf and html generation.
 '''
