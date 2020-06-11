@@ -37,94 +37,94 @@ provide this capability.
 The following sections contain the Jakarta EE
 platform solutions to the above issues:
 
-* <<a607, JNDI Naming Context>>,” defines general rules for the use of the JNDI
+* <<a607, JNDI Naming Context>> defines general rules for the use of the JNDI
 naming context and its interaction with Java language annotations that
 reference entries in the naming context.
-* <<a732, Responsibilities by Jakarta EE Role>>,” defines the general responsibilities
+* <<a732, Responsibilities by Jakarta EE Role>> defines the general responsibilities
 for each of the Jakarta EE roles such as Application Component Provider,
 Application Assembler, Deployer, and Jakarta EE Product Provider.
-* <<a751, Simple Environment Entries>>,” defines the basic interfaces that specify
+* <<a751, Simple Environment Entries>> defines the basic interfaces that specify
 and access the application component’s naming environment. The section
 illustrates the use of the application component’s naming environment
 for generic customization of the application component’s business logic.
-* <<a936, Jakarta Enterprise Beans References>>,” defines the interfaces for
+* <<a936, Jakarta Enterprise Beans References>> defines the interfaces for
 obtaining the business interface, no-interface view, or home interface
 of an enterprise bean using a Jakarta Enterprise Bean reference. A Jakarta
 Enterprise Bean reference is a special entry in the application component’s
 environment.
-* <<a1118, Web Service References>>,” refers to the specification for web service
+* <<a1118, Web Service References>> refers to the specification for web service
 references.
-* <<a1120, Resource Manager Connection Factory References>>,” defines the interfaces
+* <<a1120, Resource Manager Connection Factory References>> defines the interfaces
 for obtaining a resource manager connection factory using a resource
 manager connection factory reference. A resource manager connection
 factory reference is a special entry in the application component’s
 environment.
-* <<a1242, Resource Environment References>>,” defines the interfaces for obtaining
+* <<a1242, Resource Environment References>> defines the interfaces for obtaining
 an administered object that is associated with a resource using a
 resource environment reference. A resource environment reference is a
 special entry in the application component’s environment.
-* <<a1266, Message Destination References>>,” defines the interfaces for declaring
+* <<a1266, Message Destination References>> defines the interfaces for declaring
 and using message destination references.
-* <<a1334, UserTransaction References>>,” describes the use by eligible application
+* <<a1334, UserTransaction References>> describes the use by eligible application
 components of references to a _UserTransaction_ object in the
 component’s environment to start, commit, and abort transactions.
-* <<a1376, TransactionSynchronizationRegistry References>>,” describes the use by
+* <<a1376, TransactionSynchronizationRegistry References>> describes the use by
 eligible application components of references to a
 _TransactionSynchronizationRegistry_ object in the component’s
 environment.
-* <<a1385, ORB References>>,” describes the use by eligible application components
+* <<a1385, ORB References>> describes the use by eligible application components
 of references to a CORBA _ORB_ object in the component’s environment.
-* <<a1416, Persistence Unit References>>,” describes the use by eligible application
+* <<a1416, Persistence Unit References>> describes the use by eligible application
 components of references to an _EntityManagerFactory_ object in the
 component’s environment.
-* <<a1513, Persistence Context References>>,” describes the use by eligible
+* <<a1513, Persistence Context References>> describes the use by eligible
 application components of references to an _EntityManager_ object in the
 component’s environment.
-* <<a1607, Application Name and Module Name References>>,” describes the use by
+* <<a1607, Application Name and Module Name References>> describes the use by
 eligible application components of references to the names of the
 current application and module.
-* <<a1613, Application Client Container Property>>,” describes the use by eligible
+* <<a1613, Application Client Container Property>> describes the use by eligible
 application components of references to the application client container
 property.
-* <<a1619, Validator and Validator Factory References>>,” describes the use by
+* <<a1619, Validator and Validator Factory References>> describes the use by
 eligible application components of references to the _Validator_ and
 _ValidatorFactory_ objects in the component’s environment.
-* <<a1652, Resource Definition and Configuration>>,” describes the use by eligible
+* <<a1652, Resource Definition and Configuration>> describes the use by eligible
 application components of metadata that may be used to define resources
 in the component’s environment.
-* <<a1688, DataSource Resource Definition>>,” describes the use by eligible
+* <<a1688, DataSource Resource Definition>> describes the use by eligible
 application components of references to _DataSource_ resources in the
 component’s environment.
-* <<a1756, Jakarta Messaging Connection Factory Resource Definition>>,” describes the use by
+* <<a1756, Jakarta Messaging Connection Factory Resource Definition>> describes the use by
 eligible application components of references to Jakarta Messaging _ConnectionFactory_
 resources in the component’s environment.
-* <<a1817, Jakarta Messaging Destination Definition>>,” describes the use by eligible application
+* <<a1817, Jakarta Messaging Destination Definition>> describes the use by eligible application
 components of references to Jakarta Messaging _Destination_ resources in the
 component’s environment.
-* <<a1863, Mail Session Definition>>,” describes the use by eligible application
+* <<a1863, Mail Session Definition>> describes the use by eligible application
 components of references to Mail _Session_ resources in the component’s
 environment.
-* <<a1917, Connector Connection Factory Definition>>,” describes the use by eligible
+* <<a1917, Connector Connection Factory Definition>> describes the use by eligible
 application components of references to Connector connection factory
 resources in the component’s environment.
-* <<a1967, Connector Administered Object Definition>>,” describes the use by
+* <<a1967, Connector Administered Object Definition>> describes the use by
 eligible application components of references to Connector administered
 object resources in the component’s environment.
-* <<a2009, Default Data Source>>,” describes the use by eligible application
+* <<a2009, Default Data Source>> describes the use by eligible application
 components of references to the default DataSource in the component’s
 environment.
-* <<a2025, Default Jakarta Messaging Connection Factory>>,” describes the use by eligible
+* <<a2025, Default Jakarta Messaging Connection Factory>> describes the use by eligible
 application components of references to the default Jakarta Messaging
 ConnectionFactory in the component’s environment.
-* <<a2042, Default Jakarta Concurrency Objects>>,” describes the use by eligible
+* <<a2042, Default Jakarta Concurrency Objects>> describes the use by eligible
 application components of references to the default Jakarta Concurrency objects
 in the component’s environment.
-* <<a2067, Managed Bean References>>,” describes the use by eligible application
+* <<a2067, Managed Bean References>> describes the use by eligible application
 components of references to Managed Beans.
-* <<a2099, Bean Manager References>>,” describes the use by eligible application
+* <<a2099, Bean Manager References>> describes the use by eligible application
 components of references to a _BeanManager_ object in the component’s
 environment.
-* <<a2112, Support for Dependency Injection>>,” describes support for the use of the
+* <<a2112, Support for Dependency Injection>> describes support for the use of the
 Dependency Injection APIs.
 
 ==== Required Access to the JNDI Naming Environment
@@ -195,29 +195,29 @@ the application component class.
 naming context available to the application component instances at
 runtime. The application component’s instances may use the JNDI
 interfaces or component context lookup methods to obtain the values of
-the environment entries. __
+the environment entries.
 
 [[a616]]
 ==== Application Component Environment Namespaces
 
 The application component’s naming environment
 is composed of four logical namespaces, representing naming environments
-with different scopes. The four namespaces are: __
+with different scopes. The four namespaces are:
 
 *  _java:comp_ – Names in this namespace are
 per-component (for example, per enterprise bean). Except for components
 in a web module, each component gets its own _java:comp_ namespace, not
 shared with any other component. Components in a web module do not have
-their own private component namespace. __ See note below.
+their own private component namespace. See note below.
 *  _java:module_ – Names in this namespace are
 shared by all components in a module (for example, all enterprise beans
-in a single enterprise bean module, or all components in a web module). __
+in a single enterprise bean module, or all components in a web module).
 *  _java:app_ – Names in this namespace are
 shared by all components in all modules in a single application, where
 “single application” means a single deployment unit, such as a single
 ear file, a single module deployed standalone, etc. For example, a war
 file and a Jakarta Enterprise Beans jar file in the same ear file would both have access to
-resources in the _java:app_ namespace. __
+resources in the _java:app_ namespace.
 *  _java:global_ – Names in this namespace are
 shared by all applications deployed in an application server instance.
 Note that an application server instance may represent a single server,
@@ -236,7 +236,7 @@ instance of that same application.
 For historical reasons, the _java:comp_
 namespace is shared by all components in a web module. To preserve
 compatibility, this specification doesn’t change that. In a web module,
-_java:comp_ refers to the same namespace as _java:module_ . It is
+_java:comp_ refers to the same namespace as _java:module_. It is
 recommended that resources in a web module that are intended to be
 shared by more than one component be declared in the _java:module/env_
 namespace.
@@ -264,7 +264,7 @@ deployment error to the Deployer. The deployment tool may allow the
 Deployer to correct the error and continue deployment.
 
 The default JNDI namespace for resource
-references and resource definitions must always be _java:comp/env_ .
+references and resource definitions must always be _java:comp/env_.
 Note that this applies to both the case where no name has been supplied
 so the rules for choosing a default name are used, and the case where a
 name has been supplied explicitly but the name does not specify a
@@ -293,7 +293,7 @@ context.
 An environment entry declared in the
 _application.xml_ descriptor must specify a JNDI name in the _java:app_
 or _java:global_ namespace, for example: _java:app/env/myString_ or
-_java:global/someValue_ . The specification of a _java:comp_ or
+_java:global/someValue_. The specification of a _java:comp_ or
 _java:module_ name for an environment entry declared in the
 _application.xml_ descriptor must be reported as a deployment error to
 the Deployer.
@@ -312,8 +312,8 @@ All objects defined in environment entries of
 any kind (either in deployment descriptors or through annotations) must
 be specified to be of a Java type that is accessible to the component.
 Accessibility of Java classes is specified in section
-<<a3040, Class Loading
-Requirements>>.” If the object is of type _java.lang.Class_ , the _Class_
+<<a3040, Class Loading Requirements>>. 
+If the object is of type _java.lang.Class_, the _Class_
 object must refer to a class that is accessible to the component. Note
 that in cases where the container may return an implementation subtype
 of the requested type, the implementation subtype might not be
@@ -339,7 +339,7 @@ application can’t change the state of the object.
 that only one instance of the object may exist in the JVM.
 * The name used for the lookup is defined to
 return an instance of the object that might be shared. The names
-_java:comp/ORB_ , _java:comp/ValidatorFactory_ , and
+_java:comp/ORB_, _java:comp/ValidatorFactory_, and
 _java:comp/BeanManager_ are such names.
 
 In these cases, a shared instance of the object
@@ -352,7 +352,7 @@ satisfying this requirement.
 Each injection of an object corresponds to a
 JNDI lookup. Whether a new instance of the requested object is injected,
 or whether a shared instance is injected, is determined by the rules
-described above. __
+described above.
 
 ==== Annotations and Injection
 
@@ -367,22 +367,22 @@ necessarily managed by the container.
 Any of the types of resources described in
 this chapter may be injected. Injection may also be requested using
 entries in the deployment descriptor corresponding to each of these
-resource types. The field or method may have any access qualifier (
-_public_ , _private_ , etc.). For all classes except application client
-main classes, the fields or methods must not be _static_ . Because
+resource types. The field or method may have any access qualifier 
+(_public_, _private_, etc.). For all classes except application client
+main classes, the fields or methods must not be _static_. Because
 application clients use the same lifecycle as Java SE applications, no
 instance of the application client main class is created by the
 application client container. Instead, the _static_ _main_ method is
 invoked. To support injection for the application client main class, the
-fields or methods annotated for injection must be _static_ .
+fields or methods annotated for injection must be _static_.
 
 A field of a class may be the target of
-injection. The field must not be _final_ . By default, the name of the
+injection. The field must not be _final_. By default, the name of the
 field is combined with the fully qualified name of the class and used
 directly as the name in the application component’s naming context. For
 example, a field named _myDatabase_ in the class _MyApp_ in the package
 _com.example_ would correspond to the JNDI name
-_java:comp/env/com.example.MyApp/myDatabase_ . The annotation also
+_java:comp/env/com.example.MyApp/myDatabase_. The annotation also
 allows the JNDI name to be specified explicitly. When a deployment
 descriptor entry is used to specify injection, the JNDI name and the
 field name are both specified explicitly. Note that, by default, the
@@ -396,7 +396,7 @@ entry into the class. The JavaBeans property name (not the method name)
 is used as the default JNDI name. For example, a method named
 _setMyDatabase_ in the same _MyApp_ class would correspond to the same
 JNDI name _java:comp/env/com.example.MyApp/myDatabase_ as the field
-_myDatabase_ .
+_myDatabase_.
 
 Each resource may only be injected into a
 single field or method of a given name in a given class. Requesting
@@ -412,13 +412,11 @@ component types describe which classes may be annotated for injection,
 as summarized in <<a651, Component classes supporting injection>>.
 
 The component classes listed in
-<<a651, Component classes
-supporting injection>> with support level “Standard” all support Jakarta EE
+<<a651, Component classes supporting injection>> with support level “Standard” all support Jakarta EE
 resource injection, as well as PostConstruct and PreDestroy callbacks.
 In addition, if CDI is enabled—which it is by default—these classes also
 support CDI injection, as described in
-<<a2112, Support for Dependency
-Injection>>”, and the use of interceptors.footnote:[Note that the use of
+<<a2112, Support for Dependency Injection>>, and the use of interceptors.footnote:[Note that the use of
 interceptors defined by means of the Interceptors annotation is supported in the
 absence of CDI for Jakarta™ Enterprise Beans and Jakarta™ Managed Bean components.]
 The component classes listed with support level “Limited” only support Jakarta
@@ -474,7 +472,7 @@ specification section Jakarta™ Server Faces Managed Classes and Jakarta™ Ann
 a list of these managed classes.]
 |Standard
 
-|JAX-WS
+|Jakarta Web Services
 |service endpoints
 
 handlers
@@ -539,7 +537,7 @@ component’s environment but do not cause the resource to be injected.
 Instead, the application component is expected to use JNDI or a
 component context lookup method to lookup the entry. When the annotation
 is applied to the class, the JNDI name and the environment entry type
-must be specified explicitly. __
+must be specified explicitly.
 
 Resource annotations may appear on any of the
 classes listed above, or on any superclass of any class listed above. A
@@ -667,13 +665,11 @@ shared namespaces. The names correspond to the complete URL of the web
 application. See the Servlet specification for details.
 * Objects representing several container
 services are defined in the _java:comp_ namespace. See, for example,
-<<a1334, UserTransaction
-References>>,” <<a1376, TransactionSynchronizationRegistry References>>,” and
-<<a1385, ORB References>>.”
+<<a1334, UserTransaction References>>, <<a1376, TransactionSynchronizationRegistry References>>, and
+<<a1385, ORB References>>.
 * Strings providing the current module name
 and application name are defined in the _java:comp_ namespace. See
-<<a1607, Application Name and
-Module Name References>>.”
+<<a1607, Application Name and Module Name References>>.
 
 [[a732]]
 === Responsibilities by Jakarta EE Role
@@ -752,8 +748,8 @@ responsibilities:
 * Provide a deployment tool that allows the
 Deployer to set and modify the entries of the application component’s
 naming context.
-* Implement the _java:comp_ , _java:module_ ,
-_java:app_ and _java:global_ environment naming contexts, and provide
+* Implement the _java:comp_, _java:module_,
+_java:app_, and _java:global_ environment naming contexts, and provide
 them to the application component instances at runtime. The naming
 context must include all the entries declared by the Application
 Component Provider, with their values supplied in the deployment
@@ -787,8 +783,8 @@ context and its subcontexts.
 A simple environment entry is a configuration
 parameter used to customize an application component’s business logic.
 The environment entry values may be one of the following Java types:
-_String_ , _Character_ , _Byte_ , _Short_ , _Integer_ , _Long_ ,
-_Boolean_ , _Double_ , _Float_ , _Class_ , and any subclass of _Enum_ .
+_String_, _Character_, _Byte_, _Short_, _Integer_, _Long_,
+_Boolean_, _Double_, _Float_, _Class_, and any subclass of _Enum_.
 
 The following subsections describe the
 responsibilities of each Jakarta EE Role.
@@ -803,7 +799,7 @@ describing the API for accessing environment entries, and the third
 describing syntax for declaring the environment entries in a deployment
 descriptor.
 
-Injection of Simple Environment Entries
+===== Injection of Simple Environment Entries
 
 A field or a method of an application component
 may be annotated with the _Resource_ annotation. The name and type of
@@ -846,7 +842,7 @@ potentially in a different namespace.
 @Resource(lookup="java:app/env/timeout") int timeout;
 ----
 
-Programming Interfaces for Accessing Simple Environment Entries
+===== Programming Interfaces for Accessing Simple Environment Entries
 
 In addition to the injection based approach
 described above, an application component may access environment entries
@@ -854,7 +850,7 @@ dynamically. An application component instance locates the environment
 naming context using the JNDI interfaces. An instance creates a
 _javax.naming.InitialContext_ object by using the constructor with no
 arguments, and looks up the naming environment via the _InitialContext_
-under the name _java:comp/env_ . The application component’s environment
+under the name _java:comp/env_. The application component’s environment
 entries are stored directly in the environment naming context, or in its
 direct or indirect subcontexts.
 
@@ -902,7 +898,7 @@ public void setTaxInfo(int numberOfExemptions,...)
 }
 ----
 
-Declaration of Simple Environment Entries
+===== Declaration of Simple Environment Entries
 
 The Application Component Provider must declare
 all the environment entries accessed from the application component’s
@@ -928,7 +924,7 @@ value for an environment entry using the _env-entry-value_ element, the
 value can be changed later by the Application Assembler or Deployer. The
 value must be a string that is valid for the constructor of the
 specified type that takes a single _String_ parameter, or in the case of
-_Character_ , a single character.
+_Character_, a single character.
 
 The following example is the declaration of
 environment entries used by the application component whose code was
@@ -1062,9 +1058,9 @@ if the element is not specified, the named resource is not initialized
 in the naming context; explicit lookups of the named resource will fail.
 
 The deployment descriptor equivalent of the
-_lookup_ element of the _@Resource_ annotation is _lookup-name_ . The
+_lookup_ element of the _@Resource_ annotation is _lookup-name_. The
 following deployment descriptor fragment is equivalent to the earlier
-example that used _lookup_ .
+example that used _lookup_.
 
 [source,xml]
 ----
@@ -1169,7 +1165,7 @@ all elements of the _EJB_ annotation.
 private ShoppingCart myCart;
 ----
 
-As an alternative to _beanName_ , a reference
+As an alternative to _beanName_, a reference
 to an enterprise bean can use the global JNDI name for that enterprise bean,
 or any of the other names mandated by the Jakarta Enterprise Beans
 specifications, by means of the _lookup_ annotation element. The following
@@ -1201,8 +1197,8 @@ private ShoppingCartHome myCartHome;
 
 If the _ShoppingCart_ bean were instead
 written to the no-interface client view and implemented by bean class
-_ShoppingCartBean.class_ , the Jakarta Enterprise Bean reference would have
-type _ShoppingCartBean.class_ . For example:
+_ShoppingCartBean.class_, the Jakarta Enterprise Bean reference would have
+type _ShoppingCartBean.class_. For example:
 
 [source,java]
 ----
@@ -1223,8 +1219,8 @@ interface of an enterprise bean as follows.
 
 * Assign an entry in the application component’s
 environment to the reference. (See subsection
-<<a1011, Declaration of Jakarta Enterprise Beans
-References>> for information on how Jakarta Enterprise Beans references are
+<<a1011, Declaration of Jakarta Enterprise Beans References>> 
+for information on how Jakarta Enterprise Beans references are
 declared in the deployment descriptor.)
 * This specification recommends, but does not
 require, that references to enterprise beans be organized in the _ejb_
@@ -1286,16 +1282,16 @@ remote business interface or remote home and component interfaces. The
 _ejb-local-ref_ element is used for referencing an enterprise bean that
 is accessed through its local business interface, no-interface view, or
 local home and component interfaces. The _ejb-ref_ element contains a
-_description_ element and the _ejb-ref-name_ , _ejb-ref-type_ , _home_ ,
+_description_ element and the _ejb-ref-name_, _ejb-ref-type_, _home_,
 and _remote_ elements. The _ejb-local-ref_ element contains a
-_description_ element and the _ejb-ref-name_ , _ejb-ref-type_ ,
-_local-home_ , and _local_ elements
+_description_ element and the _ejb-ref-name_, _ejb-ref-type_,
+_local-home_, and _local_ elements
 
 The _ejb-ref-name_ element specifies the Jakarta Enterprise Bean
 reference name. Its value is the environment entry name used in the
 application component code. The optional _ejb-ref-type_ element
 specifies the expected type of the enterprise bean. Its value must be
-either _Entity_ or _Session_ . The _home_ and _remote_ or _local-home_
+either _Entity_ or _Session_. The _home_ and _remote_ or _local-home_
 and _local_ elements specify the expected Java programming language
 types of the referenced enterprise bean’s interface(s). If the reference
 is to a Jakarta Enterprise Beans 2.x remote client view interface, the _home_
@@ -1388,7 +1384,7 @@ name by “ _#_ ”. The path name is relative to the referencing
 application component JAR file. In this manner, multiple beans with the
 same _ejb-name_ may be uniquely identified when the Application
 Assembler cannot change _ejb-name_s.
-* Alternatively to the use of _ejb-link_ , the
+* Alternatively to the use of _ejb-link_, the
 Application Assembler may use the _lookup-name_ element to reference the
 target enterprise bean component by means of one of its JNDI names. It is an
 error for both _ejb-link_ and _lookup-name_ to appear inside an _ejb-ref_
@@ -1403,7 +1399,7 @@ declared in the Jakarta Enterprise Bean reference.
 
 The following example illustrates the use of the
 _ejb-link_ element in the deployment descriptor. The enterprise bean
-reference should be satisfied by the bean named _EmployeeRecord_ . The
+reference should be satisfied by the bean named _EmployeeRecord_. The
 _EmployeeRecord_ enterprise bean may be packaged in the same module as
 the component making this reference, or it may be packaged in another
 module within the same Jakarta EE application as the component making this
@@ -1516,7 +1512,7 @@ the _lookup-name_ element to bind an _ejb-ref_ to a target enterprise
 bean in the operational environment. The reference was originally
 declared in the bean’s code using an annotation. The target enterprise
 bean has _ejb-name_ _ShoppingCart_ and is deployed in the stand-alone
-module _products.jar_ .
+module _products.jar_.
 
 [source,xml]
 ----
@@ -1552,7 +1548,7 @@ by binding it to a specified compatible target enterprise bean.
 A web service reference is similar to an
 Jakarta Enterprise Bean reference, but is used to reference a web service.
 Web service references are fully specified in the Web Service
-specification and the JAX-WS specification.
+specification and the Jakarta Web Service specification.
 
 [[a1120]]
 === Resource Manager Connection Factory References
@@ -1651,9 +1647,8 @@ using lookup from multiple components may simplify the task of deploying
 the application, since now the Deployer will have to perform a single
 binding operation for the application-level resource, instead of
 multiple ones. The task can be further simplified by using a data source
-resource definition, see
-<<a1688, DataSource Resource
-Definition>>”. Of course, nothing prevents the Deployer from separately
+resource definition, see <<a1688, DataSource Resource Definition>>.
+Of course, nothing prevents the Deployer from separately
 binding each data source reference if necessary.
 
 ===== Programming Interfaces for Resource Manager Connection Factory References
@@ -1664,8 +1659,9 @@ resources as follows.
 
 * Assign an entry in the application component’s
 naming environment to the resource manager connection factory reference.
-(See subsection <<a1183, Declaration of Resource Manager Connection Factory References in
-Deployment Descriptor>> for information on how resource manager
+(See subsection 
+<<a1183, Declaration of Resource Manager Connection Factory References in Deployment Descriptor>> 
+for information on how resource manager
 connection factory references are declared in the deployment
 descriptor.)
 * This specification recommends, but does not
@@ -1679,7 +1675,7 @@ _java:comp/env/mail_ subcontext, and all URL connection factories in the
 _java:comp/env/url_ subcontext. Note that resource manager connection
 factory references declared via annotations will not, by default, appear
 in any subcontext.
-* Lookup the resource manager connection factory
+* Look up the resource manager connection factory
 object in the application component’s environment using the JNDI
 interface.
 * Invoke the appropriate method on the resource
@@ -1696,7 +1692,7 @@ use the same resource in the same transaction context. The Application
 Component Provider can specify that connections obtained from a resource
 manager connection factory reference are not shareable by specifying the
 value of the _shareable_ annotation element to _false_ or the
-_res-sharing-scope_ deployment descriptor element to be _Unshareable_ .
+_res-sharing-scope_ deployment descriptor element to be _Unshareable_.
 The sharing of connections to a resource manager allows the container to
 optimize the use of connections and enables the container’s use of local
 transaction optimizations.
@@ -1767,8 +1763,8 @@ manager connection factory reference into an application component.
 Each _resource-ref_ element describes a single
 resource manager connection factory reference. The _resource-ref_
 element consists of the _description_ element, the mandatory
-_res-ref-name_ element, and the optional _res-sharing-scope_ ,
-_res-type_ , and _res-auth_ elements. The _res-ref-name_ element
+_res-ref-name_ element, and the optional _res-sharing-scope_,
+_res-type_, and _res-auth_ elements. The _res-ref-name_ element
 contains the name of the environment entry used in the application
 component’s code. The name of the environment entry is relative to the
 _java:comp/env_ context (for example, the name should be
@@ -1783,12 +1779,12 @@ programmatically, or whether the container signs on to the resource
 based on the principal mapping information supplied by the Deployer. The
 Application Component Provider indicates the sign on responsibility by
 setting the value of the _res-auth_ element to _Application_ or
-_Container_ . If not specified, the default is _Container_ . The
+_Container_. If not specified, the default is _Container_. The
 _res-sharing-scope_ element indicates whether connections to the
 resource manager obtained through the given resource manager connection
 factory reference can be shared or whether connections are unshareable.
 The value of the _res-sharing-scope_ element is _Shareable_ or
-_Unshareable_ . If the _res-sharing-scope_ element is not specified,
+_Unshareable_. If the _res-sharing-scope_ element is not specified,
 connections are assumed to be shareable.
 
 A resource manager connection factory reference
@@ -1848,7 +1844,7 @@ _javax.sql.DataSource_ resource manager connection factory type for
 obtaining JDBC API connections.
 
 The Application Component Provider must use the
-_jakarta.jms.ConnectionFactory_ , the _jakarta.jms.QueueConnectionFactory_ ,
+_jakarta.jms.ConnectionFactory_, the _jakarta.jms.QueueConnectionFactory_,
 or the _jakarta.jms.TopicConnectionFactory_ for obtaining Jakarta Messaging connections.
 
 The Application Component Provider must use the
@@ -1900,7 +1896,7 @@ resource. The configuration mechanism is resource manager specific, and
 is beyond the scope of this specification.
 * If the value of the _Resource_ annotation
 _authenticationType_ element is _AuthenticationType.CONTAINER_ or the
-deployment descriptor’s _res-auth_ element is _Container_ , the Deployer
+deployment descriptor’s _res-auth_ element is _Container_, the Deployer
 is responsible for configuring the sign on information for the resource
 manager. This is performed in a manner specific to the container and
 resource manager; it is beyond the scope of this specification.
@@ -1925,13 +1921,13 @@ specification.
 * If the Application Component Provider sets the
 _authenticationType_ element of the _Resource_ annotation to
 _AuthenticationType.APPLICATION_ or the _res-auth_ of a resource
-reference to _Application_ , the container must allow the application
+reference to _Application_, the container must allow the application
 component to perform explicit programmatic sign on using the resource
 manager’s API.
 * If the Application Component Provider sets
 the _shareable_ element of the _Resource_ annotation to _false_ or sets
 the _res-sharing-scope_ of a resource manager connection factory
-reference to _Unshareable_ , the container must not attempt to share the
+reference to _Unshareable_, the container must not attempt to share the
 connections obtained from the resource manager connection factory
 reference.footnote:[Connections obtained from the same resource manager connection
 factory through a different resource manager connection factory reference may be shareable.]
@@ -1939,7 +1935,7 @@ factory through a different resource manager connection factory reference may be
 the Deployer to set up resource sign on information for the resource
 manager references whose _authenticationType_ is set to
 _AuthenticationType.CONTAINER_ or whose _res-auth_ element is set to
-_Container_ . The minimum requirement is that the Deployer must be able
+_Container_. The minimum requirement is that the Deployer must be able
 to specify the username/password information for each resource manager
 connection factory reference declared by the application component, and
 the container must be able to use the username/password combination for
@@ -2015,8 +2011,7 @@ associated with resources as follows.
 
 * Assign an entry in the application component’s
 environment to the reference. (See subsection
-<<a1253, Declaration of Resource
-Environment References in Deployment Descriptor>> for information on how
+<<a1253, Declaration of Resource Environment References in Deployment Descriptor>> for information on how
 resource environment references are declared in the deployment
 descriptor.)
 * This specification recommends, but does not
@@ -2175,10 +2170,8 @@ follows.
 
 * Assign an entry in the application
 component’s environment to the reference. (See subsection
-<<a1295, Declaration of Message
-Destination References in Deployment Descriptor>> for information on how
-message destination references are declared in the deployment
-descriptor.)
+<<a1295, Declaration of Message Destination References in Deployment Descriptor>> for information on how
+message destination references are declared in the deployment descriptor.)
 * This specification recommends, but does not
 require, that all message destination references be organized in the
 appropriate subcontext of the component’s environment for the resource
@@ -2226,7 +2219,7 @@ message destination reference into an application component.
 Each _message-destination-ref_ element
 describes the requirements that the referencing application component
 has for the referenced destination. The _message-destination-ref_
-element contains optional _description_ , _message-destination-type_ ,
+element contains optional _description_, _message-destination-type_,
 and _message-destination-usage_ elements and the mandatory
 _message-destination-ref-name_ element.
 
@@ -2238,7 +2231,7 @@ the _java:comp/env_ context (for example, the name should be
 _jms/StockQueue_ rather than _java:comp/env/jms/StockQueue_ ). The
 _message-destination-type_ element specifies the expected type of the
 referenced destination. For example, in the case of a Jakarta Messaging Destination,
-its value might be _jakarta.jms.Queue_ . The _message-destination-type_
+its value might be _jakarta.jms.Queue_. The _message-destination-type_
 element is optional if an injection target is specified for this message
 destination reference; in this case the _message-destination-type_
 defaults to the type of the injection target. The
@@ -2298,7 +2291,7 @@ between message consumers and producers as follows:
 * The Application Assembler uses the
 _message-destination_ element to specify a logical message destination
 within the application. The _message-destination_ element defines a
-_message-destination-name_ , which is used for the purpose of linking.
+_message-destination-name_, which is used for the purpose of linking.
 * The Application Assembler uses the
 _message-destination-link_ element of the _message-destination-ref_
 element of an application component that produces messages to link it to
@@ -2449,8 +2442,7 @@ _UserTransaction_ object.
 
 Only some application component types are
 required to be able to access a _UserTransaction_ object; see
-_<<a2159, Jakarta EE
-Technologies>>_ in this specification and the Jakarta Enterprise Beans specification for
+<<a2159, Jakarta EE Technologies>> in this specification and the Jakarta Enterprise Beans specification for
 details.
 
 ==== Jakarta EE Product Provider’s Responsibilities
@@ -2498,8 +2490,7 @@ _TransactionSynchronizationRegistry_ object.
 
 Only some application component types are
 required to be able to access a _TransactionSynchronizationRegistry_
-object; see _<<a2159, Jakarta
-EE Technologies>>_ in this specification for details.
+object; see <<a2159, Jakarta EE Technologies>> in this specification for details.
 
 ==== Jakarta EE Product Provider’s Responsibilities
 
@@ -2508,81 +2499,11 @@ providing an appropriate _TransactionSynchronizationRegistry_ object as
 required by this specification.
 
 [[a1385]]
-=== ORB References
+=== ORB References (Removed)
 
-Some Jakarta EE applications will need to make use
-of the CORBA ORB to perform certain operations. Such applications can
-find an appropriate object implementing the _ORB_ interface by looking
-up the JNDI name _java:comp/ORB_ or by requesting injection of an _ORB_
-object. The container is required to provide the _java:comp/ORB_ name
-for all components except applets. Any such reference to a _ORB_ object
-is only valid within the component instance that performed the lookup.
-
-The following example illustrates how an
-application component acquires and uses an _ORB_ object via injection.
-
-[source,java]
-----
-@Resource ORB orb;
-
-public void method(...) {
-  ...
-  // Get the POA to use when creating object references.
-  POA rootPOA = (POA)orb.resolve_initial_references("RootPOA");
-  ...
-}
-----
-
-The following example illustrates how an
-application component acquires and uses an _ORB_ object using a JNDI
-lookup.
-
-[source,java]
-----
-public void method(...) {
-  ...
-  // Obtain the default initial JNDI context.
-  Context initCtx = new InitialContext();
-
-  // Look up the ORB object.
-  ORB orb = (ORB)initCtx.lookup("java:comp/ORB");
-
-  // Get the POA to use when creating object references.
-  POA rootPOA = (POA)orb.resolve_initial_references("RootPOA");
-  ...
-}
-----
-
-An _ORB_ object reference may also be declared
-in a deployment descriptor in the same way as a resource manager
-connection factory reference. Such a deployment descriptor entry may be
-used to specify injection of an _ORB_ object.
-
-The _ORB_ instance available under the JNDI
-name _java:comp/ORB_ may always be a shared instance. By default, the
-_ORB_ instance injected into a component or declared via a deployment
-descriptor entry may also be a shared instance. However, the application
-may set the _shareable_ element of the _Resource_ annotation to _false_
-, or may set the _res-sharing-scope_ element in the deployment
-descriptor to _Unshareable_ , to request a non-shared _ORB_ instance.
-
-The requirements in this section only apply to
-Jakarta EE products that include support for interoperability using CORBA.
-
-==== Application Component Provider’s Responsibilities
-
-The Application Component Provider is
-responsible for requesting injection of the _ORB_ object using the
-Resource annotation, or using the defined name to look up the _ORB_
-object. If the _shareable_ element of the _Resource_ annotation is set
-to _false_ , the ORB object injected will not be the shared instance
-used by other components in the application but instead will be a
-private ORB instance used only by this component.
-
-==== Jakarta EE Product Provider’s Responsibilities
-
-The Jakarta EE Product Provider is responsible for
-providing an appropriate _ORB_ object as required by this specification.
+**Note:** The CORBA ORB was removed from Jakarta EE 9 (see <<a2333, "Removed Jakarta Technologies")
+as part of removing the Distribution Interoperability capability of Jakarta Enterprise Beans.
+Jakarta EE 9 applications should not be referencing an _ORB_ instance.
 
 [[a1416]]
 === Persistence Unit References
@@ -2590,7 +2511,7 @@ providing an appropriate _ORB_ object as required by this specification.
 This section describes the metadata annotations
 and deployment descriptor elements that allow the application component
 code to refer to the entity manager factory for a persistence unit using
-a logical name called a _persistence unit reference_ . Persistence unit
+a logical name called a _persistence unit reference_. Persistence unit
 references are special entries in the application component’s
 environment. The Deployer binds the persistence unit references to
 entity manager factories that are configured in accordance with the
@@ -2642,8 +2563,7 @@ references to entity manager factories as follows.
 
 * Assign an entry in the application
 component’s environment to the persistence unit reference. (See
-subsection <<a1454, Declaration
-of Persistence Unit References in Deployment Descriptor>> for information
+subsection <<a1454, Declaration of Persistence Unit References in Deployment Descriptor>> for information
 on how persistence unit references are declared in the deployment
 descriptor.) It is recommended that the Application Component Provider
 organize all persistence unit references in the
@@ -2685,8 +2605,7 @@ public class InventoryManagerBean implements InventoryManager {
 
 Although a persistence unit reference is an
 entry in the application component’s environment, the Application
-Component Provider must not use an _env-entry_
- element to declare it.
+Component Provider must not use an _env-entry_ element to declare it.
 
 Instead, if metadata annotations are not used,
 the Application Component Provider must declare all the persistence unit
@@ -2696,8 +2615,7 @@ all the persistence unit references used by an application component.
 Deployment descriptor entries may also be used to specify injection of a
 persistence unit reference into an application component.
 
-Each
-_persistence-unit-ref_ element describes a single entity manager factory
+Each _persistence-unit-ref_ element describes a single entity manager factory
 reference for the persistence unit. The _persistence-unit-ref_ element
 consists of the optional _description_ and _persistence-unit-name_
 elements, and the mandatory _persistence-unit-ref-name_ element.
@@ -2738,14 +2656,14 @@ bean illustrated in the previous subsection.
 
 The Application Assembler can use the
 _persistence-unit-name_ element in the deployment descriptor to
-disambiguate a reference to a persistence unit.The Application Assembler
+disambiguate a reference to a persistence unit. The Application Assembler
 (or Application Component Provider) may use the following syntax in the
 _persistence-unit-name_ element of the referencing application component
 to avoid the need to rename persistence units to have unique names
 within a Jakarta EE application. The Application Assembler specifies the
 path name of the root of the _persistence.xml_ file for the referenced
 persistence unit and appends the name of the persistence unit separated
-from the path name by _#_ . The path name is relative to the referencing
+from the path name by _#_. The path name is relative to the referencing
 application component jar file. In this manner, multiple persistence
 units with the same persistence unit name may be uniquely identified
 when the Application Assembler cannot change persistence unit names.
@@ -2829,8 +2747,7 @@ Java Persistence specification.
 
 ==== System Administrator’s Responsibility
 
-The System
-Administrator is typically responsible for the following:
+The System Administrator is typically responsible for the following:
 
 * Add, remove, and configure entity manager
 factories in the server environment.
@@ -2845,15 +2762,15 @@ This section describes the metadata annotations
 and deployment descriptor elements that allow the application component
 code to refer to a container-managed entity manager of a specified
 persistence context type using a logical name called a _persistence
-context reference_ . Persistence context references are special entries
+context reference_. Persistence context references are special entries
 in the application component’s environment. The Deployer binds the
 persistence context references to container-managed entity managers for
 persistence contexts of the specified type and configured in accordance
-with their persistence unit, as described in the Java Persistence
+with their persistence unit, as described in the Jakarta Persistence
 specification.
 
 The requirements in this section only apply to
-Jakarta EE products that include support for the Java Persistence API.
+Jakarta EE products that include support for the Jakarta Persistence API.
 
 ==== Application Component Provider’s Responsibilities
 
@@ -2896,7 +2813,7 @@ references.
 EntityManager em;
 ----
 
-Programming Interfaces for Persistence Context References
+===== Programming Interfaces for Persistence Context References
 
 The Application
 Component Provider may use a persistence context reference to obtain a
@@ -2905,8 +2822,7 @@ persistence unit as follows:
 
 * Assign an entry in the application
 component’s environment to the persistence context reference. (See
-subsection <<a1545, Declaration
-of Persistence Context References in Deployment Descriptor>> for
+subsection <<a1545, Declaration of Persistence Context References in Deployment Descriptor>> for
 information on how persistence context references are declared in the
 deployment descriptor.) It is recommended that the Application Component
 Provider organize all persistence context references in the
@@ -2944,8 +2860,7 @@ public class InventoryManagerBean implements InventoryManager {
 
 Although a persistence context reference is an
 entry in the application component’s environment, the Application
-Component Provider must not use an _env-entry_
- element to declare it.
+Component Provider must not use an _env-entry_ element to declare it.
 
 Instead, if metadata annotations are not used,
 the Application Component Provider must declare all the persistence
@@ -2959,8 +2874,8 @@ bean.
 Each
 _persistence-context-ref_ element describes a single container-managed
 entity manager reference. The _persistence-context-ref_ element consists
-of the optional _description_ , _persistence-unit-name_ ,
-_persistence-context-type_ , _persistence-context-synchronization_ , and
+of the optional _description_, _persistence-unit-name_,
+_persistence-context-type_, _persistence-context-synchronization_, and
 _persistence-property_ elements, and the mandatory
 _persistence-context-ref-name_ element.
 
@@ -2974,12 +2889,12 @@ _persistence-unit-name_ element is the name of the persistence unit, as
 specified in the _persistence.xml_ file for the persistence unit. The
 _persistence-context-type_ element specifies whether a
 transaction-scoped or extended persistence context is to be used. Its
-value is either _Transaction_ or _Extended_ . If the persistence context
+value is either _Transaction_ or _Extended_. If the persistence context
 type is not specified, a transaction-scoped persistence context will be
 used. The optional _persistence-context-synchronization_ element
 specifies whether the persistence context is automatically synchronized
 with the current transaction. Its value is either _Synchronized_ or
-_Unsynchronized_ . If the persistence context synchronization is not
+_Unsynchronized_. If the persistence context synchronization is not
 specified, the persistence context will be automatically synchronized.
 The optional _persistence-property_ elements specify configuration
 properties that are passed to the persistence provider when the entity
@@ -3012,8 +2927,8 @@ bean illustrated in the previous subsection.
 The Application Assembler can use the
 _persistence-unit-name_ element in the deployment descriptor to specify
 a reference to a persistence unit using the syntax described in
-<<a1475, Application Assembler’s
-Responsibilities>>.” In this manner, multiple persistence units with the
+<<a1475, Application Assembler’s Responsibilities>>.
+In this manner, multiple persistence units with the
 same persistence unit name may be uniquely identified when the
 persistence unit names cannot be changed.
 
@@ -3053,11 +2968,11 @@ defaulted or provided explicitly).
 _unitName_ element of the annotation. The Application Assembler or
 Deployer should exercise caution in changing this value, if specified,
 as doing so is likely to break the application.
-* The _persistence-context-type_ , if
+* The _persistence-context-type_, if
 specified, overrides the _type_ element of the annotation. In general,
 the Application Assembler or Deployer should never change the value of
 this element, as doing so is likely to break the application.
-* The _persistence-context-synchronization_ ,
+* The _persistence-context-synchronization_,
 if specified, overrides the _synchronization_ element of the annotation.
 In general, the Application Assembler or Deployer should never change
 the value of this element, as doing so is likely to break the
@@ -3099,11 +3014,9 @@ the Java Persistence specification.
 
 ==== Jakarta EE Product Provider’s Responsibility
 
-The Jakarta EE Product
-Provider is responsible for the following:
+The Jakarta EE Product Provider is responsible for the following:
 
-* Provide the
-deployment tools that allow the Deployer to
+* Provide the deployment tools that allow the Deployer to
 perform the tasks described in the previous subsection.
 * Provide the implementation of the entity
 manager classes for the persistence units that are configured with the
@@ -3114,8 +3027,7 @@ specification.
 
 ==== System Administrator’s Responsibility
 
-The System
-Administrator is typically responsible for the following:
+The System Administrator is typically responsible for the following:
 
 * Add, remove, and configure entity manager
 factories in the server environment.
@@ -3127,9 +3039,9 @@ by the Deployer.
 === Application Name and Module Name References
 
 A component may access the name of the current
-application using the pre-defined JNDI name _java:app/AppName_ . A
+application using the pre-defined JNDI name _java:app/AppName_. A
 component may access the name of the current module using the
-pre-defined JNDI name _java:module/ModuleName_ . Both of these names are
+pre-defined JNDI name _java:module/ModuleName_. Both of these names are
 represented by _String_ objects.
 
 ==== Application Component Provider’s Responsibilities
@@ -3150,7 +3062,7 @@ objects as required by this specification.
 
 An application may determine whether it is
 executing in a Jakarta EE application client container by using the
-pre-defined JNDI name _java:comp/InAppClientContainer_ . This property
+pre-defined JNDI name _java:comp/InAppClientContainer_. This property
 is represented by a _Boolean_ object. If the application is running in a
 Jakarta EE application client container, the value of this property is
 true. If the application is running in a Jakarta EE web or enterprise bean
@@ -3181,7 +3093,7 @@ types.
 Applications that need to use those interfaces
 can find appropriate objects by looking up the name
 _java:comp/Validator_ for _Validator_ and _java:comp/ValidatorFactory_
-for _ValidatorFactory_ , or by requesting the injection of an object of
+for _ValidatorFactory_, or by requesting the injection of an object of
 the appropriate type via the _Resource_ annotation. The
 _authenticationType_ and _shareable_ elements of the _Resource_
 annotation must not be specified.
@@ -3221,7 +3133,7 @@ reference may also be declared in a deployment descriptor in the same
 way as a resource environment reference.
 
 In order to customize the returned
-_ValidatorFactory_ , a Jakarta Enterprise Beans, web or application client module may
+_ValidatorFactory_, a Jakarta Enterprise Beans, web or application client module may
 specify a Bean Validation XML deployment descriptor, as described in the
 Bean Validation specification.
 
@@ -3246,14 +3158,14 @@ module of the application.
 ==== Jakarta EE Product Provider’s Responsibilities
 
 The Jakarta EE Product Provider must make a
-default _ValidatorFactory_ available at _java:comp/ValidatorFactory_ .
+default _ValidatorFactory_ available at _java:comp/ValidatorFactory_.
 The default _ValidatorFactory_ available at _java:comp/ValidatorFactory_
 must support use of CDI if CDI is enabled for the module. In particular,
 all of the classes specified by the
 _jakarta.validation.BootstrapConfiguration_ interface must be created as
 non-contextual objects using CDI, as described in
-<<a2112, Support for Dependency
-Injection>>”. These objects must be used to configure the default
+<<a2112, Support for Dependency Injection>>.
+These objects must be used to configure the default
 _ValidatorFactory_ available at _java:comp/ValidatorFactory_ in
 accordance with the bootstrapping APIs described by the Bean Validation
 specification.
@@ -3288,8 +3200,8 @@ resource definitions allow an application to be deployed into a Jakarta EE
 environment with more minimal administrative configuration.
 
 Resources may be defined in any of the JNDI
-namespaces described in <<a616, Application Component Environment Namespaces>>”. For example, a resource
-may be defined:
+namespaces described in <<a616, Application Component Environment Namespaces>>.
+For example, a resource may be defined:
 
 in the _java:comp_ namespace, for use by a single component;
 
@@ -3302,16 +3214,16 @@ all applications.
 
 The following annotations (and corresponding
 XML deployment descriptor elements) define resources:
-_DataSourceDefinition_ , _JMSConnectionFactoryDefinition_ ,
-_JMSDestinationDefinition_ , _MailSessionDefinition_ ,
-_ConnectionFactoryDefinition_ , and _AdministeredObjectDefinition_ .
+_DataSourceDefinition_, _JMSConnectionFactoryDefinition_,
+_JMSDestinationDefinition_, _MailSessionDefinition_,
+_ConnectionFactoryDefinition_, and _AdministeredObjectDefinition_.
 
 Once defined, a resource may be referenced by
 a component using the _lookup_ element of the _Resource_ annotation or
 the _lookup-name_ element of the _resource-ref_ deployment descriptor
 element in order to bind the logical reference to the resource as
 referenced in the application code to the resource defined in the
-environment. __
+environment.
 
 The specificity of the resource definition
 elements as provided by the Application Component Provider may vary
@@ -3337,8 +3249,8 @@ been specified for an optional element related to quality of service
 application.
 
 The following default values used in the
-_DataSourceDefinition_ , _JMSConnectionFactoryDefinition_ ,
-_JMSDestinationDefinition_ , _MailSessionDefinition_ , and
+_DataSourceDefinition_, _JMSConnectionFactoryDefinition_,
+_JMSDestinationDefinition_, _MailSessionDefinition_, and
 _ConnectionFactoryDefinition_ annotations indicate that an element value
 is optional and has not been set:
 
@@ -3366,8 +3278,8 @@ values have not been specified.
 
 The following requirements apply to the
 resource definitions described in Sections
-<<a1688, DataSource Resource
-Definition>> through <<a1967, Connector Administered Object Definition>>.
+<<a1688, DataSource Resource Definition>> through 
+<<a1967, Connector Administered Object Definition>>.
 
 When an Application Component Provider or
 Application Assembler specifies connectivity information to a “physical”
@@ -3416,8 +3328,8 @@ use appropriate values).
 ===== Properties
 
 All resource definition annotations and XML
-elements support the use of property elements (elements named “
-_properties_ ” or “ _property_ ”). A Jakarta EE Product Provider is
+elements support the use of property elements (elements named “_properties_” 
+or “_property_”). A Jakarta EE Product Provider is
 permitted to reject a deployment if a property that it recognizes has a
 value that it does not support. A Jakarta EE Product Provider must not
 reject a deployment on the basis of a property that it does not
@@ -3432,8 +3344,7 @@ JDBC driver.
 
 The _DataSource_ resource may be defined in
 any of the JNDI namespaces described in
-<<a616, Application Component
-Environment Namespaces>>”.
+<<a616, Application Component Environment Namespaces>>.
 
 A _DataSource_ resource may be defined in a
 web module, enterprise bean module, application client module, or application
@@ -3513,13 +3424,13 @@ _DataSource_ could be referenced as follows:
 The following _DataSourceDefinition_
 annotation elements (and corresponding XML deployment descriptor
 elements) are considered to specify an address for a _DataSource_
-resource: _serverName_ , _portNumber_ , _databaseName_ , _url_ .
+resource: _serverName_, _portNumber_, _databaseName_, _url_.
 
 The following _DataSourceDefinition_
 annotation elements (and corresponding XML deployment descriptor
 elements) are considered to be quality of service elements:
-_loginTimeout_ , _initialPoolSize_ , _maxPoolSize_ , _minPoolSize_ ,
-_maxIdleTime_ , _maxStatements_ .
+_loginTimeout_, _initialPoolSize_, _maxPoolSize_, _minPoolSize_,
+_maxIdleTime_, _maxStatements_.
 
 ===== Application Component Provider’s Responsibilities
 
@@ -3542,24 +3453,22 @@ precedence order is undefined and implementation specific.
 
 Requirements common to all resource
 definition types are described in
-<<a1676, Requirements Common to
-All Resource Definition Types>>”. The following additional requirements
-apply:
+<<a1676, Requirements Common to All Resource Definition Types>>.
+The following additional requirements apply:
 
-If specified, user name and password should be used as specified.
-
+* If specified, user name and password should be used as specified.
 * The transactional specification and
 isolation level must be used as specified.
 
 ===== Jakarta EE Product Provider’s Responsibilities
 
 Requirements common to all resource definition
-types are described in <<a1676, Requirements Common to All Resource Definition Types>>”. The following
+types are described in <<a1676, Requirements Common to All Resource Definition Types>>. The following
 additional requirements apply:
 
 * If a class name is specified, a resource
 with the specified implementation class (or a subclass) must be
-provided. If the class name is specified as _XADataSource_ , an XA
+provided. If the class name is specified as _XADataSource_, an XA
 datasource must be provided.
 * If an isolation level is specified, the
 Product Provider must satisfy the request or provide a higher level of
@@ -3574,8 +3483,7 @@ _ConnectionFactory_ resource.
 
 The Jakarta Messaging _ConnectionFactory_ resource may be
 defined in any of the JNDI namespaces described in
-<<a616, Application Component
-Environment Namespaces>>”.
+<<a616, Application Component Environment Namespaces>>.
 
 A Jakarta Messaging _ConnectionFactory_ resource may be
 defined in a web module, enterprise bean module, application client module, or
@@ -3651,12 +3559,12 @@ the above Jakarta Messaging _ConnectionFactory_ could be referenced as follows:
 The following
 _JMSConnectionFactoryDefinition_ annotation elements (and corresponding
 XML deployment descriptor elements) are considered to specify an address
-for a Jakarta Messaging _ConnectionFactory_ resource: _resourceAdapter_ .
+for a Jakarta Messaging _ConnectionFactory_ resource: _resourceAdapter_.
 
 The following
 _JMSConnectionFactoryDefinition_ annotation elements (and corresponding
 XML deployment descriptor elements) are considered to be quality of
-service elements: _maxPoolSize_ , _minPoolSize_ .
+service elements: _maxPoolSize_, _minPoolSize_.
 
 ===== Application Component Provider’s Responsibilities
 
@@ -3669,12 +3577,10 @@ _jms-connection-factory_ deployment descriptor element.
 
 Requirements common to all resource
 definition types are described in
-<<a1676, Requirements Common to
-All Resource Definition Types>>”. The following additional requirements
-apply:
+<<a1676, Requirements Common to All Resource Definition Types>>.
+The following additional requirements apply:
 
-A resource of the specified interface type (or of the default interface type, if not specified) must be provided.
-
+* A resource of the specified interface type (or of the default interface type, if not specified) must be provided.
 * If specified, user name and password should
 be used as specified.
 * The transactional specification must be
@@ -3686,8 +3592,7 @@ as specified.
 
 Requirements common to all resource
 definition types are described in
-<<a1676, Requirements Common to
-All Resource Definition Types>>”.
+<<a1676, Requirements Common to All Resource Definition Types>>.
 
 [[a1817]]
 ==== Jakarta Messaging Destination Definition
@@ -3697,8 +3602,7 @@ resource. A Jakarta Messaging _Destination_ resource is a Jakarta Messaging Queu
 
 The Jakarta Messaging _Destination_ resource may be defined
 in any of the JNDI namespaces described in
-<<a616, Application Component
-Environment Namespaces>>”.
+<<a616, Application Component Environment Namespaces>>.
 
 A Jakarta Messaging _Destination_ resource may be defined
 in a web module, enterprise bean module, application client module, or application
@@ -3762,7 +3666,7 @@ referenced as follows:
 The following _JMSDestinationDefinition_
 annotation elements (and corresponding XML deployment descriptor
 elements) are considered to specify an address for a Jakarta Messaging _Destination_
-resource: _resourceAdapter_ , _destinationName_ .
+resource: _resourceAdapter_, _destinationName_.
 
 ===== Application Component Provider’s Responsibilities
 
@@ -3775,9 +3679,8 @@ deployment descriptor element.
 
 Requirements common to all resource
 definition types are described in
-<<a1676, Requirements Common to
-All Resource Definition Types>>”. The following additional requirements
-apply:
+<<a1676, Requirements Common to All Resource Definition Types>>.
+The following additional requirements apply:
 
 A resource of the specified interface type must be provided.
 
@@ -3785,19 +3688,16 @@ A resource of the specified interface type must be provided.
 
 Requirements common to all resource
 definition types are described in
-<<a1676, Requirements Common to
-All Resource Definition Types>>”.
+<<a1676, Requirements Common to All Resource Definition Types>>.
 
 [[a1863]]
 ==== Mail Session Definition
 
-An application may define a Mail _Session_
-resource.
+An application may define a Mail _Session_ resource.
 
 The Mail _Session_ resource may be defined in
 any of the JNDI namespaces described in
-<<a616, Application Component
-Environment Namespaces>>”.
+<<a616, Application Component Environment Namespaces>>.
 
 A Mail _Session_ resource may be defined in a
 web module, enterprise bean module, application client module, or application
@@ -3862,7 +3762,7 @@ _Destination_ could be referenced as follows:
 The following _MailSessionDefinition_
 annotation elements (and corresponding XML deployment descriptor
 elements) are considered to specify an address for a Mail _Session_
-resource: _host_ .
+resource: _host_.
 
 ===== Application Component Provider’s Responsibilities
 
@@ -3880,9 +3780,8 @@ mail server host name.
 
 Requirements common to all resource
 definition types are described in
-<<a1676, Requirements Common to
-All Resource Definition Types>>”. The following additional requirements
-apply:
+<<a1676, Requirements Common to All Resource Definition Types>>.
+The following additional requirements apply:
 
 * If store protocol, store protocol class,
 transport protocol, or transport protocol class has been specified, a
@@ -3896,8 +3795,7 @@ used as specified.
 
 Requirements common to all resource
 definition types are described in
-<<a1676, Requirements Common to
-All Resource Definition Types>>”.
+<<a1676, Requirements Common to All Resource Definition Types>>.
 
 [[a1917]]
 ==== Connector Connection Factory Definition
@@ -3907,8 +3805,7 @@ connection factory resources.
 
 The resource may be defined in any of the
 JNDI namespaces described in
-<<a616, Application Component
-Environment Namespaces>>”.
+<<a616, Application Component Environment Namespaces>>.
 
 A Connector connection factory resource may
 be defined in a web module, enterprise bean module, or application deployment
@@ -3984,19 +3881,16 @@ _connection-factory_ deployment descriptor element.
 
 Requirements common to all resource
 definition types are described in
-<<a1676, Requirements Common to
-All Resource Definition Types>>”. The following additional requirements
-apply:
+<<a1676, Requirements Common to All Resource Definition Types>>.
+The following additional requirements apply:
 
-* A resource of the specified type must be
-provided.
+* A resource of the specified type must be provided.
 
 ===== Jakarta EE Product Provider’s Responsibilities
 
 Requirements common to all resource
 definition types are described in
-<<a1676, Requirements Common to
-All Resource Definition Types>>”.
+<<a1676, Requirements Common to All Resource Definition Types>>.
 
 [[a1967]]
 ==== Connector Administered Object Definition
@@ -4004,8 +3898,7 @@ All Resource Definition Types>>”.
 An application may define a Connector
 administered object resource. The administered object resource may be
 defined in any of the JNDI namespaces described in
-<<a616, Application Component
-Environment Namespaces>>”.
+<<a616, Application Component Environment Namespaces>>.
 
 An administered object resource may be
 defined in a web module, enterprise bean module, or application deployment
@@ -4074,11 +3967,9 @@ _administered-object_ deployment descriptor element.
 
 ===== Deployer’s Responsibilities
 
-Requirements common to all resource
-definition types are described in
-<<a1676, Requirements Common to
-All Resource Definition Types>>”. The following additional requirements
-apply:
+Requirements common to all resource definition types are described in
+<<a1676, Requirements Common to All Resource Definition Types>>.
+The following additional requirements apply:
 
 If a class name is specified, an administered
 object resource of the specified class (or a subclass) must be provided.
@@ -4087,21 +3978,20 @@ object resource of the specified class (or a subclass) must be provided.
 
 Requirements common to all resource
 definition types are described in
-<<a1676, Requirements Common to
-All Resource Definition Types>>.”
+<<a1676, Requirements Common to All Resource Definition Types>>.
 
 [[a2009]]
 === Default Data Source
 
 The Jakarta EE Platform requires that a Jakarta EE
 Product Provider provide a database in the operational environment (see
-<<a82, Database>>”). The Jakarta
+<<a82, Database>>). The Jakarta
 EE Product Provider must also provide a preconfigured, default data
 source for use by the application in accessing this database.
 
 The Jakarta EE Product Provider must make the
 default data source accessible to the application under the JNDI name
-_java:comp/DefaultDataSource_ .
+_java:comp/DefaultDataSource_.
 
 The Application Component Provider or
 Application Assembler may explicitly bind a DataSource resource
@@ -4134,7 +4024,7 @@ The Jakarta EE Product Provider must provide a
 database in the operational environment. The Jakarta EE Product Provider
 must also provide a preconfigured, default data source for use by the
 application in accessing this database under the JNDI name
-_java:comp/DefaultDataSource_ .
+_java:comp/DefaultDataSource_.
 
 If a DataSource resource reference is not
 mapped to a specific data source by the Application Component Provider,
@@ -4147,14 +4037,14 @@ Provider's default database.
 
 The Jakarta EE Platform requires that a Jakarta EE
 Product Provider provide a Jakarta Messaging provider in the operational environment
-(see <<a104, Jakarta™ Message
-Service (Jakarta Messaging)>>”) . The Jakarta EE Product Provider must also provide a
+(see <<a104, Jakarta™ Message Service (Jakarta Messaging)>>).
+The Jakarta EE Product Provider must also provide a
 preconfigured, Jakarta Messaging ConnectionFactory for use by the application in
 accessing this Jakarta Messaging provider.
 
 The Jakarta EE Product Provider must make the
 default Jakarta Messaging connection factory accessible to the application under the
-JNDI name _java:comp/DefaultJMSConnectionFactory_ .
+JNDI name _java:comp/DefaultJMSConnectionFactory_.
 
 The Application Component Provider or
 Application Assembler may explicitly bind a Jakarta Messaging ConnectionFactory
@@ -4188,7 +4078,7 @@ The Jakarta EE Product Provider must provide a
 Jakarta Messaging provider in the operational environment. The Jakarta EE Product
 Provider must also provide a preconfigured, default Jakarta Messaging connection
 factory for use by the application in accessing this provider under the
-JNDI name _java:comp/DefaultJMSConnectionFactory_ .
+JNDI name _java:comp/DefaultJMSConnectionFactory_.
 
 If a Jakarta Messaging ConnectionFactory resource reference
 is not mapped to a specific Jakarta Messaging connection factory by the Application
@@ -4209,7 +4099,7 @@ The Jakarta EE Product Provider must make the
 default Jakarta Concurrency objects accessible to the
 application under the following JNDI names:
 
-* _java:comp/ DefaultManagedExecutorService_ for the preconfigured managed executor service
+* _java:comp/DefaultManagedExecutorService_ for the preconfigured managed executor service
 * _java:comp/DefaultManagedScheduledExecutorService_ for the preconfigured managed scheduled executor service
 * _java:comp/DefaultManagedThreadFactory_ for the preconfigured managed thread factory
 * _java:comp/DefaultContextService_ for the preconfigured context service
@@ -4242,11 +4132,9 @@ ManagedExecutorService myManagedExecutorService;
 
 ==== Jakarta EE Product Provider's Responsibilities
 
-The Jakarta EE Product Provider must provide the
-following:
+The Jakarta EE Product Provider must provide the following:
 
-a preconfigured, default managed executor service for use by the application in accessing this service under the JNDI name _java:comp/DefaultManagedExecutorService_ ;
-
+* a preconfigured, default managed executor service for use by the application in accessing this service under the JNDI name _java:comp/DefaultManagedExecutorService_ ;
 * a preconfigured, default managed scheduled
 executor service for use by the application in accessing this service
 under the JNDI name _java:comp/DefaultManagedScheduledExecutorService_ ;
@@ -4255,7 +4143,7 @@ factory for use by the application in accessing this factory under the
 JNDI name _java:comp/DefaultManagedThreadFactory_ ;
 * a preconfigured, default context service
 for use by the application in accessing this service under the JNDI name
-_java:comp/DefaultContextService_ .
+_java:comp/DefaultContextService_.
 
 If a Jakarta Concurrency object resource
 environment reference is not mapped to a specific configured object by
@@ -4322,7 +4210,7 @@ elements of the _Resource_ annotation.
 The following example shows how to declare
 references to the shopping cart bean of the previous example, this time
 using descriptors. (To make the example somewhat more realistic, one
-should add an _injection-target_ child element to _resource-ref_ .)
+should add an _injection-target_ child element to _resource-ref_.)
 
 [source,xml]
 ----
@@ -4353,10 +4241,10 @@ annotations and deployment descriptor entries that allow an application
 to obtain instances of the CDI _BeanManager_ type.
 
 Typically, only portable extensions using the
-CDI SPI need to access a _BeanManager_ . Application code may
+CDI SPI need to access a _BeanManager_. Application code may
 occasionally require access to that interface; in that case, the
 application should either look up a _BeanManager_ instance in JNDI under
-the name _java:comp/BeanManager_ , or request the injection of an object
+the name _java:comp/BeanManager_, or request the injection of an object
 of type _jakarta.enterprise.inject.spi.BeanManager_ via the _Resource_
 annotation. If the latter, the _authenticationType_ and _shareable_
 elements of the _Resource_ annotation must not be specified.
@@ -4415,8 +4303,7 @@ conditions will be eligible for full dependency injection support as
 described in the CDI specification.
 
 Component classes listed in
-<<a651, Component classes
-supporting injection>> that satisfy the third condition above, but
+<<a651, Component classes supporting injection>> that satisfy the third condition above, but
 neither the first nor the second condition, can also be used as CDI
 managed beans if they are annotated with a CDI bean-defining annotation
 or contained in a bean archive for which CDI is enabled. However, if
@@ -4428,8 +4315,7 @@ Therefore, to make injection support more
 uniform across all Jakarta EE component types, Jakarta EE containers are
 required to support field, method, and constructor injection using the
 _jakarta.inject.Inject_ annotation into all component classes listed in
-<<a651, Component classes
-supporting injection>> as having the “Standard” level of injection
+<<a651, Component classes supporting injection>> as having the “Standard” level of injection
 support, as well as the use of interceptors for these classes. Such
 injection must be performed in the same logical phase as resource
 injection of fields and methods annotated with the _Resource_
@@ -4446,7 +4332,7 @@ container.
 component into which injection is to occur.
 . Create an _InjectionTarget_ instance for
 the annotated type.
-. Create a _CreationalContext_ , passing in
+. Create a _CreationalContext_, passing in
 _null_ to the _BeanManager_ _createCreationalContext_ method.
 . Instantiate the component by calling the
 _InjectionTarget_ _produce_ method.
