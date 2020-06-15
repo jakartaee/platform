@@ -672,7 +672,7 @@ resources.
 
 * The classes and resources accessible to any
 web modules included in the same ear file, as described in
-<<a3046, Web Container Class Loading Requirements>>” above.
+<<a3046, Web Container Class Loading Requirements>> above.
 * The content of any Jakarta Enterprise Beans jar files included
 in the same ear file.
 * The content of any client jar files
