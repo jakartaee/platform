@@ -475,7 +475,7 @@ different permissions than those described in
 <<a2366, Jakarta EE Security Permissions Set>>.
 
 As defined in
-<<a2496, Declaring Permissions Required by Application Components>>,” a component provider may declare
+<<a2496, Declaring Permissions Required by Application Components>>, a component provider may declare
 the permissions required by the application classes and libraries
 packaged in a module. When a component provider has declared the
 permissions required by a module, on successful deployment of the
@@ -518,7 +518,7 @@ of the installation environment, application component providers should
 declare all Java security permissions required by their application
 components.
 
-<<a2496, Declaring Permissions Required by Application Components>>,” defines the
+<<a2496, Declaring Permissions Required by Application Components>>, defines the
 mechanism(s) by which required permissions may be declared.
 
 Note that, while FilePermissions or
@@ -929,7 +929,7 @@ load JDBC drivers directly. Instead, they should use the technique
 recommended in the JDBC specification and perform a JNDI lookup to
 locate a _DataSource_ object. The JNDI name of the _DataSource_ object
 should be chosen as described in
-<<a1120, Resource Manager Connection Factory References>>.” The Jakarta EE platform must be able to
+<<a1120, Resource Manager Connection Factory References>>. The Jakarta EE platform must be able to
 supply a _DataSource_ that does not require the application to supply
 any authentication information when obtaining a database connection. Of
 course, applications may also supply a user name and password when
