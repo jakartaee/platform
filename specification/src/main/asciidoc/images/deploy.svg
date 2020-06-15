@@ -1,0 +1,329 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   sodipodi:docname="deploy2.svg"
+   inkscape:version="1.0 (4035a4f, 2020-05-01)"
+   id="svg14707"
+   version="1.1"
+   viewBox="0 0 211.66666 112.44792"
+   height="425"
+   width="800">
+  <defs
+     id="defs14701">
+    <marker
+       inkscape:isstock="true"
+       style="overflow:visible;"
+       id="Arrow1Mend"
+       refX="0.0"
+       refY="0.0"
+       orient="auto"
+       inkscape:stockid="Arrow1Mend">
+      <path
+         transform="scale(0.4) rotate(180) translate(10,0)"
+         style="fill-rule:evenodd;stroke:#b3b3b3;stroke-width:1pt;stroke-opacity:1;fill:#b3b3b3;fill-opacity:1"
+         d="M 0.0,0.0 L 5.0,-5.0 L -12.5,0.0 L 5.0,5.0 L 0.0,0.0 z "
+         id="path9007" />
+    </marker>
+    <marker
+       inkscape:isstock="true"
+       style="overflow:visible;"
+       id="Arrow1Lend"
+       refX="0.0"
+       refY="0.0"
+       orient="auto"
+       inkscape:stockid="Arrow1Lend">
+      <path
+         transform="scale(0.8) rotate(180) translate(12.5,0)"
+         style="fill-rule:evenodd;stroke:#999999;stroke-width:1pt;stroke-opacity:1;fill:#999999;fill-opacity:1"
+         d="M 0.0,0.0 L 5.0,-5.0 L -12.5,0.0 L 5.0,5.0 L 0.0,0.0 z "
+         id="path9001" />
+    </marker>
+  </defs>
+  <sodipodi:namedview
+     inkscape:window-maximized="0"
+     inkscape:window-y="54"
+     inkscape:window-x="6"
+     inkscape:window-height="1035"
+     inkscape:window-width="1920"
+     units="px"
+     showgrid="false"
+     inkscape:document-rotation="0"
+     inkscape:current-layer="layer1"
+     inkscape:document-units="mm"
+     inkscape:cy="202.59393"
+     inkscape:cx="376.85079"
+     inkscape:zoom="1.2552005"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="0.0"
+     borderopacity="1.0"
+     bordercolor="#666666"
+     pagecolor="#ffffff"
+     id="base" />
+  <metadata
+     id="metadata14704">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 3"
+     id="layer5"
+     inkscape:groupmode="layer">
+    <rect
+       style="fill:#cccccc;fill-rule:evenodd;stroke:#cccccc;stroke-width:0.478399;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0"
+       id="rect14862-2"
+       width="41.521603"
+       height="31.505793"
+       x="84.239197"
+       y="7.2392001" />
+    <path
+       style="stroke-width:0.264583;stroke:#000000"
+       fill="#d9d9d9"
+       d="m 96.1537,65.914436 v 0 c 0,-3.859167 3.12848,-6.987638 6.98764,-6.987638 h 94.14972 c 1.85325,0 3.63058,0.736195 4.94101,2.046629 1.31043,1.310436 2.04663,3.087772 2.04663,4.941009 v 27.949722 c 0,3.859165 -3.12848,6.987642 -6.98764,6.987642 h -94.14972 v 0 c -3.85916,0 -6.98764,-3.128477 -6.98764,-6.987642 z"
+       fill-rule="evenodd"
+       id="path14790" />
+  </g>
+  <g
+     inkscape:label="Layer 2"
+     id="layer4"
+     inkscape:groupmode="layer">
+    <rect
+       y="5.2392001"
+       x="82.239197"
+       height="31.505793"
+       width="41.521599"
+       id="rect14862"
+       style="fill:#ffffff;fill-rule:evenodd;stroke:#000000;stroke-width:0.4784;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0" />
+    <rect
+       y="7.2391996"
+       x="164.2392"
+       height="31.505793"
+       width="41.521603"
+       id="rect14862-2-3"
+       style="fill:#cccccc;fill-rule:evenodd;stroke:#cccccc;stroke-width:0.478399;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0" />
+    <rect
+       style="fill:#ffffff;fill-rule:evenodd;stroke:#000000;stroke-width:0.478399;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0"
+       id="rect14862-21"
+       width="41.521603"
+       height="31.505793"
+       x="162.2392"
+       y="5.2391996" />
+    <text
+       xml:space="preserve"
+       style="font-size:4.9389px;line-height:1.25;font-family:Arial;-inkscape-font-specification:Arial;text-align:center;text-anchor:middle;stroke-width:0.264583"
+       x="183.43971"
+       y="13.363323"
+       id="text14854-0"><tspan
+         sodipodi:role="line"
+         id="tspan14852-0"
+         x="183.43971"
+         y="13.363323"
+         style="font-size:4.9389px;text-align:center;text-anchor:middle;stroke-width:0.264583">Assembled and</tspan><tspan
+         sodipodi:role="line"
+         x="183.43971"
+         y="19.536949"
+         style="font-size:4.9389px;text-align:center;text-anchor:middle;stroke-width:0.264583"
+         id="tspan14856-3">Augmented by</tspan><tspan
+         sodipodi:role="line"
+         x="183.43971"
+         y="25.710573"
+         style="font-size:4.9389px;text-align:center;text-anchor:middle;stroke-width:0.264583"
+         id="tspan14858-9">Application</tspan><tspan
+         sodipodi:role="line"
+         x="183.43971"
+         y="31.884197"
+         style="font-size:4.9389px;text-align:center;text-anchor:middle;stroke-width:0.264583"
+         id="tspan14860-6">Assembler</tspan></text>
+  </g>
+  <g
+     id="layer1"
+     inkscape:groupmode="layer"
+     inkscape:label="Layer 1">
+    <path
+       style="fill:#ffffff"
+       stroke="#000000"
+       stroke-width="0.50193"
+       stroke-linejoin="round"
+       stroke-linecap="butt"
+       d="M 48.424798,10.698873 H 72.978877 V 9.2509532 l 7.355503,2.8958298 -7.355503,2.89584 v -1.44792 H 48.424798 Z"
+       fill-rule="evenodd"
+       id="path14762" />
+    <path
+       style="fill:#ffffff"
+       stroke="#000000"
+       stroke-width="0.529167"
+       stroke-linejoin="round"
+       stroke-linecap="butt"
+       d="m 184.7689,40.07929 v 27.291213 h 1.44792 l -2.89583,8.175453 -2.89583,-8.175453 h 1.4479 V 40.07929 Z"
+       fill-rule="evenodd"
+       id="path14796" />
+    <text
+       id="text14854"
+       y="13.363323"
+       x="103.43969"
+       style="font-size:4.93889px;line-height:1.25;font-family:Arial;-inkscape-font-specification:Arial;text-align:center;text-anchor:middle;stroke-width:0.264583"
+       xml:space="preserve"><tspan
+         style="font-size:4.93889px;text-align:center;text-anchor:middle;stroke-width:0.264583"
+         y="13.363323"
+         x="103.43969"
+         id="tspan14852"
+         sodipodi:role="line">Assembled and</tspan><tspan
+         id="tspan14856"
+         style="font-size:4.93889px;text-align:center;text-anchor:middle;stroke-width:0.264583"
+         y="19.536936"
+         x="103.43969"
+         sodipodi:role="line">Augmented by</tspan><tspan
+         id="tspan14858"
+         style="font-size:4.93889px;text-align:center;text-anchor:middle;stroke-width:0.264583"
+         y="25.710548"
+         x="103.43969"
+         sodipodi:role="line">Application</tspan><tspan
+         id="tspan14860"
+         style="font-size:4.93889px;text-align:center;text-anchor:middle;stroke-width:0.264583"
+         y="31.884161"
+         x="103.43969"
+         sodipodi:role="line">Assembler</tspan></text>
+    <rect
+       y="7.2392015"
+       x="4.2391953"
+       height="31.505793"
+       width="41.521603"
+       id="rect14862-2-2"
+       style="fill:#cccccc;fill-rule:evenodd;stroke:#cccccc;stroke-width:0.478399;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0" />
+    <rect
+       style="fill:#ffffff;fill-rule:evenodd;stroke:#000000;stroke-width:0.478399;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0"
+       id="rect14862-0"
+       width="41.521603"
+       height="31.505793"
+       x="2.2391994"
+       y="5.2391996" />
+    <text
+       xml:space="preserve"
+       style="font-size:4.9389px;line-height:1.25;font-family:Arial;-inkscape-font-specification:Arial;text-align:center;text-anchor:middle;stroke-width:0.264583"
+       x="22.91049"
+       y="13.363323"
+       id="text14854-7"><tspan
+         sodipodi:role="line"
+         x="22.91049"
+         y="13.363323"
+         style="font-size:4.9389px;text-align:center;text-anchor:middle;stroke-width:0.264583"
+         id="tspan14860-4">Created by</tspan><tspan
+         id="tspan15486"
+         sodipodi:role="line"
+         x="22.91049"
+         y="19.536949"
+         style="font-size:4.9389px;text-align:center;text-anchor:middle;stroke-width:0.264583">Component</tspan><tspan
+         id="tspan15488"
+         sodipodi:role="line"
+         x="22.91049"
+         y="25.710573"
+         style="font-size:4.9389px;text-align:center;text-anchor:middle;stroke-width:0.264583">Developer</tspan></text>
+    <text
+       id="text15492"
+       y="19.535358"
+       x="62.444859"
+       style="font-size:4.93889px;line-height:1.25;font-family:Arial;-inkscape-font-specification:Arial;text-align:center;text-anchor:middle;stroke-width:0.264583"
+       xml:space="preserve"><tspan
+         style="font-size:4.93889px;text-align:center;text-anchor:middle;stroke-width:0.264583"
+         y="19.535358"
+         x="62.444859"
+         id="tspan15490"
+         sodipodi:role="line">Jakarta EE</tspan><tspan
+         id="tspan15494"
+         style="font-size:4.93889px;text-align:center;text-anchor:middle;stroke-width:0.264583"
+         y="25.708969"
+         x="62.444859"
+         sodipodi:role="line">JAR</tspan></text>
+    <path
+       id="path14762-3"
+       fill-rule="evenodd"
+       d="m 128.25096,10.698873 h 24.55408 V 9.2509532 l 7.35551,2.8958298 -7.35551,2.89584 v -1.44792 h -24.55408 z"
+       stroke-linecap="butt"
+       stroke-linejoin="round"
+       stroke-width="0.50193"
+       stroke="#000000"
+       style="fill:#ffffff" />
+    <text
+       xml:space="preserve"
+       style="font-size:4.9389px;line-height:1.25;font-family:Arial;-inkscape-font-specification:Arial;text-align:center;text-anchor:middle;stroke-width:0.264583"
+       x="141.92555"
+       y="19.535364"
+       id="text15492-2"><tspan
+         sodipodi:role="line"
+         id="tspan15490-3"
+         x="141.92555"
+         y="19.535364"
+         style="font-size:4.9389px;text-align:center;text-anchor:middle;stroke-width:0.264583">Jakarta EE</tspan><tspan
+         sodipodi:role="line"
+         x="141.92555"
+         y="25.708988"
+         style="font-size:4.9389px;text-align:center;text-anchor:middle;stroke-width:0.264583"
+         id="tspan15494-8">APP</tspan></text>
+    <path
+       style="fill:none;stroke:#b3b3b3;marker-end:url(#Arrow1Mend)"
+       stroke="#999999"
+       stroke-width="1.05833"
+       stroke-linejoin="round"
+       stroke-linecap="butt"
+       d="m 126.00028,28.984696 h 6.12581 V 49.332593 H 104.85862 V 40.86803"
+       fill-rule="evenodd"
+       id="path14770" />
+    <rect
+       y="78.413773"
+       x="150.92543"
+       height="17.706333"
+       width="41.103992"
+       id="rect15942"
+       style="fill:#ffffff;fill-rule:evenodd;stroke:#000000;stroke-width:0.499999;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0" />
+    <text
+       id="text15946"
+       y="85.172195"
+       x="171.25287"
+       style="font-size:4.93889px;line-height:1.25;font-family:Arial;-inkscape-font-specification:Arial;text-align:center;text-anchor:middle;stroke-width:0.264583"
+       xml:space="preserve"><tspan
+         style="font-size:4.93889px;text-align:center;text-anchor:middle;stroke-width:0.264583"
+         y="85.172195"
+         x="171.25287"
+         id="tspan15944"
+         sodipodi:role="line">Enterprise</tspan><tspan
+         id="tspan15948"
+         style="font-size:4.93889px;text-align:center;text-anchor:middle;stroke-width:0.264583"
+         y="91.34581"
+         x="171.25287"
+         sodipodi:role="line">Components</tspan></text>
+    <text
+       id="text15952"
+       y="48.382816"
+       x="186.22614"
+       style="font-size:4.93889px;line-height:1.25;font-family:Arial;-inkscape-font-specification:Arial;stroke-width:0.264583"
+       xml:space="preserve"><tspan
+         style="font-size:4.93889px;stroke-width:0.264583"
+         y="48.382816"
+         x="186.22614"
+         id="tspan15950"
+         sodipodi:role="line">deploy</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:4.9389px;line-height:1.25;font-family:Arial;-inkscape-font-specification:Arial;stroke-width:0.264583"
+       x="102.265"
+       y="66.803581"
+       id="text15952-3"><tspan
+         sodipodi:role="line"
+         id="tspan15950-0"
+         x="102.265"
+         y="66.803581"
+         style="font-size:4.9389px;stroke-width:0.264583">Jakarta EE</tspan></text>
+  </g>
+</svg>
