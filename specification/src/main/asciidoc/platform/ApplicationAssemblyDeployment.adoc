@@ -24,14 +24,13 @@ module type not supported by a product based on a particular Jakarta EE
 profile should be understood to not apply to such a product.
 
 
-_<<a2899, Jakarta EE Deployment>>_
+<<a2899, Jakarta EE Deployment>>
 shows the composition model for Jakarta EE deployment units and includes
 the optional use of alternate deployment descriptors by the application
 package to preserve any digital signatures of the original Jakarta EE
 modules. An alternate deployment descriptor may also be provided
 external to the application package as described in
-<<a3125, Assembling a Jakarta EE
-Application>>.”
+<<a3125, Assembling a Jakarta EE Application>>.
 
 [[a2899]]
 .Jakarta EE Deployment
@@ -47,8 +46,8 @@ as stand-alone units or can be assembled with a Jakarta EE application
 deployment descriptor and deployed as a Jakarta EE application.
 
 
-_<<a2903, Jakarta EE Application
-Life Cycle>>_ shows the life cycle of a Jakarta EE application.
+<<a2903, Jakarta EE Application Life Cycle>> 
+shows the life cycle of a Jakarta EE application.
 
 [[a2903]]
 .Jakarta EE Application Life Cycle
@@ -96,7 +95,7 @@ deployed as a stand-alone Jakarta EE module without an application level
 deployment descriptor and represents a valid Jakarta EE application.
 * Jakarta EE modules may express dependencies on
 libraries as described below in
-<<a2945, Library Support>>.”
+<<a2945, Library Support>>.
 
 All Jakarta EE modules have a name. The name can
 be explicitly set in the deployment descriptor for the module. If not
@@ -150,7 +149,7 @@ extension. A minimal Jakarta EE application package will only contain Jakarta
 EE modules and, optionally, the application deployment descriptor. A
 Jakarta EE application package may also include libraries referenced by
 Jakarta EE modules (using the _Class-Path_ mechanism described below in
-<<a2945, Library Support>>”),
+<<a2945, Library Support>>),
 help files, and documentation to aid the deployer.
 
 The deployment of a portable Jakarta EE
@@ -164,8 +163,7 @@ The Jakarta EE application deployment descriptor
 represents the top level view of a Jakarta EE application’s contents. The
 Jakarta EE application deployment descriptor is specified by an XML schema
 or document type definition (see
-<<a3203, Jakarta EE Application XML
-Schema>>”).
+<<a3203, Jakarta EE Application XML Schema>>).
 
 In certain cases, a Jakarta EE application will
 need customization before it can be deployed into the enterprise. New
@@ -215,8 +213,7 @@ resource of the required type.
 
 Some resources have default mapping rules
 specified; see sections <<a2009, Default Data Source>>, <<a2025, Default JMS Connection Factory>>, and
-<<a2042, Default Concurrency
-Utilities Objects>>. By default, a product must map otherwise unmapped
+<<a2042, Default Concurrency Utilities Objects>>. By default, a product must map otherwise unmapped
 resources using these default rules. A product may include an option to
 disable or override these default mapping rules.
 
@@ -521,7 +518,7 @@ types of class loaders used or the
 hierarchical arrangement of class loaders, if any. Portable applications
 must not depend on the order in which classes and resources are loaded.
 Applications should use the techniques described in
-<<a2966, Dynamic Class Loading>>”
+<<a2966, Dynamic Class Loading>>
 if they need to load classes dynamically.
 
 In addition to the required classes specified
@@ -540,7 +537,7 @@ of the Java security model.
 Note that while libraries must be accessible
 to application classes as described below, it may be necessary to use
 the techniques described in
-<<a2966, Dynamic Class Loading>>”
+<<a2966, Dynamic Class Loading>>
 if libraries need to access classes packaged in the application modules.
 
 [[a3046]]
@@ -560,13 +557,13 @@ _WEB-INF/lib_ directory of the containing war file, but not any
 subdirectories.
 * The transitive closure of any libraries
 referenced by the above jar files (as specified in
-<<a2945, Library Support>>”).
+<<a2945, Library Support>>).
 * The transitive closure of any libraries
 referenced by the war file itself (as specified in
-<<a2945, Library Support>>”).
+<<a2945, Library Support>>).
 * The transitive closure of any libraries
 specified by or referenced by the containing ear file (as specified in
-<<a2945, Library Support>>”).
+<<a2945, Library Support>>).
 * The contents of all jar files included in
 any resource adapter archives (rar files) included in the same ear file.
 * The contents of all jar files included in
@@ -577,16 +574,15 @@ resource references in the module.
 each resource adapter archive (rar file) deployed separately to the
 application server, if any jar file in that rar file is used to satisfy
 any reference from the module using the Extension Mechanism Architecture
-(as specified in <<a2945, Library Support>>”).
+(as specified in <<a2945, Library Support>>).
 * The transitive closure of any libraries
 referenced by the jar files in the rar files above (as specified in
-<<a2945, Library Support>>”).
+<<a2945, Library Support>>).
 * The transitive closure of any libraries
 referenced by the rar files themselves (as specified in
-<<a2945, Library Support>>”).
+<<a2945, Library Support>>).
 * The Jakarta EE API classes specified in
-<<a2159, Jakarta EE
-Technologies>> for the web container.
+<<a2159, Jakarta EE Technologies>> for the web container.
 * All Java SE 8 API classes.
 
 
@@ -604,19 +600,18 @@ in the same ear file.
 specified by the above Jakarta Enterprise Beans jar files.
 * The transitive closure of any libraries
 referenced by the above Jakarta Enterprise Beans jar files and client jar files (as specified
-in <<a2945, Library Support>>”).
+in <<a2945, Library Support>>).
 * The contents of any jar files included in
 any resource adapter archives (rar files) deployed separately to the
 application server.
 * The transitive closure of any libraries
 referenced by the jar files in the rar files above (as specified in
-<<a2945, Library Support>>”).
+<<a2945, Library Support>>).
 * The transitive closure of any libraries
 referenced by the rar files above themselves (as specified in
-<<a2945, Library Support>>”).
+<<a2945, Library Support>>).
 * The Jakarta EE API classes specified in
-<<a2159, Jakarta EE
-Technologies>> for the containers other than the web container.
+<<a2159, Jakarta EE Technologies>> for the containers other than the web container.
 * Any installed libraries available in the
 application server.
 * Other classes or resources contained in the
@@ -643,10 +638,10 @@ access to the following classes and resources.
 * The content of the Jakarta Enterprise Beans jar file.
 * The transitive closure of any libraries
 referenced by the Jakarta Enterprise Beans jar file (as specified in
-<<a2945, Library Support>>”).
+<<a2945, Library Support>>).
 * The transitive closure of any libraries
 specified by or referenced by the containing ear file (as specified in
-<<a2945, Library Support>>”).
+<<a2945, Library Support>>).
 * The contents of all jar files included in
 any resource adapter archives (rar files) included in the same ear file.
 * The contents of all jar files included in
@@ -657,16 +652,15 @@ resource references in the module.
 each resource adapter archive (rar file) deployed separately to the
 application server, if any jar file in that rar file is used to satisfy
 any reference from the module using the Extension Mechanism Architecture
-(as specified in <<a2945, Library Support>>”).
+(as specified in <<a2945, Library Support>>).
 * The transitive closure of any libraries
 referenced by the jar files in the rar files above (as specified in
-<<a2945, Library Support>>”.
+<<a2945, Library Support>>.
 * The transitive closure of any libraries
 referenced by the rar files themselves (as specified in
-<<a2945, Library Support>>”).
+<<a2945, Library Support>>).
 * The Jakarta EE API classes specified in
-<<a2159, Jakarta EE
-Technologies>> for the Jakarta Enterprise Beans container.
+<<a2159, Jakarta EE Technologies>> for the Jakarta Enterprise Beans container.
 * All Java SE 8 API classes.
 
 
@@ -678,27 +672,25 @@ resources.
 
 * The classes and resources accessible to any
 web modules included in the same ear file, as described in
-<<a3046, Web Container Class
-Loading Requirements>>” above.
+<<a3046, Web Container Class Loading Requirements>> above.
 * The content of any Jakarta Enterprise Beans jar files included
 in the same ear file.
 * The content of any client jar files
 specified by the above Jakarta Enterprise Beans jar files.
 * The transitive closure of any libraries
 referenced by the above Jakarta Enterprise Beans jar files and client jar files (as specified
-in <<a2945, Library Support>>”).
+in <<a2945, Library Support>>).
 * The contents of any jar files included in
 any resource adapter archives (rar files) deployed separately to the
 application server.
 * The transitive closure of any libraries
 referenced by the jar files in the rar files above (as specified in
-<<a2945, Library Support>>”).
+<<a2945, Library Support>>).
 * The transitive closure of any libraries
 referenced by the rar files above themselves (as specified in
-<<a2945, Library Support>>”).
+<<a2945, Library Support>>).
 * The Jakarta EE API classes specified in
-<<a2159, Jakarta EE
-Technologies>> for the containers other than the Jakarta Enterprise Beans container.
+<<a2159, Jakarta EE Technologies>> for the containers other than the Jakarta Enterprise Beans container.
 * Any installed libraries available in the
 application server.
 * Other classes or resources contained in the
@@ -726,13 +718,12 @@ container must have access to the following classes and resources.
 file.
 * The transitive closure of any libraries
 referenced by the above jar file (as specified in
-<<a2945, Library Support>>”).
+<<a2945, Library Support>>).
 * The transitive closure of any libraries
 specified by or referenced by the containing ear file (as specified in
-<<a2945, Library Support>>”).
+<<a2945, Library Support>>).
 * The Jakarta EE API classes specified in
-<<a2159, Jakarta EE
-Technologies>> for the application client container.
+<<a2159, Jakarta EE Technologies>> for the application client container.
 * All Java SE 8 API classes.
 
 
@@ -743,8 +734,7 @@ Portable applications must not depend on having or not having access to
 these classes or resources.
 
 * The Jakarta EE API classes specified in
-<<a2159, Jakarta EE
-Technologies>> for the containers other than the application client
+<<a2159, Jakarta EE Technologies>> for the containers other than the application client
 container.
 * Any installed libraries available in the
 application server.
@@ -795,7 +785,7 @@ descriptors.
 The deployment descriptors for the Jakarta EE
 modules must be edited to link internally satisfied dependencies and
 eliminate any redundant security role names. An optional element
-_alt-dd_ (described in <<a3203, Jakarta EE Application XML Schema>>”) may be used when it is desirable to
+_alt-dd_ (described in <<a3203, Jakarta EE Application XML Schema>>) may be used when it is desirable to
 preserve the original deployment descriptor. The element _alt-dd_
 specifies an alternate deployment descriptor to use at deployment time.
 The edited copy of the deployment descriptor file may be saved in the
@@ -816,8 +806,7 @@ component dependency, there must only be one corresponding component
 that fulfills that dependency in the scope of the application.
 . For each _ejb-link_ , there must be only one
 matching _ejb-name_ in the scope of the entire application (see
-<<a936, Enterprise JavaBeans™
-(EJB) References>>”).
+<<a936, Enterprise JavaBeans™ (EJB) References>>).
 . Dependencies that are not linked to internal
 components must be handled by the Deployer as external dependencies that
 must be met by resources previously installed on the platform. External
@@ -956,8 +945,7 @@ the class namespace of any application depending on the level of
 isolation supported by the Jakarta EE product.
 
 As described in
-<<a149, Jakarta EE Product
-Packaging>>”, the Jakarta EE product might depend on external services to
+<<a149, Jakarta EE Product Packaging>>, the Jakarta EE product might depend on external services to
 meet the requirements of this specification. While the Jakarta EE product
 is not required to assure the availability of these services, it is
 required to ensure that these services have been configured for use.
@@ -1035,14 +1023,11 @@ deployment information; a deployment tool must examine the application
 class files for annotations that specify deployment information.
 
 If annotations are being processed (as
-required by <<a3318, Deployment
-Descriptor Processing Requirements>>, Jakarta Servlet Table 8-1, and Jakarta Enterprise Beans Tables
+required by <<a3318, Deployment Descriptor Processing Requirements>>, Jakarta Servlet Table 8-1, and Jakarta Enterprise Beans Tables
 16 and 17), _at least_ all of the classes specified in
-<<a651, Component classes
-supporting injection>> must be scanned for annotations that specify
+<<a651, Component classes supporting injection>> must be scanned for annotations that specify
 deployment information. As specified in section
-<<a3179, Deploying a Jakarta EE
-Application>>, all classes that can be used by the application may
+<<a3179, Deploying a Jakarta EE Application>>, all classes that can be used by the application may
 optionally be scanned for these annotations. (These are the annotations
 that specify information equivalent to what can be specified in a
 deployment descriptor. This requirement says nothing about the
@@ -1145,12 +1130,12 @@ rules to determine the modules included in the application.
 . All files in the application package with a
 filename extension of _.war_ are considered web modules. The context
 root of the web module is the module name (see
-<<a2904, Component Creation>>”).
+<<a2904, Component Creation>>).
 . All files in the application package with a
 filename extension of _.rar_ are considered resource adapters.
 . A directory named _lib_ is considered to be
 the library directory, as described in
-<<a2948, Bundled Libraries>>.”
+<<a2948, Bundled Libraries>>.
 . For all files in the application package
 with a filename extension of _.jar_ , but not contained in the _lib_
 directory, do the following:
@@ -1179,7 +1164,7 @@ Jakarta Beans, Jakarta Servlet, Jakarta Connector and application client
 specifications for the required location and name of the deployment
 descriptor for each component type. Deployment descriptors are optional
 for all module types. (The application client specification is
-<<a3294, Application Clients>>”.)
+<<a3294, Application Clients>>.)
 . If the module deployment descriptor is
 absent, or is present and is a Java EE 5 or later version descriptor and
 the _metadata-complete_ attribute is not set to _true_ , the deployment
@@ -1296,8 +1281,7 @@ _<role-name>manager</role-name>_ .
 All valid Jakarta EE application deployment
 descriptors must conform to the XML Schema definition, or the DTD or
 schema definition from a previous version of this specification. (See
-<<a3447, Previous Version
-Deployment Descriptors>>.) The deployment descriptor must be named
+<<a3447, Previous Version Deployment Descriptors>>.) The deployment descriptor must be named
 _META-INF/application.xml_ in the _.ear_ file. Note that this name is
 case-sensitive. The XML Schema located at
 _https://jakarta.ee/xml/ns/jakartaee/application_9.xsd_ defines the XML

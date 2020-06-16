@@ -7,7 +7,7 @@ Jakarta™ EE Platform.
 
 The required relationships of architectural
 elements of the Jakarta EE platform are shown in
-_<<a45, Jakarta EE Architecture Diagram>>_.
+<<a45, Jakarta EE Architecture Diagram>>.
 Note that this figure shows the logical relationships of the
 elements; it is not meant to imply a physical partitioning of the
 elements into separate machines, processes, address spaces, or virtual
@@ -212,7 +212,7 @@ formats for the packaging of application components for deployment.
 
 The containers are implemented by a Jakarta EE
 Product Provider. See the description of the Product Provider role in
-<<a162, Jakarta EE Product Provider>>”.
+<<a162, Jakarta EE Product Provider>>.
 
 This specification defines a set of standard
 services that each Jakarta EE product must support. These standard services
@@ -255,7 +255,7 @@ database is accessible from web components, enterprise beans, and
 application client components. The database need not be accessible from
 applets. The Jakarta EE Product Provider must also provide a preconfigured,
 default data source for use by the application in accessing this
-database. See <<a2009, Default Data Source>>”.
+database. See <<a2009, Default Data Source>>.
 
 [[a84]]
 === Jakarta EE Standard Services
@@ -290,13 +290,13 @@ and a resource manager used at the Jakarta EE SPI level.
 
 Support for CORBA, including use of IIOP and
 Java IDL, was Removed as of Jakarta EE 9. See
-<<a2331, Removed Java Technologies>>.”
+<<a2331, Removed Java Technologies>>.
 
 ==== Java IDL (Removed)
 
 Support for CORBA, including use of IIOP and
 Java IDL, was Removed as of Jakarta EE 9. See
-<<a2331, Removed Java Technologies>>.”
+<<a2331, Removed Java Technologies>>.
 
 ==== JDBC™ API
 
@@ -330,7 +330,7 @@ implements both point-to-point messaging as well as publish-subscribe
 messaging. The Jakarta EE Product Provider must also provide a
 preconfigured, default Jakarta Messaging connection factory for use by the application
 in accessing this JMS provider. See
-<<a2025, Default Jakarta Messaging Connection Factory>>”.
+<<a2025, Default Jakarta Messaging Connection Factory>>.
 
 ==== Java Naming and Directory Interface™ (JNDI)
 
@@ -442,7 +442,7 @@ web services and is a follow-on to Jakarta XML-based RPCfootnote:[Removed from J
 Jakarta XML Web Services offers extensive web
 services functionality, with support for multiple bindings/protocols.
 Support for Jakarta XML-based RPC has been removed from the Platform as of Jakarta EE 9. See
-<<a2331, Removed Java Technologies>>”.
+<<a2331, Removed Java Technologies>>.
 
 Jakarta XML Web Services and Jakarta XML Binding
 define the mapping between Java classes and XML as used
@@ -454,7 +454,7 @@ in Jakarta EE, as well as the implementation of web service endpoints using
 enterprise beans. The XML Web Services Metadata specification defines Java
 language annotations that make it easier to develop web services. The
 Jakarta XML Registries support has been removed from the Platform as of Jakarta EE
-9. See <<a2331, Removed Java Technologies>>”.
+9. See <<a2331, Removed Java Technologies>>.
 
 ==== Jakarta JSON Processing
 
@@ -509,7 +509,7 @@ interoperability with components that are not a part of the Jakarta EE
 platform, such as external web or CORBA services.
 
 
-_<<a142, Jakarta EE Interoperability>>_ illustrates the interoperability facilities of the
+<<a142, Jakarta EE Interoperability>> illustrates the interoperability facilities of the
 Jakarta EE platform. (The directions of the arrows indicate the
 client/server relationships of the components.)
 
@@ -594,9 +594,9 @@ services.
 This specification describes a minimum set of
 facilities available to all Jakarta EE products. A Jakarta EE profile may
 include some or all of these facilities, as described in
-<<a3212, Profiles>>”. Products
+<<a3212, Profiles>>. Products
 implementing the full Jakarta EE platform must provide all of them (see
-<<a3252, Full Jakarta EE Product Requirements>>”). 
+<<a3252, Full Jakarta EE Product Requirements>>). 
 Most Jakarta EE products will provide facilities beyond
 the minimum required by this specification. This specification includes
 only a few limits to the ability of a product to provide extensions. In
@@ -658,9 +658,9 @@ implementation-specific way.
 
 A Jakarta EE Product Provider must provide
 application deployment and management tools. Deployment tools enable a
-Deployer (see <<a170, Deployer>>”) to deploy application components on the Jakarta EE product.
+Deployer (see <<a170, Deployer>>) to deploy application components on the Jakarta EE product.
 Management tools allow a System Administrator (see
-<<a178, System Administrator>>”)
+<<a178, System Administrator>>)
 to manage the Jakarta EE product and the applications deployed on the Jakarta
 EE product. The form of these tools is not prescribed by this
 specification.
@@ -765,7 +765,7 @@ provider as defined by the Jakarta Authorization specification.
 This section describes the Jakarta EE contracts that must be fulfilled by a Jakarta EE Product
 Provider implementing the full Jakarta EE platform. Jakarta EE profiles may
 include some or all of these facilities, as described in
-<<a3212, Profiles>>”.
+<<a3212, Profiles>>.
 
 ==== Jakarta EE APIs
 
@@ -803,7 +803,7 @@ This specification defines the mapping of
 application components to industry-standard network protocols. The
 mapping allows client access to the application components from systems
 that have not installed Jakarta EE product technology. See
-<<a2845, Interoperability>>,” for
+<<a2845, Interoperability>>, for
 details on the network protocol support required for interoperability.
 
 The Jakarta EE Product Provider is required to

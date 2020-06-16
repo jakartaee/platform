@@ -149,15 +149,15 @@ annotations defined by the Common Annotations specification ( _Resource_,
 The following functionality is required to be
 supported in all Jakarta EE profiles:
 
-* JNDI “java:” naming context (see <<a607, JNDI Naming Context>>”)
+* JNDI “java:” naming context (see <<a607, JNDI Naming Context>>)
 * Jakarta Transactions
 
 === Optional Features for Jakarta EE Profiles
 
 All the technologies listed in
-<<a2136, Required APIs>>”, and
+<<a2136, Required APIs>>, and
 not designated as required in
-<<a3240, Requirements for All Jakarta EE Profiles>>”, are designated as optional for use in Jakarta EE
+<<a3240, Requirements for All Jakarta EE Profiles>>, are designated as optional for use in Jakarta EE
 profiles.
 
 **TODO** Since CORBA support was removed for Jakarta EE 9, do we just remove this paragraph?
@@ -166,9 +166,9 @@ The following functionality is designated as
 optional for use in Jakarta EE profiles:
 
 * RMI/IIOP interoperability requirements (see
-<<a2875, OMG Protocols (Proposed Optional)>>”)
+<<a2875, OMG Protocols (Proposed Optional)>>)
 * Support for _java:comp/ORB_ (see
-<<a1385, ORB References>>”)
+<<a1385, ORB References>>)
 
 [[a3252]]
 === Full Jakarta™ EE Product Requirements

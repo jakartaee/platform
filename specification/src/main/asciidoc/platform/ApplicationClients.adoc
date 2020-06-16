@@ -54,8 +54,7 @@ gather authentication data, the container must provide an appropriate
 user interface. In addition, an application client may provide a class
 that implements the _javax.security.auth.callback.CallbackHandler_
 interface and specify the class name in its deployment descriptor (see
-<<a3399, Jakarta EE Application
-Client XML Schema>>” for details). The Deployer may override the callback
+<<a3399, Jakarta EE Application Client XML Schema>> for details). The Deployer may override the callback
 handler specified by the application and use the container’s default
 authentication user interface instead.
 
@@ -74,8 +73,7 @@ Application clients typically execute in an
 environment with a SecurityManager installed, and have similar security
 permission requirements as servlets. The security permission
 requirements are described fully in
-<<a2339, Java Platform, Standard
-Edition (Java SE) Requirements>>.”
+<<a2339, Java Platform, Standard Edition (Java SE) Requirements>>.
 
 === Transactions
 
@@ -95,7 +93,7 @@ As with all Jakarta EE components, application
 clients use JNDI to look up enterprise beans, get access to resource
 managers, reference configurable parameters set at deployment time, and
 so on. Application clients use the _java:_ JNDI namespace to access
-these items (see <<a567, Resources, Naming, and Injection>>” for details).
+these items (see <<a567, Resources, Naming, and Injection>> for details).
 
 Injection is also supported for the
 application client main class. Because the application client container
@@ -220,8 +218,7 @@ annotations that specify such deployment information in the class files
 packaged in the application client jar file. Such annotations must also
 be ignored when processing the class files that are available to the
 application client module for the deployment of this module according to
-<<a3179, Deploying a Jakarta EE
-Application>>”.
+<<a3179, Deploying a Jakarta EE Application>>.
 
 Note that a _"true"_ value for the
 _metadata-complete_ attribute does _not_ preempt the processing of _all_
@@ -303,12 +300,12 @@ _<res-auth>container</res-auth>_ .
 All valid _application-client_ deployment
 descriptors must conform to the XML Schema definition, or to a DTD or
 schema definition from a previous version of this specification. (See
-<<a3447, Previous Version Deployment Descriptors>>.”) The deployment descriptor must be named
+<<a3447, Previous Version Deployment Descriptors>>.) The deployment descriptor must be named
 _META-INF/application-client.xml_ in the application client’s _.jar_
 file. Note that this name is case-sensitive.
 
 
-_<<a3404, Jakarta EE Application Client XML Schema Structure>>_ shows the structure of the Jakarta EE
+<<a3404, Jakarta EE Application Client XML Schema Structure>> shows the structure of the Jakarta EE
 application-client XML Schema. The Jakarta EE application-client XML Schema
 is located at
 _https://jakarta.ee/xml/ns/jakartaee/application-client_9.xsd_.

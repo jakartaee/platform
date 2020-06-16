@@ -5,7 +5,7 @@ The Jakarta™ EE Platform includes several technologies that are primarily
 intended to be used to extend the capabilities of the Jakarta EE containers.
 In addition, some Jakarta EE technologies include service provider interfaces
 along with their application programming interfaces. A Jakarta EE profile may
-include some or all of these facilities, as described in <<a3212, Profiles>>”.
+include some or all of these facilities, as described in <<a3212, Profiles>>.
 
 === Jakarta™ Connectors
 
