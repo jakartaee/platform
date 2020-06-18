@@ -99,6 +99,7 @@ List of existing specifications in Jakarta EE 9:
 *   Jakarta Connectors
 *   Jakarta Standard Tag Library
 *   Jakarta Enterprise Beans
+*   Jakarta Enterprise Web Services
 *   Jakarta Security
 *   Jakarta Server Faces
 *   Jakarta EE 9 Full Platform
@@ -210,6 +211,7 @@ The specifications included in Wave 5 are:
 *   Jakarta Connectors
 *   Jakarta Standard Tag Library
 *   Jakarta Enterprise Beans
+*   Jakarta Enterprise Web Services
 
 
 #### Wave 6
