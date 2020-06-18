@@ -36,8 +36,8 @@ Overall schedule (dates are ***tentative*** and ***subject to change***).  The w
     - Development Complete - June 12
     - Testing Complete - June 19
 - Final Jakarta EE 9 release (Java 11) - **Sept 16** announce
-    - Wave 0 Specification PRs Complete - Anytime before Aug 24
-    - Wave 0 Specification Ballots Complete - Anytime before Sept 7
+    - Wave 0 (independent) Specification PRs Complete - Anytime before Aug 24
+    - Wave 0 (independent) Specification Ballots Complete - Anytime before Sept 7
     - Wave 1 Specification PRs Complete - July 20
     - Wave 1 Specification Ballots Complete - Aug 3
     - Wave 2 Specification PRs Complete - July 27
@@ -56,7 +56,8 @@ Overall schedule (dates are ***tentative*** and ***subject to change***).  The w
 ### Jakarta EE 9 Project board
 
 Jakarta EE 9 will track its development progress with a [Github Project Board](https://github.com/orgs/eclipse-ee4j/projects/17).
-An individual Issue was created for each Specification Project to track its progress.  
+An individual Epic Issue was created for each Specification Project to track its progress.  
 For example, here's a link to the [Jakarta EE Platform Specification Version 9 Issue](https://github.com/eclipse-ee4j/jakartaee-platform/issues/133).
+
 The [Jakarta EE Release repo](https://github.com/eclipse-ee4j/jakartaee-release) will also be used for Issue tracking across the overall project.  
 For example, the [Milestone/Release Candidate API artifacts](https://github.com/eclipse-ee4j/jakartaee-release/issues) are tracked in this repository.
