@@ -15,10 +15,11 @@ This FAQ should be used to complement the [Jakarta EE 9 Release Plan](https://ec
 **TCK**
 - [Keep the old `javax` signature files?](#keep-the-old-javax-signature-files)
 
-### Is adding @Deprecated allowed?
 
-Adding @Deprecated to the Java code is allowed where it is currently defined in the Javadoc (consistency).
-But, introducing newly @Deprecated classes or methods would require a separate Release Plan for that Project.
+### Is adding `@Deprecated` allowed?
+
+Adding `@Deprecated` to the Java code is allowed where it is currently defined in the Javadoc (consistency).
+But, introducing newly `@Deprecated` classes or methods would require a separate Release Plan for that Project.
 
 ### Is introducing Generics in the API signatures allowed?
 
@@ -26,19 +27,18 @@ No.
 Although there were simple cases identified where the introduction of Generics would be okay, it was decided to keep it simple and not allow the introduction of Generics in the Jakarta EE 9 APIs.
 Any proposed use of Generics would require a separate Release Plan for that Project.
 
-### Is adding @Repeatable allowed?
+### Is adding `@Repeatable` allowed?
 
-Adding @Repeatable to the Java code is allowed where it should it have been introduced in previous Java EE or Jakarta EE releases (consistency).
+Adding `@Repeatable` to the Java code is allowed where it should it have been introduced in previous Java EE or Jakarta EE releases (consistency).
 
 ### Should `javax` property names be renamed to `jakarta`?
 
 Yes, `javax.*` property names should be renamed to `jakarta.*` for all properties defined by Jakarta EE 9.
-Pruned Jakarta EE Projects will leave their property names in the `javax.*` namespace.
+Removed Jakarta EE Projects will leave their property names in the `javax.*` namespace (along with the APIs).
 
 ### Will the target namespace change for schemas?
 
-Yes, the proposed target namespace is `https://jakarta.ee/xml/ns/jakartaee/`.  
-This work is being tracked [via this bug](https://github.com/jakartaee/jakarta.ee/issues/592).
+Yes, the target namespace is [`https://jakarta.ee/xml/ns/jakartaee/`](https://jakarta.ee/xml/ns/jakartaee/#9).  
 
 ### Keep the old `javax` signature files?
 
