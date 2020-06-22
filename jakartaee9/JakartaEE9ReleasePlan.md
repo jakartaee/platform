@@ -261,6 +261,8 @@ The project team believe this timeline is aggressive and these are **_early esti
 4. Full Profile and Web Profile First Release Candidate (May 4th)
 5. Full Profile and Web Profile Final Release Review Votes Start (June 12th)
 
+**Update:** These were the original ***proposed*** progress review dates at the time of the finalized Release Plan (Dec 2019).
+The overall schedule for Jakarta EE 9 will now be maintained on [this separate page](https://eclipse-ee4j.github.io/jakartaee-platform/jakartaee9/JakartaEE9#jakarta-ee-9-schedule).
 
 ### Compatible Implementation          
 
