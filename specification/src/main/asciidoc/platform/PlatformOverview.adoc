@@ -39,7 +39,7 @@ environments for each type of application component.
 
 [[a45]]
 .Jakarta EE Architecture Diagram
-image::JavaEEarchitecture.png[]
+image::JavaEEarchitecture.svg[]
 
 The following sections describe the Jakarta EE
 Platform requirements for each kind of Jakarta EE platform element.
@@ -519,7 +519,7 @@ client/server relationships of the components.)
 
 [[a142]]
 .Java EE Interoperability
-image::JavaEEinteroperability.png[]
+image::JavaEEinteroperability.svg[]
 
 
 
