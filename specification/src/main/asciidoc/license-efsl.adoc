@@ -13,11 +13,11 @@ endif::[]
 
 Release: {revdate}
 ....
-=== Copyright
+== Copyright
 
 Copyright (c) 2018,2020 Eclipse Foundation.
 
-=== Eclipse Foundation Specification License
+== Eclipse Foundation Specification License
 
 By using and/or copying this document, or the Eclipse Foundation
 document from which this statement is linked, you (the licensee) agree
@@ -57,7 +57,7 @@ The notice is:
 document includes material copied from or derived from 
 Jakarta EE Platform Specification, https://jakarta.ee/specifications/platform/9/[]."
 
-==== Disclaimers
+=== Disclaimers
 
 THIS DOCUMENT IS PROVIDED &quot;AS IS,&quot; AND THE COPYRIGHT
 HOLDERS AND THE ECLIPSE FOUNDATION MAKE NO REPRESENTATIONS OR
