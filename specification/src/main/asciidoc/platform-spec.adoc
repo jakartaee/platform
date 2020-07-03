@@ -23,6 +23,9 @@ endif::[]
 :sectnums!:
 include::license-efsl.adoc[]
 
-// == WebProfile
+:sectnums!:
+include::commemoration.adoc[]
+
+// == Platform
 :sectnums:
 include::platform/Platform.adoc[]
