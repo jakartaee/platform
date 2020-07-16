@@ -57,7 +57,7 @@ Jakarta EE 9 WILL NOT impose any backward compatibility requirements for compati
 
 ### Java SE Version
 
-For inclusion in Jakarta EE 9, specification’s APIs MUST be compiled at the Java SE 8 source level.  However, compatible implementations of the Jakarta EE 9 Web Profile and Full Profile MUST certify compatibility on Java SE 11. Compatible Implementations MAY additionally certify and support Java SE 8.
+For inclusion in Jakarta EE 9, specification’s APIs MUST be compiled at the Java SE 8 source level.  Compatible Implementations of the Jakarta EE 9 Platform and Web Profile MUST certify compatibility on Java SE 8. Compatible Implementations MAY additionally certify and support later versions of the Java SE runtime.
 
 
 ### Individual Specification Versioning
