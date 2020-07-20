@@ -40,35 +40,35 @@ Overall schedule (dates are ***tentative*** and ***subject to change***).  The w
 - Final Jakarta EE 9 release (Java 11) - **Sept 16** announce (proposed)
     - Wave 0 (independent) Specification PRs 
         - PRs Ready for Review - Anytime before Aug 10
-        - PRs Complete - Anytime before Aug 24
+        - PRs Complete/Ballots Start - Anytime before Aug 24
         - Ballots Complete - Anytime before Sept 7
     - Wave 1 Specification PRs 
         - PRs Ready for Review - July 6
-        - PRs Complete - July 20
+        - PRs Complete/Ballots Start - July 20
         - Ballots Complete - Aug 3
     - Wave 2 Specification PRs 
         - PRs Ready for Review - July 13
-        - PRs Complete - July 27
+        - PRs Complete/Ballots Start - July 27
         - Ballots Complete - Aug 10
     - Wave 3 Specification PRs 
         - PRs Ready for Review - July 20
-        - PRs Complete - Aug 3
+        - PRs Complete/Ballots Start - Aug 3
         - Ballots Complete - Aug 17
     - Wave 4 Specification PRs 
         - PRs Ready for Review - July 27
-        - PRs Complete - Aug 10
+        - PRs Complete/Ballots Start - Aug 10
         - Ballots Complete - Aug 24
     - Wave 5 Specification PRs 
         - PRs Ready for Review - Aug 3
-        - PRs Complete - Aug 17
+        - PRs Complete/Ballots Start - Aug 17
         - Ballots Complete - Aug 31
     - Wave 6 Specification PRs 
         - PRs Ready for Review - Aug 10
-        - PRs Complete - Aug 24
+        - PRs Complete/Ballots Start - Aug 24
         - Ballots Complete - Sept 7
     - Wave 7 (Platform) Specification PRs 
         - PRs Ready for Review - Aug 17
-        - PRs Complete - Aug 31
+        - PRs Complete/Ballots Start - Aug 31
         - Ballots Complete - Sept 14 
     
 ### Jakarta EE 9 Project board
