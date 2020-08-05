@@ -37,7 +37,13 @@ Overall schedule (dates are ***tentative*** and ***subject to change***).  The w
     - Testing Complete - June 19
     
     
-- Final Jakarta EE 9 release (Java 11) - **Sept 16** announce (proposed)
+- Final Jakarta EE 9 release (Java 8) - **TBD** announce (proposed)
+    
+    **Note:** We have determined that the Sept 16 deliverable date was not achievable, but we have not determined a new deliverable date yet.
+    When a new date is determined, then the rest of this schedule will be adjusted.
+    In the mean time, continue developing and reviewing the Specification PRs.
+    Thank you.
+    
     - Wave 0 (independent) Specification PRs 
         - PRs Ready for Review - Anytime before Aug 10
         - PRs Complete/Ballots Start - Anytime before Aug 24
