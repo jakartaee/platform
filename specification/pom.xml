@@ -27,7 +27,7 @@
     <groupId>jakarta.platform</groupId>
     <artifactId>platform-specs</artifactId>
     <packaging>pom</packaging>
-    <version>9-SNAPSHOT</version>
+    <version>9</version>
     <name>Jakarta EE Platform Specifications</name>
 
     <properties>
@@ -41,7 +41,7 @@
         <status>DRAFT</status>
         <maven.build.timestamp.format>MMMM dd, yyyy</maven.build.timestamp.format>
         <revisiondate>${maven.build.timestamp}</revisiondate>
-        <managedbean.version>2.0-SNAPSHOT</managedbean.version>  <!-- override <version> for Managed Beans spec-->
+        <managedbean.version>2.0</managedbean.version>  <!-- override <version> for Managed Beans spec-->
     </properties>
 
     <scm>
