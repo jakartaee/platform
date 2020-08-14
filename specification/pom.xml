@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
 
-    Copyright (c) 2017, 2019 Oracle and/or its affiliates. All rights reserved.
+    Copyright (c) 2017, 2020 Oracle and/or its affiliates. All rights reserved.
 
     This program and the accompanying materials are made available under the
     terms of the Eclipse Public License v. 2.0, which is available at
@@ -25,10 +25,10 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
     <groupId>jakarta.platform</groupId>
-    <artifactId>platform-spec</artifactId>
+    <artifactId>platform-specs</artifactId>
     <packaging>pom</packaging>
-    <version>9-SNAPSHOT</version>
-    <name>Jakarta EE Platform Specification</name>
+    <version>9</version>
+    <name>Jakarta EE Platform Specifications</name>
 
     <properties>
         <site.output.dir>${project.build.directory}/staging</site.output.dir>
@@ -41,7 +41,7 @@
         <status>DRAFT</status>
         <maven.build.timestamp.format>MMMM dd, yyyy</maven.build.timestamp.format>
         <revisiondate>${maven.build.timestamp}</revisiondate>
-        <managedbean.version>2.0-SNAPSHOT</managedbean.version>  <!-- override <version> for Managed Beans spec-->
+        <managedbean.version>2.0</managedbean.version>  <!-- override <version> for Managed Beans spec-->
     </properties>
 
     <scm>
@@ -117,7 +117,7 @@
                         <configuration>
                             <backend>html5</backend>
                             <sourceDocumentName>platform-spec.adoc</sourceDocumentName>
-                            <outputFile>${project.build.directory}/generated-docs/platform-spec-${project.version}.html</outputFile>
+                            <outputFile>${project.build.directory}/generated-docs/jakarta-platform-spec-${project.version}.html</outputFile>
                             <attributes>
                                 <toc>left</toc>
                             </attributes>
@@ -133,7 +133,7 @@
                         <configuration>
                             <backend>pdf</backend>
                             <sourceDocumentName>platform-spec.adoc</sourceDocumentName>
-                            <outputFile>${project.build.directory}/generated-docs/platform-spec-${project.version}.pdf</outputFile>
+                            <outputFile>${project.build.directory}/generated-docs/jakarta-platform-spec-${project.version}.pdf</outputFile>
                             <attributes>
                                 <pdf-stylesdir>${project.basedir}/src/theme</pdf-stylesdir>
                                 <pdf-style>jakartaee</pdf-style>
@@ -153,7 +153,7 @@
                         <configuration>
                             <backend>html5</backend>
                             <sourceDocumentName>webprofile-spec.adoc</sourceDocumentName>
-                            <outputFile>${project.build.directory}/generated-docs/webprofile-spec-${project.version}.html</outputFile>
+                            <outputFile>${project.build.directory}/generated-docs/jakarta-webprofile-spec-${project.version}.html</outputFile>
                             <attributes>
                                 <toc>left</toc>
                             </attributes>
@@ -169,7 +169,7 @@
                         <configuration>
                             <backend>pdf</backend>
                             <sourceDocumentName>webprofile-spec.adoc</sourceDocumentName>
-                            <outputFile>${project.build.directory}/generated-docs/webprofile-spec-${project.version}.pdf</outputFile>
+                            <outputFile>${project.build.directory}/generated-docs/jakarta-webprofile-spec-${project.version}.pdf</outputFile>
                             <attributes>
                                 <pdf-stylesdir>${project.basedir}/src/theme</pdf-stylesdir>
                                 <pdf-style>jakartaee</pdf-style>
@@ -189,7 +189,7 @@
                         <configuration>
                             <backend>html5</backend>
                             <sourceDocumentName>managedbeans-spec.adoc</sourceDocumentName>
-                            <outputFile>${project.build.directory}/generated-docs/managedbeans-spec-${managedbean.version}.html</outputFile>
+                            <outputFile>${project.build.directory}/generated-docs/jakarta-managedbeans-spec-${managedbean.version}.html</outputFile>
                             <attributes>
                                 <toc>left</toc>
                                 <revnumber>${managedbean.version}</revnumber>
@@ -206,7 +206,7 @@
                         <configuration>
                             <backend>pdf</backend>
                             <sourceDocumentName>managedbeans-spec.adoc</sourceDocumentName>
-                            <outputFile>${project.build.directory}/generated-docs/managedbeans-spec-${managedbean.version}.pdf</outputFile>
+                            <outputFile>${project.build.directory}/generated-docs/jakarta-managedbeans-spec-${managedbean.version}.pdf</outputFile>
                             <attributes>
                                 <pdf-stylesdir>${project.basedir}/src/theme</pdf-stylesdir>
                                 <pdf-style>jakartaee</pdf-style>
