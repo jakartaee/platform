@@ -1278,8 +1278,9 @@ is in general case sensitive. This means, for example, that
 _<role-name>Manager</role-name>_ is a different role than
 _<role-name>manager</role-name>_ .
 
-All valid Jakarta EE application deployment descriptors must conform to the XML 
-Schema definitions as defined by <<a3447, Previous Version Deployment Descriptors>>. 
+All valid Jakarta EE application deployment
+descriptors must conform to the XML Schema definitions
+as defined by <<a3447, Previous Version Deployment Descriptors>>. 
 The deployment descriptor must be named
 _META-INF/application.xml_ in the _.ear_ file. Note that this name is
 case-sensitive. The XML Schema located at
