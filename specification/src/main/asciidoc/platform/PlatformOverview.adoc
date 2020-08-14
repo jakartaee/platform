@@ -35,8 +35,6 @@ As indicated, the APIs of the Java™
 Platform, Standard Edition (Java SE), are supported by Java SE runtime
 environments for each type of application component.
 
-*TODO:* This diagram needs adjustments for Jakarta EE 9...
-
 [[a45]]
 .Jakarta EE Architecture Diagram
 image::JakartaEEarchitecture.svg[]
