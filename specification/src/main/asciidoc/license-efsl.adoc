@@ -53,7 +53,7 @@ specification is expressly prohibited.
 
 The notice is:
 
-"Copyright (c) 2018, 2020 Eclipse Foundation. This software or
+"Copyright (c) [$date-of-document] Eclipse Foundation. This software or
 document includes material copied from or derived from [title and URI
 of the Eclipse Foundation specification document]."
 
