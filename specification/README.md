@@ -20,9 +20,9 @@ Run the full build:
 Locate the html files:
 - `target/generated-docs/jakarta-platform-spec-<version>.html`
 - `target/generated-docs/jakarta-webprofile-spec-<version>.html`
-- `target/generated-docs/jakarta-managedbeans-spec-<version>.html`
+- `target/generated-docs/jakarta-managed-beans-spec-<version>.html`
 
 Locate the PDF files:
 - `target/generated-docs/jakarta-platform-spec-<version>.pdf`
 - `target/generated-docs/jakarta-webprofile-spec-<version>.pdf`
-- `target/generated-docs/jakarta-managedbeans-spec-<version>.pdf`
+- `target/generated-docs/jakarta-managed-beans-spec-<version>.pdf`

@@ -188,8 +188,8 @@
                         </goals>
                         <configuration>
                             <backend>html5</backend>
-                            <sourceDocumentName>managedbeans-spec.adoc</sourceDocumentName>
-                            <outputFile>${project.build.directory}/generated-docs/jakarta-managedbeans-spec-${managedbean.version}.html</outputFile>
+                            <sourceDocumentName>managed-beans-spec.adoc</sourceDocumentName>
+                            <outputFile>${project.build.directory}/generated-docs/jakarta-managed-beans-spec-${managedbean.version}.html</outputFile>
                             <attributes>
                                 <toc>left</toc>
                                 <revnumber>${managedbean.version}</revnumber>
@@ -205,8 +205,8 @@
                         </goals>
                         <configuration>
                             <backend>pdf</backend>
-                            <sourceDocumentName>managedbeans-spec.adoc</sourceDocumentName>
-                            <outputFile>${project.build.directory}/generated-docs/jakarta-managedbeans-spec-${managedbean.version}.pdf</outputFile>
+                            <sourceDocumentName>managed-beans-spec.adoc</sourceDocumentName>
+                            <outputFile>${project.build.directory}/generated-docs/jakarta-managed-beans-spec-${managedbean.version}.pdf</outputFile>
                             <attributes>
                                 <pdf-stylesdir>${project.basedir}/src/theme</pdf-stylesdir>
                                 <pdf-style>jakartaee</pdf-style>
