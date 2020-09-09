@@ -43,9 +43,9 @@ Overall schedule (dates are ***tentative*** and ***subject to change***).  The w
     Jakarta EE 9 will be formally announced at the JakartaOne Livestream on Tuesday, Dec 08.
     
     - Wave 0 (independent) Specification PRs 
-        - PRs Ready for Review - Anytime before Sept 25
-        - PRs Complete/Ballots Start - Anytime before Oct 09
-        - Ballots Complete - Anytime before Oct 23
+        - PRs Ready for Review - Anytime before Oct 02
+        - PRs Complete/Ballots Start - Anytime before Oct 16
+        - Ballots Complete - Anytime before Oct 30
     - Wave 1 Specification PRs 
         - PRs Ready for Review - Sept 11
         - PRs Complete/Ballots Start - Sept 25
