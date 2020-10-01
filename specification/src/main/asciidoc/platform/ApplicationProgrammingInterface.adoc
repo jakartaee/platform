@@ -1000,91 +1000,48 @@ _https://jakarta.ee/specifications/xml-web-services/_ .
 
 ===== RMI-JRMP
 
-*TODO Note:* What to do with this section? Leave as-is, mark Optional, remove?
-
 JRMP is the Java technology-specific Remote
 Method Invocation (RMI) protocol. The Jakarta EE security restrictions
 typically prevent all application component types except application
 clients from creating and exporting an RMI object, but all Jakarta EE
 application component types can be clients of RMI objects.
 
-===== RMI-IIOP (Proposed Optional)
+===== RMI-IIOP
 
-*TODO Note:* Since distributed interop is being removed from the EJB spec, do we remove
-this section completely?
+The RMI-IIOP subsystem is composed of APIs that allow for the
+use of RMI-style programming that is independent of the underlying
+protocol.  Implementations these APIs may support the Java SE native RMI
+protocol (JRMP), the CORBA IIOP protocol or any custom protocol that is
+compatible with the RMI programming restrictions (see the RMI-IIOP spec
+for details).
 
-The requirements in this section only apply
-to Jakarta EE products that include an Enterprise Beans container and support
-interoperability using RMI-IIOP.
+NOTE: The requirements in this section only apply to Jakarta EE products that
+include an Enterprise Beans container with support for remote interfaces.
 
-RMI-IIOP allows objects defined using RMI
-style interfaces to be accessed using the IIOP protocol. It must be
-possible to make any remote _enterprise bean accessible via_ RMI-IIOP.
-Some Jakarta  EE products will simply make all remote enterprise beans
-always (and only) accessible via RMI-IIOP; other products might control
-this via an administrative or deployment action. These and other
-approaches are allowed, provided that any remote enterprise bean (or by
-extension, all remote enterprise beans) can be made accessible using
-RMI-IIOP.
+Jakarta EE applications are required to use the RMI-IIOP APIs (specifically the
+narrow method of javax.rmi.PortableRemoteObject) when accessing
+remote Enterprise JavaBeans components, as described in the Jakarta Enterprise
+Beans 4.0 specification.  This allows Enterprise Beans and their clients to be
+protocol independent and portable to Jakarta EE implementations that may use
+CORBA or RMI as their underlying protocol.  However, there is currently no
+requirement that Enterprise Beans be accessible using the IIOP protocol itself
+or that Jakarta EE implementations support any form of distributed interoperability
+with other Jakarta EE implementations.
 
-Components accessing remote _enterprise
-beans_ may need to use the _narrow_ method of the
-_javax.rmi.PortableRemoteObject_ class, under circumstances described in
-the Jakarta Enterprise Beans specification. Because remote enterprise beans may be deployed
-using other RMI protocols, portable applications must not depend on the
-characteristics of RMI-IIOP objects (for example, the use of the _Stub_
-and _Tie_ base classes) beyond what is specified in the Jakarta Enterprise Beans
-specification.
+The use of the term RMI-IIOP has existed since J2EE 1.2 and EJB 1.1, predates
+any requirements to support CORBA itself and was used to detail application
+programming restrictions necessary to allow application portability.  Requirements
+for implementations to use CORBA IIOP itself were added to J2EE 1.3 and EJB 2.0 and
+expanded the term RMI-IIOP beyond application portability and into distributed
+interoperability. These distributed interoperability requirements
+were marked Proposed Optional in Java EE 1.8 .  As of Jakarta EE 9 and Enterprise
+Beans 4.0 distributed interoperability requirements are fully removed and the term
+RMI-IIOP reverts back to a term that guarantees only application portability, not
+distributed interoperability.
 
-The Jakarta EE security restrictions typically
-prevent all application component types, except application clients,
-from creating and exporting an RMI-IIOP object. All Jakarta EE application
-component types can be clients of RMI-IIOP objects. Jakarta EE applications
-should also use JNDI to lookup non-Enterprise Beans RMI-IIOP objects. The JNDI names
-used for such non-Enterprise Beans RMI-IIOP objects should be configured at
-deployment time using the standard environment entries mechanism (see
-<<a607, JNDI Naming Context>>).
-The application should fetch a name from JNDI using an environment
-entry, and use the name to lookup the RMI-IIOP object. Typically such
-names will be configured to be names in the COSNaming name service.
-
-This specification does not provide a
-portable way for applications to bind objects to names in a name
-service. Some products may support use of JNDI and COSNaming for binding
-objects, but this is not required. Portable Jakarta EE application clients
-can create non-Enterprise Beans RMI-IIOP server objects for use as callback objects,
-or to pass in calls to other RMI-IIOP objects.
-
-Note that while RMI-IIOP doesn’t specify how
-to propagate the current security context or transaction context, the
-Jakarta Enterprise Beans interoperability specification does define such context propagation.
-This specification only requires that the propagation of context
-information as defined in the Jakarta Enterprise Beans specification be supported in the use
-of RMI-IIOP to access enterprise beans. The propagation of context
-information is not required in the uses of RMI-IIOP to access objects
-other than enterprise beans.
-
-The RMI-IIOP specification describes how
-portable Stub and _Tie_ classes can be created. To be portable to all
-implementations that use a CORBA Portable Object Adapter (POA), the
-_Tie_ classes must extend the _org.omg.PortableServer.Servant_ class.
-This is typically done by using the _-poa_ option to the _rmic_ command.
-A Jakarta EE product must provide support for these portable _Stub_ and
-_Tie_ classes, typically using the required CORBA POA. However, for
-portability to systems that do not use a POA to implement RMI-IIOP,
-applications should not depend on the fact that the _Tie_ extends the
-_Servant_ class. A Jakarta EE application that defines or uses RMI-IIOP
-objects other than enterprise beans must include such portable _Stub_
-and _Tie_ classes in the application package. _Stub_ and _Tie_ objects
-for enterprise beans, however, must not be included with the
-application: they will be generated, if needed, by the Jakarta EE product
-at deployment time or at run time.
-
-RMI-IIOP is defined by chapters 5, 6, 13, 15,
-and section 10.6.2 of the CORBA 2.3.1 specification, available at
-_http://www.omg.org/cgi-bin/doc?formal/99-10-07_ , and by the Java™
-Language To IDL Mapping Specification, available at
-_http://www.omg.org/cgi-bin/doc?ptc/2000-01-06_ .
+Jakarta EE implementations may use CORBA IIOP as their underlying protocol, however,
+such support is implementation-specific and no longer a guarantee of the Jakarta
+EE platform.
 
 ===== JNDI
 
