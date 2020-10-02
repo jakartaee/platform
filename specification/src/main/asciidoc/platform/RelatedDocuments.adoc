@@ -30,7 +30,7 @@ _Jakarta™ Messaging Specification, Version 3.0_. Available at: _https://jakart
 
 _Jakarta™ Transaction Specification, Version 2.0_. Available at: _https://jakarta.ee/specifications/transactions/2.0_
 
-_Java™ Transaction Service, Version 1.0 (Draft)_ (JTS specification)_. Available at: _http://download.oracle.com/otn-pub/jcp/7309-jts-1.0-spec-oth-JSpec/jts1_0-spec.pdf_
+_Java™ Transaction Service (JTS) Specification, Version 1.0 (Draft)_. Available at: _http://download.oracle.com/otn-pub/jcp/7309-jts-1.0-spec-oth-JSpec/jts1_0-spec.pdf_
 
 _Jakarta™ Mail Specification, Version 2.0_. Available at: _https://jakarta.ee/specifications/mail/2.0_
 
