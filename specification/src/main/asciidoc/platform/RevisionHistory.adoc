@@ -1,17 +1,21 @@
 [appendix]
 [[revisionHistory]]
 == Revision History
+=== Changes in Final Release
+==== Editorial Changes
+* Removed the requirement for implementations to run on Java SE 11.
+* Updated the figures to svg format to make for easier updating.
+* Documented the impact of the removal of Distributed Interop from the Enterprise Beans Specification.
+* *TODO* Created a new section of Backwards Compatibility.
+* *TODO* Documented the Java Module conventions for Jakarta EE 9.
 
 === Changes in Milestone Release Draft
-
 ==== Editorial Changes
-
 * Updates per Jakarta EE 9 Release Plan, https://eclipse-ee4j.github.io/jakartaee-platform/jakartaee9/JakartaEE9ReleasePlan.
 * Changed package name of Jakarta EE 9 classes to `jakarta` namespace where appropriate.
 * Updated the requirement on Java SE 8 for the APIs and Java SE 11 for the implementations.
 * Defined Proposed Optional, Optional, and Removed lifecycle states for Specifications and Features.
 Applied these definitions through out document.
-* **TODO** Properly document the removal of OMG, CORBA, and IIOP from Jakarta EE 9.
 * Re-organized the <<a3447, "Previous Version Deployment Descriptors">> section to differentiate between the versions
 of J2EE, Java EE, and Jakarta EE.
 * Updated <<relateddocs, “Related Documents">> appendix for the updated Jakarta EE 9 specifications.

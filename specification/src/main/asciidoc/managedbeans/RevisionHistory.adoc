@@ -1,10 +1,11 @@
 [appendix]
 == Revision History
+=== Changes in Final Release
+==== Editorial Changes
+* Changed the name of the generated Specifications to match the short name for the component (managed-beans).
 
 === Changes in Milestone Release Draft
-
 ==== Editorial Changes
-
 * Initial contribution of the Managed Beans Specification source.
 * Changed most instances of "Java EE" to "Jakarta EE", except where the previous technology was clearly the target.
 * Modified references to Oracle(TM)-related items per the https://jakarta.ee/legal/acronym_guidelines/[documented guidelines].

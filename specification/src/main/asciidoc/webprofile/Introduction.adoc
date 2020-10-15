@@ -94,7 +94,7 @@ For the first one, the Jakarta EE Platform
 specification mandates support for the “ _java:_ ” naming context in all
 profiles. Consequently, Web Profile products must support it. For a
 similar reason, all Web Profile 9 APIs must support the Java(TM) Platform, Standard Edition 8 API,
-and all Web Profile 9 products must run on Java(TM) Platform, Standard Edition 11 runtime.
+and all Web Profile 9 products must run on Java(TM) Platform, Standard Edition 8 runtime.
 
 In the second category one can point out the
 requirement to support Jakarta EE web application modules ( _.war_ files)
