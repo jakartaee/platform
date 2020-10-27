@@ -2,7 +2,7 @@
 == Interoperability
 
 This chapter describes the interoperability
-requirements for the Jakarta™ EE Platform.
+features for the Jakarta™ EE Platform.
 
 === Introduction to Interoperability
 
@@ -23,7 +23,7 @@ platform, or Unix® workstation.
 * standalone Java™ technology-based applications
 that are not directly supported by the Jakarta EE platform.
 
-It is the interoperability requirements of the
+It is the interoperability features of the
 Jakarta EE platform, set out in this chapter, that make it possible for it
 to provide indirect support for various types of clients, different
 hardware platforms, and a multitude of software applications. The
@@ -31,33 +31,31 @@ interoperability features of the Jakarta EE platform permit the underlying
 disparate systems to work together seamlessly, while hiding much of the
 complexity required to join these pieces together.
 
-The interoperability requirements for the
-current Jakarta EE platform release allow:
+The interoperability features for the
+current Jakarta EE platform release may allow:
 
 * Jakarta EE applications to connect to legacy
-systems using CORBAfootnote:removed9[Removed from Jakarta EE 9.] or low-level socket interfaces.
-* Jakarta EE applications to connect to other Java
-Jakarta applications across multiple Jakarta EE products, whether from different
-Product Providers or from the same Provider, and multiple Jakarta EE
-platforms.
+systems using CORBA or low-level socket interfaces.
+* Jakarta EE applications to connect to other
+Jakarta EE applications across multiple Jakarta EE products and platforms.
 
 In this version of the specification,
 interoperability between Jakarta EE applications running in different
-platforms is accomplished through the HTTP protocol, possibly using SSL,
-or the Jakarta Enterprise Beans interoperability protocol based on IIOPfootnote:removed9[].
+platforms may be accomplished through the HTTP protocol, possibly using SSL,
+or the Jakarta Enterprise Beans interoperability protocol based on IIOP.
 
 === Interoperability Protocols
 
-This specification requires that a Jakarta EE
-product support a standard set of protocols and formats to ensure
+This specification allows a Jakarta EE
+product to support a standard set of protocols and formats to ensure
 interoperability between Jakarta EE applications and with other
 applications that also implement these protocols and formats. The
-specification requires support for the following groups of protocols and
+specification supports the following groups of protocols and
 formats:
 
 * Internet and web protocols
-* OMG protocolsfootnote:removed9[]
-* Java technology protocols **TODO** JRMP may also be removed?
+* OMG protocols (optional)
+* Java technology protocols
 * Data formats
 
 Most of these protocols and formats are
@@ -90,7 +88,7 @@ are required as part of the Jakarta Enterprise Beans interoperability protocol i
 specification.
 * SOAP 1.1—SOAP is a presentation layer
 protocol for the exchange of XML messages. Support for SOAP layered on
-HTTP is optional, as described in the Jakarta XML-based RPCfootnote:removed9[] and 
+HTTP is optional, as described in the Jakarta XML-based RPCfootnote:removed9[Removed in Jakarta EE 9] and 
 Jakarta XML Web Servicesfootnote:optional9[Made optional in Jakarta EE 9] specifications.
 * SOAP 1.2—SOAP 1.2 is the version of the SOAP
 protocol standardized through W3C and supported by Jakarta XML Web Servicesfootnote:optional9[].
@@ -107,21 +105,16 @@ initial HTTP handshake and upgrade request. The WebSocket protocol has
 been standardized by IETF under RFC 6455.
 
 [[a2875]]
-==== OMG Protocols (Removed)
+==== OMG Protocols (optional)
 
-Jakarta EE 9 removed the support for the Object Management Group (OMG) based protocols.
-Reference <<a2333, Removed Jakarta Technologies>> for more details.
+Support for the Object Management Group (OMG) based protocols is optional for Jakarta EE 9.
 
 ==== Java Technology Protocols
-
-**TODO** JRMP is a protocol that needs to be fleshed out due to the removal of CORBA
-and IIOP from the EJB interop specification.
 
 This specification requires the Jakarta EE platform
 to support the JRMP protocol, which is the Java technology-specific
 Remote Method Invocation (RMI) protocol. JRMP is a required component of
-Java SE and is one of two required RMI protocols. (IIOP is the other
-required RMI protocol, see above.)
+Java SE.
 
 JRMP is a distributed object model for the Java
 programming language. Distributed systems, running in different address
