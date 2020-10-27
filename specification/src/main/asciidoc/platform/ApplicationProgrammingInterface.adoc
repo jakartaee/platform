@@ -89,12 +89,6 @@ This is a stronger statement than making a technology "optional", since a "remov
 technology will no longer be maintained for future versions of the Platform.
 <<a2333, Removed Jakarta Technologies>> documents these removed technologies.
 
-*Table TODO* There doesn't seem to be any rhyme or reason to the ordering of the contents
-of this table.  Maybe it was done in the order of the specs getting added to the platform?
-Maybe we should just alphabetize the technologies? Reminder -- If the rows in this table
-get re-organized, then the Requirements sections at the end of this API section also need to
-be similarly re-organized.
-
 [[a2159]]
 [cols=5, options=header]
 .Jakarta EE Technologies
@@ -1018,12 +1012,11 @@ for details).
 NOTE: The requirements in this section only apply to Jakarta EE products that
 include an Enterprise Beans container with support for remote interfaces.
 
-Jakarta EE applications are required to use the RMI-IIOP APIs (specifically the
-narrow method of javax.rmi.PortableRemoteObject) when accessing
+Jakarta EE applications use the RMI-IIOP APIs when accessing
 remote Enterprise JavaBeans components, as described in the Jakarta Enterprise
 Beans 4.0 specification.  This allows Enterprise Beans and their clients to be
 protocol independent and portable to Jakarta EE implementations that may use
-CORBA or RMI as their underlying protocol.  However, there is currently no
+CORBA/IIOP, RMI, or any other custom protocol.  However, there is currently no
 requirement that Enterprise Beans be accessible using the IIOP protocol itself
 or that Jakarta EE implementations support any form of distributed interoperability
 with other Jakarta EE implementations.
@@ -1031,15 +1024,16 @@ with other Jakarta EE implementations.
 The use of the term RMI-IIOP has existed since J2EE 1.2 and EJB 1.1, predates
 any requirements to support CORBA itself and was used to detail application
 programming restrictions necessary to allow application portability.  Requirements
-for implementations to use CORBA IIOP itself were added to J2EE 1.3 and EJB 2.0 and
+for implementations to use CORBA/IIOP itself were added to J2EE 1.3 and EJB 2.0 and
 expanded the term RMI-IIOP beyond application portability and into distributed
 interoperability. These distributed interoperability requirements
 were marked Proposed Optional in Java EE 1.8 .  As of Jakarta EE 9 and Enterprise
 Beans 4.0 distributed interoperability requirements are fully removed and the term
 RMI-IIOP reverts back to a term that guarantees only application portability, not
-distributed interoperability.
+distributed interoperability.  Remaining use of the narrow method of
+`javax.rmi.PortableRemoteObject` is slated for removal in a future release.
 
-Jakarta EE implementations may use CORBA IIOP as their underlying protocol, however,
+Jakarta EE implementations may use CORBA/IIOP as their underlying protocol, however,
 such support is implementation-specific and no longer a guarantee of the Jakarta
 EE platform.
 
@@ -1185,37 +1179,16 @@ applications.
 
 === Enterprise Beans 4.0 Requirements
 
-*TODO Note:*  This section still needs some work due to the revamping of the EJB 4.0
-spec for Jakarta EE 9...
-
 This specification requires that a  Jakarta EE
 product provide support for _enterprise beans_ as specified in the Jakarta Enterprise
 Beans specification. The Jakarta Enterprise Beans specification is available at
 _https://jakarta.ee/specifications/enterprise-beans_ .
 
-This specification does not impose any
-additional requirements at this time. Note that the Jakarta Enterprise Beans
-specification includes the specification of the Jakarta Enterprise Beans
-interoperability protocol based on RMI-IIOP. Support for the Jakarta Enterprise Beans
-interoperability protocol is Proposed Optional in Jakarta EE 8. All containers that
-support Jakarta Enterprise Beans clients must be capable of using the
-Jakarta Enterprise Beans interoperability protocol to invoke enterprise
-beans. All Jakarta Enterprise Beans containers must support the invocation of enterprise
-beans using the Jakarta Enterprise Beans interoperability protocol. A Jakarta EE
-product may also support other protocols for the invocation of enterprise beans.
-
-A Jakarta EE product may support multiple object
-systems (for example, RMI-IIOP and RMI-JRMP). It may not always be
-possible to pass object references from one object system to objects in
-another object system. However, when an enterprise bean is using the
-RMI-IIOP protocol, it must be possible to pass object references for
-RMI-IIOP or Java IDL objects as arguments to methods on such an
-enterprise bean, and to return such object references as return values
-of a method on such an enterprise bean. In addition, it must be possible
-to pass a reference to an RMI-IIOP-based enterprise bean’s Home or
-Remote interface to a method on an RMI-IIOP or Java IDL object, or to
-return such an enterprise bean object reference as a return value from
-such an RMI-IIOP or Java IDL object.
+A Jakarta EE product may support multiple object systems (for example,
+RMI-IIOP, RMI-JRMP, gRPC, protobuf, Thrift).  There is no explicit
+requirement that a Jakarta EE product support any specific protocol,
+such as CORBA/IIOP, or provide distributed interoperability between
+products.
 
 In a Jakarta EE product that includes both an
 enterprise beans container and a web container, both containers are required to
