@@ -390,9 +390,6 @@ The following Jakarta EE Technologies were removed from the Jakarta EE Platform.
 
 |Distributed Interoperability (EJB 3.2 Core Specification, Chapter 10)
 |Removed in Jakarta EE 9
-
-|CORBA, Java IDL, RMI-IIOP
-|Removed in Jakarta EE 9
 |===
 
 [[a2339]]
