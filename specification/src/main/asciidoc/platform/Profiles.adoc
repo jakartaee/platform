@@ -163,8 +163,8 @@ profiles.
 The following functionality is designated as
 optional for use in Jakarta EE profiles:
 
-* RMI/IIOP interoperability requirements (see
-<<a2875, OMG Protocols (Proposed Optional)>>)
+* CORBA requirements (see
+<<a2875, OMG Protocols>>)
 * Support for _java:comp/ORB_ (see
 <<a1385, ORB References>>)
 
