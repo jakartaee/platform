@@ -160,13 +160,11 @@ not designated as required in
 <<a3240, Requirements for All Jakarta EE Profiles>>, are designated as optional for use in Jakarta EE
 profiles.
 
-**TODO** Since CORBA support was removed for Jakarta EE 9, do we just remove this paragraph?
-
 The following functionality is designated as
 optional for use in Jakarta EE profiles:
 
-* RMI/IIOP interoperability requirements (see
-<<a2875, OMG Protocols (Proposed Optional)>>)
+* CORBA requirements (see
+<<a2875, OMG Protocols>>)
 * Support for _java:comp/ORB_ (see
 <<a1385, ORB References>>)
 
@@ -218,8 +216,6 @@ associated Jakarta Enterprise Beans QL, which have been made optional)
 * Jakarta Interceptors 2.0
 * Jakarta Contexts and Dependency Injection 3.0
 * Jakarta Dependency Injection 2.0
-
-
 
 The following technologies are optional:
 
