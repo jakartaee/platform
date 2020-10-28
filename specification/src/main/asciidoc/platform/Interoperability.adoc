@@ -1,7 +1,7 @@
 [[a2845]]
-== Interoperability
+== Application Interoperability
 
-This chapter describes the interoperability
+This chapter describes the application interoperability
 features for the Jakarta™ EE Platform.
 
 === Introduction to Interoperability
@@ -42,7 +42,7 @@ Jakarta EE applications across multiple Jakarta EE products and platforms.
 In this version of the specification,
 interoperability between Jakarta EE applications running in different
 platforms may be accomplished through the HTTP protocol, possibly using SSL,
-or the Jakarta Enterprise Beans interoperability protocol based on IIOP.
+or the OMG (CORBA) protocol.
 
 === Interoperability Protocols
 
@@ -83,9 +83,7 @@ protocol is required by the Servlet specification.
 represents the security layer for Web communication. It is available
 indirectly when using the _https_ URL as opposed to the _http_ URL. A
 Jakarta EE web container must be capable of advertising its HTTPS service
-on the standard HTTPS port, port 443. Note that SSL 3.0 and only TLS 1.0
-are required as part of the Jakarta Enterprise Beans interoperability protocol in the Jakarta Enterprise Beans
-specification.
+on the standard HTTPS port, port 443. 
 * SOAP 1.1—SOAP is a presentation layer
 protocol for the exchange of XML messages. Support for SOAP layered on
 HTTP is optional, as described in the Jakarta XML-based RPCfootnote:removed9[Removed in Jakarta EE 9] and 
@@ -107,7 +105,7 @@ been standardized by IETF under RFC 6455.
 [[a2875]]
 ==== OMG Protocols (optional)
 
-Support for the Object Management Group (OMG) based protocols is optional for Jakarta EE 9.
+Support for the Object Management Group (OMG) based protocols continues to be optional for Jakarta EE 9.
 
 ==== Java Technology Protocols
 
