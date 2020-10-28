@@ -284,17 +284,17 @@ transaction boundaries.
 * An interface between the transaction manager
 and a resource manager used at the Jakarta EE SPI level.
 
-==== RMI-IIOP (Removed)
+==== RMI-IIOP (Optional)
 
 Support for CORBA, including use of IIOP and
-Java IDL, was Removed as of Jakarta EE 9. See
-<<a2331, Removed Java Technologies>>.
+Java IDL, is Optional as of Jakarta EE 9. See
+<<a2331, Optional Jakarta Technologies>>.
 
-==== Java IDL (Removed)
+==== Java IDL (Optional)
 
 Support for CORBA, including use of IIOP and
-Java IDL, was Removed as of Jakarta EE 9. See
-<<a2331, Removed Java Technologies>>.
+Java IDL, is Optional as of Jakarta EE 9. See
+<<a2331, Optional Jakarta Technologies>>.
 
 ==== JDBC™ API
 
@@ -440,7 +440,7 @@ web services and is a follow-on to Jakarta XML-based RPCfootnote:[Removed from J
 Jakarta XML Web Services offers extensive web
 services functionality, with support for multiple bindings/protocols.
 Support for Jakarta XML-based RPC has been removed from the Platform as of Jakarta EE 9. See
-<<a2331, Removed Java Technologies>>.
+<<a2333, Removed Jakarta Technologies>>.
 
 Jakarta XML Web Services and Jakarta XML Binding
 define the mapping between Java classes and XML as used
@@ -452,7 +452,7 @@ in Jakarta EE, as well as the implementation of web service endpoints using
 enterprise beans. The XML Web Services Metadata specification defines Java
 language annotations that make it easier to develop web services. The
 Jakarta XML Registries support has been removed from the Platform as of Jakarta EE
-9. See <<a2331, Removed Java Technologies>>.
+9. See <<a2333, Removed Jakarta Technologies>>.
 
 ==== Jakarta JSON Processing
 
@@ -490,35 +490,28 @@ runtime for scheduling and executing jobs.
 ==== Jakarta Management (Removed)
 
 Although the Jakarta Management Specification was removed from the Platform as of Jakarta EE
-9 (see <<a2331, Removed Java Technologies>>), the Java™ Management Extensions
+9 (see <<a2333, Removed Java Technologies>>), the Java™ Management Extensions
 (JMX) API can be used to provide some management support.
 
 ==== Jakarta Deployment (Removed)
 
 The Jakarta Deployment Specification was removed from the Platform as of Jakarta EE
-9 (see <<a2331, Removed Java Technologies>>).
+9 (see <<a2333, Removed Java Technologies>>).
 
 === Interoperability
-
-*TODO:* This section needs some work due to Jakarta EE 9 and the removal of Distributed Interop from the EJB spec...
 
 Many of the APIs described above provide
 interoperability with components that are not a part of the Jakarta EE
 platform, such as external web or CORBA services.
 
-
-<<a142, Jakarta EE Interoperability>> illustrates the interoperability facilities of the
+<<a142, Jakarta EE Interoperability>> illustrates the interoperability facilities 
+that may be available in the
 Jakarta EE platform. (The directions of the arrows indicate the
 client/server relationships of the components.)
 
-.
-
-*TODO:*  This diagram needs some adjusting due to Jakarta EE 9 and the removal of Distributed Interop from the EJB spec...
-
 [[a142]]
-.Java EE Interoperability
+.Jakarta EE Interoperability
 image::JakartaEEinteroperability.svg[]
-
 
 
 === Flexibility of Product Requirements
@@ -794,8 +787,6 @@ example, a Connector Provider) should provide components that conform to
 these SPIs and policies.
 
 ==== Network Protocols
-
-*TODO:* Might need some tweaking due to the lack of CORBA support in Jakarta EE 9...
 
 This specification defines the mapping of
 application components to industry-standard network protocols. The
