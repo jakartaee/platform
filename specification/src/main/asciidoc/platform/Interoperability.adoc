@@ -105,7 +105,7 @@ been standardized by IETF under RFC 6455.
 [[a2875]]
 ==== OMG Protocols (optional)
 
-Support for the Object Management Group (OMG) based protocols continues to be optional for Jakarta EE 9.
+Support for the Object Management Group (OMG) based protocols is optional for Jakarta EE 9.
 
 ==== Java Technology Protocols
 
