@@ -1,7 +1,7 @@
 [[a2845]]
-== Application Interoperability
+== Interoperability
 
-This chapter describes the application interoperability
+This chapter describes the interoperability
 features for the Jakarta™ EE Platform.
 
 === Introduction to Interoperability
