@@ -30,18 +30,49 @@ applications written to a previous version of the platform will continue
 to work without change and with identical behavior on the current
 version of the platform.
 
+[[a3901]]
+==== Backwards Compatibility for Jakarta EE 9
+
+The Backwards Compatibility Requirements for Jakarta EE Specifications is documented here: 
+_https://eclipse-ee4j.github.io/jakartaee-platform/CompatibilityRequirements_.
+Unfortunately, some of these requirements were not able to be adhered to for Jakarta EE 9.
+This was due to the required namespace change from `javax` to `jakarta`.
+
+===== `javax` to `jakarta` Namespace Change
+Per the Jakarta EE 9 Release Plan (https://eclipse-ee4j.github.io/jakartaee-platform/jakartaee9/JakartaEE9ReleasePlan), the whole `javax` namespace needed to change to `jakarta`.
+This had a ripple effect across all of the Specification documents, the APIs, the Javadocs, the TCKs (Technology Compatibility Kits), and the CIs (Compatible Implementations).
+In turn, this required change will also affect applications.
+Thus, the requirement that changes _"must be source-code compatible, binary compatible, and behavior compatible for applications"_ can not be honored for Jakarta EE 9.
+
+Compatible Implementations, IDEs, and other tools are providing mechanisms to make this change as painless as possible.
+One such effort is the Eclipse Transformer Project (https://projects.eclipse.org/projects/technology.transformer).
+This framework aids with the binary transformation of Java(TM) class files -- replacing the `javax.*` package references to the corresponding `jakarta.*` packages.
+In addition to being used with several of the Jakarta EE 9 Compatible Implementations, the Transformer has also been used to transform test buckets and other utility libraries.
+
+====== Schemas
+blah, blah, blah
+
+====== Properties
+blah, blah, blah
+
+===== Removed Technologies
+blah, blah, blah
+
 === Migration
 
 Migration is the act of converting an
 application to use new facilities introduced in this release of the
 platform.
 Given the required move from the `javax` namespace to the `jakarta` namespace in
-Jakarta EE 9, some migration of an application may be required.
+Jakarta EE 9, some migration of applications may be required.
 Some application servers may provide additional facilities to make this migration 
 more consumable.
 Still, an application may be better positioned for the future 
 by converting it to use the new `jakarta` namespace of the
 Jakarta EE platform.
+Reference <<a3901, "Backwards Compatibility">> for more information.
+
+Also, an application may be improved (better performance, simpler to develop, more flexible, etc.) by converting it to use newer facilities of the Jakarta EE platform as outlined in the next subsections.
 
 ==== Jakarta Persistence
 
