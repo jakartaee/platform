@@ -6,7 +6,7 @@
 * Removed the requirement for implementations to run on Java SE 11.
 * Updated the figures to svg format to make for easier updating.
 * Documented the impact of the removal of Distributed Interop from the Enterprise Beans Specification.
-* *TODO* Created a new section of Backwards Compatibility.
+* Created a new section for Backwards Compatibility.
 * *TODO* Documented the Java Module conventions for Jakarta EE 9.
 
 === Changes in Milestone Release Draft
