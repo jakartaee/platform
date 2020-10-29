@@ -10,6 +10,8 @@ _Jakarta™ EE Web Profile Version 9_. Available at: _https://jakarta.ee/specifi
 
 _Java™ Platform, Standard Edition, v8 API Specification (Java SE specification)_. Available at: _https://docs.oracle.com/javase/8/docs/_
 
+_Java™ Platform, Standard Edition, v9 API Specification (Java SE specification)_. Available at: _https://docs.oracle.com/javase/9/_
+
 _Java™ Platform, Standard Edition, v11 API Specification (Java SE specification)_. Available at: _https://docs.oracle.com/en/java/javase/11/_
 
 _Jakarta™ Enterprise Beans Specification, Version 4.0_. Available at: _https://jakarta.ee/specifications/enterprise-beans/4.0_
