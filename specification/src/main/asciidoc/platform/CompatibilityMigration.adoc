@@ -32,7 +32,6 @@ version of the platform.
 
 [[a3901]]
 ==== Backwards Compatibility for Jakarta EE 9
-
 The Backwards Compatibility Requirements for Jakarta EE Specifications is documented here: 
 _https://eclipse-ee4j.github.io/jakartaee-platform/CompatibilityRequirements_.
 Unfortunately, some of these requirements were not able to be adhered to for Jakarta EE 9.
@@ -49,14 +48,34 @@ One such effort is the Eclipse Transformer Project (https://projects.eclipse.org
 This framework aids with the binary transformation of Java(TM) class files -- replacing the `javax.*` package references to the corresponding `jakarta.*` packages.
 In addition to being used with several of the Jakarta EE 9 Compatible Implementations, the Transformer has also been used to transform test buckets and other utility libraries.
 
-====== Schemas
-blah, blah, blah
-
 ====== Properties
-blah, blah, blah
+Java(TM) properties are often used to configure the features of Jakarta EE.
+In the past, these properties were prefaced with `javax`.
+But now, along with the package name update, these property names will be prefaced with `jakarta`.
+It is implementation-dependent whether the old `javax` property names will be honored in Jakarta EE 9 compatible implementations.
+
+====== Schemas
+In addition to the Java(TM) package names being updated to `jakarta`, the namespace for the schemas was also updated to `https://jakarta.ee/xml/ns/jakartaee`.
+The complete list of updated schemas for Jakarta EE 9 can be found here: https://jakarta.ee/xml/ns/jakartaee/#9
+
+NOTE: Jakarta EE 9 only requires past schema support to (Java EE(TM)) Jakarta EE 8.
+Support for schemas prior to Java EE 8 is not required.
 
 ===== Removed Technologies
-blah, blah, blah
+Another _first_ for Jakarta EE 9 is the removal of older, rarely-used technologies.
+This is consistent with the need to lower the bar of entry for new compatible implementations.
+In most cases, this action removes the full Specification.
+While in other cases, only a portion of a Specification is deemed removable.
+For Jakarta EE 9, the following technologies were removed from the Platform.
+
+* Jakarta XML Registries
+* Jakarta XML RPC
+* Jakarta Deployment
+* Jakarta Management
+* Support for Distributed Interoperability in the EJB 3.2 Core Specification, Chapter 10
+
+Existing Compatible Implementations may decide to continue to support these removed technologies, but there are no TCK tests in Jakarta EE 9 to verify compatibility.
+There is no requirement for new Compatible Implementations to support these removed technologies.
 
 === Migration
 
@@ -64,12 +83,11 @@ Migration is the act of converting an
 application to use new facilities introduced in this release of the
 platform.
 Given the required move from the `javax` namespace to the `jakarta` namespace in
-Jakarta EE 9, some migration of applications may be required.
+Jakarta EE 9 and the removal of some technologies, some migration of applications may be required.
 Some application servers may provide additional facilities to make this migration 
 more consumable.
-Still, an application may be better positioned for the future 
-by converting it to use the new `jakarta` namespace of the
-Jakarta EE platform.
+Still, an application will be better positioned for the future 
+by converting it to use the defined features of the Jakarta EE platform.
 Reference <<a3901, "Backwards Compatibility">> for more information.
 
 Also, an application may be improved (better performance, simpler to develop, more flexible, etc.) by converting it to use newer facilities of the Jakarta EE platform as outlined in the next subsections.
