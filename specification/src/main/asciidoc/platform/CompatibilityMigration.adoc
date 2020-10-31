@@ -32,41 +32,41 @@ version of the platform.
 
 [[a3901]]
 ==== Backwards Compatibility for Jakarta EE 9
-The Backwards Compatibility Requirements for Jakarta EE Specifications is documented here: 
-_https://eclipse-ee4j.github.io/jakartaee-platform/CompatibilityRequirements_.
-Unfortunately, some of these requirements were not able to be adhered to for Jakarta EE 9.
-This was due to the required namespace change from `javax` to `jakarta`.
+Due to the migration from the `javax` namespace to the `jakarta` namespace, Jakarta
+EE 9 is not source-code compatible or binary compatible with previous releases.
+However, Jakarta EE 9 is behavior compatible with all `jakarta` APIs present
+sharing identical method signatures and behavior with their `javax` equivalents.
 
-===== `javax` to `jakarta` Namespace Change
-Per the Jakarta EE 9 Release Plan (https://eclipse-ee4j.github.io/jakartaee-platform/jakartaee9/JakartaEE9ReleasePlan), the whole `javax` namespace needed to change to `jakarta`.
-This had a ripple effect across all of the Specification documents, the APIs, the Javadocs, the TCKs (Technology Compatibility Kits), and the CIs (Compatible Implementations).
+Applications migrating to Jakarta EE 9 from previous releases will require
+modification in the areas detailed in the sections below.
+
+===== `javax` to `jakarta` Namespace
+The main requirement for Jakarta EE 9 was to change the `javax` namespace to the `jakarta` namespace.
+This requirement demanded changes across all of the Specification documents, the APIs, the Javadocs, the TCKs (Technology Compatibility Kits), and the CIs (Compatible Implementations).
 In turn, this required change will also affect applications.
-Thus, the requirement that changes _"must be source-code compatible, binary compatible, and behavior compatible for applications"_ can not be honored for Jakarta EE 9.
-
-Compatible Implementations, IDEs, and other tools are providing mechanisms to make this change as painless as possible.
-One such effort is the Eclipse Transformer Project (https://projects.eclipse.org/projects/technology.transformer).
-This framework aids with the binary transformation of Java(TM) class files -- replacing the `javax.*` package references to the corresponding `jakarta.*` packages.
-In addition to being used with several of the Jakarta EE 9 Compatible Implementations, the Transformer has also been used to transform test buckets and other utility libraries.
+For example, all `import` statements will need to be updated to reflect the updated `jakarta` package names.
 
 ====== Properties
 Java(TM) properties are often used to configure the features of Jakarta EE.
-In the past, these properties were prefaced with `javax`.
+In the past, many of these properties were prefaced with `javax`.
 But now, along with the package name update, these property names will be prefaced with `jakarta`.
-It is implementation-dependent whether the old `javax` property names will be honored in Jakarta EE 9 compatible implementations.
+It is implementation-specific whether the old `javax` property names will be honored in Jakarta EE 9 compatible implementations.
 
 ====== Schemas
-In addition to the Java(TM) package names being updated to `jakarta`, the namespace for the schemas was also updated to `https://jakarta.ee/xml/ns/jakartaee`.
+Schemas (or XSDs or DTDs) are used by some of the Jakarta EE features to define the content and format of their respective XML files.
+Previous versions of the schemas referenced the http://xmlns.jcp.org/xml/ns/javaee/ and http://java.sun.com/xml/ns/javaee/ namespaces.
+Following the `jakarta` namespace update requirement, Jakarta EE 9 also requires the schema namespace to be updated to `https://jakarta.ee/xml/ns/jakartaee`.
+Accordingly, application deployment descriptors will need to be updated to reference these updated namespaces.
 The complete list of updated schemas for Jakarta EE 9 can be found here: https://jakarta.ee/xml/ns/jakartaee/#9
 
 NOTE: Jakarta EE 9 only requires past schema support to (Java EE(TM)) Jakarta EE 8.
 Support for schemas prior to Java EE 8 is not required.
 
 ===== Removed Technologies
-Another _first_ for Jakarta EE 9 is the removal of older, rarely-used technologies.
-This is consistent with the need to lower the bar of entry for new compatible implementations.
+The following technologies have been removed from Jakarta EE 9 to lower the bar of entry for new compatible implementations.
 In most cases, this action removes the full Specification.
-While in other cases, only a portion of a Specification is deemed removable.
-For Jakarta EE 9, the following technologies were removed from the Platform.
+While in other cases, only a portion (chapter) of a Specification is removed.
+For Jakarta EE 9, the following technologies were removed from the Platform: 
 
 * Jakarta XML Registries
 * Jakarta XML RPC
@@ -76,6 +76,12 @@ For Jakarta EE 9, the following technologies were removed from the Platform.
 
 Existing Compatible Implementations may decide to continue to support these removed technologies, but there are no TCK tests in Jakarta EE 9 to verify compatibility.
 There is no requirement for new Compatible Implementations to support these removed technologies.
+
+===== Migration Tools
+Compatible Implementations, IDEs, and other tools are providing mechanisms to make these changes as painless as possible.
+One such effort is the Eclipse Transformer Project (https://projects.eclipse.org/projects/technology.transformer).
+This framework aids with the binary transformation of Java(TM) class files -- replacing the `javax.*` package references to the corresponding `jakarta.*` packages.
+In addition to being used with several of the Jakarta EE 9 Compatible Implementations, the Transformer has also been used to transform test buckets and other utility libraries.
 
 === Migration
 
