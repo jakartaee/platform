@@ -71,19 +71,20 @@ The specifications for the Java SE APIs are
 available at _http://docs.oracle.com/javase/8/docs/_ .
 
 ===== Java Module Names
-Java(TM) SE 9 introduced the concept of the Java Platform Module System (JPMS).
-Since Jakarta EE 9 is initially supporting Java SE 8, there is no requirement to define a module naming convention for the Jakarta EE 9 features.
-But, since Java SE 8 was updated to allow for the naming of modules in support of the future versions of Java, some Jakarta EE 9 features have already defined their corresponding module names.
-The following conventions are strongly suggested by the Platform project:
+Java(TM) SE 9 introduced the concept of a modularity system, known as the Java Platform Module System (JPMS).
+Defined modules need a _name_ to allow for references by other modules.
+Jakarta EE 9 is not defining a module naming convention since Jakarta EE 9 is only supporting Java SE 8.
+Some Java EE(TM) 8 and Jakarta EE features had already defined their corresponding module names.
+Due to these previous module naming efforts, the following guidelines are strongly suggested for Jakarta EE 9:
 
-* If an Automatic Module Name (MANIFEST) already exists, update it to use the ‘jakarta’ prefix to be consistent with the package rename requirement.
+* If an Automatic Module Name (MANIFEST) already exists, update the name to use the ‘jakarta’ prefix to be consistent with the package rename requirement.
 Do not create _new_ Automatic Module Names for Jakarta EE 9.  
-* If a module-info.class already exists, update it to use the ‘jakarta’ prefix to be consistent with the package rename requirement.
+* If a module-info.class already exists, update the name to use the ‘jakarta’ prefix to be consistent with the package rename requirement.
 Do not create _new_ module-info.class files for Jakarta EE 9. 
-* If neither Automatic Module Names or module-info.class exists, then leave it as-is.
+* If neither Automatic Module Names or module-info.class exists, then leave as-is.
 
-This approach defines guidelines for getting to a consistent state with the least amount of disruption.
-No matter what module names are defined in Jakarta EE 9, the module names may need to be updated once specific module name requirements are established in a future release.
+These guidelines allow existing module names to get to a consistent state with the least amount of disruption.
+Any existing module names may need to be updated once specific module name requirements are established in a future release.
 
 [[a2161]]
 ==== Required Jakarta Technologies
