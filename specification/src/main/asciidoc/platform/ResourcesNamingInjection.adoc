@@ -2499,11 +2499,77 @@ providing an appropriate _TransactionSynchronizationRegistry_ object as
 required by this specification.
 
 [[a1385]]
-=== ORB References (Removed)
+=== ORB References
 
-**Note:** The CORBA ORB was removed from Jakarta EE 9 (see <<a2333, "Removed Jakarta Technologies")
-as part of removing the Distribution Interoperability capability of Jakarta Enterprise Beans.
-Jakarta EE 9 applications should not be referencing an _ORB_ instance.
+Some Jakarta EE applications will need to make use
+of the CORBA ORB to perform certain operations. Such applications can
+find an appropriate object implementing the _ORB_ interface by looking
+up the JNDI name _java:comp/ORB_ or by requesting injection of an _ORB_
+object. The container is required to provide the _java:comp/ORB_ name
+for all components except applets. Any such reference to a _ORB_ object
+is only valid within the component instance that performed the lookup.
+
+The following example illustrates how an
+application component acquires and uses an _ORB_ object via injection.
+
+[source,java]
+----
+@Resource ORB orb;
+public void method(...) {
+  ...
+  // Get the POA to use when creating object references.
+  POA rootPOA = (POA)orb.resolve_initial_references("RootPOA");
+  ...
+}
+----
+The following example illustrates how an
+application component acquires and uses an _ORB_ object using a JNDI
+lookup.
+
+[source,java]
+----
+public void method(...) {
+  ...
+  // Obtain the default initial JNDI context.
+  Context initCtx = new InitialContext();
+  // Look up the ORB object.
+  ORB orb = (ORB)initCtx.lookup("java:comp/ORB");
+  // Get the POA to use when creating object references.
+  POA rootPOA = (POA)orb.resolve_initial_references("RootPOA");
+  ...
+}
+----
+
+An _ORB_ object reference may also be declared
+in a deployment descriptor in the same way as a resource manager
+connection factory reference. Such a deployment descriptor entry may be
+used to specify injection of an _ORB_ object.
+
+The _ORB_ instance available under the JNDI
+name _java:comp/ORB_ may always be a shared instance. By default, the
+_ORB_ instance injected into a component or declared via a deployment
+descriptor entry may also be a shared instance. However, the application
+may set the _shareable_ element of the _Resource_ annotation to _false_
+, or may set the _res-sharing-scope_ element in the deployment
+descriptor to _Unshareable_ , to request a non-shared _ORB_ instance.
+
+The requirements in this section only apply to
+Jakarta EE products that include support for interoperability using CORBA.
+
+==== Application Component Provider’s Responsibilities
+
+The Application Component Provider is
+responsible for requesting injection of the _ORB_ object using the
+Resource annotation, or using the defined name to look up the _ORB_
+object. If the _shareable_ element of the _Resource_ annotation is set
+to _false_ , the ORB object injected will not be the shared instance
+used by other components in the application but instead will be a
+private ORB instance used only by this component.
+
+==== Jakarta EE Product Provider’s Responsibilities
+
+The Jakarta EE Product Provider is responsible for
+providing an appropriate _ORB_ object as required by this specification.
 
 [[a1416]]
 === Persistence Unit References
