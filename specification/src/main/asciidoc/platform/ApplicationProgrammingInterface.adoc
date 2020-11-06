@@ -1018,9 +1018,8 @@ application component types can be clients of RMI objects.
 The RMI-IIOP subsystem is composed of APIs that allow for the
 use of RMI-style programming that is independent of the underlying
 protocol.  Implementations of these APIs may support the Java SE native RMI
-protocol (JRMP), the CORBA IIOP protocol or any custom protocol that is
-compatible with the RMI programming restrictions (see the RMI-IIOP spec
-for details).
+protocol (JRMP), the CORBA IIOP protocol, or any custom protocol that is
+compatible with the RMI programming restrictions.
 
 NOTE: The requirements in this section only apply to Jakarta EE products that
 include an Enterprise Beans container with support for remote interfaces.
@@ -1029,22 +1028,11 @@ Jakarta EE applications use the RMI-IIOP APIs when accessing
 remote Enterprise Beans components, as described in the Jakarta Enterprise
 Beans 4.0 specification.  This allows Enterprise Beans and their clients to be
 protocol independent and portable to Jakarta EE implementations that may use
-CORBA/IIOP, RMI, or any other custom protocol.  However, there is currently no
-requirement that Enterprise Beans be accessible using the IIOP protocol itself
-or that Jakarta EE implementations support any form of distributed interoperability
-with other Jakarta EE implementations.
+CORBA/IIOP, RMI, or any other custom protocol.
 
-The use of the term RMI-IIOP has existed since J2EE 1.2 and EJB 1.1, predates
-any requirements to support CORBA itself and was used to detail application
-programming restrictions necessary to allow application portability.  Requirements
-for implementations to use CORBA/IIOP itself were added to J2EE 1.3 and EJB 2.0 and
-expanded the term RMI-IIOP beyond application portability and into distributed
-interoperability. These distributed interoperability requirements
-were marked Proposed Optional in Java EE 8 .  As of Jakarta EE 9 and Enterprise
-Beans 4.0 distributed interoperability requirements are fully removed and the term
-RMI-IIOP reverts back to a term that guarantees only application portability, not
-distributed interoperability.  Remaining use of the narrow method of
-`javax.rmi.PortableRemoteObject` is slated for removal in a future release.
+Requirements for distributed interoperability over CORBA/IIOP have been removed in
+Jakarta Enterprise Beans 4.0. Use of the narrow method of `javax.rmi.PortableRemoteObject`
+and references to `org.omg.ORB` in the Platform are slated for removal in a future release.
 
 Jakarta EE implementations may use CORBA/IIOP as their underlying protocol, however,
 such support is implementation-specific and no longer a guarantee of the Jakarta
