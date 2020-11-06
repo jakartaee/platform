@@ -1018,9 +1018,8 @@ application component types can be clients of RMI objects.
 The RMI-IIOP subsystem is composed of APIs that allow for the
 use of RMI-style programming that is independent of the underlying
 protocol.  Implementations of these APIs may support the Java SE native RMI
-protocol (JRMP), the CORBA IIOP protocol or any custom protocol that is
-compatible with the RMI programming restrictions (see the RMI-IIOP spec
-for details).
+protocol (JRMP), the CORBA IIOP protocol, or any custom protocol that is
+compatible with the RMI programming restrictions.
 
 NOTE: The requirements in this section only apply to Jakarta EE products that
 include an Enterprise Beans container with support for remote interfaces.
