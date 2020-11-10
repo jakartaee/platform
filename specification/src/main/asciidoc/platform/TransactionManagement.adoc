@@ -235,8 +235,8 @@ commit the transaction.
 
 A Jakarta EE product must provide a transaction manager that is capable of
 coordinating two-phase commit operations across multiple XA-capable JDBC
-databases. If a JDBC driver supports the Jakarta Transactions API’s XA
-interfaces (in the _jakarta.transaction.xa_ package), then the Jakarta EE product
+databases. If a JDBC driver supports the Java Transaction API’s XA
+interfaces (in the _javax.transaction.xa_ package), then the Jakarta EE product
 must be capable of using the XA interfaces provided by the JDBC driver to
 accomplish two-phase commit operations. The Jakarta EE product may discover
 the XA capabilities of JDBC drivers through product-specific means, although
@@ -287,18 +287,17 @@ interoperability protocol based on RMI-IIOP.
 ==== Support for Transactional Resource Managers
 
 This specification requires all Jakarta EE products to support the
-_jakarta.transaction.xa.XAResource_ interface, as specified in the Connector
+_javax.transaction.xa.XAResource_ interface, as specified in the Connector
 specification. This specification also requires all Jakarta EE products to
-support the _jakarta.transaction.xa.XAResource_ interface for performing two-phase
+support the _javax.transaction.xa.XAResource_ interface for performing two-phase
 commit operations on JDBC drivers that support the JTA XA APIs. This
 specification does not require that JDBC drivers or Jakarta Messaging providers
-use the _jakarta.transaction.xa.XAResource_ interface, although they may use
+use the _javax.transaction.xa.XAResource_ interface, although they may use
 this interface and in all cases they must meet the transactional resource
 manager requirements described in this chapter. In particular, it must be
 possible to combine operations on one or more JDBC databases, one or more
 Jakarta Messaging sessions, one or more enterprise beans, and multiple resource
-adapters supporting the _XATransaction_ mode in a single transaction defined by
-the Jakarta Transactions specification.
+adapters supporting the _XATransaction_ mode in a single JTA transaction.
 
 === Local Transaction Optimization
 
