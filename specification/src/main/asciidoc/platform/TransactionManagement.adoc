@@ -235,7 +235,7 @@ commit the transaction.
 
 A Jakarta EE product must provide a transaction manager that is capable of
 coordinating two-phase commit operations across multiple XA-capable JDBC
-databases. If a JDBC driver supports the Java Transaction API’s XA
+databases. If a JDBC driver supports the Java SE API’s XA
 interfaces (in the _javax.transaction.xa_ package), then the Jakarta EE product
 must be capable of using the XA interfaces provided by the JDBC driver to
 accomplish two-phase commit operations. The Jakarta EE product may discover
@@ -290,14 +290,15 @@ This specification requires all Jakarta EE products to support the
 _javax.transaction.xa.XAResource_ interface, as specified in the Connector
 specification. This specification also requires all Jakarta EE products to
 support the _javax.transaction.xa.XAResource_ interface for performing two-phase
-commit operations on JDBC drivers that support the JTA XA APIs. This
+commit operations on JDBC drivers that support the Java SE XA APIs. This
 specification does not require that JDBC drivers or Jakarta Messaging providers
 use the _javax.transaction.xa.XAResource_ interface, although they may use
 this interface and in all cases they must meet the transactional resource
 manager requirements described in this chapter. In particular, it must be
 possible to combine operations on one or more JDBC databases, one or more
 Jakarta Messaging sessions, one or more enterprise beans, and multiple resource
-adapters supporting the _XATransaction_ mode in a single JTA transaction.
+adapters supporting the _XATransaction_ mode in a single transaction defined by
+the Jakarta Transactions specification.
 
 === Local Transaction Optimization
 
