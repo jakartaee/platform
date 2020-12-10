@@ -1,3 +1,0 @@
-= Jakarta EE Platform
-
-The Jakarta EE Platform project produces the Jakarta EE platform specification, which is an umbrella specification that aggregates all other Jakarta EE specifications.
