@@ -32,7 +32,7 @@ This table contains useful links for Jakarta EE specifications:
 | [Jakarta Mail](https://github.com/eclipse-ee4j/mail-spec) | [2.0](https://jakarta.ee/specifications/mail/2.0/) | [Eclipse Jakarta Mail 2.0.0](https://eclipse-ee4j.github.io/mail/) |
 | [Jakarta Managed Beans](https://github.com/eclipse-ee4j/jakartaee-platform) | [2.0](https://jakarta.ee/specifications/managedbeans/2.0/) | [Eclipse Glassfish 6.0](https://projects.eclipse.org/projects/ee4j.glassfish/downloads) |
 | [Jakarta Management](https://github.com/eclipse-ee4j/management-api) | [1.1](https://jakarta.ee/specifications/management/1.1/) | [Eclipse Glassfish 5.1](https://projects.eclipse.org/projects/ee4j.glassfish/downloads) |
-| [Jakarta Messaging](https://github.com/eclipse-ee4j/jms-api) | [3.0](https://jakarta.ee/specifications/messaging/3.0/) | [Eclipse OpenMQ 6.0.0](https://jakarta.oss.sonatype.org/content/repositories/staging/org/glassfish/mq/mq-distribution/) |
+| [Jakarta Messaging](https://github.com/eclipse-ee4j/jms-api) | [3.0](https://jakarta.ee/specifications/messaging/3.0/) | [Eclipse OpenMQ 6.0.0](https://github.com/eclipse-ee4j/openmq/releases/tag/6.0.0-RELEASE) |
 | [Jakarta Persistence](https://github.com/eclipse-ee4j/jpa-api) | [3.0](https://jakarta.ee/specifications/persistence/3.0/) | [EclipseLink 3.0.0](https://www.eclipse.org/eclipselink) |
 | [Jakarta RESTful Web Services](https://github.com/eclipse-ee4j/jaxrs-api) | [3.0](https://jakarta.ee/specifications/restful-ws/3.0/) | [Eclipse Jersey 3.0](https://projects.eclipse.org/projects/ee4j.jersey) |
 | [Jakarta Security](https://github.com/eclipse-ee4j/security-api) | [2.0](https://jakarta.ee/specifications/security/2.0/) | [Eclipse Soteria 2.0.0](https://eclipse-ee4j.github.io/soteria) |
