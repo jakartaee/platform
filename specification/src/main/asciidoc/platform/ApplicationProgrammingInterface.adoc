@@ -1227,7 +1227,7 @@ _java.io.Serializable_
 *  _jakarta.ejb.EJBLocalObject_
 *  _jakarta.ejb.EJBLocalHome_
 *  _jakarta.transaction.UserTransaction_
-* a _jakarta.naming.Context_ object for the
+* a _javax.naming.Context_ object for the
 _java:comp/env_ context
 
 a reference to an Enterprise Bean local or remote business interface or no-interface view
