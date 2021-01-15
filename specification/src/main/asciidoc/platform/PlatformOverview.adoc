@@ -458,9 +458,16 @@ Jakarta XML Registries support has been removed from the Platform as of Jakarta 
 
 Jakarta JSON Processing
 provides a convenient way to process (parse, generate, transform, and
-query) JSON text. Jakarta JSON Binding provides a
-convenient way to convert between JSON text and Java objects. Jakarta
-WebSocket is a standard API for creating WebSocket
+query) JSON text.
+
+==== Jakarta JSON Binding
+
+Jakarta JSON Binding provides a
+convenient way to convert between JSON text and Java objects. 
+
+==== Jakarta WebSocket
+
+Jakarta WebSocket is a standard API for creating WebSocket
 applications.
 
 ==== Jakarta RESTful Web Services
