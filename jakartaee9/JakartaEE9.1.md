@@ -7,7 +7,10 @@
 
 ## Jakarta EE 9.1 Release Plan
 
-The [Jakarta EE 9.1 Release Plan](JakartaEE9.1ReleasePlan) is TBD...  
+The [Jakarta EE 9.1 Release Plan](JakartaEE9.1ReleasePlan) will be available soon... 
+During the span of Nov 2020 - Jan 2021, it was created, discussed, amended, and reviewed by the Jakarta EE Community and the Platform Project.
+In Feb 2021, it will be endorsed by the [Jakarta EE Steering Committee](TBD).
+Also, in Feb 2021, an official ballot will be approved by the [Jakarta EE Specification Committee](TBD).
 
 A [Jakarta EE 9.1 Release Plan FAQ](https://eclipse-ee4j.github.io/jakartaee-platform/jakartaee9/JakartaEE9.1ReleasePlanFAQ) has also been created to help clarify aspects of the Release Plan.
 
