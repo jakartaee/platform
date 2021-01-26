@@ -73,8 +73,8 @@ available at _http://docs.oracle.com/javase/8/docs/_ .
 ===== Java Module Names
 Java(TM) SE 9 introduced the concept of a modularity system, known as the Java Platform Module System (JPMS).
 Defined modules need a _name_ to allow for references by other modules.
-Jakarta EE 9 is not defining a module naming convention since Jakarta EE 9 is only supporting Java SE 8.
-Some Java EE(TM) 8 and Jakarta EE features had already defined their corresponding module names.
+Jakarta EE 9 does not define a module naming convention.
+However, some Java EE(TM) 8 and Jakarta EE features had already defined their corresponding module names.
 Due to these previous module naming efforts, the following guidelines are strongly suggested for Jakarta EE 9:
 
 * If an Automatic Module Name (MANIFEST) already exists, update the name to use the ‘jakarta’ prefix to be consistent with the package rename requirement.
