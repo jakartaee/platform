@@ -29,4 +29,4 @@ Any updates to a Component's Javadoc will need to conform to the rules of a Serv
 
 The goal of Jakarta EE 9.1 is to support Java SE 11, without any impact to the functional aspects of Jakarta EE 9.
 Removal of CORBA in 9.1 would affect the Enterprise Beans APIs and, thus, make Jakarta EE 9.1 incompatible with Jakarta EE 9 from an API perspective.
-For this reason, the CORBA requirements will be declared Optional in Jakarta EE 9.1, with the future intent of removal.
+For this reason, the CORBA requirements will continue to be Optional in Jakarta EE 9.1, with the future intent of removal.
