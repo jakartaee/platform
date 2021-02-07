@@ -199,11 +199,10 @@ bean container.
 ==== Container Requirements
 
 This specification requires that containers
-provide a Java Compatible™ runtime environment, as defined by the Java
-Platform, Standard Edition, v8 specification (Java SE). The applet
-container may use the Java Plugin product to provide this environment,
-or it may provide it natively. The use of applet containers providing
-JDK™ 1.1 APIs is outside the scope of this specification.
+support execution in a Java™ runtime environment, as defined by the Java
+Platform, Standard Edition, v11 specification (Java SE 11). Containers may additionally choose
+to support execution in another Java™ runtime environment, as defined by a Java
+Platform, Standard Edition, v8 or later specification.
 
 The container tools must understand the file
 formats for the packaging of application components for deployment.
