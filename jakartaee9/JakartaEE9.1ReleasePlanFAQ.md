@@ -10,20 +10,20 @@ This FAQ should be used to complement the [Jakarta EE 9.1 Release Plan](https://
 - [Can the Javadoc be updated?](#can-the-javadoc-be-updated)
 
 **CORBA**
-- [Why not just remove the CORBA requirement?](#why-not-just-remove-the-CORBA-requirement)
+- [Why not just remove the CORBA requirement?](#why-not-just-remove-the-corba-requirement)
 
 
 ### Can the Specifications be updated?
 
 Yes, as long as it does not introduce any functional changes.
-Any updates to a Component's Specification will need to conform to the rules of a Service Release (x.y.z).
+Any updates to a Component's Specification will need to conform to the [Service Release (x.y.z) process](https://jakarta.ee/committees/specification/operations/#creating_a_final_service_release_specification) in support of the [JESP](https://jakarta.ee/about/jesp/).
 
 **Note:** The Jakarta EE 9.1 Platform Specification will be updated in support of the Java SE 11 requirement.
 
 ### Can the Javadoc be updated?
 
 Yes, as long as it does not introduce any functional changes.
-Any updates to a Component's Javadoc will need to conform to the rules of a Service Release (x.y.z).
+Any updates to a Component's Javadoc will need to conform to the [Service Release (x.y.z) process](https://jakarta.ee/committees/specification/operations/#creating_a_final_service_release_specification) in support of the [JESP](https://jakarta.ee/about/jesp/).
 
 ### Why not just remove the CORBA requirement?
 
