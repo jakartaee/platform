@@ -20,11 +20,18 @@ The key goal of the [Jakarta EE 9.1 Release Plan](JakartaEE9.1ReleasePlan) is to
 
 No other individual component (feature) release plans are expected.
 
-## Jakarta EE 9.1 schedule (TBD)
+## Jakarta EE 9.1 schedule (work in progress)
 
 Overall schedule dates are ***tentative*** and ***subject to change***.  
     
-- Final Jakarta EE 9.1 release (Java SE 11) - **1Q2021** completion (proposed)
+- Final Jakarta EE 9.1 release (Java SE 11) - **2Q2021** completion (proposed)
+ - [Jakarta EE 9.1 RC1 Platform API](https://search.maven.org/artifact/jakarta.platform/jakarta.jakartaee-api/9.1.0-RC1/jar)
+ - [Jakarta EE 9.1 RC1 Web Profile API](https://search.maven.org/artifact/jakarta.platform/jakarta.jakartaee-web-api/9.1.0-RC1/jar)
+ - [Eclipse Glassfish 6.1 M1](tbd)
+
+**Update 03/10/2021:**  The original goal for delivering Jakarta EE 9.1 was 1Q2021.
+This is no longer achievable.
+The new goal is 2Q2021. 
     
 ### Jakarta EE 9.1 Project board
 
