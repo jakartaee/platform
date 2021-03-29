@@ -283,12 +283,14 @@ transaction boundaries.
 * An interface between the transaction manager
 and a resource manager used at the Jakarta EE SPI level.
 
+[[a3538]]
 ==== RMI-IIOP (Optional)
 
 Support for CORBA, including use of IIOP and
 Java IDL, is Optional as of Jakarta EE 9. See
 <<a2331, Optional Jakarta Technologies>>.
 
+[[a3539]]
 ==== Java IDL (Optional)
 
 Support for CORBA, including use of IIOP and
