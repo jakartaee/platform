@@ -2499,10 +2499,9 @@ providing an appropriate _TransactionSynchronizationRegistry_ object as
 required by this specification.
 
 [[a1385]]
-=== ORB References
+=== ORB References (optional)
 
-NOTE:  The requirements in this section only apply to
-Jakarta EE products that include support for interoperability using CORBA.
+NOTE: Support for CORBA as an application service is optional.
 
 Some Jakarta EE applications will need to make use
 of the CORBA ORB to perform certain operations. Such applications can
