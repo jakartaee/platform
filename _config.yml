@@ -10,7 +10,7 @@ links:
   license: LICENSE
   issues_url: site.github.issues_url # project's issue tracker
   mailinglist: http://accounts.eclipse.org/mailing-list/jakartaee-platform-dev
-  javadocs: https://jakarta.ee/specifications/platform/8/apidocs
+  javadocs: https://jakarta.ee/specifications/platform/9/apidocs
   minutes: minutes/minutes.html
   #docs:
   #faq:
