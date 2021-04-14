@@ -30,42 +30,44 @@ might nonetheless include support for the technology. In such a case,
 the requirements for that technology described in this chapter would
 apply.
 
+[[a3537]]
 ==== Java Compatible APIs
 
 The containers provide all application
 components with at least the Java Platform, Standard Edition, v8 (Java
 SE) APIs. Containers may provide newer versions of the Java SE platform,
-provided they meet all the Jakarta EE platform requirements. The Java SE
-platform includes the following enterprise technologies:
+provided they meet all the Jakarta EE platform requirements as outlined below.
 
-* Java IDL footnote:javaremoval[Removed from Java SE 11. See <<a2161, Required Jakarta Technologies>>.]
+===== Java SE Enterprise Technologies
+
+The Java SE 8 platform includes a number of enterprise technologies. Except
+for technologies noted in this specification as being optional, containers
+must provide all application components with the APIs associated with these
+technologies. If a newer version of the Java SE platform provided by
+a container has removed some of these technologies, the container must
+provide these technologies in some other manner.
+
+The Java SE 8 platform includes the following enterprise technologies:
+
+* Java IDL footnote:[Removed from Java SE 11. Support for Java IDL is optional (see <<a3539, Java IDL (Optional)>>.) Product vendors that wish to support Java IDL on a Java SE version that does not provide the Java IDL APIs must otherwise provide those APIs to application components.]
 * JDBC
 * RMI-JRMP
-* RMI-IIOP footnote:javaremoval[]
+* RMI-IIOP footnote:[Removed from Java SE 11. Support for RMI-IIOP is optional (see <<a3538, RMI-IIOP (Optional)>>.) Product vendors that wish to support RMI-IIOP on a Java SE version that does not provide the RMI-IIOP APIs must otherwise provide those APIs to application components.]
+* javax.rmi.PortableRemoteObject footnote:[Removed from Java SE 11. Product vendors that support the optional Enterprise Beans 2.x API group must ensure that the javax.rmi.PortableRemoteObject class is available to application components.]
 * JNDI
 * JAXP
 * StAX
 * JAAS
 * JMX
-* JAX-WS footnote:javaremoval[]
-* JAXB footnote:javaremoval[]
-* JAF footnote:javaremoval[]
-* SAAJ footnote:javaremoval[]
-* Common Annotations footnote:javaremoval[]
+* JAX-WS footnote:javaremovalopt[Removed from Java SE 11. Since Jakarta EE 9 this optional technology is provided under a Jakarta EE specification. If the technology is provided, the container must provide the Jakarta EE version of the technology. See <<a2161, Required Jakarta Technologies>>.]
+* JAXB footnote:javaremovalopt[]
+* JAF footnote:javaremovalreq[Removed from Java SE 11. Since Jakarta EE 9 this technology is provided under a Jakarta EE specification. The container must provide the Jakarta EE version of the technology. See <<a2161, Required Jakarta Technologies>>.]
+* SAAJ footnote:javaremovalopt[]
+* Common Annotations footnote:javaremovalreq[]
 
-In particular, the applet execution
-environment must be Java SE 8 compatible. Since typical browsers don’t
-yet provide such support, Jakarta EE products may make use of the Java
-Plugin to provide the required applet execution environment. Use of the
-Java Plugin is not required, but is one method of meeting the
-requirement to provide a Java SE 8 compatible applet execution
-environment. This specification adds no requirements to the applet
-container beyond those specified by Java SE.
-
-Some of the enterprise technologies that are
-included in Java SE 8 are also available independently of the Java SE
-platform, and this specification requires newer versions of some of
-these technologies, as described in the following section.
+Note that a number of the enterprise technologies provided
+by Java SE 8 are now provided by Jakarta EE specifications and are
+included in the list of <<a2161, Required Jakarta Technologies>>.
 
 The specifications for the Java SE APIs are
 available at _http://docs.oracle.com/javase/8/docs/_ .
@@ -329,6 +331,11 @@ technology.footnote:[Note that a component specification is permitted to specify
 an exception to this in order to accommodate interface type dependencies—for example,
 the Jakarta™ Enterprise Beans SessionContext dependency on the
 _jakarta.xml.rpc.handler.MessageContext_ type.]
+
+If a container supports a newer version of the Java SE platform than
+Java SE 8, all classes and interfaces provided by the container to
+satisfy the platform requirements listed above must be compiled
+with the Java SE 8 source and class level.
 
 
 [[a2331]]

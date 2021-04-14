@@ -583,7 +583,7 @@ referenced by the rar files themselves (as specified in
 <<a2945, Library Support>>).
 * The Jakarta EE API classes specified in
 <<a2159, Jakarta EE Technologies>> for the web container.
-* All Java SE 8 API classes.
+* All required <<a3537, Java SE API classes>>.
 
 
 
@@ -661,7 +661,7 @@ referenced by the rar files themselves (as specified in
 <<a2945, Library Support>>).
 * The Jakarta EE API classes specified in
 <<a2159, Jakarta EE Technologies>> for the Jakarta Enterprise Beans container.
-* All Java SE 8 API classes.
+* All required <<a3537, Java SE API classes>>.
 
 
 
@@ -724,7 +724,7 @@ specified by or referenced by the containing ear file (as specified in
 <<a2945, Library Support>>).
 * The Jakarta EE API classes specified in
 <<a2159, Jakarta EE Technologies>> for the application client container.
-* All Java SE 8 API classes.
+* All required <<a3537, Java SE API classes>>.
 
 
 

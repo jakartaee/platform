@@ -199,11 +199,8 @@ bean container.
 ==== Container Requirements
 
 This specification requires that containers
-provide a Java Compatible™ runtime environment, as defined by the Java
-Platform, Standard Edition, v8 specification (Java SE). The applet
-container may use the Java Plugin product to provide this environment,
-or it may provide it natively. The use of applet containers providing
-JDK™ 1.1 APIs is outside the scope of this specification.
+support execution in a Java™ runtime environment, as defined by the Java
+Platform, Standard Edition specification, v8 or later (Java SE 8 or later).
 
 The container tools must understand the file
 formats for the packaging of application components for deployment.
@@ -284,12 +281,14 @@ transaction boundaries.
 * An interface between the transaction manager
 and a resource manager used at the Jakarta EE SPI level.
 
+[[a3538]]
 ==== RMI-IIOP (Optional)
 
 Support for CORBA, including use of IIOP and
 Java IDL, is Optional as of Jakarta EE 9. See
 <<a2331, Optional Jakarta Technologies>>.
 
+[[a3539]]
 ==== Java IDL (Optional)
 
 Support for CORBA, including use of IIOP and
