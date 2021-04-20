@@ -2499,7 +2499,9 @@ providing an appropriate _TransactionSynchronizationRegistry_ object as
 required by this specification.
 
 [[a1385]]
-=== ORB References
+=== ORB References (optional)
+
+NOTE: Support for CORBA as an application service is optional.
 
 Some Jakarta EE applications will need to make use
 of the CORBA ORB to perform certain operations. Such applications can
@@ -2552,9 +2554,6 @@ descriptor entry may also be a shared instance. However, the application
 may set the _shareable_ element of the _Resource_ annotation to _false_
 , or may set the _res-sharing-scope_ element in the deployment
 descriptor to _Unshareable_ , to request a non-shared _ORB_ instance.
-
-The requirements in this section only apply to
-Jakarta EE products that include support for interoperability using CORBA.
 
 ==== Application Component Provider’s Responsibilities
 
