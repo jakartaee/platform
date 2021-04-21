@@ -3,10 +3,4 @@
 == Revision History
 === Changes in Final Release
 ==== Editorial Changes
-* Removed the requirement for implementations to run on Java SE 11.
-
-=== Changes in Milestone Release Draft
-==== Editorial Changes
-* Updated all referenced Jakarta EE component versions per the Jakarta EE 9 release plan.
-* Updated the requirement on Java SE 8 for the APIs and Java SE 11 for the implementations.
-* Updated <<relateddocs, “Related Documents">> for the updated Specifications in Jakarta EE 9.
+* Updated <<relateddocs, “Related Documents">> for the updated Specifications in Jakarta EE 9.1.

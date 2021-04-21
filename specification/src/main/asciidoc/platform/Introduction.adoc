@@ -189,3 +189,9 @@ Specification Project with guidance provided by the Jakarta EE Working Group
 The Jakarta EE 9 specification was created by the Jakarta EE Platform
 Specification Project with guidance provided by the Jakarta EE Working Group
 (_https://jakarta.ee/_).
+
+=== Acknowledgements for Jakarta EE 9.1
+
+The Jakarta EE 9.1 specification was created by the Jakarta EE Platform
+Specification Project with guidance provided by the Jakarta EE Working Group
+(_https://jakarta.ee/_).
