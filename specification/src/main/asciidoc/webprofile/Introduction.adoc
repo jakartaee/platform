@@ -72,7 +72,7 @@ NOTE: Profile definitions can be quite terse, amounting to little more than a li
 Being the first profile of the Java(TM) EE 6 Platform to be defined, we expect the Web Profile specification to be used as a model for future profiles.
 It will also be seen as a starting point for understanding how the requirements defined in the Jakarta EE Platform specification apply to a profile that subsets the platform itself, a significant innovation in this version of the platform.
 (The case of a profile that is a superset of the platform is much easier to picture.)
-To help with this process, this section attempts to shed light on how one should go from the definition of the Web Profile to figuring out Jakarta EE Web Profile, the exact set of requirements that apply to it, and consequently to any product that implements it.
+To help with this process, this section attempts to shed light on how one should go from the definition of the Web Profile to figuring out the exact set of requirements that apply to it, and consequently to any product that implements it.
 
 As dictated by the general rules for Jakarta EE
 profiles in the Platform specification, products that implement the Web
