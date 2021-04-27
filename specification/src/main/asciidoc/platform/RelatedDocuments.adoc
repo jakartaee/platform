@@ -68,6 +68,7 @@ _Jakarta™ Managed Beans Specification, Version 2.0_. Available at: _https://ja
 
 _Jakarta™ Interceptors Specification, Version 2.1_. Available at: _https://jakarta.ee/specifications/interceptors/2.1_
 
+[[cdi-spec]]
 _Jakarta™ Contexts and Dependency Injection Specification, Version 4.0_. Available at: _https://jakarta.ee/specifications/cdi/4.0_
 
 _Jakarta™ Dependency Injection Specification, Version 2.0_. Available at: _https://jakarta.ee/specifications/dependency-injection/2.0_

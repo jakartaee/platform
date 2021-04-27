@@ -1,0 +1,5 @@
+[[component-integration]]
+== Component Specification Integration Requirements
+This section defines the requirements between component specifications that are included in the Platform.
+
+include::cdi-ee-spec/javaeeintegration.adoc[leveloffset=+1]
