@@ -1044,3 +1044,11 @@ Predominantly, Jakarta EE 9 is a tooling release:
 - A platform that development teams can use as a stable target for testing migration of their applications to the new namespace.
 - A platform that runtime vendors can use to test and deliver options and capabilities that support migration and backwards compatibility with Jakarta EE 8.
 - A foundation for innovation that Jakarta EE specification projects can use to drive new features for release in Jakarta EE 10 and beyond.
+
+=== Changes in Jakarta EE 9.1
+
+The goal of the Jakarta EE 9.1 release is to deliver a set of specifications functionally equivalent to Jakarta EE 9 and adding the support for the Java SE 11 runtime.
+
+Jakarta EE 9.1 is an extension to the foundational Jakarta EE 9 release.
+No API updates are expected in Jakarta EE 9.1.
+Only the Platform and Web Profile Specifications along with the TCKs and Compatible Implementations should be affected by Jakarta EE 9.1.
