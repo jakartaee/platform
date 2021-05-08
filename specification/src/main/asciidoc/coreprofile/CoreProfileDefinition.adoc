@@ -1,0 +1,30 @@
+== Core Profile Definition
+
+This chapter defines the contents of the Jakarta™ EE 10.0 Core Profile.
+
+[[required_components]]
+=== Required Components
+
+The following technologies are required components of the Core Profile:
+
+* Jakarta RESTful Web Services 4.0
+* Jakarta JSON Processing 2.1
+* Jakarta JSON Binding 2.1
+* Jakarta Annotations 2.0
+* Jakarta Enterprise Beans Lite 4.0
+* Jakarta Interceptors 2.0
+* Jakarta Dependency Injection 2.0
+* Jakarta Config 1.0
+
+NOTE: This list has not been finalized. Discussions exist in the
+current https://github.com/eclipse-ee4j/jakartaee-platform/issues/353[GitHub] issue and https://docs.google.com/document/d/1tal7dMb6DOHBCwlecViEjPqAMTMEStoZdxTVokIVW94/edit#[GoogleDoc].
+
+=== Optional Components
+
+There are no optional components in the Core Profile.
+
+[[additional_requirements]]
+=== Additional Requirements
+
+There are currently no requirements on the deployment packaging of
+core profile based applications.

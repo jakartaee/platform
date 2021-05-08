@@ -1,0 +1,57 @@
+== Introduction
+
+This specification defines the Jakarta(TM) EE Core Profile (“Core Profile”), a profile of the Jakarta™ Platform, Enterprise
+Edition specifically targeted at smaller applications built around microservices.
+
+=== Target and Rationale for the Web Profile
+
+The Core Profile is targeted at developers of
+modern cloud applications with focus on a minimal set of APIs
+that support microservices with a focus on enabling implementations
+that make use of ahead of time complitation build to minimize startup
+time and memory footprint.
+
+It is worth noting that Core Profile products are allowed to ship with more technologies than the
+required ones. It is conceivable that products will offer a choice at
+installation time/or build time between different configurations, some richer in
+extensions, or even allow for complete customization beyond the required
+core (“à la carte” installation).
+
+=== Determining Applicable Requirements
+
+NOTE: Profile definitions can be quite terse, amounting to little more than a list of required technologies and a
+(possibly empty) set of additional requirements, beyond those entailed by all the referenced specifications.
+
+As dictated by the general rules for Jakarta EE profiles in the Platform specification, products that implement the Core
+Profile must honor:
+
+. all requirements of the common requirements section that applies to all profiles;
+. all requirements of this specification;
+. all requirements of the individual component specifications;
+. all requirements in the Jakarta EE Platform specification that are conditional on the presence of a specific
+technology or combinations of technologies.
+
+Let’s look at some examples of requirements from each grouping.
+
+For the first one, the Jakarta EE Platform
+specification mandates support for the “ _java:_ ” naming context in all
+profiles. Consequently, Web Profile products must support it. For a
+similar reason, all Core Profile 10.0 APIs must support the Java(TM) Platform, Standard Edition 11 API.
+
+In the second category one can point out the
+requirement to support Jakarta EE web application modules ( _.war_ files)
+(<<additional_requirements, see Additional Requirements>>).
+
+The third category is hopefully
+self-explanatory. For example, Web Profile products must implement the
+Servlet API, which in turn means they need to satisfy all the
+requirements listed in the Jakarta Servlet specification.
+
+The fourth category is the most complex. As a
+first example, TBD...
+
+=== Acknowledgements for Jakarta EE 10.0
+
+The Jakarta EE 10.0 specification was created by the Jakarta EE Platform
+Specification Project with guidance provided by the Jakarta EE Working Group
+(_https://jakarta.ee/_).
