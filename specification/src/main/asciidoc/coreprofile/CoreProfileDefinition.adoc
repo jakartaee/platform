@@ -11,7 +11,7 @@ The following technologies are required components of the Core Profile:
 * Jakarta JSON Processing 2.1
 * Jakarta JSON Binding 2.1
 * Jakarta Annotations 2.0
-* Jakarta Enterprise Beans Lite 4.0
+* Jakarta Contexts and Dependency Injection Lite 4.0
 * Jakarta Interceptors 2.0
 * Jakarta Dependency Injection 2.0
 * Jakarta Config 1.0
