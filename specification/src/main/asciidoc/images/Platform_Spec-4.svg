@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.0//EN" "http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd">
 <!-- Generato da Microsoft Visio 11.0, SVG Export, v1.0 Platform_Spec-4.svg Pagina 1 -->
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:v="http://schemas.microsoft.com/visio/2003/SVGExtensions/" width="3.91764in"
-		height="1.55543in" viewBox="0 0 282.07 111.991" xml:space="preserve" color-interpolation-filters="sRGB" class="st9"
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:v="http://schemas.microsoft.com/visio/2003/SVGExtensions/" width="4.15386in"
+		height="1.83102in" viewBox="0 0 299.078 131.834" xml:space="preserve" color-interpolation-filters="sRGB" class="st9"
 		xmlns:xlink="http://www.w3.org/1999/xlink">
 	<v:documentProperties v:langID="1040" v:metric="true" v:viewMarkup="false">
 		<v:userDefs>
@@ -37,84 +37,84 @@
 		<title>Pagina 1</title>
 		<v:pageProperties v:drawingScale="0.0393701" v:pageScale="0.0393701" v:drawingUnits="24" v:shadowOffsetX="8.50394"
 				v:shadowOffsetY="-8.50394"/>
-		<g id="shape139-1" v:mID="139" v:groupContext="shape" transform="translate(0.72,-14.8932)">
+		<g id="shape139-1" v:mID="139" v:groupContext="shape" transform="translate(0.72,-0.72)">
 			<title>Foglio.139</title>
-			<rect x="0" y="26.9518" width="257.953" height="85.0394" class="st1"/>
+			<rect x="0" y="1.44" width="297.638" height="130.394" class="st1"/>
 		</g>
-		<g id="shape1-3" v:mID="1" v:groupContext="shape" transform="translate(196.311,-0.72)">
+		<g id="shape1-3" v:mID="1" v:groupContext="shape" transform="translate(201.98,-13.4759)">
 			<title>Foglio.1</title>
-			<rect x="0" y="21.2825" width="85.0394" height="90.7087" class="st2"/>
+			<rect x="0" y="41.125" width="85.0394" height="90.7087" class="st2"/>
 		</g>
-		<g id="shape110-5" v:mID="110" v:groupContext="shape" transform="translate(49.7189,180.615) scale(1,-1)">
+		<g id="shape110-5" v:mID="110" v:groupContext="shape" transform="translate(55.3882,207.544) scale(1,-1)">
 			<title>Foglio.110</title>
-			<path d="M0 111.99 L134.04 111.99" class="st3"/>
+			<path d="M0 131.83 L134.04 131.83" class="st3"/>
 		</g>
-		<g id="shape128-11" v:mID="128" v:groupContext="shape" transform="translate(295.829,65.7893) rotate(90)">
+		<g id="shape128-11" v:mID="128" v:groupContext="shape" transform="translate(321.341,72.8759) rotate(90)">
 			<title>Foglio.128</title>
-			<path d="M5.67 111.99 L0 111.99 L2.83 102.35 L5.67 111.99 Z" class="st5"/>
+			<path d="M5.67 131.83 L0 131.83 L2.83 122.2 L5.67 131.83 Z" class="st5"/>
 		</g>
-		<g id="shape4-13" v:mID="4" v:groupContext="shape" transform="translate(193.476,-3.55465)">
+		<g id="shape4-13" v:mID="4" v:groupContext="shape" transform="translate(199.145,-16.3106)">
 			<title>Foglio.4</title>
-			<rect x="0" y="18.4479" width="85.0394" height="93.5433" class="st6"/>
+			<rect x="0" y="38.2904" width="85.0394" height="93.5433" class="st6"/>
 		</g>
-		<g id="shape138-15" v:mID="138" v:groupContext="shape" transform="translate(0.72,-74.4208)">
+		<g id="shape138-15" v:mID="138" v:groupContext="shape" transform="translate(6.38929,-87.1767)">
 			<title>Foglio.138</title>
 			<desc>Web Client</desc>
 			<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
-			<v:textRect cx="28.3465" cy="104.905" width="56.7" height="14.1732"/>
-			<rect x="0" y="97.818" width="56.6929" height="14.1732" class="st7"/>
-			<text x="8.78" y="107.3" class="st8" v:langID="1040"><v:paragraph v:horizAlign="1"/><v:tabList/>Web Client</text>		</g>
-		<g id="shape2-18" v:mID="2" v:groupContext="shape" transform="translate(11.2487,-31.9011)">
+			<v:textRect cx="28.3465" cy="124.747" width="56.7" height="14.1732"/>
+			<rect x="0" y="117.66" width="56.6929" height="14.1732" class="st7"/>
+			<text x="8.78" y="127.15" class="st8" v:langID="1040"><v:paragraph v:horizAlign="1"/><v:tabList/>Web Client</text>		</g>
+		<g id="shape2-18" v:mID="2" v:groupContext="shape" transform="translate(16.918,-44.657)">
 			<title>Foglio.2</title>
-			<rect x="0" y="71.4962" width="40.4949" height="40.4949" class="st2"/>
+			<rect x="0" y="91.3388" width="40.4949" height="40.4949" class="st2"/>
 		</g>
-		<g id="shape3-20" v:mID="3" v:groupContext="shape" transform="translate(9.22394,-33.9258)">
+		<g id="shape3-20" v:mID="3" v:groupContext="shape" transform="translate(14.8932,-46.6818)">
 			<title>Foglio.3</title>
-			<rect x="0" y="71.4962" width="40.4949" height="40.4949" class="st6"/>
+			<rect x="0" y="91.3388" width="40.4949" height="40.4949" class="st6"/>
 		</g>
-		<g id="shape5-22" v:mID="5" v:groupContext="shape" transform="translate(190.641,-97.098)">
+		<g id="shape5-22" v:mID="5" v:groupContext="shape" transform="translate(196.311,-109.854)">
 			<title>Foglio.5</title>
 			<desc>Web Server</desc>
 			<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
-			<v:textRect cx="28.3465" cy="104.905" width="56.7" height="14.1732"/>
-			<rect x="0" y="97.818" width="56.6929" height="14.1732" class="st7"/>
-			<text x="7.23" y="107.3" class="st8" v:langID="1040"><v:paragraph v:horizAlign="1"/><v:tabList/>Web Server</text>		</g>
-		<g id="shape6-25" v:mID="6" v:groupContext="shape" transform="translate(68.7515,-27.5216)">
+			<v:textRect cx="28.3465" cy="124.747" width="56.7" height="14.1732"/>
+			<rect x="0" y="117.66" width="56.6929" height="14.1732" class="st7"/>
+			<text x="7.23" y="127.15" class="st8" v:langID="1040"><v:paragraph v:horizAlign="1"/><v:tabList/>Web Server</text>		</g>
+		<g id="shape6-25" v:mID="6" v:groupContext="shape" transform="translate(74.4208,-40.2775)">
 			<title>Foglio.6</title>
 			<desc>Authentication data</desc>
 			<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
-			<v:textRect cx="42.5197" cy="104.777" width="85.04" height="14.4283"/>
-			<rect x="0" y="97.5628" width="85.0394" height="14.4283" class="st7"/>
-			<text x="8.27" y="107.18" class="st8" v:langID="1040"><v:paragraph v:horizAlign="1"/><v:tabList/>Authentication data</text>		</g>
-		<g id="shape7-28" v:mID="7" v:groupContext="shape" transform="translate(68.7515,-60.2476)">
+			<v:textRect cx="42.5197" cy="124.62" width="85.04" height="14.4283"/>
+			<rect x="0" y="117.405" width="85.0394" height="14.4283" class="st7"/>
+			<text x="8.27" y="127.02" class="st8" v:langID="1040"><v:paragraph v:horizAlign="1"/><v:tabList/>Authentication data</text>		</g>
+		<g id="shape7-28" v:mID="7" v:groupContext="shape" transform="translate(74.4208,-73.0035)">
 			<title>Foglio.7</title>
 			<desc>Form</desc>
 			<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
-			<v:textRect cx="42.5197" cy="104.014" width="85.04" height="15.9543"/>
-			<rect x="0" y="96.0369" width="85.0394" height="15.9543" class="st7"/>
-			<text x="33.19" y="106.41" class="st8" v:langID="1040"><v:paragraph v:horizAlign="1"/><v:tabList/>Form</text>		</g>
-		<g id="shape140-31" v:mID="140" v:groupContext="shape" transform="translate(193.476,163.735) rotate(180)">
+			<v:textRect cx="42.5197" cy="123.857" width="85.04" height="15.9543"/>
+			<rect x="0" y="115.879" width="85.0394" height="15.9543" class="st7"/>
+			<text x="33.19" y="126.26" class="st8" v:langID="1040"><v:paragraph v:horizAlign="1"/><v:tabList/>Form</text>		</g>
+		<g id="shape140-31" v:mID="140" v:groupContext="shape" transform="translate(199.145,190.664) rotate(180)">
 			<title>Foglio.140</title>
-			<path d="M0 111.99 L134.04 111.99" class="st3"/>
+			<path d="M0 131.83 L134.04 131.83" class="st3"/>
 		</g>
-		<g id="shape141-36" v:mID="141" v:groupContext="shape" transform="translate(-52.6345,48.909) rotate(-90) scale(-1,1)">
+		<g id="shape141-36" v:mID="141" v:groupContext="shape" transform="translate(-66.8077,55.9956) rotate(-90) scale(-1,1)">
 			<title>Foglio.141</title>
-			<path d="M5.67 111.99 L0 111.99 L2.83 102.35 L5.67 111.99 Z" class="st5"/>
+			<path d="M5.67 131.83 L0 131.83 L2.83 122.2 L5.67 131.83 Z" class="st5"/>
 		</g>
-		<g id="shape143-38" v:mID="143" v:groupContext="shape" transform="translate(195.501,-29.0665)">
+		<g id="shape143-38" v:mID="143" v:groupContext="shape" transform="translate(201.17,-41.8224)">
 			<title>Foglio.143</title>
-			<rect x="0" y="71.4962" width="60.3375" height="40.4949" class="st2"/>
+			<rect x="0" y="91.3388" width="60.3375" height="40.4949" class="st2"/>
 		</g>
-		<g id="shape144-40" v:mID="144" v:groupContext="shape" transform="translate(193.476,-31.0912)">
+		<g id="shape144-40" v:mID="144" v:groupContext="shape" transform="translate(199.145,-43.8471)">
 			<title>Foglio.144</title>
-			<rect x="0" y="71.4962" width="59.5276" height="40.4949" class="st6"/>
+			<rect x="0" y="91.3388" width="59.5276" height="40.4949" class="st6"/>
 		</g>
-		<g id="shape142-42" v:mID="142" v:groupContext="shape" transform="translate(187.807,-44.657)">
+		<g id="shape142-42" v:mID="142" v:groupContext="shape" transform="translate(193.476,-57.4129)">
 			<title>Foglio.142</title>
 			<desc>credential</desc>
 			<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
-			<v:textRect cx="28.3465" cy="104.905" width="56.7" height="14.1732"/>
-			<rect x="0" y="97.818" width="56.6929" height="14.1732" class="st7"/>
-			<text x="11" y="107.3" class="st8" v:langID="1040"><v:paragraph v:horizAlign="1"/><v:tabList/>credential</text>		</g>
+			<v:textRect cx="28.3465" cy="124.747" width="56.7" height="14.1732"/>
+			<rect x="0" y="117.66" width="56.6929" height="14.1732" class="st7"/>
+			<text x="11" y="127.15" class="st8" v:langID="1040"><v:paragraph v:horizAlign="1"/><v:tabList/>credential</text>		</g>
 	</g>
 </svg>
