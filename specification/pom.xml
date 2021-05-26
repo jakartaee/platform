@@ -27,7 +27,7 @@
     <groupId>jakarta.platform</groupId>
     <artifactId>platform-specs</artifactId>
     <packaging>pom</packaging>
-    <version>9.1</version>
+    <version>10-SNAPSHOT</version>
     <name>Jakarta EE Platform Specifications</name>
 
     <properties>
