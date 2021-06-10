@@ -1,7 +1,0 @@
-include::Introduction.adoc[]
-
-include::ManagedBeansDefinition.adoc[]
-
-include::RevisionHistory.adoc[]
-
-include::RelatedDocuments.adoc[]
