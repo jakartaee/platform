@@ -70,7 +70,7 @@ URL, shown in <<a253, Initial Request>> .
 
 [[a253]]
 .Initial Request
-image::Platform_Spec-3.png[]
+image::Platform_Spec-3.svg[]
 
 Since the client has not yet authenticated
 itself to the application environment, the server responsible for
@@ -88,7 +88,7 @@ to the web server, where it is validated by the web server, as shown in
 
 [[a257]]
 .Initial Authentication
-image::Platform_Spec-4.png[]
+image::Platform_Spec-4.svg[]
 
 The validation mechanism may be local to the
 server, or it may leverage the underlying security services. On the
@@ -108,7 +108,7 @@ shows this process.
 
 [[a261]]
 .URL Authorization
-image::Platform_Spec-5.png[]
+image::Platform_Spec-5.svg[]
 
 The web server’s evaluation stops with an “is
 authorized” outcome when the web server is able to map the user to a
@@ -123,7 +123,7 @@ returns the result of the original URLrequest, as shown in
 
 [[a265]]
 .Fulfilling the Original Request
-image::Step4.png[]
+image::Step4.svg[]
 
 In our example, the response URL of a JSP page
 is returned, enabling the user to post form data that needs to be
@@ -140,7 +140,7 @@ security contexts, one in the web server and one in the Jakarta Enterprise Beans
 
 [[a269]]
 .Invoking an Enterprise Bean Business Method
-image::Platform_Spec-7.png[]
+image::Platform_Spec-7.svg[]
 
 The Jakarta Enterprise Beans container is responsible for enforcing
 access control on the enterprise bean method. It consults the security
