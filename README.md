@@ -19,8 +19,6 @@ this page will work correctly.
 ## API Specifications and Javadocs
 
 The official location for all of the Jakarta EE API Specifications and Javadocs is on the [Jakarta EE Specifications](https://jakarta.ee/specifications/) page.
-This local [Specifications](Specifications) page is also maintained to contain convenient links to the various project
-pages, specifications, and compatible implementations for all Jakarta EE specification projects.
 
 The latest API Java documentation for the Jakarta EE platform are collected together here:
 
