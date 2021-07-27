@@ -20,10 +20,8 @@ The key goal of the [Jakarta EE 9.1 Release Plan](JakartaEE9.1ReleasePlan) is to
 
 No other individual component (feature) release plans are expected.
 
-## Jakarta EE 9.1 schedule (work in progress)
+## Jakarta EE 9.1 schedule
 
-Overall schedule dates are ***tentative*** and ***subject to change***.  
-    
 - Final Jakarta EE 9.1 release (Java SE 11) - **2Q2021** completion
  - [Jakarta EE 9.1 Platform API](https://search.maven.org/artifact/jakarta.platform/jakarta.jakartaee-api/9.1.0/jar)
  - [Jakarta EE 9.1 Web Profile API](https://search.maven.org/artifact/jakarta.platform/jakarta.jakartaee-web-api/9.1.0/jar)
