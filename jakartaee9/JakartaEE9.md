@@ -1,4 +1,4 @@
-# Jakarta EE 9 (under development)
+# Jakarta EE 9 (released)
 
 - [Jakarta EE 9 Release Plan](#jakarta-ee-9-release-plan)
     - [Individual Component Release Plans](#individual-component-release-plans)
