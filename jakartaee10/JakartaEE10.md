@@ -22,7 +22,7 @@ Individual component Specification release plans have been developed by the resp
 
 Overall schedule dates are ***tentative*** and ***subject to change***.  
     
-- Final Jakarta EE 10 release - **4Q2021** completion (proposed)
+- Final Jakarta EE 10 release - **1Q2022** completion (proposed)
  - [Jakarta EE 10 Platform API](tbd)
  - [Jakarta EE 10 Web Profile API](tbd)
     
