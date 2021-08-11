@@ -1,10 +1,5 @@
 # Jakarta EE 10 Release Plan
 
-## Under Construction
-
-Current state can be found at this Google doc:
-https://docs.google.com/document/d/1U24VmTzAfXcn3WBnVcolb8vhZO-Pnk_bit0CKh_d2jM/edit?usp=sharing
-
 ### Preamble:  
 _Jakarta EE 10 is the first major release of Jakarta EE since the “jakarta” namespace update.
 Many of the component Specifications are introducing Major or Minor version updates to signify key changes in their respective Specifications and APIs.
@@ -136,7 +131,7 @@ List of specifications in Jakarta EE 10 Platform and Web Profile (updated specif
 
 ### Jakarta EE 10 APIs
 The Platform and Web Profile API uber jar files will be re-generated to correspond with the Jakarta EE 10 release designation.
-These API uber jar files will be compiled and distributed at the Java 11 source/target levels.
+These API uber jar files will be compiled and distributed at the Java 11 source/target levels.  
 **Note:** These uber jars will not be modularized, per the earlier discussion.
 
 ## Release Milestones
