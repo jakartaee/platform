@@ -21,7 +21,7 @@ Regardless of the scope of changes, all artifacts for the component and Platform
 ### Core Profile ([issue](https://github.com/eclipse-ee4j/jakartaee-platform/issues/387))
 Complementing the Web Profile, a new profile called the Core Profile is being proposed for Jakarta EE 10.
 The goal of the Core Profile is to define a subset of the Jakarta EE technologies which target microservices development and runtimes.
-It is still not clear if the creation of the Core Profile will be ready for Jakarta EE 10.
+It is still not clear if the Core Profile will be released in sync with the Web and Platform specifications.
 A separate release plan will be developed, circulated, and balloted for the Core Profile.
 
 ## Java SE 11 ([issue](https://github.com/eclipse-ee4j/jakartaee-platform/issues/331))
@@ -52,10 +52,10 @@ It is desired to firm up these suggestions into requirements.
 Several discussions via Issues, Mailing Lists, and the Platform call have resulted in these requirements for Jakarta EE 10.
  
 * Each individual component specification API provides at least one `module-info.class` following a specified set of conventions:
- * spec module name is `jakarta.<specName>`
+ * spec module name is `jakarta.<specName>` (reference [names.adoc](https://github.com/jakartaee/specification-committee/blob/master/names.adoc))
  * spec provides JPMS module definition (reliance on automatic modules is not allowed)
  * spec updates provider lookup algorithm to include search on module-path (if applicable)
- * TCK tests should be updated or provided to ensure a properly configured and functional `module-info.class`
+ * TCK tests should be updated or provided to ensure a properly configured and functional `module-info.class` (guidelines will be provided)
 * The Platform and Web Profile Specification API will not provide a platform/profile level `module-info.class` for EE 10
  * Don’t want to set the expectation that implementations must support JPMS at this point
  * Implementations can still experiment with their own aggregator modules
@@ -85,7 +85,7 @@ This will help with the eventual move of these TCK directories into their respec
 
 ## Component Specification Project Releases
 As mentioned, many of the Component Specification projects have already declared their intent for either a Major or Minor version update for Jakarta EE 10.
-These projects have already submitted or completed their Plan Reviews for inclusion in Jakarta EE 10.
+These projects have already submitted or completed their Plan Reviews for inclusion in Jakarta EE 10, and are driving towards a 4Q2021 release.
 These updates are outlined in the sections below.
 
 ## Deliverables in Jakarta EE 10
@@ -137,6 +137,7 @@ List of specifications in Jakarta EE 10 Platform and Web Profile (updated specif
 ### Jakarta EE 10 APIs
 The Platform and Web Profile API uber jar files will be re-generated to correspond with the Jakarta EE 10 release designation.
 These API uber jar files will be compiled and distributed at the Java 11 source/target levels.
+**Note:** These uber jars will not be modularized, per the earlier discussion.
 
 ## Release Milestones
 The Jakarta EE 10 Platform release plan covers the Platform and Web Profile specifications.
