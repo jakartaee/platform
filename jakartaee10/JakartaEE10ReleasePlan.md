@@ -47,13 +47,13 @@ It is desired to firm up these suggestions into requirements.
 Several discussions via Issues, Mailing Lists, and the Platform call have resulted in these requirements for Jakarta EE 10.
  
 * Each individual component specification API provides at least one `module-info.class` following a specified set of conventions:
- * spec module name is `jakarta.<specName>` (reference [names.adoc](https://github.com/jakartaee/specification-committee/blob/master/names.adoc))
- * spec provides JPMS module definition (reliance on automatic modules is not allowed)
- * spec updates provider lookup algorithm to include search on module-path (if applicable)
- * TCK tests should be updated or provided to ensure a properly configured and functional `module-info.class` (guidelines will be provided)
+  * spec module name is `jakarta.<specName>` (reference [names.adoc](https://github.com/jakartaee/specification-committee/blob/master/names.adoc))
+  * spec provides JPMS module definition (reliance on automatic modules is not allowed)
+  * spec updates provider lookup algorithm to include search on module-path (if applicable)
+  * TCK tests should be updated or provided to ensure a properly configured and functional `module-info.class` (guidelines will be provided)
 * The Platform and Web Profile Specification API will not provide a platform/profile level `module-info.class` for EE 10
- * Don’t want to set the expectation that implementations must support JPMS at this point
- * Implementations can still experiment with their own aggregator modules
+  * Don’t want to set the expectation that implementations must support JPMS at this point
+  * Implementations can still experiment with their own aggregator modules
 
 ## “Removal” of Two EJB Features
 The number of compatible implementations available for specification ratification is limited due to the requirement that all optional features need to be implemented and verified via the TCK.
@@ -124,7 +124,7 @@ List of specifications in Jakarta EE 10 Platform and Web Profile (updated specif
 * Jakarta WebSocket 2.1* (Web Profile)
 * Jakarta XML Binding 4.0* (Optional)
 * Jakarta XML Web Services 4.0* (Optional)
- * Jakarta Web Services Metadata 3.0 (Merged)
+  * Jakarta Web Services Metadata 3.0 (Merged)
 
 ### Proposed Updates to Web Profile
 * Move Concurrency 3.0* from Platform to Web Profile 10* ([issue](https://github.com/eclipse-ee4j/jakartaee-platform/issues/363#issuecomment-846424050))
