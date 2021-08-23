@@ -7,7 +7,7 @@
 
 ## Jakarta EE 10 Release Plan
 
-The [Jakarta EE 10 Release Plan](JakartaEE10ReleasePlan) is under construction! 
+The [Jakarta EE 10 Release Plan](JakartaEE10ReleasePlan) is nearing completion! 
 
 A [Jakarta EE 10 Release Plan FAQ](https://eclipse-ee4j.github.io/jakartaee-platform/jakartaee10/JakartaEE10ReleasePlanFAQ) has also been created to help clarify aspects of the Release Plan.
 
