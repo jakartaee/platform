@@ -52,7 +52,7 @@ the Java EE application 7 XML Schema.
 
 [[a3453]]
 .Java EE 7 Application XML Schema Structure
-image::JavaEEapplication_schema_7.png[]
+image::JavaEEapplication_schema_7.svg[]
 
 <<a3483, Java EE 7 Application XML Schema Structure>> The XML Schema located at
 _http://xmlns.jcp.org/xml/ns/javaee/application_7.xsd_ defines the XML
@@ -90,7 +90,7 @@ _http://xmlns.jcp.org/xml/ns/javaee/application-client_7.xsd_ .
 
 [[a3462]]
 .Java EE 7 Application Client XML Schema Structure
-image::JavaEEapplication-client_schema_7.png[]
+image::JavaEEapplication-client_schema_7.svg[]
 
 === Java EE 6 Schemas
 
@@ -118,7 +118,7 @@ Java EE 6 application XML Schema.
 
 [[a3467]]
 .Java EE 6 Application XML Schema Structure
-image::JavaEEapplication_schema.png[]
+image::JavaEEapplication_schema.svg[]
 
 <<a3483, Java EE 6 Application XML Schema Structure>> The XML Schema located at
 _http://java.sun.com/xml/ns/javaee/application_6.xsd_ defines the XML
@@ -155,7 +155,7 @@ _http://java.sun.com/xml/ns/javaee/application-client_6.xsd_ .
 
 [[a3476]]
 .Java EE 6 Application Client XML Schema Structure
-image::JavaEEapplication-client_schema.png[]
+image::JavaEEapplication-client_schema.svg[]
 
 === Java EE 5 Schemas
 
@@ -186,7 +186,7 @@ of the Java EE 5 application XML Schema.
 
 [[a3483]]
 .Java EE 5 Application XML Schema Structure
-image::Platform_Spec-17.png[]
+image::Platform_Spec-17.svg[]
 
 The XML Schema located at
 _http://java.sun.com/xml/ns/javaee/application_5.xsd_ defines the XML
@@ -224,7 +224,7 @@ _http://java.sun.com/xml/ns/javaee/application-client_5.xsd_ .
 
 [[a3492]]
 .Java EE 5 Application Client XML Schema Structure
-image::Platform_Spec-18.png[]
+image::Platform_Spec-18.svg[]
 
 === J2EE 1.4 Schemas
 
@@ -252,7 +252,7 @@ structure of the J2EE application XML Schema.
 
 [[a3498]]
 .J2EE 1.4 Application XML Schema Structure
-image::Platform_Spec-19.png[]
+image::Platform_Spec-19.svg[]
 
 The XML Schema that defines the XML grammar for
 a J2EE 1.4 application deployment descriptor is located at
@@ -287,7 +287,7 @@ _http://java.sun.com/xml/ns/j2ee/application-client_1_4.xsd_ .
 
 [[a3523]]
 .J2EE 1.4 Application Client XML Schema Structure
-image::Platform_Spec-22.png[]
+image::Platform_Spec-22.svg[]
 
 === J2EE 1.3 DTDs
 
@@ -320,7 +320,7 @@ _J2EE:application_ XML DTD.
 
 [[a3509]]
 .J2EE:1.3 application XML DTD Structure
-image::JavaEEapplication_DTD.png[]
+image::JavaEEapplication_DTD.svg[]
 
 The DTD that defines the XML grammar for a J2EE
 1.3 application deployment descriptor is available at
@@ -355,7 +355,7 @@ http://java.sun.com/dtd/application-client_1_3.dtd.
 
 [[a3530]]
 .J2EE:1.3 application-client XML DTD Structure
-image::Platform_Spec-23.png[]
+image::Platform_Spec-23.svg[]
 
 === J2EE 1.2 DTDs
 
@@ -375,7 +375,7 @@ _J2EE:application_ XML DTD.
 
 [[a3516]]
 .J2EE.1.2 application XML DTD Structure
-image::Platform_Spec-21.png[]
+image::Platform_Spec-21.svg[]
 
 The DTD that defines the XML grammar for a J2EE
 1.2 application deployment descriptor is available at
@@ -398,4 +398,4 @@ http://java.sun.com/j2ee/dtds/application-client_1_2.dtd.
 
 [[a3536]]
 .J2EE:1.2 application-client XML DTD Structure
-image::Platform_Spec-24.png[]
+image::Platform_Spec-24.svg[]
