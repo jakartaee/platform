@@ -7,7 +7,10 @@
 
 ## Jakarta EE 10 Release Plan
 
-The [Jakarta EE 10 Release Plan](JakartaEE10ReleasePlan) is nearing completion! 
+The [Jakarta EE 10 Release Plan](JakartaEE10ReleasePlan) is now available! 
+During the span of Jun 2021 - Aug 2021, the plan was created, discussed, reviewed, and amended by the Jakarta EE Community and the Platform Project.
+On Aug 24, 2021, an official ballot was approved by the [Jakarta EE Specification Committee](https://jakarta.ee/committees/specification/).
+On Aug 31, 2021, the Jakarta EE 10 Release Plan was officially recognized by the [Jakarta EE Steering Committee](https://jakarta.ee/committees/steering/).
 
 A [Jakarta EE 10 Release Plan FAQ](https://eclipse-ee4j.github.io/jakartaee-platform/jakartaee10/JakartaEE10ReleasePlanFAQ) has also been created to help clarify aspects of the Release Plan.
 
