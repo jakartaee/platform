@@ -312,4 +312,4 @@ _https://jakarta.ee/xml/ns/jakartaee/application-client_9.xsd_.
 
 [[a3404]]
 .Jakarta EE Application Client XML Schema Structure
-image::JavaEEapplication-client_schema_7.png[]
+image::JavaEEapplication-client_schema_7.svg[]

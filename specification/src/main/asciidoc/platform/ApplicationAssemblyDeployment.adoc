@@ -1292,7 +1292,7 @@ of the structure of the Jakarta EE application XML schema.
 
 [[a3208]]
 .Jakarta EE Application XML Schema Structure
-image::JavaEEapplication_schema_7.png[]
+image::JavaEEapplication_schema_7.svg[]
 
 === Common Jakarta EE XML Schema Definitions
 

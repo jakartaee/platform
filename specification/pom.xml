@@ -27,7 +27,7 @@
     <groupId>jakarta.platform</groupId>
     <artifactId>platform-specs</artifactId>
     <packaging>pom</packaging>
-    <version>9.1</version>
+    <version>10-SNAPSHOT</version>
     <name>Jakarta EE Platform Specifications</name>
 
     <properties>
@@ -41,7 +41,6 @@
         <status>DRAFT</status>
         <maven.build.timestamp.format>MMMM dd, yyyy</maven.build.timestamp.format>
         <revisiondate>${maven.build.timestamp}</revisiondate>
-        <managedbean.version>2.1-SNAPSHOT</managedbean.version>  <!-- override <version> for Managed Beans spec-->
     </properties>
 
     <scm>
@@ -176,44 +175,6 @@
                                 <pagenums />
                                 <toc />
                                 <embedAssets>true</embedAssets>
-                            </attributes>
-                        </configuration>
-                    </execution>
-                    <!-- ManagedBeans HTML generation -->
-                    <execution>
-                        <id>managedbeans-asciidoc-to-html</id>
-                        <phase>generate-resources</phase>
-                        <goals>
-                            <goal>process-asciidoc</goal>
-                        </goals>
-                        <configuration>
-                            <backend>html5</backend>
-                            <sourceDocumentName>managed-beans-spec.adoc</sourceDocumentName>
-                            <outputFile>${project.build.directory}/generated-docs/jakarta-managed-beans-spec-${managedbean.version}.html</outputFile>
-                            <attributes>
-                                <toc>left</toc>
-                                <revnumber>${managedbean.version}</revnumber>
-                            </attributes>
-                        </configuration>
-                    </execution>
-                    <!-- ManagedBeans PDF generation -->
-                    <execution>
-                        <id>managedbeans-asciidoc-to-pdf</id>
-                        <phase>generate-resources</phase>
-                        <goals>
-                            <goal>process-asciidoc</goal>
-                        </goals>
-                        <configuration>
-                            <backend>pdf</backend>
-                            <sourceDocumentName>managed-beans-spec.adoc</sourceDocumentName>
-                            <outputFile>${project.build.directory}/generated-docs/jakarta-managed-beans-spec-${managedbean.version}.pdf</outputFile>
-                            <attributes>
-                                <pdf-stylesdir>${project.basedir}/src/theme</pdf-stylesdir>
-                                <pdf-style>jakartaee</pdf-style>
-                                <pagenums />
-                                <toc />
-                                <embedAssets>true</embedAssets>
-                                <revnumber>${managedbean.version}</revnumber>
                             </attributes>
                         </configuration>
                     </execution>
