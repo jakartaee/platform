@@ -31,7 +31,7 @@ This FAQ should be used to complement the [Jakarta EE 10 Release Plan](https://e
 
 The Core Profile is a new profile under development for Jakarta EE.
 Since the goal is to allow profiles to deliver on their own schedules (separate from the Platform), there is no strict requirement that the Core Profile be delivered with Jakarta EE 10.
-The current definition of the Core Profile can be found [https://eclipse-ee4j.github.io/jakartaee-platform/jakartaee10/JakartaEE10CoreProfileRelasePlan.md](here).
+The current definition of the Core Profile can be found [here](https://eclipse-ee4j.github.io/jakartaee-platform/jakartaee10/JakartaEE10CoreProfileRelasePlan).
 The Core Profile is currently expected to be delivered in the same Q1 2022 timeframe as the rest of the Jakarta EE 10 release. 
 
 #### Why require Java SE 17 for TCK execution?
