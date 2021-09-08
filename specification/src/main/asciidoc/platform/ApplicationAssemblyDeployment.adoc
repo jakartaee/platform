@@ -8,7 +8,7 @@ deployment of Jakarta EE applications into any Jakarta EE product.
 Jakarta EE applications are composed of one or
 more Jakarta EE components and an optional Jakarta EE application deployment
 descriptor. The deployment descriptor, if present, lists the
-application’s components as _module_ s. If the deployment descriptor is
+application’s components as _modules_. If the deployment descriptor is
 not present, the application’s modules are discovered using default
 naming rules. A Jakarta EE module represents the basic unit of composition
 of a Jakarta EE application. Jakarta EE modules consist of one or more Jakarta EE
