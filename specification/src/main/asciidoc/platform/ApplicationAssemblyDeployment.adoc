@@ -512,9 +512,7 @@ loaders that must be used by a Jakarta EE product. Instead, the
 specification defines requirements in terms of what classes must or must
 not be visible to components. A Jakarta EE product is free to use whatever
 class loaders it chooses to meet these requirements. Portable
-applications must not depend on the
-
-types of class loaders used or the
+applications must not depend on the types of class loaders used or the
 hierarchical arrangement of class loaders, if any. Portable applications
 must not depend on the order in which classes and resources are loaded.
 Applications should use the techniques described in
