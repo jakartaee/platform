@@ -699,9 +699,7 @@ of the implementation of the application server.
 
 Components in the Jakarta Enterprise Beans container must not have
 access to the following classes and resources, unless such classes or
-resources are covered by one of the
-
-rules above.
+resources are covered by one of the rules above.
 
 * Other classes or resources in the
 application package. For example, the application should not have access
