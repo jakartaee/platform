@@ -3,7 +3,7 @@
 This specification defines the Jakarta(TM) EE Core Profile (“Core Profile”), a profile of the Jakarta™ Platform, Enterprise
 Edition specifically targeted at smaller applications built around microservices.
 
-=== Target and Rationale for the Web Profile
+=== Target and Rationale for the Core Profile
 
 The Core Profile is targeted at developers of
 modern cloud applications with focus on a minimal set of APIs
@@ -34,18 +34,14 @@ technology or combinations of technologies.
 Let’s look at some examples of requirements from each grouping.
 
 For the first one, the Jakarta EE Platform
-specification mandates support for the “ _java:_ ” naming context in all
-profiles. Consequently, Web Profile products must support it. For a
-similar reason, all Core Profile 10.0 APIs must support the Java(TM) Platform, Standard Edition 11 API.
+specification mandates support for Java(TM) Platform, Standard Edition 11 API.  Because of this, all Core Profile 10.0 APIs must support the Java(TM) Platform, Standard Edition 11 API.
 
 In the second category one can point out the
 requirement to support Jakarta EE web application modules ( _.war_ files)
 (<<additional_requirements, see Additional Requirements>>).
 
 The third category is hopefully
-self-explanatory. For example, Web Profile products must implement the
-Servlet API, which in turn means they need to satisfy all the
-requirements listed in the Jakarta Servlet specification.
+self-explanatory. For example, Core Profile products must implement the Jakarta RESTful Web Services API, which in turn means they need to satisfy all the requirements listed in the Jakarta RESTful Web Services 4.0 specification.
 
 The fourth category is the most complex. As a
 first example, TBD...

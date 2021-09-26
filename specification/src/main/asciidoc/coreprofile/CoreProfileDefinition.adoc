@@ -14,7 +14,7 @@ The following technologies are required components of the Core Profile:
 * Jakarta Contexts and Dependency Injection Lite 4.0
 * Jakarta Interceptors 2.0
 * Jakarta Dependency Injection 2.0
-* Jakarta Config 1.0
+* Jakarta Config 1.0 (If available by deadline)
 
 NOTE: This list has not been finalized. Discussions exist in the
 current https://github.com/eclipse-ee4j/jakartaee-platform/issues/353[GitHub] issue and https://docs.google.com/document/d/1tal7dMb6DOHBCwlecViEjPqAMTMEStoZdxTVokIVW94/edit#[GoogleDoc].

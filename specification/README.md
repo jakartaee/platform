@@ -10,8 +10,8 @@ Building
 
 Prerequisites:
 
-* JDK8+
-* Maven 3.0.5+
+* JDK11+
+* Maven 3.6.0+
 
 Run the full build:
 
@@ -19,10 +19,12 @@ Run the full build:
 
 Locate the html files:
 - `target/generated-docs/jakarta-platform-spec-<version>.html`
+- `target/generated-docs/jakarta-coreprofile-spec-<version>.html`
 - `target/generated-docs/jakarta-webprofile-spec-<version>.html`
 - `target/generated-docs/jakarta-coreprofile-spec-<version>.html`
 
 Locate the PDF files:
 - `target/generated-docs/jakarta-platform-spec-<version>.pdf`
+- `target/generated-docs/jakarta-coreprofile-spec-<version>.pdf`
 - `target/generated-docs/jakarta-webprofile-spec-<version>.pdf`
 - `target/generated-docs/jakarta-coreprofile-spec-<version>.pdf`

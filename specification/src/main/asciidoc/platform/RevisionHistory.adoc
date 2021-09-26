@@ -1,7 +1,10 @@
 [appendix]
 [[revisionHistory]]
 == Revision History
-=== Changes in Final Release
+=== Changes in Final Release for EE10
+TBD
+
+=== Changes in Final Release EE9.1
 ==== Editorial Changes
 * Added the support for implementations to run and certify using Java SE 11.
 * Clarified the optional support for CORBA and the ORB.
