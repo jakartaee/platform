@@ -132,12 +132,6 @@ language programs that are typically GUI programs that execute on a
 desktop computer. Application clients offer a user experience similar to
 that of native applications and have access to all of the facilities of
 the Jakarta EE middle tier.
-* Applets are GUI components that typically
-execute in a web browser, but can execute in a variety of other
-applications or devices that support the applet programming model.
-Applets can be used to provide a powerful user interface for Jakarta EE
-applications. (Simple HTML pages can also be used to provide a more
-limited user interface for Jakarta EE applications.)
 * servlets, server pages, server faces applications,
 filters, and web event listeners typically execute in a web container
 and may respond to HTTP requests from web clients. Servlets, server pages,
@@ -193,14 +187,14 @@ security checks, resource pooling, and state management.
 
 A typical Jakarta EE product will provide a
 container for each application component type: application client
-container, applet container, web component container, and enterprise
+container, web component container, and enterprise
 bean container.
 
 ==== Container Requirements
 
 This specification requires that containers
 support execution in a Java™ runtime environment, as defined by the Java
-Platform, Standard Edition specification, v8 or later (Java SE 8 or later).
+Platform, Standard Edition specification, v11 or later (Java SE 11 or later).
 
 The container tools must understand the file
 formats for the packaging of application components for deployment.
@@ -532,7 +526,6 @@ see fit. A Jakarta EE product must be able to deploy application components
 that execute with the semantics described by this specification.
 
 A typical low end Jakarta EE product will support
-applets using the Java Plugin in one of the popular browsers,
 application clients each in their own Java virtual machine, and will
 provide a single server that supports both web components and enterprise
 beans. A high end Jakarta EE product might split the server components into
