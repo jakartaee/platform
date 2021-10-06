@@ -47,12 +47,12 @@ technologies. If a newer version of the Java SE platform provided by
 a container has removed some of these technologies, the container must
 provide these technologies in some other manner.
 
-The Java SE 8 platform includes the following enterprise technologies:
+The Java SE 11 platform includes the following enterprise technologies:
 
-* Java IDL footnote:[Removed from Java SE 11. Support for Java IDL is optional (see <<a3539, Java IDL (Optional)>>.) Product vendors that wish to support Java IDL on a Java SE version that does not provide the Java IDL APIs must otherwise provide those APIs to application components.]
+* Java IDL footnote:[Removed from Java SE 11. Support for Java IDL is optional (see <<a3539, Java IDL (Optional)>>.) Product vendors that wish to support Java IDL on a Java SE version that does not provide the Java IDL APIs must otherwise provide those APIs to application components. ]
 * JDBC
 * RMI-JRMP
-m* javax.rmi.PortableRemoteObject footnote:[Removed from Java SE 11. Product vendors that support the optional Enterprise Beans 2.x API group must ensure that the javax.rmi.PortableRemoteObject class is available to application components.]
+* javax.rmi.PortableRemoteObject footnote:[Removed from Java SE 11. Product vendors that support the optional Enterprise Beans 2.x API group must ensure that the javax.rmi.PortableRemoteObject class is available to application components.]
 * JNDI
 * JAXP
 * StAX
