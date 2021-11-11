@@ -606,7 +606,7 @@ needed. With lazy authentication, a user is not required to authenticate
 until there is a request to access a protected resource.
 
 Lazy authentication can be used with first-tier
-clients (applets, application clients) when they request access to
+application clients when they request access to
 protected resources that require authentication. At that point the user
 can be asked to provide appropriate authentication data. If a user is
 successfully authenticated, the user is allowed to access the resource.

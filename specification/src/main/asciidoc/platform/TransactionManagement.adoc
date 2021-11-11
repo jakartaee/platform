@@ -215,11 +215,6 @@ in the Jakarta Enterprise Beans specification.
 The Jakarta EE Product Provider is not required to provide transaction
 management support for application clients.
 
-==== Applet Clients
-
-The Jakarta EE Product Provider is not required to provide transaction
-management support for applets.
-
 [[a516]]
 ==== Transactional JDBC™ Technology Support
 
