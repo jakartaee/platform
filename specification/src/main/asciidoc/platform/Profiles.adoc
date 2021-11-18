@@ -9,6 +9,8 @@ The Jakarta EE Web Profile Specification,
 published in conjunction with the present specification, defines the
 first Jakarta EE profile, the Web Profile.
 
+The Jakarta EE Core Profile Specification is a minimal profile that is published separately from the Web Profile and this specification.
+
 The definition of other profiles is left to
 future specifications.
 
@@ -147,7 +149,7 @@ annotations defined by the Common Annotations specification ( _Resource_,
  _Resources_, _PostConstruct_, _PreDestroy_ )
 
 The following functionality is required to be
-supported in all Jakarta EE profiles:
+supported in all Jakarta EE profiles other than the Core Profile:
 
 * JNDI “java:” naming context (see <<a607, JNDI Naming Context>>)
 * Jakarta Transactions
