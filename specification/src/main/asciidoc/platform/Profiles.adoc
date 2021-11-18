@@ -9,7 +9,7 @@ The Jakarta EE Web Profile Specification,
 published in conjunction with the present specification, defines the
 first Jakarta EE profile, the Web Profile.
 
-The Jakarta EE Core Profile Specification is a minimal profile that is published separately from the Web Profile and this specification.
+The Jakarta EE Core Profile Specification is a minimal profile that is published separately from the Web Profile and this Platform specification.
 
 The definition of other profiles is left to
 future specifications.
