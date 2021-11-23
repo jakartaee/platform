@@ -138,6 +138,94 @@ These API uber jar files will be compiled and distributed at the Java 11 source/
 The Jakarta EE 10 Platform release plan covers the Platform and Web Profile specifications.
 As stated earlier, all component Specifications which plan a Major or Minor release will be creating their own separate release plans.
 
+### Waves
+
+We are proposing to deliver Jakarta EE 9 in a set of waves similar to those delivered in the Jakarta EE 8 release. These waves are somewhat related to the dependency tree of specifications. We aim to deliver specifications with a low number of dependencies first followed by other specifications.
+
+
+#### Independent Wave (standalone)
+
+The following specifications can be delivered independently of other apis.
+
+*   Jakarta Annotations
+*   Jakarta Concurrency
+*   Jakarta Messaging
+*   Jakarta Persistence
+*   Jakarta Managed Beans
+
+
+#### Wave 1
+
+The specifications included in Wave 1 are:
+
+*   Jakarta JSON Processing
+*   Jakarta Dependency Injection (Service release for module-info)
+*   Jakarta Expression Language
+*   Jakarta Bean Validation (Service release for module-info)
+*   Jakarta WebSocket
+*   Jakarta Servlet
+*   Jakarta Activation
+*   Jakarta SOAP with Attachments
+*   Jakarta Interceptors (Service release for module-info)
+
+
+#### Wave 2
+
+The specifications included in Wave 2 are:
+
+*   Jakarta Mail
+*   Jakarta Authentication
+*   Jakarta JSON Binding
+*   Jakarta Server Pages
+*   Jakarta Debugging Support for Other Languages
+*   Jakarta Authorization
+*   Jakarta XML Binding
+
+
+#### Wave 3
+
+The specifications included in Wave 3 are:
+
+*   Jakarta Contexts and Dependency Injection
+*   Jakarta XML Web Services
+
+
+#### Wave 4
+
+The specifications included in Wave 4 are:
+
+*   Jakarta Batch
+*   Jakarta RESTful Web Services
+*   Jakarta Transactions (Service release for module-info)
+
+
+#### Wave 5
+
+The specifications included in Wave 5 are:
+
+*   Jakarta Connectors
+*   Jakarta Standard Tag Library
+*   Jakarta Enterprise Beans (Service release for module-info)
+*   Jakarta Enterprise Web Services
+
+
+#### Wave 6
+
+The specifications included in Wave 6 are:
+
+*   Jakarta Security
+*   Jakarta Server Faces
+
+
+#### Wave 7
+
+The specifications included in Wave 7 are:
+
+*   Jakarta EE 10 Core Profile
+*   Jakarta EE 10 Web Profile
+*   Jakarta EE 10 Full Platform
+
+
 ### Full Platform and Web Profile Release Candidate
 
 With the rather large Jakarta EE 10 release scope, at least one Release Candidate for Jakarta EE Platform and Web Profile will be produced.
