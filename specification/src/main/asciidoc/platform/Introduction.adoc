@@ -17,7 +17,7 @@ the integrity of the enterprise.
 transactions are accurately and promptly processed.
 
 In most cases, enterprise services are
-implemented as multitier __ applications. The middle tiers integrate
+implemented as _multitier applications_. The middle tiers integrate
 existing EISs with the business functions and data of the new service.
 Maturing web technologies are used to provide first tier users with easy
 access to business complexities, and eliminate or drastically reduce

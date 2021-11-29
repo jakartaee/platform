@@ -1263,7 +1263,7 @@ excluded from any initialization ordering requirements.
 
 The XML grammar for a Jakarta EE application
 deployment descriptor is defined by the Jakarta EE application schema. The
-root element of the deployment descriptor for a Jaav EE application is
+root element of the deployment descriptor for a Jakarta EE application is
 _application_ . The granularity of composition for Jakarta EE application
 assembly is the Jakarta EE module. A Jakarta EE application deployment
 descriptor contains a name and description for the application and the
