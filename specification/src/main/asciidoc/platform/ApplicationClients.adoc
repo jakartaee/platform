@@ -1,5 +1,6 @@
 [[a3294]]
 == Application Clients
+:imagesdir: ../images
 
 This chapter describes application clients
 in the Jakarta™ Enterprise Edition (Jakarta EE).

@@ -13,9 +13,9 @@ technologies.
 
 Jakarta EE application components execute in
 runtime environments provided by the containers that are a part of the
-Jakarta EE platform. The full Jakarta EE platform supports four types of
+Jakarta EE platform. The full Jakarta EE platform supports three types of
 containers corresponding to Jakarta EE application component types:
-application client containers; applet containers; web containers for
+application client containers; web containers for
 servlets, Jakarta Server Pages, Jakarta Server Faces applications,
 Jakarta RESTful Web Services applications;
 and enterprise bean containers. A Jakarta EE profile may support only a subset
@@ -34,25 +34,24 @@ apply.
 ==== Java Compatible APIs
 
 The containers provide all application
-components with at least the Java Platform, Standard Edition, v8 (Java
+components with at least the Java Platform, Standard Edition, v11 (Java
 SE) APIs. Containers may provide newer versions of the Java SE platform,
 provided they meet all the Jakarta EE platform requirements as outlined below.
 
 ===== Java SE Enterprise Technologies
 
-The Java SE 8 platform includes a number of enterprise technologies. Except
+The Java SE 11 platform includes a number of enterprise technologies. Except
 for technologies noted in this specification as being optional, containers
 must provide all application components with the APIs associated with these
 technologies. If a newer version of the Java SE platform provided by
 a container has removed some of these technologies, the container must
 provide these technologies in some other manner.
 
-The Java SE 8 platform includes the following enterprise technologies:
+The Java SE 11 platform includes the following enterprise technologies:
 
-* Java IDL footnote:[Removed from Java SE 11. Support for Java IDL is optional (see <<a3539, Java IDL (Optional)>>.) Product vendors that wish to support Java IDL on a Java SE version that does not provide the Java IDL APIs must otherwise provide those APIs to application components.]
+* Java IDL footnote:[Removed from Java SE 11. Support for Java IDL is optional (see <<a3539, Java IDL (Optional)>>.) Product vendors that wish to support Java IDL on a Java SE version that does not provide the Java IDL APIs must otherwise provide those APIs to application components. ]
 * JDBC
 * RMI-JRMP
-* RMI-IIOP footnote:[Removed from Java SE 11. Support for RMI-IIOP is optional (see <<a3538, RMI-IIOP (Optional)>>.) Product vendors that wish to support RMI-IIOP on a Java SE version that does not provide the RMI-IIOP APIs must otherwise provide those APIs to application components.]
 * javax.rmi.PortableRemoteObject footnote:[Removed from Java SE 11. Product vendors that support the optional Enterprise Beans 2.x API group must ensure that the javax.rmi.PortableRemoteObject class is available to application components.]
 * JNDI
 * JAXP
@@ -70,12 +69,12 @@ by Java SE 8 are now provided by Jakarta EE specifications and are
 included in the list of <<a2161, Required Jakarta Technologies>>.
 
 The specifications for the Java SE APIs are
-available at _http://docs.oracle.com/javase/8/docs/_ .
+available at _http://docs.oracle.com/javase/11/docs/_ .
 
 ===== Java Module Names
 Java(TM) SE 9 introduced the concept of a modularity system, known as the Java Platform Module System (JPMS).
 Defined modules need a _name_ to allow for references by other modules.
-Jakarta EE 9 does not define a module naming convention.
+Jakarta EE 10 does not define a module naming convention.
 However, some Java EE(TM) 8 and Jakarta EE features had already defined their corresponding module names.
 Due to these previous module naming efforts, the following guidelines are strongly suggested for Jakarta EE 9:
 
@@ -1109,9 +1108,7 @@ read-only access to the data in the name service.
 A Jakarta EE product may be required to provide
 a COSNaming name service to meet the Jakarta Enterprise Beans interoperability
 requirements.  In such a case, a COSNaming JNDI service provider must be available
-through the web, Enterprise Beans, and application client containers. It will also
-typically be available in the applet container, but this is not
-required.
+through the web, Enterprise Beans, and application client containers.
 
 A COSNaming JNDI service provider is a part
 of the Java SE 8 SDK and JRE from Oracle, but is not a required
@@ -1690,8 +1687,7 @@ found at _https://jakarta.ee/specifications/faces_ .
 The Jakarta Annotations specification defines
 Java language annotations that are used by several other specifications,
 including this specification. The specifications that use these
-annotations fully define the requirements for these annotations. The
-applet container need not support any of these annotations. All other
+annotations fully define the requirements for these annotations. All other
 containers must provide definitions for all of these annotations, and
 must support the semantics of these annotations as described in the
 corresponding specifications and summarized in the following table.

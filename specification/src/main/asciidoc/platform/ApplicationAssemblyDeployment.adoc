@@ -1,4 +1,5 @@
 == Application Assembly and Deployment
+:imagesdir: ../images
 
 This chapter specifies Jakarta™ Enterprise Edition (Jakarta EE) requirements for assembling, packaging, and
 deploying a Jakarta EE application. The main goal of these requirements is
@@ -752,11 +753,9 @@ access to the classes in other application client jar files in the same
 ear file, nor should it have access to the classes in web applications
 or Jakarta Enterprise Beans jar files in the same ear file.
 
-==== Applet Container Class Loading Requirements
+==== Applet Container Class Loading Requirements (Deprecated, removal in Java SE 17)
 
-The requirements for the applet container are
-completely specified by the Java SE 8 specification. This specification
-adds no new requirements for the applet container.
+Applets were deprecated in Java SE 9, and are slated for removal post Java SE 17.
 
 === Application Assembly
 

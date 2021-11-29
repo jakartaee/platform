@@ -1,5 +1,7 @@
 [[a235]]
 == Security
+// Allow images to be viewed when editing this doc
+:imagesdir: ../images
 
 This chapter describes the security
 requirements for the Jakarta™ Enterprise Edition (Jakarta EE) that
@@ -70,7 +72,7 @@ URL, shown in <<a253, Initial Request>> .
 
 [[a253]]
 .Initial Request
-image::Platform_Spec-3.svg[]
+image::Platform_Spec-3.svg[Request,700]
 
 Since the client has not yet authenticated
 itself to the application environment, the server responsible for
@@ -88,7 +90,7 @@ to the web server, where it is validated by the web server, as shown in
 
 [[a257]]
 .Initial Authentication
-image::Platform_Spec-4.svg[]
+image::Platform_Spec-4.svg[Authentication,700]
 
 The validation mechanism may be local to the
 server, or it may leverage the underlying security services. On the
@@ -604,7 +606,7 @@ needed. With lazy authentication, a user is not required to authenticate
 until there is a request to access a protected resource.
 
 Lazy authentication can be used with first-tier
-clients (applets, application clients) when they request access to
+application clients when they request access to
 protected resources that require authentication. At that point the user
 can be asked to provide appropriate authentication data. If a user is
 successfully authenticated, the user is allowed to access the resource.

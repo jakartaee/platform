@@ -27,6 +27,7 @@ The project maintains the following source code repositories
 * [https://github.com/eclipse-ee4j/jakartaee-firstcup](https://github.com/eclipse-ee4j/jakartaee-firstcup)
 * [https://github.com/eclipse-ee4j/jakartaee-firstcup-examples](https://github.com/eclipse-ee4j/jakartaee-firstcup-examples)
 * [https://github.com/eclipse-ee4j/jakartaee-schemas](https://github.com/eclipse-ee4j/jakartaee-schemas)
+* [https://github.com/eclipse-ee4j/managed-beans-spec](https://github.com/eclipse-ee4j/managed-beans-spec)
 
 ## Eclipse Contributor Agreement
 

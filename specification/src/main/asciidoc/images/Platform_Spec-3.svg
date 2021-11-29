@@ -1,97 +1,12 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.0//EN" "http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd">
-<!-- Generato da Microsoft Visio 11.0, SVG Export, v1.0 Platform_Spec-3.svg Pagina 1 -->
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:v="http://schemas.microsoft.com/visio/2003/SVGExtensions/" width="3.60268in"
-		height="1.2011in" viewBox="0 0 259.393 86.4794" xml:space="preserve" color-interpolation-filters="sRGB" class="st9"
-		xmlns:xlink="http://www.w3.org/1999/xlink">
-	<v:documentProperties v:langID="1040" v:metric="true" v:viewMarkup="false">
-		<v:userDefs>
-			<v:ud v:nameU="MBSAAddinOutlineVisible" v:prompt="" v:val="VT0(1):26"/>
-		</v:userDefs>
-	</v:documentProperties>
+<?xml version="1.0" encoding="utf-8"?>
+<svg version="1.0" width="300.000000pt" height="62.000000pt" viewBox="0 0 300.000000 62.000000" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" xmlns:bx="https://boxy-svg.com">
+  <defs>
 
-	<style type="text/css">
-	<![CDATA[
-		.st1 {fill:#ffffff;stroke:none;stroke-linecap:round;stroke-linejoin:round;stroke-width:0.72}
-		.st2 {fill:#bfbfbf;stroke:#bfbfbf;stroke-linecap:round;stroke-linejoin:round;stroke-width:0.72}
-		.st3 {marker-end:url(#mrkr13-10);stroke:#000000;stroke-linecap:round;stroke-linejoin:round;stroke-width:0.72}
-		.st4 {fill:#000000;fill-opacity:1;stroke:#000000;stroke-opacity:1;stroke-width:0.22222222222222}
-		.st5 {fill:#000000;stroke:#000000;stroke-linecap:round;stroke-linejoin:round;stroke-width:0.72}
-		.st6 {fill:#ffffff;stroke:#000000;stroke-linecap:round;stroke-linejoin:round;stroke-width:0.72}
-		.st7 {fill:none;stroke:none;stroke-linecap:round;stroke-linejoin:round;stroke-width:0.72}
-		.st8 {fill:#000000;font-family:Arial;font-size:0.666664em}
-		.st9 {fill:none;fill-rule:evenodd;font-size:12;overflow:visible;stroke-linecap:square;stroke-miterlimit:3}
-	]]>
-	</style>
-
-	<defs id="Markers">
-		<g id="lend13">
-			<path d="M 3 1 L -0 0 L 3 -1 L 3 1 " style="stroke:none"/>
-		</g>
-		<marker id="mrkr13-10" class="st4" v:arrowType="13" v:arrowSize="2" v:setback="13.5" refX="-13.5" orient="auto"
-				markerUnits="strokeWidth">
-			<use xlink:href="#lend13" transform="scale(-4.5,-4.5) "/>
-		</marker>
-	</defs>
-	<g v:mID="0" v:index="1" v:groupContext="foregroundPage">
-		<title>Pagina 1</title>
-		<v:pageProperties v:drawingScale="0.0393701" v:pageScale="0.0393701" v:drawingUnits="24" v:shadowOffsetX="8.50394"
-				v:shadowOffsetY="-8.50394"/>
-		<g id="shape139-1" v:mID="139" v:groupContext="shape" transform="translate(0.72,-0.72)">
-			<title>Foglio.139</title>
-			<rect x="0" y="1.44" width="257.953" height="85.0394" class="st1"/>
-		</g>
-		<g id="shape1-3" v:mID="1" v:groupContext="shape" transform="translate(196.311,-9.22394)">
-			<title>Foglio.1</title>
-			<rect x="0" y="29.7865" width="56.6929" height="56.6929" class="st2"/>
-		</g>
-		<g id="shape110-5" v:mID="110" v:groupContext="shape" transform="translate(49.7189,133.971) scale(1,-1)">
-			<title>Foglio.110</title>
-			<path d="M0 86.48 L134.04 86.48" class="st3"/>
-		</g>
-		<g id="shape128-11" v:mID="128" v:groupContext="shape" transform="translate(270.317,44.657) rotate(90)">
-			<title>Foglio.128</title>
-			<path d="M5.67 86.48 L0 86.48 L2.83 76.84 L5.67 86.48 Z" class="st5"/>
-		</g>
-		<g id="shape4-13" v:mID="4" v:groupContext="shape" transform="translate(193.476,-12.0586)">
-			<title>Foglio.4</title>
-			<rect x="0" y="29.7865" width="56.6929" height="56.6929" class="st6"/>
-		</g>
-		<g id="shape138-15" v:mID="138" v:groupContext="shape" transform="translate(0.72,-60.2476)">
-			<title>Foglio.138</title>
-			<desc>Web Client</desc>
-			<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
-			<v:textRect cx="28.3465" cy="79.3928" width="56.7" height="14.1732"/>
-			<rect x="0" y="72.3061" width="56.6929" height="14.1732" class="st7"/>
-			<text x="8.78" y="81.79" class="st8" v:langID="1040"><v:paragraph v:horizAlign="1"/><v:tabList/>Web Client</text>		</g>
-		<g id="shape2-18" v:mID="2" v:groupContext="shape" transform="translate(11.2487,-17.7279)">
-			<title>Foglio.2</title>
-			<rect x="0" y="45.9844" width="40.4949" height="40.4949" class="st2"/>
-		</g>
-		<g id="shape3-20" v:mID="3" v:groupContext="shape" transform="translate(9.22394,-19.7526)">
-			<title>Foglio.3</title>
-			<rect x="0" y="45.9844" width="40.4949" height="40.4949" class="st6"/>
-		</g>
-		<g id="shape5-22" v:mID="5" v:groupContext="shape" transform="translate(190.641,-68.7515)">
-			<title>Foglio.5</title>
-			<desc>Web Server</desc>
-			<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
-			<v:textRect cx="28.3465" cy="79.3928" width="56.7" height="14.1732"/>
-			<rect x="0" y="72.3061" width="56.6929" height="14.1732" class="st7"/>
-			<text x="7.23" y="81.79" class="st8" v:langID="1040"><v:paragraph v:horizAlign="1"/><v:tabList/>Web Server</text>		</g>
-		<g id="shape6-25" v:mID="6" v:groupContext="shape" transform="translate(68.7515,-21.8523)">
-			<title>Foglio.6</title>
-			<desc>protected resource</desc>
-			<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
-			<v:textRect cx="42.5197" cy="79.2652" width="85.04" height="14.4283"/>
-			<rect x="0" y="72.051" width="85.0394" height="14.4283" class="st7"/>
-			<text x="9.17" y="81.67" class="st8" v:langID="1040"><v:paragraph v:horizAlign="1"/><v:tabList/>protected resource</text>		</g>
-		<g id="shape7-28" v:mID="7" v:groupContext="shape" transform="translate(68.7515,-40.405)">
-			<title>Foglio.7</title>
-			<desc>Request access to</desc>
-			<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
-			<v:textRect cx="42.5197" cy="78.5022" width="85.04" height="15.9543"/>
-			<rect x="0" y="70.525" width="85.0394" height="15.9543" class="st7"/>
-			<text x="9.61" y="80.9" class="st8" v:langID="1040"><v:paragraph v:horizAlign="1"/><v:tabList/>Request access to  </text>		</g>
-	</g>
+  </defs>
+  <g transform="translate(0.000000,62.000000) scale(0.100000,-0.100000)" fill="#000000" stroke="none">
+    <path d="M1940 361 l0 -90 -35 15 c-44 18 -51 18 -35 -1 12 -14 -9 -16 -188 -15 -156 1 -203 5 -212 15 -14 16 -50 16 -50 -1 0 -8 -25 -12 -80 -11 -64 0 -80 3 -83 16 -4 14 -5 14 -6 0 -1 -15 -17 -17 -112 -18 l-111 -2 2 48 c3 92 20 84 -162 81 l-163 -3 -3 -133 c-2 -111 0 -133 13 -138 8 -3 12 -10 9 -15 -3 -5 66 -9 161 -9 161 0 165 1 155 19 -5 11 -10 47 -10 80 l0 60 426 1 c382 0 425 -2 414 -15 -21 -25 -5 -27 34 -4 l36 21 0 -96 0 -96 218 -2 217 -2 -210 -6 c-115 -3 -208 -7 -205 -8 3 -1 98 -3 213 -5 l207 -2 0 180 c0 99 -3 190 -6 203 -6 22 -7 22 -220 22 l-214 0 0 -89z m420 -101 l0 -180 -205 0 -205 0 0 180 0 180 205 0 205 0 0 -180z m-1340 0 l0 -120 -150 0 -150 0 0 120 0 120 150 0 150 0 0 -120z m445 20 c3 -5 -3 -10 -15 -10 -12 0 -18 5 -15 10 3 6 10 10 15 10 5 0 12 -4 15 -10z m-502 -167 c-40 -2 -107 -2 -150 0 -43 1 -10 3 72 3 83 0 118 -2 78 -3z"/>
+    <text x="748.021" y="436.127" style="white-space: pre; fill: rgb(51, 51, 51); font-family: &quot;Roboto Slab&quot;; font-size: 28px;" transform="matrix(1.037069, 0, 0, -1.437213, -27.728323, 1044.541382)">Web Client</text>
+    <text x="748.021" y="436.127" style="white-space: pre; fill: rgb(51, 51, 51); font-family: &quot;Roboto Slab&quot;; font-size: 28px;" transform="matrix(1.03707, 0, 0, -1.43721, 1294.538452, 1088.255981)">Web Server</text>
+    <text transform="matrix(1.80179, 0, 0, -3.334026, -1029.250244, 1549.805298)" style="white-space: pre; fill: rgb(51, 51, 51); font-family: &quot;Roboto Slab&quot;; font-size: 28px;" y="350.332" x="1263.207"><tspan x="1263.20703125" dy="1em">​</tspan>Request access to<tspan x="1263.20703125" dy="1em">​</tspan>protected resource<tspan x="1263.20703125" dy="1em">​</tspan><tspan x="1263.20703125" dy="1em">​</tspan></text>
+  </g>
 </svg>

@@ -1,8 +1,8 @@
 //
-// Copyright (c) 2017-2019 Contributors to the Eclipse Foundation
+// Copyright (c) 2021 Contributors to the Eclipse Foundation
 //
 
-= Jakarta Managed Beans
+= Jakarta EE CoreProfile
 :authors: Jakarta EE Platform Team, https://projects.eclipse.org/projects/ee4j.jakartaee-platform
 :email: https://dev.eclipse.org/mailman/listinfo/jakartaee-platform-dev
 :version-label!:
@@ -23,6 +23,6 @@ endif::[]
 :sectnums!:
 include::license-efsl.adoc[]
 
-// == ManagedBeans
+// == CoreProfile
 :sectnums:
-include::managedbeans/ManagedBeans.adoc[]
+include::coreprofile/CoreProfile.adoc[]

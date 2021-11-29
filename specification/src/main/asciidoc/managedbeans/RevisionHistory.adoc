@@ -1,6 +1,9 @@
 [appendix]
 == Revision History
-=== Changes in Final Release
+=== Changes in Final Release for EE10
+None expected
+
+=== Changes in Final Release for EE9
 ==== Editorial Changes
 * Changed the name of the generated Specifications to match the short name for the component (managed-beans).
 

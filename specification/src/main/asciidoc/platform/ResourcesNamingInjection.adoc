@@ -2513,7 +2513,7 @@ of the CORBA ORB to perform certain operations. Such applications can
 find an appropriate object implementing the _ORB_ interface by looking
 up the JNDI name _java:comp/ORB_ or by requesting injection of an _ORB_
 object. The container is required to provide the _java:comp/ORB_ name
-for all components except applets. Any such reference to a _ORB_ object
+for all components. Any such reference to a _ORB_ object
 is only valid within the component instance that performed the lookup.
 
 The following example illustrates how an

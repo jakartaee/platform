@@ -27,16 +27,14 @@
     <groupId>jakarta.platform</groupId>
     <artifactId>platform-specs</artifactId>
     <packaging>pom</packaging>
-    <version>9.1</version>
+    <version>10.0</version>
     <name>Jakarta EE Platform Specifications</name>
 
     <properties>
         <site.output.dir>${project.build.directory}/staging</site.output.dir>
         <maven.site.skip>true</maven.site.skip>
-        <asciidoctor.maven.plugin.version>1.5.7.1</asciidoctor.maven.plugin.version>
-        <asciidoctorj.version>1.6.2</asciidoctorj.version>
-        <asciidoctorj.pdf.version>1.5.0-alpha.18</asciidoctorj.pdf.version>
-        <jruby.version>9.2.6.0</jruby.version>
+        <asciidoctor.maven.plugin.version>2.2.1</asciidoctor.maven.plugin.version>
+        <asciidoctorj.pdf.version>1.6.0</asciidoctorj.pdf.version>
         <!-- status: DRAFT, BETA, etc., or blank for final -->
         <status>DRAFT</status>
         <maven.build.timestamp.format>MMMM dd, yyyy</maven.build.timestamp.format>
@@ -91,16 +89,6 @@
                 <version>${asciidoctor.maven.plugin.version}</version>
                 <dependencies>
                     <dependency>
-                        <groupId>org.jruby</groupId>
-                        <artifactId>jruby-complete</artifactId>
-                        <version>${jruby.version}</version>
-                    </dependency>
-                    <dependency>
-                        <groupId>org.asciidoctor</groupId>
-                        <artifactId>asciidoctorj</artifactId>
-                        <version>${asciidoctorj.version}</version>
-                    </dependency>
-                    <dependency>
                         <groupId>org.asciidoctor</groupId>
                         <artifactId>asciidoctorj-pdf</artifactId>
                         <version>${asciidoctorj.pdf.version}</version>
@@ -143,6 +131,44 @@
                             </attributes>
                         </configuration>
                     </execution>
+
+                    <!-- Core Profile HTML generation -->
+                    <execution>
+                        <id>coreprofile-asciidoc-to-html</id>
+                        <phase>generate-resources</phase>
+                        <goals>
+                            <goal>process-asciidoc</goal>
+                        </goals>
+                        <configuration>
+                            <backend>html5</backend>
+                            <sourceDocumentName>coreprofile-spec.adoc</sourceDocumentName>
+                            <outputFile>${project.build.directory}/generated-docs/jakarta-coreprofile-spec-${project.version}.html</outputFile>
+                            <attributes>
+                                <toc>left</toc>
+                            </attributes>
+                        </configuration>
+                    </execution>
+                    <!-- Core Profile PDF generation -->
+                    <execution>
+                        <id>coreprofile-asciidoc-to-pdf</id>
+                        <phase>generate-resources</phase>
+                        <goals>
+                            <goal>process-asciidoc</goal>
+                        </goals>
+                        <configuration>
+                            <backend>pdf</backend>
+                            <sourceDocumentName>coreprofile-spec.adoc</sourceDocumentName>
+                            <outputFile>${project.build.directory}/generated-docs/jakarta-coreprofile-spec-${project.version}.pdf</outputFile>
+                            <attributes>
+                                <pdf-stylesdir>${project.basedir}/src/theme</pdf-stylesdir>
+                                <pdf-style>jakartaee</pdf-style>
+                                <pagenums />
+                                <toc />
+                                <embedAssets>true</embedAssets>
+                            </attributes>
+                        </configuration>
+                    </execution>
+
                     <!-- WebProfile HTML generation -->
                     <execution>
                         <id>webprofile-asciidoc-to-html</id>
@@ -179,47 +205,10 @@
                             </attributes>
                         </configuration>
                     </execution>
-                    <!-- ManagedBeans HTML generation -->
-                    <execution>
-                        <id>managedbeans-asciidoc-to-html</id>
-                        <phase>generate-resources</phase>
-                        <goals>
-                            <goal>process-asciidoc</goal>
-                        </goals>
-                        <configuration>
-                            <backend>html5</backend>
-                            <sourceDocumentName>managed-beans-spec.adoc</sourceDocumentName>
-                            <outputFile>${project.build.directory}/generated-docs/jakarta-managed-beans-spec-${managedbean.version}.html</outputFile>
-                            <attributes>
-                                <toc>left</toc>
-                                <revnumber>${managedbean.version}</revnumber>
-                            </attributes>
-                        </configuration>
-                    </execution>
-                    <!-- ManagedBeans PDF generation -->
-                    <execution>
-                        <id>managedbeans-asciidoc-to-pdf</id>
-                        <phase>generate-resources</phase>
-                        <goals>
-                            <goal>process-asciidoc</goal>
-                        </goals>
-                        <configuration>
-                            <backend>pdf</backend>
-                            <sourceDocumentName>managed-beans-spec.adoc</sourceDocumentName>
-                            <outputFile>${project.build.directory}/generated-docs/jakarta-managed-beans-spec-${managedbean.version}.pdf</outputFile>
-                            <attributes>
-                                <pdf-stylesdir>${project.basedir}/src/theme</pdf-stylesdir>
-                                <pdf-style>jakartaee</pdf-style>
-                                <pagenums />
-                                <toc />
-                                <embedAssets>true</embedAssets>
-                                <revnumber>${managedbean.version}</revnumber>
-                            </attributes>
-                        </configuration>
-                    </execution>
                 </executions>
                 <configuration>
-                    <sourceHighlighter>coderay</sourceHighlighter>
+                    <!-- Avoid warnings about src/docs/asciidoc does not exist -->
+                    <sourceDirectory>src/main/asciidoc</sourceDirectory>
                     <attributes>
                         <revnumber>${project.version}</revnumber>
                         <revremark>${status}</revremark>
@@ -228,10 +217,12 @@
                         <status>${status}</status>
                         <data-uri />
                         <icons>font</icons>
+                        <imagesdir>images</imagesdir>
                         <sectanchors>true</sectanchors>
                         <idprefix />
                         <idseparator>-</idseparator>
                         <docinfo1>true</docinfo1>
+                        <source-highlighter>coderay</source-highlighter>
                     </attributes>
                 </configuration>
             </plugin>

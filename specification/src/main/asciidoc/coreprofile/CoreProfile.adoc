@@ -1,6 +1,6 @@
 include::Introduction.adoc[]
 
-include::ManagedBeansDefinition.adoc[]
+include::CoreProfileDefinition.adoc[]
 
 include::RevisionHistory.adoc[]
 
