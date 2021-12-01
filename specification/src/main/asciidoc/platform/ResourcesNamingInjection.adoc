@@ -1064,6 +1064,7 @@ example that used _lookup_.
 
 [source,xml]
 ----
+...
 <env-entry>
   <env-entry-name>somePackage.SomeClass/timeout</env-entry-name>
   <env-entry-type>java.lang.Integer</env-entry-type>
@@ -1075,6 +1076,7 @@ example that used _lookup_.
   </injection-target>
   <lookup-name>java:app/env/timeout</lookup-name>
 </env-entry>
+...
 ----
 
 It is an error for both the _env-entry-value_
@@ -1521,6 +1523,7 @@ module _products.jar_.
   <ejb-ref-name>ShoppingService/myCart</ejb-ref-name>
   <lookup-name>java:global/products/ShoppingCart</lookup-name>
 </ejb-ref>
+...
 ----
 
 ==== Jakarta EE Product Provider’s Responsibilities
@@ -1828,6 +1831,7 @@ using a well-known JNDI name for the latter.
 
 [source,xml]
 ----
+...
 <resource-ref>
   <res-ref-name>jdbc/EmployeeAppDB</res-ref-name>
   <res-type>javax.sql.DataSource</res-type>
@@ -1835,6 +1839,7 @@ using a well-known JNDI name for the latter.
   <res-sharing-scope>Shareable</res-sharing-scope>
   <lookup-name>java:app/env/TheEmployeeDB</lookup-name>
 </resource-ref>
+...
 ----
 
 ===== Standard Resource Manager Connection Factory Types
@@ -3419,6 +3424,7 @@ For example:
 
 [source,xml]
 ----
+...
 <data-source>
   <description>Sample DataSource definition</description>
   <name>java:app/MyDataSource</name>
@@ -3445,6 +3451,7 @@ For example:
   <max-idle-time>0</max-idle-time>
   <max-statements>50</max-statements>
 </data-source>
+...
 ----
 
 A _DataSource_ resource may also be defined
@@ -3559,6 +3566,7 @@ For example:
 
 [source,xml]
 ----
+...
 <jms-connection-factory>
   <description>
      Sample Jakarta Messaging ConnectionFactory definition
@@ -3583,6 +3591,7 @@ For example:
    <max-pool-size>30</max-pool-size>
    <min-pool-size>20</min-pool-size>
 </jms-connection-factory>
+...
 ----
 
 A Jakarta Messaging _ConnectionFactory_ resource may also
@@ -3677,6 +3686,7 @@ For example:
 
 [source,xml]
 ----
+...
 <jms-destination>
   <description>Sample Jakarta Messaging Destination definition</description>
   <name>java:app/MyJMSDestination</name>
@@ -3692,6 +3702,7 @@ For example:
     <value>20</value>
   </property>
 </jms-destination>
+...
 ----
 
 A Jakarta Messaging _Destination_ resource may also be
@@ -3772,6 +3783,7 @@ For example:
 
 [source,xml]
 ----
+...
 <mail-session>
   <description>Sample Mail Session definition</description>
   <name>java:app/mail/MySession</name>
@@ -3790,6 +3802,7 @@ For example:
     <value>500</value>
   </property>
 </mail-session>
+...
 ----
 
 A Mail _Session_ resource may also be defined
@@ -3880,6 +3893,7 @@ For example:
 
 [source,xml]
 ----
+...
 <connection-factory>
   <description>Sample Connector resource definition</description>
   <name>java:app/myConnectionFactory</name>
@@ -3899,6 +3913,7 @@ For example:
      <value>prop2val</value>
    </property>
 </connection-factory>
+...
 ----
 
 A Connector connection factory resource may
@@ -3975,6 +3990,7 @@ For example:
 
 [source,xml]
 ----
+...
 <administered-object>
   <description>Sample Admin Object definition</description>
   <name>java:app/MyAdminObject</name>
@@ -3989,6 +4005,7 @@ For example:
     <value>20</value>
   </property>
 </administered-object>
+...
 ----
 
 An administered object resource may also be
@@ -4279,11 +4296,13 @@ should add an _injection-target_ child element to _resource-ref_.)
 
 [source,xml]
 ----
+...
 <resource-ref>
   <res-ref-name>bean/cart</ref-ref-name>
   <ref-type>com.acme.ShoppingCart</ref-type>
   <lookup-name>java:module/cart</lookup-name>
 </resource-ref>
+...
 ----
 
 ==== Application Component Provider’s Responsibilities

@@ -9,7 +9,7 @@ deployment of Jakarta EE applications into any Jakarta EE product.
 Jakarta EE applications are composed of one or
 more Jakarta EE components and an optional Jakarta EE application deployment
 descriptor. The deployment descriptor, if present, lists the
-application’s components as _module_ s. If the deployment descriptor is
+application’s components as _modules_. If the deployment descriptor is
 not present, the application’s modules are discovered using default
 naming rules. A Jakarta EE module represents the basic unit of composition
 of a Jakarta EE application. Jakarta EE modules consist of one or more Jakarta EE
@@ -513,9 +513,7 @@ loaders that must be used by a Jakarta EE product. Instead, the
 specification defines requirements in terms of what classes must or must
 not be visible to components. A Jakarta EE product is free to use whatever
 class loaders it chooses to meet these requirements. Portable
-applications must not depend on the
-
-types of class loaders used or the
+applications must not depend on the types of class loaders used or the
 hierarchical arrangement of class loaders, if any. Portable applications
 must not depend on the order in which classes and resources are loaded.
 Applications should use the techniques described in
@@ -702,9 +700,7 @@ of the implementation of the application server.
 
 Components in the Jakarta Enterprise Beans container must not have
 access to the following classes and resources, unless such classes or
-resources are covered by one of the
-
-rules above.
+resources are covered by one of the rules above.
 
 * Other classes or resources in the
 application package. For example, the application should not have access
@@ -1267,7 +1263,7 @@ excluded from any initialization ordering requirements.
 
 The XML grammar for a Jakarta EE application
 deployment descriptor is defined by the Jakarta EE application schema. The
-root element of the deployment descriptor for a Jaav EE application is
+root element of the deployment descriptor for a Jakarta EE application is
 _application_ . The granularity of composition for Jakarta EE application
 assembly is the Jakarta EE module. A Jakarta EE application deployment
 descriptor contains a name and description for the application and the

@@ -508,7 +508,6 @@ for the installation to include the permissions in
 Note that, on some installations of Jakarta EE
 products, the security policy of the installation may be such that
 applications are granted fewer permissions than those defined in
-
 <<a2366, Jakarta EE Security Permissions Set>> and, as a result, some applications that declare only
 the permissions defined in
 <<a2366, Jakarta EE Security Permissions Set>> may not be deployable. Other applications that require
@@ -827,6 +826,7 @@ permission <class> [<name> [, <action list>]];
 The following is an example of a permission
 set declaration:
 
+[source,xml]
 ----
 ...
 <permissions>
@@ -1224,8 +1224,7 @@ types (when supported by the Jakarta EE product) into a
 _jakarta.servlet.http.HttpSession_ object using the _setAttribute_ or
 _putValue_ methods:
 
-_java.io.Serializable_
-
+*  _java.io.Serializable_
 *  _jakarta.ejb.EJBObject_
 *  _jakarta.ejb.EJBHome_
 *  _jakarta.ejb.EJBLocalObject_
@@ -1872,7 +1871,7 @@ The Jakarta XML Binding provides an API and tools that automate the mapping
 between XML documents and Java objects.
 A Jakarta EE product may support XML Binding.
 
-The Enterprise Web Services specification can be found
+The XML Binding specification can be found
 at _https://jakarta.ee/specifications/xml-binding_ .
 
 === XML Web Services 3.0 Requirements (Optional)
@@ -1881,7 +1880,7 @@ Jakarta XML Web Services defines a means for implementing XML-Based Web Services
 based on Jakarta SOAP with Attachments and Jakarta Web Services Metadata.
 A Jakarta EE product may support XML Web Services.
 
-The Enterprise Web Services specification can be found
+The XML Web Services specification can be found
 at _https://jakarta.ee/specifications/xml-web-services_ .
 
 === Web Services Metadata 3.0 Requirements (Optional)
@@ -1892,7 +1891,7 @@ source files, runtime requirements for a container, and annotations used for WSD
 binding, and configuration.
 A Jakarta EE product may support Web Services Metadata.
 
-The Enterprise Web Services specification can be found
+The Web Services Metadata specification can be found
 at _https://jakarta.ee/specifications/web-services-metadata_ .
 
 === SOAP with Attachments 2.0 Requirements (Optional)
@@ -1901,7 +1900,7 @@ Jakarta SOAP with Attachments defines an API enabling developers to produce and
 consume messages conforming to the SOAP 1.1, SOAP 1.2, and SOAP Attachments Feature.
 A Jakarta EE product may support SOAP with Attachments.
 
-The Enterprise Web Services specification can be found
+The SOAP with Attachments specification can be found
 at _https://jakarta.ee/specifications/soap-attachments_ .
 
 // generates a line between text and footnotes for pdf and html generation.
