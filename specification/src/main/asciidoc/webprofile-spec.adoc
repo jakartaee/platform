@@ -26,3 +26,7 @@ include::license-efsl.adoc[]
 // == WebProfile
 :sectnums:
 include::webprofile/WebProfile.adoc[]
+
+// == Dependencis
+:sectnums:
+include::web-dependencies.adoc[]
