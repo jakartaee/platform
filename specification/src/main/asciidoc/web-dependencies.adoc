@@ -96,7 +96,7 @@ jta -> interceptors ;
 cdi -> el ;
 cdi -> interceptors ;
 cdi -> di ;
-cdi -> jta ;
-cdi -> ejb ;
+cdi -> jta [label="javadoc"];
+cdi -> ejb [label="javadoc"];
 }
 -----------------------------------------------------------
