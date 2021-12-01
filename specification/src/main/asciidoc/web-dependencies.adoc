@@ -85,6 +85,13 @@ interceptors -> annotations;
 # jacc
 jacc -> servlet;
 
+# ejb
+ejb -> jta;
+
+# jta
+jta -> cdi ;
+jta -> interceptors ;
+
 # CDI
 cdi -> el ;
 cdi -> interceptors ;
