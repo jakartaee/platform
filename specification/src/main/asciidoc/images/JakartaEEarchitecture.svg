@@ -206,103 +206,7 @@
        style="fill:#e0e2df;fill-opacity:1;stroke:none;stroke-width:1.28425"
        d=""
        id="path1249" />
-    <path
-       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:10.0091;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#marker3633)"
-       d="m -1503.3816,-1935.8064 h 658.36565"
-       id="path3597"
-       sodipodi:nodetypes="cc"
-       inkscape:export-filename="/home/xubuntu/Desktop/imagem.png"
-       inkscape:export-xdpi="96"
-       inkscape:export-ydpi="96" />
-    <g
-       id="g2150">
-      <rect
-         style="color:#000000;overflow:visible;fill:#979996;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:5.11714;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-         id="rect3240"
-         width="974.46228"
-         height="748.01477"
-         x="-2030.7042"
-         y="1422.266"
-         transform="rotate(90)" />
-      <g
-         id="g2133">
-        <rect
-           transform="rotate(90)"
-           style="color:#000000;overflow:visible;fill:#e0e2df;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:5.11714;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-           id="rect2846"
-           width="974.46228"
-           height="748.01477"
-           x="-2075.4971"
-           y="1469.2047" />
-        <g
-           transform="matrix(0,7.695248,-7.7131796,0,1765.2338,-1736.3934)"
-           style="stroke-width:0.649588"
-           id="g2873">
-          <g
-             style="stroke-width:0.649588"
-             id="g2866">
-            <path
-               sodipodi:nodetypes="cccccc"
-               d="M 0.06209801,442.86046 H 18.906709 l 6.672148,22.95363 -6.672148,22.95365 H 0.06209801 Z"
-               style="color:#000000;overflow:visible;fill:#979996;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:0.649585;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-               id="path2862" />
-            <path
-               id="rect2837"
-               style="color:#000000;overflow:visible;fill:#ffffff;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.649585;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-               d="M -5.2295689,446.56465 H 13.615039 l 6.672148,22.95363 -6.672148,22.95365 H -5.2295689 Z"
-               sodipodi:nodetypes="cccccc" />
-          </g>
-          <text
-             transform="rotate(-90)"
-             id="text2844"
-             y="7.2049146"
-             x="-484.49146"
-             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.5833px;line-height:125%;font-family:sans-serif;-inkscape-font-specification:sans-serif;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.171869px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-             xml:space="preserve"><tspan
-               style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:sans-serif;-inkscape-font-specification:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.171869px"
-               y="7.2049146"
-               x="-484.49146"
-               id="tspan2842"
-               sodipodi:role="line">Applet</tspan></text>
-        </g>
-        <g
-           id="g1502"
-           transform="matrix(5.2161448,0,0,4.9998642,-245.88157,-1058.2444)">
-          <rect
-             style="color:#000000;overflow:visible;fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:1;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-             id="rect2856"
-             width="59.014088"
-             height="142.82838"
-             x="-67.572403"
-             y="235.10168"
-             transform="rotate(90)" />
-          <text
-             transform="scale(1.0002257,0.99977436)"
-             id="text2860"
-             y="-31.64846"
-             x="-339.66486"
-             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:17.9528px;line-height:125%;font-family:sans-serif;-inkscape-font-specification:sans-serif;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.264582px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-             xml:space="preserve"><tspan
-               style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:17.9528px;font-family:sans-serif;-inkscape-font-specification:sans-serif;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.264582px"
-               y="-31.64846"
-               x="-339.66486"
-               id="tspan2858"
-               sodipodi:role="line">Java SE</tspan></text>
-        </g>
-        <text
-           xml:space="preserve"
-           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:81.5357px;line-height:125%;font-family:sans-serif;-inkscape-font-specification:sans-serif;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1.32412px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-           x="-2184.7285"
-           y="-1979.2699"
-           id="text2877"
-           transform="scale(1.0011644,0.99883695)"><tspan
-             sodipodi:role="line"
-             id="tspan2875"
-             x="-2184.7285"
-             y="-1979.2699"
-             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:sans-serif;-inkscape-font-specification:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1.32412px">Applet Container</tspan></text>
-      </g>
-    </g>
+
     <g
        id="g3587"
        transform="matrix(0,15.060005,-15.099068,0,2084.1837,-3564.8967)"
@@ -566,37 +470,7 @@
        inkscape:export-filename="/home/xubuntu/Desktop/imagem.png"
        inkscape:export-xdpi="96"
        inkscape:export-ydpi="96" />
-    <g
-       id="g4324"
-       transform="matrix(7.7837525,0,0,7.7691625,-1604.007,-4527.5201)"
-       style="stroke-width:0.643553"
-       inkscape:export-filename="/home/xubuntu/Desktop/imagem.png"
-       inkscape:export-xdpi="96"
-       inkscape:export-ydpi="96">
-      <rect
-         y="316.40775"
-         x="31.203413"
-         height="31.977331"
-         width="36.72073"
-         id="rect4318"
-         style="color:#000000;overflow:visible;fill:#ffffff;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:1.28711;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
-      <text
-         id="text4314"
-         y="329.91089"
-         x="49.84866"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.5833px;line-height:125%;font-family:sans-serif;-inkscape-font-specification:sans-serif;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;fill:none;stroke:#000000;stroke-width:0.170273px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-         xml:space="preserve"><tspan
-           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:sans-serif;-inkscape-font-specification:sans-serif;text-align:center;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.170273px"
-           y="329.91089"
-           x="49.84866"
-           id="tspan4312"
-           sodipodi:role="line">HTTP</tspan><tspan
-           id="tspan4316"
-           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:sans-serif;-inkscape-font-specification:sans-serif;text-align:center;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.170273px"
-           y="343.14001"
-           x="49.84866"
-           sodipodi:role="line">SSL</tspan></text>
-    </g>
+
     <g
        transform="matrix(7.8632228,0,0,7.8484838,-1459.2847,-3725.1624)"
        id="g4334"
