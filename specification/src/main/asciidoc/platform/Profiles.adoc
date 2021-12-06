@@ -138,7 +138,7 @@ requirements.
 [[a3240]]
 === Requirements for All Jakarta EE Profiles
 
-The Java Platform, Standard Edition 8 is the
+The Java Platform, Standard Edition 11 is the
 required API foundation for any Jakarta EE profile.
 
 The following technologies are required to be
@@ -147,12 +147,6 @@ present in all Jakarta EE profiles:
 * Resource and component lifecycle
 annotations defined by the Common Annotations specification ( _Resource_,
  _Resources_, _PostConstruct_, _PreDestroy_ )
-
-The following functionality is required to be
-supported in all Jakarta EE profiles other than the Core Profile:
-
-* JNDI “java:” naming context (see <<a607, JNDI Naming Context>>)
-* Jakarta Transactions
 
 === Optional Features for Jakarta EE Profiles
 
