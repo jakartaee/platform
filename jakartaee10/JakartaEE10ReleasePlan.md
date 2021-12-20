@@ -94,7 +94,7 @@ List of specifications in Jakarta EE 10 Platform and Web Profile (updated specif
 * Jakarta Activation 2.1*
 * Jakarta Annotations 2.0 (Web Profile)
 * Jakarta Authentication 3.0* (Web Profile)
-* Jakarta Authorization 3.0*
+* Jakarta Authorization 2.1*
 * Jakarta Batch 2.1*
 * Jakarta Bean Validation 3.0 (Web Profile)
 * Jakarta Concurrency 3.0* (Web Profile)
