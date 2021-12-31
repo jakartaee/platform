@@ -331,11 +331,7 @@ an exception to this in order to accommodate interface type dependencies—for e
 the Jakarta™ Enterprise Beans SessionContext dependency on the
 _jakarta.xml.rpc.handler.MessageContext_ type.]
 
-If a container supports a newer version of the Java SE platform than
-Java SE 8, all classes and interfaces provided by the container to
-satisfy the platform requirements listed above must be compiled
-with the Java SE 8 source and class level.
-
+If a container supports Java SE 11 or a newer version of the Java SE platform, than all classes and interfaces provided by the container to satisfy the platform requirements listed above, must be compiled with the Java SE 11 source and class level.
 
 [[a2331]]
 ==== Optional Jakarta Technologies

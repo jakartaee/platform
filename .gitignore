@@ -1,3 +1,5 @@
 .m2/
 target/
 .idea
+.java-version
+*.iml
