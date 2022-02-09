@@ -1,0 +1,102 @@
+== Jakarta EE 10 Web Profile Dependencies
+
+[graphviz]
+-----------------------------------------------------------
+digraph EE10WebProfile {
+
+# Map a short node id to the label with version
+wp [label="jakarta-web-api"];
+servlet [label="servlet:6.0.0"];
+jsp [label="servlet.jsp:3.1.0"];
+el [label="el:5.0.0"];
+jstl [label="servlet.jsp.jstl:3.0.0-RC1"];
+jaxb [label="xml.bind:4.0.0-RC3"];
+faces [label="faces:4.0.0-M2"];
+jaxrs [label="jaxrsr:3.1.0"]
+websocket [label="websocket:2.1.0"];
+jsonp [label="jsonp:2.1.0"];
+jsonb [label="jsonb:3.0.0-RC1"];
+annotations [label="annotations:2.1.0"];
+ejb [label="ejb:4.0.0"];
+jta [label="jta:2.0.1-RC1"];
+jpa [label="jpa:3.1.0-RC2"];
+bv [label="bv:3.0.1"];
+interceptors [label="interceptors:2.1.0"];
+cdi [label="cdi:4.0.0-RC5"];
+di [label="di:2.0.1"];
+auth [label="auth:2.1.0-RC1"];
+jacc [label="jacc:2.0.0"];
+xml_bind [label="xml.bind:4.0.0-RC3"];
+activation [label="activation:2.1.0"];
+
+wp -> servlet;
+wp -> jsp;
+wp -> el;
+wp -> jstl;
+wp -> faces;
+wp -> websocket;
+wp -> jta;
+wp -> jpa;
+wp -> jsonb;
+wp -> jsonp;
+wp -> jaxrs;
+wp -> annotations;
+wp -> bv;
+wp -> interceptors;
+wp -> cdi;
+wp -> auth;
+wp -> jacc;
+
+# JSP
+jsp -> servlet;
+jsp -> el;
+
+# JSTL
+jstl -> servlet ;
+jstl -> jsp ;
+jstl -> el ;
+jstl -> jaxb ;
+
+# Faces
+faces -> servlet;
+faces -> websocket;
+faces -> el;
+faces -> cdi;
+faces -> bv;
+faces -> jta;
+faces -> jsp;
+faces -> jstl;
+faces -> jsonp;
+faces -> ejb;
+faces -> jpa;
+faces -> annotations;
+faces -> jaxb;
+
+# jsonb
+jsonb -> jsonp;
+
+# jaxrs
+jaxrs -> xml_bind;
+jaxrs -> activation;
+
+# interceptors
+interceptors -> annotations;
+
+# jacc
+jacc -> servlet;
+
+# ejb
+ejb -> jta;
+
+# jta
+jta -> cdi ;
+jta -> interceptors ;
+
+# CDI
+cdi -> el ;
+cdi -> interceptors ;
+cdi -> di ;
+cdi -> jta [label="javadoc"];
+cdi -> ejb [label="javadoc"];
+}
+-----------------------------------------------------------

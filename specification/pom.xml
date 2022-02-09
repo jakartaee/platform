@@ -93,6 +93,11 @@
                         <artifactId>asciidoctorj-pdf</artifactId>
                         <version>${asciidoctorj.pdf.version}</version>
                     </dependency>
+                    <dependency>
+                        <groupId>org.asciidoctor</groupId>
+                        <artifactId>asciidoctorj-diagram</artifactId>
+                        <version>2.2.1</version>
+                    </dependency>
                 </dependencies>
                 <executions>
                     <!-- Platform HTML generation -->
@@ -106,6 +111,9 @@
                             <backend>html5</backend>
                             <sourceDocumentName>platform-spec.adoc</sourceDocumentName>
                             <outputFile>${project.build.directory}/generated-docs/jakarta-platform-spec-${project.version}.html</outputFile>
+                            <requires>
+                                <require>asciidoctor-diagram</require>
+                            </requires>
                             <attributes>
                                 <toc>left</toc>
                             </attributes>
@@ -122,6 +130,9 @@
                             <backend>pdf</backend>
                             <sourceDocumentName>platform-spec.adoc</sourceDocumentName>
                             <outputFile>${project.build.directory}/generated-docs/jakarta-platform-spec-${project.version}.pdf</outputFile>
+                            <requires>
+                                <require>asciidoctor-diagram</require>
+                            </requires>
                             <attributes>
                                 <pdf-stylesdir>${project.basedir}/src/theme</pdf-stylesdir>
                                 <pdf-style>jakartaee</pdf-style>
@@ -180,6 +191,9 @@
                             <backend>html5</backend>
                             <sourceDocumentName>webprofile-spec.adoc</sourceDocumentName>
                             <outputFile>${project.build.directory}/generated-docs/jakarta-webprofile-spec-${project.version}.html</outputFile>
+                            <requires>
+                                <require>asciidoctor-diagram</require>
+                            </requires>
                             <attributes>
                                 <toc>left</toc>
                             </attributes>
@@ -196,6 +210,9 @@
                             <backend>pdf</backend>
                             <sourceDocumentName>webprofile-spec.adoc</sourceDocumentName>
                             <outputFile>${project.build.directory}/generated-docs/jakarta-webprofile-spec-${project.version}.pdf</outputFile>
+                            <requires>
+                                <require>asciidoctor-diagram</require>
+                            </requires>
                             <attributes>
                                 <pdf-stylesdir>${project.basedir}/src/theme</pdf-stylesdir>
                                 <pdf-style>jakartaee</pdf-style>
