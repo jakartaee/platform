@@ -106,7 +106,7 @@ List of specifications in Jakarta EE 10 Platform and Web Profile (updated specif
 * Jakarta Enterprise Beans 4.0 Lite (Web Profile)
 * Jakarta Enterprise Web Services 2.0 (Optional)
 * Jakarta Expression Language 5.0* (Web Profile)
-* Jakarta Interceptors 2.0 (Web Profile)
+* Jakarta Interceptors 2.1* (Web Profile)
 * Jakarta JSON Binding 3.0* (Web Profile)
 * Jakarta JSON Processing 2.1* (Web Profile)
 * Jakarta Mail 2.1*

@@ -60,10 +60,8 @@ But, for Jakarta EE 10, consider Jakarta Web Services Metadata 3.0 as an integra
 
 #### Should the TCK enforce modularization?
 
-Yes.
-At the Component Specification level, the TCK should be adjusted to provide simple verification of the `module-info.class`.
-A minimal validation would be to verify the existence of the `module-info.class` by loading the API jar and verifying that the `module.getDescriptor().isAutomatic()` is `false`.  
-**Note:** This requirement does not apply to the Platform or Profile uber jar files since these will not be modularized for Jakarta EE 10.
+No.
+There is no requirement to validate component API jar `module-info.class` files for EE10.
 
 #### Can JPMS `open module` be used?
 
