@@ -55,15 +55,14 @@ The following details the specifications and APIs currently planned for the Jaka
 List of specifications in Jakarta EE 10 Core Profile (updated specifications marked with asterisks).
 
 * Jakarta EE Core Profile 10.0*
-* Jakarta Annotations 2.0
+* Jakarta Annotations 2.1*
 * Jakarta Contexts and Dependency Injection Lite 4.0*
 * Jakarta Dependency Injection 2.0
 * Jakarta Expression Language 5.0*
-* Jakarta Interceptors 2.0
-* Jakarta JSON Binding 2.1*
+* Jakarta Interceptors 2.1*
+* Jakarta JSON Binding 3.0*
 * Jakarta JSON Processing 2.1*
 * Jakarta RESTful Web Services 3.1*
-* Jakarta Config 1.0* (If available in Q4 2021)
 
 ## Release Milestones
 As soon as all component Specifications have produced a release candidate, the Core Profile Specification will produce a release candidate based on these.  The Release Candidates will include:
