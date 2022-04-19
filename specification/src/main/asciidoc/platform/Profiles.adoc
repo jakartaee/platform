@@ -139,7 +139,7 @@ requirements.
 === Requirements for All Jakarta EE Profiles
 
 The Java Platform, Standard Edition 11 is the
-required API foundation for any Jakarta EE profile.
+required API compilation level for any Jakarta EE profile.
 
 The following technologies are required to be
 present in all Jakarta EE profiles:
