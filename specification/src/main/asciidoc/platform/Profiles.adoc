@@ -9,6 +9,8 @@ The Jakarta EE Web Profile Specification,
 published in conjunction with the present specification, defines the
 first Jakarta EE profile, the Web Profile.
 
+The Jakarta EE Core Profile Specification is a minimal profile that is published separately from the Web Profile and this Platform specification.
+
 The definition of other profiles is left to
 future specifications.
 
@@ -110,7 +112,7 @@ profile may not allow omitting a package or type or method from an API
 specified elsewhere, unless the specification for that API explicitly
 allows for this to happen.
 
-Although this specification does not define
+Although the Platform specification does not define
 any APIs, a profile may do so. Since such an API would be available only
 in profiles that build on the one that defines it, this approach limits
 the reusability of the API and thus is discouraged.
@@ -136,21 +138,13 @@ requirements.
 [[a3240]]
 === Requirements for All Jakarta EE Profiles
 
-The Java Platform, Standard Edition 8 is the
-required API foundation for any Jakarta EE profile.
+The Java Platform, Standard Edition 11 is the
+required API compilation level for any Jakarta EE profile.
 
 The following technologies are required to be
 present in all Jakarta EE profiles:
 
-* Resource and component lifecycle
-annotations defined by the Common Annotations specification ( _Resource_,
- _Resources_, _PostConstruct_, _PreDestroy_ )
-
-The following functionality is required to be
-supported in all Jakarta EE profiles:
-
-* JNDI “java:” naming context (see <<a607, JNDI Naming Context>>)
-* Jakarta Transactions
+* Component lifecycle annotations defined by the Common Annotations specification ( _PostConstruct_, _PreDestroy_ )
 
 === Optional Features for Jakarta EE Profiles
 

@@ -47,3 +47,9 @@ consistently with their compatibility requirements.
 Web Profile products must support the
 deployment of Jakarta EE web application modules ( _.war_ files). No other
 modules types are required to be supported.
+
+The following functionality is required to be supported in Web Profile products:
+
+* Resource annotations defined by the Common Annotations specification ( _Resource_, _Resources_ )
+* JNDI “java:” naming context as described in the JNDI section of the Platform specification
+* Jakarta Transactions
