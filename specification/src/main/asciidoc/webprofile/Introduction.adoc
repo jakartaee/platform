@@ -75,8 +75,7 @@ It will also be seen as a starting point for understanding how the requirements 
 To help with this process, this section attempts to shed light on how one should go from the definition of the Web Profile to figuring out the exact set of requirements that apply to it, and consequently to any product that implements it.
 
 As dictated by the general rules for Jakarta EE
-profiles in the Platform specification, products that implement the Web
-Profile must honor:
+profiles in the Platform specification, products that implement the Web Profile must honor:
 
 . all requirements of the Jakarta EE Platform
 specification that apply to all profiles;
@@ -91,9 +90,7 @@ Let’s look at some examples of requirements
 from each grouping.
 
 For the first one, the Jakarta EE Platform
-specification mandates support for the “ _java:_ ” naming context in all
-profiles. Consequently, Web Profile products must support it. For a
-similar reason, all Web Profile 9.1 APIs must support the Java(TM) Platform, Standard Edition 8 API.
+specification mandates support for the Java(TM) Platform, Standard Edition 11 API.
 
 In the second category one can point out the
 requirement to support Jakarta EE web application modules ( _.war_ files)
@@ -216,3 +213,6 @@ Specification Project with guidance provided by the Jakarta EE Working Group
 
 === Acknowledgements for Jakarta EE 10.0
 TBD
+
+The Jakarta EE 10 specification was created by the Jakarta EE Platform Specification Project with guidance provided by the Jakarta EE Working Group
+(_https://jakarta.ee/_).

@@ -9,27 +9,29 @@ Jakarta™ EE 9.1 Web Profile.
 The following technologies are required
 components of the Web Profile:
 
-* Jakarta Servlet 5.0
-* Jakarta Server Pages 3.0
-* Jakarta Expression Language  4.0
+* Jakarta Servlet 6.0*
+* Jakarta Server Pages 3.1*
+* Jakarta Expression Language  5.0*
 * Jakarta Debugging Support for Other Languages 2.0
-* Jakarta Standard Tag Library  2.0
-* Jakarta Server Faces  3.0
-* Jakarta RESTful Web Services 3.0
-* Jakarta WebSocket  2.0
-* Jakarta JSON Processing  2.0
-* Jakarta JSON Binding  2.0
-* Jakarta Annotations  2.0
-* Jakarta Enterprise Beans  4.0 Lite
+* Jakarta Standard Tag Library 3.0*
+* Jakarta Server Faces 4.0*
+* Jakarta RESTful Web Services 3.1*
+* Jakarta WebSocket 2.1*
+* Jakarta JSON Processing 2.1*
+* Jakarta JSON Binding 3.0*
+* Jakarta Annotations  2.1*
+* Jakarta Enterprise Beans 4.0 Lite
 * Jakarta Transactions 2.0
-* Jakarta Persistence  3.0
+* Jakarta Persistence  3.1*
 * Jakarta Bean Validation 3.0
 * Jakarta Managed Beans 2.0
-* Jakarta Interceptors 2.0
-* Jakarta Contexts and Dependency Injection  3.0
+* Jakarta Interceptors 2.1*
+* Jakarta Contexts and Dependency Injection 4.0*
 * Jakarta Dependency Injection  2.0
-* Jakarta Security  2.0
-* Jakarta Authentication 2.0
+* Jakarta Security  3.0*
+* Jakarta Authentication 3.0*
+
+*Note:* technologies with an asterik after them represent updated versions.
 
 === Optional Components
 

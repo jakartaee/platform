@@ -4,6 +4,9 @@
 === Changes in Final Release for EE10
 TBD
 
+==== Editorial Changes
+* Updated <<relateddocs, “Related Documents">> for the updated Specifications in Jakarta EE 10.
+
 === Changes in Final Release for EE9.1
 ==== Editorial Changes
 * Updated <<relateddocs, “Related Documents">> for the updated Specifications in Jakarta EE 9.1.
