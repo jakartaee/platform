@@ -7,17 +7,13 @@ This chapter defines the contents of the Jakarta™ EE 10.0 Core Profile.
 
 The following technologies are required components of the Core Profile:
 
-* Jakarta RESTful Web Services 4.0
 * Jakarta JSON Processing 2.1
-* Jakarta JSON Binding 2.1
-* Jakarta Annotations 2.0
-* Jakarta Contexts and Dependency Injection Lite 4.0
-* Jakarta Interceptors 2.0
+* Jakarta JSON Binding 3.0
+* Jakarta Annotations 2.1
+* Jakarta Interceptors 2.1
 * Jakarta Dependency Injection 2.0
-* Jakarta Config 1.0 (If available by deadline)
-
-NOTE: This list has not been finalized. Discussions exist in the
-current https://github.com/eclipse-ee4j/jakartaee-platform/issues/353[GitHub] issue and https://docs.google.com/document/d/1tal7dMb6DOHBCwlecViEjPqAMTMEStoZdxTVokIVW94/edit#[GoogleDoc].
+* Jakarta Contexts and Dependency Injection Lite 4.0
+* Jakarta RESTful Web Services 3.1
 
 === Optional Components
 
@@ -28,3 +24,7 @@ There are no optional components in the Core Profile.
 
 There are currently no requirements on the deployment packaging of
 core profile based applications.
+
+Jakarta XML Binding support is not required for Jakarta RESTful Web Services implementations in the Core Profile.
+
+Jakarta Expression Language support is not required in  Jakarta Contexts and Dependency Injection Lite implementations.
