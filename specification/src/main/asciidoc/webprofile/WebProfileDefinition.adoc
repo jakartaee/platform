@@ -30,6 +30,7 @@ components of the Web Profile:
 * Jakarta Dependency Injection  2.0
 * Jakarta Security  3.0*
 * Jakarta Authentication 3.0*
+* Jakarta Concurrency 3.0*
 
 *Note:* technologies with an asterik after them represent updated versions.
 
