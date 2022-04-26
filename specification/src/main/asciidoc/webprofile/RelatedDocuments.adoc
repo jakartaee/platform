@@ -51,3 +51,5 @@ _Jakarta™ JSON Binding Specification, Version 3.0_. Available at: _https://jak
 _Jakarta™ Security Specification, Version 3.0_. Available at: _https://jakarta.ee/specifications/security/3.0_
 
 _Jakarta™ Authentication Specification, Version 3.0_. Available at: _https://jakarta.ee/specifications/authentication/3.0_
+
+_Jakarta™ Concurrency Specification, Version 3.0_. Available at: _https://jakarta.ee/specifications/concurrency/3.0_
