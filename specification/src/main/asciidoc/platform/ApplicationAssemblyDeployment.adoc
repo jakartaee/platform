@@ -1211,6 +1211,17 @@ descriptor but do not appear in the application deployment descriptor,
 the deployment tool must use the description provided in the module
 deployment descriptor.
 
+[NOTE]
+====
+
+The java, javax and jakarta names are trademarked names that have restrictions on their usage. For Jakarta EE, the specification
+projects produce APIs that utilize the jakarta.* namespace. As defined in the Jakarta EE Specification Process 1.3, APIs
+artifacts (API jars, javadoc, schemas) produced by a specification project are the only artifacts that must make use of the
+jakarta.* package namespace. The jakarta namespace must not be used for any deployment, including applications, TCKs, tools,
+libraries or any other assets. Attempting to deploy an application under the jakarta.* package namespace may result in deployment
+error or other unspecified behavior.
+====
+
 ==== Deploying a Library
 
 This section specifies the requirements for
