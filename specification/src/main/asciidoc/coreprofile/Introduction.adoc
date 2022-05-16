@@ -49,4 +49,4 @@ The fourth category is the most complex. The Jakarta Core Profile TCK attempts t
 
 The Jakarta EE 10.0 specification was created by the Jakarta EE Platform
 Specification Project with guidance provided by the Jakarta EE Working Group
-(_https://jakarta.ee/_).
+(_https://jakarta.ee/about/working-group/_).
