@@ -43,11 +43,10 @@ that Jakarta XML Binding support is not required for Jakarta RESTful Web Service
 The third category is hopefully
 self-explanatory. For example, Core Profile products must implement the Jakarta RESTful Web Services API, which in turn means they need to satisfy all the requirements listed in the Jakarta RESTful Web Services 3.1 specification.
 
-The fourth category is the most complex. As a
-first example, TBD...
+The fourth category is the most complex. The Jakarta Core Profile TCK attempts to validate the ability to combine the individual component specifications into single test applications.
 
 === Acknowledgements for Jakarta EE 10.0
 
 The Jakarta EE 10.0 specification was created by the Jakarta EE Platform
 Specification Project with guidance provided by the Jakarta EE Working Group
-(_https://jakarta.ee/_).
+(_https://jakarta.ee/about/working-group/_).
