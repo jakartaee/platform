@@ -14,7 +14,7 @@ _Jakarta™ Annotations Specification, Version 2.1_. Available at: _https://jaka
 
 _Jakarta™ Interceptors Specification, Version 2.1_. Available at: _https://jakarta.ee/specifications/interceptors/2.1_
 
-_Jakarta™ Contexts and Dependency Injection Lite Specification, Version 4.0_. Available at: _https://jakarta.ee/specifications/cdi-lite/4.0_
+_Jakarta™ Contexts and Dependency Injection Lite Specification, Version 4.0_. Available at: _https://jakarta.ee/specifications/cdi/4.0_
 
 _Jakarta™ Dependency Injection Specification, Version 2.0_. Available at: _https://jakarta.ee/specifications/dependency-injection/2.0_
 
