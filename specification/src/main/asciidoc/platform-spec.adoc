@@ -13,11 +13,16 @@
 :toclevels: 3
 :sectnumlevels: 4
 :sectanchors:
+:inception-year: 2018
+:copyright-year: 2022
 ifdef::backend-pdf[]
 :pagenums:
 :numbered:
 :title-logo-image: image:jakarta_ee_logo_schooner_color_stacked_default.png[pdfwidth=4.25in,align=right]
 endif::[]
+
+:sectnums!:
+include::copyright.adoc[]
 
 // == License
 :sectnums!:
