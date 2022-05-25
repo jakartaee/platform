@@ -1,22 +1,3 @@
-[subs="normal"]
-....
-Specification: {doctitle}
-
-Version: {revnumber}
-
-ifeval::["{revremark}" != ""]
-Status: {revremark}
-endif::[]
-ifeval::["{revremark}" == ""]
-Status: Final Release
-endif::[]
-
-Release: {revdate}
-....
-== Copyright
-
-Copyright (c) 2018, 2022 Eclipse Foundation.
-
 == Eclipse Foundation Specification License
 
 By using and/or copying this document, or the Eclipse Foundation

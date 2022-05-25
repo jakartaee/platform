@@ -1,0 +1,27 @@
+//
+// Copyright (c) 2022 Contributors to the Eclipse Foundation
+//
+[subs="normal"]
+....
+Specification: {doctitle}
+
+Version: {revnumber}
+
+ifeval::["{revremark}" != ""]
+Status: {revremark}
+endif::[]
+ifeval::["{revremark}" == ""]
+Status: Final Release
+endif::[]
+
+Release: {revdate}
+....
+
+== Copyright
+
+ifeval::[{copyright-year} != {inception-year}]
+Copyright (c) {inception-year}, {copyright-year} Eclipse Foundation
+endif::[]
+ifeval::[{copyright-year} == {inception-year}]
+Copyright (c) {copyright-year} Eclipse Foundation
+endif::[]
