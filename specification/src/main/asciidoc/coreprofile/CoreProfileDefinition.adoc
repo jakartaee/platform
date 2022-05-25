@@ -8,7 +8,7 @@ This chapter defines the contents of the Jakarta™ EE 10.0 Core Profile.
 The following technologies are required components of the Core Profile:
 
 * Jakarta Annotations 2.1
-* Jakarta Contexts and Dependency Injection Lite 4.0
+* Jakarta Contexts and Dependency Injection 4.0 (CDI Lite section)
 * Jakarta Dependency Injection 2.0
 * Jakarta Interceptors 2.1
 * Jakarta JSON Processing 2.1
