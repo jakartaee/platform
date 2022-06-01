@@ -12,11 +12,11 @@ The following technologies are required components of the Web Profile:
 * Jakarta Authentication 3.0*
 * Jakarta Bean Validation 3.0
 * Jakarta Concurrency 3.0*
-* Jakarta Enterprise Beans 4.0 Lite
-* Jakarta Expression Language  5.0*
 * Jakarta Contexts and Dependency Injection 4.0*
 * Jakarta Dependency Injection  2.0
 * Jakarta Debugging Support for Other Languages 2.0
+* Jakarta Enterprise Beans 4.0 Lite
+* Jakarta Expression Language  5.0*
 * Jakarta Interceptors 2.1*
 * Jakarta JSON Processing 2.1*
 * Jakarta JSON Binding 3.0*
