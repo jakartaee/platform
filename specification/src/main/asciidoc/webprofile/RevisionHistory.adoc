@@ -5,7 +5,7 @@
 * Major and minor updates to most specifications.
 * Addition of Jakarta Concurrency to Web Profile.
 
-==== Editorial Changes
+==== Editorial Changes for EE10
 * Updated <<relateddocs, “Related Documents">> for the updated Specifications in Jakarta EE 10.
 
 === Changes in Final Release for EE9.1
