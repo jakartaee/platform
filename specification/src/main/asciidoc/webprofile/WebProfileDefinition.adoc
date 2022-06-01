@@ -13,19 +13,19 @@ The following technologies are required components of the Web Profile:
 * Jakarta Bean Validation 3.0
 * Jakarta Concurrency 3.0*
 * Jakarta Contexts and Dependency Injection 4.0*
-* Jakarta Dependency Injection  2.0
 * Jakarta Debugging Support for Other Languages 2.0
+* Jakarta Dependency Injection  2.0
 * Jakarta Enterprise Beans 4.0 Lite
 * Jakarta Expression Language  5.0*
 * Jakarta Interceptors 2.1*
-* Jakarta JSON Processing 2.1*
 * Jakarta JSON Binding 3.0*
+* Jakarta JSON Processing 2.1*
 * Jakarta Persistence  3.1*
 * Jakarta RESTful Web Services 3.1*
 * Jakarta Security  3.0*
-* Jakarta Servlet 6.0*
 * Jakarta Server Faces 4.0*
 * Jakarta Server Pages 3.1*
+* Jakarta Servlet 6.0*
 * Jakarta Standard Tag Library 3.0*
 * Jakarta Transactions 2.0
 * Jakarta WebSocket 2.1*
