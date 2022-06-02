@@ -1049,6 +1049,6 @@ Only the Platform and Web Profile Specifications along with the TCKs and Compati
 === Changes in Jakarta EE 10
 The goal of the Jakarta EE 10 release is to deliver a set of specifications that  and adding the support for the Java SE 11 and newer runtimes. The TCKs require support for both Java SE 11 and Java SE 17.
 
-Jakarta EE 10 is the first release in the Jakarta EE series to include major and minor component specification updates no limited to the javax to jakarta packge namespace change.
+Jakarta EE 10 is the first release in the Jakarta EE series to include major and minor component specification updates not limited to the javax to jakarta package namespace change.
 
 Jakarta EE 10 also introduced a new Core Profile to support smaller runtime footprints as often used with microservices.

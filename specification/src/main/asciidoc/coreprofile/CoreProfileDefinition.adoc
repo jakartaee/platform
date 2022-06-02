@@ -19,9 +19,9 @@ The following technologies are required components of the Core Profile:
 
 The optional Jakarta XML Binding support in Jakarta RESTful Web Services implementations is not required for the Core Profile.
 
-Jakarta Expression Language support is not required in  Jakarta Contexts and Dependency Injection Lite implementations since this is part of the Full CDI specification.
+Jakarta Expression Language support is not required in Jakarta Contexts and Dependency Injection Lite implementations since this is part of the Full CDI specification.
 
-The Java SE section of the CDI 4.0 are not required for Core Profile implementations. This is because that specification states that CDI implementations that support the Java SE API are required to support the Full version of the CDI specification.
+The Java SE section of the CDI 4.0 specification is not required for Core Profile implementations. Only Full CDI implementations are required to support the (CDI) Java SE API classes.
 
 [[additional_requirements]]
 === Additional Requirements
