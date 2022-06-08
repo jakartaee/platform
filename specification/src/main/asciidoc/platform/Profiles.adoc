@@ -197,6 +197,7 @@ The following technologies are required:
 * Jakarta JSON Processing 2.1*
 * Jakarta JSON Binding 3.0*
 * Jakarta Mail 2.1*
+* Jakarta Managed Beans 2.0
 * Jakarta Messaging 3.1*
 * Jakarta Persistence  3.1*
 * Jakarta RESTful Web Services 3.1*
@@ -219,6 +220,9 @@ The following technologies are optional:
 
 *Note:* technologies with an asterisk after them represent updated versions.
 
+The following technologies are deprecated:
+* Jakarta Managed Beans 2.0
+
 The following technologies are removed:
 
 * Distributed Interoperability in the Jakarta Enterprise Beans 3.2 Core Specification, Chapter 10 
@@ -226,5 +230,4 @@ The following technologies are removed:
 * Jakarta XML Registries 1.0
 * Jakarta Deployment 1.2
 * Jakarta Management 1.1
-* Jakarta Managed Beans 2.0
 * Jakarta Web Services Metadata 3.0 (Merged into Jakarta XML Web Services)
