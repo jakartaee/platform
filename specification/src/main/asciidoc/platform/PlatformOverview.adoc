@@ -487,16 +487,12 @@ The Jakarta Batch
 API provides a programming model for batch applications and a
 runtime for scheduling and executing jobs.
 
-==== Jakarta Management (Removed)
+==== Jakarta Enterprise Beans
 
-Although the Jakarta Management Specification was removed from the Platform as of Jakarta EE
-9 (see <<a2333, Removed Java Technologies>>), the Java™ Management Extensions
-(JMX) API can be used to provide some management support.
+For the Platform specification, the following two features are removed.
 
-==== Jakarta Deployment (Removed)
-
-The Jakarta Deployment Specification was removed from the Platform as of Jakarta EE
-9 (see <<a2333, Removed Java Technologies>>).
+* Entity Beans, both Container and Bean Managed Persistence
+* Embeddable EJB Container
 
 === Interoperability
 
