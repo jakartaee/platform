@@ -191,7 +191,7 @@ The following technologies are required:
 * Jakarta Contexts and Dependency Injection 4.0*
 * Jakarta Debugging Support for Other Languages 2.0
 * Jakarta Dependency Injection  2.0
-* Jakarta Enterprise Beans 4.0 (except for Jakarta Enterprise Beans entity beans and associated Jakarta Enterprise Beans QL, which have been made optional)
+* Jakarta Enterprise Beans 4.0 (except for Jakarta Enterprise Beans entity beans and associated Jakarta Enterprise Beans QL, and embedded container, which have been made removed)
 * Jakarta Expression Language  5.0*
 * Jakarta Interceptors 2.1*
 * Jakarta JSON Processing 2.1*
@@ -225,9 +225,5 @@ The following technologies are deprecated:
 
 The following technologies are removed:
 
-* Distributed Interoperability in the Jakarta Enterprise Beans 3.2 Core Specification, Chapter 10 
-* Jakarta XML RPC 1.1
-* Jakarta XML Registries 1.0
-* Jakarta Deployment 1.2
-* Jakarta Management 1.1
-* Jakarta Web Services Metadata 3.0 (Merged into Jakarta XML Web Services)
+* Entity Beans, both Container and Bean Managed Persistence
+* Embeddable EJB Container
