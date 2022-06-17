@@ -30,6 +30,12 @@ applications written to a previous version of the platform will continue
 to work without change and with identical behavior on the current
 version of the platform.
 
+==== Backwards Compatibility for Jakarta EE 10
+
+===== Removed Technologies
+* Entity Beans, both Container and Bean Managed Persistence (Jakarta Enterprise Beans 4.0, Optional Features, Chapters 3 - 7)
+* Embeddable EJB Container (Jakarta Enterprise Beans, Core Features 4.0, Chapter 17)
+
 [[a3901]]
 ==== Backwards Compatibility for Jakarta EE 9
 Due to the migration from the `javax` namespace to the `jakarta` namespace, Jakarta

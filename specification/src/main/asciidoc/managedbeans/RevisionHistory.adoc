@@ -1,7 +1,7 @@
 [appendix]
 == Revision History
 === Changes in Final Release for EE10
-None expected
+Marked for deprecation in the Platform Specification.
 
 === Changes in Final Release for EE9
 ==== Editorial Changes
