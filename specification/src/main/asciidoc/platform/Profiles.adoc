@@ -188,6 +188,7 @@ The following technologies are required:
 * Jakarta Batch 2.1*
 * Jakarta Bean Validation 3.0
 * Jakarta Concurrency 3.0*
+* Jakarta Connectors 2.1*
 * Jakarta Contexts and Dependency Injection 4.0*
 * Jakarta Debugging Support for Other Languages 2.0
 * Jakarta Dependency Injection  2.0
