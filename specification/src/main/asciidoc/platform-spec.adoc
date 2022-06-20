@@ -28,9 +28,6 @@ include::copyright.adoc[]
 :sectnums!:
 include::license-efsl.adoc[]
 
-:sectnums!:
-include::commemoration.adoc[]
-
 // == Platform
 :sectnums:
 include::platform/Platform.adoc[]
