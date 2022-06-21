@@ -98,6 +98,7 @@ technology is required (REQ), proposed optional (POPT), or optional
 (OPT). Each Jakarta EE profile specification will include a similar table
 describing which technologies are required for the profile. Note that
 some technologies are marked Optional, as described in the next section.
+Please see the table in the section Application Programming Interface for the specific versions required for each component.
 
 *Note:* Jakarta EE 9 introduced the concept of "removed" technologies.
 This is the final stage of a technology's lifecycle where the technology is
@@ -116,197 +117,197 @@ technology will no longer be maintained for future versions of the Platform.
 |Enterprise Beans
 |Status
 
-|Enterprise Beans 4.0
+|Enterprise Beans
 |Y footnote:[Client APIs only.]
 |Y
 |Y
 |REQ, OPT footnote:[Jakarta™ Enterprise Beans entity beans and associated query
 language. Jakarta Enterprise Beans 2.x API group.]
 
-|Servlet 5.0
+|Servlet
 |N
 |Y
 |N
 |REQ
 
-|Server Pages 3.0
+|Server Pages
 |N
 |Y
 |N
 |REQ
 
-|Expression Language 4.0
+|Expression Language
 |N
 |Y
 |N
 |REQ
 
-|Messaging 3.0
+|Messaging
 |Y
 |Y
 |Y
 |REQ
 
-|Transactions 2.0
+|Transactions
 |N
 |Y
 |Y
 |REQ
 
-|Activation 2.0
+|Activation
 |Y
 |Y
 |Y
 |REQ
 
-|Mail 2.0
+|Mail
 |Y
 |Y
 |Y
 |REQ
 
-|Connectors 2.0
+|Connectors
 |N
 |Y
 |Y
 |REQ
 
-|RESTful Web Services 3.0
+|RESTful Web Services
 |N
 |Y
 |N
 |REQ
 
-|WebSocket 2.0
+|WebSocket
 |N
 |Y
 |N
 |REQ
 
-|JSON Processing 2.0
+|JSON Processing
 |Y
 |Y
 |Y
 |REQ
 
-|JSON Binding 2.0
+|JSON Binding
 |Y
 |Y
 |Y
 |REQ
 
-|Concurrency 2.0
+|Concurrency
 |N
 |Y
 |Y
 |REQ
 
-|Batch 2.0
+|Batch
 |N
 |Y
 |Y
 |REQ
 
-|Authorization 2.0
+|Authorization
 |N
 |Y
 |Y
 |REQ
 
-|Authentication 2.0
+|Authentication
 |N
 |Y
 |Y
 |REQ
 
-|Security API 2.0
+|Security
 |N
 |Y
 |Y
 |REQ
 
-|Server Pages Debugging 2.0
+|Server Pages Debugging
 |N
 |Y
 |N
 |REQ
 
-|Standard Tag Library 2.0
+|Standard Tag Library
 |N
 |Y
 |N
 |REQ
 
-|Server Faces 3.0
+|Server Faces
 |N
 |Y
 |N
 |REQ
 
-|Common Annotations 2.0
+|Common Annotations
 |Y
 |Y
 |Y
 |REQ
 
-|Persistence 3.0
+|Persistence
 |Y
 |Y
 |Y
 |REQ
 
-|Bean Validation 3.0
+|Bean Validation
 |Y
 |Y
 |Y
 |REQ
 
-|Managed Beans 2.0
+|Managed Beans
 |Y
 |Y
 |Y
 |REQ
 
-|Interceptors 2.0
+|Interceptors
 |Y
 |Y
 |Y
 |REQ
 
-|Contexts and Dependency Injection 3.0
+|Contexts and Dependency Injection
 |Y
 |Y
 |Y
 |REQ
 
-|Dependency Injection 2.0
+|Dependency Injection
 |Y
 |Y
 |Y
 |REQ
 
-|XML Binding 3.0
+|XML Binding
 |Y
 |Y
 |Y
 |OPT
 
-|Enterprise Web Services 2.0
+|Enterprise Web Services
 |Y
 |Y
 |Y
 |OPT
 
-|XML Web Services 3.0
+|XML Web Services
 |Y
 |Y
 |Y
 |OPT
 
-|Web Services Metadata 3.0
-|Y
-|Y
-|Y
+|Web Services Metadata (Moved to Enterprise Web Services)
+|-
+|-
+|-
 |OPT
 
 |SOAP with Attachments 2.0
