@@ -117,93 +117,8 @@ technology will no longer be maintained for future versions of the Platform.
 |Enterprise Beans
 |Status
 
-|Enterprise Beans
-|Y footnote:[Client APIs only.]
-|Y
-|Y
-|REQ, OPT footnote:[Jakarta™ Enterprise Beans entity beans and associated query
-language. Jakarta Enterprise Beans 2.x API group.]
-
-|Servlet
-|N
-|Y
-|N
-|REQ
-
-|Server Pages
-|N
-|Y
-|N
-|REQ
-
-|Expression Language
-|N
-|Y
-|N
-|REQ
-
-|Messaging
-|Y
-|Y
-|Y
-|REQ
-
-|Transactions
-|N
-|Y
-|Y
-|REQ
-
 |Activation
 |Y
-|Y
-|Y
-|REQ
-
-|Mail
-|Y
-|Y
-|Y
-|REQ
-
-|Connectors
-|N
-|Y
-|Y
-|REQ
-
-|RESTful Web Services
-|N
-|Y
-|N
-|REQ
-
-|WebSocket
-|N
-|Y
-|N
-|REQ
-
-|JSON Processing
-|Y
-|Y
-|Y
-|REQ
-
-|JSON Binding
-|Y
-|Y
-|Y
-|REQ
-
-|Concurrency
-|N
-|Y
-|Y
-|REQ
-
-|Batch
-|N
 |Y
 |Y
 |REQ
@@ -220,38 +135,8 @@ language. Jakarta Enterprise Beans 2.x API group.]
 |Y
 |REQ
 
-|Security
+|Batch
 |N
-|Y
-|Y
-|REQ
-
-|Server Pages Debugging
-|N
-|Y
-|N
-|REQ
-
-|Standard Tag Library
-|N
-|Y
-|N
-|REQ
-
-|Server Faces
-|N
-|Y
-|N
-|REQ
-
-|Common Annotations
-|Y
-|Y
-|Y
-|REQ
-
-|Persistence
-|Y
 |Y
 |Y
 |REQ
@@ -262,14 +147,20 @@ language. Jakarta Enterprise Beans 2.x API group.]
 |Y
 |REQ
 
-|Managed Beans
+|Common Annotations
 |Y
 |Y
 |Y
 |REQ
 
-|Interceptors
+|Concurrency
+|N
 |Y
+|Y
+|REQ
+
+|Connectors
+|N
 |Y
 |Y
 |REQ
@@ -286,13 +177,135 @@ language. Jakarta Enterprise Beans 2.x API group.]
 |Y
 |REQ
 
-|XML Binding
+|Debugging Support for Other Languages
+|N
+|Y
+|N
+|REQ
+
+|Enterprise Beans
+|Y footnote:[Client APIs only.]
+|Y
+|Y
+|REQ, OPT footnote:[Jakarta™ Enterprise Beans entity beans and associated query
+language. Jakarta Enterprise Beans 2.x API group.]
+
+|Enterprise Web Services
 |Y
 |Y
 |Y
 |OPT
 
-|Enterprise Web Services
+|Expression Language
+|N
+|Y
+|N
+|REQ
+
+|Interceptors
+|Y
+|Y
+|Y
+|REQ
+
+|JSON Processing
+|Y
+|Y
+|Y
+|REQ
+
+|JSON Binding
+|Y
+|Y
+|Y
+|REQ
+
+|Mail
+|Y
+|Y
+|Y
+|REQ
+
+|Managed Beans (Deprecated)
+|Y
+|Y
+|Y
+|REQ
+
+|Messaging
+|Y
+|Y
+|Y
+|REQ
+
+|Persistence
+|Y
+|Y
+|Y
+|REQ
+
+
+|RESTful Web Services
+|N
+|Y
+|N
+|REQ
+
+|Security
+|N
+|Y
+|Y
+|REQ
+
+|Servlet
+|N
+|Y
+|N
+|REQ
+
+|Server Faces
+|N
+|Y
+|N
+|REQ
+
+|Server Pages
+|N
+|Y
+|N
+|REQ
+
+|SOAP with Attachments
+|Y
+|Y
+|Y
+|OPT
+
+|Standard Tag Library
+|N
+|Y
+|N
+|REQ
+
+|Transactions
+|N
+|Y
+|Y
+|REQ
+
+|Web Services Metadata (Moved to Enterprise Web Services)
+|-
+|-
+|-
+|OPT
+
+|WebSocket
+|N
+|Y
+|N
+|REQ
+
+|XML Binding
 |Y
 |Y
 |Y
@@ -304,17 +317,6 @@ language. Jakarta Enterprise Beans 2.x API group.]
 |Y
 |OPT
 
-|Web Services Metadata (Moved to Enterprise Web Services)
-|-
-|-
-|-
-|OPT
-
-|SOAP with Attachments 2.0
-|Y
-|Y
-|Y
-|OPT
 |===
 
 All classes and interfaces required by
