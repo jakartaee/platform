@@ -2,7 +2,13 @@
 [[revisionHistory]]
 == Revision History
 === Changes in Final Release for EE10
-TBD
+* Updated Java SE base version to 11.
+* Added basic module-info.class requirements to API artifacts.
+* Added restrictions concerning where jakarta package name usage is appropriate.
+* Added SecurityManager deprecation.
+* Removed applet requirements.
+* Refactored profile requirements to reduce base requirements in Core Profile.
+* Updated <<relateddocs, “Related Documents">> for the updated Specifications in Jakarta EE 10.0.
 
 === Changes in Final Release EE9.1
 ==== Editorial Changes
