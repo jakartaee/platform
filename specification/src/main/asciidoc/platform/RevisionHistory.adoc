@@ -8,6 +8,8 @@
 * Added SecurityManager deprecation.
 * Removed applet requirements.
 * Refactored profile requirements to reduce base requirements in Core Profile.
+* Removed requirement for Entity Beans, both Container and Bean Managed Persistence (Jakarta Enterprise Beans 4.0, Optional Features, Chapters 3 - 7)
+* Removed requirement for embeddable EJB Container (Jakarta Enterprise Beans, Core Features 4.0, Chapter 17)
 * Updated <<relateddocs, “Related Documents">> for the updated Specifications in Jakarta EE 10.0.
 
 === Changes in Final Release EE9.1
