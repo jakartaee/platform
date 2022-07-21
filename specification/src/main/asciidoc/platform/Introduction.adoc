@@ -197,4 +197,4 @@ Specification Project with guidance provided by the Jakarta EE Working Group
 (_https://jakarta.ee/_).
 
 === Acknowledgements for Jakarta EE 10.0
-TBD
+The Jakarta EE 10.0 specification was created by the Jakarta EE Platform Specification Project with guidance provided by the Jakarta EE Working Group (https://jakarta.ee/).
