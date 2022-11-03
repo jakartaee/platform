@@ -1817,7 +1817,7 @@ Managed Beans is being deprecated in EE 10 for removal in a later version. The M
 The Managed Beans specification can be found
 at _https://jakarta.ee/specifications/managedbeans_ .
 
-=== Interceptors 2.0 Requirements
+=== Interceptors 2.1 Requirements
 
 The Interceptors specification makes more
 generally available the interceptor facility originally defined as part
@@ -1826,7 +1826,7 @@ of the Jakarta Enterprise Beans 3.0 specification.
 The Interceptors specification can be found
 at _https://jakarta.ee/specifications/interceptors_ .
 
-=== Contexts and Dependency Injection (CDI) 3.0 Requirements
+=== Contexts and Dependency Injection (CDI) 4.0 Requirements
 
 The Contexts and Dependency Injection (CDI)
 specification defines a set of contextual services, provided by Jakarta EE
@@ -1859,7 +1859,7 @@ A Jakarta EE product may support Enterprise Web Services.
 The Enterprise Web Services specification can be found
 at _https://jakarta.ee/specifications/enterprise-ws_ .
 
-=== XML Binding 3.0 Requirements (Optional)
+=== XML Binding 4.0 Requirements (Optional)
 
 The Jakarta XML Binding provides an API and tools that automate the mapping
 between XML documents and Java objects.
@@ -1868,7 +1868,7 @@ A Jakarta EE product may support XML Binding.
 The XML Binding specification can be found
 at _https://jakarta.ee/specifications/xml-binding_ .
 
-=== XML Web Services 3.0 Requirements (Optional)
+=== XML Web Services 4.0 Requirements (Optional)
 
 Jakarta XML Web Services defines a means for implementing XML-Based Web Services
 based on Jakarta SOAP with Attachments and Jakarta Web Services Metadata.
@@ -1876,19 +1876,12 @@ A Jakarta EE product may support XML Web Services.
 
 The XML Web Services specification can be found
 at _https://jakarta.ee/specifications/xml-web-services_ .
+[NOTE]
+====
+Jakarta Web Services Metadata 3.0 was merged into Jakarta XML Web Services 4.0
+====
 
-=== Web Services Metadata 3.0 Requirements (Optional)
-
-Jakarta Web Services Metadata defines a programming model for Web Services in Java,
-use of metadata, a non-normative processing model for metadata annotated web service
-source files, runtime requirements for a container, and annotations used for WSDL,
-binding, and configuration.
-A Jakarta EE product may support Web Services Metadata.
-
-The Web Services Metadata specification can be found
-at _https://jakarta.ee/specifications/web-services-metadata_ .
-
-=== SOAP with Attachments 2.0 Requirements (Optional)
+=== SOAP with Attachments 3.0 Requirements (Optional)
 
 Jakarta SOAP with Attachments defines an API enabling developers to produce and
 consume messages conforming to the SOAP 1.1, SOAP 1.2, and SOAP Attachments Feature.
