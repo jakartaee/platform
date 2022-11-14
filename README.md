@@ -24,16 +24,16 @@ pages, specifications, and compatible implementations for all Jakarta EE specifi
 
 The latest API Java documentation for the Jakarta EE platform are collected together here:
 
-* [Jakarta EE APIs](https://jakarta.ee/specifications/platform/9/apidocs/)
-* [Jakarta Server Faces Tag Libraries](https://jakarta.ee/specifications/faces/3.0/vdldoc/)
-* [Jakarta Server Faces Standard HTML RenderKit](https://jakarta.ee/specifications/faces/3.0/renderkitdoc)
-* [Jakarta Server Faces JavaScript Documentation](https://jakarta.ee/specifications/faces/3.0/jsdoc)
+* [Jakarta EE APIs](https://jakarta.ee/specifications/platform/10/apidocs/)
 
-## Jakarta EE 10 (under development)
+## Jakarta EE 10
 
-The [Jakarta EE 10](jakartaee10/JakartaEE10) page contains links to the documentation and processes required for a successful Jakarta EE 10 release.
+Jakarta EE 10 was approved by the Jakarta EE Specification Committee
+on September 22, 2022.
+The final specification is available for download on the
+[Jakarta EE specification page](https://jakarta.ee/specifications/platform/10/).
 
-## Jakarta EE 9.1 (latest release)
+## Jakarta EE 9.1
 
 Jakarta EE 9.1 was approved by the Jakarta EE Specification Committee
 on May 17, 2021.
