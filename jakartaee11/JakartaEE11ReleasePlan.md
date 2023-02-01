@@ -13,10 +13,11 @@ Please revisit to keep updated
 | | | | | | |
 | *Components* | Plan Reviews | | | | |
 | *Platform* | | Plan Review | | | |
-| *All*| | TCK passed on Java SE 20 | | | |
+| *All*| | TCK pass w/Security Manager Disabled | | | |
 | *All* | | | | Milestones published | | |
-| *All* | | | | TCK passed on Java SE 21 | |
+| *All* | | | | TCK pass on Java SE 21 | |
 | *Components* | | | | Individual Component Spec Ballots | |
+| *Platform* | | | | | Platform TCK pass on Java SE 21 |
 | *Platform* | | | | | Platform ballot |
 | *Platform* | | | | | **Release** |
 
@@ -88,7 +89,9 @@ List of specifications in Jakarta EE 11 Platform, Jakarta EE 11 Web Profile, and
 * Jakarta EE Core Profile 11*
 
 *TODO: add list of specifications*
-<!--* Jakarta Activation 2.1*
+
+<!--
+* Jakarta Activation 2.1*
 * Jakarta Annotations 2.1* (Web Profile)
 * Jakarta Authentication 3.0* (Web Profile)
 * Jakarta Authorization 2.1*
@@ -121,7 +124,7 @@ List of specifications in Jakarta EE 11 Platform, Jakarta EE 11 Web Profile, and
 * Jakarta WebSocket 2.1* (Web Profile)
 * Jakarta XML Binding 4.0* (Optional)
 * Jakarta XML Web Services 4.0* (Optional)
-  * Jakarta Web Services Metadata 3.0 (Merged)
+* Jakarta Web Services Metadata 3.0 (Merged)
 -->
 
 ### Proposed Updates to Web Profile
