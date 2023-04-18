@@ -1,8 +1,8 @@
 ---
 name: Compatibility certification request
 about: Request certification of a compatibile implementation of Jakarta EE
-title: Compatibility certification request for [product/project name] for [Full Platform|Web
-  Profile]
+title: Compatibility certification request for [product/project name] for [Platform|Web
+  Profile|Core Profile]
 labels: certification
 assignees: ''
 
