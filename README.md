@@ -12,7 +12,7 @@ other attributes of the platform such as security, deployment,
 transactions, and interoperability.
 
 > Be sure to view this page at
-[https://eclipse-ee4j.github.io/jakartaee-platform/](https://eclipse-ee4j.github.io/jakartaee-platform/),
+[https://jakartaee.github.io/jakartaee-platform/](https://jakartaee.github.io/jakartaee-platform/),
 not at the GitHub source code repository README view, so that the links in
 this page will work correctly.
 
