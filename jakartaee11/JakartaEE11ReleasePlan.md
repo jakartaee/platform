@@ -144,6 +144,8 @@ As stated earlier, all component Specifications which plan a Major or Minor rele
 
 We are proposing to deliver Jakarta EE 11 in a set of waves similar to those delivered in the previous Jakarta EE releases. These waves are somewhat related to the dependency tree of specifications. We aim to deliver specifications with a low number of dependencies first followed by other specifications.
 
+PENDING(edburns): Implement steps from https://github.com/jakartaee/jakartaee-platform/issues/728
+
 
 #### Independent Wave (standalone)
 
