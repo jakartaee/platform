@@ -144,91 +144,72 @@ As stated earlier, all component Specifications which plan a Major or Minor rele
 
 We are proposing to deliver Jakarta EE 11 in a set of waves similar to those delivered in the previous Jakarta EE releases. These waves are somewhat related to the dependency tree of specifications. We aim to deliver specifications with a low number of dependencies first followed by other specifications.
 
-PENDING(edburns): Implement steps from https://github.com/jakartaee/jakartaee-platform/issues/728
-
-
-#### Independent Wave (standalone)
-
-The following specifications can be delivered independently of other apis.
-
-*   Jakarta Annotations
-*   Jakarta Concurrency
-*   Jakarta Messaging
-*   Jakarta Persistence
-*   Jakarta Managed Beans
-
-
 #### Wave 1
 
-The specifications included in Wave 1 are:
-
-*   Jakarta JSON Processing
-*   Jakarta Dependency Injection (Service release for module-info)
-*   Jakarta Expression Language
-*   Jakarta Bean Validation (Service release for module-info)
-*   Jakarta WebSocket
-*   Jakarta Servlet
-*   Jakarta Activation
-*   Jakarta SOAP with Attachments
-*   Jakarta Interceptors (Service release for module-info)
-
+* Jakarta Annotations
 
 #### Wave 2
 
-The specifications included in Wave 2 are:
-
-*   Jakarta Mail
-*   Jakarta Authentication
-*   Jakarta JSON Binding
-*   Jakarta Server Pages
-*   Jakarta Debugging Support for Other Languages
-*   Jakarta Authorization
-*   Jakarta XML Binding
-
+Jakarta Expression Language
+Jakarta Interceptors
+Jakarta Dependency Injection
+Jakarta Lang Model (may be released with Jakarta CDI [Core] in wave 3)
+Jakarta Debugging Support for Other Languages
 
 #### Wave 3
 
-The specifications included in Wave 3 are:
-
-*   Jakarta Contexts and Dependency Injection
-*   Jakarta XML Web Services
-
+Jakarta Activation
+Jakarta "CDI implementation spec"
+Jakarta JSON Processing
+Jakarta Transactions
 
 #### Wave 4
 
-The specifications included in Wave 4 are:
-
-*   Jakarta Batch
-*   Jakarta RESTful Web Services
-*   Jakarta Transactions (Service release for module-info)
-
+Jakarta Enterprise Beans
+Jakarta JSON Binding
+Jakarta Mail
+Jakarta Ressource
+Jakarta Servlet
+Jakarta Websocket Client
+Jakarta XML Binding
+Jakarta SOAP with Attachments
 
 #### Wave 5
 
-The specifications included in Wave 5 are:
-
-*   Jakarta Connectors
-*   Jakarta Standard Tag Library
-*   Jakarta Enterprise Beans (Service release for module-info)
-*   Jakarta Enterprise Web Services
-
+Jakarta Authorization
+Jakarta Batch
+Jakarta Persistence
+Jakarta RESTful Web Services
+Jakarta Servlet
+Jakarta Server Pages
+Jakarta Validation
+Jakarta WebSocket
+Jakarta XML Web Services
 
 #### Wave 6
 
-The specifications included in Wave 6 are:
-
-*   Jakarta Security
-*   Jakarta Server Faces
-
+Jakarta Authentication
+Jakarta Concurrency
+Jakarta Messaging
+Jakarta Faces
+Jakarta Security
+Jakarta Jakarta Standard Tag Library
 
 #### Wave 7
 
-The specifications included in Wave 7 are:
+Jakarta "CDI integration spec"
+Jakarta Platform Core Profile
+Jakarta Platform Web Profile
 
-*   Jakarta EE 10 Core Profile
-*   Jakarta EE 10 Web Profile
-*   Jakarta EE 10 Full Platform
+#### Wave 8
 
+Jakarta Platform
+
+
+PENDING(edburns): what about these?
+
+*   Jakarta Connectors
+*   Jakarta Enterprise Web Services
 
 ### Platform and Web Profile Release Candidate
 
