@@ -85,8 +85,8 @@ List of specifications in Jakarta EE 11 Platform, Jakarta EE 11 Web Profile, and
 - Jakarta EE Web Profile 11*
 - Jakarta EE Core Profile 11*
 
-- Jakarta "CDI implementation spec" 4.1*
-- Jakarta "CDI integration spec" 4.1*
+- Jakarta CDI 4.1*
+- Jakarta CDI EE 4.1*
 - Jakarta Activation 2.1.2* service release
 - Jakarta Annotations 3.0*
 - Jakarta Authentication 3.1*
@@ -120,7 +120,7 @@ List of specifications in Jakarta EE 11 Platform, Jakarta EE 11 Web Profile, and
 
 ### Proposed Updates to Platform
 
-- Jakarta "CDI integration spec"
+- Jakarta CDI EE
 - Jakarta Activation
 - Jakarta Annotations
 - Jakarta Authentication
@@ -144,7 +144,7 @@ List of specifications in Jakarta EE 11 Platform, Jakarta EE 11 Web Profile, and
 - Jakarta Annotations
 - Jakarta Validation
 - Jakarta Concurrency
-- Jakarta "CDI integration spec"
+- Jakarta CDI EE
 - Jakarta Authentication
 - Jakarta Interceptors
 - Jakarta JSON Processing
@@ -158,7 +158,7 @@ List of specifications in Jakarta EE 11 Platform, Jakarta EE 11 Web Profile, and
 
 ### Proposed Updates to Core Profile
 
-- Jakarta "CDI implementation spec"
+- Jakarta CDI
 - Jakarta Annotations
 - Jakarta Interceptors
 - Jakarta JSON Processing
@@ -183,23 +183,16 @@ We are proposing to deliver Jakarta EE 11 in a set of waves similar to those del
 
 #### Wave 2
 
-- Jakarta Debugging Support for Other Languages
-- Jakarta Dependency Injection
 - Jakarta Expression Language
 - Jakarta Interceptors
 - Jakarta Lang Model (may be released with Jakarta CDI [Core] in wave 3)
 
 #### Wave 3
 
-- Jakarta "CDI implementation spec"
-- Jakarta Activation
-- Jakarta JSON Processing
-- Jakarta Transactions
+- Jakarta Contexts and Dependency Injection
 
 #### Wave 4
 
-- Jakarta Connectors
-- Jakarta Enterprise Beans
 - Jakarta JSON Binding
 - Jakarta Mail
 - Jakarta SOAP with Attachments
@@ -228,7 +221,7 @@ We are proposing to deliver Jakarta EE 11 in a set of waves similar to those del
 
 #### Wave 7
 
-- Jakarta "CDI integration spec"
+- Jakarta Contexts and Dependency Injection Enterprise Edition (CDI EE)
 - Jakarta Platform Web Profile
 - Jakarta Security
 
