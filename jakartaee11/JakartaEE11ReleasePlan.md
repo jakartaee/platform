@@ -1,25 +1,21 @@
-# **DRAFT** Jakarta EE 11 Release Plan
+# Jakarta EE 11 Release Plan
 
-### Preamble:  
-
-**THIS IS A DRAFT**
-
-Please revisit to keep updated
+### Preamble
 
 ## Timeline
 
-| | Q1 2023 | Q2 2023 | Q3 2023 | Q4 2023 | H1 2024 | H2 2024 |
-|-|---------|---------|---------|---------|---------|---------|
-| | | | | | | |
+|              | Q1 2023 | Q2 2023 | Q3 2023 | Q4 2023 | H1 2024 | June/July 2024 |
+|--------------|---------|---------|---------|---------|---------|---------|
+|              |         |         |         |         |         |         |
 | *Components* | Plan Reviews | | | | | |
-| *Platform* | | | Plan Review  | | | |
-| *All*| | | TCK pass w/Security Manager Disabled  | | | |
-| *All* | | | | Milestones published | | |
-| *All* | | | | TCK pass on Java SE 21 | | |
+| *Platform*   | | | Plan Review  | | | |
+| *All*        | | | TCK pass w/Security Manager Disabled  | | | |
+| *All*        | | | | Milestones published | | |
+| *All*        | | | | TCK pass on Java SE 21 | | |
 | *Components* | | | | Individual Component Spec Ballots | | |
-| *Platform* | | | | | Platform TCK pass on Java SE 21 | |
-| *Platform* | | | | | | Platform ballot |
-| *Platform* | | | | | | **Release** | |
+| *Platform*   | | | | | Platform TCK pass on Java SE 21 | |
+| *Platform*   | | | | | | Platform ballot |
+| *Platform*   | | | | | | **Release** | |
 
 ## Scope ([issue]())
 The goal of the Jakarta EE 11 release is to deliver a set of coordinated specifications across the spectrum of Jakarta EE technologies. 
@@ -31,6 +27,14 @@ Regardless of the scope of changes, all artifacts for the component and Platform
 
 ## Java SE 21 ([issue]())
 Java SE 21 will become the minimum runtime supported by Jakarta EE compatible implementations.
+
+## Jakarta Data
+Jakarta EE 11 plans to include Jakarta Data in its platform specification. For more on Jakarta Data see [Jakatra Data](https://jakarta.ee/specifications/data/).
+
+## CDI
+Continue to make CDI the single component model used across all of EE by removing Managed Beans from Annotations and all callsites that use Managed Beans.
+
+CDI will now be comprised of two specifications. The aspects of CDI that deal with integrating CDI and other specifications will be extracted and moved to a new CDI specification called CDI EE. The remaining content will still be called CDI. For more information see the [CDI issue tracker](https://github.com/jakartaee/cdi/issues/687#issuecomment-1667009015).
 
 ### API Source and Target Level
 If a component Specification is planning a Major or Minor version update for Jakarta EE 11, then the recommendation would be to recompile and distribute the specification’s APIs at lowest required of Java SE 17 and Java SE 21.
@@ -87,6 +91,7 @@ List of specifications in Jakarta EE 11 Platform, Jakarta EE 11 Web Profile, and
 
 - Jakarta CDI 4.1*
 - Jakarta CDI EE 4.1*
+- Jakarta Data 1.0*
 - Jakarta Activation 2.1.2* service release
 - Jakarta Annotations 3.0*
 - Jakarta Authentication 3.1*
@@ -121,6 +126,7 @@ List of specifications in Jakarta EE 11 Platform, Jakarta EE 11 Web Profile, and
 ### Proposed Updates to Platform
 
 - Jakarta CDI EE
+- Jakarta Data 1.0
 - Jakarta Activation
 - Jakarta Annotations
 - Jakarta Authentication
@@ -222,7 +228,6 @@ We are proposing to deliver Jakarta EE 11 in a set of waves similar to those del
 #### Wave 7
 
 - Jakarta Contexts and Dependency Injection Enterprise Edition (CDI EE)
-- Jakarta Platform Web Profile
 - Jakarta Security
 
 #### Wave 8
