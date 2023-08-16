@@ -229,6 +229,7 @@ We are proposing to deliver Jakarta EE 11 in a set of waves similar to those del
 
 - Jakarta Contexts and Dependency Injection Enterprise Edition (CDI EE)
 - Jakarta Security
+- Jakarta Data
 
 #### Wave 8
 
