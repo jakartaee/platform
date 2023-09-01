@@ -1,4 +1,4 @@
-# Jakarta EE 10
+# Jakarta EE 10 (released)
 
 - [Jakarta EE 10 Release Plan](#jakarta-ee-10-release-plan)
     - [Individual Component Release Plans](#individual-component-release-plans)
@@ -21,7 +21,7 @@ Most of the component Specifications that make up the Platform and/or Web Profil
 
 Individual component Specification release plans have been developed by the respective Specification projects.
 
-## Jakarta EE 10 schedule (work in progress)
+## Jakarta EE 10 schedule 
 
 Overall schedule dates are ***tentative*** and ***subject to change***.  
     
