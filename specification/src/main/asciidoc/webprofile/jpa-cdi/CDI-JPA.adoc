@@ -1,0 +1,148 @@
+:cdi-spec: https://jakarta.ee/specifications/cdi/4.0
+:jpa-spec: https://jakarta.ee/specifications/persistence/3.0/jakarta-persistence-spec-3.0
+
+=== Jakarta Persistence & Jakarta Context and Dependency Injection (CDI) Integration
+This section specifies the requirements for Jakarta EE environments that integrate both {jpa-spec}[Persistence] and {cdi-spec}[CDI].
+
+
+==== Obtaining an Entity Manager Factory using CDI
+
+A container environment might feature built-in integration of
+Jakarta Persistence with the CDI bean manager, allowing
+injection of a container-managed entity manager factory using
+the annotation _jakarta.inject.Inject_. In the Jakarta EE
+environment, the container must feature built-integration of
+Jakarta Persistence with the CDI bean manager.
+
+For each persistence unit, a container which features such
+built-in integration must make available a bean with:
+
+- bean type _EntityManagerFactory_,
+- the qualifiers specified by _qualifier_ XML elements in
+_persistence.xml_, or _jakarta.enterprise.inject.Default_,
+if no qualifiers are explicitly specified,
+- scope _jakarta.enterprise.context.ApplicationScoped_,
+- bean name given by the name of the persistence unit,
+- no interceptor bindings,
+- a bean implementation which satisfies the requirements of
+this specification for a container-managed entity manager
+factory.
+
+Furthermore, the container must make available five beans with:
+
+- bean types _CriteriaBuilder_, _PersistenceUnitUtil_, _Cache_,
+_SchemaManager_, and _Metamodel_, respectively,
+- the qualifiers specified by _qualifier_ XML elements in
+_persistence.xml_, or _jakarta.enterprise.inject.Default_,
+if no qualifiers are explicitly specified,
+- scope _jakarta.enterprise.context.Dependent_,
+- no interceptor bindings,
+- a bean implementation which simply obtains the instance of
+the bean type by calling the appropriate getter method of
+the _EntityManagerFactory_ bean.
+
+==== Obtaining an Entity Manager Factory using CDI
+
+A container environment might feature built-in integration of
+Jakarta Persistence with the CDI bean manager, allowing
+injection of a container-managed entity manager factory using
+the annotation _jakarta.inject.Inject_. In the Jakarta EE
+environment, the container must feature built-integration of
+Jakarta Persistence with the CDI bean manager.
+
+For each persistence unit, a container which features such
+built-in integration must make available a bean with:
+
+- bean type _EntityManagerFactory_,
+- the qualifiers specified by _qualifier_ XML elements in
+_persistence.xml_, or _jakarta.enterprise.inject.Default_,
+if no qualifiers are explicitly specified,
+- scope _jakarta.enterprise.context.ApplicationScoped_,
+- bean name given by the name of the persistence unit,
+- no interceptor bindings,
+- a bean implementation which satisfies the requirements of
+this specification for a container-managed entity manager
+factory.
+
+Furthermore, the container must make available five beans with:
+
+- bean types _CriteriaBuilder_, _PersistenceUnitUtil_, _Cache_,
+_SchemaManager_, and _Metamodel_, respectively,
+- the qualifiers specified by _qualifier_ XML elements in
+_persistence.xml_, or _jakarta.enterprise.inject.Default_,
+if no qualifiers are explicitly specified,
+- scope _jakarta.enterprise.context.Dependent_,
+- no interceptor bindings,
+- a bean implementation which simply obtains the instance of
+the bean type by calling the appropriate getter method of
+the _EntityManagerFactory_ bean.
+
+==== persistence.xml Extended Schema
+This integration section defines an extension of the Persistence specification schema to add scope and qualifier elements.
+
+[source,xml]
+----
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- persistence.xml schema -->
+<xs:schema targetNamespace="https://jakarta.ee/xml/ns/persistence"
+            xmlns:xs="http://www.w3.org/2001/XMLSchema"
+            xmlns:persistence="https://jakarta.ee/xml/ns/persistence"
+            elementFormDefault="qualified"
+            attributeFormDefault="unqualified"
+            version="3.0">
+
+    <xs:include schemaLocation="persistence_3_0.xsd" />
+
+    <xs:complexType name="persistenceUnitExtType">
+        <xs:complexContent>
+            <xs:extension base="persistence:persistenceUnitType">
+                <xs:sequence>
+                    <xs:element name="scope" type="xs:string" />
+                    <xs:element name="qualifier" type="xs:string" />
+                </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+
+</xs:schema>
+----
+
+Its usage is illustrated in the following XML document.
+
+[source,xml]
+----
+<persistence xmlns="https://jakarta.ee/xml/ns/persistence"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xsi:schemaLocation="https://jakarta.ee/xml/ns/persistence persistence-cdi-3.2.xsd" version="3.0">
+    <persistence-unit xsi:type="persistenceUnitExtType" name="my-unit" >
+...
+        <scope>com.example.jpa.ACustomScope</scope>
+        <qualifier>com.example.jpa.CustomQualifier</qualifier>
+    </persistence-unit>
+</persistence>
+----
+
+====  Additional EntityManagerFactory Properties
+
+The following additional properties correspond to the
+new elements and properties in the _persistence.xml_ file when using the persistence-cdi-3.2xsd schema and associated persistenceUnitExtType. When any of these
+properties are specified in the Map parameter passed to the
+_createEntityManagerFactory_ method, their values override the values of
+the corresponding elements and properties in the _persistence.xml_ file
+for the named persistence unit. They also override any defaults that the
+persistence provider might have applied.
+
+
+[cols="40,10,25,~"]
+|===
+| Property | Type | Corresponding element in _persistence.xml_ | Notes
+
+
+| _jakarta.persistence.qualifiers_
+| _String[]_ | _qualifier_
+|
+| _jakarta.persistence.scope_
+| _String_
+| _scope_
+|
+|===
