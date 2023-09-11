@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
 
-    Copyright (c) 2017, 2020 Oracle and/or its affiliates. All rights reserved.
+    Copyright (c) 2017, 2023 Oracle and/or its affiliates. All rights reserved.
 
     This program and the accompanying materials are made available under the
     terms of the Eclipse Public License v. 2.0, which is available at
@@ -27,14 +27,14 @@
     <groupId>jakarta.platform</groupId>
     <artifactId>platform-specs</artifactId>
     <packaging>pom</packaging>
-    <version>10.0</version>
+    <version>11.0</version>
     <name>Jakarta EE Platform Specifications</name>
 
     <properties>
         <site.output.dir>${project.build.directory}/staging</site.output.dir>
         <maven.site.skip>true</maven.site.skip>
-        <asciidoctor.maven.plugin.version>2.2.1</asciidoctor.maven.plugin.version>
-        <asciidoctorj.pdf.version>1.6.0</asciidoctorj.pdf.version>
+        <asciidoctor.maven.plugin.version>2.2.4</asciidoctor.maven.plugin.version>
+        <asciidoctorj.pdf.version>2.3.9</asciidoctorj.pdf.version>
         <!-- status: DRAFT, BETA, etc., or blank for final -->
         <status>DRAFT</status>
         <maven.build.timestamp.format>MMMM dd, yyyy</maven.build.timestamp.format>
