@@ -30,4 +30,4 @@ See the [Jakarta EE 11 Release Plan](JakartaEE11ReleasePlan) for more schedule d
     
 ### Jakarta EE 11 Project board
 
-Jakarta EE 11 will track its development progress with an [Azure DevOps Board](https://dev.azure.com/jakarta-ee-azdo/jakarta-ee-azdo/). This board is linked to the numerous GitHub issue trackers of the [repositories that comprise the Jakarta EE effort](https://github.com/jakartaee/). The issues in the respective GitHub issue trackers are the real system of record. You can think of the Azure Board as a layer on top of the GitHub issue trackers intended to make sense of the various component issue trackers.
+Jakarta EE 11 will track its development progress with an [Azure DevOps Board](https://dev.azure.com/jakarta-ee-azdo/jakarta-ee-azdo/_workitems/). This board is linked to the numerous GitHub issue trackers of the [repositories that comprise the Jakarta EE effort](https://github.com/jakartaee/). The issues in the respective GitHub issue trackers are the real system of record. You can think of the Azure Board as a layer on top of the GitHub issue trackers intended to make sense of the various component issue trackers.
