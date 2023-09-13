@@ -9,8 +9,8 @@
 
 The [Jakarta EE 11 Release Plan](JakartaEE11ReleasePlan) is now available! 
 During the span of Jun 2023 - Aug 2023, the plan was created, discussed, reviewed, and amended by the Jakarta EE Community and the Platform Project.
-On YYYY-MM-DD, an official ballot was approved by the [Jakarta EE Specification Committee](https://jakarta.ee/committees/specification/).
-On YYYY-MM-DD Jakarta EE 11 Release Plan was officially recognized by the [Jakarta EE Steering Committee](https://jakarta.ee/committees/steering/).
+On 2023-08-30 and 2023-09-06, a official ballots were approved by the [Jakarta EE Specification Committee](https://jakarta.ee/committees/specification/).
+On 2023-08-30 and 2023-09-06 Jakarta EE 11 Release Plan was officially recognized by the [Jakarta EE Steering Committee](https://jakarta.ee/committees/steering/).
 
 A [Jakarta EE 11 Release Plan FAQ](JakartaEE11ReleasePlanFAQ) has also been created to help clarify aspects of the Release Plan.
 
