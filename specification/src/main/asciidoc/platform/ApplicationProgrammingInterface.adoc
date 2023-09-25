@@ -339,7 +339,7 @@ If a container supports Java SE 11 or a newer version of the Java SE platform, t
 [[a2841]]
 ==== Platform Prospective Specifications
 
-During the development cycle for the current version of the Jakarta EE specification, the platform project considered several component specifications for inclusion in the platform. A consensus could not be reached on including these specifications in the platform. These specifications are considerd as prospects for inclusion in a future version of the Platform specification.
+During the development cycle for the current version of the Jakarta EE specification, the platform project considered several component specifications for inclusion in the platform. A consensus could not be reached on including these specifications in the platform. These specifications are considered as prospects for inclusion in a future version of the Platform specification.
 
 * Jakarta MVC
 * Jakarta NoSQL
