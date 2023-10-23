@@ -981,8 +981,7 @@ Connector architecture must support deploying and using a JDBC driver
 that has been written and packaged as a resource adapter using the
 Connector architecture.
 
-The JDBC 4.2 specification is available at
-_https://jcp.org/en/jsr/detail?id=221_ .
+Every release of Jakarta EE declares a minimum required version of Java SE. For discussion, let this be Java SE N. Compatible implementations of Jakarta EE must support the latest version of the JDBC API mentioned in the Java SE N javadocs for the package `java.sql`. These javadocs typically have a link to the corresponding specification at `jcp.org`. 
 
 [[a2553]]
 ===== Jakarta XML Web Services (JAX-WS™) Requirements (Optional)
