@@ -16,6 +16,14 @@ In addition, there are no restrictions on mixing versions of supported deploymen
 descriptors in a single application; any combination of valid deployment
 descriptor versions must be supported.
 
+=== Jakarta EE 11 shcemas
+
+Reference this page, https://jakarta.ee/xml/ns/jakartaee/#11, for the schema definitions defined for Jakarta EE 11.
+
+=== Jakarta EE 10 schemas
+
+Reference this page, https://jakarta.ee/xml/ns/jakartaee/#10, for the schema definitions defined for Jakarta EE 10.
+
 === Jakarta EE 9 schemas
 
 A new namespace has been specified for Jakarta EE 9, https://jakarta.ee/xml/ns/jakartaee/.
