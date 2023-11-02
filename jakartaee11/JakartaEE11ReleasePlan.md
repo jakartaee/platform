@@ -258,4 +258,5 @@ The platform project will maintain close coordination with the various Compatibl
 
 ### FAQ
 
-Additional clarifications for this Release Plan can be found in the [Jakarta EE 11 Release Plan FAQ](https://eclipse-ee4j.github.io/jakartaee-platform/jakartaee11/JakartaEE11ReleasePlanFAQ).
+Additional clarifications for this Release Plan can be found in the [Jakarta EE 11 Release Plan FAQ](https://jakartaee.github.io/platform/jakartaee11/JakartaEE11ReleasePlanFAQ).
+
