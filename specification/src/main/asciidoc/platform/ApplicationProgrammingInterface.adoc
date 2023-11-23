@@ -1048,7 +1048,7 @@ types of objects must be able to make them available in the
 application’s JNDI namespace: _EJBHome_ objects, _EJBLocalHome_ objects,
 Enterprise Beans business interface objects, Jakarta Transactions _UserTransaction_ objects, JDBC API
 _DataSource_ objects, JMS _ConnectionFactory_ and _Destination_ objects,
-JavaMail _Session_ objects, _URL_ objects, resource manager
+Jakarta Mail _Session_ objects, _URL_ objects, resource manager
 _ConnectionFactory_ objects (as specified in the Connector
 specification), _ORB_ objects, _EntityManagerFactory_ objects, and other
 Java language objects as described in
@@ -1400,7 +1400,7 @@ be provided transparently to the application by a Jakarta EE product.
 The Jakarta Transaction specification is available at
 _https://jakarta.ee/specifications/transactions_ .
 
-=== Activation 2.0 Requirements
+=== Activation 2.1 Requirements
 
 Jakarta Activation defines a set of standard services to: determine the MIME
 type of an arbitrary piece of data; encapsulate access to it; discover the operations
@@ -1410,7 +1410,7 @@ A Jakarta EE product must support Activation.
 The Jakarta Activation specification is available at
 _https://jakarta.ee/specifications/activation_ .
 
-=== Mail 2.0 Requirements
+=== Mail 2.1 Requirements
 
 The Jakarta Mail API allows for access to email
 messages contained in message stores, and for the creation and sending
@@ -1418,15 +1418,15 @@ of email messages using a message transport. Specific support is
 included for Internet standard MIME messages. Access to message stores
 and transports is through protocol providers supporting specific store
 and transport protocols. The Jakarta Mail API specification does not require
-any specific protocol providers, but the JavaMail reference
-implementation includes an IMAP message store provider, a POP3 message
+any specific protocol providers, but the Jakarta EE platform
+should include an IMAP message store provider, a POP3 message
 store provider, and an SMTP message transport provider.
 
 Configuration of the Jakarta Mail API is
 typically done by setting properties in a _Properties_ object that is
 used to create a _jakarta.mail.Session_ object using a static factory
-method. To allow the Jakarta EE platform to configure and manage JavaMail
-API sessions, an application component that uses the JavaMail API should
+method. To allow the Jakarta EE platform to configure and manage Jakarta Mail
+API sessions, an application component that uses the Jakarta Mail API should
 request a _Session_ object using JNDI, and should list its need for a
 _Session_ object in its deployment descriptor using a _resource-ref_
 element, or by using a _Resource_ annotation. A Jakarta Mail API _Session_
@@ -1455,11 +1455,11 @@ restrictions on the use of threads in various containers. In Enterprise Beans
 containers, for instance, it is typically not possible to create
 threads.
 
-The Jakarta Mail API uses the JavaBeans Activation
-Framework API to support various MIME data types. The Jakarta Mail API must
+The Jakarta Mail API uses the Jakarta Activation
+API to support various MIME data types. The Jakarta Mail API must
 include _jakarta.activation.DataContentHandlers_ for the following MIME
 data types, corresponding to the Java programming language type
-indicated in <<a2675, JavaMail API MIME Data Type to Java Type Mappings>> .
+indicated in <<a2675, Jakarta Mail API MIME Data Type to Java Type Mappings>> .
 
 [[a2675]]
 [cols=2, options=header]
