@@ -1770,7 +1770,7 @@ corresponding specifications and summarized in the following table.
 The Jakarta Annotations specification can be found at
 _https://jakarta.ee/specifications/annotations_ .
 
-=== Persistence 3.0 Requirements
+=== Persistence 3.1 Requirements
 
 Jakarta Persistence is the standard API for the
 management of persistence and object/relational mapping. The Jakarta
@@ -1784,7 +1784,25 @@ unit should not be loaded by the application class loader or any of its
 parent class loaders until after the entity manager factory for the
 persistence unit has been created.
 
-The Jakarta Persistence specification can be
+The Jakarta EE platform requires that if CDI is enabled, a _BeanManager_ instance
+must be made available to Jakarta Persistence providers by the container.
+The container is responsible for passing this _BeanManager_ instance
+via the map that is passed as the second argument
+to the _createContainerEntityManagerFactory(PersistenceUnitInfo, Map)_ method
+of the _PersistenceProvider_ interface. The map key used must be
+the standard property name _jakarta.persistence.bean.manager_.
+
+The Jakarta EE platform also requires that if a Bean Validation provider exists
+in the container environment and the _validation-mode_ _NONE_ is not specified,
+a _ValidatorFactory_ instance must be made available to Jakarta Persistence providers by the container.
+The container is responsible for passing this _ValidatorFactory_ instance
+via the map that is passed as the second argument
+to the _createContainerEntityManagerFactory(PersistenceUnitInfo, Map)_ method
+of the _PersistenceProvider_ interface. The map key used must be
+the standard property name _jakarta.persistence.validation.factory_.
+
+Additional requirements on Jakarta EE platform
+containers are specified in the Jakarta Persistence specification
 found at _https://jakarta.ee/specifications/persistence_ .
 
 === Bean Validation 3.0 Requirements
