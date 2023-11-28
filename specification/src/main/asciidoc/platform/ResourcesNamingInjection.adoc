@@ -499,9 +499,14 @@ supported only in Jakarta™ RESTful Web Services components managed by CDI.]
 |interceptors footnote:[Interceptors cannot be bound to other interceptors.]
 |Standard
 
-|Java Persistence
-|entity listeners
+|Jakarta Persistence
+|attribute converters
+
+entity listeners
+
 |Standard
+
+Standard
 
 |Managed Beans
 |managed beans
