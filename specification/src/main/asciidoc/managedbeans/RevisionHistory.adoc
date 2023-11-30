@@ -1,5 +1,8 @@
 [appendix]
 == Revision History
+=== Changes in Milestone 1 Release Draft for EE 11
+* Removed Managed Beans and replaced it with CDI Managed Beans.
+
 === Changes in Final Release for EE10
 Marked for deprecation in the Platform Specification.
 

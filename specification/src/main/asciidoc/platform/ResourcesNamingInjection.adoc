@@ -120,7 +120,7 @@ ConnectionFactory in the component’s environment.
 application components of references to the default Jakarta Concurrency objects
 in the component’s environment.
 * <<a2067, Managed Bean References>> describes the use by eligible application
-components of references to Managed Beans.
+components of references to CDI Managed Beans.
 * <<a2099, Bean Manager References>> describes the use by eligible application
 components of references to a _BeanManager_ object in the component’s
 environment.
@@ -131,7 +131,7 @@ Dependency Injection APIs.
 
 Jakarta EE application clients, enterprise beans,
 and web components are required to have access to a JNDI naming
-environment.footnote:[Note that Jakarta™ Managed Beans are required to have
+environment.footnote:[Note that CDI Managed Beans are required to have
 access to the JNDI naming environment of their calling component.]
 The containers for these application
 component types are required to provide the naming environment support
@@ -516,8 +516,8 @@ Standard
 injection in CDI managed beans.]
 |CDI-style managed beans footnote:[We use this term to refer to classes that become
 managed beans per the rules in the CDI specification, thus excluding managed beans
-declared using the _ManagedBean_ annotation as well as Jakarta™ Enterprise Beans
-session beans, both of which would be managed beans even in the absence of CDI.]
+declared using Jakarta™ Enterprise Beans session beans, which would be managed bean
+even in the absence of CDI.]
 
 decorators footnote:[Interceptors cannot be bound to decorators.]
 
@@ -4239,13 +4239,13 @@ it must be mapped by the Jakarta EE Product Provider to a preconfigured
 Jakarta Concurrency object for the Jakarta EE Product Provider.
 
 [[a2067]]
-=== Managed Bean References
+=== CDI Managed Bean References
 
 This section describes the metadata
 annotations and deployment descriptor entries that allow an application
-to obtain instances of a Managed Bean.
+to obtain instances of a CDI Managed Bean.
 
-An instance of a named Managed Bean can be
+An instance of a named CDI Managed Bean can be
 obtained by looking up its name in JNDI using the same naming scheme
 used for Jakarta Enterprise Beans components:
 
@@ -4256,16 +4256,16 @@ java:module/<bean-name>
 ----
 
 The latter will only work within the module
-the Managed Bean is declared in.
+the CDI Managed Bean is declared in.
 
 Each such lookup must return a new instance.
 
 Alternatively, the _Resource_ annotation can
-be used to request the injection of a Managed Bean given either its type
+be used to request the injection of a CDI Managed Bean given either its type
 or its name. If a name is specified using the _lookup_ element then the
-type of the resource can be any of the types that the Managed Bean class
+type of the resource can be any of the types that the CDI Managed Bean class
 implements, including any of its interfaces. If no name is specified,
-the type must be the Managed Bean class itself. (Note that the _name_
+the type must be the CDI Managed Bean class itself. (Note that the _name_
 element of the _Resource_ annotation serves an entirely different
 purpose than the _lookup_ element, consistently with other uses of
 _Resource_ in this specification.) The _authenticationType_ and
@@ -4313,13 +4313,13 @@ should add an _injection-target_ child element to _resource-ref_.)
 ==== Application Component Provider’s Responsibilities
 
 The Application Component Provider is
-responsible for requesting injection of a Managed Bean or for looking it
+responsible for requesting injection of a CDI Managed Bean or for looking it
 up in JNDI using an appropriate name.
 
 ==== Jakarta EE Product Provider’s Responsibilities
 
 The Jakarta EE Product Provider is responsible
-for providing appropriate instances of the requested Managed Bean class
+for providing appropriate instances of the requested CDI Managed Bean class
 as required by this specification.
 
 [[a2099]]
@@ -4382,8 +4382,6 @@ injection is supported on managed beans. There are currently three ways
 for a class to become a managed bean:
 
 . Being a Jakarta Enterprise Beans session bean component.
-. Being annotated with the _ManagedBean_
-annotation.
 . Satisfying the conditions described in the
 CDI specification.
 
