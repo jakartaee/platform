@@ -341,8 +341,8 @@ If a container supports Java SE 11 or a newer version of the Java SE platform, t
 
 During the development cycle for the current version of the Jakarta EE specification, the platform project considered several component specifications for inclusion in the platform. A consensus could not be reached on including these specifications in the platform. These specifications are considered as prospects for inclusion in a future version of the Platform specification.
 
-* [Jakarta MVC](https://jakarta.ee/specifications/mvc/)
-* [Jakarta NoSQL](https://jakarta.ee/specifications/nosql/)
+* https://jakarta.ee/specifications/mvc/[Jakarta MVC]
+* https://jakarta.ee/specifications/nosql/[Jakarta NoSQL]
 
 [[a2331]]
 ==== Optional Jakarta Technologies
@@ -354,40 +354,9 @@ Jakarta EE Platform Specification Project follows a process similar to the one f
 expert group ( _http://mreinhold.org/blog/removing-features_ ) to stabilize and remove
 technologies from the platform in a careful and orderly way that
 minimizes the impact to developers using these technologies, while
-allowing the platform to grow even stronger. In short, our process
-defines three steps:
+allowing the platform to grow even stronger.
 
-. The Platform Specification Project for release N 
-of the platform decides to propose that a particular feature be
-marked "proposed optional". The specification for that release documents the proposal.
-. The Platform Specification Project for release N+1 decides whether to
-mark the feature as "optional" for this N+1 release, retain it as a required component,
-or leave it in the "proposed optional" state for the next N+2 release cycle to decide.
-. Eventually, the Platform Specification Project for release N+2 (or beyond) can decide
-to officially "remove" the "optional" feature from the Platform.
-
-The result of successfully applying this
-policy to a feature is to allow a gradual removal
-of the feature as a required component of the platform.
-Product vendors can _choose_ to remove or include an "optional" feature in their
-products.
-Although a "removed" feature can still be included in a vendor's product, vendors 
-need to realize that the "removed" feature is no longer defined as part of the Platform
-and, thus, the integration of this "removed" feature with the rest of the Platform
-is left as an exercise for the vendor.
-
-Technologies that are "proposed optional" are marked Proposed Optional (POPT) in
-<<a2159, Jakarta EE Technologies>>.
-Technologies that are "optional" as of Jakarta EE 9 are marked Optional (OPT) in
-<<a2159, Jakarta EE Technologies>>.
-Technologies that are "removed" from the Jakarta EE Platform are documented in 
-<<a2333, Removed Jakarta Technologies>>.
-
-*Note:* In order to get on a level playing field, Jakarta EE 9 took a couple of liberties
-with the application of "proposed optional", "optional", and "removed" technologies per
-the Jakarta EE 9 Release Plan, available at _https://eclipse-ee4j.github.io/jakartaee-platform/jakartaee9/JakartaEE9ReleasePlan_.  
-Going forward, it is the expectation that Jakarta EE
-releases will follow these defined policies.
+An individual specification can have optional features. However when a component specification is included in the Platform, Web Profile, and Core Profile, an optional feature must be explicitly declared as required, otherwise it is not required. For complete normative details, see https://jakarta.ee/committees/specification/versioning/#allowedchanges[Jakarta EE Specification Versioning, Change, and Deprecation Process].
 
 [[a2333]]
 ==== Removed Jakarta Technologies
