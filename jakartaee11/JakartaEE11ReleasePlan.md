@@ -4,18 +4,28 @@
 
 ## Timeline
 
-|              | Q1 2023 | Q2 2023 | Q3 2023 | Q4 2023 | H1 2024 | June/July 2024 |
-|--------------|---------|---------|---------|---------|---------|---------|
-|              |         |         |         |         |         |         |
-| *Components* | Plan Reviews | | | | | |
-| *Platform*   | | | Plan Review  | | | |
-| *All*        | | | TCK pass w/Security Manager Disabled  | | | |
-| *All*        | | | | Milestones published | | |
-| *All*        | | | | TCK pass on Java SE 21 | | |
-| *Components* | | | | Individual Component Spec Ballots | | |
-| *Platform*   | | | | | Platform TCK pass on Java SE 21 | |
-| *Platform*   | | | | | | Platform ballot |
-| *Platform*   | | | | | | **Release** | |
+|              | Q1 2023      | Q2 2023 | Q3 2023     | Q4 2023 | Q1 2024 | Q2 2024 | June/July 2024  |
+|--------------|--------------|---------|-------------|---------|---------|---------|-----------------|
+| *Components* | Plan Reviews |         |             |         |         |         |                 |
+| *Platform*   |              |         | Plan Review |         |         |         |                 |
+| *All*        |              |         |             | TCK pass w/Security Manager Disabled |    | | |
+| *All*        |              |         |             | M1 release |      |         |                 |
+| *All*        |              |         |             |         | Wave 1, 2, 3 specs release review by 2024-01-30 | | |
+| *All*        |              |         |             |         | M2 release | | |
+| *All*        |              |         |             |         | Wave 5 specs release review by 2024-02-29 | | |
+| *All*        |              |         |             |         | M3 release | | |
+| *All*        |              |         |             |         | Wave 6, 7 specs release review by 2024-03-29 | | |
+| *All*        |              |         |             |         | M4 release | | |
+| *All*        |              |         |             |         | TCK pass on Java SE 21 |          | |
+| *Components* |              |         |             |         | Individual Component Spec Ballots | | |
+| *Platform*   |              |         |             |         | Platform TCK pass on Java SE 21 | | |
+| *Components* |              |         |             |         |         | Complete implementations | |
+| *Platform*   |              |         |             |         |         |         | Platform ballot |
+| *Platform*   |              |         |             |         |         |         | **Release**     |
+
+For all milestone releases after M1:
+* specs that are slated to have release review before that milestone will include their final versions in the milestone.
+* all other specs will include the latest version they have on hand. (Ed and Arjan commit to do the release work for this case, if necessary.)
 
 ## Scope ([issue]())
 The goal of the Jakarta EE 11 release is to deliver a set of coordinated specifications across the spectrum of Jakarta EE technologies. 
@@ -34,7 +44,7 @@ Jakarta EE 11 plans to include Jakarta Data in its platform specification. For m
 ## CDI
 Continue to make CDI the single component model used across all of EE by removing Managed Beans from Annotations and all callsites that use Managed Beans.
 
-CDI will now be comprised of two specifications. The aspects of CDI that deal with integrating CDI and other specifications will be extracted and moved to a new CDI specification called CDI EE. The remaining content will still be called CDI. For more information see the [CDI issue tracker](https://github.com/jakartaee/cdi/issues/687#issuecomment-1667009015).
+With the help of the platform project, the CDI project will do the work to move all aspects of CDI that deal with integrating CDI with other specifications out of the CDI spec and into the platform spec or appropriate profile spec. The remaining content will still be called CDI.  For more information see the [CDI issue tracker](https://github.com/jakartaee/cdi/issues/687#issuecomment-1667009015).
 
 ### API Source and Target Level
 If a component Specification is planning a Major or Minor version update for Jakarta EE 11, then the recommendation would be to recompile and distribute the specification’s APIs at lowest required of Java SE 17 and Java SE 21.
@@ -90,7 +100,6 @@ List of specifications in Jakarta EE 11 Platform, Jakarta EE 11 Web Profile, and
 - Jakarta EE Core Profile 11*
 
 - Jakarta CDI 4.1*
-- Jakarta CDI EE 4.1*
 - Jakarta Data 1.0*
 - Jakarta Activation 2.1.2* service release
 - Jakarta Annotations 3.0*
@@ -103,7 +112,7 @@ List of specifications in Jakarta EE 11 Platform, Jakarta EE 11 Web Profile, and
 - Jakarta Dependency Injection 2.0.1
 - Jakarta Enterprise Beans 4.0.1
 - Jakarta Expression Language 4.0
-- Jakarta Faces 5.0*
+- Jakarta Faces 4.1*
 - Jakarta Interceptors 2.2*
 - Jakarta JSON Binding 3.0
 - Jakarta JSON Processing 2.1.2* service release
@@ -125,7 +134,6 @@ List of specifications in Jakarta EE 11 Platform, Jakarta EE 11 Web Profile, and
 
 ### Proposed Updates to Platform
 
-- Jakarta CDI EE
 - Jakarta Data 1.0
 - Jakarta Activation
 - Jakarta Annotations
@@ -150,7 +158,6 @@ List of specifications in Jakarta EE 11 Platform, Jakarta EE 11 Web Profile, and
 - Jakarta Annotations
 - Jakarta Validation
 - Jakarta Concurrency
-- Jakarta CDI EE
 - Jakarta Authentication
 - Jakarta Interceptors
 - Jakarta JSON Processing
@@ -227,13 +234,12 @@ We are proposing to deliver Jakarta EE 11 in a set of waves similar to those del
 
 #### Wave 7
 
-- Jakarta Contexts and Dependency Injection Enterprise Edition (CDI EE)
 - Jakarta Security
 - Jakarta Data
 
 #### Wave 8
 
-- Jakarta Platform
+- Jakarta Platform (including content formery in CDI EE)
 
 ### Platform and Web Profile Release Candidate
 
