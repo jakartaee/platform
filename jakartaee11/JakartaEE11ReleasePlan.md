@@ -10,7 +10,7 @@
 | *Platform*   |              |         | Plan Review |         |         |         |                 |
 | *All*        |              |         |             | TCK pass w/Security Manager Disabled |    | | |
 | *All*        |              |         |             | M1 release |      |         |                 |
-| *All*        |              |         |             |         | Wave 1, 2, 3 specs release review by 2024-01-30 | | |
+| *All*        |              |         |             |         | Wave 1, 2, 3, 4 specs release review by 2024-01-30 | | |
 | *All*        |              |         |             |         | M2 release | | |
 | *All*        |              |         |             |         | Wave 5 specs release review by 2024-02-29 | | |
 | *All*        |              |         |             |         | M3 release | | |
@@ -21,6 +21,8 @@
 | *Platform*   |              |         |             |         | Platform TCK pass on Java SE 21 | | |
 | *Components* |              |         |             |         |         | Complete implementations | |
 | *Platform*   |              |         |             |         |         |         | Platform ballot |
+| *Platform*   |              |         |             |         |         |         | Web Platform ballot |
+| *Platform*   |              |         |             |         |         |         | Core Platform ballot |
 | *Platform*   |              |         |             |         |         |         | **Release**     |
 
 For all milestone releases after M1:
@@ -239,7 +241,9 @@ We are proposing to deliver Jakarta EE 11 in a set of waves similar to those del
 
 #### Wave 8
 
-- Jakarta Platform (including content formery in CDI EE)
+- Jakarta Platform (including appropriate content formerly in CDI EE)
+- Jakarta Platform Web Profile (including appropriate content formerly in CDI EE)
+- Jakarta Platform Core Profile
 
 ### Platform and Web Profile Release Candidate
 
