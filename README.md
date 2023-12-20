@@ -22,9 +22,13 @@ The official location for all of the Jakarta EE API Specifications and Javadocs 
 This local [Specifications](Specifications) page is also maintained to contain convenient links to the various project
 pages, specifications, and compatible implementations for all Jakarta EE specification projects.
 
-The latest API Java documentation for the Jakarta EE platform are collected together here:
+The latest API Java documentation for the Jakarta EE platform are collected here:
 
 * [Jakarta EE APIs](https://jakarta.ee/specifications/platform/10/apidocs/)
+
+## Jakarta EE 11
+
+The [Jakarta EE 11](jakartaee11) page contains links to the documentation and processes used for Jakarta EE 11.
 
 ## Jakarta EE 10
 
@@ -40,7 +44,7 @@ on May 17, 2021.
 The final specification is available for download on the
 [Jakarta EE specification page](https://jakarta.ee/specifications/platform/9.1/).
 
-The [Jakarta EE 9.1](jakartaee9/JakartaEE9.1) page contains links to the documentation and processes which were used for a successful Jakarta EE 9.1 release.
+The [Jakarta EE 9.1](jakartaee9/JakartaEE9.1) page contains links to the documentation and processes that were used for a successful Jakarta EE 9.1 release.
 
 ## Jakarta EE 9
 
@@ -49,7 +53,7 @@ on November 20, 2020.
 The final specification is available for download on the
 [Jakarta EE specification page](https://jakarta.ee/specifications/platform/9/).
 
-The [Jakarta EE 9](jakartaee9/JakartaEE9) page contains links to the documentation and processes which were used for a successful Jakarta EE 9 release.
+The [Jakarta EE 9](jakartaee9/JakartaEE9) page contains links to the documentation and processes that were used for a successful Jakarta EE 9 release.
 
 A [Community Retrospective]() on the Jakarta EE 9 Release is pending...
 
