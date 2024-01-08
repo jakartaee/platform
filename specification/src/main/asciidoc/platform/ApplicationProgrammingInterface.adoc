@@ -226,12 +226,6 @@ language. Jakarta Enterprise Beans 2.x API group.]
 |Y
 |REQ
 
-|Managed Beans (Deprecated)
-|Y
-|Y
-|Y
-|REQ
-
 |Messaging
 |Y
 |Y
@@ -335,6 +329,14 @@ the Jakarta™ Enterprise Beans SessionContext dependency on the
 _jakarta.xml.rpc.handler.MessageContext_ type.]
 
 If a container supports Java SE 11 or a newer version of the Java SE platform, than all classes and interfaces provided by the container to satisfy the platform requirements listed above, must be compiled with the Java SE 11 source and class level.
+
+[[a2841]]
+==== Platform Prospective Specifications
+
+During the development cycle for the current version of the Jakarta EE specification, the platform project considered several component specifications for inclusion in the platform. A consensus could not be reached on including these specifications in the platform. These specifications are considered as prospects for inclusion in a future version of the Platform specification.
+
+* [Jakarta MVC](https://jakarta.ee/specifications/mvc/)
+* [Jakarta NoSQL](https://jakarta.ee/specifications/nosql/)
 
 [[a2331]]
 ==== Optional Jakarta Technologies
@@ -973,8 +975,7 @@ Connector architecture must support deploying and using a JDBC driver
 that has been written and packaged as a resource adapter using the
 Connector architecture.
 
-The JDBC 4.2 specification is available at
-_https://jcp.org/en/jsr/detail?id=221_ .
+Every release of Jakarta EE declares a minimum required version of Java SE. For discussion, let this be Java SE N. Compatible implementations of Jakarta EE must support the latest version of the JDBC API mentioned in the Java SE N javadocs for the package `java.sql`. These javadocs typically have a link to the corresponding specification at `jcp.org`. 
 
 [[a2553]]
 ===== Jakarta XML Web Services (JAX-WS™) Requirements (Optional)
@@ -1041,7 +1042,7 @@ types of objects must be able to make them available in the
 application’s JNDI namespace: _EJBHome_ objects, _EJBLocalHome_ objects,
 Enterprise Beans business interface objects, Jakarta Transactions _UserTransaction_ objects, JDBC API
 _DataSource_ objects, JMS _ConnectionFactory_ and _Destination_ objects,
-JavaMail _Session_ objects, _URL_ objects, resource manager
+Jakarta Mail _Session_ objects, _URL_ objects, resource manager
 _ConnectionFactory_ objects (as specified in the Connector
 specification), _ORB_ objects, _EntityManagerFactory_ objects, and other
 Java language objects as described in
@@ -1393,7 +1394,7 @@ be provided transparently to the application by a Jakarta EE product.
 The Jakarta Transaction specification is available at
 _https://jakarta.ee/specifications/transactions_ .
 
-=== Activation 2.0 Requirements
+=== Activation 2.1 Requirements
 
 Jakarta Activation defines a set of standard services to: determine the MIME
 type of an arbitrary piece of data; encapsulate access to it; discover the operations
@@ -1403,7 +1404,7 @@ A Jakarta EE product must support Activation.
 The Jakarta Activation specification is available at
 _https://jakarta.ee/specifications/activation_ .
 
-=== Mail 2.0 Requirements
+=== Mail 2.1 Requirements
 
 The Jakarta Mail API allows for access to email
 messages contained in message stores, and for the creation and sending
@@ -1411,15 +1412,15 @@ of email messages using a message transport. Specific support is
 included for Internet standard MIME messages. Access to message stores
 and transports is through protocol providers supporting specific store
 and transport protocols. The Jakarta Mail API specification does not require
-any specific protocol providers, but the JavaMail reference
-implementation includes an IMAP message store provider, a POP3 message
+any specific protocol providers, but the Jakarta EE platform
+should include an IMAP message store provider, a POP3 message
 store provider, and an SMTP message transport provider.
 
 Configuration of the Jakarta Mail API is
 typically done by setting properties in a _Properties_ object that is
 used to create a _jakarta.mail.Session_ object using a static factory
-method. To allow the Jakarta EE platform to configure and manage JavaMail
-API sessions, an application component that uses the JavaMail API should
+method. To allow the Jakarta EE platform to configure and manage Jakarta Mail
+API sessions, an application component that uses the Jakarta Mail API should
 request a _Session_ object using JNDI, and should list its need for a
 _Session_ object in its deployment descriptor using a _resource-ref_
 element, or by using a _Resource_ annotation. A Jakarta Mail API _Session_
@@ -1448,11 +1449,11 @@ restrictions on the use of threads in various containers. In Enterprise Beans
 containers, for instance, it is typically not possible to create
 threads.
 
-The Jakarta Mail API uses the JavaBeans Activation
-Framework API to support various MIME data types. The Jakarta Mail API must
+The Jakarta Mail API uses the Jakarta Activation
+API to support various MIME data types. The Jakarta Mail API must
 include _jakarta.activation.DataContentHandlers_ for the following MIME
 data types, corresponding to the Java programming language type
-indicated in <<a2675, JavaMail API MIME Data Type to Java Type Mappings>> .
+indicated in <<a2675, Jakarta Mail API MIME Data Type to Java Type Mappings>> .
 
 [[a2675]]
 [cols=2, options=header]
@@ -1740,11 +1741,6 @@ corresponding specifications and summarized in the following table.
 |Y
 |Y
 
-|ManagedBean
-|Y
-|Y
-|Y
-
 |DataSourceDefinition
 |Y
 |Y
@@ -1763,7 +1759,7 @@ corresponding specifications and summarized in the following table.
 The Jakarta Annotations specification can be found at
 _https://jakarta.ee/specifications/annotations_ .
 
-=== Persistence 3.0 Requirements
+=== Persistence 3.1 Requirements
 
 Jakarta Persistence is the standard API for the
 management of persistence and object/relational mapping. The Jakarta
@@ -1777,7 +1773,25 @@ unit should not be loaded by the application class loader or any of its
 parent class loaders until after the entity manager factory for the
 persistence unit has been created.
 
-The Jakarta Persistence specification can be
+The Jakarta EE platform requires that if CDI is enabled, a _BeanManager_ instance
+must be made available to Jakarta Persistence providers by the container.
+The container is responsible for passing this _BeanManager_ instance
+via the map that is passed as the second argument
+to the _createContainerEntityManagerFactory(PersistenceUnitInfo, Map)_ method
+of the _PersistenceProvider_ interface. The map key used must be
+the standard property name _jakarta.persistence.bean.manager_.
+
+The Jakarta EE platform also requires that if a Bean Validation provider exists
+in the container environment and the _validation-mode_ _NONE_ is not specified,
+a _ValidatorFactory_ instance must be made available to Jakarta Persistence providers by the container.
+The container is responsible for passing this _ValidatorFactory_ instance
+via the map that is passed as the second argument
+to the _createContainerEntityManagerFactory(PersistenceUnitInfo, Map)_ method
+of the _PersistenceProvider_ interface. The map key used must be
+the standard property name _jakarta.persistence.validation.factory_.
+
+Additional requirements on Jakarta EE platform
+containers are specified in the Jakarta Persistence specification
 found at _https://jakarta.ee/specifications/persistence_ .
 
 === Bean Validation 3.0 Requirements
@@ -1802,20 +1816,6 @@ _jakarta.persistence.validation.factory_ .
 Additional requirements on Jakarta EE platform
 containers are specified in the Bean Validation specification, which can
 be found at _https://jakarta.ee/specifications/bean-validation_ .
-
-=== Managed Beans 2.0 Requirements
-
-The Managed Beans specification defines a
-lightweight component model that supports the basic lifecycle model,
-resource injection facility and interceptor service present in the Jakarta EE platform.
-
-[NOTE]
-====
-Managed Beans is being deprecated in EE 10 for removal in a later version. The Managed Beans specification is a legacy notion that has been superceeded by the Jakarta Contexts and Dependency Injection specification and CDI beans should be used in place of Managed Beans.
-====
-
-The Managed Beans specification can be found
-at _https://jakarta.ee/specifications/managedbeans_ .
 
 === Interceptors 2.1 Requirements
 

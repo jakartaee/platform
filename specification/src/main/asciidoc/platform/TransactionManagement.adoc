@@ -195,7 +195,7 @@ and thus only one thread and one transaction will be able to use the
 object at a time, and that the top-level object will be enlisted in any
 new transaction started by the component.
 * In web components not implementing _SingleThreadModel_ , transactional
-resource objects, as well as Java Persistence _EntityManager_ objects, should
+resource objects, as well as Jakarta Persistence _EntityManager_ objects, should
 not be stored in class instance fields, and should be acquired and released
 within the same invocation of the _service_ method.
 * Web components that are called by other web components

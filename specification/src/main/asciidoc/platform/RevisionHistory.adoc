@@ -1,6 +1,9 @@
 [appendix]
 [[revisionHistory]]
 == Revision History
+=== Changes in Final Release for EE11
+* 
+
 === Changes in Final Release for EE10
 * Updated Java SE base version to 11.
 * Added basic module-info.class requirements to API artifacts.
