@@ -1,45 +1,31 @@
-:cdi-spec: https://jakarta.ee/specifications/cdi/4.0
-:jpa-spec: https://jakarta.ee/specifications/persistence/3.0/jakarta-persistence-spec-3.0
+:cdi-spec: https://jakarta.ee/specifications/cdi/4.1
+:jpa-spec: https://jakarta.ee/specifications/persistence/3.1/jakarta-persistence-spec-3.1
 
 === Jakarta Persistence & Jakarta Context and Dependency Injection (CDI) Integration
 This section specifies the requirements for Jakarta EE environments that integrate both {jpa-spec}[Persistence] and {cdi-spec}[CDI].
 
-
-==== Obtaining an Entity Manager Factory using CDI
+==== Obtaining an Entity Manager using CDI
 
 A container environment might feature built-in integration of
-Jakarta Persistence with the CDI bean manager, allowing
-injection of a container-managed entity manager factory using
-the annotation _jakarta.inject.Inject_. In the Jakarta EE
-environment, the container must feature built-integration of
-Jakarta Persistence with the CDI bean manager.
+Jakarta Persistence with the CDI bean manager, allowing injection
+of a container-managed entity manager using the annotation
+_jakarta.inject.Inject_. In the Jakarta EE environment, the
+container must feature built-integration of Jakarta Persistence
+with the CDI bean manager.
 
 For each persistence unit, a container which features such
 built-in integration must make available a bean with:
 
-- bean type _EntityManagerFactory_,
+- bean type _EntityManager_,
 - the qualifiers specified by _qualifier_ XML elements in
 _persistence.xml_, or _jakarta.enterprise.inject.Default_,
 if no qualifiers are explicitly specified,
-- scope _jakarta.enterprise.context.ApplicationScoped_,
-- bean name given by the name of the persistence unit,
+- the scope specified by the _scope_ XML element in
+_persistence.xml_, or _jakarta.transaction.TransactionScoped_
+if no scope is explicitly specified,
 - no interceptor bindings,
 - a bean implementation which satisfies the requirements of
-this specification for a container-managed entity manager
-factory.
-
-Furthermore, the container must make available five beans with:
-
-- bean types _CriteriaBuilder_, _PersistenceUnitUtil_, _Cache_,
-_SchemaManager_, and _Metamodel_, respectively,
-- the qualifiers specified by _qualifier_ XML elements in
-_persistence.xml_, or _jakarta.enterprise.inject.Default_,
-if no qualifiers are explicitly specified,
-- scope _jakarta.enterprise.context.Dependent_,
-- no interceptor bindings,
-- a bean implementation which simply obtains the instance of
-the bean type by calling the appropriate getter method of
-the _EntityManagerFactory_ bean.
+this specification for a container-managed entity manager.
 
 ==== Obtaining an Entity Manager Factory using CDI
 
@@ -78,47 +64,33 @@ the bean type by calling the appropriate getter method of
 the _EntityManagerFactory_ bean.
 
 ==== persistence.xml Extended Schema
-This integration section defines an extension of the Persistence specification schema to add scope and qualifier elements.
-
-[source,xml]
-----
-<?xml version="1.0" encoding="utf-8" ?>
-<!-- persistence.xml schema -->
-<xs:schema targetNamespace="https://jakarta.ee/xml/ns/persistence"
-            xmlns:xs="http://www.w3.org/2001/XMLSchema"
-            xmlns:persistence="https://jakarta.ee/xml/ns/persistence"
-            elementFormDefault="qualified"
-            attributeFormDefault="unqualified"
-            version="3.0">
-
-    <xs:include schemaLocation="persistence_3_0.xsd" />
-
-    <xs:complexType name="persistenceUnitExtType">
-        <xs:complexContent>
-            <xs:extension base="persistence:persistenceUnitType">
-                <xs:sequence>
-                    <xs:element name="scope" type="xs:string" />
-                    <xs:element name="qualifier" type="xs:string" />
-                </xs:sequence>
-            </xs:extension>
-        </xs:complexContent>
-    </xs:complexType>
-
-</xs:schema>
-----
-
+The Persistence 3.1 specification schema includes an extension point that allows one to add elements for configuration of integration concerns. The required approach for declaring a CDI  scope and qualifier elements.
 Its usage is illustrated in the following XML document.
 
 [source,xml]
 ----
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- persistence.xml -->
 <persistence xmlns="https://jakarta.ee/xml/ns/persistence"
-             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-             xsi:schemaLocation="https://jakarta.ee/xml/ns/persistence persistence-cdi-3.2.xsd" version="3.0">
-    <persistence-unit xsi:type="persistenceUnitExtType" name="my-unit" >
-...
-        <scope>com.example.jpa.ACustomScope</scope>
-        <qualifier>com.example.jpa.CustomQualifier</qualifier>
-    </persistence-unit>
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="https://jakarta.ee/xml/ns/persistence
+          https://jakarta.ee/xml/ns/persistence/persistence_3_1.xsd"
+        version="3.1">
+
+    <persistence-unit name="my-unit">
+      <provider>org.jpa.SomePersistenceProvider</provider>
+      <jta-data-source>java:server/datasources/ExampleDS</jta-data-source>
+      <class>org.acme.Employee</class>
+      <properties>
+        <property name="jpa.ddl.auto" value="create-drop"/>
+        <property name="jpa.show_sql" value="true"/>
+        <property name="jpa.format_sql" value="true"/>
+      </properties>
+      <!-- CDI integration -->
+      <cdi:scope>com.example.jpa.ACustomScope</cdi:scope>
+      <cdi:qualifier>com.example.jpa.CustomQualifier</cdi:qualifier>
+  </persistence-unit>
+
 </persistence>
 ----
 
