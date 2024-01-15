@@ -10,16 +10,17 @@
 | *Platform*   |              |         | Plan Review |         |         |         |                 |
 | *All*        |              |         |             | TCK pass w/Security Manager Disabled |    | | |
 | *All*        |              |         |             | M1 release |      |         |                 |
-| *All*        |              |         |             |         | Wave 1, 2, 3, 4 specs release review by 2024-01-30 | | |
+| *All*        |              |         |             |         | Wave 1, 2, 3, 4 specs release review by 2024-02-29 | | |
 | *All*        |              |         |             |         | M2 release | | |
-| *All*        |              |         |             |         | Wave 5 specs release review by 2024-02-29 | | |
+| *All*        |              |         |             |         | Wave 5 specs release review by 2024-03-29 | | |
 | *All*        |              |         |             |         | M3 release | | |
-| *All*        |              |         |             |         | Wave 6, 7 specs release review by 2024-03-29 | | |
-| *All*        |              |         |             |         | M4 release | | |
-| *All*        |              |         |             |         | TCK pass on Java SE 21 |          | |
 | *Components* |              |         |             |         | Individual Component Spec Ballots | | |
-| *Platform*   |              |         |             |         | Platform TCK pass on Java SE 21 | | |
-| *Components* |              |         |             |         |         | Complete implementations | |
+| *Components* |              |         |             |         | Each Wave 1 - 5 component spec has an impl that passes the TCK on Java SE 17 and an impl that passes the TCK on Java SE 21. These need not be the same impl. |          | |
+| *Components* |              |         |             |         | | Each Wave 6, 7 component spec has an impl that passes the TCK on Java SE 17 and an impl that passes the TCK on Java SE 21. These need not be the same impl. |          |
+| *All*        |              |         |             |         | | Wave 6, 7 specs release review by 2024-04-27 | |
+| *All*        |              |         |             |         | | M4 release | |
+| *Platform*   |              |         |             |         | | Platform TCK ready to run on Java SE 21 and Java SE 17 | |
+| *Components* |              |         |             |         |         | Further refine implementations | |
 | *Platform*   |              |         |             |         |         |         | Platform ballot |
 | *Platform*   |              |         |             |         |         |         | Web Platform ballot |
 | *Platform*   |              |         |             |         |         |         | Core Platform ballot |
@@ -48,20 +49,23 @@ Continue to make CDI the single component model used across all of EE by removin
 
 With the help of the platform project, the CDI project will do the work to move all aspects of CDI that deal with integrating CDI with other specifications out of the CDI spec and into the platform spec or appropriate profile spec. The remaining content will still be called CDI.  For more information see the [CDI issue tracker](https://github.com/jakartaee/cdi/issues/687#issuecomment-1667009015).
 
-### API Source and Target Level
-If a component Specification is planning a Major or Minor version update for Jakarta EE 11, then the recommendation would be to recompile and distribute the specification’s APIs at lowest required of Java SE 17 and Java SE 21.
-
-**Note:** A component specification may be required to recompile to a higher Java SE level than it actually use depending on the specifications it depends on.
-
 ### TCK Source Level
-The TCK for specifications updated in EE 11 will be compiled at the Java SE 21 level.
+
+- Component spec TCKs and platform TCK must compile under 17.
+- A compatible component impl must pass their component TCK when run under 17 or 21.
+   - To ratify a component specification, there must exist an implementation that passes on 17. There must also exist an implementation that passes on 21.
+   - These need not be the same implementation. There can be one implementation that passes on 17 and a different one that passes on 21.
+- A compatible platform impl must pass the platform TCK when run under 17 or 21.
+   - To ratify a platform specification, there must exist an implementation that passes on 17. There must also exist an implementation that passes on 21.
+   - These need not be the same implementation. There can be one implementation that passes on 17 and a different one that passes on 21.
 
 #### Signature Tests
 In Jakarta EE 9.1, the framework for performing API Signature tests was updated to make it easier to test Signatures across multiple Java levels.
 The framework and/or API tests may need to be tweaked as we continue to learn and experiment with future levels of Java.
 
 ### Compatible Implementation (CI) Source Level
-How a Compatible Implementation supports the Java SE 21 runtime (or above) will be left as a vendor-defined solution.
+
+The long-standing policy of considering specification binaries, in maven central or anywhere else, as a non-normative convenience remains unchanged. The platform project is silent on this matter. But because the platform project does mandate a specific JDK requirement for compatible implementations passing the component or platform TCK, specification binaries are practically constrained to follow that mandate. See [TCK Source Level](#tck-source-level)
 
 ## JPMS Module Info classes ([issue](https://github.com/eclipse-ee4j/jakartaee-platform/issues/329))
 Suggestions on support for JPMS modules were introduced in the Jakarta EE 9 Platform Specification.
