@@ -55,9 +55,9 @@ For the Jakarta EE Platform (Platform, Web and Core), the Java compiler `--relea
 
 ### TCK Source Level
 
-- Component spec TCKs and platform TCK must compile under 17.
-- A compatible component impl must pass their component TCK when run under 17 or 21.
-   - To ratify a component specification, there must exist an implementation that passes on 17. There must also exist an implementation that passes on 21.
+- Component spec TCKs and platform TCK must compile at Java 17 or less.
+- A compatible component impl must pass their component TCK when run under Java 17 or 21.
+   - To ratify a component specification, there must exist an implementation that passes on Java 17. There must also exist an implementation that passes on 21.
    - These need not be the same implementation. There can be one implementation that passes on 17 and a different one that passes on 21.
 - A compatible platform impl must pass the platform TCK when run under 17 or 21.
    - To ratify a platform specification, there must exist an implementation that passes on 17. There must also exist an implementation that passes on 21.
@@ -69,7 +69,7 @@ The framework and/or API tests may need to be tweaked as we continue to learn an
 
 ### Compatible Implementation (CI) Source Level
 
-The long-standing policy of considering specification binaries, in maven central or anywhere else, as a non-normative convenience remains unchanged. The platform project is silent on this matter. But because the platform project does mandate a specific JDK requirement for compatible implementations passing the component or platform TCK, specification binaries are practically constrained to follow that mandate. See [TCK Source Level](#tck-source-level)
+The long-standing policy of considering specification binaries, in Maven Central or anywhere else, as a non-normative convenience remains unchanged. The platform project is silent on this matter. But because the platform project does mandate a specific JDK requirement for compatible implementations passing the component or platform TCK, specification binaries are practically constrained to follow that mandate. See [TCK Source Level](#tck-source-level)
 
 ## JPMS Module Info classes ([issue](https://github.com/eclipse-ee4j/jakartaee-platform/issues/329))
 Suggestions on support for JPMS modules were introduced in the Jakarta EE 9 Platform Specification.
