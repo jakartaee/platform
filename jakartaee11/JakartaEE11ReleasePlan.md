@@ -10,15 +10,15 @@
 | *Platform*   |              |         | Plan Review |         |         |         |                 |
 | *All*        |              |         |             | TCK pass w/Security Manager Disabled |    | | |
 | *All*        |              |         |             | M1 release |      |         |                 |
-| *All*        |              |         |             |         | Wave 1, 2, 3, 4 specs release review by 2024-02-29 | | |
+| *All*        |              |         |             |         | Wave 1, 2, 3, 4 specs release review initiated by 2024-02-29 | | |
 | *All*        |              |         |             |         | M2 release | | |
-| *All*        |              |         |             |         | Wave 5 specs release review by 2024-03-29 | | |
+| *All*        |              |         |             |         | Wave 5 specs release review initiated by 2024-03-29 | | |
 | *All*        |              |         |             |         | M3 release | | |
 | *Components* |              |         |             |         | Each Wave 1 - 5 component spec has an impl that passes its TCK on Java SE 17 and an impl that passes its TCK on Java SE 21. These need not be the same impl. |          | |
-| *Components* |              |         |             |         | | Individual Component Spec Ballots | |
 | *Components* |              |         |             |         | | Each Wave 6, 7 component spec has an impl that passes its TCK on Java SE 17 and an impl that passes its TCK on Java SE 21. These need not be the same impl. |          |
-| *All*        |              |         |             |         | | Wave 6, 7 specs release review by 2024-04-27 | |
+| *All*        |              |         |             |         | | Wave 6, 7 specs release review initiated by 2024-04-27 | |
 | *All*        |              |         |             |         | | M4 release | |
+| *Components* |              |         |             |         | | Individual component spec ballots completed | |
 | *Platform*   |              |         |             |         | | Platform TCK ready to run on Java SE 21 and Java SE 17 | |
 | *Components* |              |         |             |         |         | Further refine implementations | |
 | *Platform*   |              |         |             |         |         |         | Platform ballot |
@@ -27,7 +27,7 @@
 | *Platform*   |              |         |             |         |         |         | **Release**     |
 
 For all milestone releases after M1:
-* specs that are slated to have release review before that milestone will include their final versions in the milestone.
+* specs that are slated to have release review initiated before that milestone will include their final versions in the milestone.
 * all other specs will include the latest version they have on hand. (Ed and Arjan commit to do the release work for this case, if necessary.)
 
 ## Scope ([issue]())
