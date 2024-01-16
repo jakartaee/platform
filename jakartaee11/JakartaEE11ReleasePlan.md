@@ -51,7 +51,7 @@ With the help of the platform project, the CDI project will do the work to move 
 
 ### API Source Code `--release` Level
 
-For the Jakarta EE Platform, the Java compiler `--release` option is 17. For the component specs, the Jakarta EE Platform requires the Java compiler `--release` option is **at most** 17, but component specifications can decide on a lower level.
+For the Jakarta EE Platform (Platform, Web and Core), the Java compiler `--release` option is 17. For the component specs, the Jakarta EE Platform requires the Java compiler `--release` option is **at most** 17, but component specifications can decide on a lower level.
 
 ### TCK Source Level
 
