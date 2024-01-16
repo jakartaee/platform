@@ -204,6 +204,7 @@ We are proposing to deliver Jakarta EE 11 in a set of waves similar to those del
 
 #### Wave 3
 
+- Jakarta Activation
 - Jakarta Contexts and Dependency Injection
 
 #### Wave 4
