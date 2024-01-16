@@ -14,9 +14,9 @@
 | *All*        |              |         |             |         | M2 release | | |
 | *All*        |              |         |             |         | Wave 5 specs release review by 2024-03-29 | | |
 | *All*        |              |         |             |         | M3 release | | |
-| *Components* |              |         |             |         | Individual Component Spec Ballots | | |
-| *Components* |              |         |             |         | Each Wave 1 - 5 component spec has an impl that passes the TCK on Java SE 17 and an impl that passes the TCK on Java SE 21. These need not be the same impl. |          | |
-| *Components* |              |         |             |         | | Each Wave 6, 7 component spec has an impl that passes the TCK on Java SE 17 and an impl that passes the TCK on Java SE 21. These need not be the same impl. |          |
+| *Components* |              |         |             |         | Each Wave 1 - 5 component spec has an impl that passes its TCK on Java SE 17 and an impl that passes its TCK on Java SE 21. These need not be the same impl. |          | |
+| *Components* |              |         |             |         | | Individual Component Spec Ballots | |
+| *Components* |              |         |             |         | | Each Wave 6, 7 component spec has an impl that passes its TCK on Java SE 17 and an impl that passes its TCK on Java SE 21. These need not be the same impl. |          |
 | *All*        |              |         |             |         | | Wave 6, 7 specs release review by 2024-04-27 | |
 | *All*        |              |         |             |         | | M4 release | |
 | *Platform*   |              |         |             |         | | Platform TCK ready to run on Java SE 21 and Java SE 17 | |
