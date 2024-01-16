@@ -49,6 +49,10 @@ Continue to make CDI the single component model used across all of EE by removin
 
 With the help of the platform project, the CDI project will do the work to move all aspects of CDI that deal with integrating CDI with other specifications out of the CDI spec and into the platform spec or appropriate profile spec. The remaining content will still be called CDI.  For more information see the [CDI issue tracker](https://github.com/jakartaee/cdi/issues/687#issuecomment-1667009015).
 
+### API Source and Target Level
+
+For the Jakarta EE Platform, the `source` and `target` (or maven `release` property) level is 17. For the component specs, the Jakarta EE Platform requires the `source` and `target` (or maven `release` property) is at most 17, but component specifications can decide on a lower level.
+
 ### TCK Source Level
 
 - Component spec TCKs and platform TCK must compile under 17.
