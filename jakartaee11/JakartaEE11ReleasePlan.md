@@ -69,7 +69,7 @@ The framework and/or API tests may need to be tweaked as we continue to learn an
 
 ### Compatible Implementation (CI) Source Level
 
-The long-standing policy of considering specification API binaries, in Maven Central or anywhere else, as a non-normative convenience remains unchanged. The platform project is silent on this matter. But because the platform project does mandate a specific JDK requirement for compatible implementations passing the component or platform TCK, specification binaries are practically constrained to follow that mandate. See [TCK Source Level](#tck-source-level)
+The long-standing policy of considering specification API binaries, in Maven Central or anywhere else, as a non-normative convenience remains unchanged. The platform project is silent on this matter. However, because the platform project does mandate a specific JDK requirement for compatible implementations passing the component or platform TCK, if a component specification does publish an API binary, that binary is practically constrained to follow that mandate." See [TCK Source Level](#tck-source-level)
 
 ## JPMS Module Info classes ([issue](https://github.com/eclipse-ee4j/jakartaee-platform/issues/329))
 Suggestions on support for JPMS modules were introduced in the Jakarta EE 9 Platform Specification.
