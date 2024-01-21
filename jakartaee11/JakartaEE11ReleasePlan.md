@@ -38,11 +38,11 @@ Some of these component Specifications are introducing breaking changes to their
 Many other component Specifications are introducing updates which are binary compatible and, thus, will only require a Minor version update.
 Regardless of the scope of changes, all artifacts for the component and Platform Specifications will be affected -- Specifications, APIs, TCKs, and Compatible Implementations.
 
-## Java SE 21 ([issue]())
-Java SE 21 will become the minimum runtime supported by Jakarta EE compatible implementations.
+## Java SE ([issue]())
+Java SE 17 will become the minimum runtime supported by compatible implementations of Jakarta EE.
 
 ## Jakarta Data
-Jakarta EE 11 plans to include Jakarta Data in its platform specification. For more on Jakarta Data see [Jakatra Data](https://jakarta.ee/specifications/data/).
+Jakarta EE 11 plans to include Jakarta Data in its platform specification. For more on Jakarta Data see [Jakarta Data](https://jakarta.ee/specifications/data/).
 
 ## CDI
 Continue to make CDI the single component model used across all of EE by removing Managed Beans from Annotations and all callsites that use Managed Beans.
