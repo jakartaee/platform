@@ -144,6 +144,7 @@ List of specifications in Jakarta EE 11 Platform, Jakarta EE 11 Web Profile, and
 
 ### Proposed Updates to Platform
 
+- Jakarta CDI
 - Jakarta Data 1.0
 - Jakarta Activation
 - Jakarta Annotations
@@ -165,6 +166,7 @@ List of specifications in Jakarta EE 11 Platform, Jakarta EE 11 Web Profile, and
 
 ### Proposed Updates to Web Profile
 
+- Jakarta CDI
 - Jakarta Annotations
 - Jakarta Validation
 - Jakarta Concurrency
@@ -198,61 +200,60 @@ As stated earlier, all component Specifications which plan a Major or Minor rele
 
 ### Waves
 
-We are proposing to deliver Jakarta EE 11 in a set of waves similar to those delivered in the previous Jakarta EE releases. These waves are somewhat related to the dependency tree of specifications. We aim to deliver specifications with a low number of dependencies first followed by other specifications.
+We are proposing to deliver Jakarta EE 11 in a set of waves similar to those delivered in the previous Jakarta EE releases. These waves are somewhat related to the dependency tree of specifications. We aim to deliver specifications with a low number of dependencies first followed by other specifications. (updated specifications marked with asterisks)
 
 #### Wave 1
 
-- Jakarta Annotations
+- Jakarta Annotations*
 
 #### Wave 2
 
 - Jakarta Expression Language
-- Jakarta Interceptors
+- Jakarta Interceptors*
 - Jakarta Lang Model (may be released with Jakarta CDI [Core] in wave 3)
 
 #### Wave 3
 
-- Jakarta Activation
-- Jakarta Contexts and Dependency Injection
+- Jakarta Activation*
+- Jakarta Contexts and Dependency Injection*
 
 #### Wave 4
 
 - Jakarta JSON Binding
-- Jakarta Mail
+- Jakarta Mail*
 - Jakarta SOAP with Attachments
 - Jakarta XML Binding
 
 #### Wave 5
 
-- Jakarta Authorization
+- Jakarta Authorization*
 - Jakarta Batch
-- Jakarta Persistence
-- Jakarta RESTful Web Services
-- Jakarta Server Pages
-- Jakarta Servlet
-- Jakarta Validation
-- Jakarta WebSocket
+- Jakarta Persistence*
+- Jakarta RESTful Web Services*
+- Jakarta Server Pages*
+- Jakarta Servlet*
+- Jakarta Validation*
+- Jakarta WebSocket*
 - Jakarta XML Web Services
 
 #### Wave 6
 
-- Jakarta Authentication
-- Jakarta Concurrency
-- Jakarta Faces
+- Jakarta Authentication*
+- Jakarta Concurrency*
+- Jakarta Faces*
 - Jakarta Messaging
 - Jakarta Standard Tag Library
-- Jakarta Platform Core Profile
 
 #### Wave 7
 
-- Jakarta Security
-- Jakarta Data
+- Jakarta Security*
+- Jakarta Data*
 
 #### Wave 8
 
-- Jakarta Platform (including appropriate content formerly in CDI EE)
-- Jakarta Platform Web Profile (including appropriate content formerly in CDI EE)
-- Jakarta Platform Core Profile
+- Jakarta Platform (including appropriate content formerly in CDI EE)*
+- Jakarta Platform Web Profile (including appropriate content formerly in CDI EE)*
+- Jakarta Platform Core Profile*
 
 ### Platform and Web Profile Release Candidate
 
