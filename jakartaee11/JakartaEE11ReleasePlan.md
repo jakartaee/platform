@@ -205,6 +205,7 @@ We are proposing to deliver Jakarta EE 11 in a set of waves similar to those del
 #### Wave 1
 
 - Jakarta Annotations*
+- Jakarta JSON Processing* (service release)
 
 #### Wave 2
 
@@ -214,13 +215,13 @@ We are proposing to deliver Jakarta EE 11 in a set of waves similar to those del
 
 #### Wave 3
 
-- Jakarta Activation*
+- Jakarta Activation* (service release)
 - Jakarta Contexts and Dependency Injection*
 
 #### Wave 4
 
 - Jakarta JSON Binding
-- Jakarta Mail*
+- Jakarta Mail* (service release)
 - Jakarta SOAP with Attachments
 - Jakarta XML Binding
 
