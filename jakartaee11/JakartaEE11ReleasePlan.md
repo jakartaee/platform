@@ -211,7 +211,7 @@ We are proposing to deliver Jakarta EE 11 in a set of waves similar to those del
 
 - Jakarta Expression Language*
 - Jakarta Interceptors*
-- Jakarta Lang Model (may be released with Jakarta CDI [Core] in wave 3)
+- Jakarta Lang Model* (may be released with Jakarta CDI [Core] in wave 3)
 
 #### Wave 3
 
@@ -252,9 +252,9 @@ We are proposing to deliver Jakarta EE 11 in a set of waves similar to those del
 
 #### Wave 8
 
-- Jakarta Platform (including appropriate content formerly in CDI EE)*
-- Jakarta Platform Web Profile (including appropriate content formerly in CDI EE)*
-- Jakarta Platform Core Profile*
+- Jakarta Platform* (including appropriate content formerly in CDI EE)
+- Jakarta Web Profile* (including appropriate content formerly in CDI EE)
+- Jakarta Core Profile*
 
 ### Platform and Web Profile Release Candidate
 
