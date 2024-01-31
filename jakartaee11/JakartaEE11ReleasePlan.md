@@ -121,7 +121,7 @@ List of specifications in Jakarta EE 11 Platform, Jakarta EE 11 Web Profile, and
 - Jakarta Debugging Support for Other Languages 2.0
 - Jakarta Dependency Injection 2.0.1
 - Jakarta Enterprise Beans 4.0.1
-- Jakarta Expression Language 4.0
+- Jakarta Expression Language 6.0
 - Jakarta Faces 4.1*
 - Jakarta Interceptors 2.2*
 - Jakarta JSON Binding 3.0
@@ -208,7 +208,7 @@ We are proposing to deliver Jakarta EE 11 in a set of waves similar to those del
 
 #### Wave 2
 
-- Jakarta Expression Language
+- Jakarta Expression Language*
 - Jakarta Interceptors*
 - Jakarta Lang Model (may be released with Jakarta CDI [Core] in wave 3)
 
