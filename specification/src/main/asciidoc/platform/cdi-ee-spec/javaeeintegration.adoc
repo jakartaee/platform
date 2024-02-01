@@ -1,0 +1,32 @@
+:cdi_full: CDI Full
+:cdi_lite: CDI Lite
+--
+This part of the document specifies additional rules or features when using CDI in a Jakarta EE container.
+All content defined in <<cdi-spec>> applies to this part.
+
+CDI implementations in Jakarta EE containers are required to support {cdi_full}.
+--
+
+include::definition_ee.adoc[]
+
+include::implementation_ee.adoc[]
+
+include::inheritance_ee.adoc[]
+
+include::injectionandresolution_ee.adoc[]
+
+include::scopescontext_ee.adoc[]
+
+include::lifecycle_ee.adoc[]
+
+include::decorators_ee.adoc[]
+
+include::interceptors_ee.adoc[]
+
+include::events_ee.adoc[]
+
+include::spi_ee.adoc[]
+
+include::packagingdeployment_ee.adoc[]
+
+include::el.adoc[]

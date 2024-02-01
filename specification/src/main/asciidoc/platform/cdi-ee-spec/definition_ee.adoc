@@ -1,6 +1,6 @@
 [[concepts_ee]]
 
-== Extended Concepts for Jakarta EE
+== CDI Extended Concepts for Jakarta EE
 
 When running in Jakarta EE, the container must extend the concepts defined in <<concepts>> with:
 
