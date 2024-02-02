@@ -30,3 +30,5 @@ include::spi_ee.adoc[]
 include::packagingdeployment_ee.adoc[]
 
 include::el.adoc[]
+
+include::xrefs.adoc[]

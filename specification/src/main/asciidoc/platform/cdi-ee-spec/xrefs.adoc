@@ -1,0 +1,178 @@
+:cdi_spec_url: https://jakarta.ee/specifications/cdi/4.0/jakarta-cdi-spec-4.0
+
+== CDI Specification References
+References from the CDI EE Integration specification to the online CDI core specification are provided in the following sections.
+
+[[concepts]]
+* {cdi_spec_url}concepts[2.1. Concepts]
+
+[[capabilities]]
+* {cdi_spec_url}capabilities[2.1.1. Functionality provided by the container to the bean]
+
+[[legal_bean_types]]
+* {cdi_spec_url}legal_bean_types[2.1.2.1. Legal bean types]
+
+[[scopes]]
+* {cdi_spec_url}scopes[2.1.4. Scopes]
+
+[[default_bean_discovery]]
+* {cdi_spec_url}default_bean_discovery[2.1.5. Default bean discovery mode]
+
+[[default_name]]
+* {cdi_spec_url}default_name[2.1.6.2. Default bean names]
+
+[[implementation]]
+* {cdi_spec_url}implementation[2.2. Programming model]
+
+[[what_classes_are_beans]]
+* {cdi_spec_url}what_classes_are_beans[2.2.1.1. Which Java classes are managed beans?]
+
+[[producer_method]]
+* {cdi_spec_url}producer_method[2.2.2. Producer methods]
+
+[[declaring_producer_method]]
+* {cdi_spec_url}declaring_producer_method[2.2.2.2. Declaring a producer method]
+
+[[producer_field]]
+* {cdi_spec_url}producer_field[2.2.3. Producer fields]
+
+[[producer_field_types]]
+* {cdi_spec_url}producer_field_types[2.2.3.1. Bean types of a producer field]
+
+[[declaring_producer_field]]
+* {cdi_spec_url}declaring_producer_field[2.2.3.2. Declaring a producer field]
+
+[[disposer_method]]
+* {cdi_spec_url}disposer_method[2.2.4. Disposer methods]
+
+[[declaring_disposer_method]]
+* {cdi_spec_url}declaring_disposer_method[2.2.4.2. Declaring a disposer method]
+
+[[injected_fields]]
+* {cdi_spec_url}injected_fields[2.2.6. Injected fields]
+
+[[initializer_methods]]
+* {cdi_spec_url}initializer_methods[2.2.7. Initializer methods]
+
+[[type_level_inheritance]]
+* {cdi_spec_url}type_level_inheritance[2.3.1. Inheritance of type-level metadata]
+
+[[member_level_inheritance]]
+* {cdi_spec_url}member_level_inheritance[2.3.2. Inheritance of member-level metadata]
+
+[[injection_and_resolution]]
+* {cdi_spec_url}injection_and_resolution[2.4. Dependency injection and lookup]
+
+[[selection]]
+* {cdi_spec_url}selection[2.4.1. Modularity]
+
+[[unsatisfied_and_ambig_dependencies]]
+* {cdi_spec_url}unsatisfied_and_ambig_dependencies[2.4.2.2. Unsatisfied and ambiguous dependencies]
+
+[[name_resolution]]
+* {cdi_spec_url}name_resolution[2.4.3. Name resolution]
+
+[[ambig_names]]
+* {cdi_spec_url}ambig_names[2.4.3.1. Ambiguous names]
+
+[[injection]]
+* {cdi_spec_url}injection[2.4.5. Dependency injection]
+
+[[instantiation]]
+* {cdi_spec_url}instantiation[2.4.5.1. Injection using the bean constructor]
+
+[[fields_initializer_methods]]
+* {cdi_spec_url}fields_initializer_methods[2.4.5.2. Injection of fields and initializer methods]
+
+[[dependent_objects_destruction]]
+* {cdi_spec_url}dependent_objects_destruction[2.4.5.3. Destruction of dependent objects]
+
+[[bean_metadata]]
+* {cdi_spec_url}bean_metadata[2.4.5.8. Bean metadata]
+
+[[contexts]]
+* {cdi_spec_url}contexts[2.5. Scopes and contexts]
+
+[[dependent_context]]
+* {cdi_spec_url}dependent_context[2.5.4. Dependent pseudo-scope]
+
+[[dependent_objects]]
+* {cdi_spec_url}dependent_objects[2.5.4.1. Dependent objects]
+
+[[dependent_destruction]]
+* {cdi_spec_url}dependent_destruction[2.5.4.2. Destruction of objects with scope @Dependent]
+
+[[contextual_instance]]
+* {cdi_spec_url}contextual_instance[2.5.5.3. Contextual instance of a bean]
+
+[[builtin_contexts]]
+* {cdi_spec_url}builtin_contexts[2.5.6. Context management for built-in scopes]
+
+[[request_context]]
+* {cdi_spec_url}request_context[2.5.6.1. Request context lifecycle]
+
+[[application_context]]
+* {cdi_spec_url}application_context[2.5.6.2. Application context lifecycle]
+
+[[biz_method]]
+* {cdi_spec_url}biz_method[2.6.2. Container invocations and interception]
+
+[[interceptors]]
+* {cdi_spec_url}interceptors[2.7. Interceptor bindings]
+
+[[observer_method_invocation_context]]
+* {cdi_spec_url}observer_method_invocation_context[2.8.5.3. Observer method invocation context]
+
+[[bean_archive_full]]
+* {cdi_spec_url}bean_archive_full[3.10.1. Bean archives in CDI Full]
+
+[[type_bean_discovery_full]]
+* {cdi_spec_url}type_bean_discovery_full[3.10.4. Type and Bean discovery in CDI Full]
+
+[[trimmed_bean_archive]]
+* {cdi_spec_url}trimmed_bean_archive[3.10.4.3. Trimmed bean archive]
+
+[[bean_discovery_steps_full]]
+* {cdi_spec_url}bean_discovery_steps_full[3.10.4.4. Bean discovery in CDI Full]
+
+[[specialization]]
+* {cdi_spec_url}specialization[3.2.3. Specialization]
+
+[[passivation_capable_dependency]]
+* {cdi_spec_url}passivation_capable_dependency[3.4.5.3. Passivation capable dependencies]
+
+[[passivation_validation]]
+* {cdi_spec_url}passivation_validation[3.4.5.5. Validation of passivation capable beans and dependencies]
+
+[[enabled_interceptors]]
+* {cdi_spec_url}enabled_interceptors[3.6.2. Interceptor enablement and ordering in CDI Full]
+
+[[decorators]]
+* {cdi_spec_url}decorators[3.7. Decorators]
+
+[[bean]]
+* {cdi_spec_url}bean[3.9.1. The Bean interface]
+
+[[interceptor]]
+* {cdi_spec_url}interceptor[3.9.1.2. The Interceptor interface]
+
+[[injectiontarget]]
+* {cdi_spec_url}injectiontarget[3.9.2. The Producer and InjectionTarget interfaces]
+
+[[beanmanager]]
+* {cdi_spec_url}beanmanager[3.9.3. The BeanManager object]
+
+[[alternative_metadata_sources]]
+* {cdi_spec_url}alternative_metadata_sources[3.9.4. Alternative metadata sources]
+
+[[process_bean]]
+* {cdi_spec_url}process_bean[3.9.5.10. ProcessBean event]
+
+[[process_annotated_type]]
+* {cdi_spec_url}process_annotated_type[3.9.5.6. ProcessAnnotatedType event]
+
+[[process_injection_target]]
+* {cdi_spec_url}process_injection_target[3.9.5.8. ProcessInjectionTarget event]
+
+[[process_bean_attributes]]
+* {cdi_spec_url}process_bean_attributes[3.9.5.9. ProcessBeanAttributes event]
