@@ -223,7 +223,7 @@ We are proposing to deliver Jakarta EE 11 in a set of waves similar to those del
 - Jakarta JSON Binding
 - Jakarta Mail* (service release)
 - Jakarta SOAP with Attachments
-- Jakarta XML Binding
+- Jakarta XML Binding* (version increment only)
 
 #### Wave 5
 
@@ -235,7 +235,7 @@ We are proposing to deliver Jakarta EE 11 in a set of waves similar to those del
 - Jakarta Servlet*
 - Jakarta Validation*
 - Jakarta WebSocket*
-- Jakarta XML Web Services
+- Jakarta XML Web Services* (version increment only)
 
 #### Wave 6
 
