@@ -135,7 +135,7 @@ List of specifications in Jakarta EE 11 Platform, Jakarta EE 11 Web Profile, and
 - Jakarta Security 4.0*
 - Jakarta Server Pages 4.0*
 - Jakarta Servlet 6.1*
-- Jakarta Standard Tag Library 3.0
+- Jakarta Standard Tag Library 3.0.1*
 - Jakarta Transactions 2.0.1
 - Jakarta Validation 3.1*
 - Jakarta WebSocket 2.2*
@@ -236,6 +236,7 @@ We are proposing to deliver Jakarta EE 11 in a set of waves similar to those del
 - Jakarta Validation*
 - Jakarta WebSocket*
 - Jakarta XML Web Services* (version increment only)
+- Jakarta Standard Tag Library* (service release)
 
 #### Wave 6
 
@@ -243,7 +244,6 @@ We are proposing to deliver Jakarta EE 11 in a set of waves similar to those del
 - Jakarta Concurrency*
 - Jakarta Faces*
 - Jakarta Messaging
-- Jakarta Standard Tag Library
 
 #### Wave 7
 
