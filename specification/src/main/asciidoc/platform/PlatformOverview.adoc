@@ -1048,3 +1048,5 @@ The goal of the Jakarta EE 10 release is to deliver a set of specifications that
 Jakarta EE 10 is the first release in the Jakarta EE series to include major and minor component specification updates not limited to the javax to jakarta package namespace change.
 
 Jakarta EE 10 also introduced a new Core Profile to support smaller runtime footprints as often used with microservices.
+
+=== Changes in Jakarta EE 11
