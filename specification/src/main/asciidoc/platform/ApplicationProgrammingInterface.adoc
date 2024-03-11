@@ -226,6 +226,12 @@ language. Jakarta Enterprise Beans 2.x API group.]
 |Y
 |REQ
 
+|Managed Beans (Deprecated)
+|Y
+|Y
+|Y
+|REQ
+
 |Messaging
 |Y
 |Y

@@ -23,6 +23,8 @@ include::ServiceProviderInterface.adoc[]
 
 include::CompatibilityMigration.adoc[]
 
+include::../shared-includes/IntegrationRequirements.adoc[]
+
 include::FutureDirections.adoc[]
 
 include::PreviousVersionDeploymentDescriptors.adoc[]
