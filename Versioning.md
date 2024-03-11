@@ -65,6 +65,5 @@ Examples:
 We haven't been consistent in whether the first version of a product-specific
 descriptor should include a revision of "-0" or just omit the revision number.
 
-If a DTD or XSD file has normative changes during an EE release cycle, its version number and file name must be updated to match the version number of the component specification for that EE release.
+When a component specification is updated, the version number and file name of the corresponding XSD or DTD file must be updated to match the version number of the component specification for that EE release. The file content can be updated if applicable.
 
-When the version of the spec is updated, the version number and file name of the XSD or DTD file must be updated to match the version number of the component specification for that EE release, **even if there are no normative changes to the XSD files themselves**.
