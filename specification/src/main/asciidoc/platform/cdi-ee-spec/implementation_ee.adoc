@@ -299,6 +299,10 @@ The resulting set of bean types for a resource consists only of <<legal_bean_typ
 
 === Additional built-in beans
 
+A Jakarta EE or embeddable EJB container must provide the following built-in beans, all of which have qualifier `@Default`:
+
+* a bean with bean type `jakarta.transaction.UserTransaction`, allowing injection of a reference to the JTA `UserTransaction`, and
+
 A servlet container must provide the following built-in beans, all of which have qualifier `@Default`:
 
 * a bean with bean type `jakarta.servlet.http.HttpServletRequest`, allowing injection of a reference to the `HttpServletRequest`
