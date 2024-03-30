@@ -49,7 +49,7 @@ provide these technologies in some other manner.
 
 The Java SE 11 platform includes the following enterprise technologies:
 
-* Java IDL footnote:[Removed from Java SE 11. Support for Java IDL is optional (see <<a3539, Java IDL (Optional)>>.) Product vendors that wish to support Java IDL on a Java SE version that does not provide the Java IDL APIs must otherwise provide those APIs to application components. ]
+* Java IDL footnote:[Removed from Java SE 11. Support for Java IDL is optional Product vendors that wish to support Java IDL on a Java SE version that does not provide the Java IDL APIs must otherwise provide those APIs to application components. ]
 * JDBC
 * RMI-JRMP
 * javax.rmi.PortableRemoteObject footnote:[Removed from Java SE 11. Product vendors that support the optional Enterprise Beans 2.x API group must ensure that the javax.rmi.PortableRemoteObject class is available to application components.]
@@ -92,13 +92,12 @@ Any existing module names may need to be updated once specific module name requi
 
 The full Jakarta EE platform also provides a
 number of technologies in each of the containers defined by this
-specification. <<a2159, Jakarta EE Technologies>> indicates the technologies with their required
-versions, which containers include the technologies, and whether the
-technology is required (REQ), proposed optional (POPT), or optional
-(OPT). Each Jakarta EE profile specification will include a similar table
+specification. <<a2159, Jakarta EE Technologies>> indicates the required technologies.
+Each Jakarta EE profile specification will include a similar table
 describing which technologies are required for the profile. Note that
-some technologies are marked Optional, as described in the next section.
-Please see the table in the section Application Programming Interface for the specific versions required for each component.
+some technologies are marked Optional, as described in the next
+section.  Please see the table in the section Application Programming
+Interface for the specific versions required for each component.
 
 *Note:* Jakarta EE 9 introduced the concept of "removed" technologies.
 This is the final stage of a technology's lifecycle where the technology is
@@ -115,207 +114,142 @@ technology will no longer be maintained for future versions of the Platform.
 |App Client
 |Web
 |Enterprise Beans
-|Status
 
 |Activation
 |Y
 |Y
 |Y
-|REQ
 
 |Authorization
 |N
 |Y
 |Y
-|REQ
 
 |Authentication
 |N
 |Y
 |Y
-|REQ
 
 |Batch
 |N
 |Y
 |Y
-|REQ
 
-|Bean Validation
+|Validation
 |Y
 |Y
 |Y
-|REQ
 
 |Common Annotations
 |Y
 |Y
 |Y
-|REQ
 
 |Concurrency
 |N
 |Y
 |Y
-|REQ
 
 |Connectors
 |N
 |Y
 |Y
-|REQ
 
 |Contexts and Dependency Injection
 |Y
 |Y
 |Y
-|REQ
 
 |Dependency Injection
 |Y
 |Y
 |Y
-|REQ
 
 |Debugging Support for Other Languages
 |N
 |Y
 |N
-|REQ
-
-|Enterprise Beans
-|Y footnote:[Client APIs only.]
-|Y
-|Y
-|REQ, OPT footnote:[Jakarta™ Enterprise Beans entity beans and associated query
-language. Jakarta Enterprise Beans 2.x API group.]
-
-|Enterprise Web Services
-|Y
-|Y
-|Y
-|OPT
 
 |Expression Language
 |N
 |Y
 |N
-|REQ
 
 |Interceptors
 |Y
 |Y
 |Y
-|REQ
 
 |JSON Processing
 |Y
 |Y
 |Y
-|REQ
 
 |JSON Binding
 |Y
 |Y
 |Y
-|REQ
 
 |Mail
 |Y
 |Y
 |Y
-|REQ
 
 |Managed Beans (Deprecated)
 |Y
 |Y
 |Y
-|REQ
 
 |Messaging
 |Y
 |Y
 |Y
-|REQ
 
 |Persistence
 |Y
 |Y
 |Y
-|REQ
 
 
 |RESTful Web Services
 |N
 |Y
 |N
-|REQ
 
 |Security
 |N
 |Y
 |Y
-|REQ
 
 |Servlet
 |N
 |Y
 |N
-|REQ
 
 |Server Faces
 |N
 |Y
 |N
-|REQ
 
 |Server Pages
 |N
 |Y
 |N
-|REQ
-
-|SOAP with Attachments
-|Y
-|Y
-|Y
-|OPT
 
 |Standard Tag Library
 |N
 |Y
 |N
-|REQ
 
 |Transactions
 |N
 |Y
 |Y
-|REQ
-
-|Web Services Metadata (Moved to Enterprise Web Services)
-|-
-|-
-|-
-|OPT
 
 |WebSocket
 |N
 |Y
 |N
-|REQ
-
-|XML Binding
-|Y
-|Y
-|Y
-|OPT
-
-|XML Web Services
-|Y
-|Y
-|Y
-|OPT
 
 |===
 
@@ -341,8 +275,7 @@ If a container supports Java SE 11 or a newer version of the Java SE platform, t
 
 During the development cycle for the current version of the Jakarta EE specification, the platform project considered several component specifications for inclusion in the platform. A consensus could not be reached on including these specifications in the platform. These specifications are considered as prospects for inclusion in a future version of the Platform specification.
 
-* [Jakarta MVC](https://jakarta.ee/specifications/mvc/)
-* [Jakarta NoSQL](https://jakarta.ee/specifications/nosql/)
+* https://jakarta.ee/specifications/mvc/[Jakarta MVC]
 
 [[a2331]]
 ==== Optional Jakarta Technologies
@@ -354,40 +287,9 @@ Jakarta EE Platform Specification Project follows a process similar to the one f
 expert group ( _http://mreinhold.org/blog/removing-features_ ) to stabilize and remove
 technologies from the platform in a careful and orderly way that
 minimizes the impact to developers using these technologies, while
-allowing the platform to grow even stronger. In short, our process
-defines three steps:
+allowing the platform to grow even stronger.
 
-. The Platform Specification Project for release N 
-of the platform decides to propose that a particular feature be
-marked "proposed optional". The specification for that release documents the proposal.
-. The Platform Specification Project for release N+1 decides whether to
-mark the feature as "optional" for this N+1 release, retain it as a required component,
-or leave it in the "proposed optional" state for the next N+2 release cycle to decide.
-. Eventually, the Platform Specification Project for release N+2 (or beyond) can decide
-to officially "remove" the "optional" feature from the Platform.
-
-The result of successfully applying this
-policy to a feature is to allow a gradual removal
-of the feature as a required component of the platform.
-Product vendors can _choose_ to remove or include an "optional" feature in their
-products.
-Although a "removed" feature can still be included in a vendor's product, vendors 
-need to realize that the "removed" feature is no longer defined as part of the Platform
-and, thus, the integration of this "removed" feature with the rest of the Platform
-is left as an exercise for the vendor.
-
-Technologies that are "proposed optional" are marked Proposed Optional (POPT) in
-<<a2159, Jakarta EE Technologies>>.
-Technologies that are "optional" as of Jakarta EE 9 are marked Optional (OPT) in
-<<a2159, Jakarta EE Technologies>>.
-Technologies that are "removed" from the Jakarta EE Platform are documented in 
-<<a2333, Removed Jakarta Technologies>>.
-
-*Note:* In order to get on a level playing field, Jakarta EE 9 took a couple of liberties
-with the application of "proposed optional", "optional", and "removed" technologies per
-the Jakarta EE 9 Release Plan, available at _https://eclipse-ee4j.github.io/jakartaee-platform/jakartaee9/JakartaEE9ReleasePlan_.  
-Going forward, it is the expectation that Jakarta EE
-releases will follow these defined policies.
+An individual specification can have optional features. However when a component specification is included in the Platform, Web Profile, and Core Profile, an optional feature must be explicitly declared as required, otherwise it is not required. For complete normative details, see https://jakarta.ee/committees/specification/versioning/#allowedchanges[Jakarta EE Specification Versioning, Change, and Deprecation Process].
 
 [[a2333]]
 ==== Removed Jakarta Technologies
