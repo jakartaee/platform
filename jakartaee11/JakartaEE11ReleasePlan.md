@@ -16,7 +16,7 @@
 | *All*        |              |         |             |         | M3 release | | |
 | *Components* |              |         |             |         | Each Wave 1 - 5 component spec has an impl that passes its TCK on Java SE 17 and an impl that passes its TCK on Java SE 21. These need not be the same impl. |          | |
 | *Components* |              |         |             |         | | Each Wave 6, 7 component spec has an impl that passes its TCK on Java SE 17 and an impl that passes its TCK on Java SE 21. These need not be the same impl. |          |
-| *All*        |              |         |             |         | | Wave 6, 7 specs release review initiated by 2024-04-27 | |
+| *All*        |              |         |             |         | | Wave 6, 7 specs release review initiated by 2024-04-27. Exception for Data. Data will initiate release review by 2024-05-31 | |
 | *All*        |              |         |             |         | | M4 release | |
 | *Components* |              |         |             |         | | Individual component spec ballots completed | |
 | *Platform*   |              |         |             |         | | Platform TCK ready to run on Java SE 21 and Java SE 17 | |
@@ -223,7 +223,7 @@ We are proposing to deliver Jakarta EE 11 in a set of waves similar to those del
 - Jakarta JSON Binding
 - Jakarta Mail* (service release)
 - Jakarta SOAP with Attachments
-- Jakarta XML Binding* (version increment only)
+- Jakarta XML Binding* (service relaese)
 
 #### Wave 5
 
@@ -235,7 +235,7 @@ We are proposing to deliver Jakarta EE 11 in a set of waves similar to those del
 - Jakarta Servlet*
 - Jakarta Validation*
 - Jakarta WebSocket*
-- Jakarta XML Web Services* (version increment only)
+- Jakarta XML Web Services* (service relaese)
 - Jakarta Standard Tag Library* (service release)
 
 #### Wave 6
