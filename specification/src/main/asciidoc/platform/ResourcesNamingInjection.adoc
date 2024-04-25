@@ -3291,7 +3291,10 @@ The following annotations (and corresponding
 XML deployment descriptor elements) define resources:
 _DataSourceDefinition_, _JMSConnectionFactoryDefinition_,
 _JMSDestinationDefinition_, _MailSessionDefinition_,
-_ConnectionFactoryDefinition_, and _AdministeredObjectDefinition_.
+_ConnectionFactoryDefinition_, _AdministeredObjectDefinition_
+_ContextServiceDefinition_, _ManagedExecutorDefinition_,
+_ManagedScheduledExecutorDefinition_, and
+_ManagedThreadFactoryDefinition_.
 
 Once defined, a resource may be referenced by
 a component using the _lookup_ element of the _Resource_ annotation or
@@ -4066,6 +4069,160 @@ object resource of the specified class (or a subclass) must be provided.
 Requirements common to all resource
 definition types are described in
 <<a1676, Requirements Common to All Resource Definition Types>>.
+
+==== Concurrency Resource Definitions
+
+An application may define _ContextService_, _ManagedExecutorService_,
+_ManagedScheduledExecutorService_, and _ManagedThreadFactory_
+resources. These resources are used to manage and perform
+context-aware asynchronous tasks.
+
+These resources may be defined in
+any of the JNDI namespaces described in
+<<a616, Application Component Environment Namespaces>>
+unless a non-empty list of qualifiers is specified,
+in which case `java:global` is not permitted.
+
+These resources may be defined in a web module or application
+deployment descriptor using the _context-service_,
+_managed-executor_, _managed-scheduled-executor_,
+or _managed-thread-factory_ element.
+
+For example:
+
+[source,xml]
+----
+...
+<context-service>
+  <name>java:app/concurrent/MyContext</name>
+  <cleared>Transaction</cleared>
+  <propagated>Application</propagated>
+  <propagated>Security</propagated>
+  <unchanged>Remaining</unchanged>
+</context-service>
+
+<managed-executor>
+  <name>java:app/concurrent/MaxAsync5</name>
+  <context-service-ref>java:app/concurrent/MyContext</context-service-ref>
+  <max-async>5</max-async>
+</managed-executor>
+...
+----
+
+Concurrency resources may also be defined using the following
+resource definition annotations: _ContextServiceDefinition_,
+_ManagedExecutorDefinition_, _ManagedScheduledExecutorDefinition_,
+_ManagedThreadFactoryDefinition_.
+
+When using the _ContextServiceDefinition_ annotation to define a
+_ContextService_ resource, the _ContextServiceDefinition_
+annotation must annotate a container-managed class, such as a servlet
+or enterprise bean class. If the _ContextServiceDefinition_ annotation
+specifies one or more qualifiers, then the class that is annotated with
+_ContextServiceDefinition_ must also be a CDI managed bean.
+
+When using the _ManagedExecutorDefinition_ annotation to define a
+_ManagedExecutorService_ resource, the _ManagedExecutorDefinition_
+annotation must annotate a container-managed class, such as a servlet
+or enterprise bean class. If the _ManagedExecutorDefinition_ annotation
+specifies one or more qualifiers, then the class that is annotated with
+_ManagedExecutorDefinition_ must also be a CDI managed bean.
+
+When using the _ManagedScheduledExecutorDefinition_ annotation to define a
+_ManagedScheduledExecutorService_ resource, the _ManagedScheduledExecutorDefinition_
+annotation must annotate a container-managed class, such as a servlet
+or enterprise bean class. If the _ManagedScheduledExecutorDefinition_ annotation
+specifies one or more qualifiers, then the class that is annotated with
+_ManagedScheduledExecutorDefinition_ must also be a CDI managed bean.
+
+When using the _ManagedThreadFactoryDefinition_ annotation to define
+_ManagedThreadFactory_ resources, the _ManagedThreadFactoryDefinition_
+annotation must annotate a container-managed class, such as a servlet
+or enterprise bean class. If the _ManagedThreadFactoryDefinition_ annotation
+specifies one or more qualifiers, then the class that is annotated with
+_ManagedThreadFactoryDefinition_ must also be a CDI managed bean.
+
+For example:
+
+[source,java]
+----
+  @ContextServiceDefinition(
+     name = "java:app/concurrent/AppContextOnly",
+     cleared = { TRANSACTION, SECURITY },
+     propagated = APPLICATION,
+     unchanged = ALL_REMAINING)
+
+  @ManagedExecutorDefinition(
+     name = "java:app/concurrent/MaxAsync10",
+     context = "java:app/concurrent/AppContextOnly",
+     qualifiers = MaxAsync10.class,
+     maxAsync = 10)
+----
+
+Once defined, a Concurrency resources may be
+referenced by a component using the _resource-ref_ deployment descriptor
+element or the _Resource_ annotation. For example, the above
+_ManagedExecutorService_ could be referenced as follows:
+
+[source,java]
+----
+  @Stateless
+  public class MySessionBean {
+    @Resource(lookup = "java:app/concurrent/MaxAsync10")
+    ManagedExecutorService maxAsync10Executor;
+    ...
+  }
+----
+
+Alternatively, if qualifiers are included, the resource can be injected
+into CDI beans. For example:
+
+[source,java]
+----
+  @ApplicationScoped
+  public class MyBean {
+    @Inject
+    @MaxAsync10
+    ManagedExecutorService maxAsync10Executor;
+    ...
+  }
+----
+
+===== Application Component Provider’s Responsibilities
+
+The Application Component Provider is responsible for the
+definition of a _ContextService_ resource using a
+_ContextServiceDefinition_ annotation or the
+_context-service_ deployment descriptor element.
+
+The Application Component Provider is responsible for the
+definition of a _ManagedExecutorService_ resource using a
+_ManagedExecutorDefinition_ annotation or the
+_managed-executor_ deployment descriptor element.
+
+The Application Component Provider is responsible for the
+definition of a _ManagedScheduledExecutorService_ resource using a
+_ManagedScheduledExecutorDefinition_ annotation or the
+_managed-scheduled-executor_ deployment descriptor element.
+
+The Application Component Provider is responsible for the
+definition of _ManagedThreadFactory_ resources using a
+_ManagedThreadFactoryDefinition_ annotation or the
+_managed-thread-factory_ deployment descriptor element.
+
+If a qualifier class or class name is specified, a qualifier
+with the specified class must be provided by the application.
+
+===== Deployer’s Responsibilities
+
+Requirements common to all resource
+definition types are described in
+<<a1676, Requirements Common to All Resource Definition Types>>.
+
+===== Jakarta EE Product Provider’s Responsibilities
+
+Requirements common to all resource definition
+types are described in <<a1676, Requirements Common to All Resource Definition Types>>.
 
 [[a2009]]
 === Default Data Source
