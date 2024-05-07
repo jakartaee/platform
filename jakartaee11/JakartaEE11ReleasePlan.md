@@ -11,9 +11,9 @@
 | *All*        |              |         |             | TCK pass w/Security Manager Disabled |    | | |
 | *All*        |              |         |             | M1 release |      |         |                 |
 | *All*        |              |         |             |         | Wave 1, 2, 3, 4 specs release review initiated by 2024-02-29 | | |
-| *All*        |              |         |             |         | M2 release | | |
+| *All*        |              |         |             |         | M2 release **DONE 2024-04-16** | | |
 | *All*        |              |         |             |         | Wave 5 specs release review initiated by 2024-03-29 | | |
-| *All*        |              |         |             |         | M3 release | | |
+| *All*        |              |         |             |         | M3 release **In progress** | | |
 | *Components* |              |         |             |         | Each Wave 1 - 5 component spec has an impl that passes its TCK on Java SE 17 and an impl that passes its TCK on Java SE 21. These need not be the same impl. |          | |
 | *Components* |              |         |             |         | | Each Wave 6, 7 component spec has an impl that passes its TCK on Java SE 17 and an impl that passes its TCK on Java SE 21. These need not be the same impl. |          |
 | *All*        |              |         |             |         | | Wave 6, 7 specs release review initiated by 2024-04-27. Exception for Data. Data will initiate release review by 2024-05-31 | |
