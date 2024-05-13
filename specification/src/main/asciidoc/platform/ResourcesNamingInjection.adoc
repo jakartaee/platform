@@ -3287,13 +3287,12 @@ components in an application;
 * in the _java:global_ namespace, for use by
 all applications.
 
-The following annotations (and corresponding
-XML deployment descriptor elements) define resources:
+The following annotations (and corresponding XML deployment descriptor
+elements) define resources: _AdministeredObjectDefinition_,
+_ConnectionFactoryDefinition_, _ContextServiceDefinition_,
 _DataSourceDefinition_, _JMSConnectionFactoryDefinition_,
 _JMSDestinationDefinition_, _MailSessionDefinition_,
-_ConnectionFactoryDefinition_, _AdministeredObjectDefinition_
-_ContextServiceDefinition_, _ManagedExecutorDefinition_,
-_ManagedScheduledExecutorDefinition_, and
+_ManagedExecutorDefinition_, _ManagedScheduledExecutorDefinition_, and
 _ManagedThreadFactoryDefinition_.
 
 Once defined, a resource may be referenced by
