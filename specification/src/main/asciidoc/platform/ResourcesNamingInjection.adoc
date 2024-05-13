@@ -4108,38 +4108,15 @@ For example:
 ...
 ----
 
-Concurrency resources may also be defined using the following
-resource definition annotations: _ContextServiceDefinition_,
+Concurrency resources may also be defined using the following resource
+definition annotations: _ContextServiceDefinition_,
 _ManagedExecutorDefinition_, _ManagedScheduledExecutorDefinition_,
-_ManagedThreadFactoryDefinition_.
+_ManagedThreadFactoryDefinition_. These annotations must reside on a
+container-managed class, such as a Servlet, CDI bean, Jakarta REST
+resources, etc.
 
-When using the _ContextServiceDefinition_ annotation to define a
-_ContextService_ resource, the _ContextServiceDefinition_
-annotation must annotate a container-managed class, such as a servlet
-or enterprise bean class. If the _ContextServiceDefinition_ annotation
-specifies one or more qualifiers, then the class that is annotated with
-_ContextServiceDefinition_ must also be a CDI managed bean.
-
-When using the _ManagedExecutorDefinition_ annotation to define a
-_ManagedExecutorService_ resource, the _ManagedExecutorDefinition_
-annotation must annotate a container-managed class, such as a servlet
-or enterprise bean class. If the _ManagedExecutorDefinition_ annotation
-specifies one or more qualifiers, then the class that is annotated with
-_ManagedExecutorDefinition_ must also be a CDI managed bean.
-
-When using the _ManagedScheduledExecutorDefinition_ annotation to define a
-_ManagedScheduledExecutorService_ resource, the _ManagedScheduledExecutorDefinition_
-annotation must annotate a container-managed class, such as a servlet
-or enterprise bean class. If the _ManagedScheduledExecutorDefinition_ annotation
-specifies one or more qualifiers, then the class that is annotated with
-_ManagedScheduledExecutorDefinition_ must also be a CDI managed bean.
-
-When using the _ManagedThreadFactoryDefinition_ annotation to define
-_ManagedThreadFactory_ resources, the _ManagedThreadFactoryDefinition_
-annotation must annotate a container-managed class, such as a servlet
-or enterprise bean class. If the _ManagedThreadFactoryDefinition_ annotation
-specifies one or more qualifiers, then the class that is annotated with
-_ManagedThreadFactoryDefinition_ must also be a CDI managed bean.
+If any of these annotations specifies one or more qualifiers, then the
+class on which the annotation resides must also be a CDI managed bean.
 
 For example:
 
@@ -4158,10 +4135,10 @@ For example:
      maxAsync = 10)
 ----
 
-Once defined, a Concurrency resources may be
-referenced by a component using the _resource-ref_ deployment descriptor
-element or the _Resource_ annotation. For example, the above
-_ManagedExecutorService_ could be referenced as follows:
+Once defined, Concurrency resources may be referenced by a component
+using the _resource-ref_ deployment descriptor element or the
+_Resource_ annotation. For example, the above _ManagedExecutorService_
+could be referenced as follows:
 
 [source,java]
 ----
@@ -4189,25 +4166,22 @@ into CDI beans. For example:
 
 ===== Application Component Provider’s Responsibilities
 
-The Application Component Provider is responsible for the
-definition of a _ContextService_ resource using a
-_ContextServiceDefinition_ annotation or the
-_context-service_ deployment descriptor element.
+For each row in the table, the Application Component Provider is
+responsible for the definition of the named resource using the
+corresponding annotation and the corresponding deployment descriptor
+element.
 
-The Application Component Provider is responsible for the
-definition of a _ManagedExecutorService_ resource using a
-_ManagedExecutorDefinition_ annotation or the
-_managed-executor_ deployment descriptor element.
+[cols="3*"]
+|===
+| Name of the resource | Corresponding annotation name | corresponding deployment descriptor element 
 
-The Application Component Provider is responsible for the
-definition of a _ManagedScheduledExecutorService_ resource using a
-_ManagedScheduledExecutorDefinition_ annotation or the
-_managed-scheduled-executor_ deployment descriptor element.
+| _ContextService_ | _ContextServiceDefinition_ |_context-service_ 
+| _ManagedExecutorService_ |_ManagedExecutorDefinition_ |_managed-executor_ 
+| _ManagedScheduledExecutorService_ | _ManagedScheduledExecutorDefinition_ | _managed-scheduled-executor_
+| _ManagedThreadFactory_ | _ManagedThreadFactoryDefinition_ | _managed-thread-factory_
+|===
 
-The Application Component Provider is responsible for the
-definition of _ManagedThreadFactory_ resources using a
-_ManagedThreadFactoryDefinition_ annotation or the
-_managed-thread-factory_ deployment descriptor element.
+
 
 If a qualifier class or class name is specified, a qualifier
 with the specified class must be provided by the application.
