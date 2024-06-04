@@ -1,0 +1,5 @@
+== Integration Requirements
+
+This section of the Web Profile defines integration requirements for specifications included in the Web Profile
+
+include::jpa-cdi/CDI-JPA.adoc[]

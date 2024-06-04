@@ -6,4 +6,6 @@ include::WebProfileDefinition.adoc[]
 
 include::RevisionHistory.adoc[]
 
+include::WebProfileIntegration.adoc[]
+
 include::RelatedDocuments.adoc[]
