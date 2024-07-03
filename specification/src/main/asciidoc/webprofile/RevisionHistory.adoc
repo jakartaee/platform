@@ -1,6 +1,11 @@
 [appendix]
 
 == Revision History
+=== Changes in Final Release for EE11
+* Updated Java SE base version to 17.
+* Addition of Jakarta Data to Web Profile.
+* Updated <<relateddocs, “Related Documents">> for the updated Specifications in Jakarta EE 11.
+
 === Changes in Final Release for EE10
 * Major and minor updates to most specifications.
 * Addition of Jakarta Concurrency to Web Profile.

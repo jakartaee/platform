@@ -55,7 +55,7 @@ When the `create()` method of a `Bean` object that represents a resource is call
 
 Before injecting or returning a contextual instance to the application, the container transforms its internal reference into an object that implements the bean types expected by the application and delegates method invocations to the underlying resource, entity manager, entity manager factory, remote EJB instance or web service reference. This object must be passivation capable.
 
-The container must perform ordinary Jakarta EE component environment injection upon any non-static field that functions as a resource declaration, as defined by the Jakarta EE platform and Common Annotations for the Java platform specifications.
+The container must perform ordinary Jakarta EE component environment injection upon any non-static field that functions as a resource declaration, as defined by the Jakarta EE Platform and Jakarta Annotations specifications.
 The container is not required to perform Jakarta EE component environment injection upon a static field.
 Portable applications should not rely upon the value of a static field that functions as a resource declaration.
 
