@@ -1,19 +1,21 @@
 == Core Profile Definition
 
-This chapter defines the contents of the Jakarta™ EE 10.0 Core Profile.
+This chapter defines the contents of the Jakarta™ EE 11.0 Core Profile.
 
 [[required_components]]
 === Required Components
 
 The following technologies are required components of the Core Profile:
 
-* Jakarta Annotations 2.1
-* Jakarta Contexts and Dependency Injection (CDI) 4.0 (CDI Lite section)
+* Jakarta Annotations 3.0*
+* Jakarta Contexts and Dependency Injection (CDI) 4.1 (CDI Lite section)*
 * Jakarta Dependency Injection 2.0
-* Jakarta Interceptors 2.1
+* Jakarta Interceptors 2.2*
 * Jakarta JSON Processing 2.1
 * Jakarta JSON Binding 3.0
-* Jakarta RESTful Web Services 3.1
+* Jakarta RESTful Web Services 4.0*
+
+*Note:* technologies with an asterisk after them represent updated versions.
 
 === Optional Components
 
@@ -21,7 +23,7 @@ The optional Jakarta XML Binding support in Jakarta RESTful Web Services impleme
 
 Jakarta Expression Language support is not required in Jakarta Contexts and Dependency Injection Lite implementations since this is part of the Full CDI specification.
 
-The Java SE section of the CDI 4.0 specification is not required for Core Profile implementations. Only Full CDI implementations are required to support the (CDI) Java SE API classes.
+The Java SE section of the CDI 4.1 specification is not required for Core Profile implementations. Only Full CDI implementations are required to support the (CDI) Java SE API classes.
 
 [[additional_requirements]]
 === Additional Requirements

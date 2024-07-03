@@ -789,18 +789,6 @@ interactions with the user. The application’s callback handler must
 support all the _Callback_ objects specified in the
 _javax.security.auth.callback_ package.
 
-Application clients may execute in an
-environment controlled by a Java SE security manager and are subject to
-the security permissions defined in
-<<a2339, Java Platform, Standard Edition (Java SE) Requirements>>.
-Although this specification does not
-define the relationship between the operating system identity associated
-with a running application client and the authenticated user identity,
-support for single signon requires that the Jakarta EE product be able to
-relate these identities. Additional application client requirements are
-described in <<a3294, Application Clients chapter>>
-of this specification.
-
 ==== Resource Authentication Requirements
 
 Resources within an enterprise are often
@@ -938,7 +926,7 @@ any relationship between the Run As identity and any underlying
 operating system identity that may be used to access system resources
 such as files. However, the Jakarta Authorization
 specification does specify the relationship between the Run As identity
-and the access control context used by the Java SE security manager.
+and the access control context.
 
 [[a451]]
 === Deployment Requirements

@@ -30,6 +30,23 @@ applications written to a previous version of the platform will continue
 to work without change and with identical behavior on the current
 version of the platform.
 
+==== Backwards Compatibility for Jakarta EE 11
+
+===== Removed Technologies
+* Jakarta Managed Beans
+* Jakarta SOAP with Attachments
+* Jakarta XML Binding
+* Jakarta XML Web Services
+
+Support for Jakarta Managed Beans was deprecated previously and is now removed from Jakarta EE 11 platform.  The
+jakarta.annotation.ManagedBean annotation is no longer provided with the Jakarta Annotations 3.0 release.  Applications using the 
+ManagedBean annotation should transition to another bean defining annotation such as jakarta.inject.Inject
+
+Support for Jakarta XML Web Services, along with the Jakarta XML Binding and the SOAP with attachments
+specifications, was made optional with the Jakarta EE 10 release, and is now removed
+from the Jakarta EE 11 platform.  Jakarta EE platform products can continue to support the XML Web Services specifications
+to work with the Jakarta EE 11 platform just like other standalone specifications that are not part of the platform.
+
 ==== Backwards Compatibility for Jakarta EE 10
 
 ===== Removed Technologies

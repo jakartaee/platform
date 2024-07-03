@@ -144,7 +144,7 @@ required API compilation level for any Jakarta EE profile.
 The following technologies are required to be
 present in all Jakarta EE profiles:
 
-* Component lifecycle annotations defined by the Common Annotations specification ( _PostConstruct_, _PreDestroy_ )
+* Component lifecycle annotations defined by the Jakarta Annotations specification ( _PostConstruct_, _PreDestroy_ )
 
 === Optional Features for Jakarta EE Profiles
 
@@ -181,42 +181,34 @@ in <<a2331, Optional Java Technologies>>.
 
 The following technologies are required:
 
-* Jakarta Activation 2.1*
-* Jakarta Authentication 3.0*
-* Jakarta Authorization 2.1*
-* Jakarta Batch 2.1*
-* Jakarta Bean Validation 3.0
-* Jakarta Common Annotations  2.1*
-* Jakarta Concurrency 3.0*
-* Jakarta Connectors 2.1*
-* Jakarta Contexts and Dependency Injection 4.0*
+* Jakarta Activation 2.1
+* Jakarta Annotations 3.0*
+* Jakarta Authentication 3.1*
+* Jakarta Authorization 3.0*
+* Jakarta Batch 2.1
+* Jakarta Concurrency 3.1*
+* Jakarta Connectors 2.1
+* Jakarta Contexts and Dependency Injection 4.1*
+* Jakarta Data 1.0*
 * Jakarta Debugging Support for Other Languages 2.0
-* Jakarta Dependency Injection  2.0
+* Jakarta Dependency Injection 2.0
 * Jakarta Enterprise Beans 4.0 (except for Jakarta Enterprise Beans entity beans and associated Jakarta Enterprise Beans QL, and embedded container, which have been made removed)
-* Jakarta Expression Language  5.0*
-* Jakarta Interceptors 2.1*
-* Jakarta JSON Processing 2.1*
-* Jakarta JSON Binding 3.0*
-* Jakarta Mail 2.1*
-* Jakarta Messaging 3.1*
-* Jakarta Persistence  3.1*
-* Jakarta RESTful Web Services 3.1*
-* Jakarta Security  3.0*
-* Jakarta Servlet 6.0*
-* Jakarta Server Faces 4.0*
-* Jakarta Server Pages 3.1*
-* Jakarta Standard Tag Library 3.0*
+* Jakarta Expression Language 6.0*
+* Jakarta Interceptors 2.2*
+* Jakarta JSON Processing 2.1
+* Jakarta JSON Binding 3.0
+* Jakarta Mail 2.1
+* Jakarta Messaging 3.1
+* Jakarta Persistence 3.2*
+* Jakarta RESTful Web Services 4.0*
+* Jakarta Security 4.0*
+* Jakarta Servlet 6.1*
+* Jakarta Server Faces 4.1*
+* Jakarta Server Pages 4.0*
+* Jakarta Standard Tag Library 3.0
 * Jakarta Transactions 2.0
-* Jakarta WebSocket 2.1*
-
-The following technologies are optional:
-
-* Jakarta Enterprise Beans 3.2 and earlier entity beans and associated Jakarta Enterprise Beans QL
-* Jakarta Enterprise Beans 2.x API group
-* Jakarta Enterprise Web Services 2.0
-* Jakarta SOAP with Attachments 3.0*
-* Jakarta XML Web Services 4.0*
-* Jakarta XML Binding 4.0*
+* Jakarta Validation 3.1*
+* Jakarta WebSocket 2.2*
 
 *Note:* technologies with an asterisk after them represent updated versions.
 
@@ -225,6 +217,12 @@ The following technologies are deprecated:
 
 The following technologies are removed:
 
+* Jakarta Enterprise Beans 3.2 and earlier entity beans and associated Jakarta Enterprise Beans QL
+* Jakarta Enterprise Beans 2.x API group
 * Jakarta Managed Beans
-* Entity Beans, both Container and Bean Managed Persistence
-* Embeddable EJB Container
+* Jakarta SOAP with Attachments
+* Jakarta XML Binding
+* Jakarta XML Web Services
+
+Besides the Jakarta Managed Beans specification, Jakarta EE platform products can continue to support the removed specifications
+just like any other standalone specification that is not part of the platform.

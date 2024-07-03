@@ -123,7 +123,7 @@ programming language object model.
 
 Complete information on the JRMP specification
 can be found at
-_http://docs.oracle.com/javase/8/docs/technotes/guides/rmi_ .
+_https://docs.oracle.com/javase/8/docs/technotes/guides/rmi/_ .
 
 [[a2884]]
 ==== Data Formats
@@ -151,7 +151,7 @@ format, Jakarta EE web clients must be able to display HTML 4.01 documents.
 * Image file formats—The Jakarta EE platform must
 support GIF, JPEG, and PNG images. Support for these formats is provided
 by the _java.awt.image_ APIs (see the URL:
-_http://docs.oracle.com/javase/8/docs/api/java/awt/image/package-summary.html_
+_https://docs.oracle.com/javase/8/docs/api/java/awt/image/package-summary.html_
 ) and by Jakarta EE web clients.
 * JAR files—JAR (Java Archive) files are the
 standard packaging format for Java technology-based application
@@ -164,10 +164,10 @@ bundled into one JAR file and downloaded to a browser in a single HTTP
 transaction. JAR file formats are supported by the _java.util.jar_ and
 _java.util.zip_ packages. For complete information on the JAR
 specification, see
-_http://docs.oracle.com/javase/8/docs/technotes/guides/jar_ .
+_https://docs.oracle.com/javase/8/docs/technotes/guides/jar/_ .
 * Class file format—The class file format is
 specified in the Java Virtual Machine specification. Each class file
 contains one Java programming language type—either a class or an
 interface—and consists of a stream of 8-bit bytes. For complete
 information on the class file format, see
-_http://docs.oracle.com/javase/specs/_ .
+_https://docs.oracle.com/javase/specs/_ .

@@ -2,7 +2,11 @@
 [[revisionHistory]]
 == Revision History
 === Changes in Final Release for EE11
-* 
+* Updated Java SE base version to 17.
+* Removed requirement for SOAP with Attachments, XML Binding and XML Web Services.
+* Removed references to the Applet Container.
+* Removed requirements related to the Java SecurityManager. 
+* Updated <<relateddocs, “Related Documents">> for the updated Specifications in Jakarta EE 11.
 
 === Changes in Final Release for EE10
 * Updated Java SE base version to 11.

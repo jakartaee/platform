@@ -70,12 +70,6 @@ used, the authentication user interface provided by the server (in the
 form of an HTML page delivered in response to an HTTP request) must be
 displayed by the application client.
 
-Application clients typically execute in an
-environment with a SecurityManager installed, and have similar security
-permission requirements as servlets. The security permission
-requirements are described fully in
-<<a2339, Java Platform, Standard Edition (Java SE) Requirements>>.
-
 === Transactions
 
 Application clients are not required to have
@@ -115,8 +109,8 @@ start execution at the _main_ method of the class specified in the
 _Main-Class_ attribute in the manifest file of the application client’s
 JAR file (although note that application client container code will
 typically execute before the application client itself, in order to
-prepare the environment of the container, install a _SecurityManager_ ,
-initialize the name service client library, and so on).
+prepare the environment of the container, initialize the name service 
+client library, and so on).
 
 [[a3315]]
 === Packaging and Deployment
@@ -309,7 +303,7 @@ file. Note that this name is case-sensitive.
 <<a3404, Jakarta EE Application Client XML Schema Structure>> shows the structure of the Jakarta EE
 application-client XML Schema. The Jakarta EE application-client XML Schema
 is located at
-_https://jakarta.ee/xml/ns/jakartaee/application-client_9.xsd_.
+_https://jakarta.ee/xml/ns/jakartaee/application-client_10.xsd_.
 
 [[a3404]]
 .Jakarta EE Application Client XML Schema Structure

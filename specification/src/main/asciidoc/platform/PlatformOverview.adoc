@@ -166,8 +166,7 @@ and Jakarta Enterprise Beans components. See the separate specifications for
 these components.
 * Components that are deployed and managed on a
 Jakarta EE server, but are loaded and executed on a client machine.
-These components include web resources such as HTML pages and applets
-embedded in HTML pages.
+These components include web resources such as HTML pages.
 * Components whose deployment and management is
 not completely defined by this specification. Application Clients fall
 into this category.
@@ -194,7 +193,7 @@ bean container.
 
 This specification requires that containers
 support execution in a Java™ runtime environment, as defined by the Java
-Platform, Standard Edition specification, v11 or later (Java SE 11 or later).
+Platform, Standard Edition specification, v17 or later (Java SE 17 or later).
 
 The container tools must understand the file
 formats for the packaging of application components for deployment.
@@ -241,9 +240,8 @@ products.
 The Jakarta EE platform requires a database,
 accessible through the JDBC API, for the storage of business data. The
 database is accessible from web components, enterprise beans, and
-application client components. The database need not be accessible from
-applets. The Jakarta EE Product Provider must also provide a preconfigured,
-default data source for use by the application in accessing this
+application client components. The Jakarta EE Product Provider must also provide a 
+preconfigured, default data source for use by the application in accessing this
 database. See <<a2009, Default Data Source>>.
 
 [[a84]]
@@ -407,30 +405,12 @@ Security leverages Jakarta Authentication, but provides an easier to use SPI for
 authentication of users of web applications and defines identity store
 APIs for authentication and authorization.
 
-==== XML Web Services (Optional)
+==== XML Web Services
 
-Jakarta EE optionally provides full support for both clients
-of web services as well as web service endpoints. Several Jakarta
-technologies work together to provide support for web services.
-Jakarta XML Web Services
-provides support for web service calls using the SOAP/HTTP
-protocol. XML Web Services is the primary API for
-web services and is a follow-on to Jakarta XML-based RPCfootnote:[Removed from Jakarta EE 9.]. 
-Jakarta XML Web Services offers extensive web
-services functionality, with support for multiple bindings/protocols.
-Support for Jakarta XML-based RPC has been removed from the Platform as of Jakarta EE 9. See
-<<a2333, Removed Jakarta Technologies>>.
+The Jakarta XML Web Services, XML Binding and SOAP with Attachments have been removed
+from the Platform as of Jakarta EE 11. See <<a2333, Removed Jakarta Technologies>>.
 
-Jakarta XML Web Services and Jakarta XML Binding
-define the mapping between Java classes and XML as used
-in SOAP calls, and provide support for 100% of XML Schema. 
-The Jakarta SOAP with Attachments provides support for manipulating low
-level SOAP messages. The Web Services for Jakarta EE specification fully
-defines the deployment of web service clients and web service endpoints
-in Jakarta EE, as well as the implementation of web service endpoints using
-enterprise beans. The XML Web Services Metadata specification defines Java
-language annotations that make it easier to develop web services. The
-Jakarta XML Registries support has been removed from the Platform as of Jakarta EE
+The Jakarta XML Registries support has been removed from the Platform as of Jakarta EE
 9. See <<a2333, Removed Jakarta Technologies>>.
 
 ==== Jakarta JSON Processing
@@ -687,7 +667,7 @@ enterprise bean’s business methods, or customizes the appearance of a
 Jakarta Server Pages or Jakarta Server Faces page.
 
 The Deployer’s output is web applications,
-enterprise beans, applets, and application clients that have been
+enterprise beans, and application clients that have been
 customized for the target operational environment and are deployed in a
 specific Jakarta EE container.
 
@@ -1029,10 +1009,13 @@ No API updates are expected in Jakarta EE 9.1.
 Only the Platform and Web Profile Specifications along with the TCKs and Compatible Implementations should be affected by Jakarta EE 9.1.
 
 === Changes in Jakarta EE 10
-The goal of the Jakarta EE 10 release is to deliver a set of specifications that  and adding the support for the Java SE 11 and newer runtimes. The TCKs require support for both Java SE 11 and Java SE 17.
+The goal of the Jakarta EE 10 release is to deliver a set of specifications that and adding the support for the Java SE 11 and newer runtimes. The TCKs require support for both Java SE 11 and Java SE 17.
 
 Jakarta EE 10 is the first release in the Jakarta EE series to include major and minor component specification updates not limited to the javax to jakarta package namespace change.
 
 Jakarta EE 10 also introduced a new Core Profile to support smaller runtime footprints as often used with microservices.
 
 === Changes in Jakarta EE 11
+The goal of the Jakarta EE 11 release is to deliver a set of specifications that and adding the support for the Java SE 17 and newer runtimes. The TCKs require support for both Java SE 17 and Java SE 21.
+
+Jakarta EE 11 removes Managed Beans, XML Web Services, XML Binding and SOAP with Attachments from the platform and introduces the new Jakarta Data specification to the platform.

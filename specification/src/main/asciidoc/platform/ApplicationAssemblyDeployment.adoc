@@ -244,9 +244,9 @@ Jakarta EE products are required to support the
 use of bundled and installed libraries as specified in the _Extension
 Mechanism Architecture_ and _Optional Package Versioning_ specifications
 (available at
-_http://docs.oracle.com/javase/8/docs/technotes/guides/extensions/_ )
+_https://docs.oracle.com/javase/8/docs/technotes/guides/extensions/_ )
 and the JAR File Specification (available at
-_http://docs.oracle.com/javase/8/docs/technotes/guides/jar/jar.html_ ).
+_https://docs.oracle.com/javase/8/docs/technotes/guides/jar/jar.html_ ).
 Using this mechanism a Jakarta EE JAR file can reference utility classes or
 other shared classes or resources packaged in a separate _.jar_ file or
 directory that is included in the same Jakarta EE application package, or
@@ -320,7 +320,7 @@ may be referenced in the following way:
 . JAR format files of all types may contain
 an _Extension-List_ attribute in their Manifest file, indicating a
 dependency on an installed library. The JAR File Specification defines
-the semantics of such attributes for use by applets; this specification
+the semantics of such attributes; this specification
 requires support for such attributes for all component types and
 corresponding JAR format files. The deployment tool is required to check
 such dependency information and reject the deployment of any component
@@ -752,10 +752,6 @@ application package. For example, the application client should not have
 access to the classes in other application client jar files in the same
 ear file, nor should it have access to the classes in web applications
 or Jakarta Enterprise Beans jar files in the same ear file.
-
-==== Applet Container Class Loading Requirements (Deprecated, removal in Java SE 17)
-
-Applets were deprecated in Java SE 9, and are slated for removal post Java SE 17.
 
 === Application Assembly
 
@@ -1290,7 +1286,7 @@ as defined by <<a3447, Previous Version Deployment Descriptors>>.
 The deployment descriptor must be named
 _META-INF/application.xml_ in the _.ear_ file. Note that this name is
 case-sensitive. The XML Schema located at
-_https://jakarta.ee/xml/ns/jakartaee/application_9.xsd_ defines the XML
+_https://jakarta.ee/xml/ns/jakartaee/application_11.xsd_ defines the XML
 grammar for a Jakarta EE application deployment descriptor.
 
 <<a3208, Jakarta EE Application XML Schema Structure>> shows a graphic representation
@@ -1303,6 +1299,6 @@ image::JavaEEapplication_schema_7.svg[]
 === Common Jakarta EE XML Schema Definitions
 
 The XML Schema located at
-_https://jakarta.ee/xml/ns/jakartaee/jakartaee_9.xsd_ defines types that are
+_https://jakarta.ee/xml/ns/jakartaee/jakartaee_11.xsd_ defines types that are
 used by many other Jakarta EE deployment descriptor schemas, both in this
 specification and in other specifications.

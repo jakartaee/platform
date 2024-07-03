@@ -17,7 +17,7 @@ providers. All Jakarta EE products must support the Connector APIs, as specified
 in the Connector specification.
 
 The Jakarta EE Connectors specification is available at
-_https://jakarta.ee/specifications/connectors_ .
+_https://jakarta.ee/specifications/connectors/_ .
 
 === Jakarta™ Authorization
 
@@ -25,7 +25,7 @@ The Jakarta Authorization specification defines the contract
 between a Jakarta EE container and an authorization policy provider.
 
 The Jakarta Authorization specification can be found at
-_https://jakarta.ee/specifications/authorization_ .
+_https://jakarta.ee/specifications/authorization/_ .
 
 === Jakarta™ Transactions
 
@@ -40,7 +40,7 @@ transaction, get current transaction status, and mark the current
 transaction for rollback.
 
 The Jakarta Transaction specification is available at
-_https://jakarta.ee/specifications/transactions_ .
+_https://jakarta.ee/specifications/transactions/_ .
 
 === Jakarta™ Persistence
 
@@ -49,7 +49,7 @@ _jakarta.persistence.spi_ package that allow a persistence provider to be
 plugged into the Jakarta Persistence framework.
 
 The Jakarta Persistence specification can be
-found at _https://jakarta.ee/specifications/persistence_ .
+found at _https://jakarta.ee/specifications/persistence/_ .
 
 === Jakarta™ Mail
 
@@ -60,4 +60,4 @@ Jakarta Mail API to be extended with support for new mail protocols and
 mailbox formats.
 
 The Jakarta Mail API specification is available
-at _https://jakarta.ee/specifications/mail_ .
+at _https://jakarta.ee/specifications/mail/_ .

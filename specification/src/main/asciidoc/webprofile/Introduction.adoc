@@ -90,7 +90,7 @@ Let’s look at some examples of requirements
 from each grouping.
 
 For the first one, the Jakarta EE Platform
-specification mandates support for the Java(TM) Platform, Standard Edition 11 API.
+specification mandates support for the Java(TM) Platform, Standard Edition 17 API.
 
 In the second category one can point out the
 requirement to support Jakarta EE web application modules ( _.war_ files)
@@ -162,7 +162,7 @@ Technologies), Hani Suleiman (Individual).
 Version 7 of this specification was created
 under the Java Community Process as JSR-342. The Expert Group work for
 this specification was conducted by means of the
-_http://javaee-spec.java.net_ project in order to provide transparency
+_https://javaee.github.io/javaee-spec/_ project in order to provide transparency
 to the Java community. The specification leads for the JSR-342 Expert
 Group were Bill Shannon (Oracle) and Linda DeMichiel (Oracle). The
 expert group included the following members: Deepak Anupalli (Pramati
@@ -180,9 +180,8 @@ Sutter (IBM), Spike Washburn (Individual), Kyung Koo Yoon (Tmax Soft).
 
 Version 8 of this specification was created
 under the Java Community Process as JSR-366. The Expert Group work for
-this specification was conducted by means of the
-_http://javaee-spec.java.net_ and _https:javaee.github.io/javaee-spec_
-projects in order to provide transparency to the Java community. The
+this specification was conducted by means of the _https://javaee.github.io/javaee-spec/_
+project in order to provide transparency to the Java community. The
 specification leads for the JSR-366 Expert Group were Bill Shannon
 (Oracle) and Linda DeMichiel (Oracle). The expert group included the
 following members: Florent Benoit (OW2), David Blevins (Tomitribe), Jeff
@@ -214,4 +213,9 @@ Specification Project with guidance provided by the Jakarta EE Working Group
 === Acknowledgements for Jakarta EE 10.0
 
 The Jakarta EE 10 specification was created by the Jakarta EE Platform Specification Project with guidance provided by the Jakarta EE Working Group
+(_https://jakarta.ee/_).
+
+=== Acknowledgements for Jakarta EE 11.0
+
+The Jakarta EE 11 specification was created by the Jakarta EE Platform Specification Project with guidance provided by the Jakarta EE Working Group
 (_https://jakarta.ee/_).

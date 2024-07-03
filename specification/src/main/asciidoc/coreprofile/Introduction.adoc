@@ -8,7 +8,7 @@ Edition specifically targeted at smaller applications built around microservices
 The Core Profile is targeted at developers of
 modern cloud applications with focus on a minimal set of APIs
 that support microservices with a focus on enabling implementations
-that make use of ahead of time complitation build to minimize startup
+that make use of ahead of time compilation build to minimize startup
 time and memory footprint.
 
 It is worth noting that Core Profile products are allowed to ship with more technologies than the
@@ -34,7 +34,7 @@ technology or combinations of technologies.
 Let’s look at some examples of requirements from each grouping.
 
 For the first one, the Jakarta EE Platform
-specification mandates support for Java(TM) Platform, Standard Edition 11 API.  Because of this, all Core Profile 10.0 APIs must support the Java(TM) Platform, Standard Edition 11 API.
+specification mandates support for Java(TM) Platform, Standard Edition 17 API.  Because of this, all Core Profile 11.0 APIs must support the Java(TM) Platform, Standard Edition 17 API.
 
 In the second category one can point out the
 that Jakarta XML Binding support is not required for Jakarta RESTful Web Services in the Core Profile.
@@ -48,4 +48,9 @@ The fourth category is the most complex. The Jakarta Core Profile TCK attempts t
 === Acknowledgements for Jakarta EE 10.0
 
 The Jakarta EE 10.0 specification was created by the Jakarta EE Platform
+Specification Project with guidance provided by the Jakarta EE Working Group.
+
+=== Acknowledgements for Jakarta EE 11.0
+
+The Jakarta EE 11.0 specification was created by the Jakarta EE Platform
 Specification Project with guidance provided by the Jakarta EE Working Group.

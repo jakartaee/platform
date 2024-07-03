@@ -2,5 +2,9 @@
 
 == Revision History
 
+=== Changes in Final Release for EE11
+* Updated Java SE base version to 17.
+* Updated <<relateddocs, “Related Documents">> for the updated Specifications in Jakarta EE 11.
+
 === Changes in Final Release EE 10
 * Initial version

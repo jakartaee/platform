@@ -3162,7 +3162,7 @@ required by this specification.
 
 This section describes the metadata annotations
 and deployment descriptor entries that allow an application to obtain
-instances of the Bean Validation _Validator_ and _ValidatorFactory_
+instances of the Validation _Validator_ and _ValidatorFactory_
 types.
 
 Applications that need to use those interfaces
@@ -3209,8 +3209,8 @@ way as a resource environment reference.
 
 In order to customize the returned
 _ValidatorFactory_, a Jakarta Enterprise Beans, web or application client module may
-specify a Bean Validation XML deployment descriptor, as described in the
-Bean Validation specification.
+specify a Validation XML deployment descriptor, as described in the
+Validation specification.
 
 A validation deployment descriptor only
 affects _ValidatorFactory_ instances in that module.
@@ -3227,7 +3227,7 @@ names to look up a _Validator_ or _ValidatorFactory_ instance.
 
 The Application Component Provider may
 customize the _ValidatorFactory_ and (indirectly) _Validator_ instances
-by including a Bean Validation deployment descriptor inside a specific
+by including a Validation deployment descriptor inside a specific
 module of the application.
 
 ==== Jakarta EE Product Provider’s Responsibilities
@@ -3242,7 +3242,7 @@ non-contextual objects using CDI, as described in
 <<a2112, Support for Dependency Injection>>.
 These objects must be used to configure the default
 _ValidatorFactory_ available at _java:comp/ValidatorFactory_ in
-accordance with the bootstrapping APIs described by the Bean Validation
+accordance with the bootstrapping APIs described by the Validation
 specification.
 
 The default _ValidatorFactory_ is a single
