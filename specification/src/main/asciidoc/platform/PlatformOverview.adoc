@@ -410,7 +410,7 @@ APIs for authentication and authorization.
 
 ==== XML Web Services
 
-The Jakarta XML Web Services, XML Binding and SOAP with Attachments have been removed
+The Jakarta XML Web Services, Jakarta XML Web Services, XML Binding and SOAP with Attachments have been removed
 from the Platform as of Jakarta EE 11. See <<a2333, Removed Jakarta Technologies>>.
 
 The Jakarta XML Registries support has been removed from the Platform as of Jakarta EE
@@ -1021,4 +1021,4 @@ Jakarta EE 10 also introduced a new Core Profile to support smaller runtime foot
 === Changes in Jakarta EE 11
 The goal of the Jakarta EE 11 release is to deliver a set of specifications that and adding the support for the Java SE 17 and newer runtimes. The TCKs require support for both Java SE 17 and Java SE 21.
 
-Jakarta EE 11 removes Managed Beans, XML Web Services, XML Binding and SOAP with Attachments from the platform and introduces the new Jakarta Data specification to the platform.
+Jakarta EE 11 removes Managed Beans, Enterprise Web Services, XML Web Services, XML Binding and SOAP with Attachments from the platform and introduces the new Jakarta Data specification to the platform.

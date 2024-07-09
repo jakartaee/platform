@@ -874,8 +874,7 @@ A Jakarta EE Product Provider may choose to enable
 selective access to resources using the Java protection model. The
 mechanism used is Jakarta EE product dependent.
 
-The _permissions.xml_ descriptor (see
-<<a2496, Declaring Permissions Required by Application Components>>) makes it possible to express
+The _permissions.xml_ descriptor makes it possible to express
 permissions that a component needs for access.
 
 ==== Caller Authorization

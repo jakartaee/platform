@@ -33,6 +33,7 @@ version of the platform.
 ==== Backwards Compatibility for Jakarta EE 11
 
 ===== Removed Technologies
+* Jakarta Enterprise Web Services
 * Jakarta Managed Beans
 * Jakarta SOAP with Attachments
 * Jakarta XML Binding
