@@ -15,13 +15,12 @@ optional.  In addition, there are no restrictions on mixing versions
 of supported deployment descriptors in a single application; any
 combination of valid deployment descriptor versions must be supported.
 
-If a component specification is modified during an EE release cycle,
-and that newer version of the specification is included in the EE
-release cycle, any XSD files must have their version number and file
-names updated accordingly to match the version of the component
-specification included in the corresponding EE release.  This update
-must happen regardless whether or not there are normative changes to
-the XSD files.
+If a newer version of a component specification is included in the
+Jakarta EE release cycle, any XSD file used by that specification has
+its version number and file name updated accordingly to match the
+version of the component specification included in the corresponding
+EE release.  This update happens whether or not there are normative
+changes to the XSD files.
 
 If a component specification is not modified during an EE release
 cycle, its XSD files remain a part of the platform as long as the

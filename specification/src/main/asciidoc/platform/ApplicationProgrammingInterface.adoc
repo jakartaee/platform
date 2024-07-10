@@ -310,11 +310,11 @@ The following Jakarta EE Technologies were removed from the Jakarta EE Platform.
 |Embeddable EJB Container (Jakarta Enterprise Beans, Core Features 4.0, Chapter 17)
 |Removed in Jakarta EE 10
 
-|Enterprise Web Services
-|Removed in Jakarta EE 11
-
 |Entity Beans, both Container and Bean Managed Persistence (Jakarta Enterprise Beans 4.0, Optional Features, Chapters 3 - 7)
 |Removed in Jakarta EE 10
+
+|Enterprise Web Services
+|Removed in Jakarta EE 11
 
 |SOAP with Attachments
 |Removed in Jakarta EE 11

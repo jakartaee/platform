@@ -410,8 +410,9 @@ APIs for authentication and authorization.
 
 ==== XML Web Services
 
-The Jakarta XML Web Services, Jakarta XML Web Services, XML Binding and SOAP with Attachments have been removed
-from the Platform as of Jakarta EE 11. See <<a2333, Removed Jakarta Technologies>>.
+The Jakarta Enterprise Web Services, Jakarta XML Web Services, XML
+Binding and SOAP with Attachments have been removed from the Platform
+as of Jakarta EE 11. See <<a2333, Removed Jakarta Technologies>>.
 
 The Jakarta XML Registries support has been removed from the Platform as of Jakarta EE
 9. See <<a2333, Removed Jakarta Technologies>>.
