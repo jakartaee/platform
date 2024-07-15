@@ -193,6 +193,6 @@ consulting). Reza Rahman (Individual) participated as a contributor.
 
 === Acknowledgements for Jakarta EE 8 and Beyond
 
-Specifications EE 8 and beyond were created by the Jakarta EE Platform
+Specifications Jakarta EE 8 and beyond were created by the Jakarta EE Platform
 Specification Project with guidance provided by the Jakarta EE Working Group
 (_https://jakarta.ee/_).
