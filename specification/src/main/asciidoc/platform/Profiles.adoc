@@ -217,8 +217,9 @@ The following technologies are deprecated:
 
 The following technologies are removed:
 
-* Jakarta Enterprise Beans 3.2 and earlier entity beans and associated Jakarta Enterprise Beans QL
 * Jakarta Enterprise Beans 2.x API group
+* Jakarta Enterprise Beans 3.2 and earlier entity beans and associated Jakarta Enterprise Beans QL
+* Jakarta Enterprise Web Services
 * Jakarta Managed Beans
 * Jakarta SOAP with Attachments
 * Jakarta XML Binding

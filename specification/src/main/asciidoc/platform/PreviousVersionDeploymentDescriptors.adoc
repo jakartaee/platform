@@ -1,20 +1,30 @@
 [appendix]
 [[a3447]]
-== Previous Version Deployment Descriptors
+== Deployment Descriptors
 
-This appendix describes Document Type
-Definitions (DTDs) and XML schemas for Deployment Descriptors from previous
-versions of the Java(TM) EE and Jakarta(TM) EE specifications.
-All Jakarta EE 9 products are required
-to support the DTDs and schemas specified by Jakarta EE 8,
-as well as the schemas specified in this version of the specification. 
-This ensures that applications
-written to the previous version of the Jakarta EE specification can be deployed on
-products supporting the current version of this specification. 
-Support for versions of DTDs and schemas prior to Jakarta EE 8 is optional.
-In addition, there are no restrictions on mixing versions of supported deployment
-descriptors in a single application; any combination of valid deployment
-descriptor versions must be supported.
+This appendix describes Document Type Definitions (DTDs) and XML
+schemas for Deployment Descriptors from current and previous versions
+of the Java(TM) EE and Jakarta(TM) EE specifications.  All Jakarta EE
+9 products are required to support the DTDs and schemas specified by
+Jakarta EE 8, as well as the schemas specified in the current version
+of the specification.  This ensures that applications written to the
+previous version of the Jakarta EE specification can be deployed on
+products supporting the current version of this specification.
+Support for versions of DTDs and schemas prior to Jakarta EE 8 is
+optional.  In addition, there are no restrictions on mixing versions
+of supported deployment descriptors in a single application; any
+combination of valid deployment descriptor versions must be supported.
+
+If a newer version of a component specification is included in the
+Jakarta EE release cycle, any XSD file used by that specification has
+its version number and file name updated accordingly to match the
+version of the component specification included in the corresponding
+EE release.  This update happens whether or not there are normative
+changes to the XSD files.
+
+If a component specification is not modified during an EE release
+cycle, its XSD files remain a part of the platform as long as the
+component specification itself remains part of the platform.
 
 === Jakarta EE 11 schemas
 

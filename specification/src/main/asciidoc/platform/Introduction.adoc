@@ -177,26 +177,8 @@ Inc.) Antoine Sabot-Durand (Red Hat), Kevin Sutter (IBM), Ruslan
 Synytsky (Jelastic, Inc.), Markus Winkler (oparco - open architectures &
 consulting). Reza Rahman (Individual) participated as a contributor.
 
-=== Acknowledgements for Jakarta EE 8
+=== Acknowledgements for Jakarta EE 8 and Beyond
 
-The Jakarta EE 8 specification was created by the Jakarta EE Platform
+Specifications EE 8 and beyond were created by the Jakarta EE Platform
 Specification Project with guidance provided by the Jakarta EE Working Group
 (_https://jakarta.ee/_).
-
-=== Acknowledgements for Jakarta EE 9
-
-The Jakarta EE 9 specification was created by the Jakarta EE Platform
-Specification Project with guidance provided by the Jakarta EE Working Group
-(_https://jakarta.ee/_).
-
-=== Acknowledgements for Jakarta EE 9.1
-
-The Jakarta EE 9.1 specification was created by the Jakarta EE Platform
-Specification Project with guidance provided by the Jakarta EE Working Group
-(_https://jakarta.ee/_).
-
-=== Acknowledgements for Jakarta EE 10.0
-The Jakarta EE 10.0 specification was created by the Jakarta EE Platform Specification Project with guidance provided by the Jakarta EE Working Group (https://jakarta.ee/).
-
-=== Acknowledgements for Jakarta EE 11.0
-The Jakarta EE 11.0 specification was created by the Jakarta EE Platform Specification Project with guidance provided by the Jakarta EE Working Group (https://jakarta.ee/).

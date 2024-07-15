@@ -90,10 +90,6 @@ satisfied by any Jakarta EE profile-based product that includes those two
 technologies, thus offering application developers a more complete
 programming model shared across all relevant Jakarta EE profiles.
 
-A separate specification, the Jakarta EE Web
-Profile Specification, defines the Jakarta EE Web Profile, the first
-profile of the Jakarta EE platform.
-
 Additional profiles may be defined in
 accordance with the rules of the Jakarta EE Specification Process and those
 contained in the present specification. In particular, profiles are
@@ -132,8 +128,8 @@ language programs that are typically GUI programs that execute on a
 desktop computer. Application clients offer a user experience similar to
 that of native applications and have access to all of the facilities of
 the Jakarta EE middle tier.
-* servlets, server pages, server faces applications,
-filters, and web event listeners typically execute in a web container
+* Servlets, Server Pages, Server Faces applications,
+Filters, and Web Event Listeners typically execute in a web container
 and may respond to HTTP requests from web clients. Servlets, server pages,
 server faces applications, and filters may be used to generate HTML pages that
 are an application’s user interface. They may also be used to generate
@@ -253,10 +249,11 @@ these standard services are actually provided by Java SE.
 
 ==== HTTP
 
-The HTTP client-side API is defined by the
-_java.net_ package. The HTTP server-side API is defined by the Jakarta Servlet,
-Jakarta Server Pages, and Jakarta Server Faces interfaces and by the web services support that is an optional part
-of the Jakarta EE platform.
+The HTTP client-side API is defined by the _java.net_ package. The
+HTTP server-side API is defined and used by the Jakarta RESTful Web Services,
+Jakarta Servlet, Jakarta Server Pages, and Jakarta Server Faces
+interfaces and by the web services support that is an optional part of
+the Jakarta EE platform.
 
 ==== HTTPS
 
@@ -294,6 +291,12 @@ provides an object/relational mapping facility for application
 developers using a Java domain model to manage a relational database.
 Jakarta Persistence is required to be supported in Jakarta EE. It can
 also be used in Java SE environments.
+
+==== Jakarta Data API
+
+The Jakarta Data specification provides an API for easier data access. A Java developer can split the persistence from the model with several features, such as the ability to compose custom query methods on a Repository interface.
+
+Jakarta Data’s goal is to provide a familiar and consistent, Jakarta-based programming model for data access while still retaining the particular traits of the underlying data store.
 
 [[a104]]
 ==== Jakarta™ Messaging
@@ -407,8 +410,9 @@ APIs for authentication and authorization.
 
 ==== XML Web Services
 
-The Jakarta XML Web Services, XML Binding and SOAP with Attachments have been removed
-from the Platform as of Jakarta EE 11. See <<a2333, Removed Jakarta Technologies>>.
+Jakarta Enterprise Web Services, Jakarta XML Web Services, XML
+Binding and SOAP with Attachments have been removed from the Platform
+as of Jakarta EE 11. See <<a2333, Removed Jakarta Technologies>>.
 
 The Jakarta XML Registries support has been removed from the Platform as of Jakarta EE
 9. See <<a2333, Removed Jakarta Technologies>>.
@@ -1018,4 +1022,4 @@ Jakarta EE 10 also introduced a new Core Profile to support smaller runtime foot
 === Changes in Jakarta EE 11
 The goal of the Jakarta EE 11 release is to deliver a set of specifications that and adding the support for the Java SE 17 and newer runtimes. The TCKs require support for both Java SE 17 and Java SE 21.
 
-Jakarta EE 11 removes Managed Beans, XML Web Services, XML Binding and SOAP with Attachments from the platform and introduces the new Jakarta Data specification to the platform.
+Jakarta EE 11 removes Managed Beans, Enterprise Web Services, XML Web Services, XML Binding and SOAP with Attachments from the platform and introduces the new Jakarta Data specification to the platform.
