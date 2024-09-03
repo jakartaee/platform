@@ -1,5 +1,5 @@
 //
-// Copyright (c) 2021-2022 Contributors to the Eclipse Foundation
+// Copyright (c) 2021-2024 Contributors to the Eclipse Foundation
 //
 
 = Jakarta EE Core Profile
@@ -14,7 +14,7 @@
 :sectnumlevels: 4
 :sectanchors:
 :inception-year: 2022
-:copyright-year: 2022
+:copyright-year: 2024
 ifdef::backend-pdf[]
 :pagenums:
 :numbered:
