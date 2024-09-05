@@ -107,7 +107,7 @@ technology will no longer be maintained for future versions of the Platform.
 <<a2333, Removed Jakarta Technologies>> documents these removed technologies.
 
 [[a2159]]
-[cols=5, options=header]
+[cols=4, options=header]
 .Jakarta EE Technologies
 |===
 |Jakarta EE Technology
@@ -120,8 +120,8 @@ technology will no longer be maintained for future versions of the Platform.
 |Y
 |Y
 
-|Authorization
-|N
+|Annotations
+|Y
 |Y
 |Y
 
@@ -130,18 +130,13 @@ technology will no longer be maintained for future versions of the Platform.
 |Y
 |Y
 
-|Batch
+|Authorization
 |N
 |Y
 |Y
 
-|Validation
-|Y
-|Y
-|Y
-
-|Annotations
-|Y
+|Batch
+|N
 |Y
 |Y
 
@@ -160,8 +155,8 @@ technology will no longer be maintained for future versions of the Platform.
 |Y
 |Y
 
-|Dependency Injection
-|Y
+|Data
+|N
 |Y
 |Y
 
@@ -169,6 +164,16 @@ technology will no longer be maintained for future versions of the Platform.
 |N
 |Y
 |N
+
+|Dependency Injection
+|Y
+|Y
+|Y
+
+|Enterprise Beans
+|Y footnote:[Client APIs only.]
+|Y
+|Y
 
 |Expression Language
 |N
@@ -180,22 +185,17 @@ technology will no longer be maintained for future versions of the Platform.
 |Y
 |Y
 
-|JSON Processing
-|Y
-|Y
-|Y
-
 |JSON Binding
 |Y
 |Y
 |Y
 
-|Mail
+|JSON Processing
 |Y
 |Y
 |Y
 
-|Managed Beans (Deprecated)
+|Mail
 |Y
 |Y
 |Y
@@ -210,7 +210,6 @@ technology will no longer be maintained for future versions of the Platform.
 |Y
 |Y
 
-
 |RESTful Web Services
 |N
 |Y
@@ -220,11 +219,6 @@ technology will no longer be maintained for future versions of the Platform.
 |N
 |Y
 |Y
-
-|Servlet
-|N
-|Y
-|N
 
 |Server Faces
 |N
@@ -236,6 +230,11 @@ technology will no longer be maintained for future versions of the Platform.
 |Y
 |N
 
+|Servlet
+|N
+|Y
+|N
+
 |Standard Tag Library
 |N
 |Y
@@ -243,6 +242,11 @@ technology will no longer be maintained for future versions of the Platform.
 
 |Transactions
 |N
+|Y
+|Y
+
+|Validation
+|Y
 |Y
 |Y
 
