@@ -96,7 +96,7 @@ This content should be considered a stand-in for any actual curated list once pl
 | javax.servlet.jsp.resources | jakarta.servlet.jsp.resources
 | javax.servlet.jsp.tagext | jakarta.servlet.jsp.tagext
 | javax.servlet.resources | jakarta.servlet.resources
-| javax.transaction | jakarta.transaction | excluding `javax.transaction.xa` which is still part of JavaSE
+| javax.transaction | jakarta.transaction excluding `javax.transaction.xa` which is still part of JavaSE
 | javax.validation | jakarta.validation
 | javax.validation.bootstrap | jakarta.validation.bootstrap
 | javax.validation.constraints | jakarta.validation.constraints
