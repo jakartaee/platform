@@ -1,4 +1,4 @@
-# Jakarta EE 12 Release Plan
+# Jakarta EE 12 Release Plan DRAFT
 
 ### Preamble
 
