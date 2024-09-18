@@ -14,8 +14,8 @@
 | *All*        |              |         |             | M4 release | |  | |
 | *Components* |              |         |             |         | Further refine implementations       |  | |
 | *Platform*   |              |         |             |         |         |         | Platform ballot |
-| *Platform*   |              |         |             |         |         |         | Web Platform ballot |
-| *Platform*   |              |         |             |         |         |         | Core Platform ballot |
+| *Platform*   |              |         |             |         |         |         | Web Profile ballot |
+| *Platform*   |              |         |             |         |         |         | Core Profile ballot |
 | *Platform*   |              |         |             |         |         |         | **Release**     |
 
 ## Scope ([issue]())
