@@ -13,16 +13,16 @@
 | *All*        |              |         |             | M3 release |  | | |
 | *All*        |              |         |             | M4 release | |  | |
 | *Components* |              |         |             |         | Further refine implementations       |  | |
+| *Core Profile*|              |         |             |         |         |         | Core Profile ballot|
+| *Web Profile*|              |         |             |         |         |         | Web Profile ballot |
 | *Platform*   |              |         |             |         |         |         | Platform ballot |
-| *Platform*   |              |         |             |         |         |         | Web Profile ballot |
-| *Platform*   |              |         |             |         |         |         | Core Profile ballot |
 | *Platform*   |              |         |             |         |         |         | **Release**     |
 
 ## Scope ([issue]())
 
 ## Java SE ([issue]())
 
-Java SE 21 will become the minimum runtime supported by compatible implementations of Jakarta EE.
+Java SE 21 will become the minimum runtime supported by compatible implementations of Jakarta EE. 
 
 ### API Source Code `--release` Level
 
@@ -31,12 +31,12 @@ For the Jakarta EE Platform (Platform, Web and Core), the Java compiler `--relea
 ### TCK Source Level
 
 - Component spec TCKs and platform TCK must compile at Java 21 or less.
-- A compatible component impl must pass their component TCK when run under Java 21 or 25.
-   - To ratify a component specification, there must exist an implementation that passes on Java 21. There must also exist an implementation that passes on 25.
-   - These need not be the same implementation. There can be one implementation that passes on 21 and a different one that passes on 25.
-- A compatible platform impl must pass the platform TCK when run under 21 or 25.
-   - To ratify a platform specification, there must exist an implementation that passes on 21. There must also exist an implementation that passes on 25.
-   - These need not be the same implementation. There can be one implementation that passes on 21 and a different one that passes on 25.
+- A compatible component impl must pass their component TCK when run under Java 21 or Java 25.
+   - To ratify a component specification, there must exist an implementation that passes on Java 21. There must also exist an implementation that passes on Java 25.
+   - These need not be the same implementation. There can be one implementation that passes on Java 21 and a different one that passes on Java 25.
+- A compatible platform impl must pass the platform TCK when run under Java 21 or Java 25.
+   - To ratify a platform specification, there must exist an implementation that passes on Java 21. There must also exist an implementation that passes on Java 25.
+   - These need not be the same implementation. There can be one implementation that passes on Java 21 and a different one that passes on Java 25.
 
 ### Compatible Implementation (CI) Source Level
 
