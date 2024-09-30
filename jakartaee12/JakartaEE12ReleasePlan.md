@@ -68,7 +68,7 @@ This will help with the eventual move of these TCK directories into their respec
 
 ### Jakarta EE 12 APIs
 The Platform and Web Profile API uber jar files will be re-generated to correspond with the Jakarta EE 12 release designation.
-These API uber jar files will be compiled and distributed at the Java 12 source/target levels.  
+These API uber jar files will be compiled and distributed at the Java 21 source/target levels.  
 **Note:** These uber jars will not be modularized, per the earlier discussion.
 
 ## Release Milestones
