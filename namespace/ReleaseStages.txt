@@ -48,7 +48,7 @@ Jakarta Security
 Jakarta Server Faces
 
 Stage 6
-Jakarta EE Full Profile
+Jakarta EE Platform
 Jakarta EE Web Profile
 
 

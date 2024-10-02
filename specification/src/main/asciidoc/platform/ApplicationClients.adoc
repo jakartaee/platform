@@ -303,7 +303,7 @@ file. Note that this name is case-sensitive.
 <<a3404, Jakarta EE Application Client XML Schema Structure>> shows the structure of the Jakarta EE
 application-client XML Schema. The Jakarta EE application-client XML Schema
 is located at
-_https://jakarta.ee/xml/ns/jakartaee/application-client_10.xsd_.
+_https://jakarta.ee/xml/ns/jakartaee/application-client_11.xsd_.
 
 [[a3404]]
 .Jakarta EE Application Client XML Schema Structure

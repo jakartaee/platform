@@ -2,7 +2,7 @@
 // Copyright (c) 2017-2024 Contributors to the Eclipse Foundation
 //
 
-= Jakarta EE WebProfile
+= Jakarta EE Web Profile
 :authors: Jakarta EE Platform Team, https://projects.eclipse.org/projects/ee4j.jakartaee-platform
 :email: https://dev.eclipse.org/mailman/listinfo/jakartaee-platform-dev
 :version-label!:

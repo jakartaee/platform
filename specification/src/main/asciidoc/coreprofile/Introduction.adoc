@@ -15,7 +15,7 @@ It is worth noting that Core Profile products are allowed to ship with more tech
 required ones. It is conceivable that products will offer a choice at
 installation time/or build time between different configurations, some richer in
 extensions, or even allow for complete customization beyond the required
-core (“à la carte” installation).
+core technologies (“à la carte” installation).
 
 === Determining Applicable Requirements
 
@@ -45,12 +45,8 @@ self-explanatory. For example, Core Profile products must implement the Jakarta 
 
 The fourth category is the most complex. The Jakarta Core Profile TCK attempts to validate the ability to combine the individual component specifications into composite test applications.
 
-=== Acknowledgements for Jakarta EE 10.0
+=== Acknowledgements for Jakarta EE 10 and Beyond
 
-The Jakarta EE 10.0 specification was created by the Jakarta EE Platform
-Specification Project with guidance provided by the Jakarta EE Working Group.
-
-=== Acknowledgements for Jakarta EE 11.0
-
-The Jakarta EE 11.0 specification was created by the Jakarta EE Platform
-Specification Project with guidance provided by the Jakarta EE Working Group.
+The Jakarta EE Core Profile specification version 10 and beyond were created by the Jakarta EE Platform
+Specification Project with guidance provided by the Jakarta EE Working Group
+(_https://jakarta.ee/_).

@@ -57,7 +57,7 @@ mentioned in <<a457, Future Directions>>.
 
 The security behavior of a Jakarta EE environment
 may be better understood by examining what happens in a simple
-application with a web client, a JSP user interface, and enterprise bean
+application with a web client, a Jakarta Server Pages user interface, and enterprise bean
 business logic. (The example is not meant to specify requirements.)
 
 In this example, the web client relies on the
@@ -68,7 +68,7 @@ authenticated session.
 Initial Request::
 
 The web client requests the main application
-URL, shown in <<a253, Initial Request>> .
+URL, shown in <<a253, Initial Request>>.
 
 [[a253]]
 .Initial Request
@@ -86,7 +86,7 @@ The web server returns a form that the web
 client uses to collect authentication data (for example, username and
 password) from the user. The web client forwards the authentication data
 to the web server, where it is validated by the web server, as shown in
-<<a257, Initial Authentication>> .
+<<a257, Initial Authentication>>.
 
 [[a257]]
 .Initial Authentication
@@ -120,22 +120,22 @@ to map the user to any of the permitted roles.
 Fulfilling the Original Request::
 
 If the user is authorized, the web server
-returns the result of the original URLrequest, as shown in
-<<a265, Fulfilling the Original Request>> .
+returns the result of the original URL request, as shown in
+<<a265, Fulfilling the Original Request>>.
 
 [[a265]]
 .Fulfilling the Original Request
 image::Step4.svg[]
 
-In our example, the response URL of a JSP page
+In our example, the response URL of a server page
 is returned, enabling the user to post form data that needs to be
 handled by the business logic component of the application.
 
 Invoking Enterprise Bean Business Methods::
 
-The JSP page performs the remote method call to
+The server page performs the remote method call to
 the enterprise bean, using the user’s credential to establish a secure
-association between the JSP page and the enterprise bean (as shown in
+association between the server page and the enterprise bean (as shown in
 <<a269, Invoking an Enterprise Bean Business Method>> ). 
 The association is implemented as two related
 security contexts, one in the web server and one in the Jakarta Enterprise Beans container.
@@ -157,11 +157,11 @@ authorized” outcome when the container is able to map the caller’s
 credential to a role. A “not authorized” outcome is reached if the
 container is unable to map the caller to any of the permitted roles. A
 “not authorized” result causes an exception to be thrown by the
-container, and propagated back to the calling JSP page.
+container, and propagated back to the calling server page.
 
-If the call “is authorized”, the container
+If the user is authorized, the container
 dispatches control to the enterprise bean method. The result of the
-bean’s execution of the call is returned to the JSP, and ultimately to
+bean’s execution of the call is returned to the server page, and ultimately to
 the user by the web server and the web client.
 
 === Security Architecture
@@ -183,14 +183,14 @@ should not have to know anything about security to write an application.
 to perform authentication and access control according to instructions
 established by the Deployer using deployment attributes, and managed by
 the System Administrator.
-
++
 Note that divorcing the application from
 responsibility for security ensures greater portability of Jakarta EE
 applications.
 
 . Extensibility: The use of platform services by
 security-aware applications must not compromise application portability.
-
++
 This specification provides APIs in the
 component programming model for interacting with container/server
 security information. Applications that restrict their interactions to
@@ -265,12 +265,12 @@ service.
 
 A security policy domain is also sometimes
 referred to as a realm. This specification uses the security policy
-domain, or security domain, terminology.
+domain or security domain terminology.
 
 Security Technology Domain::
 
 A security technology domain is the scope over
-which the same security mechanism (for example Kerberos) is used to
+which the same security mechanism (for example, Kerberos) is used to
 enforce a security policy.
 
 A single security technology domain may include
@@ -350,7 +350,7 @@ methods of the _EJBContext_ and _HttpServletRequest_ interfaces.
 
 These methods allow components to make business
 logic decisions based on the security role of the caller or remote user.
-For example they allow the component to determine the principal name of
+For example, they allow the component to determine the principal name of
 the caller or remote user to use as a database key. (Note that the form
 and content of principal names will vary widely between products and
 enterprises, and portable components will not depend on the actual
@@ -393,7 +393,7 @@ Product Providers may allow for control over
 the quality of protection or other aspects of secure association at
 deployment time. Applications can specify their requirements for access
 to web resources using annotations or elements in their deployment
-descriptor.
+descriptors.
 
 This specification does not define mechanisms
 that an Application Component Provider can use to communicate
@@ -412,7 +412,7 @@ both declarative security and programmatic security.
 Declarative authorization can be used to
 control access to an enterprise bean method and is specified in
 annotations or in the enterprise bean deployment descriptor. The
-_RolesAllows_ , _PermitAll_ , and _DenyAll_ annotations are used to
+_RolesAllowed_, _PermitAll_, and _DenyAll_ annotations are used to
 specify method permissions. An enterprise bean method can also be
 associated with a _method-permission_ element in the deployment
 descriptor. The _method-permission_ element contains a list of methods
@@ -424,8 +424,8 @@ the method. Access to web resources can be protected in a similar
 manner.
 
 Security roles are used in the
-_SecurityContext_ method _isCallerInRole_ , the _EJBContext_ method
-_isCallerInRole_ , and the _HttpServletRequest_ method _isUserInRole_ .
+_SecurityContext_ method _isCallerInRole_, the _EJBContext_ method
+_isCallerInRole_, and the _HttpServletRequest_ method _isUserInRole_.
 Each method returns _true_ if the calling principal is in the specified
 security role.
 
@@ -478,7 +478,7 @@ Requirements in this area are specified in
 
 User authentication is the process by which a
 user proves his or her identity to the system. This authenticated
-identity is then used to perform authorization decisions for accessing
+identity is used to perform authorization decisions for accessing
 Jakarta EE application components. An end user can authenticate using
 either of the two supported client types:
 
@@ -494,7 +494,7 @@ mechanisms. The Deployer or System Administrator determines which method
 to apply to an application or to a group of applications.
 
 * HTTP Basic Authentication
-
++
 HTTP Basic Authentication is the authentication
 mechanism supported by the HTTP protocol. This mechanism is based on a
 username and password. A web server requests a web client to
@@ -503,20 +503,20 @@ realm in which the user is to be authenticated. The web client obtains
 the username and the password from the user and transmits them to the
 web server. The web server then authenticates the user in the specified
 realm (referred to as HTTP Realm in this document).
-
++
 HTTP Basic Authentication is not secure.
 Passwords are sent in simple base64 encoding. The target server is not
 authenticated. Additional protection can be applied to overcome these
 weaknesses. The password may be protected by applying security at the
 transport layer (for example HTTPS) or at the network layer (for
 example, IPSEC or VPN).
-
++
 Despite its limitations, the HTTP Basic
 Authentication mechanism is included in this specification because it is
 widely used in form based applications.
 
 * HTTPS Client Authentication
-
++
 End user authentication using HTTPS (HTTP over
 SSL) is a strong authentication mechanism. This mechanism requires the
 user to possess a Public Key Certificate (PKC). Currently, a PKC is
@@ -526,11 +526,11 @@ browser. For these reasons, HTTPS client authentication is a required
 feature of the Jakarta EE platform.
 
 * Form Based Authentication
-
++
 The look and feel of a login screen cannot be
 varied using the web browser’s built-in authentication mechanisms. This
 specification introduces the ability to package standard HTML or
-servlet/JSP/JSF based forms for logging in, allowing customization of
+servlet, server pages, or server faces based forms for logging in, allowing customization of
 the user interface. The form based authentication mechanism introduced
 by this specification is described in the Servlet specification.
 
@@ -553,7 +553,7 @@ multiple requests from a client. Therefore, it is desirable to:
 . Make login mechanisms and policies a property
 of the environment the web application is deployed in.
 . Be able to use the same login session to
-represent a user to all the applications that he or she accesses.
+represent a user to all the applications that are accessed.
 . Require re-authentication of users only when
 a security policy domain boundary has been crossed.
 
@@ -720,7 +720,7 @@ specification.
 
 Web containers are required to support access
 to web resources by clients that have not authenticated themselves to
-the container. This is the common mode of access to web resources on the
+the container. This mode is the common way to access web resources on the
 Internet.
 
 A web container reports that no user has been
@@ -803,13 +803,13 @@ following:
 
 . Configured Identity. A Jakarta EE container must
 be able to authenticate for access to the resource using a principal and
-authentication data specified by a Deployer at deployment time.The
+authentication data specified by a Deployer at deployment time. The
 authentication must not depend in any way on data provided by the
 application components. Providing for the confidential storage of the
 authentication information is the responsibility of the Product
 Provider.
 . Programmatic Authentication. The Jakarta EE
-product must provide for specification of the principal and
+product must provide for the specification of the principal and
 authentication data for a resource by the application component at
 runtime using appropriate APIs. The application may obtain the principal
 and authentication data through a variety of mechanisms, including
@@ -833,7 +833,7 @@ principal requires delegation of the caller’s identity and credentials
 to the underlying resource manager. In some scenarios, a requesting
 principal can be a delegate of an initiating principal and the resource
 principal is transitively impersonating an initiating principal.
-
++
 The support for principal delegation is
 typically specific to a security mechanism. For example, Kerberos
 supports a mechanism for the delegation of authentication. (Refer to the
@@ -842,37 +842,23 @@ Kerberos v5 specification for more details.)
 . Credentials Mapping. This technique may be
 used when an application server and an EIS support different
 authentication domains. For example:
-. The initiating principal may have been
+* The initiating principal may have been
 authenticated and have public key certificate-based credentials.
-. The security environment for the resource
+* The security environment for the resource
 manager may be configured with the Kerberos authentication service.
-
++
 The application server is configured to map the
 public key certificate-based credentials associated with the initiating
 principal to the Kerberos credentials.
 
 Additional information on resource
-authentication requirements can be found in the Connector specification.
+authentication requirements can be found in the Jakarta Connectors specification.
 
 === Authorization Requirements
 
 To support the authorization models described
 in this chapter, the following requirements are imposed on Jakarta EE
 products.
-
-==== Code Authorization
-
-A Jakarta EE product may restrict the use of
-certain Java SE classes and methods to secure and ensure proper
-operation of the system. The minimum set of permissions that a Jakarta EE
-product is required to grant to a Jakarta EE application is defined in
-<<a2339, Java Platform, Standard Edition (Java SE) Requirements>>. 
-All Jakarta EE products must be capable
-of deploying application components with exactly these permissions.
-
-A Jakarta EE Product Provider may choose to enable
-selective access to resources using the Java protection model. The
-mechanism used is Jakarta EE product dependent.
 
 ==== Caller Authorization
 
@@ -891,10 +877,10 @@ single application within a single Jakarta EE product, the principal name
 returned by the _EJBContext_ method _getCallerPrincipal_ or the
 _SecurityContext_ method _getCallerPrincipal_ must be the same as that
 returned by the first enterprise bean in the call chain. If the first
-enterprise bean in the call chain is called by a servlet or JSP page,
+enterprise bean in the call chain is called by a servlet or server page,
 the principal name must be the same as that returned by the
 _HttpServletRequest_ method _getUserPrincipal_ or the _SecurityContext_
-method _getCallerPrincipal_ in the calling servlet or JSP page.
+method _getCallerPrincipal_ in the calling servlet or server page.
 (However, if the _HttpServletRequest_ or _SecurityContext_ method
 _getCallerPrincipal_ returns _null_ , the principal used in calls to
 enterprise beans is not specified by this specification, although it
