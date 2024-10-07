@@ -773,13 +773,13 @@ annotations are used to communicate the needs of application components
 to the Deployer. The deployment descriptor and class file annotations
 are a contract between the Application Component Provider or Assembler
 and the Deployer. The Application Component Provider or Assembler is
-required to specify the application components' external resource
+required to specify the application component's external resource
 requirements, security requirements, environment parameters, and so
-forth in the components' deployment descriptor or through class file
+forth in the component's deployment descriptor or through class file
 annotations. The Jakarta EE Product Provider is required to provide a
 deployment tool that interprets the Jakarta EE deployment descriptors and
 class file annotations and allows the Deployer to map the application
-components' requirements to the capabilities of a specific Jakarta EE
+component's requirements to the capabilities of a specific Jakarta EE
 product and environment.
 
 === Changes in J2EE 1.3
