@@ -1,21 +1,32 @@
+:web-profile: https://jakarta.ee/specifications/webprofile/11/
+
 [[a567]]
 == Resources, Naming, and Injection
 
-This chapter describes how applications
-declare dependencies on external resources and configuration parameters,
-and how those items are represented in the Jakarta EE naming system and can
-be injected into application components. These requirements are based on
+This chapter describes how applications declare dependencies on
+external resources and configuration parameters, and how those items
+are represented in the Jakarta EE naming system and can be injected
+into application components. These requirements are based on
 annotations defined in the Java Metadata specification and features
 defined in the Java Naming and Directory Interface™ (JNDI)
 specification. The _Resource_ annotation described here is defined in
 more detail in the Jakarta Annotations specification. The _EJB_
-annotation described here is defined in more detail in the Jakarta Enterprise
-Beans specification. The _PersistenceUnit_ and _PersistenceContext_
-annotations described here are defined in more detail in the Jakarta
-Persistence specification. The _Inject_ annotation described here is
-defined in the Dependency Injection for Java specification, and its
-usage in Jakarta EE applications is defined in the Jakarta Contexts 
-and Dependency Injection (CDI) specification.
+annotation described here is defined in more detail in the Jakarta
+Enterprise Beans specification. The _PersistenceUnit_ and
+_PersistenceContext_ annotations described here are defined in more
+detail in the Jakarta Persistence specification. The _Inject_
+annotation described here is defined in the Dependency Injection for
+Java specification, and its usage in Jakarta EE applications is
+defined in the Jakarta Contexts and Dependency Injection (CDI)
+specification and in the section **Jakarta Persistence & Jakarta
+Context and Dependency Injection (CDI) Integration** of the
+{web-profile}[Jakarta EE Web Profile Specification].
+
+As of Jakarta EE 11, developers are recommended to use CDI rather than
+_@Resource_ or JNDI to obtain references to objects of
+interest. Future improvements in the area of injection will be
+delivered via CDI rather than using the methods described in this
+chapter.
 
 === Overview
 
@@ -4480,7 +4491,7 @@ points annotated with the _jakarta.inject.Inject_ annotation only to the
 extent dictated by CDI.
 
 Per the CDI specification, dependency
-injection is supported on managed beans. There are currently three ways
+injection is supported on managed beans. There are currently two ways
 for a class to become a managed bean:
 
 . Being a Jakarta Enterprise Beans session bean component.
