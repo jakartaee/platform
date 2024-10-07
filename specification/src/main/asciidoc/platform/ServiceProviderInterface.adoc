@@ -14,7 +14,7 @@ are packaged and integrated with any Jakarta EE product. Many types of
 service providers can be provided using the Connector API and packaging,
 including JDBC drivers, Jakarta Messaging providers, and Jakarta XML Registries
 providers. All Jakarta EE products must support the Connector APIs, as specified
-in the Connector specification.
+in the Jakarta Connectors specification.
 
 The Jakarta EE Connectors specification is available at
 _https://jakarta.ee/specifications/connectors/_ .

@@ -17,13 +17,13 @@ the integrity of the enterprise.
 transactions are accurately and promptly processed.
 
 In most cases, enterprise services are
-implemented as _multitier applications_. The middle tiers integrate
+implemented as _multi-tier applications_. The middle tiers integrate
 existing EISs with the business functions and data of the new service.
 Maturing web technologies are used to provide first tier users with easy
 access to business complexities, and eliminate or drastically reduce
 user administration and training.
 
-The Jakarta™ EE Platform reduces the cost and complexity of developing multitier, enterprise
+The Jakarta™ EE Platform reduces the cost and complexity of developing multi-tier, enterprise
 services. Jakarta EE applications can be rapidly deployed and easily
 enhanced as the enterprise responds to competitive pressures.
 

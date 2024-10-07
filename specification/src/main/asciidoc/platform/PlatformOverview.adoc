@@ -52,18 +52,15 @@ A profile is a configuration of the Jakarta EE
 platform targeted at a specific class of applications.
 
 Profiles are not a new concept, nor are they
-unique to the Jakarta EE platform. The Jakarta EE Specification process: “A
-Specification that includes by reference a collection of Specifications and possibly additional requirements. APIs from the referenced Platform
-Edition must be included according to the referencing rules set out in
-that Platform Edition Specification. Other referenced specifications
-must be referenced in their entirety.”
+unique to the Jakarta EE platform. The Jakarta EE Specification Process defines a profile as: “A
+Specification that includes by reference a collection of Specifications and possibly additional requirements.”
 
 All Jakarta EE profiles share a set of common
 features, such as naming and resource injection, packaging rules,
 security requirements, etc. This guarantees a degree of uniformity
 across all products and, indirectly, applications that fall under the
 “Jakarta EE platform” umbrella. This also ensures that developers who are
-familiar with a certain profile, or with the full platform, can move
+familiar with a certain profile, or with the platform, can move
 easily to other profiles, avoiding excessive compartmentalization of
 skills and experience.
 
@@ -85,7 +82,7 @@ transactions in a servlet container. In isolation, neither the Jakarta Servlet
 specification nor the Jakarta Transactions specification defines a
 complete programming model for portable applications. This specification
 fills that gap by introducing its own set of requirements that pertain
-to the combination of servlets and Jakarta Transactions. These requirements must be
+to the combination of servlets and transactions. These requirements must be
 satisfied by any Jakarta EE profile-based product that includes those two
 technologies, thus offering application developers a more complete
 programming model shared across all relevant Jakarta EE profiles.
@@ -120,7 +117,7 @@ intended target.
 
 === Application Components
 
-The Jakarta EE runtime environment defines four
+The Jakarta EE runtime environment defines three
 application component types that a Jakarta EE product must support:
 
 * Application clients are Java programming
@@ -151,7 +148,7 @@ protocol.
 
 ==== Jakarta EE Server Support for Application Components
 
-The Jakarta EE servers provide deployment,
+Jakarta EE servers provide deployment,
 management, and execution support for conforming application components.
 Application components can be divided into three categories according to
 their dependence on a Jakarta EE server:
@@ -252,7 +249,7 @@ these standard services are actually provided by Java SE.
 The HTTP client-side API is defined by the _java.net_ package. The
 HTTP server-side API is defined and used by the Jakarta RESTful Web Services,
 Jakarta Servlet, Jakarta Server Pages, and Jakarta Server Faces
-interfaces and by the web services support that is an optional part of
+interfaces and by Jakarta XML Web Services support that is no longer a required part of
 the Jakarta EE platform.
 
 ==== HTTPS
@@ -307,7 +304,7 @@ publish-subscribe model. This specification requires a Jakarta Messaging provide
 implements both point-to-point messaging as well as publish-subscribe
 messaging. The Jakarta EE Product Provider must also provide a
 preconfigured, default Jakarta Messaging connection factory for use by the application
-in accessing this JMS provider. See
+in accessing this Jakarta Messaging provider. See
 <<a2025, Default Jakarta Messaging Connection Factory>>.
 
 ==== Java Naming and Directory Interface™ (JNDI)
@@ -350,7 +347,7 @@ EE applications.
 Jakarta Connectors is a Jakarta EE SPI
 that allows resource adapters that support access to Enterprise
 Information Systems to be plugged in to any Jakarta EE product. The
-Connector architecture defines a standard set of system-level contracts
+Jakarta Connectors specification defines a standard set of system-level contracts
 between a Jakarta EE server and a resource adapter. The standard contracts
 include:
 
@@ -463,6 +460,8 @@ For the Platform specification, the following two features are removed.
 
 * Entity Beans, both Container and Bean Managed Persistence
 * Embeddable EJB Container
+
+See <<a2333, Removed Jakarta Technologies>>.
 
 === Interoperability
 
@@ -709,7 +708,7 @@ application and the management and monitoring of an application server.
 ==== System Component Provider
 
 A variety of system level components may be
-provided by System Component Providers. Jakarta Connectors
+provided by System Component Providers. The Jakarta Connectors specification
 defines the primary APIs used to provide resource adapters of many
 types. These resource adapters may connect to existing enterprise
 information systems of many types, including databases and messaging
@@ -738,10 +737,10 @@ components that conform to these APIs and policies.
 
 The Jakarta EE Service Provider Interfaces (SPIs)
 define the contract between the Jakarta EE platform and service providers
-that may be plugged into a Jakarta EE product. The connector APIs define
+that may be plugged into a Jakarta EE product. The Jakarta Connectors APIs define
 service provider interfaces for integrating resource adapters with a
-Jakarta EE application server. Resource adapter components implementing the
-connector APIs are called Connectors. The Jakarta Authorization APIs
+Jakarta EE application server. Resource adapter components implementing the Jakarta
+Connectors APIs are called connectors. The Jakarta Authorization APIs
 define service provider interfaces for integrating security
 authorization mechanisms with a Jakarta EE application server.
 
@@ -764,7 +763,8 @@ The Jakarta EE Product Provider is required to
 publish the installed application components on the industry-standard
 protocols. This specification defines the mapping of servlets and server
 pages to the HTTP and HTTPS protocols, and the mapping of Jakarta Enterprise Beans components
-to IIOP and SOAP protocols.
+to IIOP and SOAP protocols.  Jakarta SOAP with Attachments is no longer required by Jakarta EE 11.
+See <<a2333, Removed Jakarta Technologies>>.
 
 ==== Deployment Descriptors and Annotations
 
@@ -773,13 +773,13 @@ annotations are used to communicate the needs of application components
 to the Deployer. The deployment descriptor and class file annotations
 are a contract between the Application Component Provider or Assembler
 and the Deployer. The Application Component Provider or Assembler is
-required to specify the application component’s external resource
+required to specify the application component's external resource
 requirements, security requirements, environment parameters, and so
-forth in the component’s deployment descriptor or through class file
+forth in the component's deployment descriptor or through class file
 annotations. The Jakarta EE Product Provider is required to provide a
 deployment tool that interprets the Jakarta EE deployment descriptors and
 class file annotations and allows the Deployer to map the application
-component’s requirements to the capabilities of a specific Jakarta EE
+component's requirements to the capabilities of a specific Jakarta EE
 product and environment.
 
 === Changes in J2EE 1.3

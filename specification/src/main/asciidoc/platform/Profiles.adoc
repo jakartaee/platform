@@ -37,7 +37,7 @@ they do, they need to obey all the relevant requirements mandated by the
 profile specification.
 
 A product may implement two or more Jakarta EE
-profiles, or the full platform and one or more Jakarta EE profiles, as long
+profiles, or the platform and one or more Jakarta EE profiles, as long
 as their combined requirements do not give rise to conflicts.
 
 === Profile Definition
