@@ -1,10 +1,14 @@
 :cdi-spec: https://jakarta.ee/specifications/cdi/4.1
 :jpa-spec: https://jakarta.ee/specifications/persistence/3.2/jakarta-persistence-spec-3.2
+:platform-profile: https://jakarta.ee/specifications/platform/11/
 [[a441]]
 === Jakarta Persistence & Jakarta Context and Dependency Injection (CDI) Integration
 This section specifies the requirements for Jakarta EE environments that integrate both {jpa-spec}[Persistence] and {cdi-spec}[CDI].
 
-Several of the items described in this section are also available with the following additional access methods.
+Several of the items described in this section are also available with
+the following additional access methods, as specified in the sections
+**Persistence Unit References** and **Persistence Context References**
+of the {platform-profile}[Jakarta EE Platform Specification].
 
 - the _@Resource_ annotation with the JNDI _lookup_ attribute.
 - the JNDI lookup using JNDI API.
