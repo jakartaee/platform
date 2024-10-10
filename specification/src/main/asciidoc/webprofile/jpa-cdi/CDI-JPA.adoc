@@ -1,8 +1,19 @@
 :cdi-spec: https://jakarta.ee/specifications/cdi/4.1
 :jpa-spec: https://jakarta.ee/specifications/persistence/3.2/jakarta-persistence-spec-3.2
-
+:platform-profile: https://jakarta.ee/specifications/platform/11/
+[[a441]]
 === Jakarta Persistence & Jakarta Context and Dependency Injection (CDI) Integration
 This section specifies the requirements for Jakarta EE environments that integrate both {jpa-spec}[Persistence] and {cdi-spec}[CDI].
+
+Several of the items described in this section are also available with
+the following additional access methods, as specified in the sections
+**Persistence Unit References** and **Persistence Context References**
+of the {platform-profile}[Jakarta EE Platform Specification].
+
+- the _@Resource_ annotation with the JNDI _lookup_ attribute.
+- the JNDI lookup using JNDI API.
+
+The items available with these additional access methods are indicated inline.
 
 ==== Obtaining an Entity Manager using CDI
 
@@ -25,6 +36,9 @@ if no scope is explicitly specified,
 - a bean implementation which satisfies the requirements of
 this specification for a container-managed entity manager.
 
+_EntityManager_ must also be available via the additional access
+methods specified at the beginning of this section.
+
 ==== Injecting an Entity Manager Factory using CDI
 
 A Jakarta EE container must feature built-in integration of Jakarta
@@ -46,6 +60,9 @@ if no qualifiers are explicitly specified,
 the Persistence specification for a container-managed entity
 manager factory.
 
+_EntityManagerFactory_ must also be available via the additional
+access methods specified at the beginning of this section.
+
 Furthermore, the container must make available five beans with:
 
 - bean types _CriteriaBuilder_, _PersistenceUnitUtil_, _Cache_,
@@ -59,8 +76,7 @@ if no qualifiers are explicitly specified,
 the bean type by calling the appropriate getter method of
 the _EntityManagerFactory_ bean.
 
-===== CDI Injection Examples
-TBD
+- To access these bean types (_CriteriaBuilder_, _PersistenceUnitUtil_, _Cache_, _SchemaManager_, and _Metamodel_) from callsites that use _@Resource_ or JNDI lookup, users must first obtain the _EntityManagerFactory_ and then use the appropriate getter methods.
 
 ==== persistence.xml Extended Schema
 The Persistence specification schema includes an extension point that allows one to add elements for configuration of integration concerns. The required approach for declaring a CDI  scope and qualifier elements is to use the cdi:scope and cdi:qualifier persistence-unit child elements. Its usage is illustrated in the following XML document.
