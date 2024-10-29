@@ -26,6 +26,10 @@ The latest API Java documentation for the Jakarta EE platform are collected here
 
 * [Jakarta EE APIs](https://jakarta.ee/specifications/platform/10/apidocs/)
 
+## Jakarta EE 12
+
+The [Jakarta EE 12](jakartaee12) page contains links to the documentation and processes used for Jakarta EE 12.
+
 ## Jakarta EE 11
 
 The [Jakarta EE 11](jakartaee11) page contains links to the documentation and processes used for Jakarta EE 11.
