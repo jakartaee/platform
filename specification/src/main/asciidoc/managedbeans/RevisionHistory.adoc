@@ -1,12 +1,12 @@
 [appendix]
 == Revision History
-=== Changes in Milestone 1 Release Draft for EE 11
+=== Changes in Final Release for Jakarta EE 11
 * Removed Managed Beans and replaced it with CDI Managed Beans.
 
-=== Changes in Final Release for EE10
+=== Changes in Final Release for Jakarta EE 10
 Marked for deprecation in the Platform Specification.
 
-=== Changes in Final Release for EE9
+=== Changes in Final Release for Jakarta EE 9
 ==== Editorial Changes
 * Changed the name of the generated Specifications to match the short name for the component (managed-beans).
 
