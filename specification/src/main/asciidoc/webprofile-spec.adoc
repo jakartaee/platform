@@ -3,11 +3,11 @@
 //
 
 = Jakarta EE Web Profile
-:authors: Jakarta EE Platform Team, https://projects.eclipse.org/projects/ee4j.jakartaee-platform
+:authors: Jakarta EE Platform Team, https://jakartaee.github.io/platform/
 :email: https://dev.eclipse.org/mailman/listinfo/jakartaee-platform-dev
 :version-label!:
 :doctype: book
-:license: Eclipse Foundation Specification License v1.0
+:license: Eclipse Foundation Specification License v1.1
 :source-highlighter: coderay
 :toc: left
 :toclevels: 3

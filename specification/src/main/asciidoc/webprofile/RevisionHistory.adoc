@@ -1,18 +1,18 @@
 [appendix]
 
 == Revision History
-=== Changes in Final Release for EE11
+=== Changes in Final Release for Jakarta EE 11
 * Updated Java SE base version to 17.
 * Addition of Jakarta Data to Web Profile.
 * Updated <<relateddocs, “Related Documents">> for the updated Specifications in Jakarta EE 11.
 
-=== Changes in Final Release for EE10
+=== Changes in Final Release for Jakarta EE 10
 * Major and minor updates to most specifications.
 * Addition of Jakarta Concurrency to Web Profile.
 
-==== Editorial Changes for EE10
+==== Editorial Changes for Jakarta EE 10
 * Updated <<relateddocs, “Related Documents">> for the updated Specifications in Jakarta EE 10.
 
-=== Changes in Final Release for EE9.1
+=== Changes in Final Release for Jakarta EE 9.1
 ==== Editorial Changes
 * Updated <<relateddocs, “Related Documents">> for the updated Specifications in Jakarta EE 9.1.

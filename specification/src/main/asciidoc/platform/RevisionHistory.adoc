@@ -1,14 +1,14 @@
 [appendix]
 [[revisionHistory]]
 == Revision History
-=== Changes in Final Release for EE11
+=== Changes in Final Release for Jakarta EE 11
 * Updated Java SE base version to 17.
 * Removed requirement for SOAP with Attachments, XML Binding, Enterprise Web Services and XML Web Services.
 * Removed references to the Applet Container.
 * Removed requirements related to the Java SecurityManager. 
 * Updated <<relateddocs, “Related Documents">> for the updated Specifications in Jakarta EE 11.
 
-=== Changes in Final Release for EE10
+=== Changes in Final Release for Jakarta EE 10
 * Updated Java SE base version to 11.
 * Added basic module-info.class requirements to API artifacts.
 * Added restrictions concerning where jakarta package name usage is appropriate.
@@ -19,7 +19,7 @@
 * Removed requirement for embeddable EJB Container (Jakarta Enterprise Beans, Core Features 4.0, Chapter 17)
 * Updated <<relateddocs, “Related Documents">> for the updated Specifications in Jakarta EE 10.0.
 
-=== Changes in Final Release EE9.1
+=== Changes in Final Release Jakarta EE 9.1
 ==== Editorial Changes
 * Added the support for implementations to run and certify using Java SE 11.
 * Clarified the optional support for CORBA and the ORB.
