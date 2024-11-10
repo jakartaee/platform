@@ -133,7 +133,7 @@ are an application’s user interface. They may also be used to generate
 XML or other format data that is consumed by other application
 components. A special kind of servlet may provide support for web services
 using the SOAP/HTTP protocol. Servlets, pages created with the
-Jakarta Server Pages technology or Jakarta Server Faces technology, web
+Jakarta Pages technology or Jakarta Server Faces technology, web
 filters, and web event listeners are referred to collectively in this
 specification as “web components.” Web applications are composed of web
 components and other data such as HTML pages. Web components execute in
@@ -248,7 +248,7 @@ these standard services are actually provided by Java SE.
 
 The HTTP client-side API is defined by the _java.net_ package. The
 HTTP server-side API is defined and used by the Jakarta RESTful Web Services,
-Jakarta Servlet, Jakarta Server Pages, and Jakarta Server Faces
+Jakarta Servlet, Jakarta Pages, and Jakarta Server Faces
 interfaces and by Jakarta XML Web Services support that is no longer a required part of
 the Jakarta EE platform.
 
@@ -257,7 +257,7 @@ the Jakarta EE platform.
 Use of the HTTP protocol over the SSL protocol
 is supported by the same client and server APIs as HTTP.
 
-==== Jakarta Transaction API (JTA)
+==== Jakarta Transactions API
 
 The Jakarta Transactions consists of two parts:
 
@@ -275,7 +275,7 @@ application-level interface used by the application components to access
 a database, and a service provider interface to attach a JDBC driver to
 the Jakarta EE platform. Support for the service provider interface is not
 required in Jakarta EE products. Instead, JDBC drivers should be packaged
-as resource adapters that use the facilities of the Connector API to
+as resource adapters that use the facilities of the Jakarta Connectors API to
 interface with a Jakarta EE product. The JDBC API is included in Java SE,
 but this specification includes additional requirements on JDBC device
 drivers.
@@ -407,7 +407,7 @@ APIs for authentication and authorization.
 
 ==== XML Web Services
 
-Jakarta Enterprise Web Services, Jakarta XML Web Services, XML
+Jakarta XML Web Services, XML
 Binding and SOAP with Attachments have been removed from the Platform
 as of Jakarta EE 11. See <<a2333, Removed Jakarta Technologies>>.
 
@@ -550,8 +550,8 @@ This specification describes a minimum set of
 facilities available to all Jakarta EE products. A Jakarta EE profile may
 include some or all of these facilities, as described in
 <<a3212, Profiles>>. Products
-implementing the full Jakarta EE platform must provide all of them (see
-<<a3252, Full Jakarta EE Product Requirements>>). 
+implementing the Jakarta EE platform must provide all of them (see
+<<a3252, Jakarta EE Platform Product Requirements>>). 
 Most Jakarta EE products will provide facilities beyond
 the minimum required by this specification. This specification includes
 only a few limits to the ability of a product to provide extensions. In
@@ -667,7 +667,7 @@ may customize the business logic of the application’s components at
 deployment time. For example, using tools provided with a Jakarta EE
 product, the Deployer may provide simple application code that wraps an
 enterprise bean’s business methods, or customizes the appearance of a
-Jakarta Server Pages or Jakarta Server Faces page.
+server pages or server faces page.
 
 The Deployer’s output is web applications,
 enterprise beans, and application clients that have been
@@ -718,7 +718,7 @@ provider as defined by the Jakarta Authorization specification.
 === Platform Contracts
 
 This section describes the Jakarta EE contracts that must be fulfilled by a Jakarta EE Product
-Provider implementing the full Jakarta EE platform. Jakarta EE profiles may
+Provider implementing the Jakarta EE platform. Jakarta EE profiles may
 include some or all of these facilities, as described in
 <<a3212, Profiles>>.
 
@@ -1022,4 +1022,4 @@ Jakarta EE 10 also introduced a new Core Profile to support smaller runtime foot
 === Changes in Jakarta EE 11
 The goal of the Jakarta EE 11 release is to deliver a set of specifications that and adding the support for the Java SE 17 and newer runtimes. The TCKs require support for both Java SE 17 and Java SE 21.
 
-Jakarta EE 11 removes Managed Beans, Enterprise Web Services, XML Web Services, XML Binding and SOAP with Attachments from the platform and introduces the new Jakarta Data specification to the platform.
+Jakarta EE 11 removes Managed Beans, SOAP with Attachments, XML Binding and XML Web Services from the platform and introduces the new Jakarta Data specification to the platform.

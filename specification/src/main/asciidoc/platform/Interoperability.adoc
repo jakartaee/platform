@@ -20,7 +20,7 @@ of applications:
 and Visual Basic.
 * applications running on a personal computer
 platform, or Unix® workstation.
-* standalone Java™ technology-based applications
+* stand-alone Java™ technology-based applications
 that are not directly supported by the Jakarta EE platform.
 
 It is the interoperability features of the
@@ -79,7 +79,7 @@ underlying operating system. A Jakarta EE web container must be capable of
 advertising its HTTP services on the standard HTTP port, port 80.
 * HTTP/2—Server-side support for the HTTP/2
 protocol is required by the Servlet specification.
-* SSL 3.0, TLS 1.2—SSL 3.0 (Secure Socket Layer)
+* TLS 1.2—TLS 1.2 (Transport Layer Security)
 represents the security layer for Web communication. It is available
 indirectly when using the _https_ URL as opposed to the _http_ URL. A
 Jakarta EE web container must be capable of advertising its HTTPS service
@@ -87,15 +87,15 @@ on the standard HTTPS port, port 443.
 * SOAP 1.1—SOAP is a presentation layer
 protocol for the exchange of XML messages. Support for SOAP layered on
 HTTP is optional, as described in the Jakarta XML-based RPCfootnote:removed9[Removed in Jakarta EE 9] and 
-Jakarta XML Web Servicesfootnote:optional9[Made optional in Jakarta EE 9] specifications.
+Jakarta XML Web Servicesfootnote:removed11[Removed in Jakarta EE 11] specifications.
 * SOAP 1.2—SOAP 1.2 is the version of the SOAP
-protocol standardized through W3C and supported by Jakarta XML Web Servicesfootnote:optional9[].
+protocol standardized through W3C and supported by Jakarta XML Web Servicesfootnote:removed11[].
 * WS-I Basic Profile 1.1—The WS-I Basic
 Profile, in combination with the Simple SOAP Binding Profile and
 Attachment Profile, describes interoperability requirements for the use
 of SOAP 1.1, WSDL 1.1, and MIME-based SOAP with Attachments. It is
 optional as defined by the Jakarta XML-based RPCfootnote:removed9[] and 
-Jakarta XML Web Servicesfootnote:optional9[] specifications.
+Jakarta XML Web Servicesfootnote:removed11[] specifications.
 * WebSocket protocol—The WebSocket protocol
 enables two-way communication layered over TCP. It enables
 bi-directional communication over a single connection established by an
@@ -105,7 +105,7 @@ been standardized by IETF under RFC 6455.
 [[a2875]]
 ==== OMG Protocols (optional)
 
-Support for the Object Management Group (OMG) based protocols is optional for Jakarta EE 9.
+Support for the Object Management Group (OMG) based protocols was made optional in Jakarta EE 9.
 
 ==== Java Technology Protocols
 
@@ -130,7 +130,7 @@ _https://docs.oracle.com/javase/8/docs/technotes/guides/rmi/_ .
 
 In addition to the protocols that allow
 communication between components, this specification requires Jakarta EE
-platform support for a number of data formats. These formats provide the
+products to support a number of data formats. These formats provide the
 definition for data exchanged between components.
 
 The following data formats must be supported:
@@ -144,7 +144,7 @@ format commonly used to transfer structured data between a server and
 web application. The Jakarta JSON Processing API provides support for the parsing,
 generation, transformation, and querying of JSON text. The Jakarta JSON Binding API
 provides support for mapping between JSON text and Java objects.
-* HTML 4.01—This represents the minimum web
+* HTML 4.01—This version represents the minimum web
 browser standard document format. While all Jakarta EE APIs with the
 exception of Jakarta Server Faces are agnostic to the version of the browser document
 format, Jakarta EE web clients must be able to display HTML 4.01 documents.

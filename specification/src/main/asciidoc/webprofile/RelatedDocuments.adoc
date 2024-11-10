@@ -22,7 +22,7 @@ _Jakarta™ Expression Language Specification, Version 6.0_. Available at: _http
 
 _Jakarta™ Servlet Specification, Version 6.1_. Available at: _https://jakarta.ee/specifications/servlet/6.1/_
 
-_Jakarta™ Transaction Specification, Version 2.0_. Available at: _https://jakarta.ee/specifications/transactions/2.0/_
+_Jakarta™ Transactions Specification, Version 2.0_. Available at: _https://jakarta.ee/specifications/transactions/2.0/_
 
 _Jakarta™ RESTful Web Services Specification, Version 4.0_. Available at: _https://jakarta.ee/specifications/restful-ws/4.0/_
 

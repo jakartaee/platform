@@ -18,7 +18,7 @@ flexibility and extensibility of the Jakarta EE component model facilitates
 the packaging and deployment of Jakarta EE components as individual
 components, component libraries, or Jakarta EE applications.
 
-A full Jakarta EE product must support all the
+A Jakarta EE Platform product must support all the
 facilities described in this chapter. A Jakarta EE profile may support only
 a subset of the Jakarta EE module types. Any requirements related to a
 module type not supported by a product based on a particular Jakarta EE
@@ -61,8 +61,8 @@ The Jakarta Enterprise Beans, Jakarta Servlet, application client, and
 Jakarta Connectors specifications include the XML Schema definition of the
 associated module level deployment descriptors and component packaging
 architecture required to produce Jakarta EE modules. (The application
-client specification is found in
-<<a3294, Application Clients chapter>> of this
+client specification is found in the
+<<a3294, Application Clients>> chapter of this
 document.)
 
 A Jakarta EE module is a collection of one or more
@@ -87,7 +87,7 @@ an application.
 * Starting with version 5 of the Java EE, a web application module, an enterprise bean module, or an
 application client module need not contain a deployment descriptor.
 Instead, the deployment information may be specified by annotations
-present in the class files of the module.
+present in the component class files in the module.
 * Starting with version 5 of the Java EE, a Jakarta EE enterprise application archive need not contain a
 deployment descriptor. Instead, the deployment information may be
 determined using default naming rules for embedded modules.
@@ -213,7 +213,7 @@ Every resource reference should be bound to a
 resource of the required type.
 
 Some resources have default mapping rules
-specified; see sections <<a2009, Default Data Source>>, <<a2025, Default JMS Connection Factory>>, and
+specified; see sections <<a2009, Default Data Source>>, <<a2025, Default Jakarta Messaging Connection Factory>>, and
 <<a2042, Default Concurrency Utilities Objects>>. By default, a product must map otherwise unmapped
 resources using these default rules. A product may include an option to
 disable or override these default mapping rules.
@@ -234,18 +234,14 @@ operational environment.
 [[a2945]]
 === Library Support
 
-The Jakarta EE provides several
+The Jakarta EE specification provides several
 mechanisms for applications to use optional packages and shared
 libraries (hereafter referred to as _libraries_ ). Libraries may be
 bundled with an application or may be installed separately for use by
 any application.
 
 Jakarta EE products are required to support the
-use of bundled and installed libraries as specified in the _Extension
-Mechanism Architecture_ and _Optional Package Versioning_ specifications
-(available at
-_https://docs.oracle.com/javase/8/docs/technotes/guides/extensions/_ )
-and the JAR File Specification (available at
+use of bundled and installed libraries as specified in the the JAR File Specification (available at
 _https://docs.oracle.com/javase/8/docs/technotes/guides/jar/jar.html_ ).
 Using this mechanism a Jakarta EE JAR file can reference utility classes or
 other shared classes or resources packaged in a separate _.jar_ file or
@@ -312,55 +308,10 @@ These libraries may reference other libraries, either bundled with the
 application or installed separately, using any of the techniques
 described herein.
 
-==== Installed Libraries
-
-Libraries that have been installed separately
-may be referenced in the following way:
-
-. JAR format files of all types may contain
-an _Extension-List_ attribute in their Manifest file, indicating a
-dependency on an installed library. The JAR File Specification defines
-the semantics of such attributes; this specification
-requires support for such attributes for all component types and
-corresponding JAR format files. The deployment tool is required to check
-such dependency information and reject the deployment of any component
-for which the dependency can not be met. Portable applications should
-not assume that any installed libraries will be available to a component
-unless the component’s JAR format file, or one of the containing JAR
-format files, expresses a dependency on the library using the
-_Extension-List_ and related attributes.
-
-The referenced libraries must be made
-available to all components contained within the referencing file,
-including any components contained within other JAR format files within
-the referencing file. For example, if a _.ear_ file references an
-installed library, the library must be made available to all components
-in all _.war_ files, Jakarta Enterprise Beans _.jar_ files, application _.jar_ files, and
-resource adapter _.rar_ files within the _.ear_ file.
-
-A Jakarta EE product is not required to support
-downloading of libraries (using the _<extension>-Implementation-URL_
-header) at deployment time or runtime. A Jakarta EE product is also not
-required to support more than a single version of an installed library
-at once. A Jakarta EE product is not required to limit access to installed
-libraries to only those for which the application has expressed a
-dependency; the application may be given access to more installed
-libraries than it has requested. In all of these cases, such support is
-highly recommended and may be required in a future version of this
-specification. In particular, we recommend that a Jakarta EE product
-support multiple versions of an installed library, and by default only
-allow applications to access the installed libraries for which they have
-expressed a dependency.
-
 ==== Library Conflicts
 
 If an application includes a bundled version
-of a library, and the same library exists as an installed library, the
-instance of the library bundled with the application should be used in
-preference to any installed version of the library. This allows an
-application to bundle exactly the version of a library it requires
-without being influenced by any installed libraries. Note that if the
-library is also a required component of the Jakarta EE version on
+of a library and the same library is also a required component of the Jakarta EE version on
 which the application is being deployed, this version may (and
 typically will) take precedence.
 
@@ -369,10 +320,7 @@ typically will) take precedence.
 In addition to allowing access to referenced
 classes, as described above, any resources contained in the referenced
 JAR files must also be accessible using the _Class_ and _ClassLoader_
-_getResource_ methods, as allowed by the security permissions of the
-application. An application will typically have the security permissions
-required to access resources in any of the JAR files packaged with the
-application.
+_getResource_ methods.
 
 [[a2966]]
 ==== Dynamic Class Loading
@@ -387,44 +335,21 @@ by the library itself can safely use the _Class_ method _forName_ .
 However, libraries that need to dynamically load classes that have been
 provided as a part of the application need to use the context class
 loader to load the classes. Note that the context class loader may be
-different in each module of an application. Access to the context class
-loader requires _RuntimePermission_ (“ _getClassLoader”)_ , which is not
-normally granted to applications, but should be granted to libraries
-that need to dynamically load classes. Libraries can use a method such
-as the following to assert their privilege when accessing the context
-class loader. This technique will work in both Java SE and Jakarta EE.
-
+different in each module of an application. Libraries should use the following technique to load classes.
 
 [source,java]
 ----
-public ClassLoader getContextClassLoader() {
-  return AccessController.doPrivileged(
-    new PrivilegedAction<ClassLoader>() {
-      public ClassLoader run() {
-        ClassLoader cl = null;
-        try {
-          cl = Thread.currentThread().
+ClassLoader cl = Thread.currentThread().
                         getContextClassLoader();
-        } catch (SecurityException ex) { }
-        return cl;
-      }
-    });
-}
-----
-
-Libraries should then use the following technique to load classes.
-
-[source,java]
-----
-ClassLoader cl = getContextClassLoader();
 if (cl != null) {
   try {
     clazz = Class.forName(name, false, cl);
   } catch (ClassNotFoundException ex) {
     clazz = Class.forName(name);
   }
- } else
+} else
   clazz = Class.forName(name);
+}
 ----
 
 ==== Examples
@@ -481,29 +406,6 @@ app3.ear:
      WEB-INF/lib/jakartaservlet1.jar
 ----
 
-The following example illustrates a simple
-use of the installed library mechanism to reference a library of utility
-classes that is installed separately.
-
-----
-app1.ear:
-  META-INF/application.xml
-  ejb1.jar :
-    META-INF/MANIFEST.MF:
-      Extension-List: util
-      util-Extension-Name: com/example/util
-      util-Specification-Version: 1.4
-    META-INF/ejb-jar.xml
-
-util.jar:
-  META-INF/MANIFEST.MF:
-  Extension-Name: com/example/util
-  Specification-Title: example.com’s util package
-  Specification-Version: 1.4
-  Specification-Vendor: example.com
-  Implementation-Version: build96
-----
-
 [[a3040]]
 === Class Loading Requirements
 
@@ -522,16 +424,11 @@ if they need to load classes dynamically.
 
 In addition to the required classes specified
 below, a Jakarta EE product must provide a way to allow an application to
-access a class library installed in the application server, even if it
-has not expressed a dependency on that library. This supports the use of
-old applications and extension libraries that do not use the defined
-extension dependency mechanism.
+access a class library installed in the application server.
 
 The following sections describe the
 requirements for each container type. In all cases, access to classes is
 governed by the rules of the Java language and the Java virtual machine.
-In all cases, access to classes and resources is governed by the rules
-of the Java security model.
 
 Note that while libraries must be accessible
 to application classes as described below, it may be necessary to use
@@ -547,7 +444,7 @@ access to the following classes
 and resources. Note that as of Java EE 6, Java Enterprise Beans
 components may be packaged in a web component module. Such Java Enterprise Beans
 components have the same access as other components in the web
-container. See the Jakarta Enterprise Beans specification for further detail.
+container. See the Jakarta Enterprise Beans specification for further details.
 
 * The content of the _WEB-INF/classes_
 directory of the containing war file.
@@ -569,11 +466,6 @@ any resource adapter archives (rar files) included in the same ear file.
 each resource adapter archive (rar file) deployed separately to the
 application server, if that resource adapter is used to satisfy any
 resource references in the module.
-* The contents of all jar files included in
-each resource adapter archive (rar file) deployed separately to the
-application server, if any jar file in that rar file is used to satisfy
-any reference from the module using the Extension Mechanism Architecture
-(as specified in <<a2945, Library Support>>).
 * The transitive closure of any libraries
 referenced by the jar files in the rar files above (as specified in
 <<a2945, Library Support>>).
@@ -647,11 +539,6 @@ any resource adapter archives (rar files) included in the same ear file.
 each resource adapter archive (rar file) deployed separately to the
 application server, if that resource adapter is used to satisfy any
 resource references in the module.
-* The contents of all jar files included in
-each resource adapter archive (rar file) deployed separately to the
-application server, if any jar file in that rar file is used to satisfy
-any reference from the module using the Extension Mechanism Architecture
-(as specified in <<a2945, Library Support>>).
 * The transitive closure of any libraries
 referenced by the jar files in the rar files above (as specified in
 <<a2945, Library Support>>.
@@ -764,7 +651,7 @@ that are typically followed when composing a Jakarta EE application.
 . Select the Jakarta EE modules that will be used
 by the application.
 . Create an application directory structure.
-
++
 The directory structure of an application is
 arbitrary, but by following some simple conventions a deployment
 descriptor may not be needed. The structure should be designed around
@@ -772,7 +659,7 @@ the requirements of the contained components.
 
 . Reconcile Jakarta EE module deployment
 descriptors.
-
++
 The deployment descriptors for the Jakarta EE
 modules must be edited to link internally satisfied dependencies and
 eliminate any redundant security role names. An optional element
@@ -797,7 +684,7 @@ component dependency, there must only be one corresponding component
 that fulfills that dependency in the scope of the application.
 . For each _ejb-link_ , there must be only one
 matching _ejb-name_ in the scope of the entire application (see
-<<a936, Enterprise JavaBeans™ (EJB) References>>).
+<<a936, Jakarta Enterprise Beans References>>).
 . Dependencies that are not linked to internal
 components must be handled by the Deployer as external dependencies that
 must be met by resources previously installed on the platform. External
@@ -855,7 +742,7 @@ its own class namespace, and the classes from application clients are
 not visible in the class namespace of other components.
 . (Optional) Create an XML deployment
 descriptor for the application.
-
++
 The deployment descriptor must be named
 _application.xml_ and must reside in the top level of the _META-INF_
 directory of the application _.ear_ file. The deployment descriptor must
@@ -913,23 +800,21 @@ deployment units:
 * Stand-alone Jakarta EE modules.
 * Jakarta EE applications, consisting of one or
 more Jakarta EE modules.
-* Class libraries packaged as _.jar_ files
-according to the _Extension Mechanism Architecture_ . These class
-libraries then become installed libraries.
+* Class libraries packaged as _.jar_ files.
 
 Any Jakarta EE product must be able to accept a
 Jakarta EE application delivered as a _.ear_ file or a stand-alone Jakarta EE
 module delivered as a _.jar_ , _.war_ , or _.rar_ file (as appropriate
 to its type), together with an optional alternate deployment descriptor
-external to the application or standalone Jakarta EE module. If the
+external to the application or stand-alone Jakarta EE module. If the
 application is delivered as a _.ear_ , an enterprise bean module
 delivered as a _.jar_ file, a web application delivered as a _.war_
 file, or an application client delivered as a _.jar_ file, the
 deployment tool must be able to deploy the application such that the
 Jakarta classes in the application are in a separate namespace from classes
 in other Jakarta applications. Typically this will require the use of a
-separate class loader for each application. Standalone resource adapters
-delivered in _.rar_ files and standalone class libraries delivered in
+separate class loader for each application. Stand-alone resource adapters
+delivered in _.rar_ files and stand-alone class libraries delivered in
 _.jar_ files that become installed libraries will of necessity appear in
 the class namespaces of applications that use them, and may appear in
 the class namespace of any application depending on the level of
@@ -999,7 +884,7 @@ Deployer. The deployment tool may allow the Deployer to correct the
 error and continue deployment. Note that the deployment descriptor
 version refers only to the version of the XML schema or DTD against
 which the descriptor is to be validated. It does not provide any
-information as to what version of the Jakarta EE the application
+information as to what version of the Jakarta EE specification that the application
 is written to.
 
 Some deployment descriptors are optional. The
@@ -1075,7 +960,7 @@ provides the deployment information used in subsequent deployment steps.
 Note that there is no requirement for the merge process to produce a new
 deployment descriptor, although that might be a common implementation
 technique.
-. When deploying a standalone module, the
+. When deploying a stand-alone module, the
 module name is used as the application name. The deployment tool must
 ensure that the application name is unique in the application server
 instance. If the name is not unique, the deployment tool may
@@ -1090,9 +975,7 @@ component specification. If the module is a type that contains JAR
 format files (for example, web and connector modules), all classes in
 _.jar_ files within the module referenced from other JAR files within
 the module using the _Class-Path_ manifest header must be included in
-the deployment. If the module, or any JAR format files within the
-module, declares a dependency on an installed library, that dependency
-must be satisfied.
+the deployment.
 . The deployment tool must allow the Deployer
 to configure the container to provide the resources and configuration
 values needed for each component. The required resources and
@@ -1118,27 +1001,27 @@ _META-INF/application.xml_ ). If the deployment descriptor is present,
 it fully specifies the modules included in the application. If no
 deployment descriptor is present, the deployment tool uses the following
 rules to determine the modules included in the application.
-. All files in the application package with a
+* All files in the application package with a
 filename extension of _.war_ are considered web modules. The context
 root of the web module is the module name (see
 <<a2904, Component Creation>>).
-. All files in the application package with a
+* All files in the application package with a
 filename extension of _.rar_ are considered resource adapters.
-. A directory named _lib_ is considered to be
+* A directory named _lib_ is considered to be
 the library directory, as described in
 <<a2948, Bundled Libraries>>.
-. For all files in the application package
+* For all files in the application package
 with a filename extension of _.jar_ , but not contained in the _lib_
 directory, do the following:
-. If the _.jar_ file contains a
+** If the _.jar_ file contains a
 _META-INF/MANIFEST.MF_ file with a _Main-Class_ attribute, or contains a
 _META-INF/application-client.xml_ file, consider the .jar file to be an
 application client module.
-. If the _.jar_ file contains a
-_META-INF/ejb-jar.xml_ file, or contains any class with an Jakarta Enterprise Beans
+** If the _.jar_ file contains a
+_META-INF/ejb-jar.xml_ file, or contains any class with a Jakarta Enterprise Beans
 component-defining annotation ( _Stateless_ , etc.), consider the .jar
-file to be an Jakarta Enterprise Beans module.
-. All other _.jar_ files are ignored unless
+file to be a Jakarta Enterprise Beans module.
+** All other _.jar_ files are ignored unless
 referenced by a JAR file discovered above using one of the JAR file
 reference mechanisms such as the _Class-Path_ header in a manifest file.
 . The deployment tool must ensure that the
@@ -1184,9 +1067,7 @@ annotations and discovered as described in the previous requirement,
 into the appropriate container according to the deployment requirements
 of the respective Jakarta EE component specification. All classes in _.jar_
 files or directories referenced from other JAR files using the
-_Class-Path_ manifest header must be included in the deployment. If the
-_.ear_ file, or any JAR format files within the _.ear_ file, declares a
-dependency on an installed library, that dependency must be satisfied.
+_Class-Path_ manifest header must be included in the deployment.
 . The deployment tool must allow the Deployer
 to configure the container to provide the resources and configuration
 values needed for each component. The required resources and
@@ -1223,17 +1104,9 @@ error or other unspecified behavior.
 This section specifies the requirements for
 deploying a library.
 
-. The deployment tool must record the
-extension name and version information from the manifest file of the
-library JAR file. The deployment tool must make the library available to
-other Jakarta EE deployment units that request it according to the version
-matching rules described in the Optional Package Versioning
-specification. Note that the library itself may include dependencies on
+. The deployment tool must make the library available to
+other Jakarta EE deployment units that request it. Note that the library itself may include dependencies on
 other libraries and these dependencies must also be satisfied.
-. The deployment tool must make the library
-available with at least the same security permissions as any application
-or module that uses it. The library may be installed with the full
-security permissions of the container.
 . Not all libraries will be deployable on all
 Jakarta EE products at all times. Libraries that conflict with the
 operation of the Jakarta EE product may not be deployable. For example, an

@@ -138,7 +138,7 @@ requirements.
 [[a3240]]
 === Requirements for All Jakarta EE Profiles
 
-The Java Platform, Standard Edition 11 is the
+The Java Platform, Standard Edition 17 is the
 required API compilation level for any Jakarta EE profile.
 
 The following technologies are required to be
@@ -163,10 +163,10 @@ optional for use in Jakarta EE profiles:
 <<a1385, ORB References>>)
 
 [[a3252]]
-=== Full Jakarta™ EE Product Requirements
+=== Jakarta™ EE Platform Product Requirements
 
 This section defines the requirements for
-full Jakarta EE platform products. These requirements correspond to the
+Jakarta EE platform products. These requirements correspond to the
 full set of requirements in previous versions of the Jakarta EE platform
 specification and update those requirements for this new version of the
 platform.
@@ -199,12 +199,12 @@ The following technologies are required:
 * Jakarta JSON Binding 3.0
 * Jakarta Mail 2.1
 * Jakarta Messaging 3.1
+* Jakarta Pages 4.0*
 * Jakarta Persistence 3.2*
 * Jakarta RESTful Web Services 4.0*
 * Jakarta Security 4.0*
 * Jakarta Servlet 6.1*
 * Jakarta Server Faces 4.1*
-* Jakarta Server Pages 4.0*
 * Jakarta Standard Tag Library 3.0
 * Jakarta Transactions 2.0
 * Jakarta Validation 3.1*
@@ -219,11 +219,10 @@ The following technologies are removed:
 
 * Jakarta Enterprise Beans 2.x API group
 * Jakarta Enterprise Beans 3.2 and earlier entity beans and associated Jakarta Enterprise Beans QL
-* Jakarta Enterprise Web Services
 * Jakarta Managed Beans
 * Jakarta SOAP with Attachments
 * Jakarta XML Binding
 * Jakarta XML Web Services
 
 Besides the Jakarta Managed Beans specification, Jakarta EE platform products can continue to support the removed specifications
-just like any other standalone specification that is not part of the platform.
+just like any other stand-alone specification that is not part of the platform.

@@ -1,5 +1,5 @@
-:cdi-spec: https://jakarta.ee/specifications/cdi/4.1
-:jpa-spec: https://jakarta.ee/specifications/persistence/3.2/jakarta-persistence-spec-3.2
+:cdi-spec: https://jakarta.ee/specifications/cdi/4.1/
+:jpa-spec: https://jakarta.ee/specifications/persistence/3.2/
 :platform-profile: https://jakarta.ee/specifications/platform/11/
 [[a441]]
 === Jakarta Persistence & Jakarta Context and Dependency Injection (CDI) Integration
