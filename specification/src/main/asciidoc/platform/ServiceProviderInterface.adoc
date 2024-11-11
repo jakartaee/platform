@@ -9,14 +9,14 @@ include some or all of these facilities, as described in <<a3212, Profiles>>.
 
 === Jakarta™ Connectors
 
-The Connector API defines how resource adapters
+The Jakarta Connectors specification defines how resource adapters
 are packaged and integrated with any Jakarta EE product. Many types of
-service providers can be provided using the Connector API and packaging,
-including JDBC drivers, Jakarta Messaging providers, and Jakarta XML Registries
-providers. All Jakarta EE products must support the Connector APIs, as specified
+service providers can be provided using the Jakarta Connectors API and packaging,
+including JDBC drivers and Jakarta Messaging providers. 
+All Jakarta EE products must support the Jakarta Connectors APIs, as specified
 in the Jakarta Connectors specification.
 
-The Jakarta EE Connectors specification is available at
+The Jakarta Connectors specification is available at
 _https://jakarta.ee/specifications/connectors/_ .
 
 === Jakarta™ Authorization
@@ -29,17 +29,17 @@ _https://jakarta.ee/specifications/authorization/_ .
 
 === Jakarta™ Transactions
 
-The Jakarta Transactions defines the
+The Jakarta Transactions specification defines the
 _TransactionSynchronizationRegistry_ interface that is intended for use
 by system level application server components such as persistence
 managers, resource adapters, as well as Jakarta Enterprise Beans and Web application
-components. This provides the ability to register synchronization
+components. This interface provides the ability to register synchronization
 objects with special ordering semantics, associate resource objects with
 the current transaction, get the transaction context of the current
 transaction, get current transaction status, and mark the current
 transaction for rollback.
 
-The Jakarta Transaction specification is available at
+The Jakarta Transactions specification is available at
 _https://jakarta.ee/specifications/transactions/_ .
 
 === Jakarta™ Persistence

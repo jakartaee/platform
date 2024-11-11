@@ -116,10 +116,10 @@ component’s environment.
 * <<a1863, Mail Session Definition>> describes the use by eligible application
 components of references to Jakarta Mail _Session_ resources in the component’s
 environment.
-* <<a1917, Connector Connection Factory Definition>> describes the use by eligible
+* <<a1917, Jakarta Connectors Connection Factory Definition>> describes the use by eligible
 application components of references to Jakarta Connectors connection factory
 resources in the component’s environment.
-* <<a1967, Connector Administered Object Definition>> describes the use by
+* <<a1967, Jakarta Connectors Administered Object Definition>> describes the use by
 eligible application components of references to Jakarta Connectors administered
 object resources in the component’s environment.
 * <<a2009, Default Data Source>> describes the use by eligible application
@@ -227,7 +227,7 @@ in a single enterprise bean module, or all components in a web module).
 *  _java:app_ – Names in this namespace are
 shared by all components in all modules in a single application, where
 “single application” means a single deployment unit, such as a single
-ear file, a single module deployed standalone, etc. For example, a war
+ear file, a single module deployed stand-alone, etc. For example, a war
 file and a Jakarta Enterprise Beans jar file in the same ear file would both have access to
 resources in the _java:app_ namespace.
 *  _java:global_ – Names in this namespace are
@@ -450,6 +450,15 @@ be put into service.
 |Classes supporting injection
 |Support level
 
+|Jakarta Pages
+|tag handlers
+
+tag library event listeners
+
+|Standard
+
+Standard
+
 |Jakarta Servlet
 |servlets
 
@@ -464,15 +473,6 @@ HTTP upgrade handlers
 Standard
 
 Standard
-
-Standard
-
-|Jakarta Server Pages
-|tag handlers
-
-tag library event listeners
-
-|Standard
 
 Standard
 
@@ -3340,7 +3340,7 @@ values have not been specified.
 The following requirements apply to the
 resource definitions described in Sections
 <<a1688, DataSource Resource Definition>> through 
-<<a1967, Connector Administered Object Definition>>.
+<<a1967, Jakarta Connectors Administered Object Definition>>.
 
 When an Application Component Provider or
 Application Assembler specifies connectivity information to a “physical”
@@ -3867,7 +3867,7 @@ definition types are described in
 <<a1676, Requirements Common to All Resource Definition Types>>.
 
 [[a1917]]
-==== Connector Connection Factory Definition
+==== Jakarta Connectors Connection Factory Definition
 
 An application may define Jakarta Connectors
 connection factory resources.
@@ -3964,7 +3964,7 @@ definition types are described in
 <<a1676, Requirements Common to All Resource Definition Types>>.
 
 [[a1967]]
-==== Connector Administered Object Definition
+==== Jakarta Connectors Administered Object Definition
 
 An application may define a Jakarta Connectors
 administered object resource. The administered object resource may be
@@ -4237,7 +4237,7 @@ Provider's default database.
 
 The Jakarta EE Platform requires that a Jakarta EE
 Product Provider provide a Jakarta Messaging provider in the operational environment
-(see <<a104, Jakarta™ Message Service (Jakarta Messaging)>>).
+(see <<a104, Jakarta™ Messaging>>).
 The Jakarta EE Product Provider must also provide a
 preconfigured, Jakarta Messaging ConnectionFactory for use by the application in
 accessing this Jakarta Messaging provider.
@@ -4334,16 +4334,16 @@ ManagedExecutorService myManagedExecutorService;
 
 The Jakarta EE Product Provider must provide the following:
 
-* a preconfigured, default managed executor service for use by the application in accessing this service under the JNDI name _java:comp/DefaultManagedExecutorService_ ;
+* a preconfigured, default managed executor service for use by the application in accessing this service under the JNDI name _java:comp/DefaultManagedExecutorService_
 * a preconfigured, default managed scheduled
 executor service for use by the application in accessing this service
-under the JNDI name _java:comp/DefaultManagedScheduledExecutorService_ ;
+under the JNDI name _java:comp/DefaultManagedScheduledExecutorService_
 * a preconfigured, default managed thread
 factory for use by the application in accessing this factory under the
-JNDI name _java:comp/DefaultManagedThreadFactory_ ;
+JNDI name _java:comp/DefaultManagedThreadFactory_
 * a preconfigured, default context service
 for use by the application in accessing this service under the JNDI name
-_java:comp/DefaultContextService_.
+_java:comp/DefaultContextService_
 
 If a Jakarta Concurrency object resource
 environment reference is not mapped to a specific configured object by
@@ -4472,7 +4472,7 @@ environment reference.
 
 The Application Component Provider is
 responsible for requesting injection of a _BeanManager_ instance using a
-_Resource_ annotation, or using the defined name to look up an instance
+_Resource_ or _Inject_ annotation, or using the defined name to look up an instance
 in JNDI.
 
 ==== Jakarta EE Product Provider’s Responsibilities
@@ -4503,8 +4503,8 @@ conditions will be eligible for full dependency injection support as
 described in the CDI specification.
 
 Component classes listed in
-<<a651, Component classes supporting injection>> that satisfy the third condition above, but
-neither the first nor the second condition, can also be used as CDI
+<<a651, Component classes supporting injection>> that satisfy the second condition above, but
+not the first condition, can also be used as CDI
 managed beans if they are annotated with a CDI bean-defining annotation
 or contained in a bean archive for which CDI is enabled. However, if
 they are used as CDI managed beans (e.g., injected into other managed

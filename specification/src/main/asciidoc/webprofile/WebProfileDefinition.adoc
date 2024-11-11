@@ -20,11 +20,11 @@ The following technologies are required components of the Web Profile:
 * Jakarta Interceptors 2.2*
 * Jakarta JSON Binding 3.0
 * Jakarta JSON Processing 2.1
+* Jakarta Pages 4.0*
 * Jakarta Persistence 3.2*
 * Jakarta RESTful Web Services 4.0*
 * Jakarta Security 4.0*
 * Jakarta Server Faces 4.1*
-* Jakarta Server Pages 4.0*
 * Jakarta Servlet 6.1*
 * Jakarta Standard Tag Library 3.0
 * Jakarta Transactions 2.0
@@ -39,7 +39,7 @@ There are no optional components in the Web
 Profile.
 
 Web Profile products may support some of the
-technologies present in the full Jakarta EE Platform and not already listed
+technologies present in the Jakarta EE Platform and not already listed
 in <<a43, Required Components>>,
 consistently with their compatibility requirements.
 

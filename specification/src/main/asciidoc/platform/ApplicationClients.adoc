@@ -2,10 +2,10 @@
 == Application Clients
 :imagesdir: ../images
 
-This chapter describes application clients
-in the Jakarta™ Enterprise Edition (Jakarta EE).
+This chapter describes the requirements for application clients
+in Jakarta™ Enterprise Edition (Jakarta EE).
 
-A full Jakarta EE product must support the
+A Jakarta EE Platform product must support the
 application client container as described in this chapter. A Jakarta EE
 profile may or may not require support for the application client
 container.
@@ -61,7 +61,7 @@ authentication user interface instead.
 
 If a callback handler is configured by the
 Deployer, the application client container must instantiate an object of
-this class and use it for all authentication interactions with the user.
+this class name and use it for all authentication interactions with the user.
 The application’s callback handler must fully support _Callback_ objects
 specified in the _javax.security.auth.callback_ package.
 
@@ -103,7 +103,7 @@ method is called.
 Application clients have all the facilities of
 the Java™ Platform, Standard Edition (subject to security
 restrictions), as well as various standard extensions, as described in
-Chapter EE.6 “Application Programming Interface.” Each application
+<<a2133, Application Programming Interface>>. Each application
 client executes in its own Java virtual machine. Application clients
 start execution at the _main_ method of the class specified in the
 _Main-Class_ attribute in the manifest file of the application client’s
@@ -154,43 +154,11 @@ attribute.
 |N/A
 |No
 
-|application-client_5
+|application-client_5 or later
 |Yes
 |No
 
-|application-client_5
-|No
-|Yes
-
-|application-client_6
-|Yes
-|No
-
-|application-client_6
-|No
-|Yes
-
-|application-client_7
-|Yes
-|No
-
-|application-client_7
-|No
-|Yes
-
-|application-client_8
-|Yes
-|No
-
-|application-client_8
-|No
-|Yes
-
-|application-client_9
-|Yes
-|No
-
-|application-client_9
+|application-client_5 or later
 |No
 |Yes
 
@@ -247,14 +215,6 @@ _metadata-complete_ attribute applies currently includes the following:
 *  _jakarta.resource.AdministeredObjectDefinitions_
 *  _jakarta.resource.ConnectionFactoryDefinition_
 *  _jakarta.resource.ConnectionFactoryDefinitions_
-
-
-* All annotations in the following packages:
-** _jakarta.jws_
-** _jakarta.jws.soap_
-** _jakarta.xml.ws_
-** _jakarta.xml.ws.soap_
-** _jakarta.xml.ws.spi_
 
 If the _metadata-complete_ attribute is not
 specified or its value is _"false"_ , the deployment tool must examine

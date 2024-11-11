@@ -30,10 +30,10 @@ applications written to a previous version of the platform will continue
 to work without change and with identical behavior on the current
 version of the platform.
 
+[[a3901]]
 ==== Backwards Compatibility for Jakarta EE 11
 
 ===== Removed Technologies
-* Jakarta Enterprise Web Services
 * Jakarta Managed Beans
 * Jakarta SOAP with Attachments
 * Jakarta XML Binding
@@ -45,8 +45,8 @@ ManagedBean annotation should transition to another bean defining annotation suc
 
 Support for Jakarta XML Web Services, along with the Jakarta XML Binding and the SOAP with attachments
 specifications, was made optional with the Jakarta EE 10 release, and is now removed
-from the Jakarta EE 11 platform.  Jakarta EE platform products can continue to support the XML Web Services specifications
-to work with the Jakarta EE 11 platform just like other standalone specifications that are not part of the platform.
+from the Jakarta EE 11 platform.  Jakarta EE products can continue to support these technologies
+to work with the Jakarta EE 11 platform just like other stand-alone specifications that are not part of the platform.
 
 ==== Backwards Compatibility for Jakarta EE 10
 
@@ -54,7 +54,6 @@ to work with the Jakarta EE 11 platform just like other standalone specification
 * Entity Beans, both Container and Bean Managed Persistence (Jakarta Enterprise Beans 4.0, Optional Features, Chapters 3 - 7)
 * Embeddable EJB Container (Jakarta Enterprise Beans, Core Features 4.0, Chapter 17)
 
-[[a3901]]
 ==== Backwards Compatibility for Jakarta EE 9
 Due to the migration from the `javax` namespace to the `jakarta` namespace, Jakarta
 EE 9 is not source-code compatible or binary compatible with previous releases.
@@ -129,19 +128,23 @@ modeling capabilities and object/relational mapping capabilities than
 EJB CMP entity beans and is significantly easier to use.
 
 Support for EJB CMP and BMP entity beans has
-been made optional with the Java EE 7 release. Support for EJB CMP 1.1
+been optional since the Java EE 7 release. Support for EJB CMP 1.1
 entity beans has been optional since Java EE 5. Applications are
-strongly encouraged to migrate applications using EJB entity beans to
+strongly encouraged to migrate applications using entity beans to
 Jakarta Persistence.
 
-==== Jakarta XML Web Services (optional)
+==== Jakarta XML Web Services
 
-Jakarta XML Web Services, along with the Jakarta XML Binding and the Metadata for
-Web Services specifications, provides simpler and more complete support
+Jakarta XML Web Services, along with the Jakarta XML Binding and the SOAP with
+attachments specifications, provides simpler and more complete support
 for web services than is available using the older JAX-RPC technology. Support
-for JAX-RPC was made optional with the Java EE 7 release, and is now removed
+for JAX-RPC was made optional with the Java EE 7 release, and was removed
 from the Jakarta EE 9 platform.
 Applications that provide web services using JAX-RPC should consider
 migrating to the Jakarta XML Web Services API. Note that because both technologies support
 the same web service interoperability standards, clients and services
 can be migrated to the new API independently.
+
+Jakarta XML and SOAP technologies have been removed from the Jakarta EE Platform with
+the Jakarta EE 11 release.  Application using XML and SOAP technologies should consider
+using the RESTful Web Services API for their web services.

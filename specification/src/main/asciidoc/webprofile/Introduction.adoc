@@ -48,7 +48,7 @@ a middle ground between these two sets of requirements.
 
 In terms of completeness, the Web Profile
 offers a complete stack, with technologies addressing presentation and
-state management (Jakarta Server Faces, Jakarta Server Pages), core web
+state management (Jakarta Faces, Jakarta Pages), core web
 container funtionality (Jakarta Servlet), business logic (Jakarta Enterprise Beans
 Lite), transactions (Jakarta Transactions), persistence (Jakarta
 Persistence) and more.
@@ -126,7 +126,7 @@ specification.
 Particular care should be taken when
 determining applicable requirements based on the presence of Jakarta Enterprise Beans Lite in
 the Web Profile. As described in the Jakarta Enterprise Beans specification, Jakarta Enterprise Beans Lite is a
-subset of the Jakarta Enterprise Beans API. When examining an Jakarta Enterprise Beans-related requirement in the
+subset of the Jakarta Enterprise Beans API. When examining a Jakarta Enterprise Beans-related requirement in the
 Jakarta EE Platform spec, one must first of all determine which API
 classes, component types and Jakarta Enterprise Beans container services are mentioned in the
 requirement itself. Only if all of them fall inside the Jakarta Enterprise Beans Lite subset

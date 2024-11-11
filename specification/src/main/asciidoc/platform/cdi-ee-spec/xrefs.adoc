@@ -176,3 +176,9 @@ References from the CDI EE Integration specification to the online CDI core spec
 
 [[process_bean_attributes]]
 * {cdi_spec_url}#process_bean_attributes[3.9.5.9. ProcessBeanAttributes event]
+
+[[declaring_selected_alternatives_application]]
+* {cdi_spec_url}#declaring_selected_alternatives_application[5.1.1.1. Declaring selected alternatives for an application]
+
+[[declaring_selected_alternatives_bean_archive]]
+* {cdi_spec_url}#declaring_selected_alternatives_bean_archive[16.1.1.2. Declaring selected alternatives for a bean archive]

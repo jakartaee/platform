@@ -30,7 +30,7 @@ _Java™ Naming and Directory Interface 1.2 Specification (JNDI specification)_.
 
 _Jakarta™ Messaging Specification, Version 3.1_. Available at: _https://jakarta.ee/specifications/messaging/3.1/_
 
-_Jakarta™ Transaction Specification, Version 2.0_. Available at: _https://jakarta.ee/specifications/transactions/2.0/_
+_Jakarta™ Transactions Specification, Version 2.0_. Available at: _https://jakarta.ee/specifications/transactions/2.0/_
 
 _Jakarta™ Mail Specification, Version 2.1_. Available at: _https://jakarta.ee/specifications/mail/2.1/_
 
@@ -62,7 +62,6 @@ _Jakarta™ Validation Specification, Version 3.1_. Available at: _https://jakar
 
 _Jakarta™ Interceptors Specification, Version 2.2_. Available at: _https://jakarta.ee/specifications/interceptors/2.2/_
 
-[[cdi-spec]]
 _Jakarta™ Contexts and Dependency Injection Specification, Version 4.1_. Available at: _https://jakarta.ee/specifications/cdi/4.1/_
 
 _Jakarta™ Dependency Injection Specification, Version 2.0_. Available at: _https://jakarta.ee/specifications/dependency-injection/2.0/_
@@ -80,12 +79,6 @@ _Jakarta™ Batch Specification, Version 2.1_. Available at: _https://jakarta.ee
 _Jakarta™ Data Specification, Version 1.0_. Available at: _https://jakarta.ee/specifications/data/1.0/_
 
 _Jakarta EE Specification Process (JESP), Version 1.4_. Available at: _https://jakarta.ee/about/jesp/_
-
-Extension Mechanism Architecture, Available at
-_https://docs.oracle.com/javase/8/docs/technotes/guides/extensions/index.html_
-
-Optional Package Versioning, Available at
-_https://docs.oracle.com/javase/8/docs/technotes/guides/extensions/index.html_
 
 JAR File Specification, Available at
 _https://docs.oracle.com/javase/8/docs/technotes/guides/jar/jar.html_

@@ -734,7 +734,7 @@ _SecurityContext_ method _getCallerPrincipal_ can also be called in the
 Jakarta Enterprise Beans container, and still returns _null_ for anonymous users.
 
 In Jakarta EE products that contain both a web
-container and an Jakarta Enterprise Beans container, components running in a web container
+container and a Jakarta Enterprise Beans container, components running in a web container
 must be able to call enterprise beans even when no user has been
 authenticated in the web container. When a call is made in such a case
 from a component in a web container to an enterprise bean, a Jakarta EE
@@ -869,7 +869,7 @@ Servlet specifications.
 
 ==== Propagated Caller Identities.
 
-In a Jakarta EE product that contains an Jakarta Enterprise Beans
+In a Jakarta EE product that contains a Jakarta Enterprise Beans
 container, it must be possible to configure the Jakarta EE product so that
 a propagated caller identity is used in all authorization decisions.
 With this configuration, for all calls to all enterprise beans from a
@@ -915,7 +915,7 @@ and the access control context.
 
 All Jakarta EE products must implement the access
 control semantics described in all included component specifications,
-such as the Jakarta Enterprise Beans, Jakarta Server Pages, and
+such as the Jakarta Enterprise Beans, Jakarta Pages, and
 Jakarta Servlet specifications; provide a means of
 mapping the security roles specified in metadata annotations or the
 deployment descriptor to the actual roles exposed by a Jakarta EE product;
