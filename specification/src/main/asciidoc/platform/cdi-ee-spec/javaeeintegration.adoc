@@ -2,8 +2,8 @@
 :cdi_full: CDI Full
 :cdi_lite: CDI Lite
 --
-This part of the document specifies additional rules or features when using CDI in a Jakarta EE container.
-All content defined in the {cdi-spec}[CDI specification] applies to this part.
+This section specifies additional rules or features when using CDI in a Jakarta EE container.
+All requirements defined in the {cdi-spec}[CDI specification] also apply to this section.
 
 CDI implementations in Jakarta EE containers are required to support {cdi_full}.
 --

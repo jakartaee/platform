@@ -1022,4 +1022,20 @@ Jakarta EE 10 also introduced a new Core Profile to support smaller runtime foot
 === Changes in Jakarta EE 11
 The goal of the Jakarta EE 11 release is to deliver a set of specifications that and adding the support for the Java SE 17 and newer runtimes. The TCKs require support for both Java SE 17 and Java SE 21.
 
-Jakarta EE 11 removes Managed Beans, SOAP with Attachments, XML Binding and XML Web Services from the platform and introduces the new Jakarta Data specification to the platform.
+Jakarta EE 11 removes the following technologies from the platform.
+
+* Managed Beans
+* SOAP with Attachments
+* XML Binding
+* XML Web Services
+
+Because the minimum Java SE version is 17, technologies that have been removed from Java SE as of version 17 have also been removed from the Jakarta EE platform. Such technologies include but are not limited to the following.
+
+* Security Manager
+* Extension Mechanism Architecture and Optional Package Versioning requirements
+
+Jakarta EE 11 adds the following technology to the platform.
+
+* Jakarta Data
+
+

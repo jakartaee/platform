@@ -57,7 +57,7 @@ mentioned in <<a457, Future Directions>>.
 
 The security behavior of a Jakarta EE environment
 may be better understood by examining what happens in a simple
-application with a web client, a server pages user interface, and enterprise bean
+application with a web client, a Jakarta Pages user interface, and enterprise bean
 business logic. (The example is not meant to specify requirements.)
 
 In this example, the web client relies on the

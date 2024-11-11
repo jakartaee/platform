@@ -48,7 +48,7 @@ a middle ground between these two sets of requirements.
 
 In terms of completeness, the Web Profile
 offers a complete stack, with technologies addressing presentation and
-state management (Jakarta Server Faces, Jakarta Pages), core web
+state management (Jakarta Faces, Jakarta Pages), core web
 container funtionality (Jakarta Servlet), business logic (Jakarta Enterprise Beans
 Lite), transactions (Jakarta Transactions), persistence (Jakarta
 Persistence) and more.
