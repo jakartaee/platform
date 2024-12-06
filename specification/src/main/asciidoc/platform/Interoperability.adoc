@@ -146,7 +146,7 @@ generation, transformation, and querying of JSON text. The Jakarta JSON Binding 
 provides support for mapping between JSON text and Java objects.
 * HTML 4.01—This version represents the minimum web
 browser standard document format. While all Jakarta EE APIs with the
-exception of Jakarta Server Faces are agnostic to the version of the browser document
+exception of Jakarta Faces are agnostic to the version of the browser document
 format, Jakarta EE web clients must be able to display HTML 4.01 documents.
 * Image file formats—The Jakarta EE platform must
 support GIF, JPEG, and PNG images. Support for these formats is provided

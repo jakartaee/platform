@@ -8,7 +8,7 @@
 
 When running in Jakarta EE, the container must extend the rules defined in <<dependent_context>> and must also ensure that if a bean is declared to have `@Dependent` scope:
 
-* When a Unified EL expression in a JSF or JSP page that refers to the bean by its bean name is evaluated, at most one instance of the bean is instantiated.
+* When a Unified EL expression in a Faces or Pages page that refers to the bean by its bean name is evaluated, at most one instance of the bean is instantiated.
 This instance exists to service just a single evaluation of the EL expression.
 It is reused if the bean name appears multiple times in the EL expression, but is never reused when the EL expression is evaluated again, or when another EL expression is evaluated.
 
@@ -24,13 +24,13 @@ When running in Jakarta EE, the container must extend the rules defined for bean
 
 When running in Jakarta EE, the container must extend the rules defined for bean in <<dependent_destruction>> to Jakarta EE component class instance, and must also ensure that :
 
-* all `@Dependent` scoped contextual instances created during evaluation of a Unified EL expression in a JSP or JSF page are destroyed when the evaluation completes.
+* all `@Dependent` scoped contextual instances created during evaluation of a Unified EL expression in a Pages or Faces page are destroyed when the evaluation completes.
 
 [[dependent_scope_el]]
 
 ==== Dependent pseudo-scope and Unified EL
 
-Suppose a Unified EL expression in a JSF or JSP page refers to a bean with scope `@Dependent` by its bean name. Each time the EL expression is evaluated:
+Suppose a Unified EL expression in a Faces or Pages page refers to a bean with scope `@Dependent` by its bean name. Each time the EL expression is evaluated:
 
 * the bean is instantiated at most once, and
 * the resulting instance is reused for every appearance of the bean name, and
@@ -48,10 +48,10 @@ Portable extensions that integrate with the container via Unified EL should also
 
 ==== Passivation capable beans in Jakarta EE
 
-* As defined by the EJB specification, an EJB stateful session beans is passivation capable if:
+* As defined by the Jakarta Enterprise Beans specification, a stateful session enterprise bean is passivation capable if:
 ** interceptors and decorators of the bean are passivation capable, and,
-** the EJB stateful session bean does not have the `passivationCapable` flag set to `false`.
-* As defined by the EJB specification, an EJB stateless session bean or an EJB singleton session bean is not passivation capable.
+** the stateful session enterprise bean does not have the `passivationCapable` flag set to `false`.
+* As defined by the Jakarta Enterprise Beans specification, a stateless session enterprise bean or a singleton session enterprise bean is not passivation capable.
 
 [[passivation_capable_dependency_ee]]
 
@@ -59,16 +59,16 @@ Portable extensions that integrate with the container via Unified EL should also
 
 When running in Jakarta EE, the container must extend the rules defined in <<passivation_capable_dependency>>, and must also guarantee that:
 
-* all EJB stateless session beans are passivation capable dependencies,
-* all EJB singleton session beans are passivation capable dependencies,
-* all passivation capable EJB stateful session beans are passivation capable dependencies, and
+* all stateless session enterprise beans are passivation capable dependencies,
+* all singleton session enterprise beans are passivation capable dependencies,
+* all passivation capable stateful session enterprise beans are passivation capable dependencies, and
 * all Jakarta EE resources are passivation capable dependencies.
 
 [[passivation_validation_ee]]
 
 ==== Validation of passivation capable beans and dependencies in Jakarta EE
 
-When running in Jakarta EE, the container must extend the rules defined for managed beans in <<passivation_validation>> to EJB session beans.
+When running in Jakarta EE, the container must extend the rules defined for managed beans in <<passivation_validation>> to session enterprise beans.
 
 [[builtin_contexts_ee]]
 
@@ -76,7 +76,7 @@ When running in Jakarta EE, the container must extend the rules defined for mana
 
 When running in Jakarta EE, the container must extend the rules defined in <<builtin_contexts>> and is also required to ensure the following rules for built-in context implementation.
 
-The built-in request and application context objects are active during servlet, web service and EJB invocations, and the built in session and request context objects are active during servlet and web service invocations.
+The built-in request and application context objects are active during servlet, web service and enterprise bean invocations, and the built in session and request context objects are active during servlet and web service invocations.
 
 [[request_context_ee]]
 
@@ -88,14 +88,14 @@ The request context is active:
 
 * during the `service()` method of any servlet in the web application, during the `doFilter()` method of any servlet filter and when the container calls any `ServletRequestListener` or `AsyncListener`,
 * during any Jakarta EE web service invocation,
-* during any remote method invocation of any EJB, during any asynchronous method invocation of any EJB, during any call to an EJB timeout method and during message delivery to any EJB message-driven bean.
+* during any remote method invocation of any enterprise bean, during any asynchronous method invocation of any enterprise bean, during any call to an enterprise bean timeout method and during message delivery to any message-driven enterprise bean.
 
 
 The request context is destroyed:
 
 * at the end of the servlet request, after the `service()` method, all `doFilter()` methods, and all `requestDestroyed()` and `onComplete()` notifications return,
 * after the web service invocation completes,
-* after the EJB remote method invocation, asynchronous method invocation, timeout or message delivery completes if it did not already exist when the invocation occurred.
+* after the enterprise bean remote method invocation, asynchronous method invocation, timeout or message delivery completes if it did not already exist when the invocation occurred.
 
 The payload of the event fired when the request context is initialized or destroyed is:
 
@@ -132,12 +132,12 @@ The application scope is active:
 * during the `service()` method of any servlet in the web application, during the `doFilter()` method of any servlet filter and when the container calls any `ServletContextListener`, `HttpSessionListener`, `AsyncListener` or `ServletRequestListener`,
 * during any Jakarta EE web service invocation,
 * during any asynchronous invocation of an event observer,
-* during any remote method invocation of any EJB, during any asynchronous method invocation of any EJB, during any call to an EJB timeout method and during message delivery to any EJB message-driven bean,
+* during any remote method invocation of any enterprise bean, during any asynchronous method invocation of any enterprise bean, during any call to an enterprise bean timeout method and during message delivery to any message-driven enterprise bean,
 * when the disposer method or `@PreDestroy` callback of any bean with any normal scope other than `@ApplicationScoped` is called, and
 * during `@PostConstruct` callback of any bean.
 
 
-The application context is shared between all servlet requests, web service invocations, asynchronous invocation of an event observer, EJB remote method invocations, EJB asynchronous method invocations, EJB timeouts and message deliveries to message-driven beans that execute within the same application.
+The application context is shared between all servlet requests, web service invocations, asynchronous invocation of an event observer, enterprise bean remote method invocations, enterprise bean asynchronous method invocations, enterprise bean timeouts and message deliveries to message-driven beans that execute within the same application.
 The application context is destroyed when the application is shut down.
 
 The payload of the event fired when the application context is initialized or destroyed is:
@@ -188,10 +188,10 @@ If the conversation associated with the current Servlet request is in the _long-
 The long-running conversation associated with a request may be propagated to any Servlet request via use of a request parameter named `cid` containing the unique identifier of the conversation.
 In this case, the application must manage this request parameter.
 
-If the current Servlet request is a JSF request, and the conversation is in _long-running_ state, it is propagated according to the following rules:
+If the current Servlet request is a Faces request, and the conversation is in _long-running_ state, it is propagated according to the following rules:
 
-* The long-running conversation context associated with a request that renders a JSF view is automatically propagated to any faces request (JSF form submission) that originates from that rendered page.
-* The long-running conversation context associated with a request that results in a JSF redirect (a redirect resulting from a navigation rule or JSF `NavigationHandler`) is automatically propagated to the resulting non-faces request, and to any other subsequent request to the same URL.
+* The long-running conversation context associated with a request that renders a Faces view is automatically propagated to any faces request (Faces form submission) that originates from that rendered page.
+* The long-running conversation context associated with a request that results in a Faces redirect (a redirect resulting from a navigation rule or Faces `NavigationHandler`) is automatically propagated to the resulting non-faces request, and to any other subsequent request to the same URL.
 This is accomplished via use of a request parameter named `cid` containing the unique identifier of the conversation.
 
 
