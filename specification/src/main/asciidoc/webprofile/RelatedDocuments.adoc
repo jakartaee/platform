@@ -16,7 +16,7 @@ _Java™ Platform, Standard Edition, v17 API Specification_. Available at: _http
 
 _Jakarta™ Enterprise Beans Specification, Version 4.0_. Available at: _https://jakarta.ee/specifications/enterprise-beans/4.0/_
 
-_Jakarta™ Server Pages Specification, Version 4.0_. Available at: _https://jakarta.ee/specifications/pages/4.0/_
+_Jakarta™ Pages Specification, Version 4.0_. Available at: _https://jakarta.ee/specifications/pages/4.0/_
 
 _Jakarta™ Expression Language Specification, Version 6.0_. Available at: _https://jakarta.ee/specifications/expression-language/6.0/_
 
@@ -32,7 +32,7 @@ _Jakarta™ Debugging Support for Other Languages Specification, Version 2.0_. A
 
 _Jakarta™ Standard Tag Library Specification, Version 3.0_. Available at: _https://jakarta.ee/specifications/tags/3.0/_
 
-_Jakarta™ Server Faces Specification, Version 4.1_. Available at: _https://jakarta.ee/specifications/faces/4.1/_
+_Jakarta™ Faces Specification, Version 4.1_. Available at: _https://jakarta.ee/specifications/faces/4.1/_
 
 _Jakarta™ Persistence Specification, Version 3.2_. Available at: _https://jakarta.ee/specifications/persistence/3.2/_
 

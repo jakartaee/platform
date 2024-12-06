@@ -20,7 +20,7 @@ When running in Jakarta EE, the container must extend the capabilities defined i
 
 === Bean types for Jakarta EE component
 
-As managed beans, EJB session beans may have multiple bean types depending on their client-visible types.
+As managed beans, session enterprise beans may have multiple bean types depending on their client-visible types.
 For instance, this session bean has only the local interfaces `BookShop` and `Auditable`, along with `Object`, as bean types, since the bean class is not a client-visible type.
                                                                                                                         
 [source, java]
@@ -39,12 +39,12 @@ The rules for determining the (unrestricted) set of bean types for Jakarta EE co
 
 === Scopes
 
-Jakarta EE components such as servlets, EJBs and JavaBeans do not have a well-defined _scope_.
+Jakarta EE components such as servlets, enterprise beans and JavaBeans do not have a well-defined _scope_.
 These components are either:
 
-* _singletons_, such as EJB singleton session beans, whose state is shared between all clients,
-* _stateless objects_, such as servlets and stateless session beans, which do not contain client-visible state, or
-* objects that must be explicitly created and destroyed by their client, such as JavaBeans and stateful session beans, whose state is shared by explicit reference passing between clients.
+* _singletons_, such as singleton session enterprise beans, whose state is shared between all clients,
+* _stateless objects_, such as servlets and stateless session enterprise beans, which do not contain client-visible state, or
+* objects that must be explicitly created and destroyed by their client, such as JavaBeans and stateful session enterprise beans, whose state is shared by explicit reference passing between clients.
 
 CDI scopes add to Jakarta EE these missing well-defined lifecycle context as defined in <<scopes>>.
 
@@ -60,11 +60,11 @@ When running in Jakarta EE, the implementations of the `@RequestScoped`, `@Appli
 
 When running in Jakarta EE, If the _bean discovery mode_ is `annotated`, the container must extend the rules defined in <<default_bean_discovery>> with:
 
-* bean classes of EJB sessions beans, are discovered, and
-* producer methods that are on an EJB session bean are discovered, and
-* producer fields that are on an EJB session bean are discovered, and
-* disposer methods that are on an EJB session bean are discovered, and
-* observer methods that are on an EJB session bean are discovered.
+* bean classes of sessions enterprise beans, are discovered, and
+* producer methods that are on a session enterprise bean are discovered, and
+* producer fields that are on a session enterprise bean are discovered, and
+* disposer methods that are on a session enterprise bean are discovered, and
+* observer methods that are on a session enterprise bean are discovered.
 
 
 [[names_ee]]
@@ -72,9 +72,9 @@ When running in Jakarta EE, If the _bean discovery mode_ is `annotated`, the con
 
 A bean with a name may be referred to by its name in Unified EL expressions.
 
-There is no relationship between the bean name of an EJB session bean and the EJB name of the bean.
+There is no relationship between the bean name of a session enterprise bean and the EJB name of the bean.
 
-Bean names allow the direct use of beans in JSP or JSF pages.
+Bean names allow the direct use of beans in Pages or Faces pages.
 For example, a bean with the name `products` could be used like this:
 
 [source, xml]
@@ -84,7 +84,7 @@ For example, a bean with the name `products` could be used like this:
 
 [[default_name_ee]]
 
-==== Default bean names for EJB session beans
+==== Default bean names for session enterprise beans
 
-In the circumstances listed in <<default_name>>, the rule for determining default name for an EJB session bean are defined in <<session_bean_name>>.
+In the circumstances listed in <<default_name>>, the rule for determining default name for a session enterprise bean are defined in <<session_bean_name>>.
 

@@ -194,6 +194,7 @@ The following technologies are required:
 * Jakarta Dependency Injection 2.0
 * Jakarta Enterprise Beans 4.0 (except for Jakarta Enterprise Beans entity beans and associated Jakarta Enterprise Beans QL, and embedded container, which have been made removed)
 * Jakarta Expression Language 6.0*
+* Jakarta Faces 4.1*
 * Jakarta Interceptors 2.2*
 * Jakarta JSON Processing 2.1
 * Jakarta JSON Binding 3.0
@@ -204,7 +205,6 @@ The following technologies are required:
 * Jakarta RESTful Web Services 4.0*
 * Jakarta Security 4.0*
 * Jakarta Servlet 6.1*
-* Jakarta Server Faces 4.1*
 * Jakarta Standard Tag Library 3.0
 * Jakarta Transactions 2.0
 * Jakarta Validation 3.1*

@@ -6,7 +6,7 @@
  
 === The `Bean` interface in Jakarta EE
  
-When running in Jakarta EE, the container must extend the rules defined in <<bean>> for managed bean to EJB session bean.
+When running in Jakarta EE, the container must extend the rules defined in <<bean>> for managed bean to session enterprise bean.
 
 [[interceptor_ee]]
 
@@ -14,7 +14,7 @@ When running in Jakarta EE, the container must extend the rules defined in <<bea
 
 When running in Jakarta EE, the container must extend the rules defined in <<interceptor>> and must also ensure that
  
-`PRE_PASSIVATE`, `POST_ACTIVATE` and `AROUND_TIMEOUT` InterceptorType values are linked to EJB lifecycle callback or timeout method.
+`PRE_PASSIVATE`, `POST_ACTIVATE` and `AROUND_TIMEOUT` InterceptorType values are linked to enterprise bean lifecycle callback or timeout method.
 
 
 [[injectiontarget_ee]]
@@ -42,11 +42,11 @@ Jakarta EE Components may obtain an instance of `BeanManager` from JNDI by looki
 
 [[alternative_metadata_sources_ee]]
 
-=== Alternative metadata sources and EJB
+=== Alternative metadata sources and enterprise beans
 
 When running in Jakarta EE, the container must extend the rules defined in <<alternative_metadata_sources>> and ensure that:
 
-* when an `AnnotatedType` represents an EJB session bean class, `Annotated.getTypeClosure()` must returns the EJB session bean types as defined in <<session_bean_types>>.
+* when an `AnnotatedType` represents a session enterprise bean class, `Annotated.getTypeClosure()` must returns the session enterprise bean types as defined in <<session_bean_types>>.
 
 [[init_events_ee]]
 
@@ -56,21 +56,21 @@ When running in Jakarta EE, the container must extend the rules defined in <<alt
 
 ==== `ProcessAnnotatedType` event in Jakarta EE
 
-When running in Jakarta EE, the container must extend the rules defined in <<process_annotated_type>> to Jakarta EE component and EJB session bean classes.
+When running in Jakarta EE, the container must extend the rules defined in <<process_annotated_type>> to Jakarta EE component and session enterprise bean classes.
 
 [[process_injection_point_ee]]
 
-==== `ProcessInjectionPoint` event and EJB
+==== `ProcessInjectionPoint` event and enterprise beans
 
-When running in Jakarta EE, the container must also fire an event for every injection point of every Jakarta EE component class supporting injection that may be instantiated by the container at runtime, including every EJB session or message-driven bean.
+When running in Jakarta EE, the container must also fire an event for every injection point of every Jakarta EE component class supporting injection that may be instantiated by the container at runtime, including every session or message-driven enterprise bean.
 
 [[process_injection_target_ee]]
 
-==== `ProcessInjectionTarget` event and EJB
+==== `ProcessInjectionTarget` event and enterprise beans
 
-When running in Jakarta EE, the container must also fire an event for every Jakarta EE component class supporting injection that may be instantiated by the container at runtime, including every EJB session or message-driven bean.
+When running in Jakarta EE, the container must also fire an event for every Jakarta EE component class supporting injection that may be instantiated by the container at runtime, including every session or message-driven enterprise bean.
 
-The container must extend the rules defined in <<process_injection_target>> for managed bean to EJB session bean and other Jakarta EE component class supporting injection.
+The container must extend the rules defined in <<process_injection_target>> for managed bean to session enterprise bean and other Jakarta EE component class supporting injection.
 
 For example, this observer decorates the `InjectionTarget` for all servlets.
 
@@ -84,14 +84,14 @@ For example, this observer decorates the `InjectionTarget` for all servlets.
 
 [[process_bean_attributes_ee]]
 
-==== `ProcessBeanAttributes` event and EJB
+==== `ProcessBeanAttributes` event and enterprise beans
 
-When running in Jakarta EE, the container must extend the rules defined in <<process_bean_attributes>> to EJB session bean.
+When running in Jakarta EE, the container must extend the rules defined in <<process_bean_attributes>> to session enterprise bean.
 
 
 [[process_bean_ee]]
 
-==== `ProcessBean` event and EJB
+==== `ProcessBean` event and enterprise beans
 
 In addition to definition given in <<process_bean>> the following apply:
 

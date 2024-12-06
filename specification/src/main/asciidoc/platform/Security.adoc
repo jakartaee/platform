@@ -127,15 +127,15 @@ returns the result of the original URL request, as shown in
 .Fulfilling the Original Request
 image::Step4.svg[]
 
-In our example, the response URL of a server page
+In our example, the response URL of a Pages page
 is returned, enabling the user to post form data that needs to be
 handled by the business logic component of the application.
 
 Invoking Enterprise Bean Business Methods::
 
-The server page performs the remote method call to
+The Pages page performs the remote method call to
 the enterprise bean, using the user’s credential to establish a secure
-association between the server page and the enterprise bean (as shown in
+association between the Pages page and the enterprise bean (as shown in
 <<a269, Invoking an Enterprise Bean Business Method>> ). 
 The association is implemented as two related
 security contexts, one in the web server and one in the Jakarta Enterprise Beans container.
@@ -157,11 +157,11 @@ authorized” outcome when the container is able to map the caller’s
 credential to a role. A “not authorized” outcome is reached if the
 container is unable to map the caller to any of the permitted roles. A
 “not authorized” result causes an exception to be thrown by the
-container, and propagated back to the calling server page.
+container, and propagated back to the calling Pages page.
 
 If the user is authorized, the container
 dispatches control to the enterprise bean method. The result of the
-bean’s execution of the call is returned to the server page, and ultimately to
+bean’s execution of the call is returned to the Pages page, and ultimately to
 the user by the web server and the web client.
 
 === Security Architecture
@@ -530,7 +530,7 @@ feature of the Jakarta EE platform.
 The look and feel of a login screen cannot be
 varied using the web browser’s built-in authentication mechanisms. This
 specification introduces the ability to package standard HTML or
-servlet, server pages, or server faces based forms for logging in, allowing customization of
+Servlet, Pages, or Faces based forms for logging in, allowing customization of
 the user interface. The form based authentication mechanism introduced
 by this specification is described in the Servlet specification.
 
@@ -877,10 +877,10 @@ single application within a single Jakarta EE product, the principal name
 returned by the _EJBContext_ method _getCallerPrincipal_ or the
 _SecurityContext_ method _getCallerPrincipal_ must be the same as that
 returned by the first enterprise bean in the call chain. If the first
-enterprise bean in the call chain is called by a servlet or server page,
+enterprise bean in the call chain is called by a servlet or Pages page,
 the principal name must be the same as that returned by the
 _HttpServletRequest_ method _getUserPrincipal_ or the _SecurityContext_
-method _getCallerPrincipal_ in the calling servlet or server page.
+method _getCallerPrincipal_ in the calling servlet or Pages page.
 (However, if the _HttpServletRequest_ or _SecurityContext_ method
 _getCallerPrincipal_ returns _null_ , the principal used in calls to
 enterprise beans is not specified by this specification, although it

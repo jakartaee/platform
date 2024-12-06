@@ -2,11 +2,11 @@
 
 == Decorators in Jakarta EE
 
-When running in Jakarta EE, the container must extend the rules defined for managed beans in <<decorators>> to EJB session beans.
+When running in Jakarta EE, the container must extend the rules defined for managed beans in <<decorators>> to session enterprise beans.
 
 [[decorator_bean_ee]]
 
 === Decorator beans in Jakarta EE
 
-Decorators of an EJB session bean must comply with the bean provider programming restrictions defined by the EJB specification.
-Decorators of an EJB stateful session bean must comply with the rules for instance passivation and conversational state defined by the EJB specification.
+Decorators of a session enteprise bean must comply with the bean provider programming restrictions defined by the Jakarta Enterprise Beans specification.
+Decorators of a stateful session enterprise bean must comply with the rules for instance passivation and conversational state defined by the Jakarta Enterprise Beans specification.

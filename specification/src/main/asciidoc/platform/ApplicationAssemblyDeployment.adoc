@@ -214,7 +214,7 @@ resource of the required type.
 
 Some resources have default mapping rules
 specified; see sections <<a2009, Default Data Source>>, <<a2025, Default Jakarta Messaging Connection Factory>>, and
-<<a2042, Default Concurrency Utilities Objects>>. By default, a product must map otherwise unmapped
+<<a2042, Default Jakarta Concurrency Objects>>. By default, a product must map otherwise unmapped
 resources using these default rules. A product may include an option to
 disable or override these default mapping rules.
 

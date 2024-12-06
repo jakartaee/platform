@@ -289,24 +289,6 @@
       <g
          id="g3932"
          style="stroke-width:0.595461">
-        <rect
-           y="263.56372"
-           x="434.57999"
-           height="16.35257"
-           width="32.705139"
-           id="rect3923"
-           style="color:#000000;overflow:visible;fill:#4d4d4d;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:1.19092;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
-        <text
-           id="text3927"
-           y="275.46329"
-           x="471.51404"
-           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.5833px;line-height:125%;font-family:sans-serif;-inkscape-font-specification:sans-serif;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.157549px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-           xml:space="preserve"><tspan
-             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:sans-serif;-inkscape-font-specification:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.157549px"
-             y="275.46329"
-             x="471.51404"
-             id="tspan3925"
-             sodipodi:role="line">Optional in Jakarta EE 9</tspan></text>
         <path
            style="stroke:none;stroke-width:3.40263"
            d=""
@@ -502,10 +484,6 @@
            style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:sans-serif;-inkscape-font-specification:sans-serif;text-align:center;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.168552px"
            id="tspan4330">SSL</tspan></text>
     </g>
-    <path
-       style="fill:#bdbfbc;fill-opacity:1;stroke:#000000;stroke-width:14.2988;stroke-linecap:square;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-       d="m -1053.8629,2344.1369 v -60.4745 h 130.64318 130.64315 v 60.4745 60.4746 h -130.64315 -130.64318 z"
-       id="path1293" />
     <rect
        y="-1871.3733"
        x="-2127.5825"
@@ -556,9 +534,9 @@
        transform="scale(1.0009154,0.99908543)"><tspan
          sodipodi:role="line"
          id="tspan1390"
-         x="-259.95792"
+         x="-109.95792"
          y="-1729.4202"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:86.5093px;font-family:sans-serif;-inkscape-font-specification:sans-serif;fill:#000000;fill-opacity:1;stroke-width:5.00456;stroke-miterlimit:4;stroke-dasharray:none">Server Pages</tspan></text>
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:86.5093px;font-family:sans-serif;-inkscape-font-specification:sans-serif;fill:#000000;fill-opacity:1;stroke-width:5.00456;stroke-miterlimit:4;stroke-dasharray:none">Pages</tspan></text>
     <path
        sodipodi:nodetypes="cccccc"
        d="m 1414.5185,-1807.4803 v 230.5037 H 897.28547 v -230.5037 l 250.38833,-69.419 z"
@@ -616,75 +594,6 @@
     <g
        transform="matrix(5.0092536,0,0,4.9998642,-324.07196,-1058.2444)"
        id="g2341">
-      <g
-         style="stroke-width:0.849424"
-         id="g1507"
-         transform="rotate(90,358.55265,-281.58092)">
-        <path
-           id="use5061-6-0"
-           style="color:#000000;overflow:visible;fill:#ffffff;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:1.022;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-           d="m 703.01523,-331.57671 v -17.48916 H 563.1663 v 17.48916 z"
-           sodipodi:nodetypes="cccc"
-           inkscape:tile-x0="-59.591586"
-           inkscape:tile-y0="-744.37067" />
-        <text
-           id="text1502"
-           y="-336.7551"
-           x="579.51715"
-           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:12.5px;line-height:1.25;font-family:sans-serif;-inkscape-font-specification:sans-serif;stroke-width:0.264583"
-           xml:space="preserve"><tspan
-             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:12.5px;font-family:sans-serif;-inkscape-font-specification:sans-serif;stroke-width:0.264583"
-             y="-336.7551"
-             x="579.51715"
-             id="tspan1500"
-             sodipodi:role="line">Enterprise Beans</tspan></text>
-      </g>
-      <g
-         style="stroke-width:0.849424"
-         id="g1507-0"
-         transform="rotate(90,349.80807,-290.3255)">
-        <g
-           id="g1536"
-           transform="translate(-4.24302)">
-          <path
-             id="use5061-6-0-1"
-             style="color:#000000;overflow:visible;fill:#ffffff;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:1.022;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-             d="m 707.25825,-331.57671 v -17.48916 H 567.40932 v 17.48916 z"
-             sodipodi:nodetypes="cccc"
-             inkscape:tile-x0="-59.591586"
-             inkscape:tile-y0="-744.37067" />
-          <text
-             id="text1502-5"
-             y="-337.0376"
-             x="570.47589"
-             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:12.5px;line-height:1.25;font-family:sans-serif;-inkscape-font-specification:sans-serif;stroke-width:0.264583"
-             xml:space="preserve"><tspan
-               style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:12.5px;font-family:sans-serif;-inkscape-font-specification:sans-serif;stroke-width:0.264583"
-               y="-337.0376"
-               x="570.47589"
-               id="tspan1500-3"
-               sodipodi:role="line">Expression Language</tspan></text>
-        </g>
-      </g>
-      <path
-         inkscape:tile-y0="-744.37067"
-         inkscape:tile-x0="-59.591586"
-         sodipodi:nodetypes="cccc"
-         d="m 373.57012,62.881658 h 17.48916 v -139.84893 h -17.48916 z"
-         style="color:#000000;overflow:visible;fill:#ffffff;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:1.022;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-         id="use5061-6-0-1-1" />
-      <text
-         xml:space="preserve"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:12.5px;line-height:1.25;font-family:sans-serif;-inkscape-font-specification:sans-serif;text-align:center;text-anchor:middle;stroke-width:0.264583"
-         x="-7.0885887"
-         y="-379.03101"
-         id="text1502-5-1"
-         transform="rotate(90)"><tspan
-           sodipodi:role="line"
-           id="tspan1500-3-9"
-           x="-7.0885887"
-           y="-379.03101"
-           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:12.5px;font-family:sans-serif;-inkscape-font-specification:sans-serif;text-align:center;text-anchor:middle;stroke-width:0.264583">Messaging</tspan></text>
       <path
          id="use5061-6-0-9"
          style="color:#000000;overflow:visible;fill:#ffffff;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:1.022;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
@@ -703,7 +612,7 @@
            y="-360.34555"
            x="-7.0428123"
            id="tspan1500-7"
-           sodipodi:role="line">Transactions</tspan></text>
+           sodipodi:role="line">Enterprise Beans</tspan></text>
       <path
          inkscape:tile-y0="-744.37067"
          inkscape:tile-x0="-59.591586"
@@ -722,7 +631,7 @@
            id="tspan1500-3-8"
            x="-7.2015038"
            y="-342.85638"
-           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:12.5px;font-family:sans-serif;-inkscape-font-specification:sans-serif;text-align:center;text-anchor:middle;stroke-width:0.264583">Activation</tspan></text>
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:12.5px;font-family:sans-serif;-inkscape-font-specification:sans-serif;text-align:center;text-anchor:middle;stroke-width:0.264583">Expression Language</tspan></text>
       <path
          id="use5061-6-0-1-1-5"
          style="color:#000000;overflow:visible;fill:#ffffff;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:1.022;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
@@ -741,7 +650,7 @@
            y="-325.1933"
            x="-7.0763817"
            id="tspan1500-3-9-6"
-           sodipodi:role="line">Mail</tspan></text>
+           sodipodi:role="line">Messaging</tspan></text>
       <path
          id="use5061-6-0-3"
          style="color:#000000;overflow:visible;fill:#ffffff;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:1.022;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
@@ -760,7 +669,7 @@
            y="-307.8262"
            x="-7.7447166"
            id="tspan1500-4"
-           sodipodi:role="line">Connectors</tspan></text>
+           sodipodi:role="line">Transactions</tspan></text>
       <path
          inkscape:tile-y0="-744.37067"
          inkscape:tile-x0="-59.591586"
@@ -779,7 +688,7 @@
            id="tspan1500-3-88"
            x="-8.2635155"
            y="-290.18445"
-           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:12.5px;font-family:sans-serif;-inkscape-font-specification:sans-serif;text-align:center;text-anchor:middle;stroke-width:0.264583">Restful WS</tspan></text>
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:12.5px;font-family:sans-serif;-inkscape-font-specification:sans-serif;text-align:center;text-anchor:middle;stroke-width:0.264583">Activation</tspan></text>
       <path
          id="use5061-6-0-1-1-6"
          style="color:#000000;overflow:visible;fill:#ffffff;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:1.022;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
@@ -798,7 +707,7 @@
            y="-272.72583"
            x="-7.1923485"
            id="tspan1500-3-9-3"
-           sodipodi:role="line">WebSocket</tspan></text>
+           sodipodi:role="line">Mail</tspan></text>
       <path
          id="use5061-6-0-7"
          style="color:#000000;overflow:visible;fill:#ffffff;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:1.022;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
@@ -817,7 +726,7 @@
            y="-255.34651"
            x="-7.311367"
            id="tspan1500-31"
-           sodipodi:role="line">JSON-P</tspan></text>
+           sodipodi:role="line">Connectors</tspan></text>
       <path
          inkscape:tile-y0="-744.37067"
          inkscape:tile-x0="-59.591586"
@@ -836,7 +745,7 @@
            id="tspan1500-3-84"
            x="-7.311367"
            y="-237.85733"
-           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:12.5px;font-family:sans-serif;-inkscape-font-specification:sans-serif;text-align:center;text-anchor:middle;stroke-width:0.264583">JSON-B</tspan></text>
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:12.5px;font-family:sans-serif;-inkscape-font-specification:sans-serif;text-align:center;text-anchor:middle;stroke-width:0.264583">Restful WS</tspan></text>
       <path
          id="use5061-6-0-1-1-61"
          style="color:#000000;overflow:visible;fill:#ffffff;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:1.022;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
@@ -855,7 +764,7 @@
            y="-221.54311"
            x="-7.2076073"
            id="tspan1500-3-9-9"
-           sodipodi:role="line">Concurrency</tspan></text>
+           sodipodi:role="line">WebSocket</tspan></text>
       <path
          id="use5061-6-0-6"
          style="color:#000000;overflow:visible;fill:#ffffff;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:1.022;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
@@ -874,7 +783,7 @@
            y="-202.76915"
            x="-8.2635155"
            id="tspan1500-8"
-           sodipodi:role="line">Batch</tspan></text>
+           sodipodi:role="line">JSON-P</tspan></text>
       <path
          inkscape:tile-y0="-744.37067"
          inkscape:tile-x0="-59.591586"
@@ -893,7 +802,7 @@
            id="tspan1500-3-7"
            x="-7.2015038"
            y="-185.28"
-           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:12.5px;font-family:sans-serif;-inkscape-font-specification:sans-serif;text-align:center;text-anchor:middle;stroke-width:0.264583">Authorization</tspan></text>
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:12.5px;font-family:sans-serif;-inkscape-font-specification:sans-serif;text-align:center;text-anchor:middle;stroke-width:0.264583">JSON-B</tspan></text>
       <path
          id="use5061-6-0-1-1-2"
          style="color:#000000;overflow:visible;fill:#ffffff;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:1.022;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
@@ -912,7 +821,7 @@
            y="-167.79083"
            x="-6.5819969"
            id="tspan1500-3-9-4"
-           sodipodi:role="line">Authentication</tspan></text>
+           sodipodi:role="line">Concurrency</tspan></text>
       <path
          id="use5061-6-0-77"
          style="color:#000000;overflow:visible;fill:#ffffff;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:1.022;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
@@ -931,7 +840,7 @@
            y="-151.58647"
            x="-7.8606834"
            id="tspan1500-75"
-           sodipodi:role="line">Security</tspan></text>
+           sodipodi:role="line">Batch</tspan></text>
       <path
          inkscape:tile-y0="-744.37067"
          inkscape:tile-x0="-59.591586"
@@ -950,7 +859,7 @@
            id="tspan1500-3-2"
            x="-7.8606834"
            y="-134.00879"
-           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:12.5px;font-family:sans-serif;-inkscape-font-specification:sans-serif;text-align:center;text-anchor:middle;stroke-width:0.264583">Standard Tag Library</tspan></text>
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:12.5px;font-family:sans-serif;-inkscape-font-specification:sans-serif;text-align:center;text-anchor:middle;stroke-width:0.264583">Authorization</tspan></text>
       <path
          id="use5061-6-0-1-1-1"
          style="color:#000000;overflow:visible;fill:#ffffff;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:1.022;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
@@ -969,7 +878,7 @@
            y="-115.44542"
            x="-7.1923485"
            id="tspan1500-3-9-64"
-           sodipodi:role="line">Server Faces</tspan></text>
+           sodipodi:role="line">Authentication</tspan></text>
       <path
          id="use5061-6-0-5"
          style="color:#000000;overflow:visible;fill:#ffffff;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:1.022;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
@@ -988,7 +897,7 @@
            y="-98.008133"
            x="-7.2015038"
            id="tspan1500-81"
-           sodipodi:role="line">Annotations</tspan></text>
+           sodipodi:role="line">Security</tspan></text>
       <path
          inkscape:tile-y0="-744.37067"
          inkscape:tile-x0="-59.591586"
@@ -1007,7 +916,7 @@
            id="tspan1500-3-1"
            x="-8.2635155"
            y="-80.50676"
-           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:12.5px;font-family:sans-serif;-inkscape-font-specification:sans-serif;text-align:center;text-anchor:middle;stroke-width:0.264583">Persistence</tspan></text>
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:12.5px;font-family:sans-serif;-inkscape-font-specification:sans-serif;text-align:center;text-anchor:middle;stroke-width:0.264583">Standard Tag Library</tspan></text>
       <path
          id="use5061-6-0-1-1-57"
          style="color:#000000;overflow:visible;fill:#ffffff;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:1.022;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
@@ -1026,7 +935,7 @@
            y="-62.855865"
            x="-7.1130028"
            id="tspan1500-3-9-2"
-           sodipodi:role="line">Bean Validation</tspan></text>
+           sodipodi:role="line">Faces</tspan></text>
       <path
          id="use5061-6-0-76"
          style="color:#000000;overflow:visible;fill:#ffffff;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:1.022;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
@@ -1045,7 +954,7 @@
            y="-46.562992"
            x="-8.2635155"
            id="tspan1500-39"
-           sodipodi:role="line">Managed Beans</tspan></text>
+           sodipodi:role="line">Annotations</tspan></text>
       <path
          inkscape:tile-y0="-744.37067"
          inkscape:tile-x0="-59.591586"
@@ -1064,7 +973,7 @@
            id="tspan1500-3-26"
            x="-7.878994"
            y="-29.244713"
-           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:12.5px;font-family:sans-serif;-inkscape-font-specification:sans-serif;text-align:center;text-anchor:middle;stroke-width:0.264583">Interceptors</tspan></text>
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:12.5px;font-family:sans-serif;-inkscape-font-specification:sans-serif;text-align:center;text-anchor:middle;stroke-width:0.264583">Persistence</tspan></text>
       <path
          id="use5061-6-0-1-1-0"
          style="color:#000000;overflow:visible;fill:#ffffff;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:1.022;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
@@ -1083,29 +992,10 @@
            y="-10.498242"
            x="-6.9695702"
            id="tspan1500-3-9-21"
-           sodipodi:role="line">CDI &amp; DI</tspan></text>
-      <path
-         inkscape:tile-y0="-744.37067"
-         inkscape:tile-x0="-59.591586"
-         sodipodi:nodetypes="cccc"
-         d="m -28.680603,62.881658 h 17.48916 v -139.84893 h -17.48916 z"
-         style="color:#000000;overflow:visible;fill:#bdbfbc;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:1.022;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-         id="use5061-6-0-1-88" />
-      <text
-         xml:space="preserve"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:12.5px;line-height:1.25;font-family:sans-serif;-inkscape-font-specification:sans-serif;text-align:center;text-anchor:middle;stroke-width:0.264583"
-         x="-8.2635155"
-         y="23.305164"
-         id="text1502-5-41"
-         transform="rotate(90)"><tspan
-           sodipodi:role="line"
-           id="tspan1500-3-79"
-           x="-8.2635155"
-           y="23.305164"
-           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:12.5px;font-family:sans-serif;-inkscape-font-specification:sans-serif;text-align:center;text-anchor:middle;stroke-width:0.264583">Enterprise WS</tspan></text>
+           sodipodi:role="line">Validation</tspan></text>
       <path
          id="use5061-6-0-55"
-         style="color:#000000;overflow:visible;fill:#bdbfbc;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:1.022;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         style="color:#000000;overflow:visible;fill:#ffffff;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:1.022;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
          d="M -11.191433,62.881658 H 6.2977272 V -76.967272 H -11.191433 Z"
          sodipodi:nodetypes="cccc"
          inkscape:tile-x0="-59.591586"
@@ -1121,10 +1011,29 @@
            y="5.9044986"
            x="-7.4578514"
            id="tspan1500-9"
-           sodipodi:role="line">XML Binding</tspan></text>
+           sodipodi:role="line">Data</tspan></text>
+      <path
+         inkscape:tile-y0="-744.37067"
+         inkscape:tile-x0="-59.591586"
+         sodipodi:nodetypes="cccc"
+         d="m -28.680603,62.881658 h 17.48916 v -139.84893 h -17.48916 z"
+         style="color:#000000;overflow:visible;fill:#ffffff;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:1.022;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         id="use5061-6-0-1-88" />
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:12.5px;line-height:1.25;font-family:sans-serif;-inkscape-font-specification:sans-serif;text-align:center;text-anchor:middle;stroke-width:0.264583"
+         x="-8.2635155"
+         y="23.305164"
+         id="text1502-5-41"
+         transform="rotate(90)"><tspan
+           sodipodi:role="line"
+           id="tspan1500-3-79"
+           x="-8.2635155"
+           y="23.305164"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:12.5px;font-family:sans-serif;-inkscape-font-specification:sans-serif;text-align:center;text-anchor:middle;stroke-width:0.264583">Interceptors</tspan></text>
       <path
          id="use5061-6-0-1-1-4"
-         style="color:#000000;overflow:visible;fill:#bdbfbc;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:1.022;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         style="color:#000000;overflow:visible;fill:#ffffff;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:1.022;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
          d="m -46.169756,62.881658 h 17.489163 v -139.84893 h -17.489163 z"
          sodipodi:nodetypes="cccc"
          inkscape:tile-x0="-59.591586"
@@ -1140,50 +1049,7 @@
            y="42.079082"
            x="-6.9451561"
            id="tspan1500-3-9-24"
-           sodipodi:role="line">XML Web Service</tspan></text>
-      <path
-         id="use5061-6-0-53"
-         style="color:#000000;overflow:visible;fill:#bdbfbc;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:1.022;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-         d="m -63.658916,62.881658 h 17.48916 v -139.84893 h -17.48916 z"
-         sodipodi:nodetypes="cccc"
-         inkscape:tile-x0="-59.591586"
-         inkscape:tile-y0="-744.37067" />
-      <text
-         id="text1502-44"
-         y="59.568279"
-         x="-7.6043358"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:12.5px;line-height:1.25;font-family:sans-serif;-inkscape-font-specification:sans-serif;text-align:center;text-anchor:middle;stroke-width:0.264583"
-         xml:space="preserve"
-         transform="rotate(90)"><tspan
-           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:12.5px;font-family:sans-serif;-inkscape-font-specification:sans-serif;text-align:center;text-anchor:middle;stroke-width:0.264583"
-           y="59.568279"
-           x="-7.6043358"
-           id="tspan1500-95"
-           sodipodi:role="line">WS Metadata</tspan></text>
-      <path
-         inkscape:tile-y0="-744.37067"
-         inkscape:tile-x0="-59.591586"
-         sodipodi:nodetypes="cccc"
-         d="m -99.225736,62.881658 h 35.56682 v -139.84893 h -35.56682 z"
-         style="color:#000000;overflow:visible;fill:#bdbfbc;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:1.02359;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-         id="use5061-6-0-1-97" />
-      <text
-         xml:space="preserve"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:12.5px;line-height:1.25;font-family:sans-serif;-inkscape-font-specification:sans-serif;text-align:center;text-anchor:middle;stroke-width:0.264583"
-         x="-7.2015038"
-         y="78.28376"
-         id="text1502-5-61"
-         transform="rotate(90)"><tspan
-           sodipodi:role="line"
-           id="tspan1500-3-4"
-           x="-7.2015038"
-           y="78.28376"
-           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:12.5px;font-family:sans-serif;-inkscape-font-specification:sans-serif;text-align:center;text-anchor:middle;stroke-width:0.264583">SOAP with </tspan><tspan
-           sodipodi:role="line"
-           x="-7.2015038"
-           y="93.90876"
-           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:12.5px;font-family:sans-serif;-inkscape-font-specification:sans-serif;text-align:center;text-anchor:middle;stroke-width:0.264583"
-           id="tspan1837">Attachments</tspan></text>
+           sodipodi:role="line">CDI &amp; DI</tspan></text>
     </g>
     <g
        id="g2128"
@@ -1282,82 +1148,6 @@
         <g
            id="g1345">
           <path
-             id="use5061-6-0-1-1-25"
-             style="color:#000000;overflow:visible;fill:#ffffff;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:1.022;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-             d="m -50.126145,435.86553 h 17.48916 V 296.0166 h -17.48916 z"
-             sodipodi:nodetypes="cccc"
-             inkscape:tile-x0="-59.591586"
-             inkscape:tile-y0="-744.37067" />
-          <text
-             transform="rotate(90)"
-             id="text1502-5-1-96"
-             y="44.665257"
-             x="365.89529"
-             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:12.5px;line-height:1.25;font-family:sans-serif;-inkscape-font-specification:sans-serif;text-align:center;text-anchor:middle;stroke-width:0.264583"
-             xml:space="preserve"><tspan
-               style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:12.5px;font-family:sans-serif;-inkscape-font-specification:sans-serif;text-align:center;text-anchor:middle;stroke-width:0.264583"
-               y="44.665257"
-               x="365.89529"
-               id="tspan1500-3-9-37"
-               sodipodi:role="line">Messaging</tspan></text>
-          <path
-             id="use5061-6-0-1-8-3"
-             style="color:#000000;overflow:visible;fill:#ffffff;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:1.022;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-             d="m -67.615305,435.86553 h 17.48916 V 296.0166 h -17.48916 z"
-             sodipodi:nodetypes="cccc"
-             inkscape:tile-x0="-59.591586"
-             inkscape:tile-y0="-744.37067" />
-          <text
-             transform="rotate(90)"
-             id="text1502-5-5-8"
-             y="63.350708"
-             x="365.78238"
-             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:12.5px;line-height:1.25;font-family:sans-serif;-inkscape-font-specification:sans-serif;text-align:center;text-anchor:middle;stroke-width:0.264583"
-             xml:space="preserve"><tspan
-               style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:12.5px;font-family:sans-serif;-inkscape-font-specification:sans-serif;text-align:center;text-anchor:middle;stroke-width:0.264583"
-               y="63.350708"
-               x="365.78238"
-               id="tspan1500-3-8-0"
-               sodipodi:role="line">Activation</tspan></text>
-          <path
-             inkscape:tile-y0="-744.37067"
-             inkscape:tile-x0="-59.591586"
-             sodipodi:nodetypes="cccc"
-             d="m -85.104465,435.86553 h 17.48916 V 296.0166 h -17.48916 z"
-             style="color:#000000;overflow:visible;fill:#ffffff;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:1.022;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-             id="use5061-6-0-1-1-5-8" />
-          <text
-             transform="rotate(90)"
-             xml:space="preserve"
-             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:12.5px;line-height:1.25;font-family:sans-serif;-inkscape-font-specification:sans-serif;text-align:center;text-anchor:middle;stroke-width:0.264583"
-             x="365.9075"
-             y="81.013794"
-             id="text1502-5-1-1-3"><tspan
-               sodipodi:role="line"
-               id="tspan1500-3-9-6-1"
-               x="365.9075"
-               y="81.013794"
-               style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:12.5px;font-family:sans-serif;-inkscape-font-specification:sans-serif;text-align:center;text-anchor:middle;stroke-width:0.264583">Mail</tspan></text>
-          <path
-             inkscape:tile-y0="-744.37067"
-             inkscape:tile-x0="-59.591586"
-             sodipodi:nodetypes="cccc"
-             d="m -102.59363,435.86553 h 17.489165 V 296.0166 h -17.489165 z"
-             style="color:#000000;overflow:visible;fill:#ffffff;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:1.022;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-             id="use5061-6-0-7-9" />
-          <text
-             transform="rotate(90)"
-             xml:space="preserve"
-             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:12.5px;line-height:1.25;font-family:sans-serif;-inkscape-font-specification:sans-serif;text-align:center;text-anchor:middle;stroke-width:0.264583"
-             x="365.67252"
-             y="98.393112"
-             id="text1502-8-8"><tspan
-               sodipodi:role="line"
-               id="tspan1500-31-7"
-               x="365.67252"
-               y="98.393112"
-               style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:12.5px;font-family:sans-serif;-inkscape-font-specification:sans-serif;text-align:center;text-anchor:middle;stroke-width:0.264583">JSON-P</tspan></text>
-          <path
              id="use5061-6-0-1-6-2"
              style="color:#000000;overflow:visible;fill:#ffffff;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:1.022;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
              d="m -120.08281,435.86553 h 17.48916 V 296.0166 h -17.48916 z"
@@ -1375,7 +1165,7 @@
                y="115.88229"
                x="365.67252"
                id="tspan1500-3-84-2"
-               sodipodi:role="line">JSON-B</tspan></text>
+               sodipodi:role="line">Messaging</tspan></text>
           <path
              inkscape:tile-y0="-744.37067"
              inkscape:tile-x0="-59.591586"
@@ -1394,7 +1184,7 @@
                id="tspan1500-81-9"
                x="365.78238"
                y="133.30737"
-               style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:12.5px;font-family:sans-serif;-inkscape-font-specification:sans-serif;text-align:center;text-anchor:middle;stroke-width:0.264583">Annotations</tspan></text>
+               style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:12.5px;font-family:sans-serif;-inkscape-font-specification:sans-serif;text-align:center;text-anchor:middle;stroke-width:0.264583">Activation</tspan></text>
           <path
              id="use5061-6-0-1-98-3"
              style="color:#000000;overflow:visible;fill:#ffffff;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:1.022;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
@@ -1413,7 +1203,7 @@
                y="150.80875"
                x="364.72037"
                id="tspan1500-3-1-1"
-               sodipodi:role="line">Persistence</tspan></text>
+               sodipodi:role="line">Mail</tspan></text>
           <path
              inkscape:tile-y0="-744.37067"
              inkscape:tile-x0="-59.591586"
@@ -1432,7 +1222,7 @@
                id="tspan1500-3-9-2-9"
                x="365.87088"
                y="168.45964"
-               style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:12.5px;font-family:sans-serif;-inkscape-font-specification:sans-serif;text-align:center;text-anchor:middle;stroke-width:0.264583">Bean Validation</tspan></text>
+               style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:12.5px;font-family:sans-serif;-inkscape-font-specification:sans-serif;text-align:center;text-anchor:middle;stroke-width:0.264583">JSON-P</tspan></text>
           <path
              inkscape:tile-y0="-744.37067"
              inkscape:tile-x0="-59.591586"
@@ -1451,7 +1241,7 @@
                id="tspan1500-39-1"
                x="364.72037"
                y="184.7525"
-               style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:12.5px;font-family:sans-serif;-inkscape-font-specification:sans-serif;text-align:center;text-anchor:middle;stroke-width:0.264583">Managed Beans</tspan></text>
+               style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:12.5px;font-family:sans-serif;-inkscape-font-specification:sans-serif;text-align:center;text-anchor:middle;stroke-width:0.264583">JSON-B</tspan></text>
           <path
              id="use5061-6-0-1-96-7"
              style="color:#000000;overflow:visible;fill:#ffffff;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:1.022;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
@@ -1470,7 +1260,7 @@
                y="202.07079"
                x="365.10489"
                id="tspan1500-3-26-0"
-               sodipodi:role="line">Interceptors</tspan></text>
+               sodipodi:role="line">Annotations</tspan></text>
           <path
              inkscape:tile-y0="-744.37067"
              inkscape:tile-x0="-59.591586"
@@ -1489,10 +1279,29 @@
                id="tspan1500-3-9-21-9"
                x="366.01431"
                y="220.81726"
-               style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:12.5px;font-family:sans-serif;-inkscape-font-specification:sans-serif;text-align:center;text-anchor:middle;stroke-width:0.264583">CDI &amp; DI</tspan></text>
+               style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:12.5px;font-family:sans-serif;-inkscape-font-specification:sans-serif;text-align:center;text-anchor:middle;stroke-width:0.264583">Persistence</tspan></text>
+          <path
+             inkscape:tile-y0="-744.37067"
+             inkscape:tile-x0="-59.591586"
+             sodipodi:nodetypes="cccc"
+             d="m -242.50693,435.86553 h 17.48916 V 296.0166 h -17.48916 z"
+             style="color:#000000;overflow:visible;fill:#ffffff;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:1.022;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+             id="use5061-6-0-55-3" />
+          <text
+             transform="rotate(90)"
+             xml:space="preserve"
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:12.5px;line-height:1.25;font-family:sans-serif;-inkscape-font-specification:sans-serif;text-align:center;text-anchor:middle;stroke-width:0.264583"
+             x="365.52603"
+             y="237.22"
+             id="text1502-36-2"><tspan
+               sodipodi:role="line"
+               id="tspan1500-9-2"
+               x="365.52603"
+               y="237.22"
+               style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:12.5px;font-family:sans-serif;-inkscape-font-specification:sans-serif;text-align:center;text-anchor:middle;stroke-width:0.264583">Validation</tspan></text>
           <path
              id="use5061-6-0-1-88-2"
-             style="color:#000000;overflow:visible;fill:#bdbfbc;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:1.022;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+             style="color:#000000;overflow:visible;fill:#ffffff;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:1.022;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
              d="m -259.9961,435.86553 h 17.48916 V 296.0166 h -17.48916 z"
              sodipodi:nodetypes="cccc"
              inkscape:tile-x0="-59.591586"
@@ -1508,32 +1317,13 @@
                y="254.6207"
                x="364.72037"
                id="tspan1500-3-79-9"
-               sodipodi:role="line">Enterprise WS</tspan></text>
-          <path
-             inkscape:tile-y0="-744.37067"
-             inkscape:tile-x0="-59.591586"
-             sodipodi:nodetypes="cccc"
-             d="m -242.50693,435.86553 h 17.48916 V 296.0166 h -17.48916 z"
-             style="color:#000000;overflow:visible;fill:#bdbfbc;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:1.022;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-             id="use5061-6-0-55-3" />
-          <text
-             transform="rotate(90)"
-             xml:space="preserve"
-             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:12.5px;line-height:1.25;font-family:sans-serif;-inkscape-font-specification:sans-serif;text-align:center;text-anchor:middle;stroke-width:0.264583"
-             x="365.52603"
-             y="237.22"
-             id="text1502-36-2"><tspan
-               sodipodi:role="line"
-               id="tspan1500-9-2"
-               x="365.52603"
-               y="237.22"
-               style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:12.5px;font-family:sans-serif;-inkscape-font-specification:sans-serif;text-align:center;text-anchor:middle;stroke-width:0.264583">XML Binding</tspan></text>
+               sodipodi:role="line">Interceptors</tspan></text>
           <path
              inkscape:tile-y0="-744.37067"
              inkscape:tile-x0="-59.591586"
              sodipodi:nodetypes="cccc"
              d="m -277.48526,435.86553 h 17.48917 V 296.0166 h -17.48917 z"
-             style="color:#000000;overflow:visible;fill:#bdbfbc;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:1.022;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+             style="color:#000000;overflow:visible;fill:#ffffff;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:1.022;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
              id="use5061-6-0-1-1-4-2" />
           <text
              transform="rotate(90)"
@@ -1546,50 +1336,7 @@
                id="tspan1500-3-9-24-5"
                x="366.03873"
                y="273.39456"
-               style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:12.5px;font-family:sans-serif;-inkscape-font-specification:sans-serif;text-align:center;text-anchor:middle;stroke-width:0.264583">XML Web Service</tspan></text>
-          <path
-             inkscape:tile-y0="-744.37067"
-             inkscape:tile-x0="-59.591586"
-             sodipodi:nodetypes="cccc"
-             d="m -294.97442,435.86553 h 17.48916 V 296.0166 h -17.48916 z"
-             style="color:#000000;overflow:visible;fill:#bdbfbc;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:1.022;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-             id="use5061-6-0-53-3" />
-          <text
-             transform="rotate(90)"
-             xml:space="preserve"
-             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:12.5px;line-height:1.25;font-family:sans-serif;-inkscape-font-specification:sans-serif;text-align:center;text-anchor:middle;stroke-width:0.264583"
-             x="365.37955"
-             y="290.88376"
-             id="text1502-44-4"><tspan
-               sodipodi:role="line"
-               id="tspan1500-95-5"
-               x="365.37955"
-               y="290.88376"
-               style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:12.5px;font-family:sans-serif;-inkscape-font-specification:sans-serif;text-align:center;text-anchor:middle;stroke-width:0.264583">WS Metadata</tspan></text>
-          <path
-             id="use5061-6-0-1-97-6"
-             style="color:#000000;overflow:visible;fill:#bdbfbc;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:1.02359;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-             d="m -330.54124,435.86553 h 35.56682 V 296.0166 h -35.56682 z"
-             sodipodi:nodetypes="cccc"
-             inkscape:tile-x0="-59.591586"
-             inkscape:tile-y0="-744.37067" />
-          <text
-             transform="rotate(90)"
-             id="text1502-5-61-8"
-             y="309.59924"
-             x="365.78238"
-             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:12.5px;line-height:1.25;font-family:sans-serif;-inkscape-font-specification:sans-serif;text-align:center;text-anchor:middle;stroke-width:0.264583"
-             xml:space="preserve"><tspan
-               style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:12.5px;font-family:sans-serif;-inkscape-font-specification:sans-serif;text-align:center;text-anchor:middle;stroke-width:0.264583"
-               y="309.59924"
-               x="365.78238"
-               id="tspan1500-3-4-3"
-               sodipodi:role="line">SOAP with </tspan><tspan
-               id="tspan1837-7"
-               style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:12.5px;font-family:sans-serif;-inkscape-font-specification:sans-serif;text-align:center;text-anchor:middle;stroke-width:0.264583"
-               y="325.22424"
-               x="365.78238"
-               sodipodi:role="line">Attachments</tspan></text>
+               style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:12.5px;font-family:sans-serif;-inkscape-font-specification:sans-serif;text-align:center;text-anchor:middle;stroke-width:0.264583">CDI &amp; DI</tspan></text>
         </g>
       </g>
     </g>
@@ -1686,63 +1433,6 @@
          id="g3830"
          transform="matrix(5.0092536,0,0,4.9998642,-325.75061,-1037.0734)">
         <path
-           inkscape:tile-y0="-744.37067"
-           inkscape:tile-x0="-59.591586"
-           sodipodi:nodetypes="cccc"
-           d="m 510.56806,412.78773 h 17.48916 V 272.9388 h -17.48916 z"
-           style="color:#000000;overflow:visible;fill:#ffffff;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:1.022;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-           id="use5061-6-0-1-1-7" />
-        <text
-           xml:space="preserve"
-           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:12.5px;line-height:1.25;font-family:sans-serif;-inkscape-font-specification:sans-serif;text-align:center;text-anchor:middle;stroke-width:0.264583"
-           x="342.81769"
-           y="-516.02893"
-           id="text1502-5-1-0"
-           transform="rotate(90)"><tspan
-             sodipodi:role="line"
-             id="tspan1500-3-9-5"
-             x="342.81769"
-             y="-516.02893"
-             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:12.5px;font-family:sans-serif;-inkscape-font-specification:sans-serif;text-align:center;text-anchor:middle;stroke-width:0.264583">Messaging</tspan></text>
-        <path
-           id="use5061-6-0-9-8"
-           style="color:#000000;overflow:visible;fill:#ffffff;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:1.022;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-           d="m 493.0789,412.78773 h 17.48916 V 272.9388 H 493.0789 Z"
-           sodipodi:nodetypes="cccc"
-           inkscape:tile-x0="-59.591586"
-           inkscape:tile-y0="-744.37067" />
-        <text
-           id="text1502-4-7"
-           y="-497.34351"
-           x="342.86346"
-           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:12.5px;line-height:1.25;font-family:sans-serif;-inkscape-font-specification:sans-serif;text-align:center;text-anchor:middle;stroke-width:0.264583"
-           xml:space="preserve"
-           transform="rotate(90)"><tspan
-             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:12.5px;font-family:sans-serif;-inkscape-font-specification:sans-serif;text-align:center;text-anchor:middle;stroke-width:0.264583"
-             y="-497.34351"
-             x="342.86346"
-             id="tspan1500-7-3"
-             sodipodi:role="line">Transactions</tspan></text>
-        <path
-           inkscape:tile-y0="-744.37067"
-           inkscape:tile-x0="-59.591586"
-           sodipodi:nodetypes="cccc"
-           d="m 475.58973,412.78773 h 17.48916 V 272.9388 h -17.48916 z"
-           style="color:#000000;overflow:visible;fill:#ffffff;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:1.022;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-           id="use5061-6-0-1-8-38" />
-        <text
-           xml:space="preserve"
-           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:12.5px;line-height:1.25;font-family:sans-serif;-inkscape-font-specification:sans-serif;text-align:center;text-anchor:middle;stroke-width:0.264583"
-           x="342.70477"
-           y="-479.85431"
-           id="text1502-5-5-6"
-           transform="rotate(90)"><tspan
-             sodipodi:role="line"
-             id="tspan1500-3-8-7"
-             x="342.70477"
-             y="-479.85431"
-             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:12.5px;font-family:sans-serif;-inkscape-font-specification:sans-serif;text-align:center;text-anchor:middle;stroke-width:0.264583">Activation</tspan></text>
-        <path
            id="use5061-6-0-1-1-5-2"
            style="color:#000000;overflow:visible;fill:#ffffff;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:1.022;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
            d="m 458.10057,412.78773 h 17.48916 V 272.9388 h -17.48916 z"
@@ -1760,7 +1450,7 @@
              y="-462.19122"
              x="342.8299"
              id="tspan1500-3-9-6-7"
-             sodipodi:role="line">Mail</tspan></text>
+             sodipodi:role="line">Messaging</tspan></text>
         <path
            id="use5061-6-0-3-8"
            style="color:#000000;overflow:visible;fill:#ffffff;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:1.022;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
@@ -1779,7 +1469,7 @@
              y="-444.82416"
              x="342.16156"
              id="tspan1500-4-8"
-             sodipodi:role="line">Connectors</tspan></text>
+             sodipodi:role="line">Transactions</tspan></text>
         <path
            id="use5061-6-0-7-90"
            style="color:#000000;overflow:visible;fill:#ffffff;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:1.022;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
@@ -1798,7 +1488,7 @@
              y="-427.32275"
              x="342.59491"
              id="tspan1500-31-3"
-             sodipodi:role="line">JSON-P</tspan></text>
+             sodipodi:role="line">Activation</tspan></text>
         <path
            inkscape:tile-y0="-744.37067"
            inkscape:tile-x0="-59.591586"
@@ -1817,7 +1507,7 @@
              id="tspan1500-3-84-1"
              x="342.59491"
              y="-409.83362"
-             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:12.5px;font-family:sans-serif;-inkscape-font-specification:sans-serif;text-align:center;text-anchor:middle;stroke-width:0.264583">JSON-B</tspan></text>
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:12.5px;font-family:sans-serif;-inkscape-font-specification:sans-serif;text-align:center;text-anchor:middle;stroke-width:0.264583">Mail</tspan></text>
         <path
            id="use5061-6-0-1-1-61-5"
            style="color:#000000;overflow:visible;fill:#ffffff;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:1.022;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
@@ -1836,7 +1526,7 @@
              y="-393.51935"
              x="342.69867"
              id="tspan1500-3-9-9-0"
-             sodipodi:role="line">Concurrency</tspan></text>
+             sodipodi:role="line">Connectors</tspan></text>
         <path
            id="use5061-6-0-6-3"
            style="color:#000000;overflow:visible;fill:#ffffff;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:1.022;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
@@ -1855,7 +1545,7 @@
              y="-374.74542"
              x="341.64276"
              id="tspan1500-8-7"
-             sodipodi:role="line">Batch</tspan></text>
+             sodipodi:role="line">JSON-P</tspan></text>
         <path
            inkscape:tile-y0="-744.37067"
            inkscape:tile-x0="-59.591586"
@@ -1874,7 +1564,7 @@
              id="tspan1500-3-7-3"
              x="342.70477"
              y="-357.25626"
-             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:12.5px;font-family:sans-serif;-inkscape-font-specification:sans-serif;text-align:center;text-anchor:middle;stroke-width:0.264583">Authorization</tspan></text>
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:12.5px;font-family:sans-serif;-inkscape-font-specification:sans-serif;text-align:center;text-anchor:middle;stroke-width:0.264583">JSON-B</tspan></text>
         <path
            id="use5061-6-0-1-1-2-8"
            style="color:#000000;overflow:visible;fill:#ffffff;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:1.022;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
@@ -1893,7 +1583,7 @@
              y="-339.76709"
              x="343.32428"
              id="tspan1500-3-9-4-6"
-             sodipodi:role="line">Authentication</tspan></text>
+             sodipodi:role="line">Concurrency</tspan></text>
         <path
            id="use5061-6-0-77-9"
            style="color:#000000;overflow:visible;fill:#ffffff;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:1.022;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
@@ -1912,7 +1602,7 @@
              y="-323.56274"
              x="342.04559"
              id="tspan1500-75-4"
-             sodipodi:role="line">Security</tspan></text>
+             sodipodi:role="line">Batch</tspan></text>
         <path
            id="use5061-6-0-5-4"
            style="color:#000000;overflow:visible;fill:#ffffff;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:1.022;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
@@ -1931,7 +1621,7 @@
              y="-304.96274"
              x="342.70477"
              id="tspan1500-81-97"
-             sodipodi:role="line">Annotations</tspan></text>
+             sodipodi:role="line">Authorization</tspan></text>
         <path
            inkscape:tile-y0="-744.37067"
            inkscape:tile-x0="-59.591586"
@@ -1950,7 +1640,7 @@
              id="tspan1500-3-1-5"
              x="341.64276"
              y="-287.46136"
-             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:12.5px;font-family:sans-serif;-inkscape-font-specification:sans-serif;text-align:center;text-anchor:middle;stroke-width:0.264583">Persistence</tspan></text>
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:12.5px;font-family:sans-serif;-inkscape-font-specification:sans-serif;text-align:center;text-anchor:middle;stroke-width:0.264583">Authentication</tspan></text>
         <path
            id="use5061-6-0-1-1-57-67"
            style="color:#000000;overflow:visible;fill:#ffffff;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:1.022;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
@@ -1969,7 +1659,7 @@
              y="-269.81046"
              x="342.79327"
              id="tspan1500-3-9-2-0"
-             sodipodi:role="line">Bean Validation</tspan></text>
+             sodipodi:role="line">Security</tspan></text>
         <path
            id="use5061-6-0-76-8"
            style="color:#000000;overflow:visible;fill:#ffffff;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:1.022;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
@@ -1988,7 +1678,7 @@
              y="-253.51758"
              x="341.64276"
              id="tspan1500-39-5"
-             sodipodi:role="line">Managed Beans</tspan></text>
+             sodipodi:role="line">Annotations</tspan></text>
         <path
            inkscape:tile-y0="-744.37067"
            inkscape:tile-x0="-59.591586"
@@ -2007,7 +1697,7 @@
              id="tspan1500-3-26-08"
              x="342.02728"
              y="-236.19931"
-             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:12.5px;font-family:sans-serif;-inkscape-font-specification:sans-serif;text-align:center;text-anchor:middle;stroke-width:0.264583">Interceptors</tspan></text>
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:12.5px;font-family:sans-serif;-inkscape-font-specification:sans-serif;text-align:center;text-anchor:middle;stroke-width:0.264583">Persistence</tspan></text>
         <path
            id="use5061-6-0-1-1-0-8"
            style="color:#000000;overflow:visible;fill:#ffffff;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:1.022;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
@@ -2026,29 +1716,10 @@
              y="-217.45282"
              x="342.93671"
              id="tspan1500-3-9-21-93"
-             sodipodi:role="line">CDI &amp; DI</tspan></text>
-        <path
-           inkscape:tile-y0="-744.37067"
-           inkscape:tile-x0="-59.591586"
-           sodipodi:nodetypes="cccc"
-           d="m 178.27399,412.78773 h 17.48916 V 272.9388 h -17.48916 z"
-           style="color:#000000;overflow:visible;fill:#bdbfbc;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:1.022;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-           id="use5061-6-0-1-88-4" />
-        <text
-           xml:space="preserve"
-           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:12.5px;line-height:1.25;font-family:sans-serif;-inkscape-font-specification:sans-serif;text-align:center;text-anchor:middle;stroke-width:0.264583"
-           x="341.64276"
-           y="-183.64941"
-           id="text1502-5-41-3"
-           transform="rotate(90)"><tspan
-             sodipodi:role="line"
-             id="tspan1500-3-79-6"
-             x="341.64276"
-             y="-183.64941"
-             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:12.5px;font-family:sans-serif;-inkscape-font-specification:sans-serif;text-align:center;text-anchor:middle;stroke-width:0.264583">Enterprise WS</tspan></text>
+             sodipodi:role="line">Validation</tspan></text>
         <path
            id="use5061-6-0-55-4"
-           style="color:#000000;overflow:visible;fill:#bdbfbc;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:1.022;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+           style="color:#000000;overflow:visible;fill:#ffffff;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:1.022;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
            d="m 195.76316,412.78773 h 17.48916 V 272.9388 h -17.48916 z"
            sodipodi:nodetypes="cccc"
            inkscape:tile-x0="-59.591586"
@@ -2064,10 +1735,29 @@
              y="-201.05008"
              x="342.44843"
              id="tspan1500-9-5"
-             sodipodi:role="line">XML Binding</tspan></text>
+             sodipodi:role="line">Data</tspan></text>
+        <path
+           inkscape:tile-y0="-744.37067"
+           inkscape:tile-x0="-59.591586"
+           sodipodi:nodetypes="cccc"
+           d="m 178.27399,412.78773 h 17.48916 V 272.9388 h -17.48916 z"
+           style="color:#000000;overflow:visible;fill:#ffffff;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:1.022;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+           id="use5061-6-0-1-88-4" />
+        <text
+           xml:space="preserve"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:12.5px;line-height:1.25;font-family:sans-serif;-inkscape-font-specification:sans-serif;text-align:center;text-anchor:middle;stroke-width:0.264583"
+           x="341.64276"
+           y="-183.64941"
+           id="text1502-5-41-3"
+           transform="rotate(90)"><tspan
+             sodipodi:role="line"
+             id="tspan1500-3-79-6"
+             x="341.64276"
+             y="-183.64941"
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:12.5px;font-family:sans-serif;-inkscape-font-specification:sans-serif;text-align:center;text-anchor:middle;stroke-width:0.264583">Interceptors</tspan></text>
         <path
            id="use5061-6-0-1-1-4-6"
-           style="color:#000000;overflow:visible;fill:#bdbfbc;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:1.022;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+           style="color:#000000;overflow:visible;fill:#ffffff;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:1.022;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
            d="M 160.78483,412.78773 H 178.274 V 272.9388 h -17.48917 z"
            sodipodi:nodetypes="cccc"
            inkscape:tile-x0="-59.591586"
@@ -2083,50 +1773,7 @@
              y="-164.87552"
              x="342.96112"
              id="tspan1500-3-9-24-2"
-             sodipodi:role="line">XML Web Service</tspan></text>
-        <path
-           id="use5061-6-0-53-8"
-           style="color:#000000;overflow:visible;fill:#bdbfbc;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:1.022;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-           d="m 143.29567,412.78773 h 17.48916 V 272.9388 h -17.48916 z"
-           sodipodi:nodetypes="cccc"
-           inkscape:tile-x0="-59.591586"
-           inkscape:tile-y0="-744.37067" />
-        <text
-           id="text1502-44-8"
-           y="-147.38632"
-           x="342.30194"
-           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:12.5px;line-height:1.25;font-family:sans-serif;-inkscape-font-specification:sans-serif;text-align:center;text-anchor:middle;stroke-width:0.264583"
-           xml:space="preserve"
-           transform="rotate(90)"><tspan
-             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:12.5px;font-family:sans-serif;-inkscape-font-specification:sans-serif;text-align:center;text-anchor:middle;stroke-width:0.264583"
-             y="-147.38632"
-             x="342.30194"
-             id="tspan1500-95-2"
-             sodipodi:role="line">WS Metadata</tspan></text>
-        <path
-           inkscape:tile-y0="-744.37067"
-           inkscape:tile-x0="-59.591586"
-           sodipodi:nodetypes="cccc"
-           d="m 107.72885,412.78773 h 35.56682 V 272.9388 h -35.56682 z"
-           style="color:#000000;overflow:visible;fill:#bdbfbc;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:1.02359;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-           id="use5061-6-0-1-97-64" />
-        <text
-           xml:space="preserve"
-           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:12.5px;line-height:1.25;font-family:sans-serif;-inkscape-font-specification:sans-serif;text-align:center;text-anchor:middle;stroke-width:0.264583"
-           x="342.70477"
-           y="-128.67084"
-           id="text1502-5-61-3"
-           transform="rotate(90)"><tspan
-             sodipodi:role="line"
-             id="tspan1500-3-4-9"
-             x="342.70477"
-             y="-128.67084"
-             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:12.5px;font-family:sans-serif;-inkscape-font-specification:sans-serif;text-align:center;text-anchor:middle;stroke-width:0.264583">SOAP with </tspan><tspan
-             sodipodi:role="line"
-             x="342.70477"
-             y="-113.04584"
-             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:12.5px;font-family:sans-serif;-inkscape-font-specification:sans-serif;text-align:center;text-anchor:middle;stroke-width:0.264583"
-             id="tspan1837-4">Attachments</tspan></text>
+             sodipodi:role="line">CDI &amp; DI</tspan></text>
       </g>
     </g>
     <text
