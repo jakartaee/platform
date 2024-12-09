@@ -27,8 +27,8 @@ The arrows represent required access to other
 parts of the Jakarta EE platform. The Application Client Container provides
 Application Clients with direct access to the Jakarta EE required Database
 through the Java API for connectivity with database systems, the JDBC™
-API. Similar access to databases is provided to server pages, server faces
-applications, and servlets by the Web Container, and to enterprise beans
+API. Similar access to databases is provided to Pages, Faces, and 
+Servlets by the Web Container, and to enterprise beans
 by the Enterprise Beans Container.
 
 As indicated, the APIs of the Java™
@@ -125,15 +125,15 @@ language programs that are typically GUI programs that execute on a
 desktop computer. Application clients offer a user experience similar to
 that of native applications and have access to all of the facilities of
 the Jakarta EE middle tier.
-* Servlets, Server Pages, Server Faces applications,
+* Servlets, Pages, Faces applications,
 Filters, and Web Event Listeners typically execute in a web container
-and may respond to HTTP requests from web clients. Servlets, server pages,
-server faces applications, and filters may be used to generate HTML pages that
+and may respond to HTTP requests from web clients. Servlets, Pages,
+Faces applications, and Filters may be used to generate HTML pages that
 are an application’s user interface. They may also be used to generate
 XML or other format data that is consumed by other application
 components. A special kind of servlet may provide support for web services
 using the SOAP/HTTP protocol. Servlets, pages created with the
-Jakarta Pages technology or Jakarta Server Faces technology, web
+Jakarta Pages technology or Jakarta Faces technology, web
 filters, and web event listeners are referred to collectively in this
 specification as “web components.” Web applications are composed of web
 components and other data such as HTML pages. Web components execute in
@@ -248,7 +248,7 @@ these standard services are actually provided by Java SE.
 
 The HTTP client-side API is defined by the _java.net_ package. The
 HTTP server-side API is defined and used by the Jakarta RESTful Web Services,
-Jakarta Servlet, Jakarta Pages, and Jakarta Server Faces
+Jakarta Servlet, Jakarta Pages, and Jakarta Faces
 interfaces and by Jakarta XML Web Services support that is no longer a required part of
 the Jakarta EE platform.
 
@@ -326,12 +326,12 @@ parts: an application-level interface used by the application components
 to send mail, and a service provider interface used at the Jakarta EE SPI
 level.
 
-==== Jakarta Activation Framework (JAF)
+==== Jakarta Activation
 
-The JAF API provides a framework for handling
+The Jakarta Activation API provides a framework for handling
 data in different MIME types, originating in different formats and
-locations. The Jakarta Mail API makes use of the JAF API. As of Jakarta EE 9, 
-the Jakarta Activation Framework is now part of the Jakarta EE Platform.
+locations. The Jakarta Mail API makes use of the Jakarta Activation API. As of Jakarta EE 9, 
+Jakarta Activation is now part of the Jakarta EE Platform.
 
 ==== XML Processing
 
@@ -667,7 +667,7 @@ may customize the business logic of the application’s components at
 deployment time. For example, using tools provided with a Jakarta EE
 product, the Deployer may provide simple application code that wraps an
 enterprise bean’s business methods, or customizes the appearance of a
-server pages or server faces page.
+Pages or Faces page.
 
 The Deployer’s output is web applications,
 enterprise beans, and application clients that have been
@@ -761,8 +761,8 @@ details on the network protocol support required for interoperability.
 
 The Jakarta EE Product Provider is required to
 publish the installed application components on the industry-standard
-protocols. This specification defines the mapping of servlets and server
-pages to the HTTP and HTTPS protocols, and the mapping of Jakarta Enterprise Beans components
+protocols. This specification defines the mapping of Servlets and
+Pages to the HTTP and HTTPS protocols, and the mapping of Jakarta Enterprise Beans components
 to IIOP and SOAP protocols.  Jakarta SOAP with Attachments is no longer required by Jakarta EE 11.
 See <<a2333, Removed Jakarta Technologies>>.
 
@@ -1013,14 +1013,14 @@ No API updates are expected in Jakarta EE 9.1.
 Only the Platform and Web Profile Specifications along with the TCKs and Compatible Implementations should be affected by Jakarta EE 9.1.
 
 === Changes in Jakarta EE 10
-The goal of the Jakarta EE 10 release is to deliver a set of specifications that and adding the support for the Java SE 11 and newer runtimes. The TCKs require support for both Java SE 11 and Java SE 17.
+The Jakarta EE 10 release removes support for Java SE 8. It includes support for Java SE 11 and newer runtimes. The TCKs require support for both Java SE 11 and Java SE 17.
 
 Jakarta EE 10 is the first release in the Jakarta EE series to include major and minor component specification updates not limited to the javax to jakarta package namespace change.
 
 Jakarta EE 10 also introduced a new Core Profile to support smaller runtime footprints as often used with microservices.
 
 === Changes in Jakarta EE 11
-The goal of the Jakarta EE 11 release is to deliver a set of specifications that and adding the support for the Java SE 17 and newer runtimes. The TCKs require support for both Java SE 17 and Java SE 21.
+The Jakarta EE 11 release removes support for Java SE 11. It includes support for Java SE 17 and newer runtimes. The TCKs require support for both Java SE 17 and Java SE 21.
 
 Jakarta EE 11 removes the following technologies from the platform.
 

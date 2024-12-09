@@ -476,8 +476,8 @@ Standard
 
 Standard
 
-|Jakarta Server Faces
-|managed classes footnote:[See the Jakarta™ Server Faces
+|Jakarta Faces
+|managed classes footnote:[See the Jakarta™ Faces
 specification section Jakarta Faces Managed Classes and Jakarta EE Annotations” for
 a list of these managed classes.]
 |Standard
@@ -1246,7 +1246,7 @@ public void changePhoneNumber(...) {
   // Obtain the default initial JNDI context.
   Context initCtx = new InitialContext();
 
-  // Look up the home interface of the EmployeeRecord
+  // Look up the interface of the EmployeeRecord
   // enterprise bean in the environment.
   EmployeeRecord result = (EmployeeRecord) initCtx.lookup("java:comp/env/ejb/EmplRecord");
  ...

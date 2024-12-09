@@ -28,13 +28,13 @@ for the Jakarta Connectors specification, each component may also acquire one or
 connections to access one or more transactional resource managers.
 
 For example, in
-<<a475, Servlets/Server Pages Accessing Enterprise Beans>> , the call
-tree starts from a servlet or server page accessing multiple enterprise beans,
+<<a475, Servlets/Pages Accessing Enterprise Beans>> , the call
+tree starts from a servlet or Pages page accessing multiple enterprise beans,
 which in turn may access other enterprise beans. The components access resource
 managers via connections.
 
 [[a475]]
-.Servlets/Server Pages Accessing Enterprise Beans
+.Servlets/Pages Accessing Enterprise Beans
 image::accessing-EJBs.svg[]
 
 The Application Component Provider specifies, using a combination of
@@ -42,7 +42,7 @@ programmatic and declarative transaction demarcation APIs, how the platform
 must manage transactions on behalf of the application.
 
 For example, the application may require that all the components in
-<<a475, Servlets/Server Pages Accessing Enterprise Beans>> access
+<<a475, Servlets/Pages Accessing Enterprise Beans>> access
 resources as part of a single transaction. The Platform Provider must provide
 the transaction capabilities to support such a scenario.
 
@@ -134,11 +134,11 @@ The Product Provider is not required to support transaction context propagation
 via an HTTP request across web components. The HTTP protocol does not support
 such transaction context propagation. When a web component associated with a
 transaction makes an HTTP request to another web component, the transaction
-context is not propagated to the target servlet or server page.
+context is not propagated to the target servlet or Pages page.
 
 However, when a web component is invoked through the _RequestDispatcher_
 interface, any active transaction context must be propagated to the called
-servlet or server page.
+servlet or Pages page.
 
 ==== Transactions in Web Component Life Cycles
 
@@ -146,8 +146,8 @@ Transactions may not span web requests from a client on the network. If a web
 component starts a transaction in the _service_ or _doFilter_ method (or
 transactional interceptor of _service_ or _doFilter_ method), it must be
 completed before the _service_ or _doFilter_ method returns to the network
-client.footnote:[For a Jakarta™ Server Pages page, this requirement applies to
-the _service_ method of the equivalent Jakarta™ Server Pages page Implementation
+client.footnote:[For a Jakarta™ Pages page, this requirement applies to
+the _service_ method of the equivalent Jakarta™ Pages page Implementation
 Class.] Returning from the _service_ or _doFilter_ method to the
 network client with an active transaction context is an error. The web container
 is required to detect this error and abort the transaction.
@@ -232,7 +232,7 @@ Jakarta Connectors API.
 
 A Jakarta EE product must support a Jakarta Messaging provider as a
 transactional resource manager. The product must enable transactional Jakarta
-Messaging access from servlets, server pages, and enterprise beans.
+Messaging access from servlets, Pages pages, and enterprise beans.
 
 It must be possible to access the Jakarta Messaging provider from multiple
 application components within a single transaction. For example, a servlet may
@@ -244,7 +244,7 @@ transaction, and, finally, commit the transaction.
 
 A Jakarta EE product must support resource adapters that use _XATransaction_
 mode as transactional resource managers. The product must enable transactional
-access to the resource adapter from servlets, server pages, and enterprise
+access to the resource adapter from servlets, Pages pages, and enterprise
 beans.
 
 It must be possible to access the resource adapter from multiple application
