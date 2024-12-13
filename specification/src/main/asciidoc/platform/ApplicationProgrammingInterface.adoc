@@ -350,8 +350,8 @@ transactions.
 
 ==== Jakarta EE Security Manager Related Requirements
 
-The Jakarta EE 11 release removes the requirement to use a Java 
-security manager.
+The Jakarta EE 11 release removes the requirement to support a Java
+security manager and any security manager related permissions.
 
 ==== Additional Requirements
 
@@ -368,12 +368,9 @@ The following URL protocols must be supported:
 *  _file_ _:_ Only reading from a _file_ URL
 need be supported. That is, the corresponding _URLConnection_ object’s
 _getOutputStream_ method may fail with an _UnknownServiceException_ .
-File access is restricted according to the permissions described above.
 *  _http_ _:_ Version 1.1 and 2.0 of the HTTP protocol
 must be supported. An _http_ URL must support both input and output.
-*  _https_ : TLS version 1.2
-must be supported by _https_ URL objects. Both input and output must be
-supported.
+*  _https_ : TLS version 1.2 must be supported by _https_ URL objects. Both input and output must be supported.
 
 The Java SE platform also includes a mechanism
 for converting a URL’s byte stream to an appropriate object, using the

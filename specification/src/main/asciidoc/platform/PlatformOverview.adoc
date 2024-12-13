@@ -1031,7 +1031,7 @@ Jakarta EE 11 removes the following technologies from the platform.
 
 Because the minimum Java SE version is 17, technologies that have been removed from Java SE as of version 17 have also been removed from the Jakarta EE platform. Such technologies include but are not limited to the following.
 
-* Security Manager
+* Security Manager and related permissions
 * Extension Mechanism Architecture and Optional Package Versioning requirements
 
 Jakarta EE 11 adds the following technology to the platform.
