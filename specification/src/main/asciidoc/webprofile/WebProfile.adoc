@@ -1,11 +1,9 @@
 include::Introduction.adoc[]
 
-include::../shared-includes/IntegrationRequirements.adoc[]
-
 include::WebProfileDefinition.adoc[]
 
-include::RevisionHistory.adoc[]
+include::../shared-includes/IntegrationRequirements.adoc[]
 
-include::WebProfileIntegration.adoc[]
+include::RevisionHistory.adoc[]
 
 include::RelatedDocuments.adoc[]

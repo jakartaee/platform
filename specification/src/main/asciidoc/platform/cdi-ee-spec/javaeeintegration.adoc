@@ -32,4 +32,6 @@ include::packagingdeployment_ee.adoc[]
 
 include::el.adoc[]
 
+include::CDI-JPA.adoc[]
+
 include::xrefs.adoc[]
