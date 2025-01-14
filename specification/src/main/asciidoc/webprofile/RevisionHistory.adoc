@@ -5,6 +5,7 @@
 * Updated Java SE base version to 17.
 * Addition of Jakarta Data to Web Profile.
 * Updated <<relateddocs, “Related Documents">> for the updated Specifications in Jakarta EE 11.
+* Add "Component Specification Integration Requirements" chapter mostly coming from the CDI specification.
 
 === Changes in Final Release for Jakarta EE 10
 * Major and minor updates to most specifications.

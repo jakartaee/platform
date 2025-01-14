@@ -1,3 +1,5 @@
+[appendix]
+
 == Jakarta EE 11 Web Profile Dependencies
 
 [graphviz]
@@ -8,15 +10,15 @@ digraph EE11WebProfile {
 wp [label="jakarta-web-api"];
 servlet [label="servlet:6.1.0"];
 jsp [label="servlet.jsp:4.0.0"];
-el [label="el:6.0.0"];
-jstl [label="servlet.jsp.jstl:3.0.0"];
-faces [label="faces:4.1.0"];
+el [label="el:6.0.1"];
+jstl [label="servlet.jsp.jstl:3.0.2"];
+faces [label="faces:4.1.2"];
 jaxrs [label="jaxrs:4.0.0"]
 websocket [label="websocket:2.2.0"];
-jsonp [label="jsonp:2.1.0"];
-jsonb [label="jsonb:3.0.0"];
+jsonp [label="jsonp:2.1.3"];
+jsonb [label="jsonb:3.0.1"];
 annotations [label="annotations:3.0.0"];
-ejb [label="ejb:4.0.0"];
+ejb [label="ejb:4.0.1"];
 jta [label="jta:2.0.1"];
 jpa [label="jpa:3.2.0"];
 validation [label="validation:3.1.0"];
@@ -25,8 +27,8 @@ cdi [label="cdi:4.1.0"];
 di [label="di:2.0.1"];
 authn [label="authentication:3.1.0"];
 security [label="security:4.0.0"];
-concurrency [label="concurrent:3.1.0"];
-data [label="data:1.0.0"];
+concurrency [label="concurrent:3.1.1"];
+data [label="data:1.0.1"];
 
 wp -> servlet;
 wp -> jsp;
@@ -66,8 +68,6 @@ faces -> el;
 faces -> cdi;
 faces -> validation;
 faces -> jta;
-faces -> jsp;
-faces -> jstl;
 faces -> jsonp;
 faces -> ejb;
 faces -> jpa;
