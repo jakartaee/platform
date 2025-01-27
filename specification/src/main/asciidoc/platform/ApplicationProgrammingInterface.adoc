@@ -351,7 +351,12 @@ transactions.
 ==== Jakarta EE Security Manager Related Requirements
 
 The Jakarta EE 11 release removes the requirement to support a Java
-security manager and any security manager related permissions.
+security manager and any security manager related permissions. For any
+component specs that are part of the platform as of version 11, whether
+or not they were updated in Jakarta EE 11, if they have any
+outstanding references to any `SecurityManager` concepts, those
+references are to be considered removed by the platform specification
+taking precedence.
 
 ==== Additional Requirements
 
