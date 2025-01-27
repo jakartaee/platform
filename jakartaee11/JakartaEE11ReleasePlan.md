@@ -4,27 +4,27 @@
 
 ## Timeline
 
-|              | Q1 2023      | Q2 2023 | Q3 2023     | Q4 2023 | Q1 2024 | Q2 2024 | June/July 2024  |
-|--------------|--------------|---------|-------------|---------|---------|---------|-----------------|
-| *Components* | Plan Reviews |         |             |         |         |         |                 |
-| *Platform*   |              |         | Plan Review |         |         |         |                 |
-| *All*        |              |         |             | TCK pass w/Security Manager Disabled |    | | |
-| *All*        |              |         |             | M1 release |      |         |                 |
-| *All*        |              |         |             |         | Wave 1, 2, 3, 4 specs release review initiated by 2024-02-29 | | |
-| *All*        |              |         |             |         | M2 release **DONE 2024-04-16** | | |
-| *All*        |              |         |             |         | Wave 5 specs release review initiated by 2024-03-29 | | |
-| *All*        |              |         |             |         | M3 release **In progress** | | |
-| *Components* |              |         |             |         | Each Wave 1 - 5 component spec has an impl that passes its TCK on Java SE 17 and an impl that passes its TCK on Java SE 21. These need not be the same impl. |          | |
-| *Components* |              |         |             |         | | Each Wave 6, 7 component spec has an impl that passes its TCK on Java SE 17 and an impl that passes its TCK on Java SE 21. These need not be the same impl. |          |
-| *All*        |              |         |             |         | | Wave 6, 7 specs release review initiated by 2024-04-27. Exception for Data. Data will initiate release review by 2024-05-31 | |
-| *All*        |              |         |             |         | | M4 release | |
-| *Components* |              |         |             |         | | Individual component spec ballots completed | |
-| *Platform*   |              |         |             |         | | Platform TCK ready to run on Java SE 21 and Java SE 17 | |
-| *Components* |              |         |             |         |         | Further refine implementations | |
-| *Platform*   |              |         |             |         |         |         | Platform ballot |
-| *Platform*   |              |         |             |         |         |         | Web Platform ballot |
-| *Platform*   |              |         |             |         |         |         | Core Platform ballot |
-| *Platform*   |              |         |             |         |         |         | **Release**     |
+|              | Q1 2023      | Q2 2023 | Q3 2023     | Q4 2023 | Q1 2024 | Q2 2024 | Q4 2024 | Q1 2025 | 2025 |
+|--------------|--------------|---------|-------------|---------|---------|---------|-----------------|-|-|
+| *Components* | Plan Reviews |         |             |         |         |         |                 | | |
+| *Platform*   |              |         | Plan Review |         |         |         |                 | | |
+| *All*        |              |         |             | TCK pass w/Security Manager Disabled |    | | | | |
+| *All*        |              |         |             | M1 release |      |         |                 | | |
+| *All*        |              |         |             |         | Wave 1, 2, 3, 4 specs release review initiated by 2024-02-29 | | | | |
+| *All*        |              |         |             |         | M2 release **DONE 2024-04-16** | | | | |
+| *All*        |              |         |             |         | Wave 5 specs release review initiated by 2024-03-29 | | | | |
+| *All*        |              |         |             |         | M3 release **In progress** | | | | |
+| *Components* |              |         |             |         | Each Wave 1 - 5 component spec has an impl that passes its TCK on Java SE 17 and an impl that passes its TCK on Java SE 21. These need not be the same impl. |          | | | |
+| *Components* |              |         |             |         | | Each Wave 6, 7 component spec has an impl that passes its TCK on Java SE 17 and an impl that passes its TCK on Java SE 21. These need not be the same impl. |          | | |
+| *All*        |              |         |             |         | | Wave 6, 7 specs release review initiated by 2024-04-27. Exception for Data. Data will initiate release review by 2024-05-31 | | | |
+| *All*        |              |         |             |         | | M4 release | | | |
+| *Components* |              |         |             |         | | Individual component spec ballots completed | | | |
+| *Platform*   |              |         |             |         | | Platform TCK ready to run on Java SE 21 and Java SE 17 | | | |
+| *Components* |              |         |             |         |         | Further refine implementations | | | |
+| *Platform*   |              |         |             |         |         |         | Core Platform ballot | |
+| *Platform*   |              |         |             |         |         |         | | Web Platform ballot |
+| *Platform*   |              |         |             |         |         |         | | | Platform ballot |
+| *Platform*   |              |         |             |         |         |         | | | **Release** |
 
 For all milestone releases after M1:
 * specs that are slated to have release review initiated before that milestone will include their final versions in the milestone.
