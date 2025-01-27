@@ -39,7 +39,8 @@ Many other component Specifications are introducing updates which are binary com
 Regardless of the scope of changes, all artifacts for the component and Platform Specifications will be affected -- Specifications, APIs, TCKs, and Compatible Implementations.
 
 ## Java SE ([issue]())
-Java SE 17 will become the minimum runtime supported by compatible implementations of Jakarta EE.
+
+Java SE 17 will become the minimum runtime supported by compatible implementations of Jakarta EE. One implication of this fact is the removal of the `SecurityManager` and all related Java SE APIs from the platform and component specifications.
 
 ## Jakarta Data
 Jakarta EE 11 plans to include Jakarta Data in its platform specification. For more on Jakarta Data see [Jakarta Data](https://jakarta.ee/specifications/data/).
