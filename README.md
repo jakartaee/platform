@@ -12,7 +12,7 @@ other attributes of the platform such as security, deployment,
 transactions, and interoperability.
 
 > Be sure to view this page at
-[https://jakartaee.github.io/jakartaee-platform/](https://jakartaee.github.io/jakartaee-platform/),
+[https://jakartaee.github.io/platform/](https://jakartaee.github.io/platform/),
 not at the GitHub source code repository README view, so that the links in
 this page will work correctly.
 
