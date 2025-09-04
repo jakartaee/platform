@@ -136,7 +136,7 @@ Invoking Enterprise Bean Business Methods::
 The Pages page performs the remote method call to
 the enterprise bean, using the user’s credential to establish a secure
 association between the Pages page and the enterprise bean (as shown in
-<<a269, Invoking an Enterprise Bean Business Method>> ). 
+<<a269, Invoking an Enterprise Bean Business Method>>).
 The association is implemented as two related
 security contexts, one in the web server and one in the Jakarta Enterprise Beans container.
 
