@@ -74,9 +74,9 @@ When running in Jakarta EE, the container must extend the rules defined for mana
 
 === Context management for built-in scopes in Jakarta EE
 
-When running in Jakarta EE, the container must extend the rules defined in <<builtin_contexts>> and is also required to ensure the following rules for built-in context implementation.
+When running in Jakarta EE, the container must extend the rules defined in <<builtin_contexts>> and is also required to ensure the following rules for built-in context implementations.
 
-The built-in request and application context objects are active during servlet, web service and enterprise bean invocations, and the built in session and request context objects are active during servlet and web service invocations.
+The built-in request context is active during servlet, web service and enterprise bean invocations, and the built-in session context is active during servlet and web service invocations.
 
 [[request_context_ee]]
 
@@ -126,19 +126,6 @@ The event payload is `jakarta.servlet.http.HttpSession`.
 ==== Application context lifecycle in Jakarta EE
 
 When running in Jakarta EE the container must extend the rules defined in <<application_context>> and is also required to implement application context with the following rules.
-
-The application scope is active:
-
-* during the `service()` method of any servlet in the web application, during the `doFilter()` method of any servlet filter and when the container calls any `ServletContextListener`, `HttpSessionListener`, `AsyncListener` or `ServletRequestListener`,
-* during any Jakarta EE web service invocation,
-* during any asynchronous invocation of an event observer,
-* during any remote method invocation of any enterprise bean, during any asynchronous method invocation of any enterprise bean, during any call to an enterprise bean timeout method and during message delivery to any message-driven enterprise bean,
-* when the disposer method or `@PreDestroy` callback of any bean with any normal scope other than `@ApplicationScoped` is called, and
-* during `@PostConstruct` callback of any bean.
-
-
-The application context is shared between all servlet requests, web service invocations, asynchronous invocation of an event observer, enterprise bean remote method invocations, enterprise bean asynchronous method invocations, enterprise bean timeouts and message deliveries to message-driven beans that execute within the same application.
-The application context is destroyed when the application is shut down.
 
 The payload of the event fired when the application context is initialized or destroyed is:
 
