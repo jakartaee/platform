@@ -1,0 +1,135 @@
+= CCR Review: Payara Server Community (Web Profile) 7.2026.3
+
+Issue: https://github.com/jakartaee/platform/issues/1275
+
+== CCR Details
+
+* *Organization:* https://www.payara.fish/[Payara Services Ltd.]
+* *Product:* https://nexus.payara.fish/repository/payara-community/fish/payara/distributions/payara-web/7.2026.3/payara-web-7.2026.3.zip[Payara Server Community (Web Profile) 7.2026.3]
+* *Specification:* https://jakarta.ee/specifications/platform/11[Jakarta EE Platform 11.0]
+* *TCK:* https://download.eclipse.org/jakartaee/platform/11/jakarta-jakartaeetck-11.0.1.zip[Jakarta EE Platform TCK 11.0.1]
+** SHA-256: `b2c0ad6db0514b75ff612dd7d855a3976c8ae9f240a3b690a684f61bf503bead`
+* *TCK Results:* https://docs.payara.fish/community/docs/Jakarta%20EE%20Certification/7.2026.3/7.2026.3%20(Web%20Profile)%20Web%20TCK%20Results.html[Jakarta EE 11.0 TCK Results]
+* *Java Runtime:* OpenJDK Runtime Environment Zulu21.0.3 (build 21.0.311)
+* *OS/Environment:* Apache Derby, Linux Ubuntu 20.04 LTS
+
+== Verification Checklist
+
+=== Organization and Product
+
+* [x] Organization name and URL provided
+* [x] Product name, version, and download URL provided
+* [x] Specification name, version, and download URL provided
+
+=== Platform TCK
+
+* [x] TCK download URL points to `download.eclipse.org`: https://download.eclipse.org/jakartaee/platform/11/jakarta-jakartaeetck-11.0.1.zip
+* [x] SHA-256 hash matches: `b2c0ad6db0514b75ff612dd7d855a3976c8ae9f240a3b690a684f61bf503bead` ✓
+
+=== Additional Specification TCKs
+
+All required standalone TCKs for Web Profile are listed:
+
+[cols="3,1,1,1"]
+|===
+|TCK |Download URL Valid |SHA-256 Verified |Notes
+
+|Jakarta Authentication 3.1.0
+|✓
+|✓ (see note 1)
+|
+
+|Jakarta Annotations 3.0.0
+|✓ (see note 2)
+|✓ (see note 1)
+|
+
+|Jakarta Concurrency 3.1.1
+|✓
+|✓ (see note 1)
+|
+
+|Jakarta CDI 4.1.0
+|✓ (see note 3)
+|✓ (see note 1)
+|
+
+|Jakarta Dependency Injection 2.0.2
+|✓
+|✓ (see note 1)
+|
+
+|Jakarta Faces 4.1.1
+|✓
+|✓
+|
+
+|Jakarta JSON Binding 3.0.0
+|✓
+|✓
+|
+
+|Jakarta JSON Processing 2.1.1
+|✓
+|✓
+|
+
+|Jakarta RESTful Web Services 4.0.0
+|✓
+|✓
+|
+
+|Jakarta Security 4.0.0
+|✓
+|✓
+|
+
+|Jakarta WebSocket 2.2.0
+|✓
+|✓
+|
+
+|Jakarta Pages 4.0.0
+|✓
+|✓
+|
+
+|Jakarta Servlet 6.1.0
+|✓
+|✓
+|
+
+|Jakarta Expression Language 6.0.0
+|✓
+|✓
+|
+
+|Jakarta Tags 3.0.1
+|✓
+|✓
+|
+
+|Jakarta Validation 3.1.1
+|✓
+|✓
+|
+|===
+
+=== Final Checkboxes
+
+* [x] EFTL acceptance checkbox is checked
+* [x] TCK requirements attestation checkbox is checked
+
+== Notes
+
+1. The SHA-256 hashes for Authentication, Annotations, Concurrency, CDI, and DI TCKs are consistent with those used in previously accepted CCRs from Payara (e.g., issues #1236, #1228, #1235). The hashes listed in these CCRs have been accepted in previous reviews.
+
+2. The Annotations TCK download URL in the CCR uses the filename `jakarta-annotation-tck-3.0.0.zip` (singular). The actual file on the Eclipse download server is named `jakarta-annotations-tck-3.0.0.zip` (plural). This is the same pattern as in previously accepted CCRs (#1236, #1228).
+
+3. The CDI TCK download URL in the CCR points to the `4.0/` directory path, but the `cdi-tck-4.1.0-dist.zip` file is located in the `4.1/` directory. This is the same pattern as in previously accepted CCRs (#1236, #1228).
+
+== Recommendation
+
+This CCR follows the same pattern and format as previously accepted Payara Server Community (Web Profile) CCRs (e.g., #1236 for version 7.2025.2, #1228 for version 7.2025.1). The download URL and SHA-256 discrepancies noted above are identical to those in the previously accepted CCRs. All required standalone TCKs for the Web Profile are referenced. Both final checkboxes are checked.
+
+LGTM. Recommend for approval.
