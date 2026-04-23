@@ -35,3 +35,8 @@ assignees: ''
   // Add here
 - [ ] By checking this box I acknowledge that the Organization I represent accepts the terms of the [EFTL](https://www.eclipse.org/legal/tck.php).
 - [ ] By checking this box I attest that all TCK requirements have been met, including any compatibility rules.
+
+# Task for Copilot
+
+## Instructions
+Follow these repository-wide rules when working on this issue: https://github.com/jakartaee/platform/wiki/Compatibility_Certification_Request_CCR_Review_Guidance
