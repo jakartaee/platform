@@ -8,15 +8,6 @@ assignees: ''
 
 ---
 
----
-name: Compatibility certification request
-about: Request certification of a compatible implementation of Jakarta Mail.
-title: Compatibility certification request for [product/project name]
-labels: certification
-assignees: ''
-
----
-
 - [ ] Organization Name ("Organization") and, if applicable, URL:<br/>
   // Add here
 - [ ] Product Name, Version and download URL (if applicable):<br/>
@@ -35,3 +26,8 @@ assignees: ''
   // Add here
 - [ ] By checking this box I acknowledge that the Organization I represent accepts the terms of the [EFTL](https://www.eclipse.org/legal/tck.php).
 - [ ] By checking this box I attest that all TCK requirements have been met, including any compatibility rules.
+
+# Task for Copilot
+
+## Instructions
+Follow these repository-wide rules when working on this issue: https://github.com/jakartaee/platform/wiki/Compatibility_Certification_Request_CCR_Review_Guidance
