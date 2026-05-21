@@ -1,6 +1,6 @@
 ---
 name: Compatibility certification request
-about: Request certification of a compatibile implementation of Jakarta EE
+about: Request certification of a compatible implementation of Jakarta EE
 title: Compatibility certification request for [product/project name] for [Platform|Web
   Profile|Core Profile]
 labels: certification
@@ -24,7 +24,7 @@ assignees: ''
   // Add here
 - [ ] Summary of the information for the certification environment, operating system, cloud, ...:<br/>
   // Add here
-- [ ] By checking this box I acknowledge that the Organization I represent accepts the terms of the [EFTL](https://www.eclipse.org/legal/tck.php).
+- [ ] By checking this box I acknowledge that the Organization I represent accepts the terms of the EFTL: https://www.eclipse.org/legal/tck.php.
 - [ ] By checking this box I attest that all TCK requirements have been met, including any compatibility rules.
 
 # Task for Copilot
