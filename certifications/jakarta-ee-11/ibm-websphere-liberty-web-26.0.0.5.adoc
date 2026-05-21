@@ -1,0 +1,136 @@
+= CCR Review: IBM WebSphere Liberty 26.0.0.5 (Web Profile)
+
+Issue: https://github.com/jakartaee/platform/issues/1291
+
+== CCR Details
+
+* *Organization:* https://www.ibm.com[IBM Corporation]
+* *Product:* https://public.dhe.ibm.com/ibmdl/export/pub/software/websphere/wasdev/downloads/wlp/26.0.0.5/wlp-webProfile11-26.0.0.5.zip[IBM WebSphere Liberty, 26.0.0.5]
+* *Specification:* https://jakarta.ee/specifications/webprofile/11[Jakarta EE Web Profile, 11]
+* *TCK:* https://download.eclipse.org/jakartaee/platform/11/jakarta-jakartaeetck-11.0.2.zip[Jakarta EE Platform TCK 11.0.2]
+** SHA-256: `a70a3085f3520891f9f4e88bcad1475328b4d375181ac56d1e2bcdc237ee62a3`
+* *TCK Results:*
+** https://www.ibm.com/support/pages/ibm-websphere-liberty-26005-jakarta-ee-web-profile-11-using-java-17-certification-summary[Java 17 Test Results]
+** https://www.ibm.com/support/pages/ibm-websphere-liberty-26005-jakarta-ee-web-profile-11-using-java-21-certification-summary[Java 21 Test Results]
+* *Java Runtime:*
+** Java 17: java version "17.0.13", IBM Semeru Runtime Certified Edition (17.0.13+11)
+** Java 21: java version "21.0.5", IBM Semeru Runtime Certified Edition (21.0.5+11)
+* *OS/Environment:* Apache Derby 10.16.1.1, Linux, Ubuntu 18
+
+== Verification Checklist
+
+=== Organization and Product
+
+* [x] Organization name and URL provided
+* [x] Product name, version, and download URL provided
+* [x] Specification name, version, and download URL provided
+
+=== Platform TCK
+
+* [x] TCK download URL points to `download.eclipse.org`: https://download.eclipse.org/jakartaee/platform/11/jakarta-jakartaeetck-11.0.2.zip
+* [x] SHA-256 hash matches: `a70a3085f3520891f9f4e88bcad1475328b4d375181ac56d1e2bcdc237ee62a3` ✓
+
+=== Additional Specification TCKs
+
+All required standalone TCKs for Web Profile are listed:
+
+[cols="3,1,1,1"]
+|===
+|TCK |Download URL Valid |SHA-256 Verified |Notes
+
+|Jakarta Annotations 3.0.0
+|✓
+|✓
+|
+
+|Jakarta Authentication 3.1.1
+|✓
+|✓
+|
+
+|Jakarta Contexts and Dependency Injection 4.1.0
+|✓
+|✓
+|
+
+|Jakarta Concurrency 3.1.1
+|✓
+|✓
+|
+
+|Jakarta Data 1.0.1
+|✓
+|✓
+|
+
+|Jakarta Debugging Support for Other Languages 2.0.0
+|✓
+|✓
+|
+
+|Jakarta Expression Language 6.0.1
+|✓
+|✓
+|
+
+|Jakarta Faces 4.1.2
+|✓
+|✓
+|
+
+|Jakarta Dependency Injection 2.0.2
+|✓
+|✓
+|
+
+|Jakarta JSON Binding 3.0.0
+|✓
+|✓
+|
+
+|Jakarta JSON Processing 2.1.1
+|✓
+|✓
+|
+
+|Jakarta Pages 4.0.0
+|✓
+|✓
+|
+
+|Jakarta RESTful Web Services 4.0.1
+|✓
+|✓
+|
+
+|Jakarta Security 4.0.0
+|✓
+|✓
+|
+
+|Jakarta Servlet 6.1.1
+|✓
+|✓
+|
+
+|Jakarta Validation 3.1.1
+|✓
+|✓
+|
+
+|Jakarta WebSocket 2.2.0
+|✓
+|✓
+|
+|===
+
+=== Final Checkboxes
+
+* [x] EFTL acceptance checkbox is checked
+* [x] TCK requirements attestation checkbox is checked
+
+== Recommendation
+
+All SHA-256 hashes for the Platform TCK and all required standalone TCKs have been verified against the official Eclipse download server. All TCK download URLs correctly point to `download.eclipse.org`. All required standalone TCKs for Jakarta EE 11 Web Profile are referenced. Both final checkboxes are checked.
+
+LGTM. Recommend for approval.
