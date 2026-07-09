@@ -4,19 +4,22 @@
 
 ## Timeline
 
-|              | Q1 2025      | Q2 2025 | Q3 2025     | Q4 2025 | Q1 2026 | Q2 2026 | June/July 2026  |
-|--------------|--------------|---------|-------------|---------|---------|---------|-----------------|
-| *Components* | Plan Reviews |         |             |         |         |         |                 |
-| *Platform*   |              | Plan Review |         |         |         |         |                 |
-| *All*        |              |         | M1 release  |         |         |         |                 |
-| *All*        |              |         | M2 release  |         |         | | |
-| *All*        |              |         |             | M3 release |  | | |
-| *All*        |              |         |             | M4 release | |  | |
-| *Components* |              |         |             |         | Further refine implementations       |  | |
-| *Core Profile*|              |         |             |         |         |         | Core Profile ballot|
-| *Web Profile*|              |         |             |         |         |         | Web Profile ballot |
-| *Platform*   |              |         |             |         |         |         | Platform ballot |
-| *Platform*   |              |         |             |         |         |         | **Release**     |
+|                | Q1 2025      | Q2 2025       | Q1 2026    | Q2 2026    | Q3 2026    | Q4 2026                        | Q1 or Q2 2027      |
+|----------------|--------------|---------------|------------|------------|------------|--------------------------------|--------------------|
+| *Components*   | Plan Reviews |               |            |            |            |                                |                    |
+| *Platform*     |              | Plan Review   |            |            |            |                                |                    |
+| *All*          |              |               | M1 release |            |            |                                |                    |
+| *All*          |              |               | M2 release |            |            |                                |                    |
+| *All*          |              |               |            | M3 release |            |                                |                    |
+| *All*          |              |               |            | M4 release |            |                                |                    |
+| *All*          |              |               |            | M5 release |            |                                |                    |
+| *All*          |              |               |            |            | M6 release |                                |                    |
+| *All*          |              |               |            |            | M7 release |                                |                    |
+| *Components*   |              |               |            |            |            | Further refine implementations |                    |
+| *Core Profile* |              |               |            |            |            | Core Profile ballot            |                    |
+| *Web Profile*  |              |               |            |            |            |                                | Web Profile ballot |
+| *Platform*     |              |               |            |            |            |                                | Platform ballot    |
+| *Platform*     |              |               |            |            |            |                                | **Release**        |
 
 ## Scope ([issue]())
 

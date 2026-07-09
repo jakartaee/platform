@@ -20,7 +20,7 @@ Individual component Specification release plans have been developed by the resp
 
 Overall schedule dates are ***tentative*** and ***subject to change***.
     
-- Final Jakarta EE 12 release - **H1 2026** completion target
+- Final Jakarta EE 12 release - **Q2 2027** completion target
 
 See the [Jakarta EE 12 Release Plan](JakartaEE12ReleasePlan) for more schedule details.
     
