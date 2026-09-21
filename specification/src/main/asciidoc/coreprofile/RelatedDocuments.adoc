@@ -14,7 +14,7 @@ _Java™ Platform, Standard Edition, v17 API Specification_. Available at: _http
 
 _Jakarta™ RESTful Web Services Specification, Version 5.0_. Available at: _https://jakarta.ee/specifications/restful-ws/5.0/_
 
-_Jakarta™ Annotations Specification, Version 3.1_. Available at: _https://jakarta.ee/specifications/annotations/3.1/_
+_Jakarta™ Annotations Specification, Version 3.0_. Available at: _https://jakarta.ee/specifications/annotations/3.0/_
 
 _Jakarta™ Interceptors Specification, Version 2.2_. Available at: _https://jakarta.ee/specifications/interceptors/2.2/_
 
