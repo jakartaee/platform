@@ -1,6 +1,6 @@
 == Core Profile Definition
 
-This chapter defines the contents of the Jakarta™ EE 11.0 Core Profile.
+This chapter defines the contents of the Jakarta™ EE 12.0 Core Profile.
 
 [[required_components]]
 === Required Components
