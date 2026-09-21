@@ -34,7 +34,7 @@ technology or combinations of technologies.
 Let’s look at some examples of requirements from each grouping.
 
 For the first one, the Jakarta EE Platform
-specification mandates support for Java(TM) Platform, Standard Edition 17 API.  Because of this, all Core Profile 11.0 APIs must support the Java(TM) Platform, Standard Edition 17 API.
+specification mandates support for Java(TM) Platform, Standard Edition 17 API.  Because of this, all Core Profile 12.0 APIs must support the Java(TM) Platform, Standard Edition 17 API.
 
 In the second category one can point out the
 that Jakarta XML Binding support is not required for Jakarta RESTful Web Services in the Core Profile.
