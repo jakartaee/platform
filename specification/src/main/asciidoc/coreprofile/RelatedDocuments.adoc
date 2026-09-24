@@ -8,9 +8,9 @@ specification are included in parentheses.
 
 _Jakarta™ EE Platform Specification, Version 12.0_. Available at: _https://jakarta.ee/specifications/platform/12/_
 
-_Java™ Platform, Standard Edition (Java SE specification), v17_. Available at: _https://www.jcp.org/en/jsr/detail?id=392_
+_Java™ Platform, Standard Edition (Java SE specification), v21_. Available at: _https://www.jcp.org/en/jsr/detail?id=396_
 
-_Java™ Platform, Standard Edition, v17 API Specification_. Available at: _https://docs.oracle.com/javase/17/docs/_
+_Java™ Platform, Standard Edition, v21 API Specification_. Available at: _https://docs.oracle.com/javase/21/docs/_
 
 _Jakarta™ RESTful Web Services Specification, Version 5.0_. Available at: _https://jakarta.ee/specifications/restful-ws/5.0/_
 
