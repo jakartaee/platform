@@ -2,6 +2,9 @@
 
 == Revision History
 
+=== Changes in Final Release for Jakarta EE 12
+* Updated <<relateddocs, “Related Documents">> for the updated Specifications in Jakarta EE 12.
+
 === Changes in Final Release for Jakarta EE 11
 * Updated Java SE base version to 17.
 * Updated <<relateddocs, “Related Documents">> for the updated Specifications in Jakarta EE 11.
