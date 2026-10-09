@@ -90,7 +90,7 @@ Let’s look at some examples of requirements
 from each grouping.
 
 For the first one, the Jakarta EE Platform
-specification mandates support for the Java(TM) Platform, Standard Edition 17 API.
+specification mandates support for the Java(TM) Platform, Standard Edition 21 API.
 
 In the second category one can point out the
 requirement to support Jakarta EE web application modules ( _.war_ files)
