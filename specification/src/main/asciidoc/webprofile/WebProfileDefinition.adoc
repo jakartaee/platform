@@ -1,37 +1,40 @@
 == Web Profile Definition
 
 This chapter defines the contents of the
-Jakarta™ EE 11 Web Profile.
+Jakarta™ EE 12 Web Profile.
 
 [[a43]]
 === Required Components
 
 The following technologies are required components of the Web Profile:
 
-* Jakarta Annotations 3.0*
-* Jakarta Authentication 3.1*
-* Jakarta Concurrency 3.1*
-* Jakarta Contexts and Dependency Injection 4.1*
-* Jakarta Data 1.0*
+* Jakarta Annotations 3.0
+* Jakarta Authentication 3.1
+* Jakarta Authorization 2.0**
+* Jakarta Concurrency 3.2*
+* Jakarta Contexts and Dependency Injection 5.0*
+* Jakarta Data 1.1*
 * Jakarta Debugging Support for Other Languages 2.0
 * Jakarta Dependency Injection 2.0
 * Jakarta Enterprise Beans 4.0 Lite
-* Jakarta Expression Language 6.0*
-* Jakarta Faces 4.1*
-* Jakarta Interceptors 2.2*
-* Jakarta JSON Binding 3.0
-* Jakarta JSON Processing 2.1
-* Jakarta Pages 4.0*
-* Jakarta Persistence 3.2*
-* Jakarta RESTful Web Services 4.0*
-* Jakarta Security 4.0*
-* Jakarta Servlet 6.1*
-* Jakarta Standard Tag Library 3.0
-* Jakarta Transactions 2.0
-* Jakarta Validation 3.1*
-* Jakarta WebSocket 2.2*
+* Jakarta Expression Language 6.1*
+* Jakarta Faces 5.0*
+* Jakarta Interceptors 2.2
+* Jakarta JSON Binding 3.1*
+* Jakarta JSON Processing 2.2*
+* Jakarta Pages 4.1*
+* Jakarta Persistence 4.0*
+* Jakarta Query 1.0**
+* Jakarta RESTful Web Services 5.0*
+* Jakarta Security 5.0*
+* Jakarta Servlet 6.2*
+* Jakarta Standard Tag Library 3.1*
+* Jakarta Transactions 2.1*
+* Jakarta Validation 4.0*
+* Jakarta WebSocket 2.3*
 
 *Note:* technologies with an asterisk after them represent updated versions.
+*Note:* technologies with a double asterisk after them represent additions to the Web Profile
 
 === Optional Components
 
